@@ -1,0 +1,50 @@
+/*-----------------------
+ Discography block
+------------------------*/
+
+#album-discography-view-container .teaser-grid li {
+	@include transition-all;
+	@include breakpoint($small-only) {
+		margin: 0 4% 4% 0;
+		width: 48%; // two across
+		
+		&:nth-of-type(even) {
+			margin-right: 0;
+		}
+	}	
+	@include breakpoint($medium-only) {
+		width: 31%; // three across
+		margin: 0 3.33333% 3.33333% 0;
+		
+		&:nth-of-type(3n+3) {
+			margin-right: 0;
+		}
+	}
+	@include breakpoint($large-only) {
+		width: 18%; // five across
+		margin: 0 2.5% 2.5% 0;
+		
+		&:nth-of-type(5n+5) {
+			margin-right: 0;
+		}
+	}
+	@include breakpoint($xlarge-up) {
+		width: 15%; // six across
+		margin: 0 2% 2% 0;
+		
+		&:nth-of-type(6n+6) {
+			margin-right: 0;
+		}
+	}
+}
+#album-discography-view-container .teaser-grid li:hover {
+	@include box-shadow(0,0,7px,#bbb);
+}
+#album-discography-view-container .teaser-grid li img {
+	@include border-all($border-color);
+}
+#album-discography-view-container a {
+	display: block;
+	overflow: hidden;
+}
+

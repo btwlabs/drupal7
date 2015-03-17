@@ -1,0 +1,51 @@
+/*******************************************************************************
+ * no-sidebar.layout.scss
+ *
+ * Styles for the Album Node layout.
+ ******************************************************************************/
+/**
+ * $ARROW
+ */
+.clearfix:before, .clearfix:after {
+  content: "";
+  display: table;
+}
+.clearfix:after {
+  clear: both;
+  font-size: 0;
+  /* Clear Fix correction (add font-size to fix extra padding at bottom of site */
+}
+
+/*-----------------------------------------------
+
+ GRIDS
+ 
+-----------------------------------------------*/
+@media (min-width: 0em) and (max-width: 40em) {
+  .l-content {
+    width: 100%;
+    float: right;
+    margin-left: 0;
+    margin-right: 0;
+    clear: none;
+    float: none;
+  }
+}
+@media (min-width: 40.063em) {
+  .l-content {
+    width: 100%;
+    float: right;
+    margin-left: 0;
+    margin-right: 0;
+    clear: none;
+  }
+}
+@media (min-width: 64.063em) {
+  .l-content {
+    width: 100%;
+    float: right;
+    margin-left: 0;
+    margin-right: 0;
+    clear: none;
+  }
+}

@@ -1,0 +1,745 @@
+/*---------------------------------------------------------------------
+-----------------------------------------------------------------------
+
+                *****   FANTORRENT USER BAR   *****
+
+-----------------------------------------------------------------------
+---------------------------------------------------------------------*/
+
+
+// TEMPORARY!!!!!!!
+#toolbar { display:none;
+}
+
+
+// Container for userbar, nav, cart
+.l-top-wrapper {
+	@include breakpoint($medium-up){
+		position: fixed;
+		width: 100%;
+		z-index: 9999;
+	}
+}
+
+// userbar outer wrapper
+.l-userbar {
+	background-color: #ccc;
+	padding: 0px;
+	@include font-size(12px);
+	z-index: 9998;
+	min-height: 50px;
+	overflow: hidden;
+	position: relative;
+	
+	@include breakpoint($medium-up) {
+		background-color: $userbar-bg-color;
+		//position: fixed;
+		width: 100%;
+		top: 0;
+	}
+}
+.l-userbar-inner,
+.l-region--user-bar {
+	position: relative;
+}
+
+
+/* negates contrained width */
+.l-userbar .l-constrained {
+	width: 100%;
+	margin: 0;
+} 
+
+/* Site Name */
+h1.site-name {
+	display:none;
+	
+	@include breakpoint($small-only) {
+		display: block;
+		position: absolute;
+		top: 0;
+		width: 100%;
+	    @include font-size(25px);
+	    text-align: center;
+	    padding: 10px 50px;
+	    height: 50px;
+	    max-height: 50px;
+	    line-height: 1.2;
+	    vertical-align: middle;
+	    margin: 0;
+	    z-index: 0;
+	    
+	    & a {
+	    	display: block;
+		    color: $site-name-text-color;
+	    }
+    }
+}
+
+/*---------------------------------------------------------------------
+-----------------------------------------------------------------------
+
+ USER BAR - LOGIN BLOCK
+  
+-----------------------------------------------------------------------
+----------------------------------------------------------------------*/
+
+
+// mobile only
+
+.block-fantorrent-join-login-form {
+	@include border-bottom($border-color);
+}
+
+@include breakpoint($small-only) {
+	.block--fantorrent-community-support-fantorrent-join-login-form > .block__content {
+		position: relative;
+		top: -50px;
+		z-index: 3;
+	}
+}
+
+/*------------------------------
+
+ login button 
+ 
+------------------------------*/
+
+#login-link-container {
+	height: 40px;
+	text-align: left;
+	position: relative;
+	z-index: 3;
+	
+	@include breakpoint($small-only) {
+		position: absolute;
+		height: 50px;
+		top: 0;
+		right: 0;
+	}
+}
+#login-link-container a {
+		display: block;
+		text-align: center;
+		text-decoration: none;
+		
+	@include breakpoint($medium-up) {
+		color: $login-button-text-color;
+		background-color: $login-button-bg-color;
+		height: 40px;
+		padding: 8px 10px;
+		width: 80px;
+		
+		&:hover {
+			color: $login-button-text-hover-color;
+			background-color: $login-button-bg-hover-color;
+		}
+	
+		&:before {
+			content: "\5d";
+			font-family: $basicicons;
+			margin-right: 5px;
+			color: #777;
+			@include font-size(16px);
+			padding: 0;
+			vertical-align: top;
+			speak: none;
+		}
+	}
+	
+	@include breakpoint($small-only) {
+		padding: 15px 10px;
+		max-height: 50px;
+		width: 50px;
+		background-color: transparent;
+		color: $text-color;
+		
+		&:hover {
+			background-color: $login-button-bg-hover-color;
+		}
+		
+		&:before {
+			display: none;
+		}
+	}
+}
+
+/*----------------------------------------
+
+ LOGIN DROPDOWN FORM 
+ 
+-----------------------------------------*/
+
+#fantorrent-join-login-dropdown-form {
+	background-color: $login-dropdown-bg-color;
+	padding: 25px 25px 40px 25px;
+	color: #aaa;
+	position: relative;
+	top: 50px;
+}
+#fantorrent-join-login-dropdown-form label {
+	font-weight: normal;
+	@include font-size(18px);
+}
+/* name */
+#fantorrent-join-login-dropdown-form .form-item-name {
+	margin: 0 0px 20px 0;
+}
+/* password */
+#fantorrent-join-login-dropdown-form .form-item-pass {
+	margin: 0;
+}
+#fantorrent-join-login-dropdown-form .form-item-name input, 
+#fantorrent-join-login-dropdown-form .form-item-pass input {
+	height: 35px;
+	padding: 6px;
+	width: 100%;
+	@include border-radius($border-radius);
+}
+/* Submit button */
+#fantorrent-join-login-dropdown-form #edit-actions input {
+	padding: 10px 25px;
+	text-transform: uppercase;
+	font-weight: normal;
+	@include font-size(18px);
+	width: 100%;
+}
+// make this one mobile only !!!!!!!!!!!!!<<<<<<<!!!!!!!!!<<<<<<<<<<!!!!!!!
+#fantorrent-join-login-dropdown-form .form-submit {
+	background-color: $button-bg-color;
+	margin-bottom: 30px;
+}
+
+/* links */
+a.login-block-register-link,
+a.login-block-recover-link {
+	width: 49%;
+	text-align: center;
+	display: inline-block;
+	padding: 5px 10px;
+	background-color: #666;
+	margin-bottom: 5px;
+	color: #ddd;
+	@include border-radius($border-radius);
+	
+	&:hover {
+		background-color: #444;
+		color: #fff;
+		text-decoration: none;
+	}
+}
+a.login-block-register-link {
+	margin-right: 2%;
+}
+
+
+/*---------------------------------------------------------------------
+-----------------------------------------------------------------------
+
+ USER BAR - LOGOUT BLOCK
+ 
+-----------------------------------------------------------------------
+----------------------------------------------------------------------*/
+
+.block--fantorrent-community-support-fantorrent-join-logged-in-block,
+.block-masquerading-link {
+	color: #fff;
+	display: inline-block;
+	margin: 0 5px 0 15px;
+	padding: 5px 0;
+	vertical-align: top;
+	height: 40px;
+}
+
+/* Masquerade-As-User link */
+.block-masquerading-link {
+	margin-right: 15px;
+	padding-top: 8px;
+	
+	& a {
+		background-color: $button-bg-color;
+		color: $button-text-color;
+		display: block;
+		padding: 0 5px;
+		@include border-radius($border-radius);
+	}
+	
+	& a:hover {
+		background-color: $button-bg-hover-color;
+		color: $button-text-hover-color;
+		text-decoration: none;
+	}
+}
+
+/* Image */
+a#fantorrent-join-logged-in-block-user-image {
+	display: inline-block;
+	margin-right: 5px;
+	vertical-align: top;
+	width: 30px;
+	height: 30px;
+	background-color: #444;
+}
+
+/* welcome text - mobile only */
+.l-userbar span.logged-in-welcome {
+	display: none;
+}
+
+/* username - mobile only */
+.l-userbar .logout-username {
+	display: none;
+}
+
+/* Logout link */
+a#fantorrent-join-logged-in-block-log-out {
+	display: inline-block;
+	height: 0;
+	width: 20px;
+	padding: 30px 28px 0 0;
+	overflow: hidden;
+	position: relative;
+	top: 0;
+	left: 0;
+	background-color: $userbar-icon-bg-color;
+	color: $userbar-icon-color;
+	@include border-radius($border-radius - 1);
+	
+	&:hover {
+		color: $userbar-icon-hover-color;
+		background-color: $userbar-icon-bg-hover-color;
+	}
+	
+	&:before {
+		content: "\5c";
+		font-family: $basicicons;
+		font-size: 18px;
+		position: absolute;
+		top: 6px;
+		left: 7px;
+		speak: none;
+	}
+}
+
+/*---------------------------------------------------------------------
+-----------------------------------------------------------------------
+
+ USER BAR - JOIN FORM (email form)
+ 
+-----------------------------------------------------------------------
+----------------------------------------------------------------------*/
+
+.block--fantorrent-community-support-fantorrent-join-join-form {
+	z-index: 9999;
+	padding: 10px 15px;
+	margin: 50px 0 0 0;	
+	background-color: #aaa;
+	
+	& label {
+		display: none;
+	}
+	
+	& .form-type-textfield {
+		display: inline-block;
+		margin: 0px;
+		width: 60%;
+	}
+	
+	& input.form-text {
+		border: medium none;
+		@include border-radius($border-radius);
+		color: #666;
+		font-family: $base-font-family;
+		height: 35px;
+		padding: 7px 5px;
+		width: 98%;
+		margin: 0px 2% 0 0;
+	}
+	
+	& .form-submit {
+		@include border-radius($border-radius);
+		display: inline-block;
+		font-family: $base-font-family;
+		font-weight: normal;
+		height: 35px;
+		line-height: 0.75;
+		padding: 0;
+		text-transform: uppercase;
+		width: 38%;
+		
+	}
+}
+
+
+/*---------------------------------------------------------------------
+-----------------------------------------------------------------------
+
+ USER BAR - DASHBOARD LINKS 
+ 
+-----------------------------------------------------------------------
+---------------------------------------------------------------------*/
+
+/* Dashboard links container */
+.block--fantorrent-base-user-bar {
+	display: inline-block;
+	vertical-align: top;
+	height: 40px;
+	padding: 5px 0;
+}
+
+/*---------------------------------
+
+ All Dashboard Links (user & admin)
+ 
+----------------------------------*/
+
+.block--fantorrent-base-user-bar .block__content > div {
+	float: left;
+	position: relative;
+	margin: 0 0 0 5px;
+	vertical-align: top;
+
+	& a {
+		background-color: $userbar-icon-bg-color;
+		padding: 3px;
+		color: $userbar-icon-color;
+		height: 0;
+		overflow: hidden;
+		padding-top: 27px;
+		position: relative;
+		width: 30px;
+		@include border-radius($border-radius);
+	}
+	
+	& a:hover {
+		color: $userbar-icon-hover-color;
+		background-color: $userbar-icon-bg-hover-color;
+	}
+}
+
+/*-----------------------------------
+
+ USER Dashboard link overrides
+
+-----------------------------------*/
+
+#user-bar-user-dashboard-link,
+#user-bar-user-dashboard-link-mobile {
+	margin: 0;
+	float: left;
+	vertical-align: top;
+	
+	// User dashboard icon - style: button with no text
+	& a {
+		color: $userbar-icon-color;
+		background-color: $userbar-icon-bg-color;
+		display: block;
+		height: 0;
+		overflow: hidden;
+		position: relative;
+		width: 38px;
+		margin-right: 5px;
+		float: left;
+		@include border-radius($border-radius);
+		@include transition-all;	
+	}
+	
+	& a:before {
+		content: "\76";
+		display: block;
+		font-family: $basicicons;
+		font-size: 30px;
+		height: 28px;
+		left: 1px;
+		line-height: 26px;
+		padding: 1px 3px;
+		position: absolute;
+		top: 0;
+		vertical-align: middle;
+		width: 40px;
+			
+	}
+	& a:hover {
+		color: $userbar-icon-hover-color;
+		background-color: $userbar-icon-bg-hover-color;
+	}
+}
+
+/*---------------------------
+ admin dashboard icon
+----------------------------*/
+#user-bar-admin-dashboard-link a:before,
+#user-bar-admin-dashboard-link-mobile a:before {
+	content: "\e613";
+	font-family: $basicicons;
+	font-size: 22px;
+	left: 4px;
+	position: absolute;
+	top: 3px;
+}
+
+/*---------------------------
+ Analytics Dashboard Link icon
+----------------------------*/
+#user-bar-analytics-dashboard-link a:before,
+#user-bar-analytics-dashboard-link-mobile a:before {
+	content: "\e610";
+	font-family: $basicicons;
+	font-size: 22px;
+	left: 4px;
+	position: absolute;
+	top: 3px;
+}
+
+/*---------------------------
+ Store Admin link icon
+----------------------------*/
+#user-bar-store-dashboard-link a:before,
+#user-bar-store-dashboard-link-mobile a:before {
+	content: "\e604";
+	font-size: 24px;
+	left: 4px;
+	position: absolute;
+	top: 2px;
+	font-family: $basicicons;
+}
+
+
+/*-----------------------------
+
+ HELP LINKS  (search, contact, faq)
+ 
+-----------------------------*/
+
+/* container */
+.block--fantorrent-base-fantorrent-help-links {
+	margin: 0;
+	overflow: hidden;
+	padding: 5px 0;
+	position: absolute;
+	right: 65px;
+	top: 0;
+	width: auto;
+	z-index: 9999;
+}
+#user-bar-search-block {
+	margin: 0;
+	overflow: hidden;
+}
+#user-bar-search-block li {
+	margin: 0 0 0 5px;
+	padding: 0;
+	list-style-type: none;
+	float: left;
+	
+	& a {
+		color: $userbar-icon-color;
+		background-color: $userbar-icon-bg-color;
+		display: block;
+		height: 0;
+		overflow: hidden;
+		padding-top: 30px;
+		position: relative;
+		width: 30px;
+		@include border-radius($border-radius);
+	}
+	
+	& a:hover {
+		background-color: $userbar-icon-bg-hover-color;
+		color: $userbar-icon-hover-color;
+	}
+}
+
+/*-----------------------------------
+ Search button icon
+------------------------------------*/
+
+#user-bar-search-item a:before {
+	content: "\41";
+	font-family: $basicicons;
+	font-size: 18px;
+	left: 6px;
+	position: absolute;
+	top: 5px;
+	vertical-align: middle;
+	speak: none;
+}
+
+/*-----------------------------------
+ Contact button icon
+-------------------------------------*/
+
+#user-bar-contact-item a:before {
+	content: "@";
+	font-size: 23px;
+	font-weight: normal;
+	left: 5px;
+	position: absolute;
+	top: 3px;
+	vertical-align: middle;
+	width: 40px;
+	speak: none;
+}
+
+/*---------------------------------
+ FAQ button icon
+----------------------------------*/
+
+#user-bar-faq-item a:before {
+	content: "\26";
+	font-family: $basicicons;
+	font-size: 18px;
+	font-weight: normal;
+	left: 6px;
+	position: absolute;
+	top: 5px;
+	vertical-align: middle;
+	width: 40px;
+	speak: none;
+}
+
+/*---------------------------------------------------------------------
+-----------------------------------------------------------------------
+
+ USER BAR - USER MENU LINKS
+ 
+-----------------------------------------------------------------------
+----------------------------------------------------------------------*/
+
+
+/* temporary hide */
+.block--fantorrent-base-fantorrent-help-links,
+.block--fantorrent-base-user-bar,
+.block--fantorrent-community-support-fantorrent-join-logged-in-block {
+	display: none;
+}
+
+.user-menu-links {
+	height: auto;
+	position: relative;
+	top: 50px; // pushes down to clear main nav link
+	
+	@include breakpoint($medium-up) {
+		width: 300px;
+		position: fixed;
+		right: 0;
+		top: 50px;
+		
+		.toolbar & {
+			//top: 80px;
+		}
+	}
+}
+
+
+/* show/hide nav button */
+.user-menu-links a.show-link.button {
+    right: 0px;
+    top: -50px;
+    margin: 0px;/* negates a.show-link default positioning */
+    z-index: 2;
+    width: 50px;
+    overflow: hidden;
+    height: 0px;
+    position: absolute;
+    padding: 50px 0px 0px;
+    background: none;
+    border-radius: 0;
+    border-left: 1px solid $border-color;
+    color: $text-color;
+    @include transition-all;
+    
+    &:before {
+	    font-family: $basicicons;
+	    content: "\30";
+	    @include font-size(24px);
+	    line-height: 1;
+	    position: absolute;
+	    top: 15px;
+	    left: 12px;
+    }
+}
+
+/* menu open */
+.user-menu-links a.show-link.show-processed {
+	background-color: #eee;
+	
+	 &:before {
+	    content: "\e008";
+    }
+}
+
+/* menu links */
+.user-menu-links ul {
+	margin: 0;
+	padding: 0 0 50px; // offsets so last <li> can be seen
+}
+.user-menu-links ul li {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	list-style-image: none;
+	text-align: left;
+	float: none;
+	
+	& a {
+		color: #000;//placeholder
+	}
+	
+	@include breakpoint($small-only) {
+		
+	}
+}
+// mobile only
+.user-menu-links li a {
+	padding: 10px 10px 10px 40px;
+	display: block;
+	text-decoration: none;
+	width: auto;
+	color: $nav-text-color;
+	@include border-bottom($border-color);
+	background-color: #eee;
+	@include font-size(18px);
+	
+	&:hover {
+		background-color: $nav-button-bg-hover-color;
+		color: $nav-text-hover-color;
+	}
+}
+.user-menu-links .menu .leaf {
+	list-style-image: none;
+	list-style-type: none;
+}
+
+// icons 
+.user-menu-links a:before {
+	font-family: $basicicons;
+	@include font-size(20px);
+	display: inline-block;
+	margin-right: 30px;
+	vertical-align: middle;
+	position: relative;
+	top: -2px;
+}
+
+.user-menu-links .user-profile-link:before {
+	content:"\30";
+}
+.user-menu-links .user-dashboard-link:before {
+	content: "\76";
+}
+.user-menu-links .user-messages-link:before {
+	content:"\35";
+}
+.user-menu-links .user-logout-link:before {
+	content: "\5c";
+}
+.user-menu-links .user-admin-dashboard-link:before {
+	content: "\e613";
+}
+.user-menu-links .user-analytics-dashboard-link:before {
+	content: "\e610";
+}
+.user-menu-links .user-store-dashboard-link:before {
+	content: "\e604";
+}

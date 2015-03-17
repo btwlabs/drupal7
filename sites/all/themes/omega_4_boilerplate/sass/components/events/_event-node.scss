@@ -1,0 +1,220 @@
+/*---------------------------------------------------------------------
+-----------------------------------------------------------------------
+
+ TOUR - UPCOMING EVENTS - Node
+ 
+-----------------------------------------------------------------------
+---------------------------------------------------------------------*/
+
+
+/*-----------------------------------
+
+ Layout
+
+-----------------------------------*/
+
+.node-type-event {
+	
+	@include breakpoint($medium-up) {
+		@include add-grid(12);
+		@include add-gutter(1);
+		
+		// main content
+		.l-content .event-node-full {
+			@include grid-span(8, 1);
+		}
+		
+		// sidebar
+		.l-content #event-node-sidebar {
+			@include grid-span(4, 9);
+		}
+	}
+}
+
+.l-content .event-node-full  {
+
+	.node-content-container {
+		margin: 0;
+		padding: 0;
+		border: 0;
+	}
+	.event-purchase-link-container ul {
+		background-color: transparent;
+		padding: 0;
+		margin-bottom: 30px;
+	}
+	li {
+		width: auto;
+		margin: 0 0 10px 0;
+	}	
+}
+ 
+
+/* node row container - default overrides */
+.event-node-full .node-row-container {
+	padding: 0;
+	margin: 0;
+	border: 0;
+}
+
+
+/*---------------------------------
+
+ top of page info 
+
+----------------------------------*/
+
+.event-node-full h3 {
+	@include font-size(35px);
+	line-height: 1;
+}
+.event-node-full h5 {
+	@include font-size(20px);
+}
+
+.event-node-full h3, /* city-state */
+.event-node-full h5 /* date */{
+	margin-bottom: 5px;
+	clear: both; /* clears inline editing float when logged in as admin */
+}
+.event-node-full h6 /* venue */ {
+	font-weight: normal;
+}
+
+/*-----------------------------------
+
+ BUY TICKETS + MEET & GREET buttons
+ - governs node & teaser list popup 
+
+-----------------------------------*/
+
+.event-node-full .event-purchase-link-container ul {
+	overflow: hidden;
+	margin-bottom: 30px;
+	
+	li {
+		list-style-type: none;
+		margin: 0 0px 10px 0;
+		padding: 0;
+		width: auto;
+		
+		&:last-child {
+			margin-right: 0;
+		}
+	}
+
+	.button a {
+		@include border-radius(30px);
+		@include font-size(20px);
+		margin-bottom: 10px;
+		padding: 16px 10px;
+		text-transform: uppercase;
+	}
+}
+
+/*----------------------------------
+
+ SOLD OUT Message 
+
+----------------------------------*/
+
+.button span.sold-out-message {
+	background-color: red;
+	display: block;
+	@include border-radius(3px);
+	padding: 8px 10px;
+	color: #fff;
+	text-align: center;
+}
+
+/*---------------------------------
+
+ EVENT DETAILS 
+ 
+----------------------------------*/
+
+.event-location-venue-link {
+
+	.field-label,
+	.views-label {
+		float: left;
+		margin-right: 10px;
+	}
+}
+.popup-main-content {
+	.event-time, 
+	.event-title,
+	.event-location-title,
+	.event-location-address {
+		color: #bbb;
+		margin-bottom: 15px;
+	}
+}
+.views-label-field-event-date,
+.views-label-field-date-hour { /* label */
+	float: left;
+	margin-right: 10px;
+}
+
+
+/*----------------------------------------------------
+
+ I'm Attending - Facebook list block 
+ 
+-----------------------------------------------------*/
+
+.node-type-event .facebook-attending-container h3 a {
+	clear: both;
+	display: block;
+	float: none;
+	height: auto;
+	padding: 10px;
+	width: 100%;
+	font-size: 1.250rem;
+}
+
+
+/*----------------------------------------------------
+
+ I'm Attending - Facebook comments block (doesn't appear in mobile)
+ 
+-----------------------------------------------------*/
+
+#facebook-event-wall-container {
+	background-color: rgba(0,0,0,0.05);
+	margin-top: 20px;
+	padding: 5%;
+	@include border-radius(8px);
+	
+	.fb-wallpost { 
+		overflow: hidden; /* clear floats */
+		margin-bottom: 10px;
+		padding-bottom: 10px;
+		@include border-bottom($border-color);
+	}
+	.fb-posted-by img {
+		display: block;
+		float: left;
+		height: 50px;
+		margin: 0 20px 0 0;
+		width: 50px;
+	}
+	a img {
+		float: left;
+		margin-right: 20px;
+		width: 50px;
+	}
+	p {
+		@include font-size(13px);
+		line-height: 1.3;
+		padding-left: 70px;
+	}
+	p:last-child {
+		margin-bottom: 0;
+	}
+}
+
+
+.node-type-event .community-feeds h2.block-title {
+	display: none; // title is the legend
+}

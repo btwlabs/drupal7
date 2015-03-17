@@ -1,0 +1,79 @@
+/*---------------------------------------------------------------------
+-----------------------------------------------------------------------
+
+ More Link - general settings
+ 
+-----------------------------------------------------------------------
+---------------------------------------------------------------------*/
+
+.more-link,
+.l-region--sidebar .view-footer {
+	text-align: right;
+	
+	a {
+		display: block;
+		padding: 10px;
+		position: relative;
+		text-transform: uppercase;
+		vertical-align: bottom;
+		text-decoration: none;
+		@include font-size(12px);
+		text-align: right;
+	}
+
+	a:hover {
+		text-decoration: none;
+	}
+
+	a:after {
+		background-color: transparent;
+		content: "\3e";
+		display: inline-block;
+		font-family: $arrowicons;
+		font-size: 20px;
+		height: 22px;
+		line-height: 23px;
+		overflow: hidden;
+		padding: 0;
+		vertical-align: middle;
+		width: 20px;
+		speak: none;
+	}
+	a:hover:after {
+		text-decoration: none;
+	}
+}
+
+/* ----------------------------
+
+ More Link - main content section
+ 
+-----------------------------*/
+
+.l-content-inner .view-footer {
+	padding: 10px 0;
+}
+.l-content-inner .more-link {
+	position: relative;	
+	left: 0;
+	top: 0;
+	background: none;
+}
+.l-content-inner .more-link {
+	padding: 10px 0;
+}
+.l-content-inner .more-link a {
+	width: auto;
+	padding: 0;
+	text-align: right;
+}
+.l-content-inner .more-link a:after {
+	background: none;
+	padding: 0;
+	margin: 0;
+	@include font-size(16px);
+	position: relative;
+	top: -2px;
+}
+
+

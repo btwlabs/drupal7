@@ -1,0 +1,583 @@
+/*---------------------------------------------------------------------
+-----------------------------------------------------------------------
+
+ LEGACY - Archived Event - NODE
+
+-----------------------------------------------------------------------
+---------------------------------------------------------------------*/
+
+/*----------------------------
+ Column Layout
+----------------------------*/
+
+.legacy-node-full {
+	@include add-grid(12);
+	@include add-gutter(1);
+}
+
+@include breakpoint($large-up) {
+	#legacy-col1 {
+		@include grid-span(6, 1);
+	}
+	#legacy-col2 {
+		@include grid-span(6, 7);
+	}
+}
+
+/* ADMIN - Legacy Status (ON/OFF) edit link */
+
+.logged-in .legacy-node-full #event-legacy-on-switch {
+	@include border-all($border-color);
+    margin-bottom: 20px;
+    padding: 5px;
+}
+.logged-in .legacy-node-full .field-name-field-event-legacy-on .field-item {
+	float: left;
+	margin-right: 5px;
+}
+.logged-in .legacy-node-full .field-name-field-event-legacy-on .field-item:nth-child(3) {
+	float: none;
+	clear: both;
+}
+
+
+/*-----------------------------------------------
+
+ LEGACY DATE BLOCK / CITY / VENUE
+ 
+----------------------------------------------*/
+
+// outer container
+.legacy-node-full .date-and-location-container {
+	border: 0;
+	padding-bottom: 0;
+}
+
+// dateblock
+.legacy-node-full .dateblock {
+	width:auto ;
+	height:auto ;
+	
+	.day {
+		@include font-size(40px);
+		line-height: .85;
+	}
+	.month {
+		@include font-size(20px);
+		line-height: .85;
+	}
+	.year {
+		@include font-size(16px);
+	}
+}
+
+// location container
+.event-location-container {
+	// event city 
+	.event-location-location {
+		@include font-size(35px);
+		line-height: .95;
+		margin-bottom: 5px;
+	}
+
+	// event venue
+	.event-location-title {
+		font-weight: normal;
+		@include font-size(18px);
+		line-height: 1;
+	}
+}
+
+/*-----------------------------------------------
+
+ Feature photo 
+ 
+-------------------------------------------------*/
+
+.legacy-concert-photo {
+	padding: 0;
+	border: 0;
+	
+	h2 {
+		display: none;
+	}
+}
+
+
+
+/*-----------------------------------------------
+
+ LINKS - buy now, i was there, # of posts 
+ 
+------------------------------------------------*/
+
+
+/* Buy Now Popup */
+
+.legacy-buy-show-link-container .views-popup-container {
+	position: relative;
+}
+.legacy-buy-show-link-container .views-popup {
+	position: absolute;
+	top: -35px !important;
+	left: 0;
+}
+.legacy-buy-show-link-container .form-type-radio {
+	float: left;
+	margin-right: 10px;
+}
+.legacy-links-item {
+	margin-bottom: 5px;
+}
+.legacy-links-item a, 
+.legacy-links-item input {
+	border-radius: 5px;
+	display: block;
+	font-size: 1.250em; /* 20px */
+	font-weight: normal;
+	padding: 10px 20px;
+	text-align: center;
+	text-transform: uppercase;
+	width: 100%;
+}
+.legacy-links-item a:hover {
+	text-decoration: none;
+}
+
+
+/*------------------------------------------------ 
+
+ SHOW NOTES 
+
+--------------------------------------------------*/
+
+.legacy-shownotes-item {
+
+	@include breakpoint($medium-up) {
+		.field__label { /* section title like h2 */
+			margin-bottom: 20px;
+			font-weight: normal;
+		}
+		
+		 p:last-child {
+			margin-bottom: 0;
+		}
+		
+		.item-hide {
+		    height: 220px;
+		    overflow: hidden;
+		    display: block;
+		    margin-bottom: 20px;
+		}
+	}
+}
+
+/*------------------------------------------------
+
+ TRACKLIST
+
+---------------------------------------------------*/
+
+
+.legacy-playlist-container .song-list-container ol {
+	@include breakpoint($medium-up) {
+		-webkit-column-count: 2;
+		-webkit-column-gap: 20px;
+		-moz-column-count: 2;
+		-moz-column-gap: 20px;
+		column-count: 2;
+		column-gap: 20px;
+	}
+}
+
+/*------------------------------------------------
+
+ MUSIC PLAYER 
+
+---------------------------------------------------*/
+
+.block--sm-player {
+	@include linear-gradient(#eeeeee, #dcdcdc);
+	padding-bottom: 8px;
+	@include border-radius(5px);
+	margin-bottom: $vert-spacing-unit;
+	@include box-shadow(1px, 1px, 1px, #BBBBBB);
+}
+
+/* player controls */
+
+.sm-player-controls {
+	margin: 0 auto;
+	height: 59px;
+	padding: 7px 0 0;
+	position: relative;
+	width: 158px;
+	
+	a {
+		@include linear-gradient(#efefef, #c7c7c7);
+		@include border-radius(35px);
+		display: block;
+		height: 0;
+		overflow: hidden;
+		padding-top: 32px;
+		position: relative;
+		width: 32px;
+		text-shadow: 1px 1px 0 #fff;
+		color: #444;
+		@include box-shadow(0, 2px, 0, #999);
+	}
+	
+	a:hover {
+		@include linear-gradient(#ffffff, #e7e7e7);
+		color: #00cc99;
+	}
+	
+	// icons
+	a:before {
+		font-family: $basicicons;
+		font-size: 16px;
+		height: 32px;
+		left: 7px;
+		line-height: 40px;
+		position: absolute;
+		top: -4px;
+	}
+}
+
+// Buttons
+.sm-player-previous,
+.sm-player-next, 
+.sm-player-play {
+	@include linear-gradient(#a4a5a7, #d3d3d4);
+	float: left;
+	margin-right: 10px;
+	padding: 5px;
+	@include border-radius(35px);
+	@include box-shadow(0, 2px, 0, #eee);
+}
+.sm-player-previous, 
+.sm-player-next {
+	position: relative;
+	top: 4px;
+}
+.sm-player-play {
+	height: 50px;
+	width: 50px;
+}
+.sm-player-next {
+	margin: 0;
+}
+.sm-player-play a {
+	padding-top: 40px;
+	width: 40px;
+}
+
+/* prev */
+.sm-player-previous a:before {
+	content: "\79";
+}
+
+/* play */
+.sm-player-play a:before {
+	content: "\7a";
+	font-size: 30px;
+	width: 40px;
+	top: -1px;
+	left: 7px;
+}
+
+/* pause */
+.sm-player-play a.playing:before {
+	content: "\7b";
+	width: 40px;
+	font-size: 24px;
+	color: #222;
+	left: 8px;
+}
+
+/* next */
+.sm-player-next a:before {
+	content: "\7c";
+	left: 10px;
+}
+
+/* track info */
+
+.sm-player-info-container {
+	width: 100%;
+}
+.sm-player-track-info {
+	padding: 5px 10px;
+	background-color: #000;
+	color: #ccc;
+	font-size: 0.813em;
+	@include border-radius(5px 5px 0 0);
+	margin-bottom: 0;
+	text-align: center;
+}
+
+/* player status */
+
+.sm-player-status {
+	background-color: #888;
+	height: 10px;
+	width: 100%;
+	border-radius: 0;
+}
+.sm-player-progress-bar {
+	background-color: #97d408;
+	height: 10px;
+	border-top: 1px solid #a8e41b;
+	border-bottom: 1px solid #7dad0c;
+}
+
+
+
+
+/*--------------------------------------------------
+
+ OFFICIAL PHOTOS / M&G PHOTOS
+ 
+---------------------------------------------------*/
+
+/* HIDE official photos block in mobile */
+
+@include breakpoint($small-only) {
+	.legacy-node-full .official-photos-container {
+		display: none;
+	}
+}
+
+/* UNHIDE official photos block (from hide in mobile only) */
+@include breakpoint($medium-up) {
+	.legacy-node-full .official-photos-container {
+		display: block;
+	}
+}
+
+// "Login To See Photos" Message
+.meet-greet-login-message {
+	background-color: #444;
+	color: #ccc;
+	@include border-radius(20px);
+	@include font-size(18px);
+	margin-bottom: $vert-spacing-unit;
+	padding: 50px;
+}
+
+// icon
+.meet-greet-login-message:before {
+	color: #FFFFFF;
+	content: "Meet & Greet Photos";
+	display: block;
+	@include font-size(30px);
+	margin-bottom: 10px;
+	text-transform: uppercase;
+}
+
+// photos grid
+
+.meetgreet-main-content,
+.photos-main-content {
+	overflow: hidden;
+	padding-bottom: 100px;
+}
+
+// override overflow:hidden from .teaser-grid ul
+.official-photos-container .teaser-grid, 
+.meetgreet-photos-container .teaser-grid {
+	margin: 0;
+	min-height: 106px;
+	overflow: visible;
+	padding: 0;
+	
+	& li {
+		margin: 0 10px 10px 0;
+		padding: 0;
+		width: 106px;
+		height: auto;
+		overflow: visible;
+	}
+}
+
+/*------------------------------------------
+ Social share links in M&G photos
+--------------------------------------------*/
+.meetgreet-image-links ul.socialitejs {
+	min-height: 20px;
+	overflow: visible;
+}
+
+// make the link centered in the space
+.meetgreet-photos-container ul.socialitejs li {
+	float: none;
+	margin: 0 auto;
+	padding: 0 10px;
+	max-width: 100px;
+}
+
+// Socialite button color
+.meetgreet-image-links ul.socialitejs li a.socialite.facebook-like {
+	background-color: #5092C8;
+	color: #fff;
+}
+
+// Zoom & Facebook share links
+
+.meetgreet-main-content .meetgreet-image-links > div {
+	padding: 20px 0 0 5px;
+	min-height: 106px;
+	background-color: rgba(0,0,0,0.6);
+	width: 106px;
+}
+
+// zoom link
+.meetgreet-main-content .meetgreet-image-links .image_zoom_link a {
+	background-color: #fff;
+	@include border-radius(4px);
+	color: #000;
+	display: block;
+	margin: 10px auto 0 auto;
+	text-align: center;
+	height: 0;
+	padding-top: 33px;
+	width: 40px;
+	font-size: 1px;
+	position: relative;
+	
+	&:hover {
+		background-color: #5092C8;
+		color: #fff;
+		text-decoration: none;
+	}
+	
+	&:before {
+		content: "A";
+		font-family: $basicicons;
+		font-size: 24px;
+		left: 8px;
+		position: absolute;
+		top: 5px;
+	}
+}
+
+/*--------------------------------------------------
+
+ Add To My Shows
+ 
+---------------------------------------------------*/
+
+/* confirmation page after clicking "add to my shows" */
+
+form#og-ui-confirm-subscribe {
+
+	& input#edit-submit,
+	a#edit-cancel {
+		float: left;
+		margin-right: 10px;
+	}
+	a#edit-cancel {
+		display: block;
+		@include font-size(13px);
+		padding: 6px 0px;
+		text-align: center;
+		text-decoration: none;
+		width: 80px;
+	}
+}
+
+
+/*-----------------------------
+ share links 
+------------------------------*/
+
+/* container outside ul with same class */
+.legacy-node-full .share-links-container {
+	border-top: 0;
+	height: 125px;
+	@include border-bottom($border-color);
+	clear: both;
+	margin: 0 0 $vert-spacing-unit + 10;
+	padding: 0 0 $vert-spacing-unit + 10;
+	
+	&:before {
+		content: "Share";
+		display: block;
+		margin-bottom: 20px !important;
+		line-height: 1;
+	}
+}
+
+
+/*---------------------------------------------------------------------
+-----------------------------------------------------------------------
+
+ LEGACY - List of TOUR GROUPS - PAGE
+
+-----------------------------------------------------------------------
+---------------------------------------------------------------------*/
+
+.view-legacy-tours {
+
+	.teaser-grid li {
+		padding: 5px 10px;
+		text-align: left;
+		float: none;
+		@include border-bottom($border-color);
+		
+		&:hover {
+			background-color: #eee;
+		}
+	}
+	.event-group-title {
+		line-height: 18px;
+	}
+	.event-group-date-range {
+		font-size: 0.875em; /* 14px */
+		font-style: italic;
+	}
+}
+.view-legacy-tours .item-list .event-group-row.teaser-list-row { /* li needs to have .teaser-grid class not teaser row */
+	margin: 0 3% 3% 0;
+	text-align: center;
+	float: left;
+	border-bottom: 0;
+	background: none;
+	padding: 0;
+	width: 30%;
+	
+	.event-group-poster-art-item {
+		margin-bottom: 10px;
+		overflow: hidden;
+	}
+	
+	.event-group-body /*text container */ {
+		height: 70px;
+	}
+}
+
+
+/*---------------------------------------------------------------------
+-----------------------------------------------------------------------
+
+ LEGACY - OLD List of TOUR DATES
+
+-----------------------------------------------------------------------
+---------------------------------------------------------------------*/
+
+.page-legacy-dates h5.legacy-event-location {
+	margin-bottom: 0px;
+}
+.page-legacy-dates .legacy-event-date {
+	@include font-size(13px);
+	font-style: italic;
+	line-height: 1.2;
+}
+.page-legacy .teaser-grid .legacy-row {
+	margin-bottom: 3%;
+	margin-right: 3%;
+	width: 30%;
+}
+h5.legacy-item {
+	margin: 7px 0 0;
+}

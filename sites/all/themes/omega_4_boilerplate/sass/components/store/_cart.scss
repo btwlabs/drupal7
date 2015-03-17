@@ -1,0 +1,113 @@
+/*-------------------------------------------
+
+ SHOPPING CART - PAGE
+
+-------------------------------------------*/
+
+.view-commerce-cart-form th {
+	padding: 10px 20px;
+}
+
+.commerce-line-item-views-form input.delete-line-item {
+	padding: 6px;
+	font-weight: normal;
+}
+
+/* form submit buttons */
+.page-cart .commerce-line-item-views-form #edit-submit, 
+.page-cart .commerce-line-item-views-form #edit-checkout {
+	display: inline-block;
+	margin: 0;
+}
+.page-cart .commerce-line-item-views-form #edit-submit {
+	margin-right: 10px;
+}
+
+/* continue or cancel */
+.checkout-continue {
+	display: inline-block;
+	margin-right: 20px;
+	@include font-size(20px);
+	padding: 20px;
+}
+.checkout-continue:after {
+	content: "\4a";
+	margin-left: 8px;
+	font-family: $arrowicons;
+	speak: none;
+}
+.checkout-cancel {
+	display: inline-block;
+	@include font-size(15px);
+	font-weight: normal;
+	text-decoration: underline;	
+}
+
+
+
+/*----------------------------------------
+
+ Shopping Cart Link Button
+ 
+-----------------------------------------*/
+
+// container 
+#block-fantorrent-base-cart-link {
+	margin-bottom: $vert-spacing-unit;
+	
+	@include breakpoint($medium-up) {
+		padding-top: 5px;
+		position: fixed;
+		top: 200px;
+		right: 0;
+	}
+}
+
+// cart link
+#user-bar-cart-link a {
+	display: block;
+	padding: 10px 15px;
+	background-color: $cart-icon-bg-color;
+	color: $cart-icon-color;
+	text-align: center;
+
+	&:hover {
+		text-decoration: none;
+		background-color: $cart-icon-bg-hover-color;
+		color: $cart-icon-hover-color;
+	}
+	// icon
+	&:before {
+		content: "\3c";
+		font-family: $basicicons;
+		@include font-size(24px);
+		width: 20px;
+		speak: none;
+		vertical-align: middle;
+		margin-right: 10px;
+	}	
+	
+	@include breakpoint($medium-up) {
+		@include border-radius(5px 0 0 5px);
+		@include transition-all;
+		margin: 0 auto;
+		padding: 50px 0 0;
+		position: relative;
+		height: 0;
+		width: 50px;
+		overflow: hidden;
+		
+		&:before {
+			content: "\3c";
+			font-family: $basicicons;
+			@include font-size(29px);
+			width: 20px;
+			speak: none;
+			vertical-align: middle;
+			position: absolute;
+			top: 10px;
+			left: 10px;
+			margin-right: 0;
+		}
+	}
+}

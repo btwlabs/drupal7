@@ -1,0 +1,152 @@
+/*-------------------------------------------------------------------
+
+ Purchase Options (discography and legacy)
+
+-----------------------------------------------------------------*/
+
+/* Padding on Anchors to clear navigation and header elements */
+@include breakpoint($medium-up) {
+	.named-anchor-wrapper a {
+		position: relative;
+		top: -150px;
+		display: block;
+	}
+}
+
+// Container
+.purchase-options {
+	position: relative;
+	overflow: hidden;
+}
+
+// title icon
+.purchase-options h2:before { 
+	content: "\3c";
+	font-family: IcoMoonBasic;
+	position: relative;
+	top: 3px;
+	left: 0;
+	margin-right: 10px;
+}
+
+// add to cart
+.purchase-options .field--type-commerce-product-reference  {
+	margin-bottom: 30px;
+	position: relative;
+	
+	// CSS3 Arrow - Mobile only
+	@include breakpoint($small-only) {
+		&:after {
+			border-left:14px solid rgba(0, 0, 0, 0);
+			border-right: 14px solid rgba(0, 0, 0, 0);
+			border-top: 14px solid #e3e3e3;
+			bottom: -14px;
+			content: "";
+			display: block;
+			height: 0;
+			left: 80px;
+			position: absolute;
+			width: 0;
+		}
+	}
+}
+
+// form container 
+.purchase-options .commerce-add-to-cart {
+	padding: 5%;
+	background-color: #e3e3e3;
+	@include border-radius(10px);
+	
+	> div {
+		overflow: hidden;
+	}
+	
+	@include breakpoint($large-up) {
+		padding: 0 0 0 10%;
+		background-color: transparent;
+		@include border-radius(0);
+		border-left: 1px solid $border-color;
+	}
+}
+
+// message
+.purchase-options .cart-form-message {
+	@include font-size(12px);
+}
+
+// Radio select buttons
+.purchase-options .form-radios {
+	background-color: transparent;
+	background-image: none;
+	position: relative;
+	margin-bottom: 30px;
+	margin-top: 0;
+	padding: 0;
+	
+	@include breakpoint($medium-up) {
+		position: relative;
+		margin-bottom: 15px;
+		padding: 20px;
+		background-color: rgba(0, 0, 0, 0.06);
+	}
+}
+
+/*--- Price, Qty & Add to Cart Button ---*/
+
+.purchase-options .add-to-cart-bottom {
+	border: 0;
+}
+.purchase-options #edit-display-price {
+	@include font-size(24px);
+	margin-top: 0;
+	
+	label {
+		display: none;
+	}
+}
+
+// quantity field
+.purchase-options .form-item-quantity {
+	border: 0;
+	padding-bottom: 0;
+}
+
+
+/*--------------- PRODUCT DETAILS  ----------------*/
+
+.purchase-options .add-to-cart-details {
+	overflow: hidden;
+	
+	// product images
+	.commerce-product-field-field-images-1 {
+		@include border-all($border-color);
+		overflow: hidden;
+		max-width: 200px;
+		height: auto;
+		margin-bottom: 20px;
+		float: none;
+		
+		@include breakpoint($medium-up) {
+			float: left;
+			margin-right: 5%;
+			width: 30%;
+		}
+	}
+	
+	// product label
+	.commerce-product-title-label {
+		display: none;
+	}
+	
+	.commerce-product-title {
+		font-size: 1.5em; /* 24px */
+		margin-bottom: 10px;
+		line-height: 1.2;
+	}
+	
+	// product description
+	.commerce-product-field-field-textarea {
+		@include font-size(13px);
+	}
+}
+

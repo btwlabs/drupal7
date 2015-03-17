@@ -1,0 +1,48 @@
+/*-------------------------------------------------------
+---------------------------------------------------------
+
+ DRUPAL TABS - navigation tab buttons
+ 
+---------------------------------------------------------
+-------------------------------------------------------*/
+
+.tabs.tabs--primary {
+	margin: 0 0 20px 0;
+	padding: 0;	
+	overflow: hidden;
+	@include border-bottom($border-color);
+}
+.tabs.tabs--primary li {
+	margin: 0 3px 0 0;
+	padding: 0;
+	float: left;
+	list-style-type: none;
+	
+	&.active a { // same as a:hover
+		background-color: #444;
+		color: #fff;
+		border-color: #333;
+	}
+}
+.tabs.tabs--primary li a {
+	background-color: #eee;
+	@include border-radius(5px 5px 0 0);
+	color: #888;
+	@include font-size(14px);
+	display: block;
+	padding: 6px 15px;
+	text-decoration: none;
+	text-transform: uppercase;
+	@include border-bottom($border-color);
+	border-bottom: 0;
+	text-align: center;
+	
+	&:hover {
+		background-color: #444;
+		color: #fff;
+		border-color: #333;
+		text-decoration: none;
+	}
+}
+
+

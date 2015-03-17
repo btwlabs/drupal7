@@ -1,0 +1,53 @@
+/*******************************************************************************
+ * no-sidebar.layout.scss
+ *
+ * Styles for the Album Node layout.
+ ******************************************************************************/
+@import "compass";
+@import "breakpoint";
+@import "singularitygs";
+@import "toolkit";
+
+// Globbing from within sub-folders only works with relative paths.
+@import "../../variables/**/*";
+@import "../../abstractions/**/*";
+
+
+
+/*-----------------------------------------------
+
+ GRIDS
+ 
+-----------------------------------------------*/
+
+// !!! Singularity is the grid system in use. 
+
+// mobile
+@include breakpoint($small-only){
+	@include add-grid(2);
+	@include add-gutter(1/2);
+	.l-content {
+		@include grid-span(2, 1);
+		float: none;
+	}
+}
+
+// tablet
+@include breakpoint($medium-up){
+	@include add-grid(6);
+	@include add-gutter(1/2);
+	.l-content {
+		@include grid-span(6);
+	}
+}
+
+// desktop
+@include breakpoint($large-up){
+	@include add-grid(12);
+	@include add-gutter(1/2);
+	.l-content {
+		@include grid-span(12);
+	}
+}
+
+

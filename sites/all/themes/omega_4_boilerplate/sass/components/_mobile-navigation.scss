@@ -1,0 +1,228 @@
+/*-------------------------------------------------------
+---------------------------------------------------------
+
+ MAIN NAVIGATION - Mobile
+ 
+---------------------------------------------------------
+--------------------------------------------------------*/
+
+
+/*-----------------------------------
+ 
+ Layout
+   
+------------------------------------*/
+
+
+/* Header in mobile */
+@include breakpoint($small-only) {
+	.l-header .l-constrained {
+		margin: 0;
+	}
+}
+
+// Outer container which contains all content
+// and pushes off screen when navigation
+// menu is toggled on
+
+.l-inner-wrap { 
+	transform: translate3d(0px);
+	transition: transform 500ms ease 0s;
+	position: relative;
+}
+
+// .js-nav is added as body class via js onClick event
+.js-nav .l-inner-wrap {
+    transform: translate3d(85%, 0px, 0px);
+    backface-visibility: hidden;
+    transition: all 500ms ease 0s;
+    position: relative;
+    width: 100%;
+}
+
+// clickable transparent content cover that closes mobile nav
+// in addition to "close menu" button
+
+#mobile-fade {
+	display: none;
+}
+.js-nav #mobile-fade {
+	width: 100%;
+	height: 100%;
+	display: block;
+	background: rgba(0,0,0,0.7);
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 9999;
+	opacity: 1;
+}
+
+// Mobile nav container
+// is translated off screen left until menu is toggled on
+
+.l-menu-mobile {
+	transform: translate3d(-100%, 0px, 0px);
+	transition: transform 500ms ease 0s;
+	position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 85%;
+    height: auto;
+    background-color: $mobile-nav-bg-color;
+    backface-visibility: hidden;
+    display: block;
+    
+    // .js-nav is added as body class via js onClick event
+	// turns off 3d translate 
+    .js-nav & {
+	    transform: translate3d(0%, 0px, 0px);
+    }
+}
+
+// container for close menu button
+.l-menu-mobile-top {
+	background-color: $mobile-nav-close-btn-bg;
+	height: 50px;
+}
+
+
+/*-----------------------------------
+ 
+ Toggle buttons
+   
+------------------------------------*/
+
+// open menu - button
+a.nav-open-btn {
+    left: 0px;
+    top: 0px;
+    z-index: 9999;
+    margin-left: 0px;/* negates show-link class positioning */
+    width: 50px;
+    overflow: hidden;
+    height: 0px;
+    position: absolute;
+    padding: 50px 0px 0px;
+    background: none;
+    border-radius: 0;
+    border-right: 1px solid $border-color;
+    color: $text-color;
+    @include transition-all;
+    
+    &:hover {
+	    color: $text-color;
+    }
+    
+    &:before {
+	    font-family: $basicicons;
+	    content: "\62";
+	    font-size: 24px;
+	    line-height: 1;
+	    position: absolute;
+	    top: 11px;
+	    left: 12px;
+    }
+    @include breakpoint($medium-up) {
+	    display:none;
+    }
+}
+
+
+// close menu - button
+a.nav-close-btn {
+	display: block;
+	padding: 15px 15px 11px 40px;
+	width: auto;
+	display: block;
+	color: $mobile-nav-bg-color;
+	@include font-size(12px);
+	line-height: 1;
+	color: #999;
+	height: 50px;
+	
+	&:hover {
+		text-decoration: none;
+		color: #fff;
+	}
+	
+	&:before {
+		content: "\e008";
+		font-family: $basicicons;
+	    font-size: 24px;
+	    line-height: 1;
+		display: inline-block;
+		position: relative;
+		top: -2px;
+		margin-right: 10px;
+		vertical-align: middle;
+	}
+}
+
+/*------------------------------------
+
+ Main Links styling
+ 
+-------------------------------------*/
+
+.mobile-nav {
+	height: auto;
+	position: relative;
+}
+.mobile-nav ul {
+	margin: 0;
+	padding: 0;
+}
+.mobile-nav ul li {
+	text-align: left;
+	float: none;
+	@include no-bullet(0,0);
+	
+	& a {
+		padding: 15px 15px 15px 40px;
+		display: block;
+		text-decoration: none;
+		width: auto;
+		color: $nav-text-color;
+		@include border-bottom($border-color);
+		@include font-size(18px);
+	}
+	
+	& a.active, a:hover {
+		background-color: $nav-button-bg-hover-color;
+		color: $nav-text-hover-color;
+		text-decoration: none;
+	}
+}
+
+.mobile-nav .menu .leaf {
+	list-style-image: none;
+	list-style-type: none;
+}
+
+
+/*---------------------------------------------------------
+
+ SUB NAV
+ 
+---------------------------------------------------------*/
+
+
+.mobile-nav .menu .expanded {
+	
+}
+.mobile-nav ul ul {
+	background-color: $mobile-subnav-bg-color;
+}
+.mobile-nav .sub-nav {
+	padding: 10px 10px 10px 80px;
+	@include font-size(14px);
+	
+	&:before {
+		font-family: $arrowicons;
+		content:"\33";
+		position: relative;
+		left: -20px;
+	}
+}
+

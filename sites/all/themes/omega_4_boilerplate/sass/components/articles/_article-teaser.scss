@@ -1,0 +1,122 @@
+/*---------------------------------------------------------------------
+-----------------------------------------------------------------------
+
+ ARTICLE TEASER LIST & ARTICLE TAGS TEASER LIST
+ 
+-----------------------------------------------------------------------
+---------------------------------------------------------------------*/
+
+// list item 
+.article-row {
+	@include breakpoint($large-up) {
+		padding: $vert-spacing-unit 0;
+	}
+}
+
+// post date
+.article-node-teaser .post-date {
+	margin-bottom: 10px;
+}
+
+// article title
+.article-node-teaser h3.title {
+	@include breakpoint($small-only) {
+		@include font-size(18px);
+	}
+
+	@include font-size(24px);
+	line-height: 1.2;
+}
+
+/*--------------------------
+
+ article tags
+ 
+----------------------------*/
+
+// tag outer container
+#article-tags-container {
+	@include font-size(12px);
+	font-style: normal;
+	margin: $vert-spacing-unit/2 0;
+	
+	// tag list container
+	.field--name-field-tags .field__items {
+	overflow: hidden;
+	
+		&:before {
+			content: "\e004";
+			font-family: $basicicons;
+			@include font-size(16px);
+			margin-right: 8px;
+			vertical-align: middle;
+			font-style: normal;
+			display: inline-block;
+		}
+	}
+
+	// individual tags
+	.field--name-field-tags .field__item {
+		margin: 0 8px 0 0;
+		display: inline-block;
+		
+		a {
+			width: auto;
+			text-align:center;
+			padding: 0;
+			margin: 0;
+			text-decoration: underline;
+		}
+	}
+}
+
+// Article teaser image
+.article-node-teaser .media-thumb-item {
+    float: left;
+    margin-right: 4%;
+    width: 28%;
+}
+
+// make room for media thumbnail
+@include breakpoint($medium-up) {
+	.page-news,
+	.page-taxonomy {
+		.article-row {
+			.title,
+			.post-date,
+			.field--name-body,
+			#article-tags-container {
+				margin-left: 32%;
+			}
+		}
+	}
+}
+
+// kill bottom margin on last <p> in body
+.article-row p:last-child {
+ 	margin-bottom: 0;
+}
+
+// social sharing
+.addthis_sharing_toolbox {
+	max-height: 32px;
+}
+
+/*-----------------------------------------------------
+ taxonomy page overrides
+ -- place a tag icon before page title on taxonomy page
+-------------------------------------------------------*/
+.page-taxonomy .l-content h1:before {
+	content: "\e004";
+	font-family: $basicicons;
+	margin-right: 15px;
+	vertical-align: middle;
+	@include font-size(20px);
+	padding: 10px 12px 10px 10px;
+	color: #fff;
+	background: $title-color;
+	@include border-radius(50%);
+	line-height: 1;
+	position: relative;
+	top: -2px;
+}

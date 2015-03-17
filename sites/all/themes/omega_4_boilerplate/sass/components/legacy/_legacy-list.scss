@@ -1,0 +1,340 @@
+/*---------------------------------------------------------------------
+-----------------------------------------------------------------------
+
+ LEGACY - LIST of all dates
+ 
+-----------------------------------------------------------------------
+---------------------------------------------------------------------*/
+
+.views-exposed-form-legacy-river-page {
+	margin: 15px 0 30px 0;
+	
+	& .views-exposed-widgets {
+		margin: 0;
+	}
+}
+
+#edit-field-legacy-traits-reference-tid-wrapper {
+	clear: both;
+	padding: 0;
+	float: none;
+	overflow: hidden;
+	
+	// filter label
+	& > label {
+	display: block;
+	font-weight: normal;
+	font-size: 1.125em; /* 18px */
+	margin-bottom: 10px;
+	
+		&:after {
+			content:":";
+		}
+	}
+	
+	// Checkboxes
+	.bef-checkboxes .form-item {
+		margin: 0 6px 10px 0;
+		@include font-size(18px);
+		@include border-bottom($border-color);
+		padding: 3px 6px 6px;
+		
+		&:hover {
+			background-color: rgba(0,0,0,0.1);
+			cursor: pointer;
+		}
+		
+		@include breakpoint($medium-up) {
+			float: left;
+			@include border-all($border-color);
+			@include border-radius(5px);
+			@include font-size(16px);
+		}
+	}
+
+	// option label
+	.form-item label.option {
+		font-weight: normal;
+		@include font-size(18px);
+		text-transform: uppercase;
+		cursor: pointer;
+		
+		@include breakpoint($medium-up) {
+			@include font-size(12px);
+		}
+	}
+}
+ 
+// Submit button
+#views-exposed-form-legacy-river-page .views-submit-button {
+	margin: 0;
+	padding: 0;
+	clear: both;
+	
+	& input.form-submit {
+		margin: 0;
+		width: 90px;
+		text-transform: uppercase;
+		font-weight: normal;
+		@include font-size(14px);
+	}
+}
+ 
+//  Checkbox options
+// (the LEGEND for available legacy content per show)
+
+#edit-field-legacy-traits-reference-tid-wrapper {
+
+	.form-item label.option:before {
+		color: darkorange;
+		font-family: $basicicons;
+		font-size: 21px;
+		font-weight: normal;
+		margin: 0 12px 0 2px;
+		vertical-align: middle;
+		text-transform: none;
+		
+		@include breakpoint($medium-up) {
+			@include font-size(12px);
+			margin-right: 6px;
+		}
+	}
+	.views-exposed-form label {
+		font-weight: normal;
+		@include font-size(12px);
+	}
+}
+
+// ****************** CHECKBOX OPTION ICONS ******************
+
+// ------------------!!!   IMPORTANT   !!!------------------
+// 
+//  NOTE::: Make sure the TID number referenced in the classes below matches 
+// the TID in the container div class, so that the proper icon  will display 
+// along with the button label. By default they are all set to the same TID 
+// number as they will commonly be different for each site.
+// 
+// example:
+// 	 .form-item-edit-field-legacy-traits-reference-tid-25  <---change number (25) to match
+
+
+// DOWNLOAD - BUY option
+.form-item-edit-field-legacy-traits-reference-tid-25 label.option:before,
+a.legacy-trait-Buy:before  {
+	content: "\3c";
+	speak: none;
+	position: relative;
+	top: -2px;
+}
+
+// MEET & GREET option
+.form-item-edit-field-legacy-traits-reference-tid-25 label.option:before,
+a.legacy-trait-Meet-Greet:before  {
+	content: "\30";
+	speak: none;
+}
+
+/* PHOTOS option */
+.form-item-edit-field-legacy-traits-reference-tid-25 label.option:before,
+a.legacy-trait-Photos:before  {
+	content: "\65";
+	speak: none;
+	
+	@include breakpoint($small-only) {
+		display: none;
+	}
+}
+
+// POSTS option
+.form-item-edit-field-legacy-traits-reference-tid-25 label.option:before,
+a.legacy-trait-Posts:before  {
+	content: "\35";
+	speak: none;
+}
+
+// AUDIO option
+.form-item-edit-field-legacy-traits-reference-tid-25 label.option:before,
+a.legacy-trait-Audio:before  {
+	content: "\4c";
+	speak: none;
+}
+
+
+/*-------------------------------------------
+
+ Filter by years 
+ 
+-------------------------------------------*/
+
+.view-legacy-river .gallery-years-view {
+	padding-top: 25px;
+	@include border-top-bottom($border-color);
+	margin-bottom: $vert-spacing-unit/2;
+}
+.view-legacy-river .gallery-years-view-content:before {
+	content: "Filter events by year:";
+	@include font-size(18px);
+	margin-bottom: 10px;
+	display: block;
+}
+.view-legacy-river .gallery-years-view ul {
+	margin: 0;
+	border: 0;
+}
+
+
+/*------------------------------------------
+
+ LEGACY EVENT LIST 
+ 
+------------------------------------------*/
+
+/*------------ logged in admin links ------------*/
+
+.legacy-list-edit-links {
+	clear: both;
+	overflow: hidden;
+}
+
+/*-------------- list item content ---------------*/
+
+.view-legacy-river .page-main-content {
+
+	.teaser-list-row {
+		overflow: hidden; /* clears floats */
+		position: relative;
+		
+		&:first-child {
+			padding-top: 15px; /* overriding the override */
+		}
+	}
+	a .city-state {
+		color: $link-color;
+		@include font-size(25px);
+		line-height: 1;
+	}
+	a:hover .city-state {
+		color: $link-hover-color;
+	}
+	.location-venue-wrapper {
+		display: block;
+		margin: 0 0 10px 60px;
+		
+		@include breakpoint($large-up) {
+			width: 52%;
+		}
+	}
+	.event-group {
+		@include font-size(12px);
+	}
+}
+
+
+/*--------- Legacy items with NO available content & no link ------*/
+
+.legacy-row-empty {
+	color: #888;
+}
+.legacy-row-empty .dateblock {
+	background-color: transparent;
+	@include border-all($border-color);
+	height: 50px;
+	padding: 5px;
+	width: 70px;
+}
+.legacy-row-empty .dateblock .month, 
+.legacy-row-empty .dateblock .year, 
+.legacy-row-empty .dateblock .day {
+	color: #888;
+	@include font-size(15px);
+}
+.legacy-row-empty .dateblock .year {
+	@include font-size(20px);
+}
+.legacy-row-empty .city-state {
+	@include font-size(15px);
+	line-height: 1.5;
+}
+
+
+/*-------- Available content Icons - trait links ---------*/
+
+.legacy-trait-links {
+	background-color: transparent;
+	margin-left: 60px; /* total width of dateblock + right margin - for mobile */
+	margin-bottom: 10px;
+	overflow: hidden;
+	display: block;
+	background-color: rgba(0, 0, 0, 0.05);
+	@include border-radius(4px);
+	padding: 5px;
+	@include border-all($border-color);
+	
+	@include breakpoint($large-up) {
+		position: absolute;
+		margin-left: 0;
+		overflow: hidden;
+		width: 36%;
+		right: 0;
+		top: $vert-spacing-unit/2; /* equal to top padding of the .teaser-list-row */
+	}
+}
+.legacy-trait-links-label {
+	display: block;
+	@include font-size(11px);
+	line-height: 1;
+	margin-bottom: 5px;
+}
+.legacy-trait-links a {
+	display: block;
+	width: 26px;
+	height: 0;
+	padding: 26px 5px 0 5px;
+	overflow: hidden;
+	position: relative;
+	float: left;
+	margin: 0 5px 5px 0;
+	color: $legacy-trait-text-color;
+	background-color: $legacy-trait-bg-color;
+	@include border-radius(3px);
+	
+	&:hover {
+		background-color: $legacy-trait-bg-hover-color;
+		color: $legacy-trait-text-hover-color;
+	}
+	
+	&:before { /* NOTE: specific icons are defined above in CHECKBOX OPTION ICONS */
+		position: absolute;
+		top: 5px;
+		left: 5px;
+		font-family: $basicicons;
+		@include font-size(16px);
+	}
+}
+
+/* BUY / DOWNLOAD link - Make it stand out from the other links - should be first in the list */
+
+.legacy-trait-links a.legacy-trait-Buy {
+	background-color: $legacy-trait-buy-bg-color;
+	border: 0 none;
+	color: #FFFFFF;
+	@include font-size(14px);
+	height: 26px;
+	line-height: 22px;
+	padding: 2px 0;
+	text-align: center;
+	text-decoration: none;
+	text-transform: uppercase;
+	width: 65px;
+	
+	&:hover {
+		background-color: $legacy-trait-buy-bg-hover-color;
+	}
+	
+	&:before {
+		left: 0;
+		margin-right: 6px;
+		position: relative;
+		top: 1px;
+	}
+}

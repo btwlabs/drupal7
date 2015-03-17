@@ -1,0 +1,81 @@
+// Show or hide specific content based on breakpoints
+
+// mobile
+@include breakpoint($small-only){
+	.omega-narrow-up {
+		display: none !important;
+	}
+	.omega-mobile-only {
+		display: block !important;
+	}
+}
+
+// tablet and above
+@include breakpoint($medium-up){
+	.omega-mobile-only {
+		display: none !important;
+	}
+	.omega-narrow-up {
+		display: block !important;
+	}
+}
+
+/* Grid containers (non-100% width) */
+.l-constrained {
+	@include breakpoint($small-only) {
+		margin: 0 15px;
+	}
+	@include breakpoint($medium-up) {
+		width: 80%;
+		margin: 0 auto;
+	}
+	@include breakpoint($xlarge-up) {
+		width: 70%;	
+	}
+}
+
+
+
+// Basic layout stuff
+.l-header,
+.l-content-wrapper,
+.l-constrained,
+.l-region-inner {
+	@include clearfix;
+}
+
+.l-header {
+	@include breakpoint($medium-up) {
+		padding-top: 106px; // minimum height = nav + userbar
+	}
+}
+
+.l-main {
+	padding-bottom: 50px;
+}
+
+
+/*---------------------------------------
+
+ NODE-CONTAINER STYLES 
+ 
+---------------------------------------*/
+
+.node-row-container,
+.node-middle-row1-container,
+.node-middle-row2-container,
+.node-middle-row3-container,
+.node-middle-row4-container,
+.node-middle-row5-container,
+.node-middle-row6-container,
+.node-middle-row7-container,
+.node-bottom-row-container {
+	padding: $vert-spacing-unit + 10 0;
+	@include border-bottom($border-color);
+	position: relative;
+}
+.node-bottom-row-container {
+	border-bottom: 0;
+}
+
+

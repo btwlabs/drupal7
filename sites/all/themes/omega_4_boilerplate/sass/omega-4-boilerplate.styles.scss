@@ -1,0 +1,85 @@
+// ----
+// Sass (v3.3.9)
+// Compass (v1.0.0.alpha.20)
+// Breakpoint (v2.4.2)
+// Singularity.gs (v1.2.1)
+// Toolkit (v2.5.0)
+// ----
+
+
+// Import external libraries.
+@import "compass";
+@import "breakpoint";
+@import "singularitygs";
+@import "toolkit";
+
+// Import variables, abstractions, base styles and components using globbing.
+//
+// Globbing will always import files alphabetically. Optimally, all your
+// components should be self-contained and explicit enough to not have any
+// contained styles leak into unrelated components: The import order should not
+// affect the result.
+//
+// If there are variables, functions or mixins that depend on each other and
+// therefore need to be imported in a specific order you can import them
+// directly. Variables-, function- or mixin providing partials should never
+// output any styles themselves: Importing them multiple times to resolve
+// dependencies shouldn't be a problem.
+@import "variables/**/*";
+@import "abstractions/**/*";
+@import "base/**/*";
+@import "components/**/*";
+
+
+
+
+
+/*--------------------------------------------------------
+----------------------------------------------------------
+
+ LAYOUT
+ 
+----------------------------------------------------------
+--------------------------------------------------------*/
+
+html {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	font: {
+		family: $base-font-family;
+		size: $base-font-size;
+		weight: $base-font-weight;
+		}
+	line-height: $base-line-height;
+	color: $text-color;
+	margin: 0;
+	padding: 0;
+}
+
+// goofin test stuff
+body {
+	@include breakpoint($xxlarge-up){
+		//background: #999;
+	}	
+}
+
+
+
+
+/*--------------------------------------
+
+ hide-show via js 
+ 
+--------------------------------------*/
+
+.item-hide {
+    overflow: hidden;
+    display: block;
+}
+.item-shown {
+    overflow: visible !important;
+    height: auto !important;
+}

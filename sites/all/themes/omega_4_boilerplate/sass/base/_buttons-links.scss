@@ -1,0 +1,131 @@
+/*---------------------------------------------------------
+-----------------------------------------------------------
+
+ General LINK styles
+ 
+-----------------------------------------------------------
+----------------------------------------------------------*/
+
+// these link styles were placed here because it has to load 
+// before .button styles - due to sass globbing and no control  
+// over stylesheet loading order - for button styles to work. 
+
+a,
+a:link,
+a:visited,
+li a.active /* may need to re-address */{
+	@include transition-all;
+	color: $link-color;
+	text-decoration: none;
+	
+	&:hover {
+		color: $link-hover-color;
+		text-decoration: underline;
+	}
+}
+
+
+/*---------------------------------------------------------
+-----------------------------------------------------------
+
+ BUTTON styles
+ 
+-----------------------------------------------------------
+----------------------------------------------------------*/
+
+/*-------------------------------------
+
+ Button normal state
+ 
+-------------------------------------*/
+
+.button a,
+a.button,
+button, 
+input[type="reset"], 
+input[type="submit"], 
+input[type="button"],
+.page-tour .attachment .views-popup-container .view-header a /*tour page */,
+a.popup-link-item /* popup box links */,
+#store-departments-links-container a /* store nav */,
+.legacy-links-item a /* legacy buy buttons */,
+.node-type-album .song-more-link a /*discography node more button*/,
+ul.action-links li a,
+.dashboard-privatemsg-message .views-field-thread-id a /* user dashboard messages */,
+.page-community-users #views-popup-wrapper .views-field-view-user a /* user grid popup */,
+form#comment-confirm-delete #edit-submit /* confirm item delete page */,
+.form-actions a#edit-cancel /* confirm item delete page */,
+.community-post-media-wrapper .post-view a /* view post button - admin dashboard */,
+.page-legacy-list .views-field-commerce-price a /* legacy list buy button */,
+#post-node-form input.form-submit /* community post form submit */ {
+	background: $button-bg-color; 
+	text-align: center;
+	color: $button-text-color;
+	display: block;
+	text-decoration: none;
+	text-shadow: none;
+	@include border-radius($border-radius);
+	@include transition-all;
+}
+
+/* Exceptions to <a> css animation */
+#colorbox button {
+	-webkit-transition: none;
+	-moz-transition: none;
+	-o-transition: none;
+	transition: none;
+}
+
+/* !!!!!!---- SET DEFAULT PADDING on .button class ---!!!!!! */
+
+.button a,
+a.button,
+button, 
+input[type="reset"], 
+input[type="submit"], 
+input[type="button"] {
+	padding: 8px 10px 7px 10px; /* do not remove default padding completely - simply override elsewhere when necessary */
+}
+
+/*------------------------------------
+
+ Button hover state
+ 
+-------------------------------------*/
+
+button:hover, 
+input[type="reset"]:hover, 
+input[type="submit"]:hover, 
+input[type="button"]:hover,
+.button a:hover,
+a.button:hover,
+.page-tour .attachment .views-popup-container .view-header a:hover /*tour page */,
+a.popup-link-item:hover /* popup box links */,
+#store-departments-links-container a:hover /* store nav */,
+.legacy-links-item a:hover /* legacy buy buttons */,
+.node-type-album .song-more-link a:hover /*discography node more button*/,
+ul.action-links li a:hover,
+.dashboard-privatemsg-message .views-field-thread-id a:hover /* user dashboard messages */,
+.page-community-users #views-popup-wrapper .views-field-view-user a:hover /* user grid popup */,
+form#comment-confirm-delete #edit-submit:hover /* confirm item delete page */,
+.form-actions a#edit-cancel:hover /* confirm item delete page */,
+.community-post-media-wrapper .post-view a:hover /* view post button - admin dashboard */,
+.page-legacy-list .views-field-commerce-price a:hover /* legacy list buy button */,
+#post-node-form input.form-submit:hover /* community post form submit */ {
+	background: $button-bg-hover-color; 
+	text-decoration: none !important;
+	text-shadow: none;
+	color: $button-text-hover-color;
+}
+
+li .button a.active {
+	color: #fff; /* same as button text color */
+}
+
+/*---------- Form buttons (Override button styles) ----------*/
+button, 
+input[type="reset"], 
+input[type="submit"], 
+input[type="button"] {
+	border: 0;
+}

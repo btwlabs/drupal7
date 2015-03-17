@@ -1,0 +1,101 @@
+/*---------------------------------------------------------------------
+-----------------------------------------------------------------------
+
+ COLORBOX popup - "SUCCESS" + REGISTER FORM
+ 
+-----------------------------------------------------------------------
+----------------------------------------------------------------------*/
+
+/*--------------------------------
+
+ Header Block 
+ 
+---------------------------------*/
+
+#fantorrent-join-register-header-block {
+	background-color: #ACDE5E;
+	@include border-radius(10px);
+	line-height: 20px;
+	margin-bottom: 10px;
+	padding: 20px;
+	text-align: center;
+}
+
+/* Title */
+#fantorrent-join-register-header-block h2 {
+	margin: 0;
+}
+
+/*----------------------------------
+
+ REGISTRATION VALUE (benefits) block
+
+-----------------------------------*/
+
+h2#fantorrent-join-register-form-block-title {
+	display: none;
+}
+
+#fantorrent-join-register-value-block {
+	@include border-all($border-color);
+	@include border-radius(10px);
+	font-size: 1rem;
+	padding: 120px 20px 20px;
+	margin-bottom: 10px;
+	background: transparent url(../images/bg-popup-join-header.jpg) no-repeat scroll center top;
+	background-size: 100% auto;
+}
+/* title */
+#fantorrent-join-register-value-block h2 {
+	text-align: center;
+}
+/* body */
+#fantorrent-join-register-value-block-body {
+	width: 85%;
+	margin: 0 auto;
+}
+#fantorrent-join-register-value-block-body ul {
+	list-style: disc;
+}
+#fantorrent-join-register-value-block-body li {
+	list-style-type: disc;
+	margin-left: 15px;
+}
+
+/*----------------------------------
+
+ REGISTER FORM
+
+-----------------------------------*/
+
+#fantorrent-join-register-form-block-form {
+	@include border-all($border-color);
+	@include border-radius(10px);
+	@include font-size(16px);
+	padding: 20px;
+}
+#fantorrent-join-register-form-block-form label {
+	@include font-size(20px);
+	font-weight: normal;
+}
+#fantorrent-join-register-form-block-form > form {
+	margin: 0 auto;
+	width: 85%;
+}
+#fantorrent-join-register-form-form .form-item-email input, 
+#fantorrent-join-register-form-form .form-item-password input {
+	@include border-radius(3px);
+	@include font-size(18px);
+	height: 60px;
+	padding: 14px;
+	width: 100%;
+	margin: 10px 0;
+}
+
+/* join button */
+#colorbox #fantorrent-join-register-form-form input.form-submit {
+	@include font-size(24px);
+	padding: 10px;
+	text-transform: uppercase;
+	width: 100%;
+}

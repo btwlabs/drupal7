@@ -1,0 +1,134 @@
+/*-------------------------------------------------------
+---------------------------------------------------------
+
+ SHARE / SOCIAL NETWORK LINKS
+ 
+---------------------------------------------------------
+-------------------------------------------------------*/
+
+.share-links-container {
+	@include border-top-bottom($border-color);
+	height: 35px;
+	margin: 0;
+	padding: 5px 0;
+	display: block;
+}
+.share-links-container li,
+.teaser-grid ul.share-links-container li /* store page popup */ {
+	float: left;
+	height: auto;
+	margin: 0 10px 0 0 !important;
+	padding: 0;
+	list-style-type: none;
+}
+.teaser-grid .share-links-container {
+	padding: 5px 0;
+	border-color: #555;
+	overflow: visible; /* overwrites .teaser-grid ul */
+}
+
+/* Exceptions */
+.node-type-song .share-links-container,
+.node-type-album .share-links-container {
+	margin-bottom: 30px;
+	
+	&:before {
+		display: block;
+		content: "Share:";
+		@include font-size(19px);
+		line-height: 1.2;
+		margin-right: 10px;
+		float: left;
+	}
+}
+
+/* fix alignment of FB iframe */
+.share-link-facebook iframe {
+	position: relative;
+	top: -5px;
+}
+
+
+/*----------------------------------------
+
+ Socialite JS button styling 
+ 
+-----------------------------------------*/
+
+/* all */
+a.socialite.twitter-share, 
+a.socialite.facebook-like, 
+a.socialite.googleplus-one {
+	background-color: #444;
+	@include border-radius($border-radius);
+	color: #fff;
+	display: block;
+	@include font-size(11px);
+	margin: 0;
+	padding: 3px 9px;
+	text-align: center;
+	max-width: 85px;
+}
+
+/* twitter */
+a.socialite.twitter-share span:before {
+	color: #00C5F9;
+	content: "0";
+	font-family: $socialicons;
+	margin-right: 4px;
+	vertical-align: middle;
+	speak: none;
+	line-height: 1;
+}
+
+/* facebook */
+a.socialite.facebook-like span:before {
+	background-color: #3B5998;
+	@include border-all($border-color);
+	@include border-radius(2px);
+	color: #fff;
+	content: "P";
+	display: inline-block;
+	font-family: $socialicons;
+	font-size: 8px;
+	height: 12px;
+	line-height: 10px;
+	margin-right: 3px;
+	position: relative;
+	text-align: center;
+	top: -1px;
+	vertical-align: middle;
+	width: 12px;
+	speak: none;
+}
+
+/* google +1 */
+a.socialite.goolgeplus-one {
+	padding: 0 6px 0 9px;
+}
+a.socialite.googleplus-one span {
+	color: #444; /* hides text in button color */
+}
+a.socialite.googleplus-one span:before {
+	color: #fff;
+	content: "!";
+	font-family: $socialicons;
+	vertical-align: middle;
+	speak: none;
+	line-height: 1;
+}
+
+
+/*------------ Non-JS styling -------------------*/
+
+/* Print link */
+li.share-link-print a {
+	padding-bottom: 5px;
+	height: 16px;
+}
+
+/* Google +1 */
+li.share-link-plusone {
+	max-width: 170px; /* narrow max */
+	overflow: hidden;
+}

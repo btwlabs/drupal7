@@ -1,0 +1,62 @@
+
+// ---------------------------------------
+// Sitewide defaults
+//----------------------------------------
+
+// default sitewide background attributes
+$background-bg-size: 100% auto;
+$background-bg-attachment: fixed;
+$background-position: center top;
+
+// Default background image / color
+$default-bg: #eee;
+$default-mobile-bg: #efefef;
+
+
+
+
+// HOME page
+$home-bg: $default-bg;
+$home-mobile-bg: $default-mobile-bg;
+
+// DISCOGRAPHY list page
+$discography-list-bg: #000 url(../images/backgrounds/bg-interior-billboard.jpg) no-repeat $background-bg-attachment $background-position;
+$discography-list-mobile-bg: $default-mobile-bg;
+
+// ALBUM node 
+$album-node-bg: #ccc url(../images/backgrounds/bg-home-darkergray.jpg) no-repeat $background-bg-attachment $background-position;
+$album-node-mobile-bg: $default-mobile-bg;
+
+// ARTICLE teaser list 
+$article-list-bg: $default-bg;
+$article-list-mobile-bg: $default-mobile-bg;
+
+// ARTICLE node
+$article-node-bg: $default-bg;
+$article-node-mobile-bg: $default-mobile-bg;
+
+// ABOUT-BIO page bg
+$bio-bg: $default-bg;
+$bio-mobile-bg: $default-mobile-bg;
+
+// LEGACY bg
+$legacy-bg: $default-bg;
+$legacy-mobile-bg: $default-mobile-bg;
+
+// STORE bg
+$store-bg: $default-bg;
+$store-mobile-bg: $default-mobile-bg;
+
+// TOUR bg
+$tour-bg: $default-bg;
+$tour-mobile-bg: $default-mobile-bg;
+
+
+
+
+// ------------------------------------------
+// Content area background
+// ------------------------------------------
+
+$content-bg: url(../images/backgrounds/bg-repeating-texture.jpg) repeat scroll $background-position;
+$content-bg-size: auto auto;

@@ -1,0 +1,77 @@
+/*******************************************************************************
+ * sidebar.layout.scss
+ *
+ * Styles for the Sidebar layout.
+ ******************************************************************************/
+@import "compass";
+@import "breakpoint";
+@import "singularitygs";
+@import "toolkit";
+
+// Globbing from within sub-folders only works with relative paths.
+@import "../../variables/**/*";
+@import "../../abstractions/**/*";
+
+
+// !!! Singularity is the grid system in use. 
+
+
+
+// ------------ SMALL - mobile ------------
+@include breakpoint($small-only){
+	@include add-grid(2);
+	@include add-gutter(1/2);
+	.l-content {
+		@include grid-span(2, 1);
+		float: none;
+	}
+}
+
+
+// ------------ MEDIUM - tablet ---------------
+
+// no sidebar in medium breakpoint - too narrow
+
+
+
+// ------------ LARGE - desktop ------------
+
+@include breakpoint($large-up){
+	@include add-grid(12);
+	@include add-gutter(1);
+	.l-content {
+		@include grid-span(8, 1);
+	}
+	.l-region--sidebar {
+		@include grid-span(4, 9);
+	}
+}
+// if no sidebar content, then .l-content = full width
+@include breakpoint($large-only) {
+	.l-page.has-no-sidebars .l-content {
+		@include grid-span(12, 1);
+		float: none;
+	}
+	.l-page.has-no-sidebars .l-region--sidebar {
+		@include grid-span(0);
+	}
+}
+
+
+
+// --------------- XXLARGE ----------------
+@include breakpoint($xxlarge-up){
+	.l-content {
+		@include grid-span(8, 2);
+	}
+	.l-region--sidebar {
+		@include grid-span(3, 10);
+	}
+}
+// if no sidebar content, then .l-content = full width
+@include breakpoint($xlarge-up) {
+	.l-page.has-no-sidebars .l-content {
+		@include grid-span(12, 1);
+		float: none;
+	}
+}

@@ -1,0 +1,127 @@
+/*---------------------------------------------------------------------
+-----------------------------------------------------------------------
+
+ CHECKOUT
+
+-----------------------------------------------------------------------
+----------------------------------------------------------------------*/
+
+table.checkout-review td {
+	@include font-size(14px);
+}
+/* section titles */
+table.checkout-review .pane-title td {
+	@include font-size(19px);
+}
+
+/* newsletter checkbox */
+.page-checkout #edit-buttons .form-item-opt-in {
+	@include border-bottom($border-color);
+	margin-bottom: $vert-spacing-unit;
+	padding-bottom: $vert-spacing-unit;
+}
+
+/* Totals table */
+.commerce-order-handler-area-order-total .commerce-price-formatted-components {
+	margin-left: auto;
+	width: 100%;
+}
+
+/* continue */
+.checkout-buttons .checkout-continue {
+	display: inline;
+	margin-right: 20px;
+	@include font-size(20px);
+	padding: 15px;
+}
+.checkout-buttons .checkout-continue:after {
+	content: "\4a";
+	margin-left: 8px;
+	font-family: $basicicons;
+	speak: none;
+}
+/* Cancel or Go Back */
+.checkout-buttons .checkout-cancel, 
+.checkout-buttons .checkout-back {
+	background: none;
+	border: 0 none;
+	color: $link-color;
+	margin: 10px 0 10px 20px;
+	padding: 0;
+	text-decoration: underline;
+	text-transform: capitalize;
+	display: inline;
+	font-size: 1rem;
+	font-weight: normal;
+	text-decoration: underline;	
+}
+.checkout-buttons .checkout-cancel:hover, 
+.checkout-buttons .checkout-back:hover {
+	color: $link-hover-color;
+}
+
+
+/*---------------------------------------------------------------------
+-----------------------------------------------------------------------
+
+ SHIPPING - section of checkout
+
+-----------------------------------------------------------------------
+----------------------------------------------------------------------*/
+
+/* Shipping times */
+#shipping_time_markup ul:before {
+	display: block;
+	font-size: 1.5rem; /* 24px */
+	content: "Shipping Times";
+	margin-bottom: 20px;
+}
+#shipping_time_markup ul {
+	margin: 0;
+	padding: 0;
+	@include border-bottom($border-color);
+}
+#shipping_time_markup ul li {
+	margin: 0;
+	padding: 8px;
+	@include border-all($border-color);
+	border-bottom: 0;
+	list-style-type: none;
+}
+
+/*-------------------------------------------
+
+ USER - ORDER PAGES
+
+--------------------------------------------*/
+
+.page-user-orders .field-name-commerce-customer-billing {
+	margin-bottom: $vert-spacing-unit;
+}
+
+.page-user-orders .field-name-commerce-customer-billing .field-items:first-child,
+.page-user-orders .field-name-commerce-customer-shipping .field-items:first-child {
+	margin-left: 30px;
+}
+
+
+
+
+
+
+
+
+
+
+
+/*---------------------------------------------------------
+
+ CHECKOUT 
+ 
+---------------------------------------------------------*/
+
+/* totals table */
+.commerce-order-handler-area-order-total .commerce-price-formatted-components {
+	margin-left: auto;
+	width: 33%;
+}

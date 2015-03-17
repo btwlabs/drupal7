@@ -1,0 +1,225 @@
+// Main Site Colors
+
+$primary-color: red;
+$secondary-color: orange;
+
+// for subtle changes to delineate container bg color in main content
+$subtle-accent: rgba(0,0,0,0.05); 
+
+
+
+// Body Text
+$text-color: #777;
+$title-color: #000;
+
+$link-color: orange;
+$link-hover-color: red;
+$link-visited-color: purple;
+
+
+
+// Selected text color
+$selection-text-color: #fff;
+$selection-background-color: orange;
+
+
+
+// Button styling
+$button-text-color: #fff;
+$button-text-hover-color: #444;
+
+$button-bg-color: #444;
+$button-bg-hover-color: #ccc;
+
+
+
+// Borders
+$border-color: #aaa;
+$sidebar-border-color: #444;
+
+
+
+// Tables 
+$table-header-bg-color: #eee;
+$table-odd-row-bg-color: #fff;
+$table-even-row-bg-color: #f0f0f0;
+
+
+
+// Navigation
+$nav-text-color: #222;
+$nav-text-hover-color: #ccc;
+
+$nav-button-bg-color: transparent;
+$nav-button-bg-hover-color: #444;
+
+$nav-bar-bg-color: #ccc;
+
+	// Sub-Navigation
+	$subnav-text-color: #999;
+	$subnav-text-hover-color: red;
+	
+	$subnav-bg-color: #000;
+	$subnav-bg-hover-color: red;
+
+	// mobile nav only
+	$mobile-nav-text-color: #444;
+	$mobile-nav-bg-color: #eee;
+	
+	// mobile nav close button
+	$mobile-nav-close-text-color: #999;
+	$mobile-nav-close-btn-bg: #000;
+	
+	// mobile subnav
+	$mobile-subnav-text-color: #444;
+	$mobile-subnav-bg-color: #ccc;
+
+
+
+// User Bar
+$userbar-bg-color: #444;
+
+$userbar-text-color: #ccc; // text only
+
+$userbar-link-color: #fff; // text link
+$userbar-link-hover-color: orange;
+
+$userbar-icon-color: #fff; // icon only
+$userbar-icon-hover-color: #fff;
+
+$userbar-icon-bg-color: #000;
+$userbar-icon-bg-hover-color: red;
+
+	// Login Block
+	$login-dropdown-bg-color: #000;
+	$login-dropdown-text-color: #555;
+	
+		// Login button
+		$login-button-text-color: #fff;
+		$login-button-text-hover-color: #fff;
+		
+		$login-button-bg-color: transparent;
+		$login-button-bg-hover-color: orange;
+		
+	// mobile site name
+	$site-name-text-color: #000;
+
+
+
+// Shopping Cart link
+$cart-icon-color: #fff;
+$cart-icon-hover-color: #000;
+
+$cart-icon-bg-color: #000;
+$cart-icon-bg-hover-color: orange;
+
+
+
+// Sidebar blocks
+$sidebar-block-bg-color: rgba(0,0,0,0.8);
+
+$sidebar-text-color: #aaa;
+
+$sidebar-link-color: #ccc;
+$sidebar-link-hover-color: red;
+	
+	// block title
+	$sidebar-block-title-color: #fff;
+	$sidebar-block-title-bg-color: #000;
+
+	// buttons
+	$sidebar-button-text-color: #000;
+	$sidebar-button-text-hover-color: #fff;
+	
+	$sidebar-button-bg-color: #fff;
+	$sidebar-button-bg-hover-color: #000;
+	
+	// more link
+	$sidebar-more-link-text-color: #000;
+	$sidebar-more-link-text-hover-color: #fff;
+	
+	$sidebar-more-link-bg-color: #fff;
+	$sidebar-more-link-bg-hover-color: red;
+
+
+
+// Views Popups (store, discography teaser, events)
+$popup-title-color: #fff;
+$popup-text-color: #ccc;
+$popup-bg-color: rgba(0,0,0,0.8);
+
+$popup-border-color: #666;
+
+$popup-button-text-color: #fff;
+$popup-button-text-hover-color: #000;
+
+$popup-button-bg-color: transparent;
+$popup-button-bg-hover-color: #ccc;
+
+$popup-button-border-color: #666;
+
+	// discography popup
+	$popup-link-icon-color: #444;
+	$popup-link-icon-hover-color: #ccc;
+
+	$popup-link-bg-color: #ccc;
+	$popup-link-bg-hover-color: #000;
+	
+	// Store
+	$popup-cart-button-text-color: #000;
+	$popup-cart-button-text-hover-color: #fff;
+	
+	$popup-cart-button-bg-color: #fff; // color emphasis on cart button
+	$popup-cart-button-bg-hover-color: red;
+
+
+
+// Footer
+$footer-text-color: #aaa;
+
+$footer-link-color: orange;
+$footer-link-hover-color: white;
+
+$footer-bg-color: #444;
+
+
+
+// Social icons
+$social-icon-color: #fff;
+$social-icon-hover-color: #777;
+
+$social-icon-bg-color: #777;
+$social-icon-bg-hover-color: #000;
+
+$social-icon-border-color: #fff;
+
+
+
+// Messages
+$messages-background-color: #A3E3F8;
+
+
+
+// Dateblock
+$dateblock-day-color: #999;
+$dateblock-month-color: #fff;
+$dateblock-year-color: #999;
+
+$dateblock-text-hover-color: #fff;
+
+$dateblock-bg-color: #000;
+$dateblock-bg-hover-color: #000;
+
+
+
+// Legacy List - legacy trait (content filter) links
+$legacy-trait-text-color: white;
+$legacy-trait-text-hover-color: #ccc;
+
+$legacy-trait-bg-color: red;
+$legacy-trait-bg-hover-color: black;
+
+$legacy-trait-buy-bg-color: black;
+$legacy-trait-buy-bg-hover-color: red;
+
+

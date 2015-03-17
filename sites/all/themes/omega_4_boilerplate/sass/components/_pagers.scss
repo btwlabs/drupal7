@@ -1,0 +1,228 @@
+/*-----------------------------------------------------------
+-------------------------------------------------------------
+
+ PAGERS
+ 
+-------------------------------------------------------------
+------------------------------------------------------------*/
+
+/*-------------------------------------
+
+ LOAD MORE link 
+ 
+--------------------------------------*/
+
+ul.pager-load-more {
+	background: url("../images/more-button-rule.png") repeat-x scroll left center transparent;
+	border: 0 none;
+	margin: 20px 0;
+}
+ul.pager-load-more li {
+	padding: 0px;
+	margin: 0;
+	float: none;
+	display: block;
+	border: 0;
+}
+
+/* Load More button */
+.pager-load-more .pager-next a {
+	background-color: #fff;
+	@include border-radius($border-radius);
+	-webkit-box-shadow: 0 0 3px #ccc;
+	box-shadow: 0 0 3px #aaa;
+	color: #444;
+	padding: 5px 20px;
+	text-transform: lowercase;
+	width: auto;
+	display: inline-block;
+	
+	&:hover {
+		background-color: #444;
+		color: #fff;
+		text-decoration: none;
+		-webkit-box-shadow: 0 0 3px #ccc, 0 0 4px #ccc inset;
+		box-shadow: 0 0 3px #888, 0 0 4px #000 inset;
+		@include transition-all;
+		/* same as the <a> - needed to override omega defaults for hover */
+		@include border-radius($border-radius);
+	}
+}
+
+
+@include breakpoint($small-only) {
+	.pager-load-more li.first.last {
+		margin-left: 0;
+	}
+}
+
+/*----------------------------------------
+
+ ENTITY PAGER - Previous / Next 
+ 
+-----------------------------------------*/
+
+.node-pager-container {
+	height: auto;
+	min-height: 60px; /* icon height + padding */
+	position: relative;
+	margin-bottom: 40px;
+	padding: 15px 0;
+	@include border-top-bottom($border-color);
+}
+.block-entity-pager {
+	overflow: hidden;
+}
+
+a.entity-pager-link,
+a.back-to-river-link {
+	line-height: 1.3;
+	text-transform: capitalize;
+	vertical-align: middle;
+	min-height: 30px;
+	padding: 0;
+	text-decoration: none;
+	color: $text-color;
+	display: block;
+	position: relative;
+	@include transition-all;
+	@include font-size(12px);
+	
+	&:hover {
+		color: $link-hover-color;
+	}
+}
+
+/*-----------------------
+ << PREVIOUS 
+------------------------*/
+
+#entity_pager_1-item-previous, /* songs */
+#entity_pager_2-item-previous, /* album node */
+#entity_pager_3-item-previous, /* product node */
+#entity_pager_4-item-previous, /* articles */
+#entity_pager_5-item-previous /* legacy */{
+	float: left;
+	max-width: 40%;
+}
+a#entity-pager-previous-link {
+	padding-left: 35px;
+	padding-top: 5px;
+	
+	// icon
+	&:before {
+		content: "\3d";
+		display: block;
+		font-family: $arrowicons;
+		font-size: 25px;
+		line-height: 28px;
+		letter-spacing: -16px;
+		margin-right: 20px;
+		vertical-align: middle;
+		position: absolute;
+		top: 0;
+		left: 0;
+		speak: none;
+	}
+	
+	// mobile only
+	@include breakpoint($small-only) {
+		display: block;
+		height: 0;
+		overflow: hidden;
+		padding: 28px 0 0 0;
+		position: relative;
+		width: 34px;
+	
+		// icon
+		&:before {
+			position: absolute;
+			left: 0;
+			top: 0px;
+			width: 34px;
+			speak: none;
+		}	
+	}	
+}
+
+
+/*-----------------------
+ NEXT >> 
+-------------------------*/
+
+#entity_pager_1-item-next, /* songs */
+#entity_pager_2-item-next, /* album node */
+#entity_pager_3-item-next, /* product node */
+#entity_pager_4-item-next, /* articles */
+#entity_pager_5-item-next /* legacy */ {
+	float: right;
+	max-width: 40%;
+}
+a#entity-pager-next-link {
+	padding-right: 35px;
+	padding-top: 5px;
+	text-align: right;
+	
+	// icon
+	&:after {
+		content:"\3e";
+		display: block;
+		font-family: $arrowicons;
+		font-size: 25px;
+		line-height: 28px;
+		letter-spacing: -16px;
+		margin-right: 20px;
+		vertical-align: middle;
+		speak: none;
+		position: absolute;
+		top: 0;
+		right: 0;
+	}
+	// mobile only
+	@include breakpoint($small-only) {
+		display: block;
+		height: 0;
+		overflow: hidden;
+		padding: 28px 0 0 0;
+		position: relative;
+		width: 34px;
+		
+		// icon
+		&:after {
+			position: absolute;
+			right: 0px;
+			top: 0px;
+		}
+	}
+}
+
+
+/*-------------------------
+ ALL - list link 
+--------------------------*/
+
+.back-to-river-link-container {
+	position: absolute;
+	left: 50%;
+	transform: translate(-50%);
+}
+a.back-to-river-link {
+	overflow: hidden;
+	height: 0;
+	width: 30px;
+	padding-top: 30px;
+	
+	// icon
+	&:before {
+		content: "\62";
+		display: block;
+		font-family: $basicicons;
+		font-size: 1.625rem;
+		left: 2px;
+		margin-right: 10px;
+		position: absolute;
+		top: 0;
+		vertical-align: middle;
+		speak: none;
+	}
+}
