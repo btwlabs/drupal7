@@ -1,7 +1,0 @@
-{
-"version": 3,
-"mappings": "AAmBA,UAAW;EC6EP,KAAY,EC3EN,UAAqD;ED2E3D,KAAY,EClER,IAAU;EDkEd,YAAY,EChDmC,KAAK;EDgDpD,WAAY,EAAE,UAAM;EAApB,KAAY,ECnB0B,IAAI;;AFvD9C,KAAM;EC0EF,KAAY,EC3EN,UAAqD;ED2E3D,KAAY,EClER,IAAU;EDkEd,YAAY,EChDmC,KAAK;EDgDpD,WAAY,ECzCuC,CAAC;EDyCpD,KAAY,ECnB0B,IAAI;;;AC7E9C,UAAW;EACT,SAAS,EAAE,IAAI",
-"sources": ["variables/_grid.scss","../../../../../.rvm/gems/ruby-2.1.2@omega.omega_4_boilerplate/gems/singularitygs-1.2.1/stylesheets/singularitygs/_api.scss","../../../../../.rvm/gems/ruby-2.1.2@omega.omega_4_boilerplate/gems/singularitygs-1.2.1/stylesheets/singularitygs/api/_isolation.scss","base/_media.scss"],
-"names": [],
-"file": "omega-4-boilerplate.styles.css"
-}

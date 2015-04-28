@@ -1,9 +1,0 @@
-// Import the legacy variables (relevant for controlling compass-normalize).
-// commented out below to stop errors in compiling with singularity 1.2 new syntax
-// @import "variables/**/*";
-
-// Generate normalize.css.
-@import "normalize";
-
-// Use 'border-box' for the box model.
-@import "toolkit/kickstart";
