@@ -1,0 +1,244 @@
+/*----------------------------------------------------------------
+------------------------------------------------------------------
+
+	SECTION - Content 4 - PRODUCT 1 (PCc)
+ 
+------------------------------------------------------------------
+-----------------------------------------------------------------*/
+
+.front .l-content-4 .l-inner {
+	padding: 0;
+}
+
+.front .view-id-products {
+	overflow: hidden;
+	
+	// add grid for cards display - see <li> for grid layout object
+	@include breakpoint($large-up) {
+		@include add-grid(3);
+		@include add-gutter(1/8);
+	}
+	
+	// container for product sections
+	.views-row {
+		padding: 0 0 100px 0;
+		position: relative;
+		
+		@include breakpoint($large-up){
+			background-color: #d0d0d0;
+			width: 100%;
+		}
+		
+		// CSS arrow (down)
+		&:before {
+			border-left: 30px solid transparent;
+		    border-top: 30px solid #fff; // section bg color
+		    border-right: 30px solid transparent;
+		    content: " ";
+		    display: block;
+		    height: 0px;
+		    position: absolute;
+		    left: 50%;
+		    top: 0;
+		    width: 0px;
+		    -webkit-transform: translateX(50%);
+		    transform: translateX(-50%);
+		    z-index: 5;
+		    
+		    // arrow
+		
+			@include breakpoint($large-up) {
+				border-top-color: #d0d0d0;
+			}
+		}
+	}
+	
+	// section title
+	div.views-field-title {
+		text-align: center;
+		text-transform: uppercase;
+		
+		@include breakpoint($small-and-medium){
+			padding: 50px 0;
+		}
+		@include breakpoint($large-up) {
+			padding: 100px 0;
+		}
+		
+		// product icons
+		&:before {
+			display: inline-block;
+			content: "";
+			margin-bottom: 10px;
+			text-align: center;
+			
+			@include breakpoint($small-and-medium){
+				width: 120px;
+				height: 120px;
+			}
+			@include breakpoint($large-up){
+				width: 190px;
+				height: 190px;
+			}
+		}
+		
+		// title text - override defaults
+		h2 {
+			color: $product-light;
+			line-height: 1;
+			
+			@include breakpoint($small-and-medium){
+				@include font-size(30px);
+				margin-bottom: 0;
+			}
+			@include breakpoint($large-up){
+				@include font-size(60px);
+			}
+		}
+	}
+	
+    
+    //--------ICONS for product titles--------
+	
+	// PCc
+	.views-row-1 {
+		
+		// override arrow color defaults at $large-up breakpoint		
+		@include breakpoint($large-up) {
+			&:before {
+				border-top-color: #fff;
+			}
+		}
+
+		.views-field-title {
+			background-color: $product-pcc-color;
+			
+			&:before {
+				background: $pcc-icon;
+				background-size: 100% auto;
+			}
+		}
+	}
+	// m2o
+	.views-row-2 .views-field-title {
+		background-color: $product-m2o-color;
+	
+		&:before {
+			background: $m2o-icon;
+			background-size: 100% auto;
+		}
+	}
+	// odp
+	.views-row-3 .views-field-title {
+		background-color: $product-odp-color;
+	
+		&:before {
+			background: $odp-icon;
+			background-size: 100% auto;
+		}
+	}
+	
+	//----------- Cards ----------------
+	ul {
+		padding: 0;
+		overflow: hidden;
+		
+		@include breakpoint($small-and-medium) {
+			margin: 0px;
+			width: auto;
+		}
+		@include breakpoint($large-up) {
+			margin: -80px auto 0;
+			width: 80%;
+		}
+	}
+	li {
+		margin: 0;
+		padding: 0;
+		list-style-type: none;
+		background-color: #fff;
+		
+		@include breakpoint($small-and-medium){
+			border-bottom: 1px solid $border-color;
+			
+			&:last-child {
+				border-bottom: 0;
+			}
+		}
+		
+		// define grid widths for cards
+		@include breakpoint($large-up) {
+			&:nth-of-type(1) {
+				@include grid-span(1, 1);
+			}
+			&:nth-of-type(2) {
+				@include grid-span(1, 2);
+			}
+			&:nth-of-type(3) {
+				@include grid-span(1, 3);
+			}
+		}
+	}
+	
+	// card title
+	.field--name-field-product-card-title {
+		font-family: $title-font-family;
+		color: $title-color;
+		@include font-size(30px);
+		padding: 5% 9%;
+		text-align: center;
+		line-height: 1.2;
+		
+		// fixed height to align with bg color band
+		@include breakpoint($large-up) {
+			height: 80px;
+		 }
+	}
+	
+	// card image 
+	.field--name-field-product-card-image {
+		@include breakpoint($small-and-medium) {
+			padding: 0 9%;
+		}
+	}
+	
+	// card body text
+	.field--name-field-product-card-body {
+		
+		@include breakpoint($small-and-medium) {
+			padding: 5% 9% 3%;
+		}
+		@include breakpoint($large-up) {
+			padding: 9%;
+		}
+	}
+	
+	// learn more button
+	.views-field-view-node {
+		text-align: center;
+		margin-top: 60px;
+		
+		a {
+			display: inline-block;
+			padding: 10px;
+			border: 2px solid $title-color;
+			@include font-size(20px);
+			color: $title-color;
+			line-height: 1;
+			text-transform: uppercase;
+			letter-spacing: .2rem;
+			
+			@include breakpoint($large-up) {
+				@include font-size(40px);
+				padding: 20px 40px 15px;
+			}
+			
+			&:hover {
+				border-color: $primary-color;
+				background-color: $primary-color;
+				color: $button-text-hover-color;
+				text-decoration: none;
+			}
+		}
+	}
+}

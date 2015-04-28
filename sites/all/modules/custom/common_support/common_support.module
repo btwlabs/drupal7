@@ -1,0 +1,142 @@
+<?php
+/**
+ * @file
+ * Code for the common support.
+ */
+
+
+function common_support_entity_info_alter(&$entity_info) {
+  $entity_info['node']['view modes']['teaser2'] = array(
+    'label' => t('Another teaser mode'),
+    'custom settings' => FALSE,
+  );
+  $entity_info['node']['view modes']['teaser3'] = array(
+    'label' => t('Another teaser mode 2'),
+    'custom settings' => FALSE,
+  );
+  $entity_info['node']['view modes']['teaser4'] = array(
+    'label' => t('Another teaser mode 3'),
+    'custom settings' => FALSE,
+  );
+  $entity_info['node']['view modes']['teaser5'] = array(
+    'label' => t('Another teaser mode 4'),
+    'custom settings' => FALSE,
+  );
+}
+
+function common_support_node_view($node, $view_mode, $langcode) {
+  // Can have share links on any node type.
+  $node->content['share_links'] = array(
+    '#theme' => 'share_links',
+    '#link_href' => url(drupal_get_path_alias('node/' . $node->nid),
+      array('absolute' => TRUE)),
+    '#nid' => $node->nid,
+  );
+}
+
+function common_support_field_extra_fields() {
+  // Get all node types with see tickets reference field.
+  $node_types = node_type_get_types();
+  $extra = array();
+  foreach ($node_types as $type => $type_object) {
+    $extra['node'][$type]['display']['share_links'] = array(
+      'label' => t('Addthis Social Share Links'),
+      'description' => t('Addthis social share links.'),
+      'weight' => 0,
+    );
+  }
+  return $extra;
+}
+
+function common_support_theme() {
+  $themes = array();
+  $themes['share_links'] = array(
+    'variables' => array('fb_scrape'=>false, 'nid'=>null, 'link_href' => null),
+    'file' => 'theme/common_support.theme.inc',
+  );
+  $themes['common_support_addthis'] = array(
+    'variables' => array('url' => null),
+    'file' => 'theme/common_support.theme.inc',
+  );
+  $themes['show_hide_more_link'] = array(
+    'variables' => array('more_text' => 'Show More', 'less_text' => 'Show Less', 'height' => null),
+    'file' => 'theme/common_support.theme.inc',
+  );
+  $themes['show_hide'] = array(
+    'variables' => array('element' => null, 'height' => null, 'more_text' => 'Show More', 'less_text' => 'Show Less'),
+    'file' => 'theme/common_support.theme.inc',
+  );
+  $themes['block_wrapper'] = array(
+    'variables' => array('data' => '', 'title' => ''),
+    'file' => 'theme/common_support.theme.inc',
+  );
+  $themes['view_embed'] = array(
+    'variables' => array('view' => '', 'display' => '', 'args' => array()),
+    'file' => 'theme/common_support.theme.inc',
+  );
+  $themes['embed_block'] = array(
+    'variables' => array('module' => null, 'delta' => null),
+    'file' => 'theme/common_support.theme.inc',
+  );
+  return $themes;
+}
+
+/**
+ * Helper function orders a page scrape from facebook.
+ * @param $url
+ */
+function common_support_order_fb_scrape($url) {
+  // Order an fb scrape if desired.
+  $ch = curl_init("https://graph.facebook.com/?id={$url}&scrape=true");
+  curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+  curl_exec($ch);
+  curl_close($ch);
+}
+
+
+/**
+ * Implements hook_preprocess_node.
+ * @param array $vars
+ */
+function common_support_preprocess_node(&$vars) {
+  // Add theme hook suggestions for nodes based on view mode.
+  $vars['theme_hook_suggestions'][] = 'node__' . $vars['type'] . '__' . $vars['view_mode'];
+}
+
+function common_support_preprocess_html(&$vars) {
+  $add_this_id = variable_get('social_share_addthis_publisher_id', 'ra-5519fea46a8a52a2');
+  if (isset($add_this_id)) {
+    // Inject the addthis js.
+    $addthis_js_url = "https://s7.addthis.com/js/300/addthis_widget.js#pubid=$add_this_id";
+    drupal_add_js($addthis_js_url, array('type' => 'external', 'scope' => 'header', 'group' => JS_LIBRARY, 'every_page' => TRUE, 'weight' => -10000));
+  }
+  // Set metatags variable if exists.
+  if (module_exists('metatag') && drupal_is_front_page()) {
+    $tags = array();
+    $instance = 'global:frontpage';
+    $build = metatag_metatags_view($instance, $tags);
+    render($build);
+  }
+}
+
+/**
+ * Checks a view element for a result.
+ * Views always returns html whether or not there are results.
+ * This sucks because it's hard to use render arrays nicely
+ * and check for results, and prevent wrappers etc from rendering
+ * in the template. This function unsets an views element if it
+ * has no results.
+ *
+ * @param array $element
+ *   The views render array to check.
+ */
+function common_support_view_check(&$element) {
+  if ($view = views_get_view($element['#view'])) {
+    $view->set_display($element['#display']);
+    $view->preview($element['#display'], (isset($element['#args']) ? $element['#args'] : array()));
+    if ($view->result) {
+      return;
+    }
+  }
+  $element = NULL;
+}

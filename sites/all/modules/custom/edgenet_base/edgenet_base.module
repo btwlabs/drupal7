@@ -1,0 +1,126 @@
+<?php
+/**
+ * @file
+ * Code for the Edgenet base feature.
+ */
+
+include_once 'edgenet_base.features.inc';
+
+function edgenet_base_field_collection_item_view_alter(&$build) {
+  if ($build['#bundle'] == 'field_product_feature_row') {
+    // Replace the icon class markup with an icon tag.
+    if (!empty($build['field_icon_class_1'])) {
+      $value = $build['field_icon_class_1'][0]['#markup'];
+      $build['field_icon_class_1'][0]['#markup'] = '<i class="' . $value . '"></i>' . $value;
+    }
+    if (!empty($build['field_icon_class_2'])) {
+      $value = $build['field_icon_class_2'][0]['#markup'];
+      $build['field_icon_class_2'][0]['#markup'] = '<i class="' . $value . '"></i>' . $value;
+    }
+  }
+}
+
+function edgenet_base_node_view($node, $view_mode, $langcode) {
+  // Alter the about us page body to use a show hide.
+  if ($node->nid == 3) {
+    if ($view_mode == 'full') {
+      $content = $node->body[LANGUAGE_NONE][0]['safe_value'];
+      $node->content['body'] = array(
+        '#theme' => 'show_hide',
+        '#element' => $content,
+        '#height' => 800,
+      );
+    }
+  }
+  if ($node->type == 'product') {
+    switch($view_mode) {
+      case 'full':
+        // Associated Partners (view).
+        $node->content['associated_partners'] = array(
+          '#theme' => 'view_embed',
+          '#view' => 'products',
+          '#display' => 'associated_partners',
+          '#args' => array($node->nid),
+        );
+        common_support_view_check($node->content['associated_partners']);
+        // Associated Partners Sort (view).
+        $node->content['associated_partners_sort'] = array(
+          '#theme' => 'view_embed',
+          '#view' => 'products',
+          '#display' => 'associated_partners_sort',
+          '#args' => array($node->nid),
+        );
+        common_support_view_check($node->content['associated_partners_sort']);
+        // Associated News (view).
+        $node->content['associated_news'] = array(
+          '#theme' => 'view_embed',
+          '#view' => 'products',
+          '#display' => 'associated_news',
+          '#args' => array($node->nid),
+        );
+        common_support_view_check($node->content['associated_news']);
+        // Section title fields.
+        $node->content['section_3_title'] = array(
+          '#markup' => "What Does {$node->title} Mean for Your Business?",
+        );
+        if (isset($node->content['associated_partners'])) {
+          $node->content['section_4_title'] = array(
+            '#markup' => "Who uses {$node->title}?",
+          );
+        }
+        if (isset($node->content['associated_partners'])) {
+          $node->content['section_5_title'] = array(
+            '#markup' => "In the News",
+          );
+        }
+        break;
+    }
+  }
+}
+
+function edgenet_base_field_extra_fields() {
+  $extra = array();
+  $extra['node']['product']['display']['associated_partners'] = array(
+    'label' => t('Associated Partners'),
+    'description' => t('List of Partners Associated With A Product (Full/Default View Mode Only)'),
+    'weight' => 0,
+  );
+  $extra['node']['product']['display']['associated_partners_sort'] = array(
+    'label' => t('Associated Partners (Sort)'),
+    'description' => t('Draggable Views Sorting The List of Partners Associated With A Product (Full/Default View Mode Only)'),
+    'weight' => 0,
+  );
+  $extra['node']['product']['display']['associated_news'] = array(
+    'label' => t('Associated News Articles'),
+    'description' => t('List of News Articles Associated With A Product (Full/Default View Mode Only)'),
+    'weight' => 0,
+  );
+  $extra['node']['product']['display']['section_3_title'] = array(
+    'label' => t('Section 3 Title'),
+    'weight' => 0,
+  );
+  $extra['node']['product']['display']['section_4_title'] = array(
+    'label' => t('Section 4 Title'),
+    'weight' => 0,
+  );
+  $extra['node']['product']['display']['section_5_title'] = array(
+    'label' => t('Section 5 Title'),
+    'weight' => 0,
+  );
+  return $extra;
+}
+
+function edgenet_base_entity_info_alter(&$entity_info) {
+  $entity_info['field_collection_item']['view modes']['teaser'] = array(
+    'label' => t('Teaser mode'),
+    'custom settings' => FALSE,
+  );
+  $entity_info['field_collection_item']['view modes']['teaser2'] = array(
+    'label' => t('Another teaser mode'),
+    'custom settings' => FALSE,
+  );
+  $entity_info['field_collection_item']['view modes']['teaser3'] = array(
+    'label' => t('Another teaser mode 2'),
+    'custom settings' => FALSE,
+  );
+}

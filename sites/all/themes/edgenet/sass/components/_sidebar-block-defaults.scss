@@ -1,0 +1,113 @@
+/*---------------------------------------------------------------------
+-----------------------------------------------------------------------
+
+ General SIDEBAR BLOCK Styles 
+ 
+-----------------------------------------------------------------------
+---------------------------------------------------------------------*/
+
+
+// all sidebar block containers
+
+.l-region--sidebar .block {
+	position: relative;
+	margin-bottom: $vert-spacing-unit;
+	background-color: $sidebar-block-bg-color;
+	color: $sidebar-text-color;
+	padding: 0; 
+}
+
+// Sidebar block title
+
+.l-region--sidebar h2.block__title {
+	color: $sidebar-block-title-color;
+	@include border-bottom($border-color);
+	padding: $sidebar-block-padding;
+	margin: 0 0 $vert-spacing-unit/2;
+	background-color: $sidebar-block-title-bg-color;
+	@include font-size(36px);
+	text-transform: uppercase;
+}
+
+// Padding around content list
+
+.l-region--sidebar .view-content,
+.l-region--sidebar .view-empty {
+	padding: $sidebar-block-padding;
+}
+
+// Sidebar list & grid rows
+
+.l-region--sidebar .teaser-list-row {
+	border-color: $sidebar-border-color;
+	line-height: 1.3;
+}
+.l-region--sidebar .teaser-grid-row,
+.song-videos .teaser-grid .teaser-grid-row /* song node */ {
+	line-height: 1.3;
+	width: 48%;
+	margin: 0 4% 4% 0;
+	border-bottom: 0;
+	@include font-size(12px);
+}
+
+// sidebar block link colors
+
+.l-region--sidebar .block a {
+	color: $sidebar-link-color;
+	
+	&:hover {
+		color: $sidebar-link-hover-color;
+	}
+}
+
+// Sidebar Button Colors
+
+.l-region--sidebar .button a,
+.l-region--sidebar a.button {
+	background-color: $sidebar-button-bg-color;
+	color: $sidebar-button-text-color;
+	
+	&:hover {
+		background-color: $sidebar-button-bg-hover-color;
+		color: $sidebar-button-text-hover-color;
+	}
+}
+
+// Sidebar row content titles
+ 
+.l-region--sidebar .views-field-title, 
+.l-region--sidebar .field-title {
+	font-size: 14px;
+}
+
+// grid row item titles
+
+.l-region--sidebar .teaser-grid-row .views-field-title,
+.song-videos .teaser-grid .teaser-grid-row .views-field-title {
+	text-align: center;
+	padding: 5px;
+}
+
+/*------------------------------
+
+ More Link - sidebar blocks only 
+ 
+-------------------------------*/
+
+.l-region--sidebar .more-link,
+.l-region--sidebar .view-footer {
+	position: relative;
+	
+	a {
+		background-color: $sidebar-more-link-bg-color;
+		color: $sidebar-more-link-text-color;
+		padding: 10px;
+	}
+	
+	a:hover {
+		background-color: $sidebar-more-link-bg-hover-color;
+		color: $sidebar-more-link-text-hover-color;
+	}
+}
+

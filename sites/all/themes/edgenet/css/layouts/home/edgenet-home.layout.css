@@ -1,0 +1,1523 @@
+/*******************************************************************************
+ * masterchannel-home.layout.scss
+ *
+ * Styles for the Album Node layout.
+ ******************************************************************************/
+/**
+ * $ARROW
+ */
+/* line 7, ../../../sass/abstractions/_grid.scss */
+.clearfix:before, .clearfix:after {
+  content: "";
+  display: table; }
+/* line 12, ../../../sass/abstractions/_grid.scss */
+.clearfix:after {
+  clear: both;
+  font-size: 0;
+  /* Clear Fix correction (add font-size to fix extra padding at bottom of site */ }
+
+/* line 42, ../../../sass/abstractions/_typography.scss */
+.title-with-submenu {
+  margin-bottom: 0;
+  border-bottom: 0; }
+
+/* line 19, ../../../sass/layouts/home/edgenet-home.layout.scss */
+.front .hidefront {
+  display: none; }
+
+/*----------------------------------------------------------------
+------------------------------------------------------------------
+
+  SHARED STYLES - GENERAL
+ 
+------------------------------------------------------------------
+-----------------------------------------------------------------*/
+/* line 33, ../../../sass/layouts/home/edgenet-home.layout.scss */
+.slide {
+  position: relative; }
+
+@media (min-width: 0em) and (max-width: 64em) {
+  /* line 40, ../../../sass/layouts/home/edgenet-home.layout.scss */
+  .front .l-custom .l-inner {
+    padding: 80px 0; } }
+@media (min-width: 64.063em) {
+  /* line 40, ../../../sass/layouts/home/edgenet-home.layout.scss */
+  .front .l-custom .l-inner {
+    padding: 150px 0; } }
+/* line 50, ../../../sass/layouts/home/edgenet-home.layout.scss */
+.front .l-custom .views-field-title h2,
+.front .l-custom h2.block__title,
+.front .l-custom .home-about-content h2 {
+  line-height: 1;
+  text-align: center;
+  text-transform: uppercase; }
+  @media (min-width: 0em) and (max-width: 64em) {
+    /* line 50, ../../../sass/layouts/home/edgenet-home.layout.scss */
+    .front .l-custom .views-field-title h2,
+    .front .l-custom h2.block__title,
+    .front .l-custom .home-about-content h2 {
+      font-size: 30px;
+      font-size: 1.875rem; } }
+  @media (min-width: 64.063em) {
+    /* line 50, ../../../sass/layouts/home/edgenet-home.layout.scss */
+    .front .l-custom .views-field-title h2,
+    .front .l-custom h2.block__title,
+    .front .l-custom .home-about-content h2 {
+      font-size: 60px;
+      font-size: 3.75rem; } }
+/* line 65, ../../../sass/layouts/home/edgenet-home.layout.scss */
+.front .l-custom .button {
+  display: inline-block; }
+
+/* line 72, ../../../sass/layouts/home/edgenet-home.layout.scss */
+.views-field-view-node {
+  text-align: center;
+  margin-top: 60px; }
+  /* line 76, ../../../sass/layouts/home/edgenet-home.layout.scss */
+  .views-field-view-node a {
+    display: inline-block;
+    padding: 10px;
+    border: 2px solid #333;
+    font-size: 20px;
+    font-size: 1.25rem;
+    color: #333;
+    line-height: 1;
+    text-transform: uppercase;
+    letter-spacing: .2rem; }
+    @media (min-width: 64.063em) {
+      /* line 76, ../../../sass/layouts/home/edgenet-home.layout.scss */
+      .views-field-view-node a {
+        font-size: 40px;
+        font-size: 2.5rem;
+        padding: 20px 40px 15px; } }
+    /* line 91, ../../../sass/layouts/home/edgenet-home.layout.scss */
+    .views-field-view-node a:hover {
+      border-color: #9f070f;
+      background-color: #9f070f;
+      color: #fff;
+      text-decoration: none; }
+
+/* line 101, ../../../sass/layouts/home/edgenet-home.layout.scss */
+.front .l-constrained {
+  width: 100%;
+  margin: 0 auto; }
+
+/* line 105, ../../../sass/layouts/home/edgenet-home.layout.scss */
+.front .l-footer-wrapper .l-constrained {
+  width: 95%; }
+
+/*----------------------------------------------------------------
+------------------------------------------------------------------
+
+	SECTION - Content 1 - HERO
+ 
+------------------------------------------------------------------
+-----------------------------------------------------------------*/
+/* line 120, ../../../sass/layouts/home/edgenet-home.layout.scss */
+.front .l-content-1 .l-inner {
+  padding: 0; }
+
+@media (min-width: 0em) and (max-width: 64em) {
+  /* line 125, ../../../sass/layouts/home/edgenet-home.layout.scss */
+  .front .l-region--content-1 {
+    max-height: 550px !important; } }
+/* line 131, ../../../sass/layouts/home/edgenet-home.layout.scss */
+.front .l-branding {
+  display: none; }
+
+/*-----------------------
+	
+	VIDEO
+	
+-------------------------*/
+/* line 142, ../../../sass/layouts/home/edgenet-home.layout.scss */
+.front .l-video-wrapper {
+  position: relative;
+  z-index: 0; }
+  @media (min-width: 0em) and (max-width: 64em) {
+    /* line 142, ../../../sass/layouts/home/edgenet-home.layout.scss */
+    .front .l-video-wrapper {
+      display: none; } }
+  @media (min-width: 64.063em) {
+    /* line 142, ../../../sass/layouts/home/edgenet-home.layout.scss */
+    .front .l-video-wrapper {
+      -webkit-transition: top 0.3s linear;
+      -moz-transition: top 0.3s linear;
+      transition: top 0.3s linear;
+      position: absolute;
+      top: 0px;
+      left: 0px;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      z-index: 0; } }
+
+/* line 165, ../../../sass/layouts/home/edgenet-home.layout.scss */
+.front video {
+  position: absolute;
+  top: 0%;
+  left: 0%;
+  height: 100%;
+  width: 100%;
+  object-fit: cover; }
+  @media (min-width: 0em) and (max-width: 64em) {
+    /* line 165, ../../../sass/layouts/home/edgenet-home.layout.scss */
+    .front video {
+      height: 550px; } }
+
+@media (min-width: 64.063em) {
+  /* line 179, ../../../sass/layouts/home/edgenet-home.layout.scss */
+  .l-top-wrapper {
+    display: none; } }
+
+/* line 186, ../../../sass/layouts/home/edgenet-home.layout.scss */
+.l-mobile-splash {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  overflow: hidden;
+  max-height: 550px;
+  width: 100%;
+  display: none; }
+  /* line 196, ../../../sass/layouts/home/edgenet-home.layout.scss */
+  .l-mobile-splash img {
+    height: auto;
+    width: 100%; }
+
+/*------------------------------------------------
+	
+	LOGO
+	
+-------------------------------------------------*/
+@media (min-width: 40.063em) {
+  /* line 210, ../../../sass/layouts/home/edgenet-home.layout.scss */
+  .front a.site-branding__logo {
+    position: absolute;
+    top: 40px;
+    left: 20px;
+    z-index: 10;
+    width: 120px;
+    height: auto; } }
+@media (min-width: 64.063em) {
+  /* line 210, ../../../sass/layouts/home/edgenet-home.layout.scss */
+  .front a.site-branding__logo {
+    top: 30px;
+    left: 50px;
+    width: 200px; } }
+
+/*------------------------------------------------
+	
+	MAIN NAV
+	
+-------------------------------------------------*/
+/* line 233, ../../../sass/layouts/home/edgenet-home.layout.scss */
+.front .l-content-1 nav {
+  position: absolute;
+  z-index: 10;
+  top: 50px;
+  right: 50px; }
+  @media (min-width: 0em) and (max-width: 40em) {
+    /* line 233, ../../../sass/layouts/home/edgenet-home.layout.scss */
+    .front .l-content-1 nav {
+      display: none; } }
+  @media (min-width: 40.063em) and (max-width: 64em) {
+    /* line 233, ../../../sass/layouts/home/edgenet-home.layout.scss */
+    .front .l-content-1 nav {
+      right: 20px; } }
+
+/* line 246, ../../../sass/layouts/home/edgenet-home.layout.scss */
+.front .l-content-1 nav ul {
+  margin: 0;
+  padding: 0; }
+  /* line 250, ../../../sass/layouts/home/edgenet-home.layout.scss */
+  .front .l-content-1 nav ul li {
+    list-style-type: none;
+    margin: 0 20px 0px 0;
+    display: inline-block; }
+    @media (min-width: 40.063em) and (max-width: 64em) {
+      /* line 250, ../../../sass/layouts/home/edgenet-home.layout.scss */
+      .front .l-content-1 nav ul li {
+        margin-right: 10px;
+        font-size: 14px; } }
+    /* line 260, ../../../sass/layouts/home/edgenet-home.layout.scss */
+    .front .l-content-1 nav ul li.last {
+      margin-right: 0; }
+  /* line 264, ../../../sass/layouts/home/edgenet-home.layout.scss */
+  .front .l-content-1 nav ul a {
+    color: #fff;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    display: block;
+    padding-bottom: 3px; }
+    /* line 272, ../../../sass/layouts/home/edgenet-home.layout.scss */
+    .front .l-content-1 nav ul a:hover {
+      border-bottom: 3px solid #e87623;
+      text-decoration: none;
+      color: #fff; }
+
+/* line 282, ../../../sass/layouts/home/edgenet-home.layout.scss */
+.front .l-region--header .block--menu {
+  display: none; }
+
+/*-----------------------------------------------
+
+	CONTENT_1  HERO IMAGE
+ 
+-----------------------------------------------*/
+/* line 292, ../../../sass/layouts/home/edgenet-home.layout.scss */
+.front .home-hero-content {
+  overflow: hidden;
+  width: 100%;
+  position: relative;
+  z-index: 0; }
+  @media (min-width: 0em) and (max-width: 64em) {
+    /* line 292, ../../../sass/layouts/home/edgenet-home.layout.scss */
+    .front .home-hero-content {
+      background: #dbeee5 url("../../../images/backgrounds/bg-video-mobile.jpg") no-repeat scroll center top;
+      background-size: 100% auto;
+      height: 550px; } }
+  @media (min-width: 64.063em) {
+    /* line 292, ../../../sass/layouts/home/edgenet-home.layout.scss */
+    .front .home-hero-content {
+      height: 100%; } }
+  /* line 307, ../../../sass/layouts/home/edgenet-home.layout.scss */
+  .front .home-hero-content::after {
+    width: 100%;
+    height: 100%;
+    display: block;
+    z-index: 1;
+    content: ""; }
+    @media (min-width: 0em) and (max-width: 64em) {
+      /* line 307, ../../../sass/layouts/home/edgenet-home.layout.scss */
+      .front .home-hero-content::after {
+        background-color: rgba(13, 26, 29, 0.7);
+        position: absolute;
+        top: 0;
+        left: 0; } }
+    @media (min-width: 64.063em) {
+      /* line 307, ../../../sass/layouts/home/edgenet-home.layout.scss */
+      .front .home-hero-content::after {
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-color: rgba(13, 26, 29, 0.2); } }
+
+/*-----------------------------------------------
+
+	CONTENT_1  Tagline
+ 
+-----------------------------------------------*/
+/* line 336, ../../../sass/layouts/home/edgenet-home.layout.scss */
+.home-tagline-container {
+  text-align: center;
+  text-shadow: 1px 1px 0 #000;
+  margin: 0 auto; }
+  @media (min-width: 0em) and (max-width: 64em) {
+    /* line 336, ../../../sass/layouts/home/edgenet-home.layout.scss */
+    .home-tagline-container {
+      width: 85%;
+      position: relative;
+      z-index: 2;
+      padding-top: 40px; } }
+  @media (min-width: 64.063em) {
+    /* line 336, ../../../sass/layouts/home/edgenet-home.layout.scss */
+    .home-tagline-container {
+      width: 60%;
+      position: absolute;
+      z-index: 4;
+      left: 50%;
+      top: 50%;
+      -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+      transform: translate(-50%, -50%); } }
+  /* line 358, ../../../sass/layouts/home/edgenet-home.layout.scss */
+  .home-tagline-container .home-tagline {
+    overflow: hidden; }
+  /* line 362, ../../../sass/layouts/home/edgenet-home.layout.scss */
+  .home-tagline-container h1 {
+    background: url(../../../images/edgenet-logo-lrg.png) no-repeat scroll right top;
+    background-size: 100% auto;
+    display: inline-block;
+    padding: 0;
+    border: 0; }
+    @media (min-width: 0em) and (max-width: 40em) {
+      /* line 362, ../../../sass/layouts/home/edgenet-home.layout.scss */
+      .home-tagline-container h1 {
+        width: 170px;
+        height: 83px;
+        margin: 0 auto 30px; } }
+    @media (min-width: 40.063em) and (max-width: 64em) {
+      /* line 362, ../../../sass/layouts/home/edgenet-home.layout.scss */
+      .home-tagline-container h1 {
+        width: 220px;
+        height: 110px;
+        margin-bottom: 40px; } }
+    @media (min-width: 64.063em) {
+      /* line 362, ../../../sass/layouts/home/edgenet-home.layout.scss */
+      .home-tagline-container h1 {
+        margin-bottom: 30px;
+        width: 300px;
+        height: 146px; } }
+    /* line 385, ../../../sass/layouts/home/edgenet-home.layout.scss */
+    .home-tagline-container h1 span.hide {
+      visibility: hidden; }
+  /* line 389, ../../../sass/layouts/home/edgenet-home.layout.scss */
+  .home-tagline-container h2 {
+    color: #ddd;
+    line-height: 1; }
+    @media (min-width: 0em) and (max-width: 64em) {
+      /* line 389, ../../../sass/layouts/home/edgenet-home.layout.scss */
+      .home-tagline-container h2 {
+        font-size: 35px;
+        font-size: 2.1875rem; } }
+    @media (min-width: 64.063em) {
+      /* line 389, ../../../sass/layouts/home/edgenet-home.layout.scss */
+      .home-tagline-container h2 {
+        font-size: 55px;
+        font-size: 3.4375rem; } }
+  /* line 401, ../../../sass/layouts/home/edgenet-home.layout.scss */
+  .home-tagline-container p {
+    color: #ccc;
+    font-size: 16px;
+    font-size: 1rem;
+    margin-bottom: 40px;
+    line-height: 1.4; }
+    @media (min-width: 0em) and (max-width: 64em) {
+      /* line 401, ../../../sass/layouts/home/edgenet-home.layout.scss */
+      .home-tagline-container p {
+        width: 70%;
+        font-size: 18px;
+        font-size: 1.125rem;
+        margin: 0 auto 35px; } }
+    @media (min-width: 64.063em) {
+      /* line 401, ../../../sass/layouts/home/edgenet-home.layout.scss */
+      .home-tagline-container p {
+        font-size: 28px;
+        font-size: 1.75rem; } }
+  /* line 417, ../../../sass/layouts/home/edgenet-home.layout.scss */
+  .home-tagline-container .slide-button a {
+    padding: 10px;
+    border: 2px solid #ccc;
+    font-size: 16px;
+    font-size: 1rem;
+    color: #ddd;
+    line-height: 1;
+    text-transform: uppercase;
+    letter-spacing: .2rem;
+    display: inline-block; }
+    @media (min-width: 64.063em) {
+      /* line 417, ../../../sass/layouts/home/edgenet-home.layout.scss */
+      .home-tagline-container .slide-button a {
+        font-size: 40px;
+        font-size: 2.5rem;
+        padding: 20px 40px 15px; } }
+    /* line 432, ../../../sass/layouts/home/edgenet-home.layout.scss */
+    .home-tagline-container .slide-button a:hover {
+      border-color: #9f070f;
+      background-color: #9f070f;
+      color: #fff;
+      text-decoration: none; }
+
+/*----------------------------------------------------------------
+------------------------------------------------------------------
+
+	SECTION - Content 2 - BANNERS
+ 
+------------------------------------------------------------------
+-----------------------------------------------------------------*/
+/* line 451, ../../../sass/layouts/home/edgenet-home.layout.scss */
+.front .l-content-2 .l-inner {
+  padding: 0; }
+
+/* line 456, ../../../sass/layouts/home/edgenet-home.layout.scss */
+.home-banners {
+  background-color: #d4d4c5; }
+
+/*----------------------------------------------------------------
+------------------------------------------------------------------
+
+	SECTION - Content 3 - PRODUCT INTRO
+ 
+------------------------------------------------------------------
+-----------------------------------------------------------------*/
+@media (min-width: 0em) and (max-width: 64em) {
+  /* line 470, ../../../sass/layouts/home/edgenet-home.layout.scss */
+  .front .l-content-3 .l-inner {
+    padding: 40px 0; } }
+@media (min-width: 64.063em) {
+  /* line 470, ../../../sass/layouts/home/edgenet-home.layout.scss */
+  .front .l-content-3 .l-inner {
+    padding-top: 100px; } }
+
+@media (min-width: 64.063em) {
+  /* line 481, ../../../sass/layouts/home/edgenet-home.layout.scss */
+  .front .l-content-3 .l-inner {
+    background-image: url(../../../images/home/bg-home-solutions-imac.png);
+    background-size: 40% auto;
+    background-position: right 40px;
+    background-repeat: no-repeat;
+    min-height: 1000px;
+    background-attachment: scroll;
+    background-color: transparent;
+    z-index: 2; } }
+@media (min-width: 0em) and (max-width: 40em) {
+  /* line 495, ../../../sass/layouts/home/edgenet-home.layout.scss */
+  .front .l-content-3 .l-constrained {
+    margin: 0 30px;
+    width: auto; } }
+@media (min-width: 40.063em) {
+  /* line 495, ../../../sass/layouts/home/edgenet-home.layout.scss */
+  .front .l-content-3 .l-constrained {
+    margin: 0 auto;
+    width: 80%; } }
+
+@media (min-width: 0em) {
+  /* line 511, ../../../sass/layouts/home/edgenet-home.layout.scss */
+  .front .home-solutions-intro h2 {
+    line-height: 1;
+    font-size: 45px;
+    font-size: 2.8125rem;
+    margin-bottom: 40px;
+    text-transform: uppercase;
+    text-align: center;
+    border: 0; }
+  /* line 519, ../../../sass/layouts/home/edgenet-home.layout.scss */
+  .front .home-solutions-intro .block__content {
+    font-size: 18px;
+    font-size: 1.125rem;
+    line-height: 1.7;
+    text-align: center;
+    margin-bottom: 30px; }
+  /* line 525, ../../../sass/layouts/home/edgenet-home.layout.scss */
+  .front .home-solutions-intro i.fa {
+    font-size: 100px;
+    color: #d4d4c5;
+    text-align: center;
+    width: 100%;
+    margin-bottom: 15px; } }
+  @media (min-width: 0em) and (min-width: 64.063em) {
+    /* line 525, ../../../sass/layouts/home/edgenet-home.layout.scss */
+    .front .home-solutions-intro i.fa {
+      font-size: 200px; } }
+
+@media (min-width: 40.063em) and (max-width: 64em) {
+  /* line 538, ../../../sass/layouts/home/edgenet-home.layout.scss */
+  .front .home-solutions-intro h2 {
+    font-size: 55px;
+    font-size: 3.4375rem; }
+  /* line 541, ../../../sass/layouts/home/edgenet-home.layout.scss */
+  .front .home-solutions-intro .block__content {
+    font-size: 20px;
+    font-size: 1.25rem; }
+  /* line 544, ../../../sass/layouts/home/edgenet-home.layout.scss */
+  .front .home-solutions-intro i.fa {
+    font-size: 200px; } }
+@media (min-width: 64.063em) {
+  /* line 508, ../../../sass/layouts/home/edgenet-home.layout.scss */
+  .front .home-solutions-intro {
+    overflow: hidden;
+    width: 50%; }
+    /* line 553, ../../../sass/layouts/home/edgenet-home.layout.scss */
+    .front .home-solutions-intro h2 {
+      font-size: 65px;
+      font-size: 4.0625rem;
+      margin-bottom: 40px; }
+    /* line 558, ../../../sass/layouts/home/edgenet-home.layout.scss */
+    .front .home-solutions-intro .block__content {
+      font-size: 25px;
+      font-size: 1.5625rem; }
+    /* line 561, ../../../sass/layouts/home/edgenet-home.layout.scss */
+    .front .home-solutions-intro i.fa {
+      font-size: 200px; } }
+
+/* line 568, ../../../sass/layouts/home/edgenet-home.layout.scss */
+.solution-product-icons {
+  overflow: hidden; }
+  @media (min-width: 0em) and (max-width: 64em) {
+    /* line 568, ../../../sass/layouts/home/edgenet-home.layout.scss */
+    .solution-product-icons {
+      width: 80%;
+      margin: 0 auto; } }
+  @media (min-width: 64.063em) {
+    /* line 568, ../../../sass/layouts/home/edgenet-home.layout.scss */
+    .solution-product-icons {
+      width: 50%;
+      margin: 0; } }
+  /* line 582, ../../../sass/layouts/home/edgenet-home.layout.scss */
+  .solution-product-icons .product-icon a {
+    width: 100%;
+    height: 0;
+    padding-top: 160px;
+    overflow: hidden;
+    font-size: 0px;
+    display: block;
+    cursor: pointer; }
+    /* line 591, ../../../sass/layouts/home/edgenet-home.layout.scss */
+    .solution-product-icons .product-icon a:hover {
+      opacity: 0.7;
+      filter: alpha(opacity=70); }
+    @media (min-width: 90.063em) {
+      /* line 582, ../../../sass/layouts/home/edgenet-home.layout.scss */
+      .solution-product-icons .product-icon a {
+        padding-top: 270px; } }
+  /* line 600, ../../../sass/layouts/home/edgenet-home.layout.scss */
+  .solution-product-icons .pcc {
+    width: 25%;
+    float: left;
+    margin-right: -100%;
+    margin-left: 0;
+    clear: none; }
+    /* line 603, ../../../sass/layouts/home/edgenet-home.layout.scss */
+    .solution-product-icons .pcc a {
+      background: url(../../../images/icon-pcc.png) no-repeat scroll center top;
+      background-size: 100% auto; }
+  /* line 608, ../../../sass/layouts/home/edgenet-home.layout.scss */
+  .solution-product-icons .m2o {
+    width: 25%;
+    float: left;
+    margin-right: -100%;
+    margin-left: 37.5%;
+    clear: none; }
+    /* line 611, ../../../sass/layouts/home/edgenet-home.layout.scss */
+    .solution-product-icons .m2o a {
+      background: url(../../../images/icon-m2o.png) no-repeat scroll center top;
+      background-size: 100% auto; }
+  /* line 616, ../../../sass/layouts/home/edgenet-home.layout.scss */
+  .solution-product-icons .odp {
+    width: 25%;
+    float: right;
+    margin-left: 0;
+    margin-right: 0;
+    clear: none; }
+    /* line 619, ../../../sass/layouts/home/edgenet-home.layout.scss */
+    .solution-product-icons .odp a {
+      background: url(../../../images/icon-odp.png) no-repeat scroll center top;
+      background-size: 100% auto; }
+
+/* line 630, ../../../sass/layouts/home/edgenet-home.layout.scss */
+.container:after {
+  content: "";
+  display: block;
+  position: absolute;
+  z-index: 0;
+  background-color: rgba(255, 255, 255, 0.2); }
+
+/* line 638, ../../../sass/layouts/home/edgenet-home.layout.scss */
+.container.contain1:after {
+  top: -40%;
+  width: 100%;
+  height: 100%;
+  -ms-transform: skew(0, -2deg);
+  /* IE 9 */
+  -webkit-transform: skew(0, -2deg);
+  /* Safari */
+  transform: skew(0, -2deg); }
+
+/* line 646, ../../../sass/layouts/home/edgenet-home.layout.scss */
+.container.contain2:after {
+  top: 0;
+  left: 50%;
+  width: 80%;
+  height: 100%;
+  -ms-transform: skew(35deg, 0);
+  -webkit-transform: skew(35deg, 0);
+  transform: skew(35deg, 0); }
+
+/* line 655, ../../../sass/layouts/home/edgenet-home.layout.scss */
+.container.contain3:after {
+  top: -60%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  -ms-transform: skew(0, 4deg);
+  /* IE 9 */
+  -webkit-transform: skew(0, 4deg);
+  /* Safari */
+  transform: skew(0, 4deg); }
+
+/*----------------------------------------------------------------
+------------------------------------------------------------------
+
+	SECTION - Content 4 - PRODUCT 1 (PCc)
+ 
+------------------------------------------------------------------
+-----------------------------------------------------------------*/
+/* line 675, ../../../sass/layouts/home/edgenet-home.layout.scss */
+.front .l-content-4 .l-inner {
+  padding: 0; }
+
+/* line 685, ../../../sass/layouts/home/edgenet-home.layout.scss */
+.front .view-id-products {
+  overflow: hidden; }
+  /* line 688, ../../../sass/layouts/home/edgenet-home.layout.scss */
+  .front .view-id-products ul.teaser-list {
+    margin: 0; }
+  /* line 693, ../../../sass/layouts/home/edgenet-home.layout.scss */
+  .front .view-id-products .views-row {
+    padding: 0 0 100px 0;
+    position: relative;
+    border: 0; }
+    @media (min-width: 64.063em) {
+      /* line 693, ../../../sass/layouts/home/edgenet-home.layout.scss */
+      .front .view-id-products .views-row {
+        background-color: #d0d0d0;
+        width: 100%; } }
+    /* line 704, ../../../sass/layouts/home/edgenet-home.layout.scss */
+    .front .view-id-products .views-row:before {
+      border-left: 30px solid transparent;
+      border-top: 30px solid #fff;
+      border-right: 30px solid transparent;
+      content: " ";
+      display: block;
+      height: 0px;
+      position: absolute;
+      left: 50%;
+      top: 0;
+      width: 0px;
+      -webkit-transform: translateX(-50%);
+      -ms-transform: translateX(-50%);
+      transform: translateX(-50%);
+      z-index: 5; }
+    /* line 721, ../../../sass/layouts/home/edgenet-home.layout.scss */
+    .front .view-id-products .views-row:after {
+      content: "";
+      display: block;
+      position: absolute;
+      z-index: 0;
+      background-color: rgba(255, 255, 255, 0.15); }
+  /* line 731, ../../../sass/layouts/home/edgenet-home.layout.scss */
+  .front .view-id-products .views-field-field-product-page-content {
+    overflow: hidden; }
+  /* line 736, ../../../sass/layouts/home/edgenet-home.layout.scss */
+  .front .view-id-products .product-content-wrapper {
+    font-size: 20px;
+    font-size: 1.25rem;
+    color: #fff;
+    margin: 0 30px;
+    text-align: center; }
+    @media (min-width: 40.063em) {
+      /* line 736, ../../../sass/layouts/home/edgenet-home.layout.scss */
+      .front .view-id-products .product-content-wrapper {
+        width: 38%;
+        float: left;
+        margin-left: 5%;
+        position: relative;
+        z-index: 2; }
+        /* line 749, ../../../sass/layouts/home/edgenet-home.layout.scss */
+        .front .view-id-products .product-content-wrapper .product-body {
+          min-height: 400px; } }
+  /* line 756, ../../../sass/layouts/home/edgenet-home.layout.scss */
+  .front .view-id-products h2 {
+    text-align: center;
+    text-transform: uppercase;
+    color: #e4e4d5;
+    line-height: 1;
+    margin-bottom: 0; }
+    @media (min-width: 0em) and (max-width: 64em) {
+      /* line 756, ../../../sass/layouts/home/edgenet-home.layout.scss */
+      .front .view-id-products h2 {
+        padding: 50px 0;
+        font-size: 30px;
+        font-size: 1.875rem; } }
+    @media (min-width: 64.063em) {
+      /* line 756, ../../../sass/layouts/home/edgenet-home.layout.scss */
+      .front .view-id-products h2 {
+        padding: 100px 0 60px;
+        font-size: 60px;
+        font-size: 3.75rem; } }
+    /* line 774, ../../../sass/layouts/home/edgenet-home.layout.scss */
+    .front .view-id-products h2 span.product-icon {
+      display: inline-block;
+      content: "";
+      margin-bottom: 10px;
+      text-align: center; }
+      @media (min-width: 0em) and (max-width: 64em) {
+        /* line 774, ../../../sass/layouts/home/edgenet-home.layout.scss */
+        .front .view-id-products h2 span.product-icon {
+          width: 120px;
+          height: 120px; } }
+      @media (min-width: 64.063em) {
+        /* line 774, ../../../sass/layouts/home/edgenet-home.layout.scss */
+        .front .view-id-products h2 span.product-icon {
+          width: 190px;
+          height: 190px; } }
+    /* line 789, ../../../sass/layouts/home/edgenet-home.layout.scss */
+    .front .view-id-products h2 span.title {
+      clear: both;
+      display: block; }
+  /* line 796, ../../../sass/layouts/home/edgenet-home.layout.scss */
+  .front .view-id-products .home-product-image-right,
+  .front .view-id-products .home-product-image-left {
+    font-size: 0;
+    width: 100%;
+    margin: 30px 0; }
+  @media (min-width: 40.063em) {
+    /* line 804, ../../../sass/layouts/home/edgenet-home.layout.scss */
+    .front .view-id-products .home-product-image-left {
+      width: 55%;
+      position: absolute;
+      left: 0;
+      z-index: 1;
+      top: 0px;
+      height: 100%;
+      margin: 0; } }
+  /* line 817, ../../../sass/layouts/home/edgenet-home.layout.scss */
+  .front .view-id-products .fadeInLeftBig {
+    width: 100%;
+    height: 100%;
+    background-image: url(../../../images/home/home-products-device-m2o.png);
+    background-size: 100% auto;
+    background-position: left top;
+    background-repeat: no-repeat; }
+    @media (min-width: 40.063em) {
+      /* line 817, ../../../sass/layouts/home/edgenet-home.layout.scss */
+      .front .view-id-products .fadeInLeftBig {
+        background-position: left 150px; } }
+  @media (min-width: 40.063em) {
+    /* line 831, ../../../sass/layouts/home/edgenet-home.layout.scss */
+    .front .view-id-products .home-product-image-right {
+      width: 55%;
+      position: absolute;
+      right: 0;
+      z-index: 1;
+      top: 0px;
+      height: 100%;
+      margin: 0; } }
+  /* line 843, ../../../sass/layouts/home/edgenet-home.layout.scss */
+  .front .view-id-products .home-product-image-right .fadeInRightBig {
+    width: 100%;
+    height: 100%;
+    background-image: url(../../../images/home/home-products-device-pcc.png);
+    background-size: 100% auto;
+    background-position: right top;
+    background-repeat: no-repeat; }
+    @media (min-width: 40.063em) {
+      /* line 843, ../../../sass/layouts/home/edgenet-home.layout.scss */
+      .front .view-id-products .home-product-image-right .fadeInRightBig {
+        background-position: right 150px; } }
+  /* line 858, ../../../sass/layouts/home/edgenet-home.layout.scss */
+  .front .view-id-products .views-field-view-node {
+    text-align: center;
+    margin-top: 60px;
+    position: relative;
+    z-index: 1; }
+    /* line 864, ../../../sass/layouts/home/edgenet-home.layout.scss */
+    .front .view-id-products .views-field-view-node a {
+      display: inline-block;
+      padding: 10px;
+      border: 2px solid #fff;
+      font-size: 20px;
+      font-size: 1.25rem;
+      color: #fff;
+      line-height: 1;
+      text-transform: uppercase;
+      letter-spacing: .2rem; }
+      @media (min-width: 64.063em) {
+        /* line 864, ../../../sass/layouts/home/edgenet-home.layout.scss */
+        .front .view-id-products .views-field-view-node a {
+          font-size: 40px;
+          font-size: 2.5rem;
+          padding: 20px 40px 15px; } }
+      /* line 879, ../../../sass/layouts/home/edgenet-home.layout.scss */
+      .front .view-id-products .views-field-view-node a:hover {
+        border-color: #fff;
+        background-color: #fff;
+        color: #23849b;
+        text-decoration: none; }
+  /* line 897, ../../../sass/layouts/home/edgenet-home.layout.scss */
+  .front .view-id-products .views-row-1 {
+    background-color: #23849b; }
+    /* line 901, ../../../sass/layouts/home/edgenet-home.layout.scss */
+    .front .view-id-products .views-row-1:before {
+      border-top-color: #fff; }
+    /* line 904, ../../../sass/layouts/home/edgenet-home.layout.scss */
+    .front .view-id-products .views-row-1:after {
+      width: 100%;
+      height: 100%;
+      -ms-transform: skew(0, -2deg);
+      /* IE 9 */
+      -webkit-transform: skew(0, -2deg);
+      /* Safari */
+      transform: skew(0, -2deg); }
+      @media (min-width: 0em) and (max-width: 40em) {
+        /* line 904, ../../../sass/layouts/home/edgenet-home.layout.scss */
+        .front .view-id-products .views-row-1:after {
+          display: none; } }
+      @media (min-width: 40.063em) {
+        /* line 904, ../../../sass/layouts/home/edgenet-home.layout.scss */
+        .front .view-id-products .views-row-1:after {
+          top: -66%; } }
+      @media (min-width: 64.063em) {
+        /* line 904, ../../../sass/layouts/home/edgenet-home.layout.scss */
+        .front .view-id-products .views-row-1:after {
+          top: -52%; } }
+      @media (min-width: 90.063em) {
+        /* line 904, ../../../sass/layouts/home/edgenet-home.layout.scss */
+        .front .view-id-products .views-row-1:after {
+          top: -35%; } }
+      @media (min-width: 120.063em) {
+        /* line 904, ../../../sass/layouts/home/edgenet-home.layout.scss */
+        .front .view-id-products .views-row-1:after {
+          top: -25%; } }
+    /* line 931, ../../../sass/layouts/home/edgenet-home.layout.scss */
+    .front .view-id-products .views-row-1 h2 .product-icon {
+      background: url(../../../images/icon-pcc.png) no-repeat scroll center top;
+      background-size: 100% auto; }
+    /* line 936, ../../../sass/layouts/home/edgenet-home.layout.scss */
+    .front .view-id-products .views-row-1 .field--type-image {
+      display: none; }
+    @media (min-width: 0em) and (max-width: 40em) {
+      /* line 941, ../../../sass/layouts/home/edgenet-home.layout.scss */
+      .front .view-id-products .views-row-1 .home-product-image-right {
+        height: 295px; } }
+    /* line 948, ../../../sass/layouts/home/edgenet-home.layout.scss */
+    .front .view-id-products .views-row-1 .home-product-image-left {
+      display: none; }
+    /* line 953, ../../../sass/layouts/home/edgenet-home.layout.scss */
+    .front .view-id-products .views-row-1 .views-field-view-node a:hover {
+      color: #23849b; }
+  /* line 960, ../../../sass/layouts/home/edgenet-home.layout.scss */
+  .front .view-id-products .views-row-2 {
+    background-color: #9f070f; }
+    /* line 964, ../../../sass/layouts/home/edgenet-home.layout.scss */
+    .front .view-id-products .views-row-2:before {
+      border-top-color: #23849b; }
+    /* line 967, ../../../sass/layouts/home/edgenet-home.layout.scss */
+    .front .view-id-products .views-row-2:after {
+      top: 0;
+      width: 80%;
+      height: 100%;
+      -ms-transform: skew(36deg, 0);
+      -webkit-transform: skew(36deg, 0);
+      transform: skew(36deg, 0); }
+      @media (min-width: 0em) and (max-width: 40em) {
+        /* line 967, ../../../sass/layouts/home/edgenet-home.layout.scss */
+        .front .view-id-products .views-row-2:after {
+          display: none; } }
+      @media (min-width: 40.063em) {
+        /* line 967, ../../../sass/layouts/home/edgenet-home.layout.scss */
+        .front .view-id-products .views-row-2:after {
+          left: 68%; } }
+      @media (min-width: 64.063em) {
+        /* line 967, ../../../sass/layouts/home/edgenet-home.layout.scss */
+        .front .view-id-products .views-row-2:after {
+          left: 62%; } }
+      @media (min-width: 90.063em) {
+        /* line 967, ../../../sass/layouts/home/edgenet-home.layout.scss */
+        .front .view-id-products .views-row-2:after {
+          left: 55%; } }
+      @media (min-width: 120.063em) {
+        /* line 967, ../../../sass/layouts/home/edgenet-home.layout.scss */
+        .front .view-id-products .views-row-2:after {
+          left: 50%; } }
+    /* line 994, ../../../sass/layouts/home/edgenet-home.layout.scss */
+    .front .view-id-products .views-row-2 h2 .product-icon {
+      background: url(../../../images/icon-m2o.png) no-repeat scroll center top;
+      background-size: 100% auto; }
+    @media (min-width: 40.063em) {
+      /* line 1001, ../../../sass/layouts/home/edgenet-home.layout.scss */
+      .front .view-id-products .views-row-2 .product-content-wrapper {
+        width: 38%;
+        float: none;
+        float: right;
+        margin-left: 0;
+        margin-right: 5%; } }
+    @media (min-width: 0em) and (max-width: 40em) {
+      /* line 1012, ../../../sass/layouts/home/edgenet-home.layout.scss */
+      .front .view-id-products .views-row-2 .home-product-image-left {
+        height: 325px; } }
+    /* line 1019, ../../../sass/layouts/home/edgenet-home.layout.scss */
+    .front .view-id-products .views-row-2 .home-product-image-right {
+      display: none; }
+    /* line 1022, ../../../sass/layouts/home/edgenet-home.layout.scss */
+    .front .view-id-products .views-row-2 .views-field-view-node a:hover {
+      color: #9f070f; }
+  /* line 1031, ../../../sass/layouts/home/edgenet-home.layout.scss */
+  .front .view-id-products .views-row-3 {
+    background-color: #007a4a; }
+    /* line 1035, ../../../sass/layouts/home/edgenet-home.layout.scss */
+    .front .view-id-products .views-row-3:before {
+      border-top-color: #9f070f; }
+    /* line 1038, ../../../sass/layouts/home/edgenet-home.layout.scss */
+    .front .view-id-products .views-row-3:after {
+      left: 0;
+      width: 100%;
+      height: 100%;
+      -ms-transform: skew(0, 4deg);
+      /* IE 9 */
+      -webkit-transform: skew(0, 4deg);
+      /* Safari */
+      transform: skew(0, 4deg); }
+      @media (min-width: 0em) and (max-width: 40em) {
+        /* line 1038, ../../../sass/layouts/home/edgenet-home.layout.scss */
+        .front .view-id-products .views-row-3:after {
+          display: none; } }
+      @media (min-width: 40.063em) {
+        /* line 1038, ../../../sass/layouts/home/edgenet-home.layout.scss */
+        .front .view-id-products .views-row-3:after {
+          top: -70%; } }
+      @media (min-width: 64.063em) {
+        /* line 1038, ../../../sass/layouts/home/edgenet-home.layout.scss */
+        .front .view-id-products .views-row-3:after {
+          top: -70%; } }
+      @media (min-width: 90.063em) {
+        /* line 1038, ../../../sass/layouts/home/edgenet-home.layout.scss */
+        .front .view-id-products .views-row-3:after {
+          top: -60%; } }
+      @media (min-width: 120.063em) {
+        /* line 1038, ../../../sass/layouts/home/edgenet-home.layout.scss */
+        .front .view-id-products .views-row-3:after {
+          top: -48%; } }
+    /* line 1065, ../../../sass/layouts/home/edgenet-home.layout.scss */
+    .front .view-id-products .views-row-3 h2 .product-icon {
+      background: url(../../../images/icon-odp.png) no-repeat scroll center top;
+      background-size: 100% auto; }
+    /* line 1072, ../../../sass/layouts/home/edgenet-home.layout.scss */
+    .front .view-id-products .views-row-3 .home-product-image-left {
+      display: none; }
+    @media (min-width: 0em) and (max-width: 40em) {
+      /* line 1077, ../../../sass/layouts/home/edgenet-home.layout.scss */
+      .front .view-id-products .views-row-3 .home-product-image-right {
+        height: 255px; } }
+    /* line 1081, ../../../sass/layouts/home/edgenet-home.layout.scss */
+    .front .view-id-products .views-row-3 .home-product-image-right .fadeInRightBig {
+      background-image: url(../../../images/home/home-products-device-odp.png);
+      background-size: 100% auto; }
+    /* line 1086, ../../../sass/layouts/home/edgenet-home.layout.scss */
+    .front .view-id-products .views-row-3 .views-field-view-node a:hover {
+      color: #007a4a; }
+
+@media (min-width: 0em) and (max-width: 64em) {
+  /* line 1093, ../../../sass/layouts/home/edgenet-home.layout.scss */
+  .block--views-products-home-page-sort {
+    background-color: #eee;
+    padding: 5% 10%; } }
+@media (min-width: 64.063em) {
+  /* line 1093, ../../../sass/layouts/home/edgenet-home.layout.scss */
+  .block--views-products-home-page-sort {
+    padding: 5% 20%; } }
+
+/*----------------------------------------------------------------
+------------------------------------------------------------------
+
+	SECTION - Content 5 - ABOUT
+ 
+------------------------------------------------------------------
+-----------------------------------------------------------------*/
+/* line 1113, ../../../sass/layouts/home/edgenet-home.layout.scss */
+.front .l-content-5 {
+  background: url(../../../images/backgrounds/bg-edgenet-wall.jpg) no-repeat scroll center top;
+  background-size: cover;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  min-height: 600px;
+  position: relative; }
+  /* line 1122, ../../../sass/layouts/home/edgenet-home.layout.scss */
+  .front .l-content-5:before {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(29, 39, 46, 0.75);
+    display: block;
+    z-index: 2;
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0; }
+  /* line 1134, ../../../sass/layouts/home/edgenet-home.layout.scss */
+  .front .l-content-5 .l-constrained {
+    z-index: 5;
+    position: relative; }
+    @media (min-width: 0em) and (max-width: 40em) {
+      /* line 1134, ../../../sass/layouts/home/edgenet-home.layout.scss */
+      .front .l-content-5 .l-constrained {
+        margin: 0 30px;
+        width: auto; } }
+    @media (min-width: 40.063em) {
+      /* line 1134, ../../../sass/layouts/home/edgenet-home.layout.scss */
+      .front .l-content-5 .l-constrained {
+        margin: 0 auto;
+        width: 60%; } }
+  @media (min-width: 64.063em) {
+    /* line 1149, ../../../sass/layouts/home/edgenet-home.layout.scss */
+    .front .l-content-5 .home-about-content .text-columns {
+      margin-bottom: 60px; } }
+  /* line 1154, ../../../sass/layouts/home/edgenet-home.layout.scss */
+  .front .l-content-5 .home-about-content h2 {
+    color: #fff;
+    text-align: center;
+    margin-bottom: 30px; }
+  /* line 1159, ../../../sass/layouts/home/edgenet-home.layout.scss */
+  .front .l-content-5 .home-about-content p {
+    color: #ccc;
+    font-size: 24px;
+    font-size: 1.5rem;
+    text-align: center; }
+  /* line 1164, ../../../sass/layouts/home/edgenet-home.layout.scss */
+  .front .l-content-5 .home-about-content .button-container {
+    text-align: center; }
+  /* line 1167, ../../../sass/layouts/home/edgenet-home.layout.scss */
+  .front .l-content-5 .home-about-content .button {
+    color: #fff;
+    border-color: #fff;
+    text-align: center;
+    font-size: 20px;
+    font-size: 1.25rem; }
+    @media (min-width: 64.063em) {
+      /* line 1167, ../../../sass/layouts/home/edgenet-home.layout.scss */
+      .front .l-content-5 .home-about-content .button {
+        font-size: 40px;
+        font-size: 2.5rem;
+        padding: 20px 40px 15px; } }
+    /* line 1178, ../../../sass/layouts/home/edgenet-home.layout.scss */
+    .front .l-content-5 .home-about-content .button:hover {
+      border-color: #9f070f;
+      background-color: #9f070f;
+      color: #fff;
+      text-decoration: none; }
+
+/*----------------------------------------------------------------
+------------------------------------------------------------------
+
+	SECTION - Content 6 - PARTNERS
+ 
+------------------------------------------------------------------
+-----------------------------------------------------------------*/
+/* line 1196, ../../../sass/layouts/home/edgenet-home.layout.scss */
+.front .l-content-6 .l-inner {
+  padding-bottom: 0; }
+
+/* line 1204, ../../../sass/layouts/home/edgenet-home.layout.scss */
+.front .view-partners .attachment-before {
+  margin: 0 auto 60px;
+  position: relative; }
+  @media (min-width: 0em) and (max-width: 64em) {
+    /* line 1204, ../../../sass/layouts/home/edgenet-home.layout.scss */
+    .front .view-partners .attachment-before {
+      width: 90%; } }
+  @media (min-width: 64.063em) {
+    /* line 1204, ../../../sass/layouts/home/edgenet-home.layout.scss */
+    .front .view-partners .attachment-before {
+      width: 70%; } }
+  /* line 1217, ../../../sass/layouts/home/edgenet-home.layout.scss */
+  .front .view-partners .attachment-before:before {
+    content: "\43";
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    line-height: 1;
+    font-family: IcoMoonBasic;
+    width: 25px;
+    font-size: 25px;
+    font-size: 1.5625rem; }
+    @media (min-width: 64.063em) {
+      /* line 1217, ../../../sass/layouts/home/edgenet-home.layout.scss */
+      .front .view-partners .attachment-before:before {
+        font-size: 60px;
+        font-size: 3.75rem;
+        width: 60px; } }
+  /* line 1235, ../../../sass/layouts/home/edgenet-home.layout.scss */
+  .front .view-partners .attachment-before:after {
+    content: "\44";
+    display: inline-block;
+    position: absolute;
+    top: 30px;
+    right: 0;
+    line-height: 1;
+    font-family: IcoMoonBasic;
+    float: right;
+    width: 25px;
+    font-size: 25px;
+    font-size: 1.5625rem; }
+    @media (min-width: 64.063em) {
+      /* line 1235, ../../../sass/layouts/home/edgenet-home.layout.scss */
+      .front .view-partners .attachment-before:after {
+        font-size: 60px;
+        font-size: 3.75rem;
+        width: 60px; } }
+  /* line 1254, ../../../sass/layouts/home/edgenet-home.layout.scss */
+  .front .view-partners .attachment-before .view-display-id-attachment_1 {
+    margin: 0 30px;
+    padding: 0 15px; }
+    @media (min-width: 64.063em) {
+      /* line 1254, ../../../sass/layouts/home/edgenet-home.layout.scss */
+      .front .view-partners .attachment-before .view-display-id-attachment_1 {
+        margin: 0 60px; } }
+  /* line 1263, ../../../sass/layouts/home/edgenet-home.layout.scss */
+  .front .view-partners .attachment-before .views-slideshow-cycle-main-frame {
+    position: relative; }
+    /* line 1268, ../../../sass/layouts/home/edgenet-home.layout.scss */
+    .front .view-partners .attachment-before .views-slideshow-cycle-main-frame:before {
+      content: "";
+      position: absolute;
+      left: 0px;
+      top: 0;
+      height: 100%;
+      width: 15px;
+      z-index: 5;
+      background: url(../../../images/bg-partner-quotes_fade-left.png) repeat-y scroll left top; }
+    /* line 1279, ../../../sass/layouts/home/edgenet-home.layout.scss */
+    .front .view-partners .attachment-before .views-slideshow-cycle-main-frame:after {
+      content: "";
+      position: absolute;
+      right: 0px;
+      top: 0;
+      height: 100%;
+      width: 15px;
+      z-index: 5;
+      background: url(../../../images/bg-partner-quotes_fade-right.png) repeat-y scroll right top; }
+  /* line 1292, ../../../sass/layouts/home/edgenet-home.layout.scss */
+  .front .view-partners .attachment-before .views-field-field-partner-testimonial {
+    font-size: 20px;
+    font-size: 1.25rem;
+    margin-bottom: 30px;
+    text-align: center;
+    padding: 0 15px; }
+  /* line 1300, ../../../sass/layouts/home/edgenet-home.layout.scss */
+  .front .view-partners .attachment-before .views-field-field-partner-testimonee,
+  .front .view-partners .attachment-before .views-field-title {
+    text-align: center;
+    font-style: italic;
+    clear: both; }
+  /* line 1308, ../../../sass/layouts/home/edgenet-home.layout.scss */
+  .front .view-partners .attachment-before .views-slideshow-controls-bottom {
+    text-align: center;
+    margin-top: 30px; }
+    /* line 1312, ../../../sass/layouts/home/edgenet-home.layout.scss */
+    .front .view-partners .attachment-before .views-slideshow-controls-bottom span {
+      display: inline-block; }
+      /* line 1315, ../../../sass/layouts/home/edgenet-home.layout.scss */
+      .front .view-partners .attachment-before .views-slideshow-controls-bottom span a {
+        display: block;
+        width: 50px;
+        height: 0;
+        padding-top: 50px;
+        overflow: hidden;
+        position: relative;
+        color: #151515;
+        border: 2px solid #151515; }
+        /* line 1325, ../../../sass/layouts/home/edgenet-home.layout.scss */
+        .front .view-partners .attachment-before .views-slideshow-controls-bottom span a:nth-of-type(1) {
+          margin-right: 15px; }
+        /* line 1328, ../../../sass/layouts/home/edgenet-home.layout.scss */
+        .front .view-partners .attachment-before .views-slideshow-controls-bottom span a:nth-of-type(2) {
+          margin-left: 15px; }
+        /* line 1332, ../../../sass/layouts/home/edgenet-home.layout.scss */
+        .front .view-partners .attachment-before .views-slideshow-controls-bottom span a:before {
+          content: "\3d";
+          display: block;
+          position: absolute;
+          top: 9px;
+          left: 8px;
+          font-size: 30px;
+          font-size: 1.875rem;
+          font-family: IcoMoonArrows; }
+        /* line 1342, ../../../sass/layouts/home/edgenet-home.layout.scss */
+        .front .view-partners .attachment-before .views-slideshow-controls-bottom span a:hover {
+          background-color: #9f070f;
+          color: #fff;
+          border-color: #9f070f; }
+    /* line 1351, ../../../sass/layouts/home/edgenet-home.layout.scss */
+    .front .view-partners .attachment-before .views-slideshow-controls-bottom .views_slideshow_controls_text_previous a:before {
+      content: "\3d"; }
+    /* line 1354, ../../../sass/layouts/home/edgenet-home.layout.scss */
+    .front .view-partners .attachment-before .views-slideshow-controls-bottom .views_slideshow_controls_text_next a:before {
+      content: "\3e"; }
+    /* line 1357, ../../../sass/layouts/home/edgenet-home.layout.scss */
+    .front .view-partners .attachment-before .views-slideshow-controls-bottom .views_slideshow_controls_text_pause {
+      display: none; }
+
+/* line 1367, ../../../sass/layouts/home/edgenet-home.layout.scss */
+.front .view-partners .view-content {
+  overflow: hidden; }
+  /* line 1370, ../../../sass/layouts/home/edgenet-home.layout.scss */
+  .front .view-partners .view-content ul {
+    margin-bottom: 60px;
+    border-top: 1px solid #dfdfdf; }
+    @media (min-width: 0em) {
+      /* line 1374, ../../../sass/layouts/home/edgenet-home.layout.scss */
+      .front .view-partners .view-content ul li.teaser-grid-row {
+        width: 50%;
+        border-right: 1px solid #dfdfdf;
+        border-bottom: 1px solid #dfdfdf;
+        padding: 3%; } }
+    @media (min-width: 64.063em) {
+      /* line 1374, ../../../sass/layouts/home/edgenet-home.layout.scss */
+      .front .view-partners .view-content ul li.teaser-grid-row {
+        width: 20%;
+        float: left;
+        list-style-type: none;
+        margin: 0;
+        overflow: hidden;
+        -webkit-transition: all 0.4 ease;
+        -moz-transition: all 0.4 ease;
+        -o-transition: all 0.4 ease;
+        transition: all 0.4 ease; } }
+    /* line 1390, ../../../sass/layouts/home/edgenet-home.layout.scss */
+    .front .view-partners .view-content ul li.teaser-grid-row a {
+      display: block;
+      padding: 10% 20%;
+      overflow: hidden; }
+    /* line 1395, ../../../sass/layouts/home/edgenet-home.layout.scss */
+    .front .view-partners .view-content ul li.teaser-grid-row a:hover img {
+      -webkit-transform: scale(1.2);
+      -ms-transform: scale(1.2);
+      transform: scale(1.2); }
+
+/* line 1405, ../../../sass/layouts/home/edgenet-home.layout.scss */
+.front .view-partners .attachment-after {
+  text-align: center; }
+  /* line 1408, ../../../sass/layouts/home/edgenet-home.layout.scss */
+  .front .view-partners .attachment-after .view-header {
+    padding: 60px 0; }
+
+/*----------------------------------------------------------------
+------------------------------------------------------------------
+
+	SECTION - Content 7 - NEWS TEASER
+ 
+------------------------------------------------------------------
+-----------------------------------------------------------------*/
+/* line 1422, ../../../sass/layouts/home/edgenet-home.layout.scss */
+.front .l-content-7 {
+  background-color: #eee; }
+  @media (min-width: 0em) and (max-width: 40em) {
+    /* line 1425, ../../../sass/layouts/home/edgenet-home.layout.scss */
+    .front .l-content-7 .l-constrained {
+      margin: 0 30px;
+      width: auto; } }
+  @media (min-width: 40.063em) {
+    /* line 1425, ../../../sass/layouts/home/edgenet-home.layout.scss */
+    .front .l-content-7 .l-constrained {
+      margin: 0 auto;
+      width: 80%; } }
+  /* line 1436, ../../../sass/layouts/home/edgenet-home.layout.scss */
+  .front .l-content-7 h2.block__title {
+    margin-bottom: 30px; }
+  /* line 1440, ../../../sass/layouts/home/edgenet-home.layout.scss */
+  .front .l-content-7 .teaser-grid {
+    cursor: pointer; }
+    @media (min-width: 0em) and (max-width: 40em) {
+      /* line 1443, ../../../sass/layouts/home/edgenet-home.layout.scss */
+      .front .l-content-7 .teaser-grid .teaser-grid-row {
+        width: 100%;
+        margin: 0 0 30px 0;
+        float: none;
+        padding-bottom: 30px;
+        border-bottom: 1px solid #aaa; } }
+    @media (min-width: 40.063em) and (max-width: 64em) {
+      /* line 1443, ../../../sass/layouts/home/edgenet-home.layout.scss */
+      .front .l-content-7 .teaser-grid .teaser-grid-row {
+        float: left;
+        width: 48%;
+        margin: 0 4% 30px 0;
+        min-height: 400px; }
+        /* line 1458, ../../../sass/layouts/home/edgenet-home.layout.scss */
+        .front .l-content-7 .teaser-grid .teaser-grid-row.views-row-even {
+          margin-right: 0; } }
+    @media (min-width: 64.063em) {
+      /* line 1440, ../../../sass/layouts/home/edgenet-home.layout.scss */
+      .front .l-content-7 .teaser-grid {
+        overflow: hidden; }
+        /* line 1471, ../../../sass/layouts/home/edgenet-home.layout.scss */
+        .front .l-content-7 .teaser-grid .views-row-1 {
+          width: 22.22222%;
+          float: left;
+          margin-right: -100%;
+          margin-left: 0;
+          clear: none; }
+        /* line 1474, ../../../sass/layouts/home/edgenet-home.layout.scss */
+        .front .l-content-7 .teaser-grid .views-row-2 {
+          width: 22.22222%;
+          float: left;
+          margin-right: -100%;
+          margin-left: 25.92593%;
+          clear: none; }
+        /* line 1477, ../../../sass/layouts/home/edgenet-home.layout.scss */
+        .front .l-content-7 .teaser-grid .views-row-3 {
+          width: 22.22222%;
+          float: left;
+          margin-right: -100%;
+          margin-left: 51.85185%;
+          clear: none; }
+        /* line 1480, ../../../sass/layouts/home/edgenet-home.layout.scss */
+        .front .l-content-7 .teaser-grid .views-row-4 {
+          width: 22.22222%;
+          float: right;
+          margin-left: 0;
+          margin-right: 0;
+          clear: none; } }
+  /* line 1485, ../../../sass/layouts/home/edgenet-home.layout.scss */
+  .front .l-content-7 img {
+    margin-bottom: 10px; }
+  /* line 1488, ../../../sass/layouts/home/edgenet-home.layout.scss */
+  .front .l-content-7 h3 {
+    line-height: 1.2;
+    margin-bottom: 5px; }
+  /* line 1492, ../../../sass/layouts/home/edgenet-home.layout.scss */
+  .front .l-content-7 .post-date {
+    font-style: italic; }
+  /* line 1495, ../../../sass/layouts/home/edgenet-home.layout.scss */
+  .front .l-content-7 .more-link {
+    text-align: center;
+    margin-top: 60px; }
+    /* line 1499, ../../../sass/layouts/home/edgenet-home.layout.scss */
+    .front .l-content-7 .more-link a {
+      display: inline-block;
+      padding: 10px;
+      border: 2px solid #333;
+      font-size: 20px;
+      font-size: 1.25rem;
+      color: #333;
+      line-height: 1;
+      text-transform: uppercase;
+      letter-spacing: .2rem; }
+      @media (min-width: 64.063em) {
+        /* line 1499, ../../../sass/layouts/home/edgenet-home.layout.scss */
+        .front .l-content-7 .more-link a {
+          font-size: 40px;
+          font-size: 2.5rem;
+          padding: 20px 40px 15px; } }
+      /* line 1514, ../../../sass/layouts/home/edgenet-home.layout.scss */
+      .front .l-content-7 .more-link a:hover {
+        border-color: #9f070f;
+        background-color: #9f070f;
+        color: #fff;
+        text-decoration: none; }
+      /* line 1521, ../../../sass/layouts/home/edgenet-home.layout.scss */
+      .front .l-content-7 .more-link a:after {
+        display: none; }
+
+/*----------------------------------------------------------------
+------------------------------------------------------------------
+
+	SECTION - Content 8 - FORM
+ 
+------------------------------------------------------------------
+-----------------------------------------------------------------*/
+/* line 1536, ../../../sass/layouts/home/edgenet-home.layout.scss */
+.front .l-content-8 {
+  background-color: #555; }
+  /* line 1539, ../../../sass/layouts/home/edgenet-home.layout.scss */
+  .front .l-content-8 .l-inner {
+    padding: 0 0 75px; }
+
+/*---------------------------------------
+	
+	locations
+	
+----------------------------------------*/
+/* line 1551, ../../../sass/layouts/home/edgenet-home.layout.scss */
+.office-locations {
+  background-color: #fff;
+  line-height: 1;
+  overflow: hidden;
+  margin-bottom: 60px;
+  letter-spacing: 3px; }
+  /* line 1561, ../../../sass/layouts/home/edgenet-home.layout.scss */
+  .office-locations .location-1 {
+    width: 50%;
+    float: left;
+    margin-right: -100%;
+    margin-left: 0;
+    clear: none;
+    border-right: 1px solid #aaa; }
+  /* line 1565, ../../../sass/layouts/home/edgenet-home.layout.scss */
+  .office-locations .location-2 {
+    width: 50%;
+    float: right;
+    margin-left: 0;
+    margin-right: 0;
+    clear: none; }
+
+/* line 1570, ../../../sass/layouts/home/edgenet-home.layout.scss */
+.location {
+  display: inline-block;
+  text-align: center;
+  text-transform: uppercase;
+  position: relative; }
+  @media (min-width: 0em) and (max-width: 40em) {
+    /* line 1570, ../../../sass/layouts/home/edgenet-home.layout.scss */
+    .location {
+      font-size: 12px;
+      padding: 20px; } }
+  @media (min-width: 40.063em) {
+    /* line 1570, ../../../sass/layouts/home/edgenet-home.layout.scss */
+    .location {
+      font-size: 1.7vw;
+      padding: 30px; } }
+
+/*---------------------------------------
+	
+	webform
+	
+----------------------------------------*/
+/* line 1593, ../../../sass/layouts/home/edgenet-home.layout.scss */
+.front .form--contact_know-more {
+  overflow: hidden; }
+  @media (min-width: 0em) and (max-width: 64em) {
+    /* line 1593, ../../../sass/layouts/home/edgenet-home.layout.scss */
+    .front .form--contact_know-more {
+      margin: 0px auto;
+      width: 90%; } }
+  @media (min-width: 64.063em) {
+    /* line 1593, ../../../sass/layouts/home/edgenet-home.layout.scss */
+    .front .form--contact_know-more {
+      margin: 0 auto;
+      width: 80%;
+      max-width: 1400px; } }
+  /* line 1608, ../../../sass/layouts/home/edgenet-home.layout.scss */
+  .front .form--contact_know-more header {
+    display: none; }
+  /* line 1612, ../../../sass/layouts/home/edgenet-home.layout.scss */
+  .front .form--contact_know-more .field--name-body {
+    text-align: center; }
+    @media (min-width: 64.063em) {
+      /* line 1612, ../../../sass/layouts/home/edgenet-home.layout.scss */
+      .front .form--contact_know-more .field--name-body {
+        width: 44%;
+        text-align: left;
+        display: inline-block; } }
+    /* line 1621, ../../../sass/layouts/home/edgenet-home.layout.scss */
+    .front .form--contact_know-more .field--name-body h3 {
+      color: #fff;
+      font-size: 30px;
+      font-size: 1.875rem;
+      margin-bottom: 15px;
+      line-height: 1.2; }
+      @media (min-width: 64.063em) {
+        /* line 1621, ../../../sass/layouts/home/edgenet-home.layout.scss */
+        .front .form--contact_know-more .field--name-body h3 {
+          font-size: 50px;
+          font-size: 3.125rem;
+          display: inline-block;
+          vertical-align: top; } }
+    /* line 1634, ../../../sass/layouts/home/edgenet-home.layout.scss */
+    .front .form--contact_know-more .field--name-body .copy {
+      color: #aaa;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      font-size: 15px;
+      font-size: 0.9375rem;
+      margin-bottom: 30px; }
+      @media (min-width: 64.063em) {
+        /* line 1634, ../../../sass/layouts/home/edgenet-home.layout.scss */
+        .front .form--contact_know-more .field--name-body .copy {
+          font-size: 20px;
+          font-size: 1.25rem; } }
+      /* line 1645, ../../../sass/layouts/home/edgenet-home.layout.scss */
+      .front .form--contact_know-more .field--name-body .copy p {
+        margin: 0 0 10px; }
+      /* line 1648, ../../../sass/layouts/home/edgenet-home.layout.scss */
+      .front .form--contact_know-more .field--name-body .copy a {
+        color: #6CC93C; }
+
+/* line 1656, ../../../sass/layouts/home/edgenet-home.layout.scss */
+.l-content-9,
+.l-content-10 {
+  display: none; }
+
+/*# sourceMappingURL=edgenet-home.layout.css.map */

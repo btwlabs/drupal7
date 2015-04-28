@@ -1,0 +1,47 @@
+/*-------------------------------------------------------
+---------------------------------------------------------
+
+ LOGO
+ 
+---------------------------------------------------------
+--------------------------------------------------------*/
+
+.l-branding {
+	background-color: transparent;
+	height: auto;
+	
+	@include breakpoint($small-only) {
+		@include border-bottom($border-color);
+		padding-left: 15px;
+	}
+	@include breakpoint($medium-up) {
+		width: 140px;
+		position: absolute;
+		left: 0;
+		top: 0;
+	}
+	@include breakpoint($large-up) {
+		width: 200px;
+	}
+}
+
+a.site-branding__logo {
+	@include breakpoint($small-only) {
+		color: $text-color;
+		@include font-size(24px);
+		text-transform: uppercase;
+		display: block;
+		padding: 0;
+	}
+	@include breakpoint($medium-up) {
+		display: block;
+		text-align: center;
+		
+		@include breakpoint($medium-only) {
+			width: 140px;
+		}
+		@include breakpoint($large-up) {
+			width: 200px;
+		}
+	}
+}

@@ -1,0 +1,55 @@
+/*----------------------------------------
+
+ SHOW MORE / SHOW LESS - toggle links 
+ 
+-----------------------------------------*/
+
+.show-hide-link-wrapper {
+	text-align: center;
+	margin: $vert-spacing-unit 0;
+}
+
+
+// Show more
+a.show-link {
+	display: inline-block;
+	clear: both;
+	color: $button-text-color; 
+	background-color: $button-bg-color;
+	//@include border-radius(50%);
+	text-align: center;
+	padding: 4px 20px;
+	margin-top: 10px;
+	position: relative;
+	text-transform: lowercase;
+	@include font-size(13px);
+	width: 180px;
+}
+a.show-link:hover {
+	background-color: $button-bg-hover-color;
+	color: $button-text-hover-color;
+	text-decoration: none;
+}
+a.show-link:before,
+a.show-link:after {
+	content: "\25";
+	font-family: $arrowicons;
+	@include font-size(13px);
+	letter-spacing: -10px;
+	margin-right: 15px;
+	position: relative;
+	top: 1px;
+	speak: none;
+}
+a.show-link:after {
+	margin-left: 6px;
+	margin-right: 6px;
+}
+
+// Show less
+a.show-link.show-processed:before,
+a.show-link.show-processed:after {
+	top: 1px;
+	content: "\24";
+	speak: none;
+}

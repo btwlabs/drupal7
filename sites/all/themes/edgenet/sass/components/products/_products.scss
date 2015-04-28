@@ -1,0 +1,695 @@
+// Products styling
+
+
+/*--------------------------------------------
+	
+	Product landing
+	
+---------------------------------------------*/
+
+.page-products {
+	
+	.view-products {
+		ul {
+			margin: 0;
+			padding: 0;
+		}
+		li {
+			margin: 0;
+			padding: $vert-spacing-unit*2 0;
+			list-style-type: none;
+			overflow: hidden;
+			@include border-bottom($border-color);
+		}
+		
+		// product logo
+		.views-field-field-product-header {
+			 float: left;
+			 width: 40%;
+		}
+		.views-field-title {
+			@include title-style;
+			@include font-size(40px);
+			margin-left: 45%;
+		}
+		.views-field-field-product-page-content {
+			margin-left: 45%;
+			@include font-size(18px);
+		}
+	}
+}
+
+
+/*--------------------------------------------
+	
+	Product nodes
+	
+---------------------------------------------*/
+
+
+/*---------------------------------
+ General / Shared classes
+----------------------------------*/
+
+.node-type-product {
+	
+	.l-main {
+		padding: 0;
+		
+		& > .l-constrained {
+			width: 100%;
+			margin: 0;
+		}
+	}
+	// hide extra title
+	h2.block-title {
+		display: none;
+	}
+	
+	// section titles
+	h2.section-title {
+		color: #fff;
+		text-align: center;
+		padding: $vert-spacing-unit;
+		text-transform: uppercase;
+		margin-bottom: 0;
+		
+		@include breakpoint($small-and-medium) {
+			@include font-size(35px);
+			line-height: 1.2;
+		}
+		@include breakpoint($large-up) {
+			@include font-size(50px);
+		}
+	}
+	
+
+	
+	// override module defaults
+	.field-collection-container {
+		margin: 0;
+		border: 0;
+	}
+	
+	// row of 2 feature items
+	.field-collection-view {
+	    padding: 0;
+	    margin: 0;
+	    border-bottom: 0;
+	}
+}
+
+// bring back content width contraint inside sections
+.product-section-2,
+.product-section-3,
+.product-section-4,
+.product-section-5 {
+	
+	 .l-constrained {
+		border: 0;
+		padding: $vert-spacing-unit*2.5 0;
+		
+		@include breakpoint($small-only) {
+			width: 90%;
+			margin: 0 auto;
+		}
+		@include breakpoint($medium-up) {
+			width: 70%;
+			margin: 0 auto;
+		}
+		@include breakpoint($large-up) {
+			width: 80%;
+		}
+		@include breakpoint($xlarge-up) {
+			width: 70%;
+		}
+	}
+}
+
+
+// specific colors for product pages
+
+.node-type-product.section-product-content-cloud h2.section-title {
+	background-color: $product-pcc-color;
+}
+.node-type-product.section-product-sales-configurator h2.section-title {
+	background-color: $product-m2o-color;
+}
+.node-type-product.section-outdoor-projects h2.section-title {
+	background-color: $product-odp-color;
+}
+
+/*---------------------------------
+	
+ SECTION 1 - Hero Images
+ 
+----------------------------------*/
+
+.product-section-1 {
+	
+	.field-collection-view {
+		height: 100%;
+		position: relative;
+		z-index: 0;
+		
+		 &:after {
+		    content: "";
+		    display: block;
+		    width: 100%;
+		    height: 100%;
+		    background-color: rgba(0,0,0,0.7);
+		    position: absolute;
+		    top: 0;
+		    left: 0;
+		    z-index: 1;
+	    }
+	    
+	    // hero image
+	    > div:nth-of-type(1) {
+		    
+		    @include breakpoint($small-only) {
+			    height: 600px;
+			    background-position: center center !important; // has to override inline styles
+			    background-size: auto auto !important;
+			    background-repeat: no-repeat !important;
+		    }
+		    @include breakpoint($medium-up) {
+			    height: 475px;
+			    background-position: center center !important; // has to override inline styles
+			    background-size: 100% auto !important;
+			    background-repeat: no-repeat !important;
+		    }
+		    @include breakpoint($large-up) {
+			    height: 600px;
+		    }
+		    @include breakpoint($xlarge-up) {
+			    height: 750px;
+		    }
+	    }
+	}
+	
+	ul.teaser-grid {
+		overflow: hidden;
+		width: 80%;
+		margin: 0;
+		max-width: 1400px;
+		position: absolute;
+		left: 50%;
+		top: 50%;
+		z-index: 5;
+		-webkit-transform: translate(-50%, -50%);
+		-ms-transform: translate(-50%, -50%);
+		transform: translate(-50%, -50%);
+		padding: 0;
+		
+		li {
+			@include breakpoint($large-up) {
+				width: 50%;
+			}
+		}
+		
+		// LOGO
+		li:nth-of-type(1) {
+			
+			@include breakpoint($small-and-medium) {
+				width: 50%;
+				margin: 0 auto;
+				float: none;
+				margin-bottom: $vert-spacing-unit/2;
+				border-bottom: 1px solid $product-light;
+				padding: 10px;
+			}
+			@include breakpoint($large-up) {
+				padding: 30px 60px 30px 0;
+			}
+			
+			label {
+				display: none; // kill edgenet word
+			}
+		}
+		
+		// Text
+		li:nth-of-type(2) {
+			color: $product-light;
+			
+			@include breakpoint($small-and-medium) {
+				float: none;
+				text-align: center;
+				padding: 10px;
+				@include font-size(15px);
+			}
+			
+			@include breakpoint($large-up){
+				border-left: 1px solid $product-light;
+				text-align: left;
+				padding: 30px 0 30px 60px;
+				@include font-size(20px);
+			}
+			
+			h2 {
+				@include font-size(40px);
+				color: $product-light; // override default
+				line-height: 1;
+				text-transform: uppercase;
+			}
+			
+			a.button {
+				@include button-on-dark;
+				
+				&:hover {
+					color: $button-text-hover-color;
+					border-color: $button-border-hover-color;
+					background-color: $button-bg-hover-color;
+				}
+			}
+		}
+	}
+}
+
+// for PCc - make bg image larger to fit
+.section-product-content-cloud {
+	.product-section-1 {
+			.field-collection-view{
+			// hero image
+		    > div:nth-of-type(1) {
+			    @include breakpoint($medium-up) {
+				    background-size: 135% auto !important;
+			    }
+		    }
+	    }
+	}
+}
+
+/*---------------------------------
+	
+ SECTION 2 - Product Description
+ 
+----------------------------------*/
+
+.product-section-2 {
+	
+	// container
+	.field-collection-item-field-product-page-content .content {
+		@include breakpoint($large-up) {
+			@include add-grid(2);
+			@include add-gutter(1/8);
+			overflow: hidden;
+		}
+	}
+	
+	// product image
+	.field--name-field-product-editorial-image {
+		margin-bottom: $vert-spacing-unit;
+		
+		@include breakpoint($large-up) {
+			@include grid-span(1, 1);
+		}
+	}
+	
+	// content body
+	.field--name-field-product-editorial-body {
+		margin-bottom: $vert-spacing-unit;
+		@include font-size(20px);
+				
+		@include breakpoint($large-up) {
+			@include grid-span(1, 2);
+		}
+	}
+}
+
+
+
+/*---------------------------------
+	
+ SECTION 3 - Product Features grid
+ 
+----------------------------------*/
+
+.product-section-3 {
+	
+	@include breakpoint($small-only) {
+		margin-top: 100px;
+	}
+	
+	// feature item
+	.teaser-grid-item {
+		margin-bottom: $vert-spacing-unit*2;
+		
+		@include breakpoint($large-up){
+			float: left;
+			width: 47%;
+			
+			&:nth-child(1) {
+				margin-right: 6%; 
+			}
+		}
+	}
+	
+	// feature item title
+	.field--name-field-product-feature-title-1,
+	.field--name-field-product-feature-title-2 {
+		@include title-style;
+		margin-bottom: 20px; // override from mixin 'title-style'
+		display: inline-block;
+		vertical-align: top;
+		width: 80%;
+		width: calc(100% - 100px);
+		
+		@include breakpoint($small-and-medium){
+			@include font-size(30px);
+		}
+		@include breakpoint($large-up) {
+			@include font-size(40px);
+		}
+		@include breakpoint($xlarge-up) {
+			@include font-size(45px);
+		}
+	}
+	
+	// Feature body copy
+	.field--name-field-product-feature-body-1,
+	.field--name-field-product-feature-body-2 {
+		@include font-size(20px);
+		display: inline-block;
+		vertical-align: top;
+		
+		// space for vertical align with title
+		@include breakpoint($small-and-medium) {
+		    margin-left: 60px; // icon width + margin-right
+	    }
+	    @include breakpoint($large-up) {
+		    margin-left: 80px;
+	    }
+	    @include breakpoint($xlarge-up) {
+		    margin-left: 100px;
+	    }
+	}
+	
+	// icons
+	.field--name-field-icon-class-1,
+	.field--name-field-icon-class-2 {
+	    display: inline-block;
+	    vertical-align: top;
+	    overflow: hidden;
+	    line-height: 1;
+	    color: $icon-color;
+	    
+	    @include breakpoint($small-and-medium) {
+		    width: 45px;
+		    font-size: 35px;
+		    height: 35px;
+		    margin-right: 15px;
+	    }
+	    @include breakpoint($large-up) {
+		    width: 55px;
+		    font-size: 45px;
+		    height: 45px;
+		    margin-right: 25px;
+	    }
+	    @include breakpoint($xlarge-up) {
+		    width: 65px;
+		    font-size: 55px;
+		    height: 55px;
+		    margin-right: 35px;
+	    }
+	}
+}
+
+
+
+/*---------------------------------
+	
+ SECTION 4 - Partner Grid
+ 
+----------------------------------*/
+
+.product-section-4 {
+	
+	// real title
+	h2.section-title {
+		margin: 0;
+	}
+	
+	.view-products {
+		
+		.view-content {
+			overflow: hidden; // clear floats
+		}
+		
+		ul {
+			margin: 0;
+			padding: 0;
+			
+			.views-row {
+				list-style-type: none;
+				margin: 0;
+				padding: 0 3% 3%;
+				float: left;
+				overflow: hidden;
+				
+				@include breakpoint($small-up) {
+					width: 50%;
+				}
+				
+				@include breakpoint($medium-up) {
+					width: 33.333%;
+					@include transition($property,0.4,$function);
+				}
+				
+				@include breakpoint($xlarge-up) {
+					width: 25%;
+				}
+				@include breakpoint($xxlarge-up) {
+					width: 20%;
+				}
+				
+				& a {
+					display: block;
+					padding: 10% 20%;
+					overflow: hidden;
+				}
+				& a:hover img {
+					-ms-transform: scale(1.2);
+					-webkit-transform: scale(1.2);
+					transform: scale(1.2);	
+				}
+			}
+			
+			.views-field-title {
+				display: none;
+			}
+		}
+	}
+}
+
+// Show the title for the sort
+.product-section-4 h2.block-title:nth-of-type(2) {
+	display: block;
+	margin: $vert-spacing-unit 0 $vert-spacing-unit/2;
+	text-align: center;
+}
+
+.view-display-id-associated_partners_sort {
+	margin: 0 0 $vert-spacing-unit 0;
+	
+	// establish constrained width for this block only
+	.view-content {
+		@include breakpoint($small-only) {
+			margin: 0;
+		}
+		@include breakpoint($medium-up) {
+			width: 90%;
+			margin: 0 auto;
+		}
+		@include breakpoint($large-up) {
+			width: 80%;
+		}
+	}
+	// resize image
+	.views-field-field-image {
+		img {
+			width: 200px;
+		}
+	}
+}
+
+
+/*---------------------------------
+	
+ SECTION 5 - Related Articles
+ 
+----------------------------------*/
+
+.product-section-5 {
+	background-color: #eee;
+}
+
+/*---------------------------------
+	
+ FOOTER PRE - Contact forms
+ 
+----------------------------------*/
+
+
+.not-front .l-pre-footer-wrapper {
+	background-color: #555;
+	
+	.pre-footer-inner {
+		padding: 60px 0 75px;
+	}
+}
+
+/*---------------------------------------
+	
+	webform
+	
+----------------------------------------*/
+
+// container
+
+.form--contact_know-more {
+	overflow: hidden;
+	
+	header {
+		display: none;
+	}
+	// text and phone number
+	.field--name-body {
+		text-align: center;
+		
+		@include breakpoint($large-up){
+			width: 44%;
+			text-align: left;
+			display: inline-block;
+		}
+		
+		h3 {
+			color:#fff;
+			@include font-size(30px);
+			margin-bottom: 15px;
+			line-height: 1.2;
+			
+			@include breakpoint($large-up) {
+				@include font-size(50px);
+				display: inline-block;
+				vertical-align: top;
+			}
+		}
+		
+		.copy {
+			color: #aaa;
+			text-transform: uppercase;
+			letter-spacing: 3px;
+			@include font-size(15px);
+			margin-bottom: $vert-spacing-unit;
+			
+			@include breakpoint($large-up){
+				@include font-size(20px);
+			}
+			
+			p {
+				margin: 0 0 10px;
+			}
+			a {
+				color: #6CC93C;
+			}
+		}
+	}
+	// form container
+	.webform-client-form {
+		@include breakpoint($large-up) {
+			width: 55%;
+			display: inline-block;
+			vertical-align: top;
+		}
+	}
+	
+	// form
+	.webform-component {
+		margin: 0 auto 15px;
+		
+		label {
+			display: block;
+			margin: 0 0 10px 0;
+			@include font-size(15px);
+			text-align: left;
+			padding-right: 3%;
+			color: #AAA;
+			font-weight: 100;
+			vertical-align: bottom;
+			line-height: 1;
+			
+			@include breakpoint($medium-up) {
+				font-size: 20px;
+				width: 20%;
+				display: inline-block;
+				text-align: right;
+			}
+		}
+		
+		input {
+			@include border-radius(0);
+		}
+		
+		input.form-text {
+			padding: 10px;
+			font-size: 18px;
+			background: #fff;
+			width: 100%;
+			border: 0; // reset border
+			@include border-bottom(#555); // add only bottom border
+			
+			@include breakpoint($medium-up) {
+				display: inline-block;
+				width: 79%;
+			}
+		}
+	
+		.form-textarea-wrapper {
+			@include breakpoint($medium-up) {
+				width: 79%;
+				display: inline-block;
+			}
+		}
+		
+		.form-textarea {
+			background: #fff;
+			@include border-all(#555);
+			padding: 10px;
+			color: #aaa;
+		}
+		
+		.resizable-textarea .grippie {
+			background-color: #222;
+			@include border-all(#555);
+			border-top: 0;
+		}
+	}
+	// Submit Button - override defaults in /base/_forms.scss
+	.webform-client-form input.form-submit {
+	    @include border-all(#fff);
+	    color: #fff;
+	    
+	    @include breakpoint($medium-up) {
+		    width: 79%;
+		    float: right;
+	    }
+	    
+	    &:hover {
+		    background-color: #000;
+		    border-color: #000;
+	    }
+	}
+}
+
+
+// textarea - message
+.webform-component-textarea {
+	margin-top: 40px;
+	
+	label {
+		vertical-align: top;
+	}
+}
+
+

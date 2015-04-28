@@ -1,0 +1,60 @@
+/*******************************************************************************
+ * no-sidebar.layout.scss
+ *
+ * Styles for the Album Node layout.
+ ******************************************************************************/
+/**
+ * $ARROW
+ */
+/* line 7, ../../../sass/abstractions/_grid.scss */
+.clearfix:before, .clearfix:after {
+  content: "";
+  display: table; }
+/* line 12, ../../../sass/abstractions/_grid.scss */
+.clearfix:after {
+  clear: both;
+  font-size: 0;
+  /* Clear Fix correction (add font-size to fix extra padding at bottom of site */ }
+
+/* line 42, ../../../sass/abstractions/_typography.scss */
+.title-with-submenu {
+  margin-bottom: 0;
+  border-bottom: 0; }
+
+/*-----------------------------------------------
+
+ GRIDS
+ 
+-----------------------------------------------*/
+@media (min-width: 0em) and (max-width: 40em) {
+  /* line 29, ../../../sass/layouts/no-sidebar/no-sidebar.layout.scss */
+  .l-content {
+    width: 100%;
+    float: right;
+    margin-left: 0;
+    margin-right: 0;
+    clear: none;
+    float: none; } }
+@media (min-width: 40.063em) {
+  /* line 39, ../../../sass/layouts/no-sidebar/no-sidebar.layout.scss */
+  .l-content {
+    width: 100%;
+    float: right;
+    margin-left: 0;
+    margin-right: 0;
+    clear: none; } }
+@media (min-width: 64.063em) {
+  /* line 48, ../../../sass/layouts/no-sidebar/no-sidebar.layout.scss */
+  .l-content {
+    width: 100%;
+    float: right;
+    margin-left: 0;
+    margin-right: 0;
+    clear: none; } }
+@media (min-width: 40.063em) {
+  /* line 55, ../../../sass/layouts/no-sidebar/no-sidebar.layout.scss */
+  .l-main .l-region-inner {
+    padding: 0;
+    background-color: #fff; } }
+
+/*# sourceMappingURL=no-sidebar.layout.css.map */

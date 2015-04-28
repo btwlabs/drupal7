@@ -1,0 +1,41 @@
+@mixin button {
+	background: $button-bg-color; 
+	text-align: center;
+	color: $button-text-color;
+	display: inline-block;
+	text-decoration: none;
+	text-shadow: none;
+	border: 2px solid $button-border-color;
+	@include transition(all, 0.2s, ease-in);
+	@include button-padding($button-padding);
+	text-transform: uppercase;
+	letter-spacing: 0.2rem;
+	line-height: 1;
+}
+
+@mixin button-on-dark {
+	background: $button-bg-color; 
+	text-align: center;
+	color: $product-light;
+	display: inline-block;
+	text-decoration: none;
+	text-shadow: none;
+	border: 2px solid $product-light;
+	@include transition(all, 0.2s, ease-in);
+	@include button-padding($button-padding);
+	text-transform: uppercase;
+	letter-spacing: 0.2rem;
+	line-height: 1;
+}
+
+
+@mixin button-hover {
+	background: $button-bg-hover-color; 
+	text-decoration: none;
+	text-shadow: none;
+	color: $button-text-hover-color;
+}
+
+@mixin button-padding($button-padding) {
+	padding: $button-padding;
+}

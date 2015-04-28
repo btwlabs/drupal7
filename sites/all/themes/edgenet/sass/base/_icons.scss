@@ -1,0 +1,82 @@
+/*-----------------------------------
+
+ Fantorrent Default Icon Fonts
+ 
+-----------------------------------*/
+
+/* Social Network Icons */
+@font-face {
+    font-family: 'IcoMoonSocial';
+    src: url('../fonts/IcoMoonSocial/fonts/icomoon_social.eot');
+    src: url('../fonts/IcoMoonSocial/fonts/icomoon_social.eot?#iefix') format('eot'),
+         url('../fonts/IcoMoonSocial/fonts/icomoon_social.woff') format('woff'),
+         url('../fonts/IcoMoonSocial/fonts/icomoon_social.ttf') format('truetype'),
+         url('../fonts/IcoMoonSocial/fonts/icomoon_social.svg#IcoMoonSocial') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* Interface icons */
+@font-face {
+	font-family: 'IcoMoonBasic';
+	src: url('../fonts/IcoMoonBasic/fonts/icomoon_basic.eot');
+	src: url('../fonts/IcoMoonBasic/fonts/icomoon_basic.eot?#iefix') format('embedded-opentype'),
+		url('../fonts/IcoMoonBasic/fonts/icomoon_basic.svg#IcoMoon') format('svg'),
+		url('../fonts/IcoMoonBasic/fonts/icomoon_basic.woff') format('woff'),
+		url('../fonts/IcoMoonBasic/fonts/icomoon_basic.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+
+/* Arrows icons */
+@font-face {
+	font-family: 'IcoMoonArrows';
+	src:url('../fonts/IcoMoonArrows/fonts/icomoon_arrows.eot');
+	src:url('../fonts/IcoMoonArrows/fonts/icomoon_arrows.eot?#iefix') format('embedded-opentype'),
+		url('../fonts/IcoMoonArrows/fonts/icomoon_arrows.svg#icomoon') format('svg'),
+		url('../fonts/IcoMoonArrows/fonts/icomoon_arrows.woff') format('woff'),
+		url('../fonts/IcoMoonArrows/fonts/icomoon_arrows.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+
+
+
+/*---------------------------------------
+
+ Font Icons - reset 
+ 
+---------------------------------------*/
+
+* a:before,
+* a:after {
+	text-transform: none;
+	font-style: normal;
+	text-decoration: none;
+	text-shadow: none;
+	line-height: 1;
+}
+a:hover:before,
+a:hover:after {
+	text-decoration: none;
+}
+
+a:before,
+h1:before,
+h2:before,
+h3:before,
+h4:before,
+h5:before,
+h6:before,
+a:after,
+h1:after,
+h2:after,
+h3:after,
+h4:after,
+h5:after,
+h6:after {
+	font-weight: normal;
+	-webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    line-height: 1;
+}
