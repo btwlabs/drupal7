@@ -1,6 +1,6 @@
 name = Banner Support
 core = 7.x
-package = BTW Features
+package = BTW
 dependencies[] = features
 dependencies[] = image
 dependencies[] = jcarousel

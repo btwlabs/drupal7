@@ -9,6 +9,7 @@ dependencies[] = cookie_monster
 dependencies[] = ctools
 dependencies[] = entity
 dependencies[] = cool_tokens
+dependencies[] = common_support
 dependencies[] = googleanalytics
 dependencies[] = google_analytics_et
 dependencies[] = job_scheduler

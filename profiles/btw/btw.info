@@ -21,6 +21,7 @@ dependencies[] = rdf
 dependencies[] = block_class
 dependencies[] = context_omega
 dependencies[] = devel
+dependencies[] = ds_ui
 dependencies[] = email_confirm
 dependencies[] = entityreference
 dependencies[] = feeds_ui

@@ -4,7 +4,9 @@
  * Code for the common support.
  */
 
-
+/**
+ * Implements hook_entity_info_alter().
+ */
 function common_support_entity_info_alter(&$entity_info) {
   $entity_info['node']['view modes']['teaser2'] = array(
     'label' => t('Another teaser mode'),
@@ -24,6 +26,9 @@ function common_support_entity_info_alter(&$entity_info) {
   );
 }
 
+/**
+ * Implements hook_node_view().
+ */
 function common_support_node_view($node, $view_mode, $langcode) {
   // Can have share links on any node type.
   $node->content['share_links'] = array(
@@ -34,6 +39,9 @@ function common_support_node_view($node, $view_mode, $langcode) {
   );
 }
 
+/**
+ * Implements hook_extra_fields().
+ */
 function common_support_field_extra_fields() {
   // Get all node types with see tickets reference field.
   $node_types = node_type_get_types();
@@ -48,6 +56,9 @@ function common_support_field_extra_fields() {
   return $extra;
 }
 
+/**
+ * Implements hook_theme().
+ */
 function common_support_theme() {
   $themes = array();
   $themes['share_links'] = array(
@@ -95,14 +106,16 @@ function common_support_order_fb_scrape($url) {
 
 
 /**
- * Implements hook_preprocess_node.
- * @param array $vars
+ * Implements hook_preprocess_node().
  */
 function common_support_preprocess_node(&$vars) {
   // Add theme hook suggestions for nodes based on view mode.
   $vars['theme_hook_suggestions'][] = 'node__' . $vars['type'] . '__' . $vars['view_mode'];
 }
 
+/**
+ * Implements hook_preprocess_html().
+ */
 function common_support_preprocess_html(&$vars) {
   $add_this_id = variable_get('social_share_addthis_publisher_id', 'ra-5519fea46a8a52a2');
   if (isset($add_this_id)) {
@@ -139,4 +152,101 @@ function common_support_view_check(&$element) {
     }
   }
   $element = NULL;
+}
+
+/**
+ * Save a nodequeue queue.
+ * @see _fe_nodequeue_save_queue() in fe_nodequeue module.
+ *
+ * @param array $settings
+ *   A nodequeue settings array.
+ *
+ * @return array
+ *   The updated settings array.
+ */
+function common_support_nodequeue_save_queue(array $settings) {
+  // Convert roles from names to rids.
+  $roles = array_flip(user_roles());
+  foreach ((array) $settings['roles'] as $index => $role) {
+    // In case we are dealing with an old export with rids, don't do anything.
+    if (is_int($role)) {
+      continue;
+    }
+    $settings['roles'][$index] = $roles[$role];
+  }
+
+  // Simulate checkboxes.
+  $settings['roles'] = drupal_map_assoc($settings['roles']);
+  $settings['types'] = drupal_map_assoc($settings['types']);
+
+  // Simulate submitting.
+  $form_state = array();
+  $form_state['values'] = $settings;
+  module_load_include('inc', 'nodequeue', 'includes/nodequeue.admin');
+  nodequeue_edit_queue_form_submit(NULL, $form_state);
+
+  // Reset static caches.
+  // Note: we are currently using a variant of nodequeue_get_qid_map() that uses
+  // drupal_static() instead of a static variable to cache the results.
+  // @see http://drupal.org/node/1666556
+  drupal_static_reset('_fe_nodequeue_get_qid_map');
+
+  return $settings;
+}
+
+/**
+ * Return a map of queue name to qid values to aid in various lookups.
+ *
+ * This is based on nodequeue_get_qid_map() but uses drupal_static() instead of
+ * a static variable to cache the results.
+ *
+ * @see nodequeue_get_qid_map()
+ *
+ * @todo Add a link to the issue that converts this to drupal_static().
+ * @todo Create a followup issue to remove this once the above issue is fixed.
+ *   We will need to keep this in for a while to provide backwards compatibility
+ *   for people running old versions of Nodequeue.
+ *
+ * @see _fe_nodequeue_get_qid_map() in fe_nodequeue module.
+ *
+ * @return array
+ *   A array of qids, keyed by machine name.
+ */
+function common_support_nodequeue_get_qid_map() {
+  $map = &drupal_static(__FUNCTION__, array());
+  if (!$map) {
+    $result = db_query("SELECT qid, name FROM {nodequeue_queue}");
+    while ($get = $result->fetchObject()) {
+      $map[$get->name] = $get->qid;
+    }
+  }
+  return $map;
+}
+
+/**
+ * Implements hook_ctools_plugin_api().
+ */
+function common_support_ctools_plugin_api($module = NULL, $api = NULL) {
+  if ($module == "context" && $api == "context") {
+    return array("version" => "3");
+  }
+  if ($module == "field_group" && $api == "field_group") {
+    return array("version" => "1");
+  }
+  if ($module == "strongarm" && $api == "strongarm") {
+    return array("version" => "1");
+  }
+  if ($module == 'ds' && ($api == 'ds' || $api == 'plugins')) {
+    return array('version' => 1);
+  }
+  if ($module == 'field_group' && $api == 'field_group') {
+    return array('version' => 1);
+  }
+}
+
+/**
+ * Implements hook_views_api().
+ */
+function common_support_views_api($module = NULL, $api = NULL) {
+  return array("api" => "3.0");
 }

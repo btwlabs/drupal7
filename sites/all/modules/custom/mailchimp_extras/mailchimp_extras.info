@@ -1,7 +1,7 @@
 name = Mailchimp Extras
 description = Integrates with mailchimp to maintain a mailing list based on the site's users
 core = 7.x
-package = btw
+package = BTW
 dependencies[] = ctools
 dependencies[] = entity
 dependencies[] = mailchimp

@@ -4,8 +4,6 @@
  * Code for the Articles Support feature.
  */
 
-include_once('articles_support.features.inc');
-
 /**
  * Returns an image to use in the article teaser.
  *
@@ -170,4 +168,18 @@ function articles_support_field_extra_fields() {
     'weight' => 0,
   );
   return $extra;
+}
+
+/**
+ * Implements hook_ctools_plugin_api().
+ */
+function articles_support_ctools_plugin_api($module = NULL, $api = NULL) {
+  return common_support_ctools_plugin_api($module, $api);
+}
+
+/**
+ * Implements hook_views_api().
+ */
+function articles_support_views_api($module = NULL, $api = NULL) {
+  return common_support_views_api($module, $api);
 }

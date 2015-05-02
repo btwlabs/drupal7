@@ -1,7 +1,8 @@
 name = Article Feed Import
 description = news article node importer from csv
 core = 7.x
-package = BTW Features
+package = BTW
+dependencies[] = articles_support
 dependencies[] = ctools
 dependencies[] = feeds
 dependencies[] = feeds_tamper

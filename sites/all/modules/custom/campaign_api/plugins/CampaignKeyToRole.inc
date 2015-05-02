@@ -105,7 +105,7 @@ class CampaignKeyToRole extends CampaignCoolKeys {
         "LABEL" : "Add new role if user exists",
         "PLUGIN" : "rule",
         "TAGS" : [ "Campaigns" ],
-        "REQUIRES" : [ "rules", "btw" ],
+        "REQUIRES" : [ "rules", "commont_support" ],
         "USES VARIABLES" : { "email_address" : { "label" : "email address", "type" : "text" } },
         "IF" : [
           { "entity_exists" : {
@@ -140,7 +140,7 @@ class CampaignKeyToRole extends CampaignCoolKeys {
         "LABEL" : "Register new user if null",
         "PLUGIN" : "rule",
         "TAGS" : [ " - Campaigns" ],
-        "REQUIRES" : [ "rules", "btw" ],
+        "REQUIRES" : [ "rules", "common_support" ],
         "USES VARIABLES" : { "email_address" : { "label" : "email address", "type" : "text" } },
         "IF" : [
           { "AND" : [

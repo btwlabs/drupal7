@@ -5,9 +5,9 @@
  */
 
 /**
- * Implements hook_strongarm().
+ * Implements hook_default_variables().
  */
-function articles_support_strongarm() {
+function articles_support_default_variables() {
   $export = array();
 
   $strongarm = new stdClass();
