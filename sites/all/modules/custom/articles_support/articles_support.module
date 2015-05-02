@@ -60,7 +60,7 @@ function articles_support_node_view($node, $view_mode, $langcode) {
         if ($gallery->result) {
           $items = count($gallery->result[0]->field_field_article_images) + count($gallery->result[0]->field_field_article_video);
           if ($items > 1) {
-            $node->content['gallery'] = array(
+            $node->content['news_article_gallery'] = array(
               '#theme' => 'block_wrapper',
               '#data' => theme('show_hide', array('element' => $data, 'height' => 175)),
               '#title' => $gallery->get_title(),
