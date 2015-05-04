@@ -71,12 +71,12 @@ function articles_support_preprocess_node(&$vars) {
       default:
         // Video/image switcharoo.
         $field_content = articles_support_get_article_teaser_image($vars['node']);
-        $vars['teaser_image'] = $field_content;
+        $vars['teaser_image'] = drupal_render($field_content);
         // Link to title as a clickable select link.
-        /*$node['title_link'] = array(
+        $field_content = array(
           '#theme' => 'link',
-          '#path' => 'node/' . $vars['#node']->nid,
-          '#text' => filter_xss($vars['#node']->title),
+          '#path' => 'node/' . $vars['node']->nid,
+          '#text' => filter_xss($vars['node']->title),
           '#options' => array(
             'html' => FALSE,
             'attributes' => array(
@@ -85,13 +85,15 @@ function articles_support_preprocess_node(&$vars) {
               ),
             ),
           ),
-        );*/
+        );
+        $vars['clickable_title_link'] = drupal_render($field_content);
+
         // Re Write the submitted date.
         $stamp = $vars['node']->created;
         $field_content = array(
           '#markup' => date('F n, Y', $stamp),
         );
-        $vars['submitted'] = $field_content;
+        $vars['submitted'] = drupal_render($field_content);
     }
   }
 }

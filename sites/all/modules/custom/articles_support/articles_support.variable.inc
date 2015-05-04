@@ -69,7 +69,7 @@ function articles_support_default_variables() {
         'custom_settings' => TRUE,
       ),
       'full' => array(
-        'custom_settings' => TRUE,
+        'custom_settings' => FALSE,
       ),
       'rss' => array(
         'custom_settings' => FALSE,
@@ -178,11 +178,11 @@ function articles_support_default_variables() {
             'visible' => TRUE,
           ),
           'teaser2' => array(
-            'weight' => '5',
+            'weight' => '13',
             'visible' => FALSE,
           ),
           'teaser' => array(
-            'weight' => '5',
+            'weight' => '12',
             'visible' => FALSE,
           ),
           'full' => array(
