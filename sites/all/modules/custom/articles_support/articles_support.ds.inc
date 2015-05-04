@@ -12,8 +12,8 @@ function articles_support_ds_custom_fields_info() {
 
   $ds_field = new stdClass();
   $ds_field->api_version = 1;
-  $ds_field->field = 'article_entity_page';
-  $ds_field->label = 'Article Entity Page';
+  $ds_field->field = 'article_entity_pager';
+  $ds_field->label = 'Article Entity Pager';
   $ds_field->field_type = 7;
   $ds_field->entities = array(
     'node' => 'node',
