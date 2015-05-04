@@ -178,7 +178,7 @@ function articles_support_default_variables() {
             'visible' => TRUE,
           ),
           'teaser2' => array(
-            'weight' => '13',
+            'weight' => '18',
             'visible' => FALSE,
           ),
           'teaser' => array(
