@@ -69,7 +69,7 @@ function articles_support_default_variables() {
         'custom_settings' => TRUE,
       ),
       'full' => array(
-        'custom_settings' => FALSE,
+        'custom_settings' => TRUE,
       ),
       'rss' => array(
         'custom_settings' => FALSE,
@@ -88,6 +88,18 @@ function articles_support_default_variables() {
       ),
       'teaser2' => array(
         'custom_settings' => TRUE,
+      ),
+      'teaser3' => array(
+        'custom_settings' => FALSE,
+      ),
+      'teaser4' => array(
+        'custom_settings' => FALSE,
+      ),
+      'teaser5' => array(
+        'custom_settings' => FALSE,
+      ),
+      'revision' => array(
+        'custom_settings' => FALSE,
       ),
     ),
     'extra_fields' => array(
@@ -119,6 +131,10 @@ function articles_support_default_variables() {
             'weight' => '6',
             'visible' => FALSE,
           ),
+          'full' => array(
+            'weight' => '6',
+            'visible' => TRUE,
+          ),
         ),
         'article_pager' => array(
           'default' => array(
@@ -132,6 +148,10 @@ function articles_support_default_variables() {
           'teaser' => array(
             'weight' => '3',
             'visible' => FALSE,
+          ),
+          'full' => array(
+            'weight' => '7',
+            'visible' => TRUE,
           ),
         ),
         'recent_articles' => array(
@@ -147,6 +167,10 @@ function articles_support_default_variables() {
             'weight' => '4',
             'visible' => FALSE,
           ),
+          'full' => array(
+            'weight' => '8',
+            'visible' => TRUE,
+          ),
         ),
         'share_links' => array(
           'default' => array(
@@ -160,6 +184,10 @@ function articles_support_default_variables() {
           'teaser' => array(
             'weight' => '5',
             'visible' => FALSE,
+          ),
+          'full' => array(
+            'weight' => '1',
+            'visible' => TRUE,
           ),
         ),
         'teaser_image' => array(
@@ -175,6 +203,10 @@ function articles_support_default_variables() {
             'weight' => '9',
             'visible' => FALSE,
           ),
+          'full' => array(
+            'weight' => '9',
+            'visible' => FALSE,
+          ),
         ),
         'title_link' => array(
           'teaser2' => array(
@@ -186,6 +218,10 @@ function articles_support_default_variables() {
             'visible' => TRUE,
           ),
           'default' => array(
+            'weight' => '10',
+            'visible' => FALSE,
+          ),
+          'full' => array(
             'weight' => '10',
             'visible' => FALSE,
           ),

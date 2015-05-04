@@ -45,28 +45,53 @@ function articles_support_get_article_teaser_image($node, $view_mode = 'full') {
   return $image;
 }
 
-function articles_support_proprocess_node(&$vars) {
+function articles_support_preprocess_node(&$vars) {
   // Proceed if this is a news article.
-  if ($vars['#node']->type == 'news_article') {
+  if ($vars['node']->type == 'news_article') {
     // Proceed by view mode.
     switch($vars['view_mode']) {
       case "full":
         // Gallery.
         $gallery = views_get_view('articles');
         $gallery->set_display('gallery');
-        $data = $gallery->preview('gallery', array($vars['#node']->nid));
+        $data = $gallery->preview('gallery', array($vars['node']->nid));
         //count images + videos
         if ($gallery->result) {
           $items = count($gallery->result[0]->field_field_article_images) + count($gallery->result[0]->field_field_article_video);
           if ($items > 1) {
-            $vars['#node']->content['news_article_gallery'] = array(
+            $field_content = array(
               '#theme' => 'block_wrapper',
               '#data' => theme('show_hide', array('element' => $data, 'height' => 175)),
               '#title' => $gallery->get_title(),
             );
+            $vars['news_article_gallery'] = drupal_render($field_content);
           }
         }
         break;
+      default:
+        // Video/image switcharoo.
+        $field_content = articles_support_get_article_teaser_image($vars['node']);
+        $vars['teaser_image'] = $field_content;
+        // Link to title as a clickable select link.
+        /*$node['title_link'] = array(
+          '#theme' => 'link',
+          '#path' => 'node/' . $vars['#node']->nid,
+          '#text' => filter_xss($vars['#node']->title),
+          '#options' => array(
+            'html' => FALSE,
+            'attributes' => array(
+              'class' => array(
+                'clickable-select',
+              ),
+            ),
+          ),
+        );*/
+        // Re Write the submitted date.
+        $stamp = $vars['node']->created;
+        $field_content = array(
+          '#markup' => date('F n, Y', $stamp),
+        );
+        $vars['submitted'] = $field_content;
     }
   }
 }

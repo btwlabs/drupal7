@@ -57,6 +57,10 @@ function articles_support_views_default_views() {
   $handler->display->display_options['filters']['type']['value'] = array(
     'news_article' => 'news_article',
   );
+
+  /* Display: Article Entity Pager Block */
+  $handler = $view->new_display('block', 'Article Entity Pager Block', 'block_1');
+  $handler->display->display_options['block_description'] = 'Article Entity Pager';
   $export['article_entity_pager'] = $view;
 
   $view = new view();
