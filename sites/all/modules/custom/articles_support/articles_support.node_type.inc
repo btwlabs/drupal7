@@ -6,7 +6,7 @@
 /**
  * Implements hook_node_info().
  */
-function articles_support_node_info() {
+function articles_support_node_default_node_types() {
   $items = array(
     'news_article' => array(
       'name' => t('News Article'),
@@ -17,6 +17,5 @@ function articles_support_node_info() {
       'help' => '',
     ),
   );
-  drupal_alter('node_info', $items);
   return $items;
 }

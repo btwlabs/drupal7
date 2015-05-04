@@ -140,11 +140,11 @@ function articles_support_node_view($node, $view_mode, $langcode) {
 
 function articles_support_field_extra_fields() {
   $extra = array();
-  $extra['node']['news_article']['display']['gallery'] = array(
+  /*$extra['node']['news_article']['display']['gallery'] = array(
     'label' => t('News Article Gallery'),
     'description' => t('Gallery of images and/or videos in the news article. (Full/Default View Mode Only)'),
     'weight' => 0,
-  );
+  );*/
   if (module_exists('entity_pager')) {
     $extra['node']['news_article']['display']['article_pager'] = array(
       'label' => t('News Article Entity Pager'),

@@ -42,6 +42,9 @@ function common_support_import_node_types($module = 'common_support', $export = 
     $new_type = node_type_set_defaults($new_type);
     $new_type->module = $module;
     $new_type->type = $type_name;
+    // Needed for https://www.drupal.org/node/2465159.
+    $new_type->custom = 1;
+    $new_type->locked = 0;
     if (node_type_save($new_type)) {
       continue;
     }

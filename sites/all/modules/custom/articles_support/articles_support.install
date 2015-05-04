@@ -16,7 +16,7 @@ function articles_support_install() {
 
   // Nodes.
   include_once('articles_support.node_type.inc');
-  $items = articles_support_node_info();
+  $items = articles_support_node_default_node_types();
   if (!common_support_import_node_types('articles_support', $items)) {
     watchdog('articles_support_import_node_types', t('Could not import node types'));
     $errors = TRUE;
