@@ -45,7 +45,55 @@ function articles_support_get_article_teaser_image($node, $view_mode = 'full') {
   return $image;
 }
 
+function articles_support_proprocess_node(&$vars) {
+  // Proceed if this is a news article.
+  if ($vars['#node']->type == 'news_article') {
+    // Proceed by view mode.
+    switch($vars['view_mode']) {
+      case "full":
+        // Gallery.
+        $gallery = views_get_view('articles');
+        $gallery->set_display('gallery');
+        $data = $gallery->preview('gallery', array($vars['#node']->nid));
+        //count images + videos
+        if ($gallery->result) {
+          $items = count($gallery->result[0]->field_field_article_images) + count($gallery->result[0]->field_field_article_video);
+          if ($items > 1) {
+            $vars['#node']->content['news_article_gallery'] = array(
+              '#theme' => 'block_wrapper',
+              '#data' => theme('show_hide', array('element' => $data, 'height' => 175)),
+              '#title' => $gallery->get_title(),
+            );
+          }
+        }
+        break;
+    }
+  }
+}
 
+/**
+ * Implements hook_ds_layout_info().
+ */
+function articles_support_ds_layout_info() {
+  $path = drupal_get_path('module', 'articles_support');
+
+  $layouts = array(
+    'articles_support_1' => array(
+      'label' => t('Article Layout Gen 1'),
+      'path' => $path . '/layouts/articles_support_1',
+      'regions' => array(
+        'article_content' => t('Content'),
+      ),
+      'css' => TRUE,
+      // optional, form only applies to node form at this point.
+      'form' => TRUE,
+    ),
+  );
+
+  return $layouts;
+}
+
+/*
 function articles_support_node_view($node, $view_mode, $langcode) {
   // Proceed if this is a news article.
   if ($node->type == 'news_article') {
@@ -140,11 +188,11 @@ function articles_support_node_view($node, $view_mode, $langcode) {
 
 function articles_support_field_extra_fields() {
   $extra = array();
-  /*$extra['node']['news_article']['display']['gallery'] = array(
+  $extra['node']['news_article']['display']['gallery'] = array(
     'label' => t('News Article Gallery'),
     'description' => t('Gallery of images and/or videos in the news article. (Full/Default View Mode Only)'),
     'weight' => 0,
-  );*/
+  );
   if (module_exists('entity_pager')) {
     $extra['node']['news_article']['display']['article_pager'] = array(
       'label' => t('News Article Entity Pager'),
@@ -168,7 +216,7 @@ function articles_support_field_extra_fields() {
     'weight' => 0,
   );
   return $extra;
-}
+}*/
 
 /**
  * Implements hook_ctools_plugin_api().
