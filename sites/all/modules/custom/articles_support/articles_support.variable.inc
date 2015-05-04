@@ -1,7 +1,7 @@
 <?php
 /**
  * @file
- * articles_support.strongarm.inc
+ * articles_support.variable.inc
  */
 
 /**
