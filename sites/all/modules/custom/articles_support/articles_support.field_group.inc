@@ -18,13 +18,12 @@ function articles_support_field_group_info() {
   $field_group->entity_type = 'node';
   $field_group->bundle = 'news_article';
   $field_group->mode = 'teaser2';
-  $field_group->parent_name = 'group_clickable_container';
+  $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'title wrapper',
     'weight' => '2',
     'children' => array(
-      0 => 'article_pager',
-      1 => 'title_link',
+      0 => 'clickable_title_link',
     ),
     'format_type' => 'html-element',
     'format_settings' => array(
