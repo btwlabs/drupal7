@@ -8,6 +8,7 @@ dependencies[] = ctools
 dependencies[] = ds
 dependencies[] = ds_extras
 dependencies[] = entityreference
+dependencies[] = entity_pager
 dependencies[] = field_collection
 dependencies[] = field_group
 dependencies[] = image

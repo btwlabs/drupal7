@@ -32,7 +32,7 @@ function articles_support_get_article_teaser_image($node, $view_mode = 'full') {
   }
   elseif (!empty($node->field_article_images)) { //else if there's a image, use that
     $settings = array(
-      'label' => 'above',
+      'label' => 'hidden',
       'module' => 'image',
       'settings' => array(
         'image_style' => 'articles_teaser_square_switcher',
@@ -45,9 +45,57 @@ function articles_support_get_article_teaser_image($node, $view_mode = 'full') {
   return $image;
 }
 
+/**
+ * Returns an image to use in the article teaser.
+ *
+ * @param $node
+ *   The article node to get and image for.
+ * @return $image
+ *   An image file render array or null if none can be found.
+ *
+ */
+function articles_support_get_article_hero_image($node, $view_mode = 'full') {
+  //if there is an article video, use that.
+  $image = array();
+  if (!empty($node->field_article_video)) {
+    $settings = array(
+      'label' => 'hidden',
+      'module' => 'video_embed_field',
+      'settings' => array(
+        'description' => 1,
+        'description_position' => 'bottom',
+      ),
+      'type' => 'video_embed_field_embed_code',
+      'style' => 'wide',
+      'weight' => 9,
+    );
+    $image = field_view_value('node', $node, 'field_article_video', $node->field_article_video[LANGUAGE_NONE][0], $settings);
+  }
+  elseif (!empty($node->field_article_images)) { //else if there's a image, use that
+    $settings = array(
+      'label' => 'hidden',
+      'module' => 'image',
+      'type' => 'image',
+      'weight' => 10,
+    );
+    $image = field_view_value('node', $node, 'field_article_images', $node->field_article_images[LANGUAGE_NONE][0], $settings);
+  }
+  return $image;
+}
+
 function articles_support_preprocess_node(&$vars) {
   // Proceed if this is a news article.
   if ($vars['node']->type == 'news_article') {
+    // All view modes.
+    // Re Write the submitted date.
+    $stamp = $vars['node']->created;
+    $field_content = array(
+      '#prefix' => '<span class="submitted">',
+      '#markup' => date('F n, Y', $stamp),
+      '#suffix' => '</span>',
+    );
+    $vars['submitted'] = drupal_render($field_content);
+
     // Proceed by view mode.
     switch($vars['view_mode']) {
       case "full":
@@ -67,7 +115,19 @@ function articles_support_preprocess_node(&$vars) {
             $vars['news_article_gallery'] = drupal_render($field_content);
           }
         }
+        // Video/image switcharoo full size.
+        $field_content = articles_support_get_article_hero_image($vars['node']);
+        if ($field_content[0]['#theme'] == 'video_embed_field_embed_code') {
+          $field_content['#prefix'] = '<div class="node-content-container embedded-video-container">';
+          $field_content['#suffix'] = '</div>';
+        }
+        else {
+          $field_content['#prefix'] = '<div class="node-content-container reactive image">';
+          $field_content['#suffix'] = '</div>';
+        }
+        $vars['article_hero_image'] = drupal_render($field_content);
         break;
+
       default:
         // Video/image switcharoo.
         $field_content = articles_support_get_article_teaser_image($vars['node']);
@@ -87,13 +147,6 @@ function articles_support_preprocess_node(&$vars) {
           ),
         );
         $vars['clickable_title_link'] = drupal_render($field_content);
-
-        // Re Write the submitted date.
-        $stamp = $vars['node']->created;
-        $field_content = array(
-          '#markup' => date('F n, Y', $stamp),
-        );
-        $vars['submitted'] = drupal_render($field_content);
     }
   }
 }
@@ -106,10 +159,32 @@ function articles_support_ds_layout_info() {
 
   $layouts = array(
     'articles_support_1' => array(
-      'label' => t('Article Layout Gen 1'),
+      'label' => t('Article Layout V1'),
       'path' => $path . '/layouts/articles_support_1',
       'regions' => array(
-        'article_content' => t('Content'),
+        'header' => t('Header'),
+        'row1' => t('Row 1'),
+        'row2' => t('Row 2'),
+        'row2_col1' => t('Row 2 Column 1'),
+        'row2_col2' => t('Row 2 Column 2'),
+        'row3' => t('Row 3'),
+        'row_mobile' => t('Row Mobile'),
+        'row_mobile_col1' => t('Row Mobile Column 1'),
+        'row_mobile_col2' => t('Row Mobile Column 2'),
+        'row5' => t('Row 5'),
+        'row_bottom' => t('Row Bottom'),
+      ),
+      'css' => TRUE,
+      // optional, form only applies to node form at this point.
+      'form' => TRUE,
+    ),
+    'articles_support_quote_1' => array(
+      'label' => t('Article Quote Layout V1'),
+      'path' => $path . '/layouts/articles_support_quote_1',
+      'regions' => array(
+        'quote_body' => t('Quote body'),
+        'quote_author' => t('Quote author'),
+        'quote_url' => t('Quote url'),
       ),
       'css' => TRUE,
       // optional, form only applies to node form at this point.

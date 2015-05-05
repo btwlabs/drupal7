@@ -69,7 +69,7 @@ function articles_support_default_variables() {
         'custom_settings' => TRUE,
       ),
       'full' => array(
-        'custom_settings' => FALSE,
+        'custom_settings' => TRUE,
       ),
       'rss' => array(
         'custom_settings' => FALSE,
@@ -174,7 +174,7 @@ function articles_support_default_variables() {
         ),
         'share_links' => array(
           'default' => array(
-            'weight' => '1',
+            'weight' => '3',
             'visible' => TRUE,
           ),
           'teaser2' => array(
@@ -277,6 +277,83 @@ function articles_support_default_variables() {
   $strongarm->name = 'pathauto_node_news_article_pattern';
   $strongarm->value = 'news/[node:title]';
   $export['pathauto_node_news_article_pattern'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'entity_pager_1_entity_id_arg';
+  $strongarm->value = '1';
+  $export['entity_pager_1_entity_id_arg'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'entity_pager_1_entity_pager_entity_type';
+  $strongarm->value = 'node';
+  $export['entity_pager_1_entity_pager_entity_type'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'entity_pager_1_entity_pager_view';
+  $strongarm->value = 'article_entity_pager';
+  $export['entity_pager_1_entity_pager_view'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'entity_pager_1_link_path';
+  $strongarm->value = 'articles';
+  $export['entity_pager_1_link_path'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'entity_pager_1_link_text';
+  $strongarm->value = 'Back to Articles';
+  $export['entity_pager_1_link_text'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'entity_pager_1_pager_text_custom';
+  $strongarm->value = 0;
+  $export['entity_pager_1_pager_text_custom'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'entity_pager_1_pager_text_next';
+  $strongarm->value = '';
+  $export['entity_pager_1_pager_text_next'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'entity_pager_1_pager_text_previous';
+  $strongarm->value = '';
+  $export['entity_pager_1_pager_text_previous'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'entity_pager_1_scroll_percent';
+  $strongarm->value = '50';
+  $export['entity_pager_1_scroll_percent'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'entity_pager_1_use_js';
+  $strongarm->value = 0;
+  $export['entity_pager_1_use_js'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'entity_pager_1_use_link';
+  $strongarm->value = 1;
+  $export['entity_pager_1_use_link'] = $strongarm;
 
   return $export;
 }
