@@ -1,7 +1,0 @@
-<?php
-/**
- * @file
- * Code for the export feature.
- */
-
-include_once 'export.features.inc';
