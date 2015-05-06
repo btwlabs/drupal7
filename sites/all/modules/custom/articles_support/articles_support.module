@@ -117,12 +117,12 @@ function articles_support_preprocess_node(&$vars) {
         }
         // Video/image switcharoo full size.
         $field_content = articles_support_get_article_hero_image($vars['node']);
-        if ($field_content[0]['#theme'] == 'video_embed_field_embed_code') {
-          $field_content['#prefix'] = '<div class="node-content-container embedded-video-container">';
+        if ($field_content['#theme'] == 'image_formatter') {
+          $field_content['#prefix'] = '<div class="node-content-container reactive image">';
           $field_content['#suffix'] = '</div>';
         }
         else {
-          $field_content['#prefix'] = '<div class="node-content-container reactive image">';
+          $field_content['#prefix'] = '<div class="node-content-container embedded-video-container">';
           $field_content['#suffix'] = '</div>';
         }
         $vars['article_hero_image'] = drupal_render($field_content);

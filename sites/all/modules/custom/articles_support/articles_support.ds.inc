@@ -307,7 +307,17 @@ function articles_support_ds_field_settings_info() {
   $ds_fieldsetting->view_mode = 'teaser2';
   $ds_fieldsetting->settings = array(
     'clickable_title_link' => array(
-      'weight' => '10',
+      'weight' => '0',
+      'label' => 'hidden',
+      'format' => 'default',
+    ),
+    'submitted' => array(
+      'weight' => '2',
+      'label' => 'hidden',
+      'format' => 'default',
+    ),
+    'teaser_image' => array(
+      'weight' => '1',
       'label' => 'hidden',
       'format' => 'default',
     ),
@@ -873,8 +883,9 @@ function articles_support_ds_layout_settings_info() {
   $ds_layout->settings = array(
     'regions' => array(
       'ds_content' => array(
-        0 => 'group_title_wrapper',
+        0 => 'teaser_image',
         1 => 'clickable_title_link',
+        2 => 'submitted',
       ),
     ),
     'fields' => array(
