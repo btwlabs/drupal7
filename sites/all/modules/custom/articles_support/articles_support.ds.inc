@@ -819,25 +819,41 @@ function articles_support_ds_layout_settings_info() {
   $ds_layout->entity_type = 'node';
   $ds_layout->bundle = 'news_article';
   $ds_layout->view_mode = 'teaser';
-  $ds_layout->layout = 'ds_1col';
+  $ds_layout->layout = 'articles_support_teaser_1';
   $ds_layout->settings = array(
     'regions' => array(
-      'ds_content' => array(
-        0 => 'clickable_title_link',
-        1 => 'teaser_image',
+      'teaser_all' => array(
+        0 => 'teaser_image',
+        1 => 'clickable_title_link',
         2 => 'submitted',
+      ),
+      'teaser_narrow_up' => array(
         3 => 'field_article_body',
+        4 => 'field_tags',
       ),
     ),
     'fields' => array(
-      'clickable_title_link' => 'ds_content',
-      'teaser_image' => 'ds_content',
-      'submitted' => 'ds_content',
-      'field_article_body' => 'ds_content',
+      'teaser_image' => 'teaser_all',
+      'clickable_title_link' => 'teaser_all',
+      'submitted' => 'teaser_all',
+      'field_article_body' => 'teaser_narrow_up',
+      'field_tags' => 'teaser_narrow_up',
     ),
-    'classes' => array(),
+    'classes' => array(
+      'layout_class' => array(
+        'teaser-list-layout' => 'teaser-list-layout',
+      ),
+      'teaser_all' => array(
+        'node-row-container' => 'node-row-container',
+      ),
+      'teaser_narrow_up' => array(
+        'node-row-container' => 'node-row-container',
+        'omega-narrow-up' => 'omega-narrow-up',
+      ),
+    ),
     'wrappers' => array(
-      'ds_content' => 'div',
+      'teaser_all' => 'div',
+      'teaser_narrow_up' => 'div',
     ),
     'layout_wrapper' => 'div',
     'layout_attributes' => '',
@@ -862,8 +878,9 @@ function articles_support_ds_layout_settings_info() {
       ),
     ),
     'fields' => array(
-      'group_title_wrapper' => 'ds_content',
+      'teaser_image' => 'ds_content',
       'clickable_title_link' => 'ds_content',
+      'submitted' => 'ds_content',
     ),
     'classes' => array(),
     'wrappers' => array(

@@ -6,7 +6,7 @@
  */
 ?>
 
-<<?php print $layout_wrapper; print $layout_attributes; ?> class="articles-support-1 <?php print $classes;?> clearfix">
+<<?php print $layout_wrapper; print $layout_attributes; ?> class="articles-support-quote-1 <?php print $classes;?> clearfix">
   <?php if (isset($title_suffix['contextual_links'])): ?>
     <?php print render($title_suffix['contextual_links']); ?>
   <?php endif; ?>

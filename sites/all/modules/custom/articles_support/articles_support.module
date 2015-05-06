@@ -131,7 +131,10 @@ function articles_support_preprocess_node(&$vars) {
       default:
         // Video/image switcharoo.
         $field_content = articles_support_get_article_teaser_image($vars['node']);
+        $field_content['#prefix'] = '<div class="omega-narrow-up media-thumb-container"><div class="media-thumb-item image-item">';
+        $field_content['#suffix'] = '</div></div>';
         $vars['teaser_image'] = drupal_render($field_content);
+
         // Link to title as a clickable select link.
         $field_content = array(
           '#theme' => 'link',
@@ -145,6 +148,8 @@ function articles_support_preprocess_node(&$vars) {
               ),
             ),
           ),
+          '#prefix' => '<h3 class="title">',
+          '#suffix' => '</h3>',
         );
         $vars['clickable_title_link'] = drupal_render($field_content);
     }
@@ -185,6 +190,17 @@ function articles_support_ds_layout_info() {
         'quote_body' => t('Quote body'),
         'quote_author' => t('Quote author'),
         'quote_url' => t('Quote url'),
+      ),
+      'css' => TRUE,
+      // optional, form only applies to node form at this point.
+      'form' => TRUE,
+    ),
+    'articles_support_teaser_1' => array(
+      'label' => t('Article Teaser List V1'),
+      'path' => $path . '/layouts/articles_support_teaser_1',
+      'regions' => array(
+        'teaser_all' => t('All Sizes Content'),
+        'teaser_narrow_up' => t('Narrow-Up Content'),
       ),
       'css' => TRUE,
       // optional, form only applies to node form at this point.
