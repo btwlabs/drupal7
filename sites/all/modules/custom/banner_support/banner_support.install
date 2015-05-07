@@ -1,0 +1,52 @@
+<?php
+/**
+ * @file
+ * banner_support.install
+ */
+
+/**
+ * Implements hook_install().
+ */
+function banner_support_install() {
+  if (module_exists('common_support')) {
+    module_load_include('inc', 'common_support', 'common_support.importers.inc');
+  }
+
+  $errors = FALSE;
+
+  // Nodes.
+  include_once('banner_support.node_type.inc');
+  $items = banner_support_node_default_node_types();
+  if (!common_support_import_node_types('banner_support', $items)) {
+    watchdog('banner_support_import_node_types', t('Could not import node types, they may already exist or the import array is malformed.'));
+    $errors = TRUE;
+  }
+
+  // Field Bases.
+  include_once('banner_support.field_base.inc');
+  $items = banner_support_field_default_field_bases();
+  if (!common_support_import_field_bases($items)) {
+    watchdog('banner_support_import_field_bases', t('Could not import field bases'));
+    $errors = TRUE;
+  }
+
+  // Field Instances.
+  include_once('banner_support.field_instance.inc');
+  $items = banner_support_field_default_field_instances();
+  if (!common_support_import_field_instances($items)) {
+    watchdog('banner_support_import_field_instances', t('Could not import field instances'));
+    $errors = TRUE;
+  }
+
+  // Variables.
+  include_once('banner_support.variable.inc');
+  $items = banner_support_default_variables();
+  if (!common_support_import_variables($items)) {
+    watchdog('banner_support_import_variables', t('Could not import variables'));
+    $errors = TRUE;
+  }
+
+  if ($errors) {
+    drupal_set_message(t('There were errors importing exports in banner_support install'), 'error');
+  }
+}

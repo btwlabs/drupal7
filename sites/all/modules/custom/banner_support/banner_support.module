@@ -4,4 +4,16 @@
  * Code for the Banner Support feature.
  */
 
-include_once 'banner_support.features.inc';
+/**
+ * Implements hook_ctools_plugin_api().
+ */
+function banner_support_ctools_plugin_api($module = NULL, $api = NULL) {
+  return common_support_ctools_plugin_api($module, $api);
+}
+
+/**
+ * Implements hook_views_api().
+ */
+function banner_support_views_api($module = NULL, $api = NULL) {
+  return array("api" => "3.0");
+}

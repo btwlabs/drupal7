@@ -37,16 +37,21 @@ function common_support_import_node_types($module = 'common_support', $export = 
     return FALSE;
   }
   foreach($export as $type_name => $type) {
-    // @todo look for existing node type.
-    $new_type = (object)$type;
-    $new_type = node_type_set_defaults($new_type);
-    $new_type->module = $module;
-    $new_type->type = $type_name;
-    // Needed for https://www.drupal.org/node/2465159.
-    $new_type->custom = 1;
-    $new_type->locked = 0;
-    if (node_type_save($new_type)) {
-      continue;
+    // Look for existing node type.
+    if (!node_type_load($type_name)) {
+      $new_type = (object)$type;
+      $new_type = node_type_set_defaults($new_type);
+      $new_type->module = $module;
+      $new_type->type = $type_name;
+      // Needed for https://www.drupal.org/node/2465159.
+      $new_type->custom = 1;
+      $new_type->locked = 0;
+      if (node_type_save($new_type)) {
+        continue;
+      }
+      else {
+        return FALSE;
+      }
     }
     else {
       return FALSE;
@@ -66,10 +71,15 @@ function common_support_import_commerce_product($export = array()) {
   if (empty($export)) {
     return FALSE;
   }
-  foreach($export as $type) {
-    // @todo look for existing commerce_product type.
-    if (commerce_product_ui_product_type_save($type)) {
-      continue;
+  foreach($export as $type_name => $type) {
+    // Look for existing commerce_product type.
+    if (!commerce_product_type_load($type_name)) {
+      if (commerce_product_ui_product_type_save($type)) {
+        continue;
+      }
+      else {
+        return FALSE;
+      }
     }
     else {
       return FALSE;
@@ -89,10 +99,15 @@ function common_support_import_field_bases($export = array()) {
   if (empty($export)) {
     return FALSE;
   }
-  foreach($export as $field_base) {
-    // @todo look for existing field base.
-    if (field_create_field($field_base)) {
-      continue;
+  foreach($export as $field_name => $field_base) {
+    // Look for existing field base.
+    if (!field_info_field($field_name)) {
+      if (field_create_field($field_base)) {
+        continue;
+      }
+      else {
+        return FALSE;
+      }
     }
     else {
       return FALSE;
@@ -113,9 +128,14 @@ function common_support_import_field_instances($export = array()) {
     return FALSE;
   }
   foreach($export as $field_instance) {
-    //@todo look for existing field instances.
-    if (field_create_instance($field_instance)) {
-      continue;
+    // Look for existing field instances.
+    if (!field_info_instance($field_instance['entity_type'], $field_instance['field_name'], $field_instance['bundle_name'])) {
+      if (field_create_instance($field_instance)) {
+        continue;
+      }
+      else {
+        return FALSE;
+      }
     }
     else {
       return FALSE;
@@ -136,9 +156,14 @@ function common_support_import_taxonomy_vocabularies($export = array()) {
     return FALSE;
   }
   foreach($export as $vocabulary) {
-    //@todo look for existing.
-    if (taxonomy_vocabulary_save($vocabulary)) {
-      continue;
+    // Look for existing vocabulary.
+    if (!taxonomy_vocabulary_machine_name_load($vocabulary['machine_name'])) {
+      if (taxonomy_vocabulary_save($vocabulary)) {
+        continue;
+      }
+      else {
+        return FALSE;
+      }
     }
     else {
       return FALSE;
@@ -159,11 +184,16 @@ function common_support_import_user_roles($export = array()) {
     return FALSE;
   }
   foreach($export as $user_role) {
-    //@todo look for existing.
-    $role = (object)$user_role;
-    $role->is_new = TRUE;
-    if (user_role_save($role)) {
-      continue;
+    // Look for existing role.
+    if (!user_role_load_by_name($user_role['name'])) {
+      $role = (object)$user_role;
+      $role->is_new = TRUE;
+      if (user_role_save($role)) {
+        continue;
+      }
+      else {
+        return FALSE;
+      }
     }
     else {
       return FALSE;
@@ -186,7 +216,6 @@ function common_support_import_user_permissions($export = array()) {
   // @todo could probably do this more elegantly with some array manipulations.
   foreach($export as $user_permission) {
     foreach($user_permission['roles'] as $role_name) {
-      //@todo look for existing.
       $role = user_role_load_by_name($role_name);
       $permission = array(
         $user_permission['name'] => TRUE,
@@ -215,14 +244,16 @@ function common_support_import_variables($export = array()) {
   }
   $return = TRUE;
   foreach($export as $variable) {
-    //@todo look for existing.
-    try {
-      variable_set($variable->name, $variable->value);
+    if (!variable_get($variable->name, FALSE)) {
+      try {
+        variable_set($variable->name, $variable->value);
+      }
+      catch(Exception $e) {
+        watchdog('common_support_import_variables', $e->getMessage());
+        $return = FALSE;
+      }
     }
-    catch(Exception $e) {
-      watchdog('common_support_import_variables', $e->getMessage());
-      $return = FALSE;
-    }
+    else $return = FALSE;
   }
   return $return;
 }
@@ -239,9 +270,15 @@ function common_support_import_image_style($export = array()) {
     return FALSE;
   }
   foreach($export as $style) {
-    //@todo look for existing.
-    if(image_default_style_save($style)) {
-      continue;
+    // Look for existing image style.
+    $current_style = image_style_load($style['name']);
+    if (!empty($current_style)) {
+      if(image_default_style_save($style)) {
+        continue;
+      }
+      else {
+        return FALSE;
+      }
     }
     else {
       return FALSE;
@@ -262,18 +299,23 @@ function common_support_import_nodequeues($export = array()) {
     return FALSE;
   }
   foreach($export as $nodequeue) {
-    //@todo look for existing.
-    // Assign the existing qid if a nodequeue with the same name already exists.
-    $map = common_support_nodequeue_get_qid_map();
-    if (isset($map[$nodequeue['name']])) {
-      $nodequeue['qid'] = $map[$nodequeue['name']];
-    }
-    // Clear the qid if it is a new nodequeue.
-    else {
-      unset($nodequeue['qid']);
-    }
-    if(common_support_nodequeue_save_queue((array) $nodequeue)) {
-      continue;
+    // Look for existing nodequeue.
+    if (!nodequeue_load_queue_by_name($nodequeue['name'])) {
+      // Assign the existing qid if a nodequeue with the same name already exists.
+      $map = common_support_nodequeue_get_qid_map();
+      if (isset($map[$nodequeue['name']])) {
+        $nodequeue['qid'] = $map[$nodequeue['name']];
+      }
+      // Clear the qid if it is a new nodequeue.
+      else {
+        unset($nodequeue['qid']);
+      }
+      if(common_support_nodequeue_save_queue((array) $nodequeue)) {
+        continue;
+      }
+      else {
+        return FALSE;
+      }
     }
     else {
       return FALSE;
