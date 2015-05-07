@@ -272,7 +272,7 @@ function common_support_import_image_style($export = array()) {
   foreach($export as $style) {
     // Look for existing image style.
     $current_style = image_style_load($style['name']);
-    if (!empty($current_style)) {
+    if (empty($current_style)) {
       if(image_default_style_save($style)) {
         continue;
       }
