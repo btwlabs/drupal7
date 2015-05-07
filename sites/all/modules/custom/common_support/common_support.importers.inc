@@ -129,7 +129,7 @@ function common_support_import_field_instances($export = array()) {
   }
   foreach($export as $field_instance) {
     // Look for existing field instances.
-    if (!field_info_instance($field_instance['entity_type'], $field_instance['field_name'], $field_instance['bundle_name'])) {
+    if (!field_info_instance($field_instance['entity_type'], $field_instance['field_name'], $field_instance['bundle'])) {
       if (field_create_instance($field_instance)) {
         continue;
       }
@@ -272,7 +272,7 @@ function common_support_import_image_style($export = array()) {
   foreach($export as $style) {
     // Look for existing image style.
     $current_style = image_style_load($style['name']);
-    if (empty($current_style)) {
+    if (!isset($current_style['isid'])) {
       if(image_default_style_save($style)) {
         continue;
       }
