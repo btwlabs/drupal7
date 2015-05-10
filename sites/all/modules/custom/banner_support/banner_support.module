@@ -15,5 +15,28 @@ function banner_support_ctools_plugin_api($module = NULL, $api = NULL) {
  * Implements hook_views_api().
  */
 function banner_support_views_api($module = NULL, $api = NULL) {
-  return array("api" => "3.0");
+  return common_support_views_api($module, $api);
+}
+
+/**
+ * Implements hook_common_support_import().
+ */
+function banner_support_common_support_import() {
+  return array(
+    'node_type',
+    'field_base',
+    'field_instance',
+    'variable',
+  );
+}
+
+/**
+ * Implements hook_common_support_delete_import().
+ */
+function banner_support_common_support_delete_import() {
+  return array(
+    'node_type',
+    'field_instance',
+    'variable',
+  );
 }

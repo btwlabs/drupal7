@@ -5,9 +5,9 @@
  */
 
 /**
- * Implements hook_field_default_field_instances().
+ * Implements hook_field_instance_assets().
  */
-function articles_support_field_default_field_instances() {
+function articles_support_default_field_instance_assets() {
   $field_instances = array();
 
   // Exported field_instance: 'field_collection_item-field_article_quote-field_article_quote_author'

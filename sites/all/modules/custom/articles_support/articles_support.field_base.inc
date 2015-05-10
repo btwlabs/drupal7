@@ -5,9 +5,9 @@
  */
 
 /**
- * Implements hook_field_default_field_bases().
+ * Implements hook_default_field_base_assets().
  */
-function articles_support_field_default_field_bases() {
+function articles_support_default_field_base_assets() {
   $field_bases = array();
 
   // Exported field_base: 'field_article_body'

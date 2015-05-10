@@ -4,9 +4,9 @@
  */
 
 /**
- * Implements hook_node_info().
+ * Implements hook_default_node_type_assets().
  */
-function articles_support_node_default_node_types() {
+function articles_support_default_node_type_assets() {
   $items = array(
     'news_article' => array(
       'name' => t('News Article'),

@@ -5,6 +5,42 @@
  */
 
 /**
+ * Implements hook_modules_installed().
+ * Imports any assets that a module specifies should
+ * be imported when the module is installed.
+ */
+function common_support_modules_enabled($modules) {
+  module_load_include('inc', 'common_support', 'common_support.importers');
+  $implementations = module_implements('common_support_import');
+  foreach($modules as $module) {
+    if (in_array($module, $implementations)) {
+      $assets = module_invoke($module, 'common_support_import');
+      if (is_array($assets)) {
+        common_support_import($module, $assets);
+      }
+    }
+  }
+}
+
+/**
+ * Implements hook_modules_uninstalled.
+ * Deletes any assets that a module specifies should
+ * be disabled when the module is un-installed.
+ */
+function common_support_modules_uninstalled($modules) {
+  module_load_include('inc', 'common_support', 'common_support.importers');
+  $implementations = module_implements('common_support_delete_import');
+  foreach($modules as $module) {
+    if (in_array($module, $implementations)) {
+      $assets = module_invoke($module, 'common_support_delete_import');
+      if (is_array($assets)) {
+        common_support_delete_imports($assets);
+      }
+    }
+  }
+}
+
+/**
  * Implements hook_entity_info_alter().
  */
 function common_support_entity_info_alter(&$entity_info) {

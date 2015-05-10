@@ -3,6 +3,6 @@ core = 7.x
 package = BTW
 dependencies[] = common_support
 dependencies[] = image
-dependencies[] = views_slideshow
+dependencies[] = slick
 dependencies[] = link
 dependencies[] = views

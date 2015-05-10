@@ -5,9 +5,9 @@
  */
 
 /**
- * Implements hook_strongarm().
+ * Implements hook_default_default_variable_assets().
  */
-function banner_support_default_variables() {
+function banner_support_default_variable_assets() {
   $export = array();
 
   $strongarm = new stdClass();

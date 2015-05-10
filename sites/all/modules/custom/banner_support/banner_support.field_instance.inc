@@ -5,10 +5,66 @@
  */
 
 /**
- * Implements hook_field_default_field_instances().
+ * Implements hook_default_field_instances_assets().
  */
-function banner_support_field_default_field_instances() {
+function banner_support_default_field_instance_assets() {
   $field_instances = array();
+
+  // Exported field_instance: 'node-news_article-field_article_body'
+  $field_instances['node-banner-field_banner_body'] = array(
+    'bundle' => 'banner',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'hidden',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 5,
+      ),
+      'full' => array(
+        'label' => 'hidden',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 5,
+      ),
+      'teaser' => array(
+        'label' => 'hidden',
+        'module' => 'text',
+        'settings' => array(
+          'trim_length' => 240,
+        ),
+        'type' => 'text_trimmed',
+        'weight' => 1,
+      ),
+      'teaser2' => array(
+        'label' => 'hidden',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 9,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_banner_body',
+    'label' => 'Body',
+    'required' => 0,
+    'settings' => array(
+      'text_processing' => 1,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'rows' => 5,
+      ),
+      'type' => 'text_textarea',
+      'weight' => 1,
+    ),
+  );
 
   // Exported field_instance: 'node-banner-field_banner_image'
   $field_instances['node-banner-field_banner_image'] = array(
@@ -56,7 +112,7 @@ function banner_support_field_default_field_instances() {
         'progress_indicator' => 'throbber',
       ),
       'type' => 'image_image',
-      'weight' => 1,
+      'weight' => 0,
     ),
   );
 
@@ -120,6 +176,7 @@ function banner_support_field_default_field_instances() {
   // Translatables
   // Included for use with string extractors like potx.
   t('Banner Image');
+  t('Body');
   t('Link');
   t('This is the url that the banner image will link to');
 

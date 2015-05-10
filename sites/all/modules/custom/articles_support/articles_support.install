@@ -7,57 +7,6 @@
  * Implements hook_install().
  */
 function articles_support_install() {
-  // Importers.
-  if (module_exists('common_support')) {
-    module_load_include('inc', 'common_support', 'common_support.importers');
-  }
-
-  $errors = FALSE;
-
-  // Nodes.
-  include_once('articles_support.node_type.inc');
-  $items = articles_support_node_default_node_types();
-  if (!common_support_import_node_types('articles_support', $items)) {
-    watchdog('articles_support_import_node_types', t('Could not import node types'));
-    $errors = TRUE;
-  }
-
-  // Field Bases.
-  include_once('articles_support.field_base.inc');
-  $items = articles_support_field_default_field_bases();
-  if (!common_support_import_field_bases($items)) {
-    watchdog('articles_support_import_field_bases', t('Could not import field bases'));
-    $errors = TRUE;
-  }
-
-  // Field Instances.
-  include_once('articles_support.field_instance.inc');
-  $items = articles_support_field_default_field_instances();
-  if (!common_support_import_field_instances($items)) {
-    watchdog('articles_support_import_field_instances', t('Could not import field instances'));
-    $errors = TRUE;
-  }
-
-  // Variables.
-  include_once('articles_support.variable.inc');
-  $items = articles_support_default_variables();
-  if (!common_support_import_variables($items)) {
-    watchdog('articles_support_import_variables', t('Could not import variables'));
-    $errors = TRUE;
-  }
-
-  // Image Styles.
-  include_once('articles_support.image_style.inc');
-  $items = articles_support_image_default_styles();
-  if (!common_support_import_image_style($items)) {
-    watchdog('articles_support_import_image_styles', t('Could not import image styles'));
-    $errors = TRUE;
-  }
-
-  if ($errors) {
-    drupal_set_message(t('There were errors importing exports in articles_support install'), 'error');
-  }
-
   // Make sure that colorbox load is enabled.
   variable_set('colorbox_load', 1);
 }

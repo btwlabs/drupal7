@@ -6,7 +6,7 @@
 /**
  * Implements hook_image_default_styles().
  */
-function articles_support_image_default_styles() {
+function articles_support_default_image_style_assets() {
   $styles = array();
 
   // Exported image style: article-inline.
