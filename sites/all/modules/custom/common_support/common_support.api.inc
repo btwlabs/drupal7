@@ -15,6 +15,23 @@
  * settings that import currently supports. See the code
  * below for the current list of supported settings.
  *
+ * In order for anything to be imported you have to create
+ * some export files. These are always in the form:
+ *   mymodule.TYPE.inc
+ * and the function to return exported settings should be
+ * defined as:
+ *   mymodule_default_TYPE_assets() {}
+ * where TYPE is the type being returned in this hook.
+ * E.G. node_type import would have function:
+ * mymodule_default_node_type_assets() {} to be found in
+ * file mymodule.node_type.inc.
+ *
+ * It is possible to use the features module to prototype
+ * exports and then tweak them to meet the above requirements.
+ * That is what I do! Or you can write your own code. Usually
+ * I create my exports and then just adjust them in code as
+ * needed.
+ *
  * @return array $assets
  *   List of asset names that should be imported upon
  *   enabling the module.
