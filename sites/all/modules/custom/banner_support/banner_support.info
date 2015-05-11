@@ -3,6 +3,7 @@ core = 7.x
 package = BTW
 dependencies[] = common_support
 dependencies[] = image
+dependencies[] = jquery_update
 dependencies[] = slick
 dependencies[] = link
 dependencies[] = views
