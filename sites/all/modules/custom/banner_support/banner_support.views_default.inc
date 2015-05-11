@@ -79,6 +79,8 @@ function banner_support_views_default_views() {
 
   /* Display: Rotating Banner Images Block */
   $handler = $view->new_display('block', 'Rotating Banner Images Block', 'block');
+  $handler->display->display_options['block_description'] = 'Rotating Banner Block';
+
   $export['rotating_banner_images'] = $view;
 
   return $export;

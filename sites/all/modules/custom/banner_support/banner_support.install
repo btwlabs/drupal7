@@ -4,3 +4,10 @@
  * banner_support.install
  */
 
+/**
+ * Implements hook_enable().
+ */
+function banner_support_enable() {
+  // Make sure that slick is selected in jquery update.
+
+}

@@ -40,3 +40,20 @@ function banner_support_common_support_delete_import() {
     'variable',
   );
 }
+
+/**
+ * Implements hook_node_view_alter().
+ */
+function banner_support_node_view_alter(&$build) {
+  // Switch banner view modes on banner logic.
+  // This works b/c banners are only shown in a views block.
+  // If body has content, use teaser.
+  if ($build['#entity_type'] == 'banner') {
+    if (!empty($build['field_banner_body'])) {
+      $build['#view_mode'] = 'teaser';
+    }
+    else {
+      $build['#view_mode'] = 'teaser2';
+    }
+  }
+}
