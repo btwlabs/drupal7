@@ -4,7 +4,6 @@
  * Code for the common support.
  */
 
-define('COMMON_SUPPORT_IMPORTABLE_ENITIES', array('node_type', 'commerce_product_type'));
 /**
  * Implements hook_modules_installed().
  * Imports any assets that a module specifies should
@@ -18,8 +17,12 @@ function common_support_modules_enabled($modules) {
       $assets = module_invoke($module, 'common_support_import');
       if (is_array($assets)) {
         // Entities must be imported first.
+        $importables = array(
+          'node',
+          'commerce_product',
+        );
         foreach($assets as $key => $asset) {
-          if (in_array($asset, COMMON_SUPPORT_IMPORTABLE_ENITIES)) {
+          if (in_array($asset, $importables)) {
             unset ($assets[$key]);
             array_unshift($assets, $asset);
           }
