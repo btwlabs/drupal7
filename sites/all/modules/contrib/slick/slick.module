@@ -283,7 +283,7 @@ function slick_library() {
     'website' => 'http://kenwheeler.github.io/slick/',
     'version' => '1.3.2',
     'js' => array(
-      $slick_library_path . '/slick/slick.js' => array('group' => JS_DEFAULT),
+      $slick_library_path . '/slick/slick.min.js' => array('group' => JS_DEFAULT),
     ),
     'css' => array(
       $slick_library_path . '/slick/slick.css' => array('group' => CSS_DEFAULT),

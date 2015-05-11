@@ -37,6 +37,7 @@ class slick_plugin_style_slick extends views_plugin_style {
       '#title' => t('Settings'),
       '#type' => 'fieldset',
       '#collapsible' => FALSE,
+      '#tree' => TRUE,
     );
 
     foreach ($options as $name => $values) {
@@ -44,7 +45,7 @@ class slick_plugin_style_slick extends views_plugin_style {
         '#title' => $values['title'],
         '#description' => $values['description'],
         '#type' => ($values['type'] == 'boolean') ? 'checkbox' : 'textfield',
-        '#default_value' => $this->options['slick_settings'][$name],
+        '#default_value' => (!empty($this->options['slick_settings'][$name])) ? $this->options['slick_settings'][$name] : $values['default'],
       );
     }
   }

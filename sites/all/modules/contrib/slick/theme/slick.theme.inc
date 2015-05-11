@@ -86,7 +86,9 @@ function template_preprocess_slick_carousel(&$variables) {
 
   // Set settings as data attributes.
   foreach ($settings as $key => $value) {
-    $variables['attributes_array']['data-' . $key] = $value;
+    if (!empty($value)) {
+      $variables['attributes_array']['data-' . $key] = $value;
+    }
   }
 
   // Add slick options to js.
