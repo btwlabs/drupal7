@@ -127,8 +127,7 @@ function common_support_default_404_page_headline() {
  * Returns default copy for the 404 page.
  */
 function common_support_default_404_page_body() {
-  $content = "<p>We couldn't find the page you were looking for</p>";
-  $content .= "<p>Why not try and use the " . l(t('Search'), 'search'). " or " . l(t('Return to the Home Page'), '<front>') . ".</p>";
+  $content = "<p>Sorry, we couldn't find the page you were looking for. Why not try and use the " . l(t('Search'), 'search'). " or " . l(t('Return to the Home Page'), '<front>') . ".</p>";
   return $content;
 }
 
