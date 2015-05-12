@@ -64,7 +64,41 @@ function banner_support_default_variable_assets() {
   $strongarm->api_version = 1;
   $strongarm->name = 'field_bundle_settings_node__banner';
   $strongarm->value = array(
-    'view_modes' => array(),
+    'view_modes' => array(
+      'teaser' => array(
+        'custom_settings' => TRUE,
+      ),
+      'teaser2' => array(
+        'custom_settings' => TRUE,
+      ),
+      'full' => array(
+        'custom_settings' => FALSE,
+      ),
+      'rss' => array(
+        'custom_settings' => FALSE,
+      ),
+      'search_index' => array(
+        'custom_settings' => FALSE,
+      ),
+      'search_result' => array(
+        'custom_settings' => FALSE,
+      ),
+      'teaser3' => array(
+        'custom_settings' => FALSE,
+      ),
+      'teaser4' => array(
+        'custom_settings' => FALSE,
+      ),
+      'teaser5' => array(
+        'custom_settings' => FALSE,
+      ),
+      'token' => array(
+        'custom_settings' => FALSE,
+      ),
+      'revision' => array(
+        'custom_settings' => FALSE,
+      ),
+    ),
     'extra_fields' => array(
       'form' => array(
         'metatags' => array(
@@ -80,7 +114,22 @@ function banner_support_default_variable_assets() {
           'weight' => '4',
         ),
       ),
-      'display' => array(),
+      'display' => array(
+        'share_links' => array(
+          'default' => array(
+            'weight' => '0',
+            'visible' => FALSE,
+          ),
+          'teaser2' => array(
+            'weight' => '12',
+            'visible' => FALSE,
+          ),
+          'teaser' => array(
+            'weight' => '9',
+            'visible' => FALSE,
+          ),
+        ),
+      ),
     ),
   );
   $export['field_bundle_settings_node__banner'] = $strongarm;

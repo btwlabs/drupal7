@@ -10,7 +10,7 @@
 function banner_support_default_field_instance_assets() {
   $field_instances = array();
 
-  // Exported field_instance: 'node-news_article-field_article_body'
+  // Exported field_instance: 'node-banner-field_banner_body'
   $field_instances['node-banner-field_banner_body'] = array(
     'bundle' => 'banner',
     'default_value' => NULL,
@@ -33,18 +33,16 @@ function banner_support_default_field_instance_assets() {
       ),
       'teaser' => array(
         'label' => 'hidden',
-        'module' => 'text',
-        'settings' => array(
-          'trim_length' => 240,
-        ),
-        'type' => 'text_trimmed',
-        'weight' => 1,
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 12,
       ),
       'teaser2' => array(
         'label' => 'hidden',
+        'module' => 'text',
         'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 9,
+        'type' => 'text_default',
+        'weight' => 2,
       ),
     ),
     'entity_type' => 'node',
@@ -73,7 +71,7 @@ function banner_support_default_field_instance_assets() {
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'above',
+        'label' => 'hidden',
         'module' => 'image',
         'settings' => array(
           'image_link' => '',
@@ -83,9 +81,19 @@ function banner_support_default_field_instance_assets() {
         'weight' => 1,
       ),
       'teaser' => array(
-        'label' => 'above',
+        'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
+        'weight' => 7,
+      ),
+      'teaser2' => array(
+        'label' => 'hidden',
+        'module' => 'image',
+        'settings' => array(
+          'image_link' => '',
+          'image_style' => '',
+        ),
+        'type' => 'image',
         'weight' => 0,
       ),
     ),
@@ -124,17 +132,24 @@ function banner_support_default_field_instance_assets() {
     'description' => 'This is the url that the banner image will link to',
     'display' => array(
       'default' => array(
-        'label' => 'above',
+        'label' => 'hidden',
         'module' => 'link',
         'settings' => array(),
         'type' => 'link_default',
         'weight' => 2,
       ),
       'teaser' => array(
-        'label' => 'above',
+        'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 8,
+      ),
+      'teaser2' => array(
+        'label' => 'hidden',
+        'module' => 'link',
+        'settings' => array(),
+        'type' => 'link_default',
+        'weight' => 3,
       ),
     ),
     'entity_type' => 'node',
@@ -179,6 +194,8 @@ function banner_support_default_field_instance_assets() {
   t('Body');
   t('Link');
   t('This is the url that the banner image will link to');
+
+  return $field_instances;
 
   return $field_instances;
 }
