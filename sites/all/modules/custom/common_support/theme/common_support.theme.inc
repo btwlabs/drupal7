@@ -138,3 +138,17 @@ function theme_embed_block($vars) {
     return render($result);
   }
 }
+
+/**
+ * Preprocess variables for the page not found page.
+ */
+function template_preprocess_common_support_404_page(&$vars) {
+  $headline = variable_get('common_support_404_headline', array('value' => common_support_default_404_page_headline(), 'format' => 'filtered_html'));
+  $vars['content']['headline'] = array(
+    '#markup' => $headline['value'],
+  );
+  $body = variable_get('common_support_404_body', array('value' => common_support_default_404_page_body()));
+  $vars['content']['body'] = array(
+    '#markup' => $body['value'],
+  );
+}

@@ -52,6 +52,21 @@ function common_support_modules_uninstalled($modules) {
 }
 
 /**
+ * Implements hook_menu().
+ */
+function common_support_menu() {
+  $items = array();
+  $items['page-not-found'] = array(
+    'type' => MENU_CALLBACK,
+    'title' => t('Page Not Found'),
+    'page callback' => 'common_support_404_page',
+    'access arguments' => array('access content'),
+    'file' => 'common_support.pages.inc',
+  );
+  return $items;
+}
+
+/**
  * Implements hook_entity_info_alter().
  */
 function common_support_entity_info_alter(&$entity_info) {
@@ -71,6 +86,50 @@ function common_support_entity_info_alter(&$entity_info) {
     'label' => t('Another teaser mode 4'),
     'custom settings' => FALSE,
   );
+}
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ */
+function common_support_form_system_site_information_settings_alter(&$form, $form_state) {
+  // Add custom 404 page settings
+  $form['error_page']['404_page'] = array(
+    '#type' => 'fieldset',
+    '#title' => t('404 Page Content'),
+    '#collapsible' => TRUE,
+    '#collapsed' => TRUE,
+  );
+  $form['error_page']['404_page']['common_support_404_headline'] = array(
+    '#type' => 'text_format',
+    '#title' => t('404 Page Headline'),
+    '#description' => t('This will be displayed above the 404 page body.'),
+    '#default_format' => 'filtered_html',
+    '#default_value' => common_support_default_404_page_headline(),
+  );
+  $form['error_page']['404_page']['common_support_404_body'] = array(
+    '#type' => 'text_format',
+    '#title' => t('404 Page Body'),
+    '#description' => t('This will be displayed below the 404 page headline.'),
+    '#default_format' => 'filtered_html',
+    '#default_value' => common_support_default_404_page_body(),
+  );
+}
+
+/**
+ * Returns default copy for the 404 page.
+ */
+function common_support_default_404_page_headline() {
+  $content = "<p>Sorry, that page can't be found on the site.</p>";
+  return $content;
+}
+
+/**
+ * Returns default copy for the 404 page.
+ */
+function common_support_default_404_page_body() {
+  $content = "Sorry, that page can\'t be found on the site.\n";
+  $content .= "You can " . l(t('Return to the Home Page'), '<front>') . " or " . l(t('Search'), 'search') . ".";
+  return $content;
 }
 
 /**
@@ -135,6 +194,12 @@ function common_support_theme() {
   $themes['embed_block'] = array(
     'variables' => array('module' => null, 'delta' => null),
     'file' => 'theme/common_support.theme.inc',
+  );
+  $themes['common_support_404_page'] = array(
+    'variables' => array(),
+    'path' => drupal_get_path('module', 'common_support') . '/theme',
+    'file' => 'common_support.theme.inc',
+    'template' => 'common-support-404-page',
   );
   return $themes;
 }
