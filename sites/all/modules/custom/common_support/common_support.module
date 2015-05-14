@@ -5,6 +5,15 @@
  */
 
 /**
+ * Implements hook_common_support_import().
+ */
+function common_support_common_support_import() {
+  return array(
+    'variable',
+  );
+}
+
+/**
  * Implements hook_modules_installed().
  * Imports any assets that a module specifies should
  * be imported when the module is installed.
@@ -332,6 +341,41 @@ function common_support_nodequeue_get_qid_map() {
     }
   }
   return $map;
+}
+
+/**
+ * Implements hook_ds_layout_info().
+ */
+function common_support_ds_layout_info() {
+  $path = drupal_get_path('module', 'common_support');
+
+  $layouts = array(
+    'common_support_quote_1' => array(
+      'label' => t('Quote Layout V1'),
+      'path' => $path . '/layouts/common_support_quote_1',
+      'regions' => array(
+        'quote_body' => t('Quote body'),
+        'quote_author' => t('Quote author'),
+        'quote_url' => t('Quote url'),
+      ),
+      'css' => TRUE,
+      // optional, form only applies to node form at this point.
+      'form' => TRUE,
+    ),
+    'common_support_teaser_1' => array(
+      'label' => t('Teaser List V1'),
+      'path' => $path . '/layouts/common_support_teaser_1',
+      'regions' => array(
+        'col1' => t('Column 1'),
+        'col2' => t('Column 2'),
+      ),
+      'css' => TRUE,
+      // optional, form only applies to node form at this point.
+      'form' => TRUE,
+    ),
+  );
+
+  return $layouts;
 }
 
 /**

@@ -2,11 +2,12 @@
 
 /**
  * @file
- * articles support v1 full node layout template.
+ * common-support-quote-1.tpl.php
+ * common support v1 quote layout.
  */
 ?>
 
-<<?php print $layout_wrapper; print $layout_attributes; ?> class="articles-support-quote-1 <?php print $classes;?> clearfix">
+<<?php print $layout_wrapper; print $layout_attributes; ?> class="common-support-quote-1 <?php print $classes;?> clearfix">
   <?php if (isset($title_suffix['contextual_links'])): ?>
     <?php print render($title_suffix['contextual_links']); ?>
   <?php endif; ?>

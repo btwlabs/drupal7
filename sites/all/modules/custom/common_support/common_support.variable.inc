@@ -7,7 +7,7 @@
 /**
  * Implements hook_default_variables().
  */
-function common_support_default_variables() {
+function common_support_default_variable_assets() {
   $export = array();
 
   $strongarm = new stdClass();
@@ -44,26 +44,7 @@ quote-url
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'ds_classes_regions';
-  $strongarm->value = 'node-row-container
-node-header-row-container
-node-row1-container
-node-row2-container
-node-row3-container
-node-row4-container
-node-row5-container
-node-bottom-container
-node-row2-column1-container
-node-row2-column2-container
-node-row-mobile-container
-node-row-mobile-column1-container
-node-row-mobile-column2-container
-omega-mobile-only
-omega-narrow-only
-omega-narrow-up
-omega-normal-only
-omega-normal-up
-omega-wide-only
-omega-wide-up';
+  $strongarm->value = 'l-constrained';
   $export['ds_classes_regions'] = $strongarm;
 
   $strongarm = new stdClass();

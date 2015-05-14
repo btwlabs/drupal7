@@ -489,7 +489,7 @@ function articles_support_ds_layout_settings_info() {
   $ds_layout->entity_type = 'field_collection_item';
   $ds_layout->bundle = 'field_article_quote';
   $ds_layout->view_mode = 'default';
-  $ds_layout->layout = 'articles_support_quote_1';
+  $ds_layout->layout = 'common_support_quote_1';
   $ds_layout->settings = array(
     'regions' => array(
       'quote_body' => array(
@@ -507,11 +507,7 @@ function articles_support_ds_layout_settings_info() {
       'field_article_quote_author' => 'quote_author',
       'field_article_quote_url' => 'quote_url',
     ),
-    'classes' => array(
-      'layout_class' => array(
-        '' => '',
-      ),
-    ),
+    'classes' => array(),
     'wrappers' => array(
       'quote_body' => 'div',
       'quote_author' => 'div',
@@ -531,7 +527,7 @@ function articles_support_ds_layout_settings_info() {
   $ds_layout->entity_type = 'field_collection_item';
   $ds_layout->bundle = 'field_article_quote';
   $ds_layout->view_mode = 'full';
-  $ds_layout->layout = 'articles_support_quote_1';
+  $ds_layout->layout = 'common_support_quote_1';
   $ds_layout->settings = array(
     'regions' => array(
       'quote_body' => array(
@@ -549,11 +545,7 @@ function articles_support_ds_layout_settings_info() {
       'field_article_quote_author' => 'quote_author',
       'field_article_quote_url' => 'quote_url',
     ),
-    'classes' => array(
-      'layout_class' => array(
-        '' => '',
-      ),
-    ),
+    'classes' => array(),
     'wrappers' => array(
       'quote_body' => 'div',
       'quote_author' => 'div',
@@ -619,61 +611,7 @@ function articles_support_ds_layout_settings_info() {
       'article_pager' => 'row5',
       'field_article_quote' => 'row2_col1',
     ),
-    'classes' => array(
-      'layout_class' => array(
-        '' => '',
-      ),
-      'header' => array(
-        'node-row-container' => 'node-row-container',
-        'node-header-row-container' => 'node-header-row-container',
-      ),
-      'row1' => array(
-        'node-row-container' => 'node-row-container',
-        'node-row1-container' => 'node-row1-container',
-      ),
-      'row2' => array(
-        'node-row-container' => 'node-row-container',
-        'node-row2-container' => 'node-row2-container',
-        'omega-narrow-up' => 'omega-narrow-up',
-      ),
-      'row2_col1' => array(
-        'node-row-container' => 'node-row-container',
-        'node-row2-column1-container' => 'node-row2-column1-container',
-        'omega-narrow-up' => 'omega-narrow-up',
-      ),
-      'row2_col2' => array(
-        'node-row-container' => 'node-row-container',
-        'node-row2-column2-container' => 'node-row2-column2-container',
-        'omega-narrow-up' => 'omega-narrow-up',
-      ),
-      'row3' => array(
-        'node-row-container' => 'node-row-container',
-        'node-row3-container' => 'node-row3-container',
-      ),
-      'row_mobile' => array(
-        'node-row-container' => 'node-row-container',
-        'node-row-mobile-container' => 'node-row-mobile-container',
-        'omega-mobile-only' => 'omega-mobile-only',
-      ),
-      'row_mobile_col1' => array(
-        'node-row-container' => 'node-row-container',
-        'node-row-mobile-column1-container' => 'node-row-mobile-column1-container',
-        'omega-mobile-only' => 'omega-mobile-only',
-      ),
-      'row_mobile_col2' => array(
-        'node-row-container' => 'node-row-container',
-        'node-row-mobile-column2-container' => 'node-row-mobile-column2-container',
-        'omega-mobile-only' => 'omega-mobile-only',
-      ),
-      'row5' => array(
-        'node-row-container' => 'node-row-container',
-        'node-row5-container' => 'node-row5-container',
-      ),
-      'row_bottom' => array(
-        'node-row-container' => 'node-row-container',
-        'node-bottom-container' => 'node-bottom-container',
-      ),
-    ),
+    'classes' => array(),
     'wrappers' => array(
       'header' => 'div',
       'row1' => 'div',
@@ -747,61 +685,7 @@ function articles_support_ds_layout_settings_info() {
       'recent_articles' => 'row_bottom',
       'article_pager' => 'row5',
     ),
-    'classes' => array(
-      'layout_class' => array(
-        '' => '',
-      ),
-      'header' => array(
-        'node-row-container' => 'node-row-container',
-        'node-header-row-container' => 'node-header-row-container',
-      ),
-      'row1' => array(
-        'node-row-container' => 'node-row-container',
-        'node-row1-container' => 'node-row1-container',
-      ),
-      'row2' => array(
-        'node-row-container' => 'node-row-container',
-        'node-row2-container' => 'node-row2-container',
-        'omega-narrow-up' => 'omega-narrow-up',
-      ),
-      'row2_col1' => array(
-        'node-row-container' => 'node-row-container',
-        'node-row2-column1-container' => 'node-row2-column1-container',
-        'omega-narrow-up' => 'omega-narrow-up',
-      ),
-      'row2_col2' => array(
-        'node-row-container' => 'node-row-container',
-        'node-row2-column2-container' => 'node-row2-column2-container',
-        'omega-narrow-up' => 'omega-narrow-up',
-      ),
-      'row3' => array(
-        'node-row-container' => 'node-row-container',
-        'node-row3-container' => 'node-row3-container',
-      ),
-      'row_mobile' => array(
-        'node-row-container' => 'node-row-container',
-        'node-row-mobile-container' => 'node-row-mobile-container',
-        'omega-mobile-only' => 'omega-mobile-only',
-      ),
-      'row_mobile_col1' => array(
-        'node-row-container' => 'node-row-container',
-        'node-row-mobile-column1-container' => 'node-row-mobile-column1-container',
-        'omega-mobile-only' => 'omega-mobile-only',
-      ),
-      'row_mobile_col2' => array(
-        'node-row-container' => 'node-row-container',
-        'node-row-mobile-column2-container' => 'node-row-mobile-column2-container',
-        'omega-mobile-only' => 'omega-mobile-only',
-      ),
-      'row5' => array(
-        'node-row-container' => 'node-row-container',
-        'node-row5-container' => 'node-row5-container',
-      ),
-      'row_bottom' => array(
-        'node-row-container' => 'node-row-container',
-        'node-bottom-container' => 'node-bottom-container',
-      ),
-    ),
+    'classes' => array(),
     'wrappers' => array(
       'header' => 'div',
       'row1' => 'div',
@@ -829,41 +713,30 @@ function articles_support_ds_layout_settings_info() {
   $ds_layout->entity_type = 'node';
   $ds_layout->bundle = 'news_article';
   $ds_layout->view_mode = 'teaser';
-  $ds_layout->layout = 'articles_support_teaser_1';
+  $ds_layout->layout = 'common_support_teaser_1';
   $ds_layout->settings = array(
     'regions' => array(
-      'teaser_all' => array(
+      'col1' => array(
         0 => 'teaser_image',
         1 => 'clickable_title_link',
         2 => 'submitted',
       ),
-      'teaser_narrow_up' => array(
+      'col2' => array(
         3 => 'field_article_body',
         4 => 'field_tags',
       ),
     ),
     'fields' => array(
-      'teaser_image' => 'teaser_all',
-      'clickable_title_link' => 'teaser_all',
-      'submitted' => 'teaser_all',
-      'field_article_body' => 'teaser_narrow_up',
-      'field_tags' => 'teaser_narrow_up',
+      'teaser_image' => 'col1',
+      'clickable_title_link' => 'col1',
+      'submitted' => 'col1',
+      'field_article_body' => 'col2',
+      'field_tags' => 'col2',
     ),
-    'classes' => array(
-      'layout_class' => array(
-        'teaser-list-layout' => 'teaser-list-layout',
-      ),
-      'teaser_all' => array(
-        'node-row-container' => 'node-row-container',
-      ),
-      'teaser_narrow_up' => array(
-        'node-row-container' => 'node-row-container',
-        'omega-narrow-up' => 'omega-narrow-up',
-      ),
-    ),
+    'classes' => array(),
     'wrappers' => array(
-      'teaser_all' => 'div',
-      'teaser_narrow_up' => 'div',
+      'col1' => 'div',
+      'col2' => 'div',
     ),
     'layout_wrapper' => 'div',
     'layout_attributes' => '',

@@ -196,29 +196,6 @@ function articles_support_ds_layout_info() {
       // optional, form only applies to node form at this point.
       'form' => TRUE,
     ),
-    'articles_support_quote_1' => array(
-      'label' => t('Article Quote Layout V1'),
-      'path' => $path . '/layouts/articles_support_quote_1',
-      'regions' => array(
-        'quote_body' => t('Quote body'),
-        'quote_author' => t('Quote author'),
-        'quote_url' => t('Quote url'),
-      ),
-      'css' => TRUE,
-      // optional, form only applies to node form at this point.
-      'form' => TRUE,
-    ),
-    'articles_support_teaser_1' => array(
-      'label' => t('Article Teaser List V1'),
-      'path' => $path . '/layouts/articles_support_teaser_1',
-      'regions' => array(
-        'teaser_all' => t('All Sizes Content'),
-        'teaser_narrow_up' => t('Narrow-Up Content'),
-      ),
-      'css' => TRUE,
-      // optional, form only applies to node form at this point.
-      'form' => TRUE,
-    ),
   );
 
   return $layouts;
