@@ -11,13 +11,17 @@
     <?php print render($title_suffix['contextual_links']); ?>
   <?php endif; ?>
 
-  <<?php print $row1_wrapper ?> class="row-1-wrapper <?php print $row1_classes;?>">
-    <?php print $row1; ?>
-  </<?php print $row1_wrapper ?>>
+  <div class="outer-wrapper row1-outer-wrapper">
+    <<?php print $row1_wrapper ?> class=row row-1-wrapper <?php print $row1_classes;?>">
+      <?php print $row1; ?>
+    </<?php print $row1_wrapper ?>>
+  </div>
 
-  <<?php print $row2_wrapper ?> class="row-2-wrapper <?php print $row2_classes;?>">
-     <?php print $row2; ?>
-  </<?php print $row2_wrapper ?>>
+  <div class="outer-wrapper row2-outer-wrapper">
+    <<?php print $row2_wrapper ?> class="row row-2-wrapper <?php print $row2_classes;?>">
+       <?php print $row2; ?>
+    </<?php print $row2_wrapper ?>>
+  </div>
 
 </<?php print $layout_wrapper ?>>
 

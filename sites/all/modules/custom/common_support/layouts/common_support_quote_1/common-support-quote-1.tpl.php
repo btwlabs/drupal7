@@ -13,7 +13,7 @@
   <?php endif; ?>
 
   <span class="quote-start quote">&#8220;</span>
-  <?php print $quote_body; ?>
+    <?php print $quote_body; ?>
   <span class="quote-end quote">&#8221;</span>
 
   <?php print $quote_author; ?>
