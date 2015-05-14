@@ -718,10 +718,10 @@ function articles_support_ds_layout_settings_info() {
     'regions' => array(
       'col1' => array(
         0 => 'teaser_image',
-        1 => 'clickable_title_link',
-        2 => 'submitted',
       ),
       'col2' => array(
+        1 => 'clickable_title_link',
+        2 => 'submitted',
         3 => 'field_article_body',
         4 => 'field_tags',
       ),
