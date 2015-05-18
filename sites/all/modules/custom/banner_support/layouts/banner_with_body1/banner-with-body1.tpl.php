@@ -12,7 +12,7 @@
   <?php endif; ?>
 
   <div class="outer-wrapper row1-outer-wrapper">
-    <<?php print $row1_wrapper ?> class=row row-1-wrapper <?php print $row1_classes;?>">
+    <<?php print $row1_wrapper ?> class="row row-1-wrapper <?php print $row1_classes;?>">
       <?php print $row1; ?>
     </<?php print $row1_wrapper ?>>
   </div>
