@@ -2,12 +2,12 @@
     Drupal.behaviors.removeEmptyNodes = {
         attach: function(context, settings) {
             // Remove any .row-container nodes that have no content.
-            $list = $('div, section, article, aside').not('.always-include').not('.page-admin div').not('.page-admin section').not('.page-admin article').not('.page-admin aside');
+            /*$list = $('div, section, article, aside').not('.always-include').not('.page-admin div').not('.page-admin section').not('.page-admin article').not('.page-admin aside');
             $list.each(function() {
                 if (!$.trim($(this).html())) {
                     $(this).remove();
                 }
-            });
+            });*/
         }
     };
     Drupal.behaviors.itemHideShow = {
