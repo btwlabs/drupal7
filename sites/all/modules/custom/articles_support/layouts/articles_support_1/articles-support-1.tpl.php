@@ -26,44 +26,36 @@
 
   <div class="outer-wrapper row2-outer-wrapper">
     <<?php print $row2_wrapper ?> class="row row-2-wrapper <?php print $row2_classes;?>">
-      <div class="outer-wrapper row2-col1-outer-wrapper">
-        <<?php print $row2_col1_wrapper ?> class="col row2-col1-wrapper <?php print $row2_col1_classes;?>">
+        <<?php print $row2_col1_wrapper ?> class="col col-1-wrapper <?php print $row2_col1_classes;?>">
          <?php print $row2_col1; ?>
         </<?php print $row2_col1_wrapper ?>>
-      </div>
-      <div class="outer-wrapper row2-col2-outer-wrapper">
-        <<?php print $row2_col2_wrapper ?> class="col row2-col2-wrapper <?php print $row2_col2_classes;?>">
+        <<?php print $row2_col2_wrapper ?> class="col col-2-wrapper <?php print $row2_col2_classes;?>">
           <?php print $row2_col2; ?>
         </<?php print $row2_col2_wrapper ?>>
-      </div>
       <?php print $row2; ?>
     </<?php print $row2_wrapper ?>>
   </div>
 
   <div class="outer-wrapper row3-outer-wrapper">
-    <<?php print $row3_wrapper ?> class="row row3-wrapper <?php print $row3_classes;?>">
+    <<?php print $row3_wrapper ?> class="row row-3-wrapper <?php print $row3_classes;?>">
       <?php print $row3; ?>
     </<?php print $row3_wrapper ?>>
   </div>
 
   <div class="outer-wrapper row-mobile-outer-wrapper">
     <<?php print $row_mobile_wrapper ?> class="row row-mobile-wrapper <?php print $row_mobile_classes;?>">
-      <div class="outer-wrapper row-mobile-col1-outer-wrapper">
-        <<?php print $row_mobile_col1_wrapper ?> class="col row-mobile-col1-wrapper <?php print $row_mobile_col1_classes;?>">
+        <<?php print $row_mobile_col1_wrapper ?> class="col col-1-wrapper <?php print $row_mobile_col1_classes;?>">
           <?php print $row_mobile_col1; ?>
         </<?php print $row_mobile_col1_wrapper ?>>
-      </div>
-      <div class="outer-wrapper row-mobile-col2-outer-wrapper">
-        <<?php print $row_mobile_col2_wrapper ?> class="col row-mobile-col2-wrapper <?php print $row_mobile_col2_classes;?>">
+        <<?php print $row_mobile_col2_wrapper ?> class="col col-2-wrapper <?php print $row_mobile_col2_classes;?>">
           <?php print $row_mobile_col2; ?>
         </<?php print $row_mobile_col2_wrapper ?>>
-      </div>
       <?php print $row_mobile; ?>
     </<?php print $row_mobile_wrapper ?>>
   </div>
 
   <div class="outer-wrapper row5-outer-wrapper">
-    <<?php print $row5_wrapper ?> class="row row5-wrapper <?php print $row5_classes;?>">
+    <<?php print $row5_wrapper ?> class="row row-5-wrapper <?php print $row5_classes;?>">
       <?php print $row5; ?>
     </<?php print $row5_wrapper ?>>
   </div>
