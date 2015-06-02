@@ -110,7 +110,7 @@ function le_gate_block_info() {
  */
 function le_gate_block_view($delta) {
   $block = array();
-  switch($delta) {
+  switch ($delta) {
     case 'le_gate_gate':
       $block['subject'] = '';
       $block['content'] = theme('le_gate_gate');

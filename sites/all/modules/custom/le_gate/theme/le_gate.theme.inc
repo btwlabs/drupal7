@@ -15,7 +15,7 @@ function template_preprocess_le_gate_gate(&$vars) {
     '#markup' => $instructions['value'],
   );
   $type = variable_get('le_gate_type', 'links');
-  switch($type) {
+  switch ($type) {
     case 'links':
       $vars['content']['links'] = array(
         '#type' => 'container',
