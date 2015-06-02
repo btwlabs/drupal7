@@ -126,7 +126,7 @@ function cookie_monster_decrypt($id) {
  *   If true (default) then a session variable will be set
  *   in addition to a cookie.
  */
-function cookie_monster_set_cookie($data, $session = TRUE) {
+function cookie_monster_set_cookie($data, $session = FALSE) {
   // Check for a secret.
   $secret = variable_get('cookie_monster_secret', NULL);
   if (!isset($secret)) {
