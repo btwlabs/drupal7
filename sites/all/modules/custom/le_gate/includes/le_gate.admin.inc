@@ -45,75 +45,75 @@ function le_gate_settings_form($form, &$form_state) {
     '#description' => t('Enter a message to be shown to the user if they don\'t pass the gate.'),
     '#default_value' => variable_get('le_gate_message', t('Sorry but you did not pass.')),
   );
-  $type = variable_get('le_gate_type', 'buttons');
+  $type = variable_get('le_gate_type', 'links');
   $form['le_gate_type'] = array(
     '#type' => 'select',
     '#title' => t('Gate Type'),
-    '#description' => t('Select which gate type to use. Two-Button will display 2 configurable buttons (yes/no). Date will present a date select which will pass Le Gate on configurable dates.'),
-    '#options' => array('buttons' => t('Buttons'), 'date' => t('Date')),
+    '#description' => t('Select which gate type to use. Two-Link will display 2 configurable links (yes/no). Date will present a date select which will pass Le Gate on configurable dates.'),
+    '#options' => array('links' => t('Links'), 'date' => t('Date')),
     '#default_value' => $type,
   );
   // BUTTONS.
-  $form['le_gate_type_buttons_options'] = array(
+  $form['le_gate_type_links_options'] = array(
     '#type' => 'fieldset',
-    '#title' => t('Buttons Settings'),
+    '#title' => t('Links Settings'),
     '#states' => array(
-      // Hide if buttons not selected,
+      // Hide if links not selected,
       'invisible' => array(
         ':input[name="le_gate_type"]' => array('value' => 'date'),
       ),
     ),
   );
-  $form['le_gate_type_buttons_options']['le_gate_buttons_cookie'] = array(
+  $form['le_gate_type_links_options']['le_gate_links_cookie'] = array(
     '#type' => 'radios',
-    '#title' => t('Cookie Button'),
-    '#description' => t('Select which button should set Le gate cookie'),
+    '#title' => t('Access Link'),
+    '#description' => t('Select which link should provide access when clicked.'),
     '#options' => array(
-      'button1' => t('Button 1'),
-      'button2' => t('Button 2'),
+      'link1' => t('Link 1'),
+      'link2' => t('Link 2'),
     ),
-    '#default_value' => variable_get('le_gate_buttons_cookie', 'button1'),
+    '#default_value' => variable_get('le_gate_links_cookie', 'link1'),
   );
-  $form['le_gate_type_buttons_options']['button1'] = array(
+  $form['le_gate_type_links_options']['link1'] = array(
     '#type' => 'fieldset',
-    '#title' => t('Button 1'),
+    '#title' => t('Link 1'),
   );
-  $form['le_gate_type_buttons_options']['button1']['le_gate_button_1_path'] = array(
+  $form['le_gate_type_links_options']['link1']['le_gate_link_1_path'] = array(
     '#type' => 'textfield',
-    '#title' => t('Button 1 Path'),
-    '#description' => t('Enter the path to redirect to after clicking the first button. Leave blank to stay on the requested page.'),
-    '#default_value' => variable_get('le_gate_button_1_path', ''),
+    '#title' => t('Link 1 Path'),
+    '#description' => t('Enter the path to redirect to after clicking the first link. Leave blank to stay on the requested page.'),
+    '#default_value' => variable_get('le_gate_link_1_path', ''),
   );
-  $form['le_gate_type_buttons_options']['button1']['le_gate_button_1_text'] = array(
+  $form['le_gate_type_links_options']['link1']['le_gate_link_1_text'] = array(
     '#type' => 'textfield',
-    '#title' => t('Button 1 Text'),
-    '#description' => t('Enter the text for button 1'),
-    '#default_value' => variable_get('le_gate_button_1_text', 'Yes'),
+    '#title' => t('Link 1 Text'),
+    '#description' => t('Enter the text for link 1'),
+    '#default_value' => variable_get('le_gate_link_1_text', 'Yes'),
   );
-  $form['le_gate_type_buttons_options']['button2'] = array(
+  $form['le_gate_type_links_options']['link2'] = array(
     '#type' => 'fieldset',
-    '#title' => t('Button 2'),
+    '#title' => t('Link 2'),
   );
-  $form['le_gate_type_buttons_options']['button2']['le_gate_button_2_path'] = array(
+  $form['le_gate_type_links_options']['link2']['le_gate_link_2_path'] = array(
     '#type' => 'textfield',
-    '#title' => t('Button 2 Path'),
-    '#description' => t('Enter the path to redirect to after clicking the second button. Leave blank to stay on the requested page.'),
-    '#default_value' => variable_get('le_gate_button_2_path', ''),
+    '#title' => t('Link 2 Path'),
+    '#description' => t('Enter the path to redirect to after clicking the second link. Leave blank to stay on the requested page.'),
+    '#default_value' => variable_get('le_gate_link_2_path', ''),
   );
-  $form['le_gate_type_buttons_options']['button2']['le_gate_button_2_text'] = array(
+  $form['le_gate_type_links_options']['link2']['le_gate_link_2_text'] = array(
     '#type' => 'textfield',
-    '#title' => t('Button 2 Text'),
-    '#description' => t('Enter the text for button 2'),
-    '#default_value' => variable_get('le_gate_button_2_text', 'No'),
+    '#title' => t('Link 2 Text'),
+    '#description' => t('Enter the text for link 2'),
+    '#default_value' => variable_get('le_gate_link_2_text', 'No'),
   );
   // Date type.
   $form['le_gate_type_date_options'] = array(
     '#type' => 'fieldset',
     '#title' => t('Date Settings'),
     '#states' => array(
-      // Hide if buttons not selected,
+      // Hide if links not selected,
       'invisible' => array(
-        ':input[name="le_gate_type"]' => array('value' => 'buttons'),
+        ':input[name="le_gate_type"]' => array('value' => 'links'),
       ),
     ),
   );

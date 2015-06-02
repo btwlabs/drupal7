@@ -1,16 +1,5 @@
 name = Le Gate
 description = Provides a generic 'Gate' to throw up in front of users accessing a site
 core = 7.x
-package = BTW
-php = 5.2.4
 project = le_gate
-
 dependencies[] = cookie_monster
-dependencies[] = common_support
-dependencies[] = context
-dependencies[] = path
-
-; stylesheets[all][] =
-; scripts[] =
-; dependencies[] =
-; files[] =
