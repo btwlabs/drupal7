@@ -37,7 +37,10 @@ function le_gate_init() {
   if ((!($paths == '')) && !drupal_match_path($current_path, $paths)) {
     return;
   }
-  drupal_goto('le-gate');
+  // Look for drush otherwise do the redirect.
+  if (!drupal_is_cli()) {
+    drupal_goto('le-gate');
+  }
 }
 
  /**
