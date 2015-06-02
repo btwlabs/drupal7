@@ -143,7 +143,7 @@ function le_gate_set_cookie($redirect_path = '') {
     'id' => LE_GATE_COOKIE_ID,
     'expire_time' => 86400,
   );
-  cookie_monster_set_cookie($data);
+  cookie_monster_set_cookie($data, FALSE);
   drupal_goto($redirect_path);
 }
 
