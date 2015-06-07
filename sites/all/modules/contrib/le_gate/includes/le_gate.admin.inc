@@ -33,11 +33,23 @@ function le_gate_settings_form($form, &$form_state) {
     '#default_value' => $instructions['value'],
     '#format' => $instructions['format'],
   );
+  $form['le_gate_use_paths'] = array(
+    '#type' => 'checkbox',
+    '#title' => t('Select Paths?'),
+    '#description' => t('If unchecked (recommended) the gate will go up on every page. This setting can make the gate faster to appear.'),
+    '#default_value' => variable_get('le_gate_use_paths', FALSE),
+  );
   $form['le_gate_paths'] = array(
     '#type' => 'textarea',
     '#title' => t('Pages'),
     '#description' => t('Indicate which paths to throw Le Gate in front of. Leave blank for all paths, use ~ to indicate paths to exclude. Use ~ alone to exclude all paths'),
     '#default_value' => variable_get('le_gate_paths'),
+    '#states' => array(
+      // Hide if links not selected,
+      'visible' => array(
+        ':input[name="le_gate_use_paths"]' => array('checked' => TRUE),
+      ),
+    ),
   );
   $form['le_gate_message'] = array(
     '#type' => 'textfield',

@@ -32,7 +32,6 @@ function template_preprocess_le_gate_gate(&$vars) {
           'attributes' => array(
             'class' => array('le-gate-link-1-link'),
           ),
-          //'query' => array('le_gate_redirect' => $redirect_path1),
         ),
       );
       $vars['content']['links']['link2'] = array(
@@ -48,12 +47,10 @@ function template_preprocess_le_gate_gate(&$vars) {
       );
       $cookie_link = variable_get('le_gate_links_cookie', 'link1');
       if ($cookie_link == 'link1') {
-        $vars['content']['links']['link1']['#path'] = LE_GATE_COOKIE_PATH;
-        $vars['content']['links']['link1']['#options']['query']['le_gate_redirect'] = variable_get('le_gate_link_1_path', '');
+        $vars['content']['links']['link1']['#options']['attributes']['class'][] = 'le-gate-pass-link';
       }
       else {
-        $vars['content']['links']['link2']['#path'] = LE_GATE_COOKIE_PATH;
-        $vars['content']['links']['link2']['#options']['query']['le_gate_redirect'] = variable_get('le_gate_link_2_path', '');
+        $vars['content']['links']['link2']['#options']['attributes']['class'][] = 'le-gate-pass-link';
       }
       break;
     case 'date':
