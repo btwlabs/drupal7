@@ -1,0 +1,6 @@
+Le Gate 7.x-dev, 2015-06-06
+-----------------------------
+
+Changed the entire method of redirecting from server to client side.
+This was done to not require session or cookie access on the server at all
+so as to not break any reverse proxy caching (like varnish).

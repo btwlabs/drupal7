@@ -122,8 +122,11 @@ function cookie_monster_decrypt($id) {
  *   'id' (required) => the machine name of the cookie to set
  *   'expire_time' (optional) => the time before cookie expiration in seconds
  *   ... any other data to save with the cookie.
+ * @param boolean $session
+ *   If true (default) then a session variable will be set
+ *   in addition to a cookie.
  */
-function cookie_monster_set_cookie($data) {
+function cookie_monster_set_cookie($data, $session = FALSE) {
   // Check for a secret.
   $secret = variable_get('cookie_monster_secret', NULL);
   if (!isset($secret)) {
@@ -131,9 +134,10 @@ function cookie_monster_set_cookie($data) {
     return FALSE;
   }
 
-  // Set a session variable.
-  $_SESSION['cookie_monster'][$data['id']] = $data;
-
+  if ($session) {
+    // Set a session variable.
+    $_SESSION['cookie_monster'][$data['id']] = $data;
+  }
   // Check for needed data in data array.
   if (!isset($data['id'])) {
     return FALSE;

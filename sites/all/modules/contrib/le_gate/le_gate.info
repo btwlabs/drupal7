@@ -1,0 +1,5 @@
+name = Le Gate
+description = Provides a generic 'Gate' to throw up in front of users accessing a site
+core = 7.x
+project = le_gate
+scripts[] = js/le_gate.js
