@@ -6,7 +6,7 @@
  */
 ?>
 
-<<?php print $layout_wrapper; print $layout_attributes; ?> class="banner-with-body1 <?php print $classes;?> clearfix">
+<<?php print $layout_wrapper; print $layout_attributes; ?> class="banner-with-body-1 <?php print $classes;?> clearfix">
   <?php if (isset($title_suffix['contextual_links'])): ?>
     <?php print render($title_suffix['contextual_links']); ?>
   <?php endif; ?>

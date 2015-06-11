@@ -1,0 +1,79 @@
+/*-------------------------------
+ 
+ Social Icons
+ 
+--------------------------------*/
+
+#social-icons ul {
+	margin: 0;
+	overflow: hidden;
+	padding: 0;
+	
+	li {
+		margin: 0 7px 7px 0;
+		padding: 0;
+		float: left;
+		list-style-type: none;
+		border: 0;
+	}
+	
+	li:last-child {
+		margin-right: 0;
+	}
+	a {
+		margin: 0;
+		padding: 50px 20px 0;
+		width: 50px;
+		border-radius: 25px;
+		display: block;
+		height: 0;
+		overflow: hidden;
+		position: relative;
+		color: $social-icon-color;
+		background-color: $social-icon-bg-color;
+		
+		// hover state
+		&:hover {
+			color: $social-icon-hover-color;
+			background-color: $social-icon-bg-hover-color;
+		}
+		
+		// icons
+		&:before {
+			position: absolute;
+			top: 10px;
+			left: 10px;
+			font-family: $socialicons;
+			font-size: 31px;
+			line-height: 31px;
+			speak: none;
+		}
+	}
+	
+	// facebook
+	li#facebook a:before {
+		content: "\50";
+	}
+	li#twitter a:before {
+		content: "\30";
+	}
+	li#youtube a:before {
+		content: "\4b";
+	}
+	li#itunes a:before {
+		content: "\4f";
+	}
+	li#myspace a:before {
+		content:"\26";
+	}
+	li#email a:before {
+		font-family: $basicicons;
+		content:"\6f";
+		font-size: 29px;
+		line-height: 30px;
+	}
+	li#instagram a:before {
+		content:"\40";
+		left: 12px;
+	}
+}

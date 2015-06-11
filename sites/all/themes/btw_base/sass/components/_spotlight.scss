@@ -1,0 +1,301 @@
+/*====================================!!! SPOTLIGHT BANNER SECTION !!!=========================================*/
+
+/*---------------------------------------------------------------------
+-----------------------------------------------------------------------
+
+ SPOTLIGHT BANNER POPUP 
+ 
+-----------------------------------------------------------------------
+---------------------------------------------------------------------*/
+
+.responsive-layout-mobile .block-fantorrent-ads-support:before {
+	content: "PROMOTIONS:";
+	display: block;
+	margin-bottom: 10px;
+	padding-top: 10px;
+	font-size: 30px;
+	text-align: center;
+	border-top: 4px double $border-color;
+	color: $text-color;
+}
+
+
+/*-------------------------------------
+
+ Toggle button 
+ 
+---------------------------------------*/
+
+a.spotlight-toggle {
+	background-color: transparent;
+	padding: 15px;
+	width: 100%;
+	@include transition(all, 0.2s, ease-in);
+	color: #fff;
+	display: block;
+	font-size: 20px;
+	text-align: center;
+	text-transform: uppercase;
+	margin-bottom: 10px;
+	
+	& img img {
+		width: auto;
+	}
+}
+
+
+/*---------------------------
+ Spotlight Closed 
+-----------------------------*/
+
+a.spotlight-toggle.closed {
+	background-color: #32bcd5;
+}
+a.spotlight-toggle.closed:hover {
+	background-color: #000;
+	text-decoration: none;
+}
+
+
+/*--------------------------
+ Spotlight Open 
+----------------------------*/
+
+a.spotlight-toggle.open {
+	background-color: #dd5c5c;
+}
+a.spotlight-toggle.open:hover {
+	background-color: #000;
+	text-decoration: none;
+}
+
+
+
+/*------------------------------------------------
+ 
+ Drop Down Section
+ 
+------------------------------------------------*/
+
+.spotlight.drop-down {
+	background: #eee;
+	padding: 20px;
+	margin-bottom: 10px;
+}
+
+/* Spotlight Images */
+.spotlight-images-wrapper {
+	margin-bottom: 15px;
+}
+
+/* spotlight - h2 title */
+.spotlight h2 {
+	color: #222;
+	font-size: 23px;
+	line-height: 1;
+	margin-bottom: 5px;
+}
+.spotlight h5 {
+	font-size: 15px;
+}
+
+
+
+/*-------------------------------
+ spotlight - body and link 
+---------------------------------*/
+
+.spotlight-body-and-link-wrapper {
+	color: #999;
+}
+.spotlight-body-and-link-wrapper .field-name-body {
+	font-size: 1.5rem;
+	line-height: 1.3;
+	margin-bottom: 10px;
+	position: relative;
+}
+.spotlight .field-name-body p a {
+	color: #bbb;
+}
+
+
+/* Link Field */
+.spotlight.drop-down .field-type-link-field .field-label {
+	display: none;
+}
+.spotlight .field-type-link-field {
+	display: block;
+	font-size: 1em;
+	
+	& a {
+		display: block;
+		font-size: 1.250rem;
+		line-height: 1;
+		padding: 10px 30px 10px 30px;
+		color: #fff;
+		background-color: #32bcd5;
+		border-radius: 15px;
+		text-align: center;
+	}
+
+	& a:hover {
+		text-decoration: none;
+		background-color: #ddd;
+		color: #222;
+	}
+	
+	& a:after {
+		content: "/";
+		font-family: $arrowicons;
+		font-size: 25px;
+		line-height: 27px;
+		margin-left: 5px;
+		vertical-align: middle;
+	}
+}
+
+
+
+
+
+
+/*====================================!!! SPOTLIGHT SECTION NON MOBILE!!!=========================================*/
+
+/*---------------------------------------------------------------------
+-----------------------------------------------------------------------
+
+ SPOTLIGHT BANNER POPUP 
+ 
+-----------------------------------------------------------------------
+---------------------------------------------------------------------*/
+
+
+
+/*-------------------------------------
+
+ Toggle button 
+ 
+---------------------------------------*/
+
+a.spotlight-toggle {
+	height: 0;
+	overflow: hidden;
+	padding: 75px 0 0 0;
+	position: absolute;
+	right: 0;
+	top: -75px;
+	width: 75px;
+	margin-bottom: 0;
+}
+
+/* Spotlight Open - position bg image*/
+a.spotlight-toggle.open {
+	background-position: center -82px;
+}
+
+/* icon */
+a#spotlight-toggle:before,
+a#spotlight-toggle.open:before {
+	font-family: IcoMoonBasic;
+	
+}
+
+/* Open/Close icon */
+a.spotlight-toggle:before {
+	content: "\e009";
+	font-family: IcoMoonBasic;
+	font-size: 50px;
+	left: 50%;
+	margin-left: -25px;
+	margin-top: -25px;
+	position: absolute;
+	top: 50%;
+	@include transition(all, 0.2s, ease-in);
+}
+
+a.spotlight-toggle.open:before {
+	-webkit-transform: rotate(45deg);
+	-moz-transform: rotate(45deg);
+	-ms-transform: rotate(45deg);
+	transform: rotate(45deg);
+}
+
+/*------------------------------------------------
+ 
+ Drop Down Section
+ 
+------------------------------------------------*/
+
+.spotlight {
+	overflow: hidden;
+}
+.spotlight.drop-down {
+	margin: 0 auto;
+	position: relative;
+	width: 100%;
+	padding: 3%;
+	background: rgba(0,0,0,0.7);
+}
+
+/* optional transparent bg img using pseudoclass :after */
+.spotlight.drop-down:after {
+	background: transparent;
+	background-size: cover;
+	content: "";
+	display: block;
+	height: 100%;
+	left: 0;
+	opacity: 0.95;
+	position: absolute;
+	top: 0;
+	width: 100%;
+	z-index: -1;
+}
+
+/* Spotlight Images */
+.spotlight-images-wrapper {
+	float: left;
+	margin-right: 3%;
+	margin-bottom: 0;
+	width: 20%;
+	max-width: 180px;
+	height: auto;
+	vertical-align: top;
+}
+
+/* spotlight - h2 title */
+.spotlight h2 {
+	color: #FFFFFF;
+	font-size: 40px;
+}
+
+/* spotlight - body and link */
+.spotlight-body-and-link-wrapper {
+	float: left;
+	vertical-align: top;
+	color: #999;
+	width: 76%;
+	overflow: hidden;
+}
+.spotlight-body-and-link-wrapper .field-name-body {
+	font-size: 25px;
+	font-weight: 300;
+	line-height: 130%;
+	margin-bottom: 10px;
+	position: relative;
+}
+.spotlight .field-name-body p a {
+	color: #bbb;
+}
+
+/* link field */
+
+.spotlight .field-type-link-field {
+	display: block;
+	font-size: 20px;
+	width: auto;
+	float: left;
+}
+.spotlight .field-type-link-field a {
+	border-radius: 5px;
+}

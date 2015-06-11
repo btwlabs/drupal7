@@ -1,0 +1,120 @@
+
+// sitewide default
+
+body {
+	
+	@include breakpoint($small-only) {
+		background: $default-bg;
+	}
+	
+	@include breakpoint($medium-up) {
+		background: $default-bg;
+		background-size: $background-bg-size;
+		background-attachment: $background-bg-attachment;
+	}
+	
+	// fixed bg images cause poor redraw rate with iOS devices
+	
+	// all ipads
+	@media only screen and (min-device-width : 768px) and (max-device-width : 1024px){
+		background-attachment: scroll;
+	}
+	
+	// iphone 5
+	@media only screen and (min-device-width : 320px) and (max-device-width : 568px) {
+		background-attachment: scroll;
+	}
+	
+	// iphone 4 and down
+	@media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+		background-attachment: scroll;
+	}
+}
+
+
+// test ONLY 
+body {
+	background-size: auto auto;
+}
+
+// discography list
+.page-music-albums {
+	@include breakpoint($small-only) {
+		background: $discography-list-mobile-bg;
+	}
+	@include breakpoint($medium-up) {
+		background: $discography-list-bg;
+	}
+}
+
+// album node
+.node-type-album {
+	@include breakpoint($small-only) {
+		background: $album-node-mobile-bg;
+	}
+	@include breakpoint($medium-up) {
+		background: $album-node-bg;
+	}
+}
+
+// Article list 
+.page-news {
+	@include breakpoint($small-only) {
+		background: $article-list-mobile-bg;
+	}
+	@include breakpoint($medium-up) {
+		background: $article-list-bg;
+	}
+}
+
+// Article node
+.node-type-article {
+	@include breakpoint($small-only) {
+		background: $article-node-mobile-bg;
+	}
+	@include breakpoint($medium-up) {
+		background: $article-node-bg;
+	}
+}
+
+// Bio page bg
+.context-about {
+	@include breakpoint($small-only) {
+		background: $bio-mobile-bg;
+	}
+	@include breakpoint($medium-up) {
+		background: $bio-bg;
+	}	
+}
+
+// Tour page bg
+.context-tour {	
+	@include breakpoint($small-only) {
+		background: $tour-mobile-bg;
+	}
+	@include breakpoint($medium-up) {
+		background: $tour-bg;
+	}
+}
+
+// Legacy bg
+.context-legacy {
+	@include breakpoint($small-only) {
+		background: $legacy-mobile-bg;
+	}
+	@include breakpoint($medium-up) {
+		background: $legacy-bg;
+	}
+}
+
+
+
+// Store bg
+.context-store {
+	@include breakpoint($small-only) {
+		background: $store-mobile-bg;
+	}
+	@include breakpoint($medium-up) {
+		background: $store-bg;
+	}
+}
