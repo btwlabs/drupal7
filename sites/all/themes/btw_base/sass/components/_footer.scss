@@ -41,74 +41,58 @@
 	}
 }
 
-@include breakpoint($medium-up) {
+@include breakpoint($large-up) {
 
 	.l-region-footer {
 		@include add-grid(6);
 		@include add-gutter(1/2);
 	}
-	// footer links, copyright, icons	
-	.block--fantorrent-base-footer-message {
-		@include grid-span(4, 1);
-		@include font-size(14px);
+	// footer section 1 - copyright & links	
+	.l-region--footer-1 {
+		@include grid-span(3, 1);
 	}
-	// social icons
-	.block--social-icons {
-		@include grid-span(2, 5);
-	}
-	#social-icons {
-		float: right;
+	// footer section 2 - social icons
+	.l-region--footer-2 {
+		@include grid-span(3, 4);
 	}
 }
 
 /*-----------------------------------
 
- Copyright, links, privacy, logos 
+ Copyright & links
  
 ------------------------------------*/
 
-.block--fantorrent-base-footer-message {
-	@include font-size(13px);
-	overflow: hidden;
+.footer-links {
+	margin-bottom: 5px;
 	
-	& .privacy-footer a {
-		margin-right: 7px;
-		padding-right: 7px;
-		border-right: 1px solid #999;
+	& ul {
+		margin: 0;
+		padding: 0;
+		@include clearfix;
 	}
-	
-	& .footer-logos {
-		margin-bottom: 10px;
-		overflow: hidden;
-	}
-	
-	& .copyright {
-		margin-bottom: 10px;
-		overflow: hidden;
+	& ul li {
+		@include no-bullet(0 12px 0 0, 0 0 0 0);
+		float: left;
 	}
 }
 
-/* Idea Den Logos */
-
-.footer-logos a {
-	background-position: left center;
-	background-repeat: no-repeat;
-	background-size: 100% auto;
-	background-color: transparent;
-	float: left;
-	height: 0;
-	overflow: hidden;
-	display: block;
-	margin-right: 10px;
-	@include opacity(0.5);
+// footer main menu block
+.l-footer-wrapper .footer-menu {
 	
-	&.masterchannel-logo {
-		background-image: url("../../../../../../profiles/fantorrent_bands/themes/boilerplate/images/masterchannel-logo-dark.svg");
-		padding-top: 40px;
-		width: 120px;
+	ul {
+		margin: 0;
+		padding: 0;
 	}
-		
-	&:hover {
-		@include opacity(1);
+	li {
+		float: left;
+		list-style-type: none;
+		margin-right: 10px;
+	}
+}
+
+.footer-copyright {
+	@include breakpoint($small-and-medium) {
+		margin-bottom: $vert-spacing-unit/2;
 	}
 }

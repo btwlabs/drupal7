@@ -97,16 +97,6 @@ $userbar-icon-hover-color: #fff;
 $userbar-icon-bg-color: #000;
 $userbar-icon-bg-hover-color: red;
 
-	// Login Block
-	$login-dropdown-bg-color: #000;
-	$login-dropdown-text-color: #555;
-	
-		// Login button
-		$login-button-text-color: #fff;
-		$login-button-text-hover-color: #fff;
-		
-		$login-button-bg-color: transparent;
-		$login-button-bg-hover-color: orange;
 		
 	// mobile site name
 	$site-name-text-color: #000;
@@ -150,41 +140,6 @@ $sidebar-link-hover-color: red;
 
 
 
-// Views Popups (store, discography teaser, events)
-$popup-title-color: #fff;
-$popup-text-color: #ccc;
-$popup-bg-color: rgba(0,0,0,0.8);
-
-$popup-border-color: #666;
-
-$popup-button-text-color: #fff;
-$popup-button-text-hover-color: #000;
-
-$popup-button-bg-color: transparent;
-$popup-button-bg-hover-color: #ccc;
-
-$popup-button-border-color: #666;
-
-	// discography popup
-	$popup-link-icon-color: #444;
-	$popup-link-icon-hover-color: #ccc;
-
-	$popup-link-bg-color: #ccc;
-	$popup-link-bg-hover-color: #000;
-	
-	// Store popup
-	$popup-cart-button-text-color: #000;
-	$popup-cart-button-text-hover-color: #fff;
-	
-	$popup-cart-button-bg-color: #fff; // color emphasis on cart button
-	$popup-cart-button-bg-hover-color: red;
-
-
-// Contextual Commerce slide out content 
-$contextual-commerce-bg-color: #000;
-$contextual-commerce-text-color: #999;
-$contextual-commerce-title-bg: #00cc99;
-
 
 // Footer
 $footer-text-color: #aaa;
@@ -221,24 +176,5 @@ $dateblock-text-hover-color: #fff;
 
 $dateblock-bg-color: #000;
 $dateblock-bg-hover-color: #000;
-
-
-
-// Legacy List - legacy trait (content filter) links
-$legacy-trait-text-color: white;
-$legacy-trait-text-hover-color: #ccc;
-
-$legacy-trait-bg-color: red;
-$legacy-trait-bg-hover-color: black;
-
-$legacy-trait-buy-bg-color: black;
-$legacy-trait-buy-bg-hover-color: red;
-
-
-// Store colors
-
-// price that shows on store list items above the image in the corner
-$product-price-bg-color: #000; 
-$product-price-text-color: #fff;
 
 

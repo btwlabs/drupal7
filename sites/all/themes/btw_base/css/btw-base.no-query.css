@@ -1,5 +1,2948 @@
+/**
+ * $ARROW
+ */
+/* line 7, ../sass/abstractions/_mixin-layout.scss */
+.clearfix:before, .clearfix:after {
+  content: "";
+  display: table; }
+/* line 12, ../sass/abstractions/_mixin-layout.scss */
+.clearfix:after {
+  clear: both;
+  font-size: 0;
+  /* Clear Fix correction (add font-size to fix extra padding at bottom of site */ }
+
+/* line 41, ../sass/abstractions/_mixin-typography.scss */
+.title-with-submenu, .node-type-event h1,
+.context-tour h1,
+.context-news h1,
+.context-gallery h1,
+.context-music h1 {
+  margin-bottom: 0;
+  border-bottom: 0; }
+
+/*---------------------------------------------------------
+-----------------------------------------------------------
+
+ General LINK styles
+ 
+-----------------------------------------------------------
+----------------------------------------------------------*/
+/* line 13, ../sass/base/_buttons-links.scss */
+a,
+a:link,
+a:visited,
+li a.active {
+  -webkit-transition: all 0.2s ease-in;
+  -moz-transition: all 0.2s ease-in;
+  -o-transition: all 0.2s ease-in;
+  transition: all 0.2s ease-in;
+  color: darkorange;
+  text-decoration: none; }
+  /* line 21, ../sass/base/_buttons-links.scss */
+  a:hover,
+  a:link:hover,
+  a:visited:hover,
+  li a.active:hover {
+    color: red;
+    text-decoration: underline; }
+
+/*---------------------------------------------------------
+-----------------------------------------------------------
+
+ BUTTON styles
+ 
+-----------------------------------------------------------
+----------------------------------------------------------*/
+/*-------------------------------------
+
+ Button normal state
+ 
+-------------------------------------*/
+/* line 42, ../sass/base/_buttons-links.scss */
+.button a,
+a.button,
+button,
+input[type="reset"],
+input[type="submit"],
+input[type="button"] {
+  border-radius: 4px;
+  -webkit-transition: all 0.2s ease-in;
+  -moz-transition: all 0.2s ease-in;
+  -o-transition: all 0.2s ease-in;
+  transition: all 0.2s ease-in;
+  background: #444;
+  text-align: center;
+  color: #fff;
+  display: block;
+  text-decoration: none;
+  padding: 8px 10px 7px 10px; }
+  /* line 57, ../sass/base/_buttons-links.scss */
+  .button a:hover,
+  a.button:hover,
+  button:hover,
+  input[type="reset"]:hover,
+  input[type="submit"]:hover,
+  input[type="button"]:hover {
+    background: #ccc;
+    text-decoration: none !important;
+    color: #444; }
+
+/*---------- Form buttons (Override button styles) ----------*/
+/* line 66, ../sass/base/_buttons-links.scss */
+button,
+input[type="reset"],
+input[type="submit"],
+input[type="button"] {
+  border: 0; }
+
+/* Exceptions to <a> css animation */
+/* line 75, ../sass/base/_buttons-links.scss */
+#colorbox button {
+  -webkit-transition: none;
+  -moz-transition: none;
+  -o-transition: none;
+  transition: none; }
+
+/* line 83, ../sass/base/_buttons-links.scss */
+li .button a.active {
+  color: #fff; }
+
+/* line 1, ../sass/base/_fieldsets.scss */
+fieldset {
+  padding: 30px;
+  border: 1px solid #aaa;
+  margin-bottom: 40px;
+  border-radius: 4px; }
+
+/* line 7, ../sass/base/_fieldsets.scss */
+legend {
+  font-size: 24px;
+  font-size: 1.5rem;
+  font-weight: 700;
+  padding: 0 15px;
+  color: #000; }
+  /* line 13, ../sass/base/_fieldsets.scss */
+  legend a:link {
+    color: #000; }
+
+/* line 1, ../sass/base/_forms.scss */
+input.focus {
+  color: #F8F4CA; }
+
+/* line 4, ../sass/base/_forms.scss */
+.image-widget-data input.form-file {
+  margin-right: 10px; }
+
+/* line 7, ../sass/base/_forms.scss */
+.form-item label,
+.form-actions label {
+  font-weight: normal;
+  font-size: 18px; }
+
+/* line 12, ../sass/base/_forms.scss */
+label.option {
+  vertical-align: middle; }
+
+/* line 15, ../sass/base/_forms.scss */
+input[type="checkbox"] {
+  cursor: pointer; }
+
+/* line 18, ../sass/base/_forms.scss */
+input[type="text"],
+input.form-text {
+  max-width: 100%;
+  padding: 10px; }
+
+/* line 24, ../sass/base/_forms.scss */
+input[type="file"] {
+  margin: 15px 0px 0px; }
+
+/* line 30, ../sass/base/_forms.scss */
+.form-managed-file {
+  border: 1px solid #aaa;
+  padding: 20px;
+  margin: 0 0 10px 0; }
+
+/* line 38, ../sass/base/_forms.scss */
+.webform-client-form input.form-submit {
+  background-color: transparent;
+  border: 1px solid #aaa;
+  border-radius: 4px;
+  padding: 10px 30px 8px;
+  margin: 15px 0;
+  display: block;
+  font-weight: 100;
+  width: 100%;
+  color: #000; }
+  /* line 53, ../sass/base/_forms.scss */
+  .webform-client-form input.form-submit:hover {
+    background-color: red;
+    border-color: red;
+    color: #fff; }
+
+/* line 60, ../sass/base/_forms.scss */
+.contact-button-wrapper a {
+  padding: 14px 5px 12px;
+  background-color: red;
+  color: #fff;
+  text-align: center;
+  text-transform: uppercase;
+  display: block;
+  margin-bottom: 15px; }
+  /* line 79, ../sass/base/_forms.scss */
+  .contact-button-wrapper a:hover {
+    color: #fff;
+    background-color: orange;
+    text-decoration: none; }
+
+/*-----------------------------------
+
+ Fantorrent Default Icon Fonts
+ 
+-----------------------------------*/
+/* Social Network Icons */
+@font-face {
+  font-family: 'IcoMoonSocial';
+  src: url("../fonts/IcoMoonSocial/fonts/icomoon_social.eot");
+  src: url("../fonts/IcoMoonSocial/fonts/icomoon_social.eot?#iefix") format("eot"), url("../fonts/IcoMoonSocial/fonts/icomoon_social.woff") format("woff"), url("../fonts/IcoMoonSocial/fonts/icomoon_social.ttf") format("truetype"), url("../fonts/IcoMoonSocial/fonts/icomoon_social.svg#IcoMoonSocial") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+/* Interface icons */
+@font-face {
+  font-family: 'IcoMoonBasic';
+  src: url("../fonts/IcoMoonBasic/fonts/icomoon_basic.eot");
+  src: url("../fonts/IcoMoonBasic/fonts/icomoon_basic.eot?#iefix") format("embedded-opentype"), url("../fonts/IcoMoonBasic/fonts/icomoon_basic.svg#IcoMoon") format("svg"), url("../fonts/IcoMoonBasic/fonts/icomoon_basic.woff") format("woff"), url("../fonts/IcoMoonBasic/fonts/icomoon_basic.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal; }
+/* Arrows icons */
+@font-face {
+  font-family: 'IcoMoonArrows';
+  src: url("../fonts/IcoMoonArrows/fonts/icomoon_arrows.eot");
+  src: url("../fonts/IcoMoonArrows/fonts/icomoon_arrows.eot?#iefix") format("embedded-opentype"), url("../fonts/IcoMoonArrows/fonts/icomoon_arrows.svg#icomoon") format("svg"), url("../fonts/IcoMoonArrows/fonts/icomoon_arrows.woff") format("woff"), url("../fonts/IcoMoonArrows/fonts/icomoon_arrows.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal; }
+/*---------------------------------------
+
+ Font Icons - reset 
+ 
+---------------------------------------*/
+/* line 51, ../sass/base/_icons.scss */
+* a:before,
+* a:after {
+  text-transform: none;
+  font-style: normal;
+  text-decoration: none;
+  text-shadow: none;
+  line-height: 1; }
+
+/* line 59, ../sass/base/_icons.scss */
+a:hover:before,
+a:hover:after {
+  text-decoration: none; }
+
+/* line 64, ../sass/base/_icons.scss */
+a:before,
+h1:before,
+h2:before,
+h3:before,
+h4:before,
+h5:before,
+h6:before,
+a:after,
+h1:after,
+h2:after,
+h3:after,
+h4:after,
+h5:after,
+h6:after {
+  font-weight: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  line-height: 1; }
+
+/* Grid containers (non-100% width) */
+/* line 7, ../sass/abstractions/_mixin-layout.scss */
+.l-header:before, .l-header:after,
+.l-content-wrapper:before,
+.l-content-wrapper:after,
+.l-constrained:before,
+.l-constrained:after,
+.l-region-inner:before,
+.l-region-inner:after {
+  content: "";
+  display: table; }
+/* line 12, ../sass/abstractions/_mixin-layout.scss */
+.l-header:after,
+.l-content-wrapper:after,
+.l-constrained:after,
+.l-region-inner:after {
+  clear: both;
+  font-size: 0;
+  /* Clear Fix correction (add font-size to fix extra padding at bottom of site */ }
+
+/* line 53, ../sass/base/_layout.scss */
+.not-front .l-main {
+  padding-bottom: 50px; }
+
+/*---------------------------------------
+
+ NODE-CONTAINER STYLES 
+ 
+---------------------------------------*/
+/* line 64, ../sass/base/_layout.scss */
+.node-row-container,
+.node-middle-row1-container,
+.node-middle-row2-container,
+.node-middle-row3-container,
+.node-middle-row4-container,
+.node-middle-row5-container,
+.node-middle-row6-container,
+.node-middle-row7-container,
+.node-bottom-row-container {
+  padding: 50px 0;
+  border-bottom: 1px solid #aaa;
+  position: relative; }
+
+/* line 77, ../sass/base/_layout.scss */
+.node-bottom-row-container {
+  border-bottom: 0; }
+
+/*-------------------------------------------
+
+ LISTS - ordered & unordered defaults 
+
+--------------------------------------------*/
+/* line 10, ../sass/base/_lists.scss */
+ol {
+  list-style: decimal; }
+
+/* line 13, ../sass/base/_lists.scss */
+ol li {
+  list-style-type: decimal; }
+
+/* line 16, ../sass/base/_lists.scss */
+ul {
+  list-style: disc; }
+
+/* line 19, ../sass/base/_lists.scss */
+ul li {
+  list-style: disc; }
+
+/* line 22, ../sass/base/_lists.scss */
+ul ul,
+ol ol {
+  padding-top: 0.5em; }
+
+/* line 26, ../sass/base/_lists.scss */
+ul ul li {
+  list-style: circle; }
+
+/* line 29, ../sass/base/_lists.scss */
+.node ol,
+.node ul {
+  padding-left: 2em; }
+
+/* line 33, ../sass/base/_lists.scss */
+.node ul.inline,
+.node ol.inline {
+  padding-left: 0; }
+
+/*-------- Definition Lists --------*/
+/* line 39, ../sass/base/_lists.scss */
+dt, .admin h3 {
+  font-size: 1.125rem;
+  /* 18px */
+  margin: 0; }
+
+/* line 43, ../sass/base/_lists.scss */
+dd {
+  padding-left: 10px;
+  font-size: 0.938rem;
+  /* 15px */
+  font-style: italic;
+  margin-bottom: 20px; }
+
+/* Content that needs typical ordered list styling */
+/* line 51, ../sass/base/_lists.scss */
+.context-legal .block-system-main ol,
+.context-legal .block-system-main ul,
+.context-meet-greet-rules .block-system-main ol,
+.highlight-product-body {
+  margin: 0 0 30px 30px; }
+
+/* line 57, ../sass/base/_lists.scss */
+ol.search-results li {
+  margin-left: 30px; }
+
+/* store page - negates .teaser-grid style on overarching views <li> for whole page */
+/* line 62, ../sass/base/_lists.scss */
+.view-store-landing.teaser-grid #views-popup-wrapper .field-name-body li {
+  list-style-type: disc;
+  margin-left: 20px; }
+
+/*---------------------------------------------------------
+-----------------------------------------------------------
+
+ TEASER LIST & TEASER GRID styles
+  
+-----------------------------------------------------------
+---------------------------------------------------------*/
+/*---------------------------------------
+
+ TEASER-GRID
+ 
+----------------------------------------*/
+/* line 82, ../sass/base/_lists.scss */
+.teaser-grid {
+  margin: 0;
+  padding: 0; }
+
+/* line 86, ../sass/base/_lists.scss */
+.teaser-grid ul {
+  margin: 0;
+  padding: 0;
+  overflow: hidden; }
+
+/* line 91, ../sass/base/_lists.scss */
+.teaser-grid li,
+.teaser-grid .item-list li,
+.teaser-grid-row {
+  list-style-type: none;
+  float: left;
+  padding: 0;
+  margin: 0;
+  position: relative; }
+
+/*---------------------------------------
+
+ TEASER-LIST
+ 
+----------------------------------------*/
+/* line 107, ../sass/base/_lists.scss */
+.teaser-list {
+  padding: 0; }
+
+/* line 110, ../sass/base/_lists.scss */
+.teaser-list ul {
+  margin: 0;
+  padding: 0; }
+
+/* line 114, ../sass/base/_lists.scss */
+.teaser-list-row,
+.item-list li.teaser-list-row {
+  padding: 20px 0;
+  border-bottom: 1px solid #aaa;
+  list-style-type: none;
+  margin: 0;
+  position: relative;
+  overflow: hidden; }
+
+/* first and last row alterations */
+/* line 125, ../sass/base/_lists.scss */
+.teaser-list-row:nth-of-type(1),
+.item-list li.teaser-list-row:first-child,
+.l-region--sidebar .teaser-list-row:first-child {
+  padding-top: 0; }
+
+/* line 130, ../sass/base/_lists.scss */
+.teaser-list-row:last-child,
+.item-list li.teaser-list-row:last-child,
+.l-region--sidebar .teaser-list-row:last-child {
+  border-bottom: 0; }
+
+/* list row content - articles */
+/* line 137, ../sass/base/_lists.scss */
+.teaser-list h3.title {
+  font-size: 15px;
+  margin-bottom: 5px; }
+
+/* line 141, ../sass/base/_lists.scss */
+.teaser-list .post-date {
+  font-size: 0.813em;
+  font-style: italic; }
+
+/* line 145, ../sass/base/_lists.scss */
+.teaser-list .media-thumb-item {
+  width: 160px;
+  float: left;
+  margin-right: 30px; }
+
+/* line 150, ../sass/base/_lists.scss */
+.teaser-list ul.share-links-container {
+  border: 0;
+  height: 20px;
+  margin: 0px;
+  padding: 5px 0; }
+
+/*-------------------------------------
+
+  Site Images
+
+--------------------------------------*/
+/* line 7, ../sass/base/_media.scss */
 img, media {
   max-width: 100%;
-}
+  width: 100%;
+  height: auto;
+  vertical-align: middle;
+  /* kills space between img, a, and container */ }
 
-/* No files to import found in partials/components/**\/* */
+/* line 15, ../sass/base/_media.scss */
+table img,
+img.file-icon,
+.feed-icon img,
+img#views-popup-ajax-throbber,
+.gallery-image-item img,
+body.node-type-banner .field-type-image img,
+.commerce-paypal-icon,
+#toolbar img,
+.mollom-image-captcha img {
+  width: auto; }
+
+/* line 29, ../sass/base/_media.scss */
+a img {
+  -webkit-transition: all 0.2s ease-in;
+  -moz-transition: all 0.2s ease-in;
+  -o-transition: all 0.2s ease-in;
+  transition: all 0.2s ease-in; }
+
+/* line 35, ../sass/base/_media.scss */
+a.colorbox img,
+.gallery-image-item img {
+  cursor: url("../images/cursor-zoom.png"), pointer; }
+
+/* line 41, ../sass/base/_media.scss */
+a.colorbox-load img,
+.gallery-video-item img {
+  cursor: url("../images/cursor-video.png"), pointer; }
+
+/* line 48, ../sass/base/_media.scss */
+img#views-popup-ajax-throbber {
+  width: auto; }
+
+/* line 51, ../sass/base/_media.scss */
+#views-popup-ajax-throbber-container {
+  padding-left: 25px; }
+
+/*-------------------------------------
+
+ video
+
+-------------------------------------*/
+/* line 63, ../sass/base/_media.scss */
+.l-page .embedded-video {
+  height: 0;
+  overflow: hidden;
+  padding-bottom: 56.25%;
+  padding-top: 30px;
+  position: relative; }
+  /* line 70, ../sass/base/_media.scss */
+  .l-page .embedded-video iframe {
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%; }
+
+/* line 1, ../sass/base/_menus.scss */
+.menu .leaf {
+  list-style-image: none;
+  list-style-type: none; }
+
+/*----------------------------------------- 
+
+ TABLE STYLES 
+
+------------------------------------------*/
+/* line 10, ../sass/base/_tables.scss */
+table, tbody, tfoot, thead, tr, th, td {
+  vertical-align: middle; }
+
+/* line 13, ../sass/base/_tables.scss */
+table {
+  width: 100%; }
+
+/* line 16, ../sass/base/_tables.scss */
+thead th {
+  background-color: #eee;
+  border: 1px solid #aaa;
+  font-size: 13px;
+  font-size: 0.8125rem;
+  padding: 1em;
+  text-align: left;
+  text-transform: uppercase; }
+
+/* line 24, ../sass/base/_tables.scss */
+td {
+  border: 1px solid #aaa;
+  padding: 15px;
+  font-size: 12px;
+  font-size: 0.75rem; }
+
+/* line 29, ../sass/base/_tables.scss */
+tr.odd {
+  background-color: #fff; }
+
+/* line 32, ../sass/base/_tables.scss */
+tr.even {
+  background-color: #f0f0f0; }
+
+/* line 41, ../sass/base/_tables.scss */
+tr.draggable td {
+  padding-left: 25px; }
+
+/* line 46, ../sass/base/_tables.scss */
+.draggable a.tabledrag-handle {
+  margin-left: -25px; }
+
+/* line 50, ../sass/base/_tables.scss */
+a.tabledrag-handle .handle {
+  background-position: 1px 4px;
+  height: 17px;
+  margin: -0.4em 0.5em;
+  padding: 0.42em 0.5em;
+  width: 13px; }
+
+/* line 57, ../sass/base/_tables.scss */
+a.tabledrag-handle-hover .handle {
+  background-position: 0 -16px; }
+
+/*-------------------------------------------------------
+---------------------------------------------------------
+
+ DRUPAL TABS - navigation tab buttons
+ 
+---------------------------------------------------------
+-------------------------------------------------------*/
+/* line 9, ../sass/base/_tabs.scss */
+.tabs.tabs--primary {
+  margin: 0 0 20px 0;
+  padding: 0;
+  overflow: hidden;
+  border-bottom: 1px solid #aaa; }
+
+/* line 15, ../sass/base/_tabs.scss */
+.tabs.tabs--primary li {
+  margin: 0 3px 0 0;
+  padding: 0;
+  float: left;
+  list-style-type: none; }
+  /* line 21, ../sass/base/_tabs.scss */
+  .tabs.tabs--primary li.active a {
+    background-color: #444;
+    color: #fff;
+    border-color: #333; }
+
+/* line 27, ../sass/base/_tabs.scss */
+.tabs.tabs--primary li a {
+  background-color: #eee;
+  border-radius: 5px 5px 0 0;
+  color: #888;
+  font-size: 14px;
+  font-size: 0.875rem;
+  display: block;
+  padding: 6px 15px;
+  text-decoration: none;
+  text-transform: uppercase;
+  border-bottom: 1px solid #aaa;
+  border-bottom: 0;
+  text-align: center; }
+  /* line 40, ../sass/base/_tabs.scss */
+  .tabs.tabs--primary li a:hover {
+    background-color: #444;
+    color: #fff;
+    border-color: #333;
+    text-decoration: none; }
+
+/*-----------------------------------
+
+ Custom Fonts - per site
+ 
+-----------------------------------*/
+/*--------------------------------------------------------
+----------------------------------------------------------
+
+ TEXT STYLES
+ 
+----------------------------------------------------------
+--------------------------------------------------------*/
+/* line 24, ../sass/base/_typography.scss */
+::-moz-selection,
+::selection {
+  color: #fff;
+  background-color: darkorange;
+  text-shadow: none; }
+
+/* line 32, ../sass/base/_typography.scss */
+hr {
+  margin: 0;
+  padding: 0;
+  border: none;
+  height: 1px;
+  background: #aaa; }
+
+/* line 39, ../sass/base/_typography.scss */
+p, dl, hr, h1, h2, h3, h4, h5, h6, ol,
+ul, pre, table, address, fieldset {
+  margin-bottom: 40px;
+  margin-top: 0; }
+
+/* line 45, ../sass/base/_typography.scss */
+p {
+  word-wrap: break-word; }
+
+/*---------------------------------------------
+
+ HEADINGS & TITLES - general
+ 
+-----------------------------------------------*/
+/* line 55, ../sass/base/_typography.scss */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.legacy-shownotes-item .field-label,
+.legacy-node-full div.share-links-container:before {
+  letter-spacing: -0.05em;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 700;
+  margin: 0 0 30px 0;
+  color: #000; }
+
+/* line 69, ../sass/base/_typography.scss */
+h1, h2 {
+  font-weight: normal;
+  /* removes ugly bold rendering of custom title fonts - remove as necessary */ }
+
+/*------------------
+
+ h1
+ 
+-------------------*/
+/* line 79, ../sass/base/_typography.scss */
+h1 {
+  line-height: 1;
+  padding-bottom: 26.66667px;
+  text-transform: uppercase;
+  margin-bottom: 40px;
+  font-size: 48px;
+  font-size: 3rem;
+  border-bottom: 1px solid #aaa; }
+
+/* line 87, ../sass/base/_typography.scss */
+h1#page-title {
+  color: #444; }
+
+/* overrides to account for node pager or menu block at page top */
+/*------------------
+
+ h2
+ 
+--------------------*/
+/* line 106, ../sass/base/_typography.scss */
+h2,
+h2.node-title,
+h2.block-title,
+h2.views-title,
+.legacy-shownotes-item .field-label,
+.legacy-node-full div.share-links-container:before,
+#edit-department-id-wrapper label[for*="department"],
+.page-store .view-display-id-dl_shows h3 {
+  font-size: 27px;
+  font-size: 1.6875rem; }
+
+/* line 118, ../sass/base/_typography.scss */
+h2.node-title,
+h2.block-title {
+  line-height: 1.2; }
+
+/*--------------------
+
+ h3 - h6
+ 
+---------------------*/
+/* line 129, ../sass/base/_typography.scss */
+h3 {
+  font-size: 21px;
+  font-size: 1.3125rem; }
+
+/* line 132, ../sass/base/_typography.scss */
+h4 {
+  font-size: 19px;
+  font-size: 1.1875rem; }
+
+/* line 135, ../sass/base/_typography.scss */
+h5 {
+  font-size: 17px;
+  font-size: 1.0625rem; }
+
+/* line 138, ../sass/base/_typography.scss */
+h6 {
+  font-size: 15px;
+  font-size: 0.9375rem; }
+
+/*---------------------------------------
+
+ LOGGED IN AS ADMIN ON MOBILE
+ 
+---------------------------------------*/
+/* line 7, ../sass/components/_admin-toolbar.scss */
+body.toolbar,
+body.toolbar-drawer {
+  padding-top: 0 !important; }
+
+/* line 11, ../sass/components/_admin-toolbar.scss */
+#toolbar {
+  position: relative; }
+
+/* line 14, ../sass/components/_admin-toolbar.scss */
+div.toolbar-drawer,
+.toolbar-menu a.toggle {
+  display: none; }
+
+/* prevents side scrolling */
+/* line 20, ../sass/components/_admin-toolbar.scss */
+#toolbar {
+  margin: 0;
+  padding: 0; }
+
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+  /* line 4, ../sass/components/_backgrounds.scss */
+  body {
+    background-attachment: scroll; } }
+@media only screen and (min-device-width: 320px) and (max-device-width: 568px) {
+  /* line 4, ../sass/components/_backgrounds.scss */
+  body {
+    background-attachment: scroll; } }
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+  /* line 4, ../sass/components/_backgrounds.scss */
+  body {
+    background-attachment: scroll; } }
+
+/* line 36, ../sass/components/_backgrounds.scss */
+body {
+  background-size: auto auto; }
+
+/*----------------------------------------------
+
+ CLICKABLE class: 
+ 
+ JS that makes entire teaser-row container a link, vs
+ just the linked text within. Style to make 
+ visible changes on container hover.
+  
+-----------------------------------------------*/
+/*----------------------------
+ in main content area
+------------------------------*/
+/* articles list page */
+/* line 17, ../sass/components/_clickable.scss */
+.teaser-list .clickable:hover h3 a {
+  color: red; }
+
+/*------------------------------
+ general 
+-------------------------------*/
+/* line 25, ../sass/components/_clickable.scss */
+.clickable {
+  -webkit-transition: all 0.2s ease-in;
+  -moz-transition: all 0.2s ease-in;
+  -o-transition: all 0.2s ease-in;
+  transition: all 0.2s ease-in; }
+
+/* line 28, ../sass/components/_clickable.scss */
+.clickable-hover {
+  cursor: pointer;
+  background: none; }
+
+/*-----------------------------
+ in sidebar 
+------------------------------*/
+/* unlinked text */
+/* line 38, ../sass/components/_clickable.scss */
+.l-region--sidebar .clickable-hover {
+  color: #aaa; }
+
+/* linked text */
+/* line 42, ../sass/components/_clickable.scss */
+.l-region--sidebar .clickable a {
+  color: #ccc;
+  /* same as default sidebar text */ }
+
+/* line 45, ../sass/components/_clickable.scss */
+.l-region--sidebar .clickable-hover a {
+  color: red;
+  text-decoration: none; }
+
+/* dateblock */
+/* line 51, ../sass/components/_clickable.scss */
+.l-region--sidebar .clickable-hover .dateblock {
+  background-color: #000; }
+  /* line 54, ../sass/components/_clickable.scss */
+  .l-region--sidebar .clickable-hover .dateblock .month, .l-region--sidebar .clickable-hover .dateblock .day, .l-region--sidebar .clickable-hover .dateblock .year {
+    color: #fff; }
+
+/* overrides to box-sizing (adds padding & border to total width) */
+/* line 2, ../sass/components/_colorbox.scss */
+#colorbox,
+#cboxOverlay,
+#cboxWrapper {
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box; }
+
+/*--------------------------------------
+ Colorbox Popups  
+---------------------------------------*/
+/* line 15, ../sass/components/_colorbox.scss */
+#cboxContent {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; }
+
+/* line 1, ../sass/components/_dateblock.scss */
+.dateblock {
+  width: 45px;
+  background-color: #000;
+  float: left;
+  margin: 0 15px 0px 0;
+  padding: 5px;
+  text-align: center;
+  border-radius: 4px;
+  -webkit-transition: all 0.2s ease-in;
+  -moz-transition: all 0.2s ease-in;
+  -o-transition: all 0.2s ease-in;
+  transition: all 0.2s ease-in; }
+  /* line 11, ../sass/components/_dateblock.scss */
+  .dateblock .month, .dateblock .day, .dateblock .year {
+    display: block;
+    line-height: 1;
+    text-transform: uppercase; }
+  /* line 17, ../sass/components/_dateblock.scss */
+  .dateblock .month {
+    font-size: 14px;
+    font-size: 0.875rem;
+    color: #fff; }
+  /* line 22, ../sass/components/_dateblock.scss */
+  .dateblock .day {
+    font-size: 26px;
+    font-size: 1.625rem;
+    color: #999; }
+  /* line 27, ../sass/components/_dateblock.scss */
+  .dateblock .year {
+    font-size: 12px;
+    font-size: 0.75rem; }
+
+/*-------------------------------------------------
+---------------------------------------------------
+
+ Footer - Layout
+ 
+---------------------------------------------------
+-------------------------------------------------*/
+/* line 11, ../sass/components/_footer.scss */
+.l-footer-wrapper {
+  background-color: #444; }
+  /* line 7, ../sass/abstractions/_mixin-layout.scss */
+  .l-footer-wrapper:before, .l-footer-wrapper:after {
+    content: "";
+    display: table; }
+  /* line 12, ../sass/abstractions/_mixin-layout.scss */
+  .l-footer-wrapper:after {
+    clear: both;
+    font-size: 0;
+    /* Clear Fix correction (add font-size to fix extra padding at bottom of site */ }
+
+/* line 17, ../sass/components/_footer.scss */
+.l-footer-wrapper .l-constrained {
+  width: 95%; }
+
+/* line 22, ../sass/components/_footer.scss */
+.footer-inner {
+  padding: 40px 0;
+  color: #aaa; }
+  /* line 7, ../sass/abstractions/_mixin-layout.scss */
+  .footer-inner:before, .footer-inner:after {
+    content: "";
+    display: table; }
+  /* line 12, ../sass/abstractions/_mixin-layout.scss */
+  .footer-inner:after {
+    clear: both;
+    font-size: 0;
+    /* Clear Fix correction (add font-size to fix extra padding at bottom of site */ }
+  /* line 27, ../sass/components/_footer.scss */
+  .footer-inner a {
+    color: orange; }
+  /* line 31, ../sass/components/_footer.scss */
+  .footer-inner a:hover {
+    color: white; }
+
+/*-----------------------------------
+
+ Copyright & links
+ 
+------------------------------------*/
+/* line 66, ../sass/components/_footer.scss */
+.footer-links {
+  margin-bottom: 5px; }
+  /* line 69, ../sass/components/_footer.scss */
+  .footer-links ul {
+    margin: 0;
+    padding: 0; }
+    /* line 7, ../sass/abstractions/_mixin-layout.scss */
+    .footer-links ul:before, .footer-links ul:after {
+      content: "";
+      display: table; }
+    /* line 12, ../sass/abstractions/_mixin-layout.scss */
+    .footer-links ul:after {
+      clear: both;
+      font-size: 0;
+      /* Clear Fix correction (add font-size to fix extra padding at bottom of site */ }
+  /* line 74, ../sass/components/_footer.scss */
+  .footer-links ul li {
+    margin: 0 12px 0 0;
+    padding: 0 0 0 0;
+    list-style-type: none;
+    list-style-image: none;
+    float: left; }
+
+/* line 83, ../sass/components/_footer.scss */
+.l-footer-wrapper .footer-menu ul {
+  margin: 0;
+  padding: 0; }
+/* line 87, ../sass/components/_footer.scss */
+.l-footer-wrapper .footer-menu li {
+  float: left;
+  list-style-type: none;
+  margin-right: 10px; }
+
+/*-------------------------------------------------------
+---------------------------------------------------------
+
+ LOGO
+ 
+---------------------------------------------------------
+--------------------------------------------------------*/
+/* line 9, ../sass/components/_logo.scss */
+.l-branding {
+  background-color: transparent;
+  height: auto; }
+
+/*--------------------------------------
+
+ System Messages (mobile)
+ 
+---------------------------------------*/
+/* line 9, ../sass/components/_messages.scss */
+.l-messages {
+  line-height: 1.25;
+  padding: 0;
+  margin: 0;
+  background-color: #fff;
+  border: 0;
+  font-size: 18px;
+  font-size: 1.125rem;
+  word-break: break-all; }
+
+/* line 18, ../sass/components/_messages.scss */
+.l-messages .l-constrained {
+  margin: 0;
+  width: auto; }
+
+/* line 23, ../sass/components/_messages.scss */
+.messages {
+  margin: 0;
+  padding: 15px 15px 15px 50px;
+  border: 0;
+  background-position: 15px 15px; }
+
+/* line 34, ../sass/components/_messages.scss */
+.messages--warning {
+  background-color: #fcf092;
+  color: #000; }
+
+/* line 38, ../sass/components/_messages.scss */
+.messages--error {
+  background-color: #f45d5d; }
+
+/* line 41, ../sass/components/_messages.scss */
+.messages--status {
+  background-color: #bff697; }
+
+/* line 45, ../sass/components/_messages.scss */
+.messages--status a,
+.messages--error a,
+.messages--warning a {
+  color: #000;
+  /* color needs to be visible from .messages bg-color value */
+  text-decoration: underline; }
+
+/*-------------------------------------------------------
+---------------------------------------------------------
+
+ MAIN NAVIGATION - Mobile
+ 
+---------------------------------------------------------
+--------------------------------------------------------*/
+/*-----------------------------------
+ 
+ Layout
+   
+------------------------------------*/
+/* Header in mobile */
+/* line 26, ../sass/components/_mobile-navigation.scss */
+#site-wrapper {
+  overflow: hidden;
+  width: 100%; }
+
+/* line 36, ../sass/components/_mobile-navigation.scss */
+.l-inner-wrap {
+  width: 100%;
+  height: 100%;
+  -webkit-transition: .3s ease all;
+  transition: .3s ease all; }
+
+/* line 60, ../sass/components/_mobile-navigation.scss */
+.js-nav body {
+  overflow: hidden; }
+
+/* line 63, ../sass/components/_mobile-navigation.scss */
+.js-nav .l-inner-wrap {
+  -webkit-transform: translateX(300px);
+  transform: translateX(300px);
+  -webkit-transform: translateX(300px) tranlateZ(0);
+  transform: translateX(300px) tranlateZ(0);
+  -webkit-transform: translate3d(300px, 0, 0);
+  transform: translate3d(300px, 0, 0);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-transition: transform 500ms ease 0s;
+  transition: transform 500ms ease 0s;
+  position: relative;
+  width: 100%; }
+
+/* line 87, ../sass/components/_mobile-navigation.scss */
+#mobile-fade {
+  display: none; }
+
+/* line 90, ../sass/components/_mobile-navigation.scss */
+.js-nav #mobile-fade {
+  width: 100%;
+  height: 100%;
+  display: block;
+  background: rgba(0, 0, 0, 0.7);
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  opacity: 1; }
+
+/* line 105, ../sass/components/_mobile-navigation.scss */
+.l-menu-mobile {
+  position: absolute;
+  left: -300px;
+  top: 0px;
+  width: 300px;
+  height: 100%;
+  background-color: #eee;
+  backface-visibility: hidden;
+  display: block; }
+  /* line 117, ../sass/components/_mobile-navigation.scss */
+  .js-nav .l-menu-mobile {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+    -webkit-transform: translateX(0) translateZ(0);
+    transform: translateX(0) translateZ(0);
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0); }
+
+/* line 134, ../sass/components/_mobile-navigation.scss */
+.l-menu-mobile-top {
+  background-color: #000;
+  height: 50px; }
+
+/*-----------------------------------
+ 
+ Toggle buttons
+   
+------------------------------------*/
+/* line 147, ../sass/components/_mobile-navigation.scss */
+a.nav-open-btn {
+  left: 0px;
+  top: 0px;
+  z-index: 9999;
+  margin-left: 0px;
+  /* negates show-link class positioning */
+  width: 50px;
+  overflow: hidden;
+  height: 0px;
+  position: absolute;
+  padding: 50px 0px 0px;
+  background: none;
+  border-radius: 0;
+  border-right: 1px solid #aaa;
+  color: #777;
+  -webkit-transition: all 0.2s ease;
+  -moz-transition: all 0.2s ease;
+  -o-transition: all 0.2s ease;
+  transition: all 0.2s ease; }
+  /* line 163, ../sass/components/_mobile-navigation.scss */
+  a.nav-open-btn:hover {
+    color: #777; }
+  /* line 167, ../sass/components/_mobile-navigation.scss */
+  a.nav-open-btn:before {
+    font-family: IcoMoonBasic;
+    content: "\62";
+    font-size: 24px;
+    line-height: 1;
+    position: absolute;
+    top: 11px;
+    left: 12px; }
+
+/* line 183, ../sass/components/_mobile-navigation.scss */
+a.nav-close-btn {
+  display: block;
+  padding: 15px 15px 11px 40px;
+  width: auto;
+  display: block;
+  color: #eee;
+  font-size: 12px;
+  font-size: 0.75rem;
+  line-height: 1;
+  color: #999;
+  height: 50px; }
+  /* line 194, ../sass/components/_mobile-navigation.scss */
+  a.nav-close-btn:hover {
+    text-decoration: none;
+    color: #fff; }
+  /* line 199, ../sass/components/_mobile-navigation.scss */
+  a.nav-close-btn:before {
+    content: "\e008";
+    font-family: IcoMoonBasic;
+    font-size: 24px;
+    line-height: 1;
+    display: inline-block;
+    position: relative;
+    top: -2px;
+    margin-right: 10px;
+    vertical-align: middle; }
+
+/*------------------------------------
+
+ Main Links styling
+ 
+-------------------------------------*/
+/* line 218, ../sass/components/_mobile-navigation.scss */
+.mobile-nav {
+  height: auto;
+  position: relative; }
+
+/* line 222, ../sass/components/_mobile-navigation.scss */
+.mobile-nav ul {
+  margin: 0;
+  padding: 0; }
+
+/* line 226, ../sass/components/_mobile-navigation.scss */
+.mobile-nav ul li {
+  text-align: left;
+  float: none;
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  list-style-image: none; }
+  /* line 231, ../sass/components/_mobile-navigation.scss */
+  .mobile-nav ul li a {
+    padding: 15px 15px 15px 40px;
+    display: block;
+    text-decoration: none;
+    width: auto;
+    color: #222;
+    border-bottom: 1px solid #aaa;
+    font-size: 18px;
+    font-size: 1.125rem; }
+  /* line 241, ../sass/components/_mobile-navigation.scss */
+  .mobile-nav ul li a:hover {
+    background-color: #444;
+    color: #ccc;
+    text-decoration: none; }
+  /* line 246, ../sass/components/_mobile-navigation.scss */
+  .mobile-nav ul li a.active {
+    color: #222; }
+
+/* line 251, ../sass/components/_mobile-navigation.scss */
+.mobile-nav .menu .leaf {
+  list-style-image: none;
+  list-style-type: none; }
+
+/*---------------------------------------------------------
+
+ SUB NAV
+ 
+---------------------------------------------------------*/
+/* line 267, ../sass/components/_mobile-navigation.scss */
+.mobile-nav ul ul {
+  background-color: #ccc; }
+
+/* line 270, ../sass/components/_mobile-navigation.scss */
+.mobile-nav .sub-nav {
+  padding: 10px 10px 10px 80px;
+  font-size: 14px;
+  font-size: 0.875rem; }
+  /* line 274, ../sass/components/_mobile-navigation.scss */
+  .mobile-nav .sub-nav:before {
+    font-family: IcoMoonArrows;
+    content: "\33";
+    position: relative;
+    left: -20px; }
+
+/*---------------------------------------------------------------------
+-----------------------------------------------------------------------
+
+ More Link - general settings
+ 
+-----------------------------------------------------------------------
+---------------------------------------------------------------------*/
+/* line 9, ../sass/components/_more-link.scss */
+.more-link,
+.l-region--sidebar .view-footer {
+  text-align: right; }
+  /* line 13, ../sass/components/_more-link.scss */
+  .more-link a,
+  .l-region--sidebar .view-footer a {
+    display: block;
+    padding: 10px;
+    position: relative;
+    text-transform: uppercase;
+    vertical-align: bottom;
+    text-decoration: none;
+    font-size: 12px;
+    font-size: 0.75rem;
+    text-align: right; }
+  /* line 24, ../sass/components/_more-link.scss */
+  .more-link a:hover,
+  .l-region--sidebar .view-footer a:hover {
+    text-decoration: none; }
+  /* line 28, ../sass/components/_more-link.scss */
+  .more-link a:after,
+  .l-region--sidebar .view-footer a:after {
+    background-color: transparent;
+    content: "\3e";
+    display: inline-block;
+    font-family: IcoMoonArrows;
+    font-size: 20px;
+    height: 22px;
+    line-height: 23px;
+    overflow: hidden;
+    padding: 0;
+    vertical-align: middle;
+    width: 20px;
+    speak: none; }
+  /* line 42, ../sass/components/_more-link.scss */
+  .more-link a:hover:after,
+  .l-region--sidebar .view-footer a:hover:after {
+    text-decoration: none; }
+
+/* ----------------------------
+
+ More Link - main content section
+ 
+-----------------------------*/
+/* line 53, ../sass/components/_more-link.scss */
+.l-content-inner .view-footer {
+  padding: 10px 0; }
+
+/* line 56, ../sass/components/_more-link.scss */
+.l-content-inner .more-link {
+  position: relative;
+  left: 0;
+  top: 0;
+  background: none; }
+
+/* line 62, ../sass/components/_more-link.scss */
+.l-content-inner .more-link {
+  padding: 10px 0; }
+
+/* line 65, ../sass/components/_more-link.scss */
+.l-content-inner .more-link a {
+  width: auto;
+  padding: 0;
+  text-align: right; }
+
+/* line 70, ../sass/components/_more-link.scss */
+.l-content-inner .more-link a:after {
+  background: none;
+  padding: 0;
+  margin: 0;
+  font-size: 16px;
+  font-size: 1rem;
+  position: relative;
+  top: -2px; }
+
+/*-------------------------------------------------------
+---------------------------------------------------------
+ 
+ MAIN-NAVIGATION - non-mobile
+ 
+---------------------------------------------------------
+--------------------------------------------------------*/
+/* line 28, ../sass/components/_navigation.scss */
+.l-region--navigation .menu {
+  margin: 0;
+  padding: 0;
+  overflow: visible;
+  position: relative; }
+
+/* line 36, ../sass/components/_navigation.scss */
+.l-region--navigation .menu li {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  float: left;
+  position: relative; }
+  /* line 43, ../sass/components/_navigation.scss */
+  .l-region--navigation .menu li.leaf {
+    list-style-image: none; }
+  /* line 46, ../sass/components/_navigation.scss */
+  .l-region--navigation .menu li.collapsed {
+    list-style-image: none; }
+  /* line 49, ../sass/components/_navigation.scss */
+  .l-region--navigation .menu li.expanded {
+    list-style-image: none; }
+
+/* line 55, ../sass/components/_navigation.scss */
+.l-region--navigation li > a {
+  padding: 15px 20px;
+  display: block;
+  color: #222;
+  background-color: transparent;
+  font-size: 18px;
+  font-size: 1.125rem; }
+  /* line 62, ../sass/components/_navigation.scss */
+  .l-region--navigation li > a:hover {
+    color: #ccc;
+    background-color: #444;
+    text-decoration: none; }
+
+/* sub nav menus */
+/* line 73, ../sass/components/_navigation.scss */
+.l-region--navigation li ul.menu {
+  position: absolute;
+  top: 59px;
+  left: 0;
+  min-width: 300px;
+  visibility: hidden;
+  -webkit-transition: opacity 0.2s ease-in;
+  -moz-transition: opacity 0.2s ease-in;
+  -o-transition: opacity 0.2s ease-in;
+  transition: opacity 0.2s ease-in;
+  background-color: #777;
+  left: -9999px; }
+
+/* line 87, ../sass/components/_navigation.scss */
+.l-region--navigation .menu li:hover > a {
+  background-color: #444;
+  color: #ccc; }
+
+/* line 91, ../sass/components/_navigation.scss */
+.l-region--navigation .menu li:hover ul.menu {
+  display: block;
+  opacity: 1;
+  visibility: visible;
+  left: 0; }
+
+/* line 97, ../sass/components/_navigation.scss */
+.l-region--navigation li ul.menu li {
+  float: left; }
+  /* line 100, ../sass/components/_navigation.scss */
+  .l-region--navigation li ul.menu li a {
+    padding: 10px 15px;
+    color: #fff;
+    font-size: 14px;
+    font-size: 0.875rem; }
+
+/* line 107, ../sass/components/_navigation.scss */
+.l-region--navigation li.last ul.menu {
+  transform: translate(-70%); }
+
+/*-------------------------------------------------------
+---------------------------------------------------------
+ 
+ SUB-NAVIGATION in PAGE CONTENT
+ 
+---------------------------------------------------------
+--------------------------------------------------------*/
+/* line 121, ../sass/components/_navigation.scss */
+.l-content .block--menu-block h2.block-title {
+  display: none; }
+
+/* line 124, ../sass/components/_navigation.scss */
+.l-content .menu-block-wrapper {
+  margin: 40px 0;
+  overflow: hidden;
+  padding: 13.33333px 0;
+  background-color: #eee; }
+
+/* line 130, ../sass/components/_navigation.scss */
+.l-content .menu-block-wrapper .menu {
+  margin: 0;
+  padding: 0; }
+  /* line 134, ../sass/components/_navigation.scss */
+  .l-content .menu-block-wrapper .menu li {
+    float: none;
+    list-style-type: none;
+    list-style-image: none;
+    border: 0;
+    padding: 0;
+    margin: 10px 0; }
+  /* line 142, ../sass/components/_navigation.scss */
+  .l-content .menu-block-wrapper .menu li a {
+    text-transform: uppercase;
+    display: block; }
+  /* line 146, ../sass/components/_navigation.scss */
+  .l-content .menu-block-wrapper .menu li a:hover {
+    text-decoration: none; }
+
+/*-----------------------------------------------------------
+-------------------------------------------------------------
+
+ PAGERS
+ 
+-------------------------------------------------------------
+------------------------------------------------------------*/
+/*-------------------------------------
+
+ LOAD MORE link 
+ 
+--------------------------------------*/
+/* line 15, ../sass/components/_pagers.scss */
+ul.pager-load-more {
+  background: url("../images/more-button-rule.png") repeat-x scroll left center transparent;
+  border: 0 none;
+  margin: 20px 0; }
+
+/* line 20, ../sass/components/_pagers.scss */
+ul.pager-load-more li {
+  padding: 0px;
+  margin: 0;
+  float: none;
+  display: block;
+  border: 0; }
+
+/* Load More button */
+/* line 29, ../sass/components/_pagers.scss */
+.pager-load-more .pager-next a {
+  background-color: #fff;
+  border-radius: 4px;
+  -webkit-box-shadow: 0 0 3px #ccc;
+  box-shadow: 0 0 3px #aaa;
+  color: #444;
+  padding: 5px 20px;
+  text-transform: lowercase;
+  width: auto;
+  display: inline-block; }
+  /* line 40, ../sass/components/_pagers.scss */
+  .pager-load-more .pager-next a:hover {
+    background-color: #444;
+    color: #fff;
+    text-decoration: none;
+    -webkit-box-shadow: 0 0 3px #ccc, 0 0 4px #ccc inset;
+    box-shadow: 0 0 3px #888, 0 0 4px #000 inset;
+    -webkit-transition: all 0.2s ease-in;
+    -moz-transition: all 0.2s ease-in;
+    -o-transition: all 0.2s ease-in;
+    transition: all 0.2s ease-in;
+    /* same as the <a> - needed to override omega defaults for hover */
+    border-radius: 4px; }
+
+/*----------------------------------------
+
+ ENTITY PAGER - Previous / Next 
+ 
+-----------------------------------------*/
+/* line 65, ../sass/components/_pagers.scss */
+.node-pager-container {
+  height: auto;
+  min-height: 60px;
+  /* icon height + padding */
+  position: relative;
+  margin-bottom: 40px;
+  padding: 15px 0;
+  border-bottom: 1px solid #aaa;
+  border-top: 1px solid #aaa; }
+
+/* line 73, ../sass/components/_pagers.scss */
+.block-entity-pager {
+  overflow: hidden; }
+
+/* line 77, ../sass/components/_pagers.scss */
+a.entity-pager-link,
+a.back-to-river-link {
+  line-height: 1.3;
+  text-transform: capitalize;
+  vertical-align: middle;
+  min-height: 30px;
+  padding: 0;
+  text-decoration: none;
+  color: #777;
+  display: block;
+  position: relative;
+  -webkit-transition: all 0.2s ease-in;
+  -moz-transition: all 0.2s ease-in;
+  -o-transition: all 0.2s ease-in;
+  transition: all 0.2s ease-in;
+  font-size: 12px;
+  font-size: 0.75rem; }
+  /* line 91, ../sass/components/_pagers.scss */
+  a.entity-pager-link:hover,
+  a.back-to-river-link:hover {
+    color: red; }
+
+/*-----------------------
+ << PREVIOUS 
+------------------------*/
+/* line 100, ../sass/components/_pagers.scss */
+#entity_pager_1-item-previous,
+#entity_pager_2-item-previous,
+#entity_pager_3-item-previous,
+#entity_pager_4-item-previous,
+#entity_pager_5-item-previous {
+  float: left;
+  max-width: 40%; }
+
+/* line 108, ../sass/components/_pagers.scss */
+a#entity-pager-previous-link {
+  padding-left: 35px;
+  padding-top: 5px; }
+  /* line 113, ../sass/components/_pagers.scss */
+  a#entity-pager-previous-link:before {
+    content: "\3d";
+    display: block;
+    font-family: IcoMoonArrows;
+    font-size: 25px;
+    line-height: 28px;
+    letter-spacing: -16px;
+    margin-right: 20px;
+    vertical-align: middle;
+    position: absolute;
+    top: 0;
+    left: 0;
+    speak: none; }
+
+/*-----------------------
+ NEXT >> 
+-------------------------*/
+/* line 153, ../sass/components/_pagers.scss */
+#entity_pager_1-item-next,
+#entity_pager_2-item-next,
+#entity_pager_3-item-next,
+#entity_pager_4-item-next,
+#entity_pager_5-item-next {
+  float: right;
+  max-width: 40%; }
+
+/* line 161, ../sass/components/_pagers.scss */
+a#entity-pager-next-link {
+  padding-right: 35px;
+  padding-top: 5px;
+  text-align: right; }
+  /* line 167, ../sass/components/_pagers.scss */
+  a#entity-pager-next-link:after {
+    content: "\3e";
+    display: block;
+    font-family: IcoMoonArrows;
+    font-size: 25px;
+    line-height: 28px;
+    letter-spacing: -16px;
+    margin-right: 20px;
+    vertical-align: middle;
+    speak: none;
+    position: absolute;
+    top: 0;
+    right: 0; }
+
+/*-------------------------
+ ALL - list link 
+--------------------------*/
+/* line 204, ../sass/components/_pagers.scss */
+.back-to-river-link-container {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%); }
+
+/* line 209, ../sass/components/_pagers.scss */
+a.back-to-river-link {
+  overflow: hidden;
+  height: 0;
+  width: 30px;
+  padding-top: 30px; }
+  /* line 216, ../sass/components/_pagers.scss */
+  a.back-to-river-link:before {
+    content: "\62";
+    display: block;
+    font-family: IcoMoonBasic;
+    font-size: 1.625rem;
+    left: 2px;
+    margin-right: 10px;
+    position: absolute;
+    top: 0;
+    vertical-align: middle;
+    speak: none; }
+
+/*----------------------------------------------------
+------------------------------------------------------
+
+ SEARCH page
+ 
+------------------------------------------------------
+----------------------------------------------------*/
+/* line 9, ../sass/components/_search.scss */
+.page-search #search-form #edit-basic {
+  margin-bottom: 40px; }
+
+/* line 12, ../sass/components/_search.scss */
+.page-search .tabs ul.primary {
+  margin: 0;
+  border: 0; }
+
+/* form wrapper */
+/* line 18, ../sass/components/_search.scss */
+.page-search #edit-basic {
+  padding: 26.66667px;
+  border: 1px solid #aaa; }
+
+/* label */
+/* line 24, ../sass/components/_search.scss */
+.page-search label[for="edit-keys"] {
+  margin-right: 5px; }
+
+/* input */
+/* line 29, ../sass/components/_search.scss */
+.page-search input#edit-keys {
+  width: 150px; }
+
+/* submit */
+/* line 34, ../sass/components/_search.scss */
+.page-search #edit-basic .form-submit {
+  margin: 1em 0; }
+
+/* ----Search Results -------*/
+/* line 40, ../sass/components/_search.scss */
+.search-results p:last-child {
+  margin-bottom: 0; }
+
+/* line 43, ../sass/components/_search.scss */
+.search-results li {
+  border-bottom: 1px dotted #aaa;
+  margin-bottom: 1em; }
+
+/* in-context results display */
+/* line 48, ../sass/components/_search.scss */
+.search-results .search-snippet-info {
+  background-color: #f5f5f5;
+  font-size: 11px;
+  font-size: 0.6875rem;
+  margin-bottom: 20px;
+  padding: 15px;
+  border-radius: 10px; }
+
+/*-------------------------------------------------------
+---------------------------------------------------------
+
+ SHARE / SOCIAL NETWORK LINKS
+ 
+---------------------------------------------------------
+-------------------------------------------------------*/
+/* line 9, ../sass/components/_share-links.scss */
+.share-links-container {
+  border-bottom: 1px solid #aaa;
+  border-top: 1px solid #aaa;
+  height: 35px;
+  margin: 0;
+  padding: 5px 0;
+  display: block; }
+
+/* line 16, ../sass/components/_share-links.scss */
+.share-links-container li,
+.teaser-grid ul.share-links-container li {
+  float: left;
+  height: auto;
+  margin: 0 10px 0 0 !important;
+  padding: 0;
+  list-style-type: none; }
+
+/* line 24, ../sass/components/_share-links.scss */
+.teaser-grid .share-links-container {
+  padding: 5px 0;
+  border-color: #555;
+  overflow: visible;
+  /* overwrites .teaser-grid ul */ }
+
+/* Exceptions */
+/* line 31, ../sass/components/_share-links.scss */
+.node-type-song .share-links-container,
+.node-type-album .share-links-container {
+  margin-bottom: 30px; }
+  /* line 35, ../sass/components/_share-links.scss */
+  .node-type-song .share-links-container:before,
+  .node-type-album .share-links-container:before {
+    display: block;
+    content: "Share:";
+    font-size: 19px;
+    font-size: 1.1875rem;
+    line-height: 1.2;
+    margin-right: 10px;
+    float: left; }
+
+/* fix alignment of FB iframe */
+/* line 46, ../sass/components/_share-links.scss */
+.share-link-facebook iframe {
+  position: relative;
+  top: -5px; }
+
+/*----------------------------------------
+
+ Socialite JS button styling 
+ 
+-----------------------------------------*/
+/* all */
+/* line 59, ../sass/components/_share-links.scss */
+a.socialite.twitter-share,
+a.socialite.facebook-like,
+a.socialite.googleplus-one {
+  background-color: #444;
+  border-radius: 4px;
+  color: #fff;
+  display: block;
+  font-size: 11px;
+  font-size: 0.6875rem;
+  margin: 0;
+  padding: 3px 9px;
+  text-align: center;
+  max-width: 85px; }
+
+/* twitter */
+/* line 74, ../sass/components/_share-links.scss */
+a.socialite.twitter-share span:before {
+  color: #00C5F9;
+  content: "0";
+  font-family: IcoMoonSocial;
+  margin-right: 4px;
+  vertical-align: middle;
+  speak: none;
+  line-height: 1; }
+
+/* facebook */
+/* line 85, ../sass/components/_share-links.scss */
+a.socialite.facebook-like span:before {
+  background-color: #3B5998;
+  border: 1px solid #aaa;
+  border-radius: 2px;
+  color: #fff;
+  content: "P";
+  display: inline-block;
+  font-family: IcoMoonSocial;
+  font-size: 8px;
+  height: 12px;
+  line-height: 10px;
+  margin-right: 3px;
+  position: relative;
+  text-align: center;
+  top: -1px;
+  vertical-align: middle;
+  width: 12px;
+  speak: none; }
+
+/* google +1 */
+/* line 106, ../sass/components/_share-links.scss */
+a.socialite.goolgeplus-one {
+  padding: 0 6px 0 9px; }
+
+/* line 109, ../sass/components/_share-links.scss */
+a.socialite.googleplus-one span {
+  color: #444;
+  /* hides text in button color */ }
+
+/* line 112, ../sass/components/_share-links.scss */
+a.socialite.googleplus-one span:before {
+  color: #fff;
+  content: "!";
+  font-family: IcoMoonSocial;
+  vertical-align: middle;
+  speak: none;
+  line-height: 1; }
+
+/*------------ Non-JS styling -------------------*/
+/* Print link */
+/* line 125, ../sass/components/_share-links.scss */
+li.share-link-print a {
+  padding-bottom: 5px;
+  height: 16px; }
+
+/* Google +1 */
+/* line 131, ../sass/components/_share-links.scss */
+li.share-link-plusone {
+  max-width: 170px;
+  /* narrow max */
+  overflow: hidden; }
+
+/*----------------------------------------
+
+ SHOW MORE / SHOW LESS - toggle links 
+ 
+-----------------------------------------*/
+/* line 8, ../sass/components/_show-more.scss */
+a.show-link {
+  display: block;
+  clear: both;
+  color: #fff;
+  background-color: #444;
+  text-align: center;
+  padding: 4px 20px;
+  margin-top: 10px;
+  position: relative;
+  text-transform: lowercase;
+  font-size: 13px;
+  font-size: 0.8125rem;
+  width: 180px; }
+
+/* line 22, ../sass/components/_show-more.scss */
+a.show-link:hover {
+  background-color: #ccc;
+  color: #444;
+  text-decoration: none; }
+
+/* line 27, ../sass/components/_show-more.scss */
+a.show-link:before,
+a.show-link:after {
+  content: "\25";
+  font-family: IcoMoonArrows;
+  font-size: 13px;
+  font-size: 0.8125rem;
+  letter-spacing: -10px;
+  margin-right: 15px;
+  position: relative;
+  top: 1px;
+  speak: none; }
+
+/* line 38, ../sass/components/_show-more.scss */
+a.show-link:after {
+  margin-left: 6px;
+  margin-right: 6px; }
+
+/* line 44, ../sass/components/_show-more.scss */
+a.show-link.show-processed:before,
+a.show-link.show-processed:after {
+  top: 1px;
+  content: "\24";
+  speak: none; }
+
+/*---------------------------------------------------------------------
+-----------------------------------------------------------------------
+
+ General SIDEBAR BLOCK Styles 
+ 
+-----------------------------------------------------------------------
+---------------------------------------------------------------------*/
+/* line 12, ../sass/components/_sidebar-block-defaults.scss */
+.l-region--sidebar .block {
+  position: relative;
+  margin-bottom: 40px;
+  background-color: rgba(0, 0, 0, 0.8);
+  color: #aaa;
+  padding: 0; }
+
+/* line 22, ../sass/components/_sidebar-block-defaults.scss */
+.l-region--sidebar h2.block__title,
+.event-node-sidebar h2.block__title {
+  color: #fff;
+  border-bottom: 0;
+  padding: 4% 7%;
+  margin: 0;
+  background-color: #000;
+  font-size: 24px;
+  font-size: 1.5rem; }
+
+/* line 34, ../sass/components/_sidebar-block-defaults.scss */
+.l-region--sidebar .view-content,
+.l-region--sidebar .view-empty {
+  padding: 7%; }
+
+/* line 41, ../sass/components/_sidebar-block-defaults.scss */
+.l-region--sidebar .teaser-list-row {
+  border-color: #444;
+  line-height: 1.3; }
+
+/* line 45, ../sass/components/_sidebar-block-defaults.scss */
+.l-region--sidebar .teaser-grid-row,
+.song-videos .teaser-grid .teaser-grid-row {
+  line-height: 1.3;
+  width: 48%;
+  margin: 0 4% 4% 0;
+  border-bottom: 0;
+  font-size: 12px;
+  font-size: 0.75rem; }
+
+/* line 56, ../sass/components/_sidebar-block-defaults.scss */
+.l-region--sidebar .block a {
+  color: #ccc; }
+  /* line 59, ../sass/components/_sidebar-block-defaults.scss */
+  .l-region--sidebar .block a:hover {
+    color: red; }
+
+/* line 66, ../sass/components/_sidebar-block-defaults.scss */
+.l-region--sidebar .button a,
+.l-region--sidebar a.button {
+  background-color: #fff;
+  color: #000; }
+  /* line 71, ../sass/components/_sidebar-block-defaults.scss */
+  .l-region--sidebar .button a:hover,
+  .l-region--sidebar a.button:hover {
+    background-color: #000;
+    color: #fff; }
+
+/* line 79, ../sass/components/_sidebar-block-defaults.scss */
+.l-region--sidebar .views-field-title,
+.l-region--sidebar .field-title {
+  font-size: 14px; }
+
+/* line 86, ../sass/components/_sidebar-block-defaults.scss */
+.l-region--sidebar .teaser-grid-row .views-field-title,
+.song-videos .teaser-grid .teaser-grid-row .views-field-title {
+  text-align: center;
+  padding: 5px; }
+
+/*------------------------------
+
+ More Link - sidebar blocks only 
+ 
+-------------------------------*/
+/* line 98, ../sass/components/_sidebar-block-defaults.scss */
+.l-region--sidebar .more-link,
+.l-region--sidebar .view-footer {
+  position: relative; }
+  /* line 102, ../sass/components/_sidebar-block-defaults.scss */
+  .l-region--sidebar .more-link a,
+  .l-region--sidebar .view-footer a {
+    background-color: #fff;
+    color: #000;
+    padding: 10px; }
+  /* line 108, ../sass/components/_sidebar-block-defaults.scss */
+  .l-region--sidebar .more-link a:hover,
+  .l-region--sidebar .view-footer a:hover {
+    background-color: red;
+    color: #fff; }
+
+/*-------------------------------
+ 
+ Social Icons
+ 
+--------------------------------*/
+/* line 7, ../sass/components/_social-icons.scss */
+#social-icons ul {
+  margin: 0;
+  overflow: hidden;
+  padding: 0; }
+  /* line 12, ../sass/components/_social-icons.scss */
+  #social-icons ul li {
+    margin: 0 7px 7px 0;
+    padding: 0;
+    float: left;
+    list-style-type: none;
+    border: 0; }
+  /* line 20, ../sass/components/_social-icons.scss */
+  #social-icons ul li:last-child {
+    margin-right: 0; }
+  /* line 23, ../sass/components/_social-icons.scss */
+  #social-icons ul a {
+    margin: 0;
+    padding: 50px 20px 0;
+    width: 50px;
+    border-radius: 25px;
+    display: block;
+    height: 0;
+    overflow: hidden;
+    position: relative;
+    color: #fff;
+    background-color: #777; }
+    /* line 36, ../sass/components/_social-icons.scss */
+    #social-icons ul a:hover {
+      color: #777;
+      background-color: #000; }
+    /* line 42, ../sass/components/_social-icons.scss */
+    #social-icons ul a:before {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      font-family: IcoMoonSocial;
+      font-size: 31px;
+      line-height: 31px;
+      speak: none; }
+  /* line 54, ../sass/components/_social-icons.scss */
+  #social-icons ul li#facebook a:before {
+    content: "\50"; }
+  /* line 57, ../sass/components/_social-icons.scss */
+  #social-icons ul li#twitter a:before {
+    content: "\30"; }
+  /* line 60, ../sass/components/_social-icons.scss */
+  #social-icons ul li#youtube a:before {
+    content: "\4b"; }
+  /* line 63, ../sass/components/_social-icons.scss */
+  #social-icons ul li#itunes a:before {
+    content: "\4f"; }
+  /* line 66, ../sass/components/_social-icons.scss */
+  #social-icons ul li#myspace a:before {
+    content: "\26"; }
+  /* line 69, ../sass/components/_social-icons.scss */
+  #social-icons ul li#email a:before {
+    font-family: IcoMoonBasic;
+    content: "\6f";
+    font-size: 29px;
+    line-height: 30px; }
+  /* line 75, ../sass/components/_social-icons.scss */
+  #social-icons ul li#instagram a:before {
+    content: "\40";
+    left: 12px; }
+
+/*====================================!!! SPOTLIGHT BANNER SECTION !!!=========================================*/
+/*---------------------------------------------------------------------
+-----------------------------------------------------------------------
+
+ SPOTLIGHT BANNER POPUP 
+ 
+-----------------------------------------------------------------------
+---------------------------------------------------------------------*/
+/* line 11, ../sass/components/_spotlight.scss */
+.responsive-layout-mobile .block-fantorrent-ads-support:before {
+  content: "PROMOTIONS:";
+  display: block;
+  margin-bottom: 10px;
+  padding-top: 10px;
+  font-size: 30px;
+  text-align: center;
+  border-top: 4px double #aaa;
+  color: #777; }
+
+/*-------------------------------------
+
+ Toggle button 
+ 
+---------------------------------------*/
+/* line 29, ../sass/components/_spotlight.scss */
+a.spotlight-toggle {
+  background-color: transparent;
+  padding: 15px;
+  width: 100%;
+  -webkit-transition: all 0.2s ease-in;
+  -moz-transition: all 0.2s ease-in;
+  -o-transition: all 0.2s ease-in;
+  transition: all 0.2s ease-in;
+  color: #fff;
+  display: block;
+  font-size: 20px;
+  text-align: center;
+  text-transform: uppercase;
+  margin-bottom: 10px; }
+  /* line 41, ../sass/components/_spotlight.scss */
+  a.spotlight-toggle img img {
+    width: auto; }
+
+/*---------------------------
+ Spotlight Closed 
+-----------------------------*/
+/* line 51, ../sass/components/_spotlight.scss */
+a.spotlight-toggle.closed {
+  background-color: #32bcd5; }
+
+/* line 54, ../sass/components/_spotlight.scss */
+a.spotlight-toggle.closed:hover {
+  background-color: #000;
+  text-decoration: none; }
+
+/*--------------------------
+ Spotlight Open 
+----------------------------*/
+/* line 64, ../sass/components/_spotlight.scss */
+a.spotlight-toggle.open {
+  background-color: #dd5c5c; }
+
+/* line 67, ../sass/components/_spotlight.scss */
+a.spotlight-toggle.open:hover {
+  background-color: #000;
+  text-decoration: none; }
+
+/*------------------------------------------------
+ 
+ Drop Down Section
+ 
+------------------------------------------------*/
+/* line 80, ../sass/components/_spotlight.scss */
+.spotlight.drop-down {
+  background: #eee;
+  padding: 20px;
+  margin-bottom: 10px; }
+
+/* Spotlight Images */
+/* line 87, ../sass/components/_spotlight.scss */
+.spotlight-images-wrapper {
+  margin-bottom: 15px; }
+
+/* spotlight - h2 title */
+/* line 92, ../sass/components/_spotlight.scss */
+.spotlight h2 {
+  color: #222;
+  font-size: 23px;
+  line-height: 1;
+  margin-bottom: 5px; }
+
+/* line 98, ../sass/components/_spotlight.scss */
+.spotlight h5 {
+  font-size: 15px; }
+
+/*-------------------------------
+ spotlight - body and link 
+---------------------------------*/
+/* line 108, ../sass/components/_spotlight.scss */
+.spotlight-body-and-link-wrapper {
+  color: #999; }
+
+/* line 111, ../sass/components/_spotlight.scss */
+.spotlight-body-and-link-wrapper .field-name-body {
+  font-size: 1.5rem;
+  line-height: 1.3;
+  margin-bottom: 10px;
+  position: relative; }
+
+/* line 117, ../sass/components/_spotlight.scss */
+.spotlight .field-name-body p a {
+  color: #bbb; }
+
+/* Link Field */
+/* line 123, ../sass/components/_spotlight.scss */
+.spotlight.drop-down .field-type-link-field .field-label {
+  display: none; }
+
+/* line 126, ../sass/components/_spotlight.scss */
+.spotlight .field-type-link-field {
+  display: block;
+  font-size: 1em; }
+  /* line 130, ../sass/components/_spotlight.scss */
+  .spotlight .field-type-link-field a {
+    display: block;
+    font-size: 1.250rem;
+    line-height: 1;
+    padding: 10px 30px 10px 30px;
+    color: #fff;
+    background-color: #32bcd5;
+    border-radius: 15px;
+    text-align: center; }
+  /* line 141, ../sass/components/_spotlight.scss */
+  .spotlight .field-type-link-field a:hover {
+    text-decoration: none;
+    background-color: #ddd;
+    color: #222; }
+  /* line 147, ../sass/components/_spotlight.scss */
+  .spotlight .field-type-link-field a:after {
+    content: "/";
+    font-family: IcoMoonArrows;
+    font-size: 25px;
+    line-height: 27px;
+    margin-left: 5px;
+    vertical-align: middle; }
+
+/*====================================!!! SPOTLIGHT SECTION NON MOBILE!!!=========================================*/
+/*---------------------------------------------------------------------
+-----------------------------------------------------------------------
+
+ SPOTLIGHT BANNER POPUP 
+ 
+-----------------------------------------------------------------------
+---------------------------------------------------------------------*/
+/*-------------------------------------
+
+ Toggle button 
+ 
+---------------------------------------*/
+/* line 180, ../sass/components/_spotlight.scss */
+a.spotlight-toggle {
+  height: 0;
+  overflow: hidden;
+  padding: 75px 0 0 0;
+  position: absolute;
+  right: 0;
+  top: -75px;
+  width: 75px;
+  margin-bottom: 0; }
+
+/* Spotlight Open - position bg image*/
+/* line 192, ../sass/components/_spotlight.scss */
+a.spotlight-toggle.open {
+  background-position: center -82px; }
+
+/* icon */
+/* line 197, ../sass/components/_spotlight.scss */
+a#spotlight-toggle:before,
+a#spotlight-toggle.open:before {
+  font-family: IcoMoonBasic; }
+
+/* Open/Close icon */
+/* line 204, ../sass/components/_spotlight.scss */
+a.spotlight-toggle:before {
+  content: "\e009";
+  font-family: IcoMoonBasic;
+  font-size: 50px;
+  left: 50%;
+  margin-left: -25px;
+  margin-top: -25px;
+  position: absolute;
+  top: 50%;
+  -webkit-transition: all 0.2s ease-in;
+  -moz-transition: all 0.2s ease-in;
+  -o-transition: all 0.2s ease-in;
+  transition: all 0.2s ease-in; }
+
+/* line 216, ../sass/components/_spotlight.scss */
+a.spotlight-toggle.open:before {
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg); }
+
+/*------------------------------------------------
+ 
+ Drop Down Section
+ 
+------------------------------------------------*/
+/* line 229, ../sass/components/_spotlight.scss */
+.spotlight {
+  overflow: hidden; }
+
+/* line 232, ../sass/components/_spotlight.scss */
+.spotlight.drop-down {
+  margin: 0 auto;
+  position: relative;
+  width: 100%;
+  padding: 3%;
+  background: rgba(0, 0, 0, 0.7); }
+
+/* optional transparent bg img using pseudoclass :after */
+/* line 241, ../sass/components/_spotlight.scss */
+.spotlight.drop-down:after {
+  background: transparent;
+  background-size: cover;
+  content: "";
+  display: block;
+  height: 100%;
+  left: 0;
+  opacity: 0.95;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: -1; }
+
+/* Spotlight Images */
+/* line 256, ../sass/components/_spotlight.scss */
+.spotlight-images-wrapper {
+  float: left;
+  margin-right: 3%;
+  margin-bottom: 0;
+  width: 20%;
+  max-width: 180px;
+  height: auto;
+  vertical-align: top; }
+
+/* spotlight - h2 title */
+/* line 267, ../sass/components/_spotlight.scss */
+.spotlight h2 {
+  color: #FFFFFF;
+  font-size: 40px; }
+
+/* spotlight - body and link */
+/* line 273, ../sass/components/_spotlight.scss */
+.spotlight-body-and-link-wrapper {
+  float: left;
+  vertical-align: top;
+  color: #999;
+  width: 76%;
+  overflow: hidden; }
+
+/* line 280, ../sass/components/_spotlight.scss */
+.spotlight-body-and-link-wrapper .field-name-body {
+  font-size: 25px;
+  font-weight: 300;
+  line-height: 130%;
+  margin-bottom: 10px;
+  position: relative; }
+
+/* line 287, ../sass/components/_spotlight.scss */
+.spotlight .field-name-body p a {
+  color: #bbb; }
+
+/* link field */
+/* line 293, ../sass/components/_spotlight.scss */
+.spotlight .field-type-link-field {
+  display: block;
+  font-size: 20px;
+  width: auto;
+  float: left; }
+
+/* line 299, ../sass/components/_spotlight.scss */
+.spotlight .field-type-link-field a {
+  border-radius: 5px; }
+
+/*---------------------------------------------------------------------
+-----------------------------------------------------------------------
+
+                *****   USER BAR   *****
+
+-----------------------------------------------------------------------
+---------------------------------------------------------------------*/
+/* line 35, ../sass/components/_userbar.scss */
+.l-userbar {
+  background-color: #ccc;
+  padding: 0px;
+  font-size: 12px;
+  font-size: 0.75rem;
+  z-index: 9998;
+  min-height: 50px;
+  overflow: hidden;
+  position: relative; }
+
+/* line 51, ../sass/components/_userbar.scss */
+.l-userbar-inner,
+.l-region--user-bar {
+  position: relative; }
+
+/* negates contrained width */
+/* line 58, ../sass/components/_userbar.scss */
+.l-userbar .l-constrained {
+  width: 100%;
+  margin: 0; }
+
+/* Site Name */
+/* line 64, ../sass/components/_userbar.scss */
+h1.site-name {
+  display: none; }
+
+/*====================================!!! SIDEBAR !!!=========================================*/
+/*---------------------------------------------------------------------
+-----------------------------------------------------------------------
+
+ ARTICLES SIDEBAR 
+ 
+-----------------------------------------------------------------------
+---------------------------------------------------------------------*/
+/*-------------------------------
+
+ NEWS - sidebar list
+ 
+-------------------------------*/
+/* line 19, ../sass/components/articles/_article-blocks.scss */
+.block--views-articles-sidebar-list .image {
+  float: left;
+  margin-right: 15px;
+  width: 60px; }
+/* line 24, ../sass/components/articles/_article-blocks.scss */
+.block--views-articles-sidebar-list .title {
+  margin-left: 75px;
+  font-size: 13px;
+  font-size: 0.8125rem; }
+/* line 28, ../sass/components/articles/_article-blocks.scss */
+.block--views-articles-sidebar-list .views-row-last {
+  border-bottom: 0; }
+
+/*-------------------------------
+
+ VIDEOS sidebar grid - (sidebar, song node) 
+ 
+--------------------------------*/
+/* line 41, ../sass/components/articles/_article-blocks.scss */
+.block--views-articles-videos .videos-main-content {
+  overflow: hidden; }
+/* line 44, ../sass/components/articles/_article-blocks.scss */
+.block--views-articles-videos .teaser-grid-row a {
+  display: block; }
+/* line 47, ../sass/components/articles/_article-blocks.scss */
+.block--views-articles-videos .views-row-even {
+  margin-right: 0; }
+
+/*--------------------------------
+
+ RECENT ARTICLES - Sidebar list
+ 
+---------------------------------*/
+/* line 60, ../sass/components/articles/_article-blocks.scss */
+.block--views-articles-recent .field-title {
+  display: block; }
+/* line 63, ../sass/components/articles/_article-blocks.scss */
+.block--views-articles-recent .field-date {
+  font-size: 13px;
+  font-size: 0.8125rem;
+  font-style: italic; }
+
+/*---------------------------------------------------------------------
+-----------------------------------------------------------------------
+
+ ARTICLES - NODE
+ 
+-----------------------------------------------------------------------
+---------------------------------------------------------------------*/
+/*---------------------------------
+
+ node container overrides 
+ 
+----------------------------------*/
+/* line 16, ../sass/components/articles/_article-node.scss */
+#article-header-row-container {
+  padding: 0;
+  border: 0; }
+
+/* line 22, ../sass/components/articles/_article-node.scss */
+#article-middle-row1-container {
+  border: 0; }
+
+/* line 27, ../sass/components/articles/_article-node.scss */
+#article-middle-row2-container {
+  overflow: hidden;
+  padding-top: 0; }
+
+/* line 35, ../sass/components/articles/_article-node.scss */
+#article-middle-row4-container {
+  border-bottom: 1px solid #aaa;
+  padding: 40px 0; }
+
+/* line 41, ../sass/components/articles/_article-node.scss */
+#article-node-middle-row5-container {
+  padding: 20px; }
+
+/* line 44, ../sass/components/articles/_article-node.scss */
+#article-node-middle-row5-container .node-pager-container {
+  padding: 0;
+  border: 0;
+  min-height: 30px; }
+
+/*--------------------------
+
+ pager - default overrides
+  
+---------------------------*/
+/* line 56, ../sass/components/articles/_article-node.scss */
+.node-type-article .node-pager-container {
+  margin-bottom: 0; }
+
+/*--------------------------
+
+ article title & author
+ 
+---------------------------*/
+/* line 67, ../sass/components/articles/_article-node.scss */
+#article-header-row-container h2.node__title {
+  margin-bottom: 20px;
+  line-height: 1.2; }
+
+/*--------------------------------------------------------
+ submitted info
+ -- (may contain posted date only or also author full name)
+----------------------------------------------------------*/
+/* line 77, ../sass/components/articles/_article-node.scss */
+.node-type-article .node-article .submitted {
+  font-style: italic;
+  margin-bottom: 20px;
+  display: block; }
+
+/*--------------------------
+
+ article body 
+ 
+---------------------------*/
+/* line 90, ../sass/components/articles/_article-node.scss */
+#article-body-container p:last-child {
+  margin-bottom: 0; }
+
+/*--------------------------
+
+ related songs 
+ 
+----------------------------*/
+/* line 101, ../sass/components/articles/_article-node.scss */
+#article-songs-container {
+  font-size: 13px;
+  font-size: 0.8125rem;
+  font-style: italic; }
+  /* line 105, ../sass/components/articles/_article-node.scss */
+  #article-songs-container h2 {
+    display: none; }
+  /* line 108, ../sass/components/articles/_article-node.scss */
+  #article-songs-container span.views-label:before {
+    content: "\4b";
+    font-family: IcoMoonBasic;
+    font-size: 18px;
+    margin-right: 3px;
+    vertical-align: middle;
+    font-style: normal; }
+
+/*-------------------------------------
+
+ ARTICLE GALLERY 
+ 
+---------------------------------------*/
+@incluce breakpoint($small-only) {
+  /* line 126, ../sass/components/articles/_article-node.scss */
+  #article-mobile-middle-row3-container .first-item,
+  #article-mobile-middle-row3-container .not-first-item {
+    margin-bottom: 15px; } }
+/* line 131, ../sass/components/articles/_article-node.scss */
+#article-photo-gallery-container {
+  overflow: hidden; }
+  /* line 135, ../sass/components/articles/_article-node.scss */
+  #article-photo-gallery-container .teaser-grid {
+    padding-left: 0;
+    height: 175px;
+    /* set height on div toggle section */ }
+  /* line 139, ../sass/components/articles/_article-node.scss */
+  #article-photo-gallery-container .photo-row {
+    height: auto;
+    margin: 0 1.5% 1.5% 0;
+    padding: 0;
+    width: 18.5%; }
+
+/*-------------------------------------------
+
+ ARTICLE PULL QUOTE
+ 
+--------------------------------------------*/
+/*--------------------------------
+ article pull quote - 
+ block displays in mobile only 
+--------------------------------*/
+/* line 158, ../sass/components/articles/_article-node.scss */
+#article-pullquote {
+  margin-bottom: 40px;
+  padding-bottom: 40px;
+  border-bottom: 1px solid #aaa; }
+  /* line 163, ../sass/components/articles/_article-node.scss */
+  #article-pullquote .quote-start {
+    float: left;
+    font-size: 80px;
+    font-size: 5rem;
+    line-height: 0.75;
+    /* 60px */
+    margin-right: 5px;
+    vertical-align: middle; }
+  /* line 170, ../sass/components/articles/_article-node.scss */
+  #article-pullquote .quote-body {
+    margin-left: 40px; }
+  /* line 174, ../sass/components/articles/_article-node.scss */
+  #article-pullquote .quote-end {
+    display: none; }
+  /* line 177, ../sass/components/articles/_article-node.scss */
+  #article-pullquote .quote-author,
+  #article-pullquote .quote-url {
+    font-size: 13px;
+    font-size: 0.8125rem;
+    line-height: 1.4;
+    font-style: italic;
+    text-align: left; }
+
+/*--------------------------------
+ node sidebar - quotes
+--------------------------------*/
+/* line 191, ../sass/components/articles/_article-node.scss */
+.node-sidebar-container {
+  float: right;
+  padding: 0;
+  width: auto;
+  width: 30%;
+  margin-bottom: 40px;
+  margin-left: 40px; }
+  /* line 199, ../sass/components/articles/_article-node.scss */
+  .node-sidebar-container .quote-item {
+    text-align: left;
+    margin-bottom: 40px;
+    position: relative; }
+  /* line 206, ../sass/components/articles/_article-node.scss */
+  .node-sidebar-container .quote-start,
+  .node-sidebar-container .quote-end {
+    font-size: 112px;
+    font-size: 7rem;
+    height: 50px;
+    line-height: 1; }
+  /* line 212, ../sass/components/articles/_article-node.scss */
+  .node-sidebar-container .quote-start {
+    float: left;
+    left: 0;
+    margin-right: 10px;
+    position: relative;
+    top: -10px; }
+  /* line 219, ../sass/components/articles/_article-node.scss */
+  .node-sidebar-container .quote-end {
+    position: absolute;
+    bottom: 20px;
+    right: 0; }
+  /* line 226, ../sass/components/articles/_article-node.scss */
+  .node-sidebar-container .quote-body {
+    font-size: 20px;
+    font-size: 1.25rem;
+    line-height: 1.4;
+    padding: 0;
+    margin-bottom: 10px;
+    position: relative; }
+  /* line 233, ../sass/components/articles/_article-node.scss */
+  .node-sidebar-container .quote-body p {
+    margin-bottom: 0; }
+  /* line 238, ../sass/components/articles/_article-node.scss */
+  .node-sidebar-container .quote-url {
+    display: block; }
+
+/*--------------------------------------
+
+ PRODUCT REFERENCES ( "In This Article" block )
+ 
+---------------------------------------*/
+/* line 250, ../sass/components/articles/_article-node.scss */
+#article-nodes-container {
+  margin-bottom: 40px;
+  padding-bottom: 40px;
+  border-bottom: 1px solid #aaa; }
+  /* line 255, ../sass/components/articles/_article-node.scss */
+  #article-nodes-container h2.block-title {
+    margin-bottom: 20px; }
+  /* line 258, ../sass/components/articles/_article-node.scss */
+  #article-nodes-container .teaser-list h2.block-title {
+    display: none; }
+  /* line 262, ../sass/components/articles/_article-node.scss */
+  #article-nodes-container .teaser-list-row {
+    overflow: hidden;
+    padding: 26.66667px 0; }
+    /* line 266, ../sass/components/articles/_article-node.scss */
+    #article-nodes-container .teaser-list-row:first-child {
+      padding-top: 0; }
+    /* line 270, ../sass/components/articles/_article-node.scss */
+    #article-nodes-container .teaser-list-row:last-child {
+      border-bottom: 0;
+      padding-bottom: 0; }
+
+/* product image - container */
+/* line 278, ../sass/components/articles/_article-node.scss */
+.article-related-node .image {
+  border: 1px solid #aaa;
+  float: left;
+  height: auto;
+  margin-right: 4%;
+  width: 20%; }
+
+/* product title - container */
+/* line 287, ../sass/components/articles/_article-node.scss */
+.article-related-node-product-body,
+.article-related-node-album-body {
+  float: left;
+  width: 50%; }
+
+/* line 292, ../sass/components/articles/_article-node.scss */
+.article-related-node-title {
+  font-size: 21px;
+  font-size: 1.3125rem; }
+
+/* product created date */
+/* line 297, ../sass/components/articles/_article-node.scss */
+.article-related-node-created-date {
+  font-size: 13px;
+  font-size: 0.8125rem; }
+
+/* product price */
+/* line 302, ../sass/components/articles/_article-node.scss */
+#article-nodes-container .field-commerce-price {
+  margin-bottom: 0;
+  /* override from store-global.css */ }
+
+/* Links - container */
+/* line 307, ../sass/components/articles/_article-node.scss */
+.article-related-node-links {
+  float: right;
+  margin-left: 4%;
+  /* Links - buttons */ }
+  /* line 312, ../sass/components/articles/_article-node.scss */
+  .article-related-node-links a {
+    background-color: #444;
+    border-radius: 30px;
+    display: block;
+    float: left;
+    height: 0;
+    margin-left: 10px;
+    overflow: hidden;
+    padding-top: 35px;
+    width: 35px;
+    position: relative;
+    color: #fff; }
+    /* line 325, ../sass/components/articles/_article-node.scss */
+    .article-related-node-links a:hover {
+      background-color: #ccc;
+      color: #444;
+      text-decoration: none; }
+
+/* view more link icon */
+/* line 335, ../sass/components/articles/_article-node.scss */
+a.related-node-album-view-link:before,
+a.related-node-product-view-link:before {
+  position: absolute;
+  content: "\25";
+  font-size: 18px;
+  left: 9px;
+  top: 8px;
+  font-family: IcoMoonBasic; }
+
+/* buy now link icon */
+/* line 346, ../sass/components/articles/_article-node.scss */
+a.related-node-album-buy-link:before,
+a.related-node-product-buy-link:before {
+  position: absolute;
+  content: "\3c";
+  font-size: 18px;
+  left: 8px;
+  top: 8px;
+  font-family: IcoMoonBasic; }
+
+/*-------------------------------------
+
+ RECENT & MORE ARTICLES content block 
+ 
+---------------------------------------*/
+/* line 363, ../sass/components/articles/_article-node.scss */
+.node-more-articles {
+  position: relative; }
+  /* line 366, ../sass/components/articles/_article-node.scss */
+  .node-more-articles h2.block-title {
+    font-size: 20px;
+    font-size: 1.25rem;
+    margin-bottom: 0px; }
+  /* line 370, ../sass/components/articles/_article-node.scss */
+  .node-more-articles .views-row {
+    padding: 10px 0;
+    border-bottom: 0;
+    float: none; }
+  /* line 375, ../sass/components/articles/_article-node.scss */
+  .node-more-articles .field-title {
+    font-size: 15px;
+    font-size: 0.9375rem;
+    line-height: 1.3;
+    padding-right: 10px;
+    display: block; }
+  /* line 381, ../sass/components/articles/_article-node.scss */
+  .node-more-articles .field-date {
+    font-size: 13px;
+    font-size: 0.8125rem;
+    display: block;
+    line-height: 1.3;
+    font-style: italic; }
+  /* line 387, ../sass/components/articles/_article-node.scss */
+  .node-more-articles .view-footer {
+    padding: 10px 0; }
+  /* line 392, ../sass/components/articles/_article-node.scss */
+  .node-more-articles .view-empty {
+    font-size: 13px; }
+
+/*---------------------------------------------------------------------
+-----------------------------------------------------------------------
+
+ ARTICLE TEASER LIST & ARTICLE TAGS TEASER LIST
+ 
+-----------------------------------------------------------------------
+---------------------------------------------------------------------*/
+/* line 17, ../sass/components/articles/_article-teaser.scss */
+.article-node-teaser .post-date {
+  margin-bottom: 10px; }
+
+/* line 22, ../sass/components/articles/_article-teaser.scss */
+.article-node-teaser h3.title {
+  font-size: 24px;
+  font-size: 1.5rem;
+  line-height: 1.2; }
+
+/* line 32, ../sass/components/articles/_article-teaser.scss */
+.page-news .teasers-main-content h3.title a,
+.page-taxonomy .teasers-main-content h3.title a {
+  color: #000; }
+  /* line 36, ../sass/components/articles/_article-teaser.scss */
+  .page-news .teasers-main-content h3.title a:hover,
+  .page-taxonomy .teasers-main-content h3.title a:hover {
+    color: red; }
+
+/*--------------------------
+
+ article tags
+ 
+----------------------------*/
+/* line 49, ../sass/components/articles/_article-teaser.scss */
+#article-tags-container {
+  font-size: 12px;
+  font-size: 0.75rem;
+  font-style: normal;
+  margin: 20px 0; }
+  /* line 55, ../sass/components/articles/_article-teaser.scss */
+  #article-tags-container .field--name-field-tags .field__items {
+    overflow: hidden; }
+    /* line 58, ../sass/components/articles/_article-teaser.scss */
+    #article-tags-container .field--name-field-tags .field__items:before {
+      content: "\e004";
+      font-family: IcoMoonBasic;
+      font-size: 16px;
+      font-size: 1rem;
+      margin-right: 8px;
+      vertical-align: middle;
+      font-style: normal;
+      display: inline-block; }
+  /* line 70, ../sass/components/articles/_article-teaser.scss */
+  #article-tags-container .field--name-field-tags .field__item {
+    margin: 0 8px 0 0;
+    display: inline-block; }
+    /* line 74, ../sass/components/articles/_article-teaser.scss */
+    #article-tags-container .field--name-field-tags .field__item a {
+      width: auto;
+      text-align: center;
+      padding: 0;
+      margin: 0;
+      text-decoration: underline; }
+
+/* line 85, ../sass/components/articles/_article-teaser.scss */
+.article-node-teaser .media-thumb-item {
+  float: left;
+  margin-right: 4%;
+  width: 28%; }
+
+/* line 107, ../sass/components/articles/_article-teaser.scss */
+.article-row p:last-child {
+  margin-bottom: 0; }
+
+/* line 112, ../sass/components/articles/_article-teaser.scss */
+.addthis_sharing_toolbox {
+  max-height: 32px; }
+
+/*-----------------------------------------------------
+	
+ taxonomy page overrides
+
+-------------------------------------------------------*/
+/* make taxonomy page title smaller to fit better if longer */
+/* line 123, ../sass/components/articles/_article-teaser.scss */
+.page-taxonomy h1 {
+  font-size: 2.250em; }
+
+/* -- place a tag icon before page title on taxonomy page*/
+/* line 128, ../sass/components/articles/_article-teaser.scss */
+.page-taxonomy .l-content h1:before {
+  content: "\e004";
+  font-family: IcoMoonBasic;
+  margin-right: 15px;
+  vertical-align: middle;
+  padding: 10px 12px 10px 10px;
+  color: #fff;
+  background: #000;
+  line-height: 1;
+  position: relative;
+  top: -2px;
+  font-size: 20px;
+  font-size: 1.25rem;
+  border-radius: 50%; }
+
+/*# sourceMappingURL=btw-base.no-query.css.map */
