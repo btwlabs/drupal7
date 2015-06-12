@@ -13,39 +13,33 @@
 --------------------------------------*/
 
 ul.pager-load-more {
-	background: url("../images/more-button-rule.png") repeat-x scroll left center transparent;
 	border: 0 none;
 	margin: 20px 0;
-}
-ul.pager-load-more li {
-	padding: 0px;
-	margin: 0;
-	float: none;
-	display: block;
-	border: 0;
-}
-
-/* Load More button */
-.pager-load-more .pager-next a {
-	background-color: #fff;
-	@include border-radius($border-radius);
-	-webkit-box-shadow: 0 0 3px #ccc;
-	box-shadow: 0 0 3px #aaa;
-	color: #444;
-	padding: 5px 20px;
-	text-transform: lowercase;
-	width: auto;
-	display: inline-block;
 	
-	&:hover {
-		background-color: #444;
-		color: #fff;
-		text-decoration: none;
-		-webkit-box-shadow: 0 0 3px #ccc, 0 0 4px #ccc inset;
-		box-shadow: 0 0 3px #888, 0 0 4px #000 inset;
-		@include transition(all, 0.2s, ease-in);
-		/* same as the <a> - needed to override omega defaults for hover */
-		@include border-radius($border-radius);
+	li {
+		padding: 0px;
+		margin: 0;
+		float: none;
+		display: block;
+		border: 0;
+	}
+	
+	/* Load More button */
+	.pager-next a {
+		background-color: $button-bg-color;
+		@include border-radius($button-border-radius);
+		color: $button-text-color;
+		padding: 5px 20px;
+		width: auto;
+		display: inline-block;
+		
+		&:hover {
+			background-color: $button-bg-hover-color;
+			color: $button-text-hover-color;
+			text-decoration: none;
+			@include transition(all, 0.2s, ease-in);
+			@include border-radius($button-border-radius);
+		}
 	}
 }
 
@@ -66,9 +60,9 @@ ul.pager-load-more li {
 	height: auto;
 	min-height: 60px; /* icon height + padding */
 	position: relative;
-	margin-bottom: 40px;
+	//margin-bottom: $vert-spacing-unit;
 	padding: 15px 0;
-	@include border-top-bottom($border-color);
+	//@include border-top-bottom($border-color);
 }
 .block-entity-pager {
 	overflow: hidden;
@@ -76,15 +70,15 @@ ul.pager-load-more li {
 
 a.entity-pager-link,
 a.back-to-river-link {
-	line-height: 1.3;
-	text-transform: capitalize;
-	vertical-align: middle;
-	min-height: 30px;
-	padding: 0;
-	text-decoration: none;
 	color: $text-color;
 	display: block;
+	line-height: 1.3;
+	min-height: 30px;
+	padding: 0;
 	position: relative;
+	text-decoration: none;
+	text-transform: capitalize;
+	vertical-align: middle;
 	@include transition(all, 0.2s, ease-in);
 	@include font-size(12px);
 	
@@ -97,32 +91,25 @@ a.back-to-river-link {
  << PREVIOUS 
 ------------------------*/
 
-#entity_pager_1-item-previous, /* songs */
-#entity_pager_2-item-previous, /* album node */
-#entity_pager_3-item-previous, /* product node */
-#entity_pager_4-item-previous, /* articles */
-#entity_pager_5-item-previous /* legacy */{
+#entity_pager_1-item-previous,
+#entity_pager_2-item-previous {
 	float: left;
 	max-width: 40%;
 }
 a#entity-pager-previous-link {
-	padding-left: 35px;
-	padding-top: 5px;
+	padding: 0px 0px 0px 40px;
 	
 	// icon
 	&:before {
 		content: "\3d";
-		display: block;
+		display: inline-block;
 		font-family: $arrowicons;
 		font-size: 25px;
 		line-height: 28px;
-		letter-spacing: -16px;
-		margin-right: 20px;
 		vertical-align: middle;
-		position: absolute;
-		top: 0;
-		left: 0;
 		speak: none;
+		margin-left: -40px;
+		width: 40px;
 	}
 	
 	// mobile only
@@ -141,6 +128,8 @@ a#entity-pager-previous-link {
 			top: 0px;
 			width: 34px;
 			speak: none;
+			display: block;
+			margin: 0;
 		}	
 	}	
 }
@@ -150,33 +139,26 @@ a#entity-pager-previous-link {
  NEXT >> 
 -------------------------*/
 
-#entity_pager_1-item-next, /* songs */
-#entity_pager_2-item-next, /* album node */
-#entity_pager_3-item-next, /* product node */
-#entity_pager_4-item-next, /* articles */
-#entity_pager_5-item-next /* legacy */ {
+#entity_pager_1-item-next,
+#entity_pager_2-item-next {
 	float: right;
 	max-width: 40%;
 }
 a#entity-pager-next-link {
-	padding-right: 35px;
-	padding-top: 5px;
 	text-align: right;
+	padding: 0 40px 0 0;
 	
 	// icon
 	&:after {
 		content:"\3e";
-		display: block;
+		display: inline-block;
 		font-family: $arrowicons;
 		font-size: 25px;
 		line-height: 28px;
-		letter-spacing: -16px;
-		margin-right: 20px;
 		vertical-align: middle;
 		speak: none;
-		position: absolute;
-		top: 0;
-		right: 0;
+		margin-right: -40px;
+		width: 40px;
 	}
 	// mobile only
 	@include breakpoint($small-only) {
@@ -192,6 +174,9 @@ a#entity-pager-next-link {
 			position: absolute;
 			right: 0px;
 			top: 0px;
+			display: block;
+			speak: none;
+			margin: 0;
 		}
 	}
 }
@@ -203,8 +188,7 @@ a#entity-pager-next-link {
 
 .back-to-river-link-container {
 	position: absolute;
-	left: 50%;
-	transform: translate(-50%);
+	@include translate-centerX;
 }
 a.back-to-river-link {
 	overflow: hidden;
@@ -226,3 +210,4 @@ a.back-to-river-link {
 		speak: none;
 	}
 }
+

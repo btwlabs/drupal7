@@ -1,3 +1,5 @@
+// button mixins
+
 @mixin button {
 	background: $button-bg-color; 
 	text-align: center;
@@ -5,16 +7,16 @@
 	display: block;
 	text-decoration: none;
 	text-shadow: none;
-	@include border-radius($border-radius);
+	text-transform: $button-text-transform;
+	@include border-radius($button-border-radius);
 	@include transition(all, 0.2s, ease-in);
 	@include button-padding($button-padding);
 }
 
 @mixin button-hover {
 	background: $button-bg-hover-color; 
-	text-decoration: none;
-	text-shadow: none;
 	color: $button-text-hover-color;
+	text-decoration: none;
 }
 
 @mixin button-padding($button-padding) {

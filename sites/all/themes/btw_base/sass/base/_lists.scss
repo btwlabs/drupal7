@@ -47,50 +47,60 @@ dd {
 	margin-bottom: 20px;
 }
 
-/* Content that needs typical ordered list styling */
-.context-legal .block-system-main ol,
-.context-legal .block-system-main ul,
-.context-meet-greet-rules .block-system-main ol,
-.highlight-product-body {
-	margin: 0 0 30px 30px;
-}
-ol.search-results li {
-	margin-left: 30px;
-}
+/* LIST formatting classes */
 
-/* store page - negates .teaser-grid style on overarching views <li> for whole page */
-.view-store-landing.teaser-grid #views-popup-wrapper .field-name-body li {
-	list-style-type: disc;
-	margin-left: 20px;
-}
+.upper-roman {
+	list-style-type: upper-roman;
+	font-size: 18px;
 
+	> li {
+		list-style-type: upper-roman;
+		padding-left: 8px;
+	}
+}	
+.upper-alpha {
+	list-style-type: upper-alpha;
+
+	> li {
+		list-style-type: upper-alpha;
+		padding-left: 8px;
+	}
+}	
+.decimal {
+	list-style-type: decimal;
+
+	> li {
+		list-style-type: decimal;
+		padding-left: 8px;
+	}
+}
 
 /*---------------------------------------------------------
 -----------------------------------------------------------
 
- TEASER LIST & TEASER GRID styles
+ LIST & GRID styles
   
 -----------------------------------------------------------
 ---------------------------------------------------------*/
 
 /*---------------------------------------
 
- TEASER-GRID
+ GRID
  
 ----------------------------------------*/
 
-.teaser-grid  {
+.grid  {
 	margin: 0;
 	padding: 0;
 }
-.teaser-grid ul {
+.grid ul {
 	margin: 0;
 	padding: 0;
 	overflow: hidden;
 }
-.teaser-grid li,
-.teaser-grid .item-list li,
-.teaser-grid-row {
+.grid li,
+.grid .item-list li,
+.grid-row {
 	list-style-type: none;
 	float: left;
 	padding: 0;
@@ -100,19 +110,19 @@ ol.search-results li {
 
 /*---------------------------------------
 
- TEASER-LIST
+ LIST
  
 ----------------------------------------*/
 
-.teaser-list {
+.list {
 	padding: 0;
 }
-.teaser-list ul {
+.list ul {
 	margin: 0;
 	padding: 0;
 }
-.teaser-list-row,
-.item-list li.teaser-list-row {
+.list-row,
+.item-list li.list-row {
 	padding: $vert-spacing-unit/2 0;
 	@include border-bottom($border-color);
 	list-style-type: none;
@@ -122,32 +132,32 @@ ol.search-results li {
 }
 
 /* first and last row alterations */
-.teaser-list-row:nth-of-type(1),
-.item-list li.teaser-list-row:first-child,
-.l-region--sidebar .teaser-list-row:first-child {
+.list-row:nth-of-type(1),
+.item-list li.list-row:first-child,
+.l-region--sidebar .list-row:first-child {
 	padding-top: 0;
 }
-.teaser-list-row:last-child,
-.item-list li.teaser-list-row:last-child,
-.l-region--sidebar .teaser-list-row:last-child {
+.list-row:last-child,
+.item-list li.list-row:last-child,
+.l-region--sidebar .list-row:last-child {
 	border-bottom: 0;
 }
 
 /* list row content - articles */
-.teaser-list h3.title {
+.list h3.title {
 	font-size: 15px;
 	margin-bottom: 5px;
 }
-.teaser-list .post-date {
+.list .post-date {
 	font-size: 0.813em;
 	font-style: italic;
 }
-.teaser-list .media-thumb-item {
+.list .media-thumb-item {
 	width: 160px;
 	float: left;
 	margin-right: 30px;
 }
-.teaser-list ul.share-links-container {
+.list ul.share-links-container {
 	border: 0;
 	height: 20px;
 	margin: 0px;

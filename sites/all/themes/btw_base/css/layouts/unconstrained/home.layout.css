@@ -3,6 +3,9 @@
  *
  * Styles for the HOME PAGE layout.
  ******************************************************************************/
+/**
+ * $ARROW
+ */
 /* line 7, ../../../sass/abstractions/_mixin-layout.scss */
 .clearfix:before, .clearfix:after {
   content: "";
@@ -24,7 +27,7 @@
  
 -----------------------------------------------*/
 @media (min-width: 0em) and (max-width: 40em) {
-  /* line 29, ../../../sass/layouts/home/home.layout.scss */
+  /* line 29, ../../../sass/layouts/unconstrained/home.layout.scss */
   .front .l-content {
     width: 100%;
     float: right;
@@ -33,7 +36,7 @@
     clear: none;
     float: none; } }
 @media (min-width: 40.063em) {
-  /* line 39, ../../../sass/layouts/home/home.layout.scss */
+  /* line 39, ../../../sass/layouts/unconstrained/home.layout.scss */
   .front .l-content {
     width: 100%;
     float: right;
@@ -41,7 +44,7 @@
     margin-right: 0;
     clear: none; } }
 @media (min-width: 64.063em) {
-  /* line 48, ../../../sass/layouts/home/home.layout.scss */
+  /* line 48, ../../../sass/layouts/unconstrained/home.layout.scss */
   .front .l-content {
     width: 100%;
     float: right;
