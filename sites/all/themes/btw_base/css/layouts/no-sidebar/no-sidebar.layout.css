@@ -3,9 +3,6 @@
  *
  * Styles for the Album Node layout.
  ******************************************************************************/
-/**
- * $ARROW
- */
 /* line 7, ../../../sass/abstractions/_mixin-layout.scss */
 .clearfix:before, .clearfix:after {
   content: "";

@@ -53,3 +53,12 @@
 	background-image: linear-gradient(top, $fromColor, $toColor); /* W3C */
 	filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,StartColorStr='#{$fromColor}', EndColorStr='#{$toColor}');
 }
+
+
+// Hide text but show images
+@mixin hide-text {
+	text-indent: 100%; //get out of the window
+	white-space: nowrap; // don't come back in
+	overflow: hidden; // no really, don't come back in
+}
+

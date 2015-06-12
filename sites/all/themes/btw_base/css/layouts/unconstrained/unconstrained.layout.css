@@ -1,5 +1,5 @@
 /*******************************************************************************
- * home.layout.scss
+ * unconstrained.layout.scss
  *
  * Styles for the HOME PAGE layout.
  ******************************************************************************/
@@ -24,8 +24,8 @@
  
 -----------------------------------------------*/
 @media (min-width: 0em) and (max-width: 40em) {
-  /* line 29, ../../../sass/layouts/home/home.layout.scss */
-  .front .l-content {
+  /* line 29, ../../../sass/layouts/unconstrained/unconstrained.layout.scss */
+  .l-content {
     width: 100%;
     float: right;
     margin-left: 0;
@@ -33,20 +33,20 @@
     clear: none;
     float: none; } }
 @media (min-width: 40.063em) {
-  /* line 39, ../../../sass/layouts/home/home.layout.scss */
-  .front .l-content {
+  /* line 39, ../../../sass/layouts/unconstrained/unconstrained.layout.scss */
+  .l-content {
     width: 100%;
     float: right;
     margin-left: 0;
     margin-right: 0;
     clear: none; } }
 @media (min-width: 64.063em) {
-  /* line 48, ../../../sass/layouts/home/home.layout.scss */
-  .front .l-content {
+  /* line 48, ../../../sass/layouts/unconstrained/unconstrained.layout.scss */
+  .l-content {
     width: 100%;
     float: right;
     margin-left: 0;
     margin-right: 0;
     clear: none; } }
 
-/*# sourceMappingURL=home.layout.css.map */
+/*# sourceMappingURL=unconstrained.layout.css.map */

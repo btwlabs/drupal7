@@ -102,68 +102,72 @@
 				<!-- content_1 region -->
 				<div class="l-content-1 l-custom slide" data-slide="1">
 					<div class="l-content-1-inner l-inner">
-						<div class="l-constrained">
-							<?php print render($page['content_1']); ?>
-						</div>
+						<?php print render($page['content_1']); ?>
 					</div>
 				</div>
 				
 				<!-- content_2 region -->
 				<div class="l-content-2 l-custom slide" data-slide="2">
 					<div class="l-content-2-inner l-inner">
-						<div class="l-constrained">
-							<?php print render($page['content_2']); ?>
-						</div>
+						<?php print render($page['content_2']); ?>
 					</div>
 				</div>
 			
 				<!-- content_3 region -->
 				<div class="l-content-3 l-custom slide" data-slide="3">
 					<div class="l-content-3-inner l-inner">
-						<div class="l-constrained">
-							<?php print render($page['content_3']); ?>
-						</div>
+						<?php print render($page['content_3']); ?>
 					</div>
 				</div>
 			
 				<!-- content_4 region -->
 				<div class="l-content-4 l-custom slide" data-slide="4">
 					<div class="l-content-4-inner l-inner">
-						<div class="l-constrained">
-							<?php print render($page['content_4']); ?>
-						</div>
+						<?php print render($page['content_4']); ?>
 					</div>
 				</div>
 				
 				<!-- content_5 region -->
 				<div class="l-content-5 l-custom slide" data-slide="5">
 					<div class="l-content-5-inner l-inner">
-						<div class="l-constrained">
-							<?php print render($page['content_5']); ?>
-						</div>
+						<?php print render($page['content_5']); ?>
 					</div>
 				</div>
 				
 				<!-- content_6 region -->
 				<div class="l-content-6 l-custom slide" data-slide="6">
 					<div class="l-content-6-inner l-inner">
-						<div class="l-constrained">
-							<?php print render($page['content_6']); ?>
-						</div>
+						<?php print render($page['content_6']); ?>
 					</div>
 				</div>
 				
 				<!-- content_7 region -->
 				<div class="l-content-7 l-custom slide" data-slide="7">
 					<div class="l-content-7-inner l-inner">
-						<div class="l-constrained">
-							<?php print render($page['content_7']); ?>
-							<!-- render content here so webform node shows in this region -->
-							<?php print render($page['content']); ?>
-						</div>
+						<?php print render($page['content_7']); ?>
 					</div>
 				</div>
-						
+				
+				<!-- content_8 region -->
+				<div class="l-content-8 l-custom slide" data-slide="8">
+					<div class="l-content-8-inner l-inner">
+						<?php print render($page['content_8']); ?>
+					</div>
+				</div>
+				
+				<!-- content_9 region -->
+				<div class="l-content-9 l-custom slide" data-slide="9">
+					<div class="l-content-9-inner l-inner">
+						<?php print render($page['content_9']); ?>
+					</div>
+				</div>
+				
+				<!-- content_10 region -->
+				<div class="l-content-10 l-custom slide" data-slide="10">
+					<div class="l-content-10-inner l-inner">
+						<?php print render($page['content_10']); ?>
+					</div>
+				</div>														
 			</div>
 			
 		</div><!-- close #content -->

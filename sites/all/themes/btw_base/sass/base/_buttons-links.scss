@@ -45,19 +45,10 @@ button,
 input[type="reset"], 
 input[type="submit"], 
 input[type="button"] {
-	@include border-radius($border-radius);
-	@include transition(all, 0.2s, ease-in);
-	background: $button-bg-color; 
-	text-align: center;
-	color: $button-text-color;
-	display: block;
-	text-decoration: none;
-	padding: $button-padding;
+	@include button;
 	
 	&:hover {
-		background: $button-bg-hover-color; 
-		text-decoration: none !important;
-		color: $button-text-hover-color;
+		@include button-hover;
 	}
 }
 
