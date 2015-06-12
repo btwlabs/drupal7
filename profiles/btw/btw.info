@@ -22,6 +22,7 @@ dependencies[] = field_ui
 dependencies[] = file
 dependencies[] = rdf
 dependencies[] = block_class
+dependencies[] = context_ui
 dependencies[] = context_omega
 dependencies[] = devel
 dependencies[] = ds_ui
