@@ -12,9 +12,11 @@
     <?php print render($title_suffix['contextual_links']); ?>
   <?php endif; ?>
 
-  <span class="quote-start quote">&#8220;</span>
-    <?php print $quote_body; ?>
-  <span class="quote-end quote">&#8221;</span>
+  <?php if (!empty($quote_body)) : ?>
+    <span class="quote-start quote">&#8220;</span>
+      <?php print $quote_body; ?>
+    <span class="quote-end quote">&#8221;</span>
+  <?php endif; ?>
 
   <?php print $quote_author; ?>
 
