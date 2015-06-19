@@ -17,6 +17,21 @@
   margin-bottom: 0;
   border-bottom: 0; }
 
+/*--------------------------------------------------------
+----------------------------------------------------------
+
+ BASE STYLES
+ 
+----------------------------------------------------------
+--------------------------------------------------------*/
+/* line 9, ../sass/base/_body.scss */
+body {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 1.6;
+  color: #777; }
+
 /*---------------------------------------------------------
 -----------------------------------------------------------
 
@@ -834,6 +849,7 @@ div.toolbar-drawer,
 body {
   background-size: auto auto; }
 
+/* CSS for feature/header banners */
 /*----------------------------------------------
 
  CLICKABLE class: 
@@ -941,6 +957,10 @@ body {
   .dateblock .year {
     font-size: 12px;
     font-size: 0.75rem; }
+
+/* line 3, ../sass/components/_ds-basics.scss */
+.outer-wrapper {
+  margin-bottom: 60px; }
 
 /*-------------------------------------------------
 ---------------------------------------------------
@@ -2446,124 +2466,36 @@ h1.site-name {
     padding: 0;
     width: 18.5%; }
 
-/*-------------------------------------------
-
- ARTICLE PULL QUOTE
- 
---------------------------------------------*/
-/*--------------------------------
- article pull quote - 
- block displays in mobile only 
---------------------------------*/
-/* line 158, ../sass/components/articles/_article-node.scss */
-#article-pullquote {
-  margin-bottom: 40px;
-  padding-bottom: 40px;
-  border-bottom: 1px solid #aaa; }
-  /* line 163, ../sass/components/articles/_article-node.scss */
-  #article-pullquote .quote-start {
-    float: left;
-    font-size: 80px;
-    font-size: 5rem;
-    line-height: 0.75;
-    /* 60px */
-    margin-right: 5px;
-    vertical-align: middle; }
-  /* line 170, ../sass/components/articles/_article-node.scss */
-  #article-pullquote .quote-body {
-    margin-left: 40px; }
-  /* line 174, ../sass/components/articles/_article-node.scss */
-  #article-pullquote .quote-end {
-    display: none; }
-  /* line 177, ../sass/components/articles/_article-node.scss */
-  #article-pullquote .quote-author,
-  #article-pullquote .quote-url {
-    font-size: 13px;
-    font-size: 0.8125rem;
-    line-height: 1.4;
-    font-style: italic;
-    text-align: left; }
-
-/*--------------------------------
- node sidebar - quotes
---------------------------------*/
-/* line 191, ../sass/components/articles/_article-node.scss */
-.node-sidebar-container {
-  float: right;
-  padding: 0;
-  width: auto;
-  width: 30%;
-  margin-bottom: 40px;
-  margin-left: 40px; }
-  /* line 199, ../sass/components/articles/_article-node.scss */
-  .node-sidebar-container .quote-item {
-    text-align: left;
-    margin-bottom: 40px;
-    position: relative; }
-  /* line 206, ../sass/components/articles/_article-node.scss */
-  .node-sidebar-container .quote-start,
-  .node-sidebar-container .quote-end {
-    font-size: 112px;
-    font-size: 7rem;
-    height: 50px;
-    line-height: 1; }
-  /* line 212, ../sass/components/articles/_article-node.scss */
-  .node-sidebar-container .quote-start {
-    float: left;
-    left: 0;
-    margin-right: 10px;
-    position: relative;
-    top: -10px; }
-  /* line 219, ../sass/components/articles/_article-node.scss */
-  .node-sidebar-container .quote-end {
-    position: absolute;
-    bottom: 20px;
-    right: 0; }
-  /* line 226, ../sass/components/articles/_article-node.scss */
-  .node-sidebar-container .quote-body {
-    font-size: 20px;
-    font-size: 1.25rem;
-    line-height: 1.4;
-    padding: 0;
-    margin-bottom: 10px;
-    position: relative; }
-  /* line 233, ../sass/components/articles/_article-node.scss */
-  .node-sidebar-container .quote-body p {
-    margin-bottom: 0; }
-  /* line 238, ../sass/components/articles/_article-node.scss */
-  .node-sidebar-container .quote-url {
-    display: block; }
-
 /*--------------------------------------
 
  PRODUCT REFERENCES ( "In This Article" block )
  
 ---------------------------------------*/
-/* line 250, ../sass/components/articles/_article-node.scss */
+/* line 153, ../sass/components/articles/_article-node.scss */
 #article-nodes-container {
   margin-bottom: 40px;
   padding-bottom: 40px;
   border-bottom: 1px solid #aaa; }
-  /* line 255, ../sass/components/articles/_article-node.scss */
+  /* line 158, ../sass/components/articles/_article-node.scss */
   #article-nodes-container h2.block-title {
     margin-bottom: 20px; }
-  /* line 258, ../sass/components/articles/_article-node.scss */
+  /* line 161, ../sass/components/articles/_article-node.scss */
   #article-nodes-container .teaser-list h2.block-title {
     display: none; }
-  /* line 262, ../sass/components/articles/_article-node.scss */
+  /* line 165, ../sass/components/articles/_article-node.scss */
   #article-nodes-container .teaser-list-row {
     overflow: hidden;
     padding: 26.66667px 0; }
-    /* line 266, ../sass/components/articles/_article-node.scss */
+    /* line 169, ../sass/components/articles/_article-node.scss */
     #article-nodes-container .teaser-list-row:first-child {
       padding-top: 0; }
-    /* line 270, ../sass/components/articles/_article-node.scss */
+    /* line 173, ../sass/components/articles/_article-node.scss */
     #article-nodes-container .teaser-list-row:last-child {
       border-bottom: 0;
       padding-bottom: 0; }
 
 /* product image - container */
-/* line 278, ../sass/components/articles/_article-node.scss */
+/* line 181, ../sass/components/articles/_article-node.scss */
 .article-related-node .image {
   border: 1px solid #aaa;
   float: left;
@@ -2572,36 +2504,36 @@ h1.site-name {
   width: 20%; }
 
 /* product title - container */
-/* line 287, ../sass/components/articles/_article-node.scss */
+/* line 190, ../sass/components/articles/_article-node.scss */
 .article-related-node-product-body,
 .article-related-node-album-body {
   float: left;
   width: 50%; }
 
-/* line 292, ../sass/components/articles/_article-node.scss */
+/* line 195, ../sass/components/articles/_article-node.scss */
 .article-related-node-title {
   font-size: 21px;
   font-size: 1.3125rem; }
 
 /* product created date */
-/* line 297, ../sass/components/articles/_article-node.scss */
+/* line 200, ../sass/components/articles/_article-node.scss */
 .article-related-node-created-date {
   font-size: 13px;
   font-size: 0.8125rem; }
 
 /* product price */
-/* line 302, ../sass/components/articles/_article-node.scss */
+/* line 205, ../sass/components/articles/_article-node.scss */
 #article-nodes-container .field-commerce-price {
   margin-bottom: 0;
   /* override from store-global.css */ }
 
 /* Links - container */
-/* line 307, ../sass/components/articles/_article-node.scss */
+/* line 210, ../sass/components/articles/_article-node.scss */
 .article-related-node-links {
   float: right;
   margin-left: 4%;
   /* Links - buttons */ }
-  /* line 312, ../sass/components/articles/_article-node.scss */
+  /* line 215, ../sass/components/articles/_article-node.scss */
   .article-related-node-links a {
     background-color: #444;
     border-radius: 30px;
@@ -2614,14 +2546,14 @@ h1.site-name {
     width: 35px;
     position: relative;
     color: #fff; }
-    /* line 325, ../sass/components/articles/_article-node.scss */
+    /* line 228, ../sass/components/articles/_article-node.scss */
     .article-related-node-links a:hover {
       background-color: #ccc;
       color: #444;
       text-decoration: none; }
 
 /* view more link icon */
-/* line 335, ../sass/components/articles/_article-node.scss */
+/* line 238, ../sass/components/articles/_article-node.scss */
 a.related-node-album-view-link:before,
 a.related-node-product-view-link:before {
   position: absolute;
@@ -2632,7 +2564,7 @@ a.related-node-product-view-link:before {
   font-family: IcoMoonBasic; }
 
 /* buy now link icon */
-/* line 346, ../sass/components/articles/_article-node.scss */
+/* line 249, ../sass/components/articles/_article-node.scss */
 a.related-node-album-buy-link:before,
 a.related-node-product-buy-link:before {
   position: absolute;
@@ -2647,37 +2579,37 @@ a.related-node-product-buy-link:before {
  RECENT & MORE ARTICLES content block 
  
 ---------------------------------------*/
-/* line 363, ../sass/components/articles/_article-node.scss */
+/* line 266, ../sass/components/articles/_article-node.scss */
 .node-more-articles {
   position: relative; }
-  /* line 366, ../sass/components/articles/_article-node.scss */
+  /* line 269, ../sass/components/articles/_article-node.scss */
   .node-more-articles h2.block-title {
     font-size: 20px;
     font-size: 1.25rem;
     margin-bottom: 0px; }
-  /* line 370, ../sass/components/articles/_article-node.scss */
+  /* line 273, ../sass/components/articles/_article-node.scss */
   .node-more-articles .views-row {
     padding: 10px 0;
     border-bottom: 0;
     float: none; }
-  /* line 375, ../sass/components/articles/_article-node.scss */
+  /* line 278, ../sass/components/articles/_article-node.scss */
   .node-more-articles .field-title {
     font-size: 15px;
     font-size: 0.9375rem;
     line-height: 1.3;
     padding-right: 10px;
     display: block; }
-  /* line 381, ../sass/components/articles/_article-node.scss */
+  /* line 284, ../sass/components/articles/_article-node.scss */
   .node-more-articles .field-date {
     font-size: 13px;
     font-size: 0.8125rem;
     display: block;
     line-height: 1.3;
     font-style: italic; }
-  /* line 387, ../sass/components/articles/_article-node.scss */
+  /* line 290, ../sass/components/articles/_article-node.scss */
   .node-more-articles .view-footer {
     padding: 10px 0; }
-  /* line 392, ../sass/components/articles/_article-node.scss */
+  /* line 295, ../sass/components/articles/_article-node.scss */
   .node-more-articles .view-empty {
     font-size: 13px; }
 

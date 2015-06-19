@@ -61,7 +61,7 @@
   <?php endif; ?>
 
   <?php if ((!empty($row_mobile))) : ?>
-    <div class="outer-wrapper row-mobile-outer-wrapper">
+    <div class="outer-wrapper row-mobile-outer-wrapper omega-mobile-only">
       <<?php print $row_mobile_wrapper ?> class="row row-mobile-wrapper clearfix <?php print $row_mobile_classes;?>">
         <?php print $row_mobile; ?>
       </<?php print $row_mobile_wrapper ?>>

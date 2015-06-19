@@ -359,8 +359,7 @@ function common_support_ds_layout_info() {
         'quote_url' => t('Quote url'),
       ),
       'css' => TRUE,
-      // optional, form only applies to node form at this point.
-      'form' => TRUE,
+      'image' => TRUE,
     ),
     'common_support_teaser_1' => array(
       'label' => t('Teaser List V1'),
@@ -370,8 +369,7 @@ function common_support_ds_layout_info() {
         'col2' => t('Column 2'),
       ),
       'css' => TRUE,
-      // optional, form only applies to node form at this point.
-      'form' => TRUE,
+      'image' => TRUE,
     ),
   );
 

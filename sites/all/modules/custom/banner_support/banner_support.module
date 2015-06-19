@@ -100,8 +100,7 @@ function banner_support_ds_layout_info() {
         'row2' => t('Row 2'),
       ),
       'css' => TRUE,
-      // optional, form only applies to node form at this point.
-      'form' => TRUE,
+      'image' => TRUE,
     ),
   );
 

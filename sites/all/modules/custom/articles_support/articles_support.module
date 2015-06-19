@@ -191,8 +191,7 @@ function articles_support_ds_layout_info() {
         'row_bottom' => t('Row Bottom'),
       ),
       'css' => TRUE,
-      // optional, form only applies to node form at this point.
-      'form' => TRUE,
+      'image' => TRUE,
     ),
   );
 
