@@ -1,7 +1,82 @@
 /*------ CSS for common-support-quote-1.tpl.php ------*/
 
 
+
+/* MOBILE - $small-up = min-width: 0 */
+@media (min-width: 0em) {
+	
+	.common-support-quote-1 .quote-start {
+		float: left;
+		font-size: 5rem; /* 80px */
+		line-height: 0.75;
+		margin-right: 5px;
+		vertical-align: middle;
+	}
+	.common-support-quote-1 .quote-body,
+	.common-support-quote-1 .quote-author,
+	.common-support-quote-1 .quote-url {
+		margin-left: 40px;
+	}
+	
+	/* hide close quotation mark */
+	.common-support-quote-1 .quote-end {
+		display: none;
+	}
+	.common-support-quote-1 .quote-author,
+	.common-support-quote-1 .quote-url {
+		font-size: 0.813rem;
+		line-height: 1.4;
+		font-style: italic;
+	}
+}
+
 /* TABLET - $medium-up = min-width: 641px */
 @media (min-width: 40.063em)  {
 
+	.common-support-quote-1 {
+		float: right;
+		width: 40%;
+		position: relative;
+	}
+	
+	/* Quote icons */
+	.common-support-quote-1 .quote-start,
+	.common-support-quote-1 .quote-end {
+		font-size: 6.250rem; /* 100px */
+		height: 50px;
+		line-height: 1;
+	}
+	/* open quotation */
+	.common-support-quote-1 .quote-start {
+		margin-right: 10px;
+		position: relative;
+		top: -10px;
+		left: 0;
+	}
+	/* close quotation */
+	.common-support-quote-1 .quote-end {
+		position: absolute;
+		bottom: 20px;
+		right: 0;
+		display: block;
+	}
+	
+	/* Quote body */
+	.common-support-quote-1 .quote-body {
+		font-size: 1.250rem; /* 20px */
+		margin: 0 45px 10px 55px;
+		padding: 0;
+		position: relative;
+	}
+	.common-support-quote-1 .quote-body p {
+		margin-bottom: 0;
+	}
+	
+	/* quote URL */
+	.common-support-quote-1 .quote-author,
+	.common-support-quote-1 .quote-url {
+		margin: 0 55px;
+		word-wrap: break-word;
+	}
 }
+

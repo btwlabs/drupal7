@@ -1,7 +1,36 @@
 /*------ CSS for articles_support_1.tpl.php ------*/
 
 
-/* TABLET - $medium-up = min-width: 641px */
-@media (min-width: 40.063em)  {
+/* MOBILE UP - $small-up = min-width: 0 */
+@media (min-width: 0em) {
+	
+	.articles-support-1 .row-mobile-outer-wrapper {
+		display: block;
+	}
+}
 
+/* TABLET UP - $medium-up = min-width: 641px */
+@media (min-width: 40.063em)  {
+	
+	/* hide mobile row */
+	.articles-support-1 .row-mobile-outer-wrapper {
+		display: none;
+	}
+	
+	.articles-support-1 .col {
+		float: left;
+	}
+	.articles-support-1 .col-1-wrapper {
+		margin-right: 5%;
+		width: 60%;
+	}
+	.articles-support-1 .col-2-wrapper {
+		width: 35%;
+	}
+	
+	/* col = has sidebar */
+	
+	.articles-support-1 .has-sidebar .col {
+		width: 55%;
+	}
 }

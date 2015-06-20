@@ -154,7 +154,7 @@ function articles_support_ds_field_settings_info() {
     'field_article_images' => array(
       'formatter_settings' => array(
         'ft' => array(
-          'func' => 'theme_ds_field_minimal',
+          'func' => 'theme_ds_field',
         ),
       ),
     ),
@@ -568,7 +568,7 @@ function articles_support_ds_layout_settings_info() {
   $ds_layout->layout = 'articles_support_1';
   $ds_layout->settings = array(
     'regions' => array(
-      'row_mobile_col1' => array(
+      'row_mobile' => array(
         0 => 'quote_mobile',
       ),
       'row1' => array(
@@ -579,37 +579,37 @@ function articles_support_ds_layout_settings_info() {
         3 => 'submitted',
         4 => 'share_links',
       ),
-      'row2_col2' => array(
+      'row2_col1' => array(
         5 => 'field_article_body',
       ),
       'row3' => array(
         6 => 'news_article_gallery',
       ),
-      'row_mobile_col2' => array(
+      'row_mobile' => array(
         7 => 'field_article_images',
       ),
       'row_bottom' => array(
         8 => 'recent_articles',
       ),
-      'row5' => array(
+      'row4' => array(
         9 => 'article_pager',
       ),
-      'row2_col1' => array(
+      'row2_col2' => array(
         10 => 'field_article_quote',
       ),
     ),
     'fields' => array(
-      'quote_mobile' => 'row_mobile_col1',
+      'quote_mobile' => 'row_mobile',
       'article_hero_image' => 'row1',
       'field_tags' => 'header',
       'submitted' => 'header',
       'share_links' => 'header',
-      'field_article_body' => 'row2_col2',
+      'field_article_body' => 'row2_col1',
       'news_article_gallery' => 'row3',
-      'field_article_images' => 'row_mobile_col2',
+      'field_article_images' => 'row_mobile',
       'recent_articles' => 'row_bottom',
-      'article_pager' => 'row5',
-      'field_article_quote' => 'row2_col1',
+      'article_pager' => 'row4',
+      'field_article_quote' => 'row2_col2',
     ),
     'classes' => array(),
     'wrappers' => array(
@@ -617,12 +617,10 @@ function articles_support_ds_layout_settings_info() {
       'row1' => 'div',
       'row2' => 'div',
       'row2_col1' => 'div',
-      'row2_col2' => 'div',
+      'row2_col2' => 'aside',
       'row3' => 'div',
       'row_mobile' => 'div',
-      'row_mobile_col1' => 'div',
-      'row_mobile_col2' => 'div',
-      'row5' => 'div',
+      'row4' => 'div',
       'row_bottom' => 'div',
     ),
     'layout_wrapper' => 'div',
@@ -650,40 +648,40 @@ function articles_support_ds_layout_settings_info() {
         3 => 'share_links',
         4 => 'submitted',
       ),
-      'row_mobile_col1' => array(
+      'row_mobile' => array(
         2 => 'quote_mobile',
       ),
-      'row_mobile_col2' => array(
+      'row_mobile' => array(
         5 => 'field_article_images',
       ),
-      'row2_col1' => array(
+      'row2_col2' => array(
         6 => 'field_article_quote',
       ),
       'row3' => array(
         7 => 'news_article_gallery',
       ),
-      'row2_col2' => array(
+      'row2_col1' => array(
         8 => 'field_article_body',
       ),
       'row_bottom' => array(
         9 => 'recent_articles',
       ),
-      'row5' => array(
+      'row4' => array(
         10 => 'article_pager',
       ),
     ),
     'fields' => array(
       'article_hero_image' => 'row1',
       'field_tags' => 'header',
-      'quote_mobile' => 'row_mobile_col1',
+      'quote_mobile' => 'row_mobile',
       'share_links' => 'header',
       'submitted' => 'header',
-      'field_article_images' => 'row_mobile_col2',
-      'field_article_quote' => 'row2_col1',
+      'field_article_images' => 'row_mobile',
+      'field_article_quote' => 'row2_col2',
       'news_article_gallery' => 'row3',
-      'field_article_body' => 'row2_col2',
+      'field_article_body' => 'row2_col1',
       'recent_articles' => 'row_bottom',
-      'article_pager' => 'row5',
+      'article_pager' => 'row4',
     ),
     'classes' => array(),
     'wrappers' => array(
@@ -691,12 +689,10 @@ function articles_support_ds_layout_settings_info() {
       'row1' => 'div',
       'row2' => 'div',
       'row2_col1' => 'div',
-      'row2_col2' => 'div',
+      'row2_col2' => 'aside',
       'row3' => 'div',
       'row_mobile' => 'div',
-      'row_mobile_col1' => 'div',
-      'row_mobile_col2' => 'div',
-      'row5' => 'div',
+      'row4' => 'div',
       'row_bottom' => 'div',
     ),
     'layout_wrapper' => 'div',

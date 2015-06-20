@@ -141,7 +141,7 @@ function banner_support_ds_layout_settings_info() {
   $ds_layout->entity_type = 'node';
   $ds_layout->bundle = 'banner';
   $ds_layout->view_mode = 'teaser2';
-  $ds_layout->layout = 'banner_with_body1';
+  $ds_layout->layout = 'banner_with_body_1';
   $ds_layout->settings = array(
     'regions' => array(
       'row1' => array(

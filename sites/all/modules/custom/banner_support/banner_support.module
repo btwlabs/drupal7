@@ -92,16 +92,15 @@ function banner_support_ds_layout_info() {
   $path = drupal_get_path('module', 'banner_support');
 
   $layouts = array(
-    'banner_with_body1' => array(
+    'banner_with_body_1' => array(
       'label' => t('Banner With Body V1'),
-      'path' => $path . '/layouts/banner_with_body1',
+      'path' => $path . '/layouts/banner_with_body_1',
       'regions' => array(
         'row1' => t('Row 1'),
         'row2' => t('Row 2'),
       ),
       'css' => TRUE,
-      // optional, form only applies to node form at this point.
-      'form' => TRUE,
+      'image' => TRUE,
     ),
   );
 

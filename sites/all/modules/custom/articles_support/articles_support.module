@@ -187,14 +187,11 @@ function articles_support_ds_layout_info() {
         'row2_col2' => t('Row 2 Column 2'),
         'row3' => t('Row 3'),
         'row_mobile' => t('Row Mobile'),
-        'row_mobile_col1' => t('Row Mobile Column 1'),
-        'row_mobile_col2' => t('Row Mobile Column 2'),
-        'row5' => t('Row 5'),
+        'row4' => t('Row 4'),
         'row_bottom' => t('Row Bottom'),
       ),
       'css' => TRUE,
-      // optional, form only applies to node form at this point.
-      'form' => TRUE,
+      'image' => TRUE,
     ),
   );
 
