@@ -33,6 +33,6 @@ regions[content_8] = Content 8
 regions[content_9] = Content 9
 regions[content_10] = Content 10
 regions[pre_footer] = Pre-Footer
-regions[footer] = Footer
 regions[footer_1] = Footer Section 1
 regions[footer_2] = Footer Section 2
+regions[footer_3] = Footer Section 3
