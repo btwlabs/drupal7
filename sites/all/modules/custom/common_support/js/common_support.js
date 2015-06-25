@@ -10,6 +10,51 @@
             });
         }
     };
+    Drupal.behaviors.masonryAppended = {
+        attach: function(context, settings) {
+            $("body").delegate('.masonry-load-more', 'views_load_more.new_content', function(e, new_items){
+                // Use the masonry module settings to initialize masonry etc.
+                // Iterate through all Masonry instances
+                $.each(Drupal.settings.masonry, function (container, settings) {
+                    // Set container
+                    var $container = $(container);
+
+                    // Set options
+                    var $options = new Object();
+                    if (settings.item_selector) {
+                        $options.itemSelector = settings.item_selector;
+                    }
+                    if (settings.column_width) {
+                        if (settings.column_width_units == 'px') {
+                            $options.columnWidth = settings.column_width;
+                        }
+                        else if (settings.column_width_units == '%') {
+                            $options.columnWidth = function (containerWidth) {
+                                return containerWidth * (settings.column_width / 100);
+                            };
+                        }
+                    }
+                    $options.gutterWidth = settings.gutter_width;
+                    $options.isResizable = settings.resizable;
+                    if (settings.resizable) {
+                        $options.isAnimated = settings.animated;
+                        if (settings.animated) {
+                            $options.animationOptions = {
+                                queue: false,
+                                duration: settings.animation_duration
+                            };
+                        }
+                    }
+                    $options.isFitWidth = settings.fit_width;
+                    $options.isRTL = settings.rtl;
+
+                    // Apply Masonry to container and append.
+                    $container.masonry($options);
+                    $container.masonry('reload');
+                });
+            });
+        }
+    };
     Drupal.behaviors.itemHideShow = {
         attach:  function(context, settings) {
             $('a.show-link', context)
