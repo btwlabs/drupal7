@@ -53,12 +53,12 @@
 	
 		    	<?php if(!empty($page['branding'])) : ?>
 		        	<div class="l-branding">
-						<?php print render($page['branding']); ?>
-							<?php if ($logo): ?>
-					            <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home" class="site-branding__logo"><img src="<?php print $logo; ?>" alt="<?php print t('Home'); ?>" /></a>
-							<?php endif; ?>
+						    <?php print render($page['branding']); ?>
+							  <?php if ($logo): ?>
+					        <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home" class="site-branding__logo"><img src="<?php print $logo; ?>" alt="<?php print t('Home'); ?>" /></a>
+					      <?php endif; ?>
 		        	</div><!-- l-branding -->
-				<?php endif; ?>
+				  <?php endif; ?>
 		
 				<?php if (!empty($page['header'])) : ?>
 		        	<?php print render($page['header']); ?>
