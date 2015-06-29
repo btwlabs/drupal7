@@ -552,14 +552,14 @@ img#views-popup-ajax-throbber {
 
 -------------------------------------*/
 /* line 63, ../sass/base/_media.scss */
-.l-page .embedded-video {
+.embedded-video {
   height: 0;
   overflow: hidden;
   padding-bottom: 56.25%;
   padding-top: 30px;
   position: relative; }
   /* line 70, ../sass/base/_media.scss */
-  .l-page .embedded-video iframe {
+  .embedded-video iframe {
     height: 100%;
     left: 0;
     position: absolute;
