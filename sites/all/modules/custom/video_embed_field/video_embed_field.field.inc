@@ -304,6 +304,15 @@ function video_embed_field_field_formatter_info() {
         'video_style' => 'normal',
       ),
     );
+    $info['video_embed_field_link_colorbox'] = array(
+      'label' => t('Link to Video w/Colorbox'),
+      'field types' => array('video_embed_field'),
+      'settings' => array(
+        'video_style' => 'normal',
+        'use_description' => FALSE,
+        'link_title' => t('Watch Video'),
+      ),
+    );
   }
   return $info;
 }
@@ -316,7 +325,7 @@ function video_embed_field_field_formatter_settings_form($field, $instance, $vie
   $settings = $display['settings'];
   $element = array();
 
-  if ($display['type'] == 'video_embed_field' || $display['type'] == 'video_embed_field_thumbnail_colorbox' || $display['type'] == 'video_embed_field_url_colorbox') {
+  if ($display['type'] == 'video_embed_field' || $display['type'] == 'video_embed_field_thumbnail_colorbox' || $display['type'] == 'video_embed_field_url_colorbox' || $display['type'] == 'video_embed_field_link_colorbox') {
     $video_styles = video_embed_field_video_style_options(FALSE);
     $element['video_style'] = array(
       '#title' => t('Video style'),
@@ -349,7 +358,7 @@ function video_embed_field_field_formatter_settings_form($field, $instance, $vie
     );
   }
 
-  if ($instance['settings']['description_field'] && $display['type'] != 'video_embed_field_url' && $display['type'] != 'video_embed_field_url_colorbox') {
+  if ($instance['settings']['description_field'] && $display['type'] != 'video_embed_field_url' && $display['type'] != 'video_embed_field_url_colorbox' && $display['type'] != 'video_embed_field_link_colorbox') {
     $element['description'] = array(
       '#title' => t('Show description'),
       '#type' => 'checkbox',
@@ -371,8 +380,31 @@ function video_embed_field_field_formatter_settings_form($field, $instance, $vie
       ),
     );
   }
+
+  if ($display['type'] == 'video_embed_field_link_colorbox') {
+    if ($instance['settings']['description_field']) {
+      $element['use_description'] = array(
+        '#title' => t('Use Description as Link Title?'),
+        '#type' => 'checkbox',
+        '#description' => t('If checked then the video title will be used as the link title'),
+        '#default_value' => $settings['use_description'],
+      );
+    }
+    $element['link_title'] = array(
+      '#title' => t('Link Title'),
+      '#description' => t('Enter a custom title for the video colorbox link'),
+      '#type' => 'textfield',
+      '#default_value' => $settings['link_title'],
+      '#states' => array(
+        'invisible' => array(
+          ':input[name="fields[' . $field['field_name'] . '][settings_edit_form][settings][use_description]"]' => array('checked' => TRUE),
+        ),
+      ),
+    );
+  }
   return $element;
 }
+
 /**
  * Implements hook_field_formatter_settings_summary().
  */
@@ -505,6 +537,20 @@ function video_embed_field_field_formatter_view($entity_type, $entity, $field, $
       $element[$delta] = array(
         array(
           '#markup' => url($path['path'], $path['options']),
+        ),
+      );
+    }
+    elseif ($display['type'] == 'video_embed_field_link_colorbox') {
+      if (isset($item['description']) && ($display['settings']['use_description'])) {
+        $title = check_plain($item['description']);
+      }
+      else {
+        $title = $display['settings']['link_title'];
+      }
+      $path = video_embed_field_get_ajax_url($item['video_url'], $display['settings']['video_style']);
+      $element[$delta] = array(
+        array(
+          '#markup' => l($title, $path['path'], $path['options']),
         ),
       );
     }
