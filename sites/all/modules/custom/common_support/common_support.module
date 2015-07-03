@@ -72,6 +72,12 @@ function common_support_menu() {
     'access arguments' => array('access content'),
     'file' => 'common_support.pages.inc',
   );
+  $items['home'] = array(
+    'type' => MENU_CALLBACK,
+    'page callback' => 'common_support_blank_page',
+    'access arguments' => array('access content'),
+    'file' => 'common_support.pages.inc',
+  );
   return $items;
 }
 
