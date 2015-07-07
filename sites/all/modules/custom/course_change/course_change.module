@@ -1,0 +1,71 @@
+<?php
+/**
+ * @file
+ * course_change.module
+ */
+
+/**
+ * Implements hook_init().
+ */
+function course_change_init() {
+  $settings = array(
+    'courseChange' => array(
+      'course_change_waypoint_1_attach_element' => variable_get('course_change_waypoint_1_attach_element', ''),
+      'course_change_waypoint_1_toggle_class' => variable_get('course_change_waypoint_1_toggle_class', ''),
+      'course_change_waypoint_1_same_element' => variable_get('course_change_waypoint_1_same_element', ''),
+      'course_change_waypoint_1_toggle_element' => variable_get('course_change_waypoint_1_toggle_element', ''),
+      'course_change_waypoint_1_toggle_offset' => variable_get('course_change_waypoint_1_toggle_offset', 0),
+
+
+      'course_change_waypoint_2_attach_element' => variable_get('course_change_waypoint_2_attach_element', ''),
+      'course_change_waypoint_2_toggle_class' => variable_get('course_change_waypoint_2_toggle_class', ''),
+      'course_change_waypoint_2_same_element' => variable_get('course_change_waypoint_2_same_element', ''),
+      'course_change_waypoint_2_toggle_element' => variable_get('course_change_waypoint_2_toggle_element', ''),
+      'course_change_waypoint_2_toggle_offset' => variable_get('course_change_waypoint_2_toggle_offset', 0),
+
+      'course_change_waypoint_3_attach_element' => variable_get('course_change_waypoint_3_attach_element', ''),
+      'course_change_waypoint_3_toggle_class' => variable_get('course_change_waypoint_3_toggle_class', ''),
+      'course_change_waypoint_3_same_element' => variable_get('course_change_waypoint_3_same_element', ''),
+      'course_change_waypoint_3_toggle_element' => variable_get('course_change_waypoint_3_toggle_element', ''),
+      'course_change_waypoint_3_toggle_offset' => variable_get('course_change_waypoint_3_toggle_offset', 0),
+    ),
+  );
+  drupal_add_js($settings, 'setting');
+}
+
+/**
+ * Implements hook_permission().
+ */
+function course_change_permission() {
+  $permissions = array();
+  $permissions['configure course_change'] = array(
+    'title' => t('Configure Course Change'),
+    'description' => t('Allows a user to add course change waypoints'),
+    'restrict access' => TRUE,
+    'warning' => t('Giving this permission to some users could result in some funky-ass website behaviors.')
+  );
+  return $permissions;
+}
+
+/**
+ * Implements hook_menu().
+ */
+function course_change_menu() {
+  $items = array();
+  $items['admin/config/user-interface/waypoints/course-change'] = array(
+    'type' => MENU_LOCAL_TASK,
+    'title' => t('Course Change'),
+    'access arguments' => array('configure course_change'),
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('course_change_settings_form'),
+    'file' => 'includes/course_change.admin.inc',
+    'weight' => 10,
+  );
+  $items['admin/config/user-interface/waypoints/settings'] = array(
+    'type' => MENU_DEFAULT_LOCAL_TASK,
+    'title' => t('Waypoints Module Settings'),
+    'weight' => -10,
+  );
+
+  return $items;
+}

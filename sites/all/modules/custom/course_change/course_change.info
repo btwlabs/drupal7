@@ -1,0 +1,9 @@
+name = Course Change
+description = "A fun little ui for waypoints."
+core = 7.x
+project = course_change
+dependencies[] = waypoints
+scripts[] = js/course_change.js
+; stylesheets[all][] =
+; scripts[] =
+; dependencies[] =
