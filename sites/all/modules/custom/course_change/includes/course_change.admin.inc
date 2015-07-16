@@ -9,7 +9,7 @@
 
 /**
  * Settings form.
- * @todo use entities for this shit.
+ * @todo do something clever with multiple waypoints here.
  */
 function course_change_settings_form($form, $form_state) {
   $form['course_change_waypoint_1'] = array(
