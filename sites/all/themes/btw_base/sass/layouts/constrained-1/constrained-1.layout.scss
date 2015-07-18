@@ -1,7 +1,7 @@
 /*******************************************************************************
- * home.layout.scss
+ * constrained.layout.scss
  *
- * Styles for the HOME PAGE layout.
+ * Styles for the CONSTRAINED layout.
  ******************************************************************************/
 @import "compass";
 @import "breakpoint";
@@ -26,7 +26,7 @@
 @include breakpoint($small-only){
 	@include add-grid(2);
 	@include add-gutter(1/2);
-	.front .l-content {
+	.l-content {
 		@include grid-span(2, 1);
 		float: none;
 	}
@@ -36,7 +36,7 @@
 @include breakpoint($medium-up){
 	@include add-grid(6);
 	@include add-gutter(1/2);
-	.front .l-content {
+	.l-content {
 		@include grid-span(6);
 	}
 }
@@ -45,7 +45,7 @@
 @include breakpoint($large-up){
 	@include add-grid(12);
 	@include add-gutter(1/2);
-	.front .l-content {
+	.l-content {
 		@include grid-span(12);
 	}
 }

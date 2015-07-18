@@ -9,22 +9,137 @@
 
 /*-----------------------------------
  
- Layout
+ mobile header - contains nav toggle 
+ and site name
    
 ------------------------------------*/
 
 
-/* Header in mobile */
-@include breakpoint($small-only) {
-	.l-header .l-constrained {
-		margin: 0;
+// Container for userbar, nav
+.l-mobile-header {
+	@extend %clearfix;
+	
+	@include breakpoint($small-only){
+		position: relative;
+		width: 100%;
+		z-index: 100;
+		top: 0;
+		left: 0;
+		width: 100%;
+		background-color: $mobile-header-bg-color;
+	}
+	@include breakpoint($medium-up) {
+		display: none;
+	}
+}
+
+/* Site Name */
+h1.site-name {
+	display:none;
+	
+	@include breakpoint($small-only) {
+		display: block;
+		position: absolute;
+		top: 0;
+		width: 100%;
+	    @include font-size(25px);
+	    text-align: center;
+	    padding: 10px 20px 10px 70px;
+	    height: 50px;
+	    max-height: 50px;
+	    line-height: 1.2;
+	    vertical-align: middle;
+	    margin: 0;
+	    z-index: 0;
+	    @include border-bottom($border-color);
+	    
+	    & a {
+	    	display: block;
+		    color: $site-name-text-color;
+	    }
+    }
+}
+
+/*-----------------------------------
+	
+ Toggle buttons 
+ 
+-----------------------------------*/
+
+// open menu - button
+a.nav-open-btn {
+    left: 0px;
+    top: 0px;
+    z-index: 9999;
+    margin-left: 0px;/* negates show-link class positioning */
+    width: 50px;
+    overflow: hidden;
+    height: 0px;
+    position: absolute;
+    padding: 50px 0px 0px;
+    background: none;
+    border-radius: 0;
+    border-right: 1px solid $border-color;
+    color: $text-color;
+    @include transition($property,$time,$function);
+    
+    &:hover {
+	    color: $text-color;
+    }
+    
+    &:before {
+	    font-family: $basicicons;
+	    content: "\62";
+	    font-size: 24px;
+	    line-height: 1;
+	    position: absolute;
+	    top: 11px;
+	    left: 12px;
+    }
+    @include breakpoint($medium-up) {
+	    display:none;
+    }
+}
+
+
+// close menu - button
+a.nav-close-btn {
+	display: block;
+	padding: 15px 15px 11px 40px;
+	width: auto;
+	display: block;
+	color: $mobile-nav-bg-color;
+	@include font-size(12px);
+	line-height: 1;
+	color: #999;
+	height: 50px;
+	
+	&:hover {
+		text-decoration: none;
+		color: #fff;
+	}
+	
+	&:before {
+		content: "\e008";
+		font-family: $basicicons;
+	    font-size: 24px;
+	    line-height: 1;
+		display: inline-block;
+		position: relative;
+		top: -2px;
+		margin-right: 10px;
+		vertical-align: middle;
 	}
 }
 
 
-// new
+/*-----------------------------------
+ 
+ Layout
+   
+------------------------------------*/
+
 #site-wrapper {
-	//position: relative;
 	overflow: hidden;
 	width: 100%;
 }
@@ -38,8 +153,12 @@
 	height: 100%;
 	//position: relative;
 	
+	// Adding 3d transform forces browser to use hardware acceleration for better performance
+	// ..HOWEVER..
+	// !!!! Temporarily hidden because of fixed position bug. When a parent container uses CSS3 transforms, 
+	// inner elements that are fixed position no longer act as fixed but as absolute or relative.
+	// here the transforms are only occurring with the .js-nav class is enacted, which is only after mobile nav is toggled
 	
-	// !!!! Temporarily hidden because of fixed position bug when parent container uses CSS3 transforms. No longer acts as fixed but absolute or relative.
 	// older browser support
 	//-webkit-transform: translateX(0);
 	//transform: translateX(0); 
@@ -137,78 +256,6 @@
 }
 
 
-/*-----------------------------------
- 
- Toggle buttons
-   
-------------------------------------*/
-
-// open menu - button
-a.nav-open-btn {
-    left: 0px;
-    top: 0px;
-    z-index: 9999;
-    margin-left: 0px;/* negates show-link class positioning */
-    width: 50px;
-    overflow: hidden;
-    height: 0px;
-    position: absolute;
-    padding: 50px 0px 0px;
-    background: none;
-    border-radius: 0;
-    border-right: 1px solid $border-color;
-    color: $text-color;
-    @include transition($property,$time,$function);
-    
-    &:hover {
-	    color: $text-color;
-    }
-    
-    &:before {
-	    font-family: $basicicons;
-	    content: "\62";
-	    font-size: 24px;
-	    line-height: 1;
-	    position: absolute;
-	    top: 11px;
-	    left: 12px;
-    }
-    @include breakpoint($medium-up) {
-	    display:none;
-    }
-}
-
-
-// close menu - button
-a.nav-close-btn {
-	display: block;
-	padding: 15px 15px 11px 40px;
-	width: auto;
-	display: block;
-	color: $mobile-nav-bg-color;
-	@include font-size(12px);
-	line-height: 1;
-	color: #999;
-	height: 50px;
-	
-	&:hover {
-		text-decoration: none;
-		color: #fff;
-	}
-	
-	&:before {
-		content: "\e008";
-		font-family: $basicicons;
-	    font-size: 24px;
-	    line-height: 1;
-		display: inline-block;
-		position: relative;
-		top: -2px;
-		margin-right: 10px;
-		vertical-align: middle;
-	}
-}
-
 /*------------------------------------
 
  Main Links styling
@@ -248,22 +295,13 @@ a.nav-close-btn {
 	}
 }
 
-.mobile-nav .menu .leaf {
-	list-style-image: none;
-	list-style-type: none;
-}
 
-
-/*---------------------------------------------------------
+/*---------------------------------------
 
  SUB NAV
  
----------------------------------------------------------*/
+---------------------------------------*/
 
-
-.mobile-nav .menu .expanded {
-	
-}
 .mobile-nav ul ul {
 	background-color: $mobile-subnav-bg-color;
 }
@@ -278,7 +316,3 @@ a.nav-close-btn {
 		left: -20px;
 	}
 }
-
-
-// about - subnav
-

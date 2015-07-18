@@ -10,7 +10,6 @@
 // footer outer wrapper
 .l-footer-wrapper {
 	background-color: $footer-bg-color;
-	@include clearfix;
 }
 
 // constrained container
@@ -20,8 +19,8 @@
 
 // footer inner wrapper
 .footer-inner {
+	@extend %clearfix;
 	padding: $vert-spacing-unit 0;
-	@include clearfix;
 	color: $footer-text-color;
 	
 	& a {

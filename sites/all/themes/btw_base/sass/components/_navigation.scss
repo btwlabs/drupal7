@@ -7,7 +7,7 @@
 --------------------------------------------------------*/
 
 
-.l-region--navigation {
+.l-region--header {
 	@include breakpoint($small-only) {
 		display: none;
 	}
@@ -23,149 +23,82 @@
 		min-height: 59px;
 		//overflow: hidden;
 	}
-}
-
-.l-region--navigation .menu {
-	margin: 0;
-	padding: 0;
-	overflow: visible;
-	position: relative;
-}
-
-// List items
-.l-region--navigation .menu li {
-	margin: 0;
-	padding: 0;
-	list-style-type: none;
-	float: left;
-	position: relative;
 	
-	&.leaf {
-		list-style-image: none;
-	}
-	&.collapsed {
-		list-style-image: none;
-	}
-	&.expanded {
-		list-style-image: none;
-	}
-}
-
-// Nav button links
-.l-region--navigation li > a {
-	padding: 15px 20px;
-	display: block;
-	color: $nav-text-color;
-	background-color: $nav-button-bg-color;
-	@include font-size(18px);
-	
-	&:hover {
-		color: $nav-text-hover-color;
-		background-color: $nav-button-bg-hover-color;
-		text-decoration: none;
-	}
-}
-
-
-/* sub nav menus */
-
-
-.l-region--navigation li ul.menu {
-	position: absolute;
-	top: 59px;
-	left: 0;
-	min-width: 300px;
-	//display: none;
-	visibility: hidden;
-	@include transition-opacity;
-	background-color: #777;
-	left: -9999px; // hide offscreen when not needed - more accessible than display:none
-
-}
-
-// keeps main nav link in a persistent hover state while cursor moves to subnav list
-.l-region--navigation .menu li:hover > a {
-	background-color: $nav-button-bg-hover-color;
-	color: $nav-text-hover-color;
-}
-.l-region--navigation .menu li:hover ul.menu {
-	display: block;
-	opacity: 1;
-	visibility: visible;
-	left: 0;
-}
-.l-region--navigation li ul.menu li {
-	float: left;
-	
-	& a {
-		padding: 10px 15px;
-		color: #fff;
-		@include font-size(14px);
-	}
-}
-
-.l-region--navigation li.last ul.menu {
-	transform: translate(-70%);
-}
-
-
-/*-------------------------------------------------------
----------------------------------------------------------
- 
- SUB-NAVIGATION in PAGE CONTENT
- 
----------------------------------------------------------
---------------------------------------------------------*/
-
-// Hide Duplicate h2.block-title from submenu on pages
-.l-content .block--menu-block h2.block-title {
-	display: none;
-}
-.l-content .menu-block-wrapper {
-	margin: $vert-spacing-unit 0;
-	overflow: hidden;
-	padding: $vert-spacing-unit/3 0;
-	background-color: #eee;
-}
-.l-content .menu-block-wrapper .menu {
-	margin: 0;
-	padding: 0;
-	
-	& li {
-		float: none;
-		list-style-type: none;
-		list-style-image: none;
-		border: 0;
-		padding: 0;
-		margin: 10px 0;
-	}
-	& li a {
-		text-transform: uppercase;
-		display: block;
-	}
-	& li a:hover {
-		text-decoration: none;
-	}
-}
-
-// above mobile layout size
-@include breakpoint($medium-up) {
-	.l-content .menu-block-wrapper {
-		@include border-bottom($border-color);
-		margin-top: 0px;
-		padding: 0 0 $vert-spacing-unit/1.5 0;
-		background-color: transparent;
-	}
-	.l-content .menu-block-wrapper .menu li {
-		float: left;
-		padding: 0 10px 0 0;
-		margin: 0 10px 0 0;
-		@include font-size(14px);
-		border-right: 1px solid $border-color;
-	}
-	.l-content .menu-block-wrapper .menu li.last {
+	// List items
+	.menu {
 		margin: 0;
-		border: 0;
+		padding: 0;
+		overflow: visible;
+		position: relative;
+		
+		li {
+			margin: 0;
+			padding: 0;
+			list-style-type: none;
+			float: left;
+			position: relative;
+			
+			&.leaf {
+				list-style-image: none;
+			}
+			&.collapsed {
+				list-style-image: none;
+			}
+			&.expanded {
+				list-style-image: none;
+			}
+			
+			// keeps main nav link in a persistent hover state while cursor moves to subnav list
+			&:hover > a {
+				background-color: $nav-button-bg-hover-color;
+				color: $nav-text-hover-color;
+			}
+			
+			// Nav button links
+			> a {
+				padding: 15px 20px;
+				display: block;
+				color: $nav-text-color;
+				background-color: $nav-button-bg-color;
+				@include font-size(18px);
+				
+				&:hover {
+					color: $nav-text-hover-color;
+					background-color: $nav-button-bg-hover-color;
+					text-decoration: none;
+				}
+			}
+			
+			/* sub nav menus */
+			ul.menu {
+				position: absolute;
+				top: 59px;
+				left: 0;
+				min-width: 300px;
+				//display: none;
+				visibility: hidden;
+				@include transition-opacity;
+				background-color: #777;
+				left: -9999px; // hide offscreen when not needed - more accessible than display:none
+			
+				li {
+					float: left;
+					
+					a {
+						padding: 10px 15px;
+						color: #fff;
+						@include font-size(14px);
+					}
+				}
+			}
+			
+			// show sub-menu on hover
+			&:hover ul.menu {
+				display: block;
+				opacity: 1;
+				visibility: visible;
+				left: 0;
+			}
+		}
 	}
 }
-

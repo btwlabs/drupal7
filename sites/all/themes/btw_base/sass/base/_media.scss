@@ -15,10 +15,7 @@ img, media {
 table img,
 img.file-icon,
 .feed-icon img,
-img#views-popup-ajax-throbber, /* tour, store page ajax loading gif */
-.gallery-image-item img, /* gallery and gear gallery */
 body.node-type-banner .field-type-image img,
-.commerce-paypal-icon,
 #toolbar img,
 .mollom-image-captcha img /* captcha */ {
 	width: auto;
@@ -41,15 +38,6 @@ a.colorbox img,
 a.colorbox-load img,
 .gallery-video-item img {
 	cursor: url("../images/cursor-video.png"), pointer;
-}
-
-// Ajax Throbber - animated gif
-// allow ajax throber to be width of gif, not 100% 
-img#views-popup-ajax-throbber {
-	width: auto;
-}
-#views-popup-ajax-throbber-container {
-	padding-left: 25px;	
 }
 
 

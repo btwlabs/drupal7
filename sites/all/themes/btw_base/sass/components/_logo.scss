@@ -36,12 +36,11 @@ a.site-branding__logo {
 	@include breakpoint($medium-up) {
 		display: block;
 		text-align: center;
-		
-		@include breakpoint($medium-only) {
-			width: 140px;
-		}
-		@include breakpoint($large-up) {
-			width: 200px;
-		}
+	}
+	@include breakpoint($medium-only) {
+		width: 140px;
+	}
+	@include breakpoint($large-up) {
+		width: 200px;
 	}
 }

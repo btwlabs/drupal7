@@ -1,0 +1,97 @@
+/*
+Error: Undefined mixin 'breakpoint'.
+        on line 21 of /Users/dennisthompson/Sites/drupal7/sites/all/themes/btw_base/sass/components/video-hero.scss, in `breakpoint'
+        from line 21 of /Users/dennisthompson/Sites/drupal7/sites/all/themes/btw_base/sass/components/video-hero.scss
+
+16:     width: 100%;
+17:     height: 0;
+18:     overflow: hidden;
+19:     z-index: 0;
+20:     
+21:     @include breakpoint($small-and-medium) {
+22: 	    display: none;
+23:     }
+24:     
+25:     @include breakpoint($large-up) {
+26: 	    display: block;
+
+Backtrace:
+/Users/dennisthompson/Sites/drupal7/sites/all/themes/btw_base/sass/components/video-hero.scss:21:in `breakpoint'
+/Users/dennisthompson/Sites/drupal7/sites/all/themes/btw_base/sass/components/video-hero.scss:21
+/Users/dennisthompson/.rvm/gems/ruby-2.1.2@omega.btw_base/gems/sass-3.4.14/lib/sass/tree/visitors/perform.rb:348:in `block in visit_mixin'
+/Users/dennisthompson/.rvm/gems/ruby-2.1.2@omega.btw_base/gems/sass-3.4.14/lib/sass/stack.rb:98:in `block in with_mixin'
+/Users/dennisthompson/.rvm/gems/ruby-2.1.2@omega.btw_base/gems/sass-3.4.14/lib/sass/stack.rb:115:in `with_frame'
+/Users/dennisthompson/.rvm/gems/ruby-2.1.2@omega.btw_base/gems/sass-3.4.14/lib/sass/stack.rb:98:in `with_mixin'
+/Users/dennisthompson/.rvm/gems/ruby-2.1.2@omega.btw_base/gems/sass-3.4.14/lib/sass/tree/visitors/perform.rb:346:in `visit_mixin'
+/Users/dennisthompson/.rvm/gems/ruby-2.1.2@omega.btw_base/gems/sass-3.4.14/lib/sass/tree/visitors/base.rb:36:in `visit'
+/Users/dennisthompson/.rvm/gems/ruby-2.1.2@omega.btw_base/gems/sass-3.4.14/lib/sass/tree/visitors/perform.rb:158:in `block in visit'
+/Users/dennisthompson/.rvm/gems/ruby-2.1.2@omega.btw_base/gems/sass-3.4.14/lib/sass/stack.rb:79:in `block in with_base'
+/Users/dennisthompson/.rvm/gems/ruby-2.1.2@omega.btw_base/gems/sass-3.4.14/lib/sass/stack.rb:115:in `with_frame'
+/Users/dennisthompson/.rvm/gems/ruby-2.1.2@omega.btw_base/gems/sass-3.4.14/lib/sass/stack.rb:79:in `with_base'
+/Users/dennisthompson/.rvm/gems/ruby-2.1.2@omega.btw_base/gems/sass-3.4.14/lib/sass/tree/visitors/perform.rb:158:in `visit'
+/Users/dennisthompson/.rvm/gems/ruby-2.1.2@omega.btw_base/gems/sass-3.4.14/lib/sass/tree/visitors/perform.rb:430:in `block (2 levels) in visit_rule'
+/Users/dennisthompson/.rvm/gems/ruby-2.1.2@omega.btw_base/gems/sass-3.4.14/lib/sass/tree/visitors/perform.rb:430:in `map'
+/Users/dennisthompson/.rvm/gems/ruby-2.1.2@omega.btw_base/gems/sass-3.4.14/lib/sass/tree/visitors/perform.rb:430:in `block in visit_rule'
+/Users/dennisthompson/.rvm/gems/ruby-2.1.2@omega.btw_base/gems/sass-3.4.14/lib/sass/tree/visitors/perform.rb:179:in `with_environment'
+/Users/dennisthompson/.rvm/gems/ruby-2.1.2@omega.btw_base/gems/sass-3.4.14/lib/sass/tree/visitors/perform.rb:428:in `visit_rule'
+/Users/dennisthompson/.rvm/gems/ruby-2.1.2@omega.btw_base/gems/sass-3.4.14/lib/sass/tree/visitors/base.rb:36:in `visit'
+/Users/dennisthompson/.rvm/gems/ruby-2.1.2@omega.btw_base/gems/sass-3.4.14/lib/sass/tree/visitors/perform.rb:158:in `block in visit'
+/Users/dennisthompson/.rvm/gems/ruby-2.1.2@omega.btw_base/gems/sass-3.4.14/lib/sass/stack.rb:79:in `block in with_base'
+/Users/dennisthompson/.rvm/gems/ruby-2.1.2@omega.btw_base/gems/sass-3.4.14/lib/sass/stack.rb:115:in `with_frame'
+/Users/dennisthompson/.rvm/gems/ruby-2.1.2@omega.btw_base/gems/sass-3.4.14/lib/sass/stack.rb:79:in `with_base'
+/Users/dennisthompson/.rvm/gems/ruby-2.1.2@omega.btw_base/gems/sass-3.4.14/lib/sass/tree/visitors/perform.rb:158:in `visit'
+/Users/dennisthompson/.rvm/gems/ruby-2.1.2@omega.btw_base/gems/sass-3.4.14/lib/sass/tree/visitors/base.rb:52:in `block in visit_children'
+/Users/dennisthompson/.rvm/gems/ruby-2.1.2@omega.btw_base/gems/sass-3.4.14/lib/sass/tree/visitors/base.rb:52:in `map'
+/Users/dennisthompson/.rvm/gems/ruby-2.1.2@omega.btw_base/gems/sass-3.4.14/lib/sass/tree/visitors/base.rb:52:in `visit_children'
+/Users/dennisthompson/.rvm/gems/ruby-2.1.2@omega.btw_base/gems/sass-3.4.14/lib/sass/tree/visitors/perform.rb:167:in `block in visit_children'
+/Users/dennisthompson/.rvm/gems/ruby-2.1.2@omega.btw_base/gems/sass-3.4.14/lib/sass/tree/visitors/perform.rb:179:in `with_environment'
+/Users/dennisthompson/.rvm/gems/ruby-2.1.2@omega.btw_base/gems/sass-3.4.14/lib/sass/tree/visitors/perform.rb:166:in `visit_children'
+/Users/dennisthompson/.rvm/gems/ruby-2.1.2@omega.btw_base/gems/sass-3.4.14/lib/sass/tree/visitors/base.rb:36:in `block in visit'
+/Users/dennisthompson/.rvm/gems/ruby-2.1.2@omega.btw_base/gems/sass-3.4.14/lib/sass/tree/visitors/perform.rb:186:in `visit_root'
+/Users/dennisthompson/.rvm/gems/ruby-2.1.2@omega.btw_base/gems/sass-3.4.14/lib/sass/tree/visitors/base.rb:36:in `visit'
+/Users/dennisthompson/.rvm/gems/ruby-2.1.2@omega.btw_base/gems/sass-3.4.14/lib/sass/tree/visitors/perform.rb:157:in `visit'
+/Users/dennisthompson/.rvm/gems/ruby-2.1.2@omega.btw_base/gems/sass-3.4.14/lib/sass/tree/visitors/perform.rb:8:in `visit'
+/Users/dennisthompson/.rvm/gems/ruby-2.1.2@omega.btw_base/gems/sass-3.4.14/lib/sass/tree/root_node.rb:36:in `css_tree'
+/Users/dennisthompson/.rvm/gems/ruby-2.1.2@omega.btw_base/gems/sass-3.4.14/lib/sass/tree/root_node.rb:29:in `render_with_sourcemap'
+/Users/dennisthompson/.rvm/gems/ruby-2.1.2@omega.btw_base/gems/sass-3.4.14/lib/sass/engine.rb:368:in `_render_with_sourcemap'
+/Users/dennisthompson/.rvm/gems/ruby-2.1.2@omega.btw_base/gems/sass-3.4.14/lib/sass/engine.rb:285:in `render_with_sourcemap'
+/Users/dennisthompson/.rvm/gems/ruby-2.1.2@omega.btw_base/gems/sass-3.4.14/lib/sass/plugin/compiler.rb:490:in `update_stylesheet'
+/Users/dennisthompson/.rvm/gems/ruby-2.1.2@omega.btw_base/gems/sass-3.4.14/lib/sass/plugin/compiler.rb:215:in `block in update_stylesheets'
+/Users/dennisthompson/.rvm/gems/ruby-2.1.2@omega.btw_base/gems/sass-3.4.14/lib/sass/plugin/compiler.rb:209:in `each'
+/Users/dennisthompson/.rvm/gems/ruby-2.1.2@omega.btw_base/gems/sass-3.4.14/lib/sass/plugin/compiler.rb:209:in `update_stylesheets'
+/Users/dennisthompson/.rvm/gems/ruby-2.1.2@omega.btw_base/gems/compass-1.1.0.alpha.3/lib/compass/sass_compiler.rb:40:in `compile!'
+/Users/dennisthompson/.rvm/gems/ruby-2.1.2@omega.btw_base/gems/compass-1.1.0.alpha.3/lib/compass/commands/update_project.rb:49:in `perform'
+/Users/dennisthompson/.rvm/gems/ruby-2.1.2@omega.btw_base/gems/compass-1.1.0.alpha.3/lib/compass/commands/base.rb:18:in `execute'
+/Users/dennisthompson/.rvm/gems/ruby-2.1.2@omega.btw_base/gems/compass-1.1.0.alpha.3/lib/compass/commands/project_base.rb:19:in `execute'
+/Users/dennisthompson/.rvm/gems/ruby-2.1.2@omega.btw_base/gems/guard-compass-1.1.0/lib/guard/compass.rb:140:in `perform'
+/Users/dennisthompson/.rvm/gems/ruby-2.1.2@omega.btw_base/gems/guard-compass-1.1.0/lib/guard/compass.rb:123:in `run_on_change'
+/Users/dennisthompson/.rvm/gems/ruby-2.1.2@omega.btw_base/gems/guard-2.12.6/lib/guard/runner.rb:82:in `block in _supervise'
+/Users/dennisthompson/.rvm/gems/ruby-2.1.2@omega.btw_base/gems/guard-2.12.6/lib/guard/runner.rb:79:in `catch'
+/Users/dennisthompson/.rvm/gems/ruby-2.1.2@omega.btw_base/gems/guard-2.12.6/lib/guard/runner.rb:79:in `_supervise'
+/Users/dennisthompson/.rvm/gems/ruby-2.1.2@omega.btw_base/gems/guard-2.12.6/lib/guard/runner.rb:61:in `block (3 levels) in run_on_changes'
+/Users/dennisthompson/.rvm/gems/ruby-2.1.2@omega.btw_base/gems/guard-2.12.6/lib/guard/runner.rb:56:in `each'
+/Users/dennisthompson/.rvm/gems/ruby-2.1.2@omega.btw_base/gems/guard-2.12.6/lib/guard/runner.rb:56:in `block (2 levels) in run_on_changes'
+/Users/dennisthompson/.rvm/gems/ruby-2.1.2@omega.btw_base/gems/guard-2.12.6/lib/guard/runner.rb:119:in `block (2 levels) in _run_group_plugins'
+/Users/dennisthompson/.rvm/gems/ruby-2.1.2@omega.btw_base/gems/guard-2.12.6/lib/guard/runner.rb:117:in `each'
+/Users/dennisthompson/.rvm/gems/ruby-2.1.2@omega.btw_base/gems/guard-2.12.6/lib/guard/runner.rb:117:in `block in _run_group_plugins'
+/Users/dennisthompson/.rvm/gems/ruby-2.1.2@omega.btw_base/gems/guard-2.12.6/lib/guard/runner.rb:116:in `catch'
+/Users/dennisthompson/.rvm/gems/ruby-2.1.2@omega.btw_base/gems/guard-2.12.6/lib/guard/runner.rb:116:in `_run_group_plugins'
+/Users/dennisthompson/.rvm/gems/ruby-2.1.2@omega.btw_base/gems/guard-2.12.6/lib/guard/runner.rb:54:in `block in run_on_changes'
+/Users/dennisthompson/.rvm/gems/ruby-2.1.2@omega.btw_base/gems/guard-2.12.6/lib/guard/runner.rb:53:in `each'
+/Users/dennisthompson/.rvm/gems/ruby-2.1.2@omega.btw_base/gems/guard-2.12.6/lib/guard/runner.rb:53:in `run_on_changes'
+/Users/dennisthompson/.rvm/gems/ruby-2.1.2@omega.btw_base/gems/guard-2.12.6/lib/guard/internals/queue.rb:23:in `process'
+/Users/dennisthompson/.rvm/gems/ruby-2.1.2@omega.btw_base/gems/guard-2.12.6/lib/guard/commander.rb:43:in `start'
+/Users/dennisthompson/.rvm/gems/ruby-2.1.2@omega.btw_base/gems/guard-2.12.6/lib/guard/cli/environments/valid.rb:16:in `start_guard'
+/Users/dennisthompson/.rvm/gems/ruby-2.1.2@omega.btw_base/gems/guard-2.12.6/lib/guard/cli.rb:122:in `start'
+/Users/dennisthompson/.rvm/gems/ruby-2.1.2@omega.btw_base/gems/thor-0.19.1/lib/thor/command.rb:27:in `run'
+/Users/dennisthompson/.rvm/gems/ruby-2.1.2@omega.btw_base/gems/thor-0.19.1/lib/thor/invocation.rb:126:in `invoke_command'
+/Users/dennisthompson/.rvm/gems/ruby-2.1.2@omega.btw_base/gems/thor-0.19.1/lib/thor.rb:359:in `dispatch'
+/Users/dennisthompson/.rvm/gems/ruby-2.1.2@omega.btw_base/gems/thor-0.19.1/lib/thor/base.rb:440:in `start'
+/Users/dennisthompson/.rvm/gems/ruby-2.1.2@omega.btw_base/gems/guard-2.12.6/lib/guard/aruba_adapter.rb:32:in `execute'
+/Users/dennisthompson/.rvm/gems/ruby-2.1.2@omega.btw_base/gems/guard-2.12.6/lib/guard/aruba_adapter.rb:19:in `execute!'
+/Users/dennisthompson/.rvm/gems/ruby-2.1.2@omega.btw_base/gems/guard-2.12.6/bin/_guard-core:11:in `<main>'
+*/
+body:before {
+  white-space: pre;
+  font-family: monospace;
+  content: "Error: Undefined mixin 'breakpoint'.\A         on line 21 of /Users/dennisthompson/Sites/drupal7/sites/all/themes/btw_base/sass/components/video-hero.scss, in `breakpoint'\A         from line 21 of /Users/dennisthompson/Sites/drupal7/sites/all/themes/btw_base/sass/components/video-hero.scss\A \A 16:     width: 100%;\A 17:     height: 0;\A 18:     overflow: hidden;\A 19:     z-index: 0;\A 20:     \A 21:     @include breakpoint($small-and-medium) {\A 22: 	    display: none;\A 23:     }\A 24:     \A 25:     @include breakpoint($large-up) {\A 26: 	    display: block;"; }

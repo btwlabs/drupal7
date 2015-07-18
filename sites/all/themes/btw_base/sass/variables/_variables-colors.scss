@@ -10,19 +10,20 @@ $subtle-accent: rgba(0,0,0,0.05);
 
 // Body Text
 $text-color: #777;
+
+$link-color: $primary-color;
+$link-hover-color: $secondary-color;
+$link-visited-color: #000;
+
+
+// Titles
 $title-color: #000;
-
-$page-title-color: #444;
-
-$link-color: darkorange;
-$link-hover-color: red;
-$link-visited-color: purple;
-
+$page-title-color: #000;
 
 
 // Selected text color
 $selection-text-color: #fff;
-$selection-background-color: darkorange;
+$selection-background-color: $primary-color;
 
 
 
@@ -33,10 +34,13 @@ $button-text-hover-color: #444;
 $button-bg-color: #444;
 $button-bg-hover-color: #ccc;
 
-
+$button-border-color: $button-bg-color;
 $button-border-hover-color: $button-bg-hover-color;
 
-// Borders
+
+
+
+// Sitewide Borders
 $border-color: #aaa;
 $sidebar-border-color: #444;
 
@@ -68,6 +72,12 @@ $nav-bar-bg-color: #ccc;
 	// mobile nav only
 	$mobile-nav-text-color: #444;
 	$mobile-nav-bg-color: #eee;
+	$mobile-nav-text-hover-color: #fff;
+	$mobile-nav-bg-hover-color: $primary-color;
+	
+	// mobile header 
+	$mobile-header-bg-color: #fff;
+	
 	
 	// mobile nav close button
 	$mobile-nav-close-text-color: #999;
@@ -80,22 +90,6 @@ $nav-bar-bg-color: #ccc;
 	// Home page non-mobile
 	$home-nav-text-color: #fff;
 	$home-nav-text-hover-color: #fff;
-
-
-
-// User Bar
-$userbar-bg-color: #444;
-
-$userbar-text-color: #ccc; // text only
-
-$userbar-link-color: #fff; // text link
-$userbar-link-hover-color: orange;
-
-$userbar-icon-color: #fff; // icon only
-$userbar-icon-hover-color: #fff;
-
-$userbar-icon-bg-color: #000;
-$userbar-icon-bg-hover-color: red;
 
 		
 	// mobile site name
@@ -177,4 +171,15 @@ $dateblock-text-hover-color: #fff;
 $dateblock-bg-color: #000;
 $dateblock-bg-hover-color: #000;
 
+
+
+// Admin Tabs 
+$tabs-text-color: $text-color;
+$tabs-text-hover-color: #fff;
+
+$tabs-bg-color: #eee;
+$tabs-bg-hover-color: #444;
+
+$tabs-active-text-color: $text-color;
+$tabs-active-bg-color: #444;
 

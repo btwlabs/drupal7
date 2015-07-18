@@ -30,28 +30,3 @@
 	background: none;
 }
 
-/*-----------------------------
- in sidebar 
-------------------------------*/
-
-/* unlinked text */
-.l-region--sidebar .clickable-hover {
-	color: $sidebar-text-color;
-}
-/* linked text */
-.l-region--sidebar .clickable a {
-	color: $sidebar-link-color; /* same as default sidebar text */
-}
-.l-region--sidebar .clickable-hover a {
-	color: $sidebar-link-hover-color;
-	text-decoration: none;
-}
-
-/* dateblock */
-.l-region--sidebar .clickable-hover .dateblock {
-	background-color: $dateblock-bg-hover-color;
-	
-	& .month, & .day, & .year {
-		color: $dateblock-text-hover-color;
-	}	
-}

@@ -37,21 +37,39 @@
 
 
 // Basic layout stuff
-.l-header,
-.l-content-wrapper,
 .l-constrained,
-.l-region-inner {
-	@include clearfix;
+.l-pre-header,
+.l-header,
+.l-inner,
+.l-content,
+#content,
+.pre-content,
+.l-content-wrapper,
+.l-pre-footer-wrapper,
+.l-footer-wrapper {
+	@extend %clearfix;
 }
 
-.l-header {
-	@include breakpoint($medium-up) {
-		padding-top: 106px; // minimum height = nav + userbar
-	}
-}
 
 .not-front .l-main {
 	padding-bottom: 50px;
+}
+
+
+// to clear navigation in header
+.not-front #content {
+	@include breakpoint($small-up) {
+		padding-top: $header-height-small;
+	}
+	@include breakpoint($medium-up) {
+		padding-top: $header-height-medium;
+	}
+	@include breakpoint($large-up){
+		padding-top: $header-height-large;
+	}
+	@include breakpoint($xlarge-up){
+		padding-top: $header-height-xlarge;
+	}
 }
 
 

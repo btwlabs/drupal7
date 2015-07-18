@@ -1,7 +1,7 @@
 /*******************************************************************************
- * home.layout.scss
+ * constrained.layout.scss
  *
- * Styles for the HOME PAGE layout.
+ * Styles for the CONSTRAINED layout.
  ******************************************************************************/
 /* line 7, ../../../sass/abstractions/_mixin-layout.scss */
 .clearfix:before, .clearfix:after {
@@ -13,11 +13,6 @@
   font-size: 0;
   /* Clear Fix correction (add font-size to fix extra padding at bottom of site */ }
 
-/* line 41, ../../../sass/abstractions/_mixin-typography.scss */
-.title-with-submenu {
-  margin-bottom: 0;
-  border-bottom: 0; }
-
 /*-----------------------------------------------
 
  GRIDS
@@ -25,7 +20,7 @@
 -----------------------------------------------*/
 @media (min-width: 0em) and (max-width: 40em) {
   /* line 29, ../../../sass/layouts/constrained-1/constrained-1.layout.scss */
-  .front .l-content {
+  .l-content {
     width: 100%;
     float: right;
     margin-left: 0;
@@ -34,7 +29,7 @@
     float: none; } }
 @media (min-width: 40.063em) {
   /* line 39, ../../../sass/layouts/constrained-1/constrained-1.layout.scss */
-  .front .l-content {
+  .l-content {
     width: 100%;
     float: right;
     margin-left: 0;
@@ -42,7 +37,7 @@
     clear: none; } }
 @media (min-width: 64.063em) {
   /* line 48, ../../../sass/layouts/constrained-1/constrained-1.layout.scss */
-  .front .l-content {
+  .l-content {
     width: 100%;
     float: right;
     margin-left: 0;

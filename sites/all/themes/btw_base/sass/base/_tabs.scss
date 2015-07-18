@@ -19,28 +19,28 @@
 	list-style-type: none;
 	
 	&.active a { // same as a:hover
-		background-color: #444;
-		color: #fff;
-		border-color: #333;
+		background-color: $tabs-active-bg-color;
+		color: $tabs-active-text-color;
+		border-color: $tabs-active-bg-color;
 	}
 }
 .tabs.tabs--primary li a {
-	background-color: #eee;
-	@include border-radius(5px 5px 0 0);
-	color: #888;
-	@include font-size(14px);
+	background-color: $tabs-bg-color;
+	color: $tabs-text-color;
 	display: block;
 	padding: 6px 15px;
 	text-decoration: none;
 	text-transform: uppercase;
 	@include border-bottom($border-color);
+	@include border-radius(5px 5px 0 0);
 	border-bottom: 0;
 	text-align: center;
+	@include font-size(14px);
 	
 	&:hover {
-		background-color: #444;
-		color: #fff;
-		border-color: #333;
+		background-color: $tabs-bg-hover-color;
+		color: $tabs-text-hover-color;
+		border-color: $tabs-bg-hover-color;
 		text-decoration: none;
 	}
 }

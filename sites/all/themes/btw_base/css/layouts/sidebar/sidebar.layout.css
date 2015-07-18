@@ -13,11 +13,6 @@
   font-size: 0;
   /* Clear Fix correction (add font-size to fix extra padding at bottom of site */ }
 
-/* line 41, ../../../sass/abstractions/_mixin-typography.scss */
-.title-with-submenu {
-  margin-bottom: 0;
-  border-bottom: 0; }
-
 @media (min-width: 0em) and (max-width: 40em) {
   /* line 24, ../../../sass/layouts/sidebar/sidebar.layout.scss */
   .l-content {

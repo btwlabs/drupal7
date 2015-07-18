@@ -16,11 +16,10 @@
 				<?php print render($page['mobile_nav']); ?>
 			</div>
 		<?php endif; ?>
-	
-	
-		<?php if (($site_name) || (!empty($page['navigation'])) || ($messages)) : ?>
-	    	<div class="l-top-wrapper">
-				<div class="l-constrained">
+		
+		<!-- mobile header -->
+		<?php if (($site_name) || (!empty($page['navigation'])) : ?>
+	    	<div class="l-mobile-header">
 				
 					<!-- nav open button -->
 					<a class="nav-open-btn" id="mobile-nav-open-btn" href="#nav">Open Menu</a>
@@ -34,7 +33,15 @@
 					<?php if (!empty($page['navigation'])) : ?>
 						<?php print render($page['navigation']); ?>
 					<?php endif; ?>
+							
+	    	</div><!-- close l-mobile-header -->
+		<?php endif; ?>
 		
+		<!-- system messages -->
+		<?php if (!empty($messages)) : ?>
+	    	<div class="l-messages">
+				<div class="l-constrained">
+						
 					<!-- system messages -->
 					<?php if ($messages): ?>
 						<div class="l-messages"><!-- 100% width wrapper -->
@@ -45,33 +52,33 @@
 					<?php endif; ?>
 					
 				</div><!-- close l-constrained -->
-	    	</div><!-- close l-top-wrapper -->
+	    	</div><!-- close l-messages -->
 		<?php endif; ?>
 	
 		<header class="l-header" role="banner">
 			<div class="l-constrained">
 	
-		    	<?php if(!empty($page['branding'])) : ?>
-		        	<div class="l-branding">
-						    <?php print render($page['branding']); ?>
-							  <?php if ($logo): ?>
-					        <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home" class="site-branding__logo"><img src="<?php print $logo; ?>" alt="<?php print t('Home'); ?>" /></a>
-					      <?php endif; ?>
-		        	</div><!-- l-branding -->
-				  <?php endif; ?>
-		
 				<?php if (!empty($page['header'])) : ?>
 		        	<?php print render($page['header']); ?>
+				<?php endif; ?>
+
+		    	<?php if(!empty($page['branding'])) : ?>
+		        	<div class="l-branding">
+						<?php print render($page['branding']); ?>
+						<?php if ($logo): ?>
+					        <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home" class="site-branding__logo"><img src="<?php print $logo; ?>" alt="<?php print t('Home'); ?>" /></a>
+					    <?php endif; ?>
+		        	</div><!-- l-branding -->
 				<?php endif; ?>
 				
 			</div><!-- close l-constrained -->
 		</header>
 	
-		<div id="content" class="clearfix"> <!-- content section -->
+		<div id="content"> <!-- content section -->
 	
 		    <!-- pre content region -->
 		    <?php if (!empty($page['pre_content'])) : ?>
-		      <div class="pre-content l-content-wrapper"><!-- 100% width wrapper -->
+		      <div class="pre-content"><!-- 100% width wrapper -->
 		          <div class="l-content-inner">
 		            <?php print render($page['pre_content']); ?>
 		          </div>
@@ -83,7 +90,7 @@
 	
 		    	<a id="main-content"></a>
 		
-				<div class="l-content-admin" role="main"><!-- grid container -->
+				<div class="l-content-admin"><!-- grid container -->
 			        <div class="l-content-admin-inner l-inner">
 				        <div class="l-constrained">
 			
@@ -107,7 +114,7 @@
 				
 				<?php if(!empty($page['content_1'])) : ?>
 				<!-- content_1 region -->
-					<div class="l-content-1 l-custom slide" data-slide="1">
+					<div class="l-content-1 l-content slide" data-slide="1" role="main">
 						<div class="l-content-1-inner l-inner">
 							<div class="l-constrained">
 					    		<?php print render($page['content_1']); ?>
@@ -118,7 +125,7 @@
 				
 				<?php if(!empty($page['content_2'])) : ?>
 				<!-- content_2 region -->
-					<div class="l-content-2 l-custom slide" data-slide="2">
+					<div class="l-content-2 l-content slide" data-slide="2">
 						<div class="l-content-2-inner l-inner">
 							<div class="l-constrained">
 					    		<?php print render($page['content_2']); ?>
@@ -129,7 +136,7 @@
 				
 				<?php if(!empty($page['content_3'])) : ?>
 				<!-- content_3 region -->
-					<div class="l-content-3 l-custom slide" data-slide="3">
+					<div class="l-content-3 l-content slide" data-slide="3">
 						<div class="l-content-3-inner l-inner">
 							<div class="l-constrained">
 					    		<?php print render($page['content_3']); ?>
@@ -140,7 +147,7 @@
 				
 				<?php if(!empty($page['content_4'])) : ?>
 				<!-- content_4 region -->
-					<div class="l-content-4 l-custom slide" data-slide="4">
+					<div class="l-content-4 l-content slide" data-slide="4">
 						<div class="l-content-4-inner l-inner">
 							<div class="l-constrained">
 					    		<?php print render($page['content_4']); ?>
@@ -151,7 +158,7 @@
 				
 				<?php if(!empty($page['content_5'])) : ?>
 				<!-- content_5 region -->
-					<div class="l-content-5 l-custom slide" data-slide="5">
+					<div class="l-content-5 l-content slide" data-slide="5">
 						<div class="l-content-5-inner l-inner">
 							<div class="l-constrained">
 					    		<?php print render($page['content_5']); ?>
@@ -162,7 +169,7 @@
 				
 				<?php if(!empty($page['content_6'])) : ?>
 				<!-- content_6 region -->
-					<div class="l-content-6 l-custom slide" data-slide="6">
+					<div class="l-content-6 l-content slide" data-slide="6">
 						<div class="l-content-6-inner l-inner">
 							<div class="l-constrained">
 					    		<?php print render($page['content_6']); ?>
@@ -173,7 +180,7 @@
 				
 				<?php if(!empty($page['content_7'])) : ?>
 				<!-- content_7 region -->
-					<div class="l-content-7 l-custom slide" data-slide="7">
+					<div class="l-content-7 l-content slide" data-slide="7">
 						<div class="l-content-7-inner l-inner">
 							<div class="l-constrained">
 					    		<?php print render($page['content_7']); ?>
@@ -184,7 +191,7 @@
 				
 				<?php if(!empty($page['content_8'])) : ?>
 				<!-- content_8 region -->
-					<div class="l-content-8 l-custom slide" data-slide="8">
+					<div class="l-content-8 l-content slide" data-slide="8">
 						<div class="l-content-8-inner l-inner">
 							<div class="l-constrained">
 					    		<?php print render($page['content_8']); ?>
@@ -195,7 +202,7 @@
 				
 				<?php if(!empty($page['content_9'])) : ?>
 				<!-- content_9 region -->
-					<div class="l-content-9 l-custom slide" data-slide="9">
+					<div class="l-content-9 l-content slide" data-slide="9">
 						<div class="l-content-9-inner l-inner">
 							<div class="l-constrained">
 					    		<?php print render($page['content_9']); ?>
@@ -206,7 +213,7 @@
 				
 				<?php if(!empty($page['content_10'])) : ?>
 				<!-- content_10 region -->
-					<div class="l-content-10 l-custom slide" data-slide="10">
+					<div class="l-content-10 l-content slide" data-slide="10">
 						<div class="l-content-10-inner l-inner">
 							<div class="l-constrained">
 					    		<?php print render($page['content_10']); ?>
