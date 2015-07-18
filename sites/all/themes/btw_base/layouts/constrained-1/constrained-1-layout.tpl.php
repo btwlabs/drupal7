@@ -18,7 +18,7 @@
 		<?php endif; ?>
 		
 		<!-- mobile header -->
-		<?php if (($site_name) || (!empty($page['navigation'])) : ?>
+		<?php if (($site_name) || (!empty($page['navigation']))) : ?>
 	    	<div class="l-mobile-header">
 				
 					<!-- nav open button -->
