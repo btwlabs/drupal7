@@ -3,21 +3,21 @@
 
 /* MOBILE - $small-up = min-width: 0 */
 @media (min-width: 0em) {
-	.col-1-wrapper {
+	.common-support-teaser-1 .col-1-wrapper {
 		margin-bottom: 2.5rem;
 	}
 }
 
 /* TABLET - $medium-up = min-width: 641px */
 @media (min-width: 40.063em)  {
-	.col {
+	.common-support-teaser-1 .col {
 		float: left;
 	}
-	.col-1-wrapper {
+	.common-support-teaser-1 .col-1-wrapper {
 		margin-right: 5%;
 		width: 35%;
 	}
-	.col-2-wrapper {
+	.common-support-teaser-1 .col-2-wrapper {
 		width: 60%;
 	}
 }

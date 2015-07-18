@@ -13,8 +13,10 @@
 }
 
 // constrained container
-.l-footer-wrapper .l-constrained {
-	width: 95%;
+@include breakpoint($large-up) {
+	.l-footer-wrapper .l-constrained {
+		width: 95%;
+	}
 }
 
 // footer inner wrapper

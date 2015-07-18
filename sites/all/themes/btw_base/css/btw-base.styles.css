@@ -1060,27 +1060,27 @@ body {
 .l-footer-wrapper {
   background-color: #444; }
 
-/* line 16, ../sass/components/_footer.scss */
-.l-footer-wrapper .l-constrained {
-  width: 95%; }
-
-/* line 21, ../sass/components/_footer.scss */
+@media (min-width: 64.063em) {
+  /* line 17, ../sass/components/_footer.scss */
+  .l-footer-wrapper .l-constrained {
+    width: 95%; } }
+/* line 23, ../sass/components/_footer.scss */
 .footer-inner {
   padding: 40px 0;
   color: #aaa; }
-  /* line 26, ../sass/components/_footer.scss */
+  /* line 28, ../sass/components/_footer.scss */
   .footer-inner a {
     color: orange; }
-  /* line 30, ../sass/components/_footer.scss */
+  /* line 32, ../sass/components/_footer.scss */
   .footer-inner a:hover {
     color: white; }
 
 @media (min-width: 0em) and (max-width: 40em) {
-  /* line 38, ../sass/components/_footer.scss */
+  /* line 40, ../sass/components/_footer.scss */
   .block--fantorrent-base-footer-message {
     margin-bottom: 20px; } }
 @media (min-width: 64.063em) {
-  /* line 50, ../sass/components/_footer.scss */
+  /* line 52, ../sass/components/_footer.scss */
   .l-region--footer-1 {
     width: 47.05882%;
     float: left;
@@ -1088,7 +1088,7 @@ body {
     margin-left: 0;
     clear: none; }
 
-  /* line 54, ../sass/components/_footer.scss */
+  /* line 56, ../sass/components/_footer.scss */
   .l-region--footer-2 {
     width: 47.05882%;
     float: right;
@@ -1100,10 +1100,10 @@ body {
  Copyright & links
  
 ------------------------------------*/
-/* line 65, ../sass/components/_footer.scss */
+/* line 67, ../sass/components/_footer.scss */
 .footer-links {
   margin-bottom: 5px; }
-  /* line 68, ../sass/components/_footer.scss */
+  /* line 70, ../sass/components/_footer.scss */
   .footer-links ul {
     margin: 0;
     padding: 0; }
@@ -1116,7 +1116,7 @@ body {
       clear: both;
       font-size: 0;
       /* Clear Fix correction (add font-size to fix extra padding at bottom of site */ }
-  /* line 73, ../sass/components/_footer.scss */
+  /* line 75, ../sass/components/_footer.scss */
   .footer-links ul li {
     margin: 0 12px 0 0;
     padding: 0 0 0 0;
@@ -1124,18 +1124,18 @@ body {
     list-style-image: none;
     float: left; }
 
-/* line 82, ../sass/components/_footer.scss */
+/* line 84, ../sass/components/_footer.scss */
 .l-footer-wrapper .footer-menu ul {
   margin: 0;
   padding: 0; }
-/* line 86, ../sass/components/_footer.scss */
+/* line 88, ../sass/components/_footer.scss */
 .l-footer-wrapper .footer-menu li {
   float: left;
   list-style-type: none;
   margin-right: 10px; }
 
 @media (min-width: 0em) and (max-width: 64em) {
-  /* line 93, ../sass/components/_footer.scss */
+  /* line 95, ../sass/components/_footer.scss */
   .footer-copyright {
     margin-bottom: 20px; } }
 
