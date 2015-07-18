@@ -51,6 +51,10 @@
 }
 
 
+.l-content {
+	position: relative;
+}
+
 .not-front .l-main {
 	padding-bottom: 50px;
 }
@@ -97,3 +101,15 @@
 }
 
 
+
+/*---------------------------------------
+
+ Base Column styles
+ 
+---------------------------------------*/
+
+@media (min-width: 40.063em)  {
+	.col {
+		float: left;
+	}
+}
