@@ -54,6 +54,19 @@
         // The anchor is then appended to the current element.
         $anchor.appendTo(this);
       });
+      
+      //toggle mobile nav classes that show/hide menu links
+      $('#mobile-nav-open-btn', context).bind('click', function(e) {
+	     $('html').toggleClass('js-nav');
+	     e.preventDefault();
+	     return false;
+      });
+      $('#mobile-nav-close-btn,#mobile-fade', context).bind('click', function(e) {
+	     $('html').removeClass('js-nav');
+	     e.preventDefault();
+	     return false;
+      });      
+
     }
   };
 
