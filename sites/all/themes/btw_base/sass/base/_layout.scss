@@ -1,3 +1,14 @@
+//----------------------------------------------
+//
+//	LAYOUT - general layout styles for main containers
+//
+//	location: 
+//      /sass/base/_layout.scss
+//
+//----------------------------------------------
+
+
+
 // Show or hide specific content based on breakpoints
 
 // mobile
@@ -20,7 +31,11 @@
 	}
 }
 
-/* Grid containers (non-100% width) */
+
+//----------------------------------------
+// Define constrained containers sitewide
+//-----------------------------------------
+
 .l-constrained {
 	@include breakpoint($small-only) {
 		margin: 0 20px;
@@ -36,7 +51,12 @@
 
 
 
-// Basic layout stuff
+/*----------------------------------------
+
+ Add Clearfix to all main containers
+
+----------------------------------------*/
+
 .l-constrained,
 .l-pre-header,
 .l-header,
@@ -51,14 +71,21 @@
 }
 
 
-.l-content {
-	position: relative;
-}
 
-.not-front .l-main {
-	padding-bottom: 50px;
-}
+/*----------------------------------------
 
+ HEADER region Layout
+
+----------------------------------------*/
+
+
+
+
+/*----------------------------------------
+
+ CONTENT region layout
+
+----------------------------------------*/
 
 // to clear navigation in header
 .not-front #content {
@@ -76,12 +103,17 @@
 	}
 }
 
+.l-content {
+	position: relative;
+}
 
-/*---------------------------------------
+.not-front .l-main {
+	padding-bottom: 50px;
+}
 
+/*---------------------------
  NODE-CONTAINER STYLES 
- 
----------------------------------------*/
+----------------------------*/
 
 .node-row-container,
 .node-middle-row1-container,
@@ -101,12 +133,9 @@
 }
 
 
-
-/*---------------------------------------
-
+/*--------------------------
  Base Column styles
- 
----------------------------------------*/
+--------------------------*/
 
 @media (min-width: 40.063em)  {
 	.col {

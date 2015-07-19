@@ -1,4 +1,15 @@
-// Border mixins
+//------------------------------------------------------
+//
+//	MIXINS - BORDERS 
+//
+//	location: 
+//      /sass/abstractions/mixins-borders.scss
+//
+//------------------------------------------------------
+
+
+
+// Border radius 
 @mixin border-radius($border-radius) {
 	border-radius: $border-radius;
 }

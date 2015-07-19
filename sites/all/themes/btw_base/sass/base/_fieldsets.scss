@@ -1,3 +1,13 @@
+//----------------------------------------------
+//
+//	Fieldsets - general styles for fieldsets
+//
+//	location: 
+//      /sass/base/_fieldsets.scss
+//
+//----------------------------------------------
+
+
 fieldset {
 	@include border-all($border-color);
 	@include border-radius($border-radius);

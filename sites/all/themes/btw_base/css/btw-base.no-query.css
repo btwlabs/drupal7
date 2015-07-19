@@ -1,4 +1,4 @@
-/* line 7, ../sass/abstractions/_mixin-layout.scss */
+/* line 13, ../sass/abstractions/_mixin-layout.scss */
 .clearfix:before, .clearfix:after,
 .l-constrained:before,
 .l-pre-header:before,
@@ -26,7 +26,7 @@
 .l-mobile-header:after {
   content: "";
   display: table; }
-/* line 12, ../sass/abstractions/_mixin-layout.scss */
+/* line 18, ../sass/abstractions/_mixin-layout.scss */
 .clearfix:after,
 .l-constrained:after,
 .l-pre-header:after,
@@ -44,14 +44,7 @@
   font-size: 0;
   /* Clear Fix correction (add font-size to fix extra padding at bottom of site */ }
 
-/*--------------------------------------------------------
-----------------------------------------------------------
-
- BASE STYLES
- 
-----------------------------------------------------------
---------------------------------------------------------*/
-/* line 9, ../sass/base/_body.scss */
+/* line 11, ../sass/base/_body.scss */
 body {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: 300;
@@ -66,7 +59,7 @@ body {
  
 -----------------------------------------------------------
 ----------------------------------------------------------*/
-/* line 13, ../sass/base/_buttons-links.scss */
+/* line 24, ../sass/base/_buttons-links.scss */
 a,
 a:link,
 a:visited,
@@ -77,7 +70,7 @@ li a.active {
   transition: all 0.2s ease-in;
   color: red;
   text-decoration: none; }
-  /* line 21, ../sass/base/_buttons-links.scss */
+  /* line 32, ../sass/base/_buttons-links.scss */
   a:hover,
   a:link:hover,
   a:visited:hover,
@@ -97,7 +90,7 @@ li a.active {
  Button normal state
  
 -------------------------------------*/
-/* line 42, ../sass/base/_buttons-links.scss */
+/* line 53, ../sass/base/_buttons-links.scss */
 .button a,
 a.button,
 button,
@@ -117,7 +110,7 @@ input[type="button"] {
   -o-transition: all 0.2s ease-in;
   transition: all 0.2s ease-in;
   padding: 10px 15px; }
-  /* line 50, ../sass/base/_buttons-links.scss */
+  /* line 61, ../sass/base/_buttons-links.scss */
   .button a:hover,
   a.button:hover,
   button:hover,
@@ -129,7 +122,7 @@ input[type="button"] {
     text-decoration: none; }
 
 /*---------- Form buttons (Override button styles) ----------*/
-/* line 57, ../sass/base/_buttons-links.scss */
+/* line 68, ../sass/base/_buttons-links.scss */
 button,
 input[type="reset"],
 input[type="submit"],
@@ -137,74 +130,74 @@ input[type="button"] {
   border: 0; }
 
 /* Exceptions to <a> css animation */
-/* line 66, ../sass/base/_buttons-links.scss */
+/* line 77, ../sass/base/_buttons-links.scss */
 #colorbox button {
   -webkit-transition: none;
   -moz-transition: none;
   -o-transition: none;
   transition: none; }
 
-/* line 74, ../sass/base/_buttons-links.scss */
+/* line 85, ../sass/base/_buttons-links.scss */
 li .button a.active {
   color: #fff; }
 
-/* line 1, ../sass/base/_fieldsets.scss */
+/* line 11, ../sass/base/_fieldsets.scss */
 fieldset {
   border: 1px solid #aaa;
   border-radius: 4px;
   padding: 40px;
   margin-bottom: 40px; }
 
-/* line 7, ../sass/base/_fieldsets.scss */
+/* line 17, ../sass/base/_fieldsets.scss */
 legend {
   font-size: 24px;
   font-size: 1.5rem;
   font-weight: 700;
   color: #000;
   padding: 0 20px; }
-  /* line 13, ../sass/base/_fieldsets.scss */
+  /* line 23, ../sass/base/_fieldsets.scss */
   legend a:link {
     color: #000; }
 
-/* line 1, ../sass/base/_forms.scss */
+/* line 11, ../sass/base/_forms.scss */
 input.focus {
   color: #F8F4CA; }
 
-/* line 4, ../sass/base/_forms.scss */
+/* line 14, ../sass/base/_forms.scss */
 .image-widget-data input.form-file {
   margin-right: 10px; }
 
-/* line 7, ../sass/base/_forms.scss */
+/* line 17, ../sass/base/_forms.scss */
 .form-item label,
 .form-actions label {
   font-weight: normal;
   font-size: 18px; }
 
-/* line 12, ../sass/base/_forms.scss */
+/* line 22, ../sass/base/_forms.scss */
 label.option {
   vertical-align: middle; }
 
-/* line 15, ../sass/base/_forms.scss */
+/* line 25, ../sass/base/_forms.scss */
 input[type="checkbox"] {
   cursor: pointer; }
 
-/* line 18, ../sass/base/_forms.scss */
+/* line 28, ../sass/base/_forms.scss */
 input[type="text"],
 input.form-text {
   max-width: 100%;
   padding: 10px; }
 
-/* line 24, ../sass/base/_forms.scss */
+/* line 34, ../sass/base/_forms.scss */
 input[type="file"] {
   margin: 15px 0px 0px; }
 
-/* line 30, ../sass/base/_forms.scss */
+/* line 40, ../sass/base/_forms.scss */
 .form-managed-file {
   border: 1px solid #aaa;
   padding: 20px;
   margin: 0 0 10px 0; }
 
-/* line 38, ../sass/base/_forms.scss */
+/* line 48, ../sass/base/_forms.scss */
 .webform-client-form input.form-submit {
   background-color: transparent;
   border: 1px solid #aaa;
@@ -215,13 +208,13 @@ input[type="file"] {
   font-weight: 100;
   width: 100%;
   color: #000; }
-  /* line 53, ../sass/base/_forms.scss */
+  /* line 63, ../sass/base/_forms.scss */
   .webform-client-form input.form-submit:hover {
     background-color: red;
     border-color: red;
     color: #fff; }
 
-/* line 60, ../sass/base/_forms.scss */
+/* line 70, ../sass/base/_forms.scss */
 .contact-button-wrapper a {
   padding: 14px 5px 12px;
   background-color: red;
@@ -230,7 +223,7 @@ input[type="file"] {
   text-transform: uppercase;
   display: block;
   margin-bottom: 15px; }
-  /* line 79, ../sass/base/_forms.scss */
+  /* line 89, ../sass/base/_forms.scss */
   .contact-button-wrapper a:hover {
     color: #fff;
     background-color: orange;
@@ -238,7 +231,7 @@ input[type="file"] {
 
 /*-----------------------------------
 
- Fantorrent Default Icon Fonts
+ Default Icon Fonts
  
 -----------------------------------*/
 /* Social Network Icons */
@@ -267,7 +260,7 @@ input[type="file"] {
  Font Icons - reset 
  
 ---------------------------------------*/
-/* line 51, ../sass/base/_icons.scss */
+/* line 62, ../sass/base/_icons.scss */
 * a:before,
 * a:after {
   text-transform: none;
@@ -276,12 +269,12 @@ input[type="file"] {
   text-shadow: none;
   line-height: 1; }
 
-/* line 59, ../sass/base/_icons.scss */
+/* line 70, ../sass/base/_icons.scss */
 a:hover:before,
 a:hover:after {
   text-decoration: none; }
 
-/* line 64, ../sass/base/_icons.scss */
+/* line 75, ../sass/base/_icons.scss */
 a:before,
 h1:before,
 h2:before,
@@ -301,21 +294,33 @@ h6:after {
   -moz-osx-font-smoothing: grayscale;
   line-height: 1; }
 
-/* Grid containers (non-100% width) */
-/* line 54, ../sass/base/_layout.scss */
+/*----------------------------------------
+
+ Add Clearfix to all main containers
+
+----------------------------------------*/
+/*----------------------------------------
+
+ HEADER region Layout
+
+----------------------------------------*/
+/*----------------------------------------
+
+ CONTENT region layout
+
+----------------------------------------*/
+/* line 106, ../sass/base/_layout.scss */
 .l-content {
   position: relative; }
 
-/* line 58, ../sass/base/_layout.scss */
+/* line 110, ../sass/base/_layout.scss */
 .not-front .l-main {
   padding-bottom: 50px; }
 
-/*---------------------------------------
-
+/*---------------------------
  NODE-CONTAINER STYLES 
- 
----------------------------------------*/
-/* line 86, ../sass/base/_layout.scss */
+----------------------------*/
+/* line 118, ../sass/base/_layout.scss */
 .node-row-container,
 .node-middle-row1-container,
 .node-middle-row2-container,
@@ -329,67 +334,65 @@ h6:after {
   border-bottom: 1px solid #aaa;
   position: relative; }
 
-/* line 99, ../sass/base/_layout.scss */
+/* line 131, ../sass/base/_layout.scss */
 .node-bottom-row-container {
   border-bottom: 0; }
 
-/*---------------------------------------
-
+/*--------------------------
  Base Column styles
- 
----------------------------------------*/
+--------------------------*/
 @media (min-width: 40.063em) {
-  /* line 112, ../sass/base/_layout.scss */
+  /* line 141, ../sass/base/_layout.scss */
   .col {
     float: left; } }
 /*-------------------------------------------
 
- LISTS - ordered & unordered defaults 
+ LISTS - defaults for standard formatting
 
 --------------------------------------------*/
-/* line 10, ../sass/base/_lists.scss */
+/* line 21, ../sass/base/_lists.scss */
 ol {
   list-style: decimal; }
 
-/* line 13, ../sass/base/_lists.scss */
+/* line 24, ../sass/base/_lists.scss */
 ol li {
   list-style-type: decimal; }
 
-/* line 16, ../sass/base/_lists.scss */
+/* line 27, ../sass/base/_lists.scss */
 ul {
   list-style: disc; }
 
-/* line 19, ../sass/base/_lists.scss */
+/* line 30, ../sass/base/_lists.scss */
 ul li {
   list-style: disc; }
 
-/* line 22, ../sass/base/_lists.scss */
+/* line 33, ../sass/base/_lists.scss */
 ul ul,
 ol ol {
   padding-top: 0.5em; }
 
-/* line 26, ../sass/base/_lists.scss */
+/* line 37, ../sass/base/_lists.scss */
 ul ul li {
   list-style: circle; }
 
-/* line 29, ../sass/base/_lists.scss */
+/* line 40, ../sass/base/_lists.scss */
 .node ol,
 .node ul {
   padding-left: 2em; }
 
-/* line 33, ../sass/base/_lists.scss */
+/* line 44, ../sass/base/_lists.scss */
 .node ul.inline,
 .node ol.inline {
   padding-left: 0; }
 
 /*-------- Definition Lists --------*/
-/* line 39, ../sass/base/_lists.scss */
+/* line 50, ../sass/base/_lists.scss */
 dt, .admin h3 {
   font-size: 1.125rem;
   /* 18px */
   margin: 0; }
 
-/* line 43, ../sass/base/_lists.scss */
+/* line 54, ../sass/base/_lists.scss */
 dd {
   padding-left: 10px;
   font-size: 0.938rem;
@@ -398,27 +401,27 @@ dd {
   margin-bottom: 20px; }
 
 /* LIST formatting classes */
-/* line 52, ../sass/base/_lists.scss */
+/* line 63, ../sass/base/_lists.scss */
 .upper-roman {
   list-style-type: upper-roman;
   font-size: 18px; }
-  /* line 56, ../sass/base/_lists.scss */
+  /* line 67, ../sass/base/_lists.scss */
   .upper-roman > li {
     list-style-type: upper-roman;
     padding-left: 8px; }
 
-/* line 61, ../sass/base/_lists.scss */
+/* line 72, ../sass/base/_lists.scss */
 .upper-alpha {
   list-style-type: upper-alpha; }
-  /* line 64, ../sass/base/_lists.scss */
+  /* line 75, ../sass/base/_lists.scss */
   .upper-alpha > li {
     list-style-type: upper-alpha;
     padding-left: 8px; }
 
-/* line 69, ../sass/base/_lists.scss */
+/* line 80, ../sass/base/_lists.scss */
 .decimal {
   list-style-type: decimal; }
-  /* line 72, ../sass/base/_lists.scss */
+  /* line 83, ../sass/base/_lists.scss */
   .decimal > li {
     list-style-type: decimal;
     padding-left: 8px; }
@@ -426,27 +429,27 @@ dd {
 /*---------------------------------------------------------
 -----------------------------------------------------------
 
- LIST & GRID styles
+ LIST & GRID styles - without standard list formatting
   
 -----------------------------------------------------------
 ---------------------------------------------------------*/
 /*---------------------------------------
 
- GRID
+ .GRID
  
 ----------------------------------------*/
-/* line 92, ../sass/base/_lists.scss */
+/* line 103, ../sass/base/_lists.scss */
 .grid {
   margin: 0;
   padding: 0; }
 
-/* line 96, ../sass/base/_lists.scss */
+/* line 107, ../sass/base/_lists.scss */
 .grid ul {
   margin: 0;
   padding: 0;
   overflow: hidden; }
 
-/* line 101, ../sass/base/_lists.scss */
+/* line 112, ../sass/base/_lists.scss */
 .grid li,
 .grid .item-list li,
 .grid-row {
@@ -458,19 +461,19 @@ dd {
 
 /*---------------------------------------
 
- LIST
+ .LIST
  
 ----------------------------------------*/
-/* line 117, ../sass/base/_lists.scss */
+/* line 128, ../sass/base/_lists.scss */
 .list {
   padding: 0; }
 
-/* line 120, ../sass/base/_lists.scss */
+/* line 131, ../sass/base/_lists.scss */
 .list ul {
   margin: 0;
   padding: 0; }
 
-/* line 124, ../sass/base/_lists.scss */
+/* line 135, ../sass/base/_lists.scss */
 .list-row,
 .item-list li.list-row {
   padding: 20px 0;
@@ -481,48 +484,24 @@ dd {
   overflow: hidden; }
 
 /* first and last row alterations */
-/* line 135, ../sass/base/_lists.scss */
+/* line 146, ../sass/base/_lists.scss */
 .list-row:nth-of-type(1),
 .item-list li.list-row:first-child,
 .l-region--sidebar .list-row:first-child {
   padding-top: 0; }
 
-/* line 140, ../sass/base/_lists.scss */
+/* line 151, ../sass/base/_lists.scss */
 .list-row:last-child,
 .item-list li.list-row:last-child,
 .l-region--sidebar .list-row:last-child {
   border-bottom: 0; }
-
-/* list row content - articles */
-/* line 147, ../sass/base/_lists.scss */
-.list h3.title {
-  font-size: 15px;
-  margin-bottom: 5px; }
-
-/* line 151, ../sass/base/_lists.scss */
-.list .post-date {
-  font-size: 0.813em;
-  font-style: italic; }
-
-/* line 155, ../sass/base/_lists.scss */
-.list .media-thumb-item {
-  width: 160px;
-  float: left;
-  margin-right: 30px; }
-
-/* line 160, ../sass/base/_lists.scss */
-.list ul.share-links-container {
-  border: 0;
-  height: 20px;
-  margin: 0px;
-  padding: 5px 0; }
 
 /*-------------------------------------
 
   Site Images
 
 --------------------------------------*/
-/* line 7, ../sass/base/_media.scss */
+/* line 18, ../sass/base/_media.scss */
 img, media {
   max-width: 100%;
   width: 100%;
@@ -530,7 +509,7 @@ img, media {
   vertical-align: middle;
   /* kills space between img, a, and container */ }
 
-/* line 15, ../sass/base/_media.scss */
+/* line 26, ../sass/base/_media.scss */
 table img,
 img.file-icon,
 .feed-icon img,
@@ -539,19 +518,19 @@ body.node-type-banner .field-type-image img,
 .mollom-image-captcha img {
   width: auto; }
 
-/* line 26, ../sass/base/_media.scss */
+/* line 37, ../sass/base/_media.scss */
 a img {
   -webkit-transition: all 0.2s ease-in;
   -moz-transition: all 0.2s ease-in;
   -o-transition: all 0.2s ease-in;
   transition: all 0.2s ease-in; }
 
-/* line 32, ../sass/base/_media.scss */
+/* line 43, ../sass/base/_media.scss */
 a.colorbox img,
 .gallery-image-item img {
   cursor: url("../images/cursor-zoom.png"), pointer; }
 
-/* line 38, ../sass/base/_media.scss */
+/* line 49, ../sass/base/_media.scss */
 a.colorbox-load img,
 .gallery-video-item img {
   cursor: url("../images/cursor-video.png"), pointer; }
@@ -561,14 +540,14 @@ a.colorbox-load img,
  video
 
 -------------------------------------*/
-/* line 51, ../sass/base/_media.scss */
+/* line 62, ../sass/base/_media.scss */
 .embedded-video {
   height: 0;
   overflow: hidden;
   padding-bottom: 56.25%;
   padding-top: 30px;
   position: relative; }
-  /* line 58, ../sass/base/_media.scss */
+  /* line 69, ../sass/base/_media.scss */
   .embedded-video iframe {
     height: 100%;
     left: 0;
@@ -576,25 +555,20 @@ a.colorbox-load img,
     top: 0;
     width: 100%; }
 
-/* line 1, ../sass/base/_menus.scss */
+/* line 13, ../sass/base/_menus.scss */
 .menu .leaf {
   list-style-image: none;
   list-style-type: none; }
 
-/*----------------------------------------- 
-
- TABLE STYLES 
-
-------------------------------------------*/
-/* line 10, ../sass/base/_tables.scss */
+/* line 15, ../sass/base/_tables.scss */
 table, tbody, tfoot, thead, tr, th, td {
   vertical-align: middle; }
 
-/* line 13, ../sass/base/_tables.scss */
+/* line 18, ../sass/base/_tables.scss */
 table {
   width: 100%; }
 
-/* line 16, ../sass/base/_tables.scss */
+/* line 21, ../sass/base/_tables.scss */
 thead th {
   background-color: #eee;
   border: 1px solid #aaa;
@@ -604,30 +578,30 @@ thead th {
   text-align: left;
   text-transform: uppercase; }
 
-/* line 24, ../sass/base/_tables.scss */
+/* line 29, ../sass/base/_tables.scss */
 td {
   border: 1px solid #aaa;
   padding: 15px;
   font-size: 12px;
   font-size: 0.75rem; }
 
-/* line 29, ../sass/base/_tables.scss */
+/* line 34, ../sass/base/_tables.scss */
 tr.odd {
   background-color: #fff; }
 
-/* line 32, ../sass/base/_tables.scss */
+/* line 37, ../sass/base/_tables.scss */
 tr.even {
   background-color: #f0f0f0; }
 
-/* line 41, ../sass/base/_tables.scss */
+/* line 46, ../sass/base/_tables.scss */
 tr.draggable td {
   padding-left: 25px; }
 
-/* line 46, ../sass/base/_tables.scss */
+/* line 51, ../sass/base/_tables.scss */
 .draggable a.tabledrag-handle {
   margin-left: -25px; }
 
-/* line 50, ../sass/base/_tables.scss */
+/* line 55, ../sass/base/_tables.scss */
 a.tabledrag-handle .handle {
   background-position: 1px 4px;
   height: 17px;
@@ -635,37 +609,30 @@ a.tabledrag-handle .handle {
   padding: 0.42em 0.5em;
   width: 13px; }
 
-/* line 57, ../sass/base/_tables.scss */
+/* line 62, ../sass/base/_tables.scss */
 a.tabledrag-handle-hover .handle {
   background-position: 0 -16px; }
 
-/*-------------------------------------------------------
----------------------------------------------------------
-
- DRUPAL TABS - navigation tab buttons
- 
----------------------------------------------------------
--------------------------------------------------------*/
-/* line 9, ../sass/base/_tabs.scss */
+/* line 12, ../sass/base/_tabs.scss */
 .tabs.tabs--primary {
   margin: 0 0 20px 0;
   padding: 0;
   overflow: hidden;
   border-bottom: 1px solid #aaa; }
 
-/* line 15, ../sass/base/_tabs.scss */
+/* line 18, ../sass/base/_tabs.scss */
 .tabs.tabs--primary li {
   margin: 0 3px 0 0;
   padding: 0;
   float: left;
   list-style-type: none; }
-  /* line 21, ../sass/base/_tabs.scss */
+  /* line 24, ../sass/base/_tabs.scss */
   .tabs.tabs--primary li.active a {
     background-color: #444;
     color: #777;
     border-color: #444; }
 
-/* line 27, ../sass/base/_tabs.scss */
+/* line 30, ../sass/base/_tabs.scss */
 .tabs.tabs--primary li a {
   background-color: #eee;
   color: #777;
@@ -679,7 +646,7 @@ a.tabledrag-handle-hover .handle {
   text-align: center;
   font-size: 14px;
   font-size: 0.875rem; }
-  /* line 40, ../sass/base/_tabs.scss */
+  /* line 43, ../sass/base/_tabs.scss */
   .tabs.tabs--primary li a:hover {
     background-color: #444;
     color: #fff;
@@ -688,7 +655,7 @@ a.tabledrag-handle-hover .handle {
 
 /*-----------------------------------
 
- Custom Fonts - per site
+ Custom Fonts
  
 -----------------------------------*/
 /*--------------------------------------------------------
@@ -698,14 +665,14 @@ a.tabledrag-handle-hover .handle {
  
 ----------------------------------------------------------
 --------------------------------------------------------*/
-/* line 24, ../sass/base/_typography.scss */
+/* line 36, ../sass/base/_typography.scss */
 ::-moz-selection,
 ::selection {
   color: #fff;
   background-color: red;
   text-shadow: none; }
 
-/* line 31, ../sass/base/_typography.scss */
+/* line 43, ../sass/base/_typography.scss */
 hr {
   margin: 0;
   padding: 0;
@@ -713,13 +680,13 @@ hr {
   height: 1px;
   background: #aaa; }
 
-/* line 39, ../sass/base/_typography.scss */
+/* line 51, ../sass/base/_typography.scss */
 p, dl, hr, h1, h2, h3, h4, h5, h6, ol,
 ul, pre, table, address, fieldset {
   margin-bottom: 40px;
   margin-top: 0; }
 
-/* line 45, ../sass/base/_typography.scss */
+/* line 57, ../sass/base/_typography.scss */
 p {
   word-wrap: break-word; }
 
@@ -728,7 +695,7 @@ p {
  HEADINGS & TITLES - general
  
 -----------------------------------------------*/
-/* line 55, ../sass/base/_typography.scss */
+/* line 67, ../sass/base/_typography.scss */
 h1,
 h2,
 h3,
@@ -742,7 +709,7 @@ h6 {
   margin: 0 0 30px 0;
   color: #000; }
 
-/* line 66, ../sass/base/_typography.scss */
+/* line 78, ../sass/base/_typography.scss */
 h1, h2 {
   font-weight: normal;
   /* removes ugly bold rendering of custom title fonts - remove as necessary */ }
@@ -752,14 +719,14 @@ h1, h2 {
  h1
  
 -------------------*/
-/* line 77, ../sass/base/_typography.scss */
+/* line 89, ../sass/base/_typography.scss */
 h1 {
   line-height: 1;
   padding-bottom: 0;
   text-transform: none;
   margin-bottom: 40px; }
 
-/* line 94, ../sass/base/_typography.scss */
+/* line 106, ../sass/base/_typography.scss */
 h1#page-title {
   color: #000; }
 
@@ -768,7 +735,7 @@ h1#page-title {
  h2
  
 --------------------*/
-/* line 105, ../sass/base/_typography.scss */
+/* line 117, ../sass/base/_typography.scss */
 h2,
 h2.node-title,
 h2.block-title,
@@ -776,7 +743,7 @@ h2.views-title {
   font-size: 27px;
   font-size: 1.6875rem; }
 
-/* line 113, ../sass/base/_typography.scss */
+/* line 125, ../sass/base/_typography.scss */
 h2.node-title,
 h2.block-title {
   line-height: 1.2; }
@@ -786,22 +753,22 @@ h2.block-title {
  h3 - h6
  
 ---------------------*/
-/* line 124, ../sass/base/_typography.scss */
+/* line 136, ../sass/base/_typography.scss */
 h3 {
   font-size: 21px;
   font-size: 1.3125rem; }
 
-/* line 127, ../sass/base/_typography.scss */
+/* line 139, ../sass/base/_typography.scss */
 h4 {
   font-size: 19px;
   font-size: 1.1875rem; }
 
-/* line 130, ../sass/base/_typography.scss */
+/* line 142, ../sass/base/_typography.scss */
 h5 {
   font-size: 17px;
   font-size: 1.0625rem; }
 
-/* line 133, ../sass/base/_typography.scss */
+/* line 145, ../sass/base/_typography.scss */
 h6 {
   font-size: 15px;
   font-size: 0.9375rem; }
@@ -811,44 +778,43 @@ h6 {
  LOGGED IN AS ADMIN ON MOBILE
  
 ---------------------------------------*/
-/* line 7, ../sass/components/_admin-toolbar.scss */
+/* line 18, ../sass/components/_admin-toolbar.scss */
 body.toolbar,
 body.toolbar-drawer {
   padding-top: 0 !important; }
 
-/* line 11, ../sass/components/_admin-toolbar.scss */
+/* line 22, ../sass/components/_admin-toolbar.scss */
 #toolbar {
   position: relative; }
 
-/* line 14, ../sass/components/_admin-toolbar.scss */
+/* line 25, ../sass/components/_admin-toolbar.scss */
 div.toolbar-drawer,
 .toolbar-menu a.toggle {
   display: none; }
 
 /* prevents side scrolling */
-/* line 20, ../sass/components/_admin-toolbar.scss */
+/* line 31, ../sass/components/_admin-toolbar.scss */
 #toolbar {
   margin: 0;
   padding: 0; }
 
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
-  /* line 4, ../sass/components/_backgrounds.scss */
+  /* line 12, ../sass/components/_backgrounds.scss */
   body {
     background-attachment: scroll; } }
 @media only screen and (min-device-width: 320px) and (max-device-width: 568px) {
-  /* line 4, ../sass/components/_backgrounds.scss */
+  /* line 12, ../sass/components/_backgrounds.scss */
   body {
     background-attachment: scroll; } }
 @media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
-  /* line 4, ../sass/components/_backgrounds.scss */
+  /* line 12, ../sass/components/_backgrounds.scss */
   body {
     background-attachment: scroll; } }
 
-/* line 36, ../sass/components/_backgrounds.scss */
+/* line 44, ../sass/components/_backgrounds.scss */
 body {
   background-size: auto auto; }
 
-/* CSS for feature/header banners */
 /*----------------------------------------------
 
  CLICKABLE class: 
@@ -882,7 +848,7 @@ body {
   background: none; }
 
 /* overrides to box-sizing (adds padding & border to total width) */
-/* line 2, ../sass/components/_colorbox.scss */
+/* line 12, ../sass/components/_colorbox.scss */
 #colorbox,
 #cboxOverlay,
 #cboxWrapper {
@@ -893,11 +859,11 @@ body {
 /*--------------------------------------
  Colorbox Popups  
 ---------------------------------------*/
-/* line 15, ../sass/components/_colorbox.scss */
+/* line 25, ../sass/components/_colorbox.scss */
 #cboxContent {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; }
 
-/* line 1, ../sass/components/_dateblock.scss */
+/* line 12, ../sass/components/_dateblock.scss */
 .dateblock {
   width: 45px;
   background-color: #000;
@@ -910,31 +876,31 @@ body {
   -moz-transition: all 0.2s ease-in;
   -o-transition: all 0.2s ease-in;
   transition: all 0.2s ease-in; }
-  /* line 11, ../sass/components/_dateblock.scss */
+  /* line 22, ../sass/components/_dateblock.scss */
   .dateblock .month, .dateblock .day, .dateblock .year {
     display: block;
     line-height: 1;
     text-transform: uppercase; }
-  /* line 17, ../sass/components/_dateblock.scss */
+  /* line 28, ../sass/components/_dateblock.scss */
   .dateblock .month {
     font-size: 14px;
     font-size: 0.875rem;
     color: #fff; }
-  /* line 22, ../sass/components/_dateblock.scss */
+  /* line 33, ../sass/components/_dateblock.scss */
   .dateblock .day {
     font-size: 26px;
     font-size: 1.625rem;
     color: #999; }
-  /* line 27, ../sass/components/_dateblock.scss */
+  /* line 38, ../sass/components/_dateblock.scss */
   .dateblock .year {
     font-size: 12px;
     font-size: 0.75rem; }
 
-/* line 3, ../sass/components/_ds-basics.scss */
+/* line 11, ../sass/components/_ds-basics.scss */
 .outer-wrapper {
   margin-bottom: 60px; }
 
-/* line 3, ../sass/components/_field-collection-reset.scss */
+/* line 11, ../sass/components/_field-collection-reset.scss */
 .field-collection-view,
 .field-collection-container {
   padding: 0;
@@ -948,18 +914,18 @@ body {
  
 ---------------------------------------------------
 -------------------------------------------------*/
-/* line 11, ../sass/components/_footer.scss */
+/* line 23, ../sass/components/_footer.scss */
 .l-footer-wrapper {
   background-color: #444; }
 
-/* line 23, ../sass/components/_footer.scss */
+/* line 35, ../sass/components/_footer.scss */
 .footer-inner {
   padding: 40px 0;
   color: #aaa; }
-  /* line 28, ../sass/components/_footer.scss */
+  /* line 40, ../sass/components/_footer.scss */
   .footer-inner a {
     color: orange; }
-  /* line 32, ../sass/components/_footer.scss */
+  /* line 44, ../sass/components/_footer.scss */
   .footer-inner a:hover {
     color: white; }
 
@@ -968,23 +934,23 @@ body {
  Copyright & links
  
 ------------------------------------*/
-/* line 67, ../sass/components/_footer.scss */
+/* line 56, ../sass/components/_footer.scss */
 .footer-links {
   margin-bottom: 5px; }
-  /* line 70, ../sass/components/_footer.scss */
+  /* line 59, ../sass/components/_footer.scss */
   .footer-links ul {
     margin: 0;
     padding: 0; }
-    /* line 7, ../sass/abstractions/_mixin-layout.scss */
+    /* line 13, ../sass/abstractions/_mixin-layout.scss */
     .footer-links ul:before, .footer-links ul:after {
       content: "";
       display: table; }
-    /* line 12, ../sass/abstractions/_mixin-layout.scss */
+    /* line 18, ../sass/abstractions/_mixin-layout.scss */
     .footer-links ul:after {
       clear: both;
       font-size: 0;
       /* Clear Fix correction (add font-size to fix extra padding at bottom of site */ }
-  /* line 75, ../sass/components/_footer.scss */
+  /* line 64, ../sass/components/_footer.scss */
   .footer-links ul li {
     margin: 0 12px 0 0;
     padding: 0 0 0 0;
@@ -992,24 +958,17 @@ body {
     list-style-image: none;
     float: left; }
 
-/* line 84, ../sass/components/_footer.scss */
+/* line 73, ../sass/components/_footer.scss */
 .l-footer-wrapper .footer-menu ul {
   margin: 0;
   padding: 0; }
-/* line 88, ../sass/components/_footer.scss */
+/* line 77, ../sass/components/_footer.scss */
 .l-footer-wrapper .footer-menu li {
   float: left;
   list-style-type: none;
   margin-right: 10px; }
 
-/*-------------------------------------------------------
----------------------------------------------------------
-
- LOGO
- 
----------------------------------------------------------
---------------------------------------------------------*/
-/* line 9, ../sass/components/_logo.scss */
+/* line 13, ../sass/components/_logo.scss */
 .l-branding {
   background-color: transparent;
   height: auto; }
@@ -1019,7 +978,7 @@ body {
  System Messages (mobile)
  
 ---------------------------------------*/
-/* line 9, ../sass/components/_messages.scss */
+/* line 20, ../sass/components/_messages.scss */
 .l-messages {
   line-height: 1.25;
   padding: 0;
@@ -1030,32 +989,32 @@ body {
   font-size: 1.125rem;
   word-break: break-all; }
 
-/* line 18, ../sass/components/_messages.scss */
+/* line 29, ../sass/components/_messages.scss */
 .l-messages .l-constrained {
   margin: 0;
   width: auto; }
 
-/* line 23, ../sass/components/_messages.scss */
+/* line 34, ../sass/components/_messages.scss */
 .messages {
   margin: 0;
   padding: 15px 15px 15px 50px;
   border: 0;
   background-position: 15px 15px; }
 
-/* line 34, ../sass/components/_messages.scss */
+/* line 45, ../sass/components/_messages.scss */
 .messages--warning {
   background-color: #fcf092;
   color: #000; }
 
-/* line 38, ../sass/components/_messages.scss */
+/* line 49, ../sass/components/_messages.scss */
 .messages--error {
   background-color: #f45d5d; }
 
-/* line 41, ../sass/components/_messages.scss */
+/* line 52, ../sass/components/_messages.scss */
 .messages--status {
   background-color: #bff697; }
 
-/* line 45, ../sass/components/_messages.scss */
+/* line 56, ../sass/components/_messages.scss */
 .messages--status a,
 .messages--error a,
 .messages--warning a {
@@ -1063,13 +1022,6 @@ body {
   /* color needs to be visible from .messages bg-color value */
   text-decoration: underline; }
 
-/*-------------------------------------------------------
----------------------------------------------------------
-
- MAIN NAVIGATION - Mobile
- 
----------------------------------------------------------
---------------------------------------------------------*/
 /*-----------------------------------
  
  mobile header - contains nav toggle 
@@ -1077,7 +1029,7 @@ body {
    
 ------------------------------------*/
 /* Site Name */
-/* line 37, ../sass/components/_mobile-navigation.scss */
+/* line 40, ../sass/components/_mobile-navigation.scss */
 h1.site-name {
   display: none; }
 
@@ -1086,7 +1038,7 @@ h1.site-name {
  Toggle buttons 
  
 -----------------------------------*/
-/* line 70, ../sass/components/_mobile-navigation.scss */
+/* line 73, ../sass/components/_mobile-navigation.scss */
 a.nav-open-btn {
   left: 0px;
   top: 0px;
@@ -1106,10 +1058,10 @@ a.nav-open-btn {
   -moz-transition: all 0.2s ease;
   -o-transition: all 0.2s ease;
   transition: all 0.2s ease; }
-  /* line 86, ../sass/components/_mobile-navigation.scss */
+  /* line 89, ../sass/components/_mobile-navigation.scss */
   a.nav-open-btn:hover {
     color: #777; }
-  /* line 90, ../sass/components/_mobile-navigation.scss */
+  /* line 93, ../sass/components/_mobile-navigation.scss */
   a.nav-open-btn:before {
     font-family: IcoMoonBasic;
     content: "\62";
@@ -1119,7 +1071,7 @@ a.nav-open-btn {
     top: 11px;
     left: 12px; }
 
-/* line 106, ../sass/components/_mobile-navigation.scss */
+/* line 109, ../sass/components/_mobile-navigation.scss */
 a.nav-close-btn {
   display: block;
   padding: 15px 15px 11px 40px;
@@ -1131,11 +1083,11 @@ a.nav-close-btn {
   line-height: 1;
   color: #999;
   height: 50px; }
-  /* line 117, ../sass/components/_mobile-navigation.scss */
+  /* line 120, ../sass/components/_mobile-navigation.scss */
   a.nav-close-btn:hover {
     text-decoration: none;
     color: #fff; }
-  /* line 122, ../sass/components/_mobile-navigation.scss */
+  /* line 125, ../sass/components/_mobile-navigation.scss */
   a.nav-close-btn:before {
     content: "\e008";
     font-family: IcoMoonBasic;
@@ -1152,23 +1104,23 @@ a.nav-close-btn {
  Layout
    
 ------------------------------------*/
-/* line 142, ../sass/components/_mobile-navigation.scss */
+/* line 145, ../sass/components/_mobile-navigation.scss */
 #site-wrapper {
   overflow: hidden;
   width: 100%; }
 
-/* line 151, ../sass/components/_mobile-navigation.scss */
+/* line 154, ../sass/components/_mobile-navigation.scss */
 .l-inner-wrap {
   width: 100%;
   height: 100%;
   -webkit-transition: .3s ease all;
   transition: .3s ease all; }
 
-/* line 179, ../sass/components/_mobile-navigation.scss */
+/* line 182, ../sass/components/_mobile-navigation.scss */
 .js-nav body {
   overflow: hidden; }
 
-/* line 182, ../sass/components/_mobile-navigation.scss */
+/* line 185, ../sass/components/_mobile-navigation.scss */
 .js-nav .l-inner-wrap {
   -webkit-transform: translateX(300px);
   transform: translateX(300px);
@@ -1183,11 +1135,11 @@ a.nav-close-btn {
   position: relative;
   width: 100%; }
 
-/* line 206, ../sass/components/_mobile-navigation.scss */
+/* line 209, ../sass/components/_mobile-navigation.scss */
 #mobile-fade {
   display: none; }
 
-/* line 209, ../sass/components/_mobile-navigation.scss */
+/* line 212, ../sass/components/_mobile-navigation.scss */
 .js-nav #mobile-fade {
   width: 100%;
   height: 100%;
@@ -1199,7 +1151,7 @@ a.nav-close-btn {
   z-index: 9999;
   opacity: 1; }
 
-/* line 224, ../sass/components/_mobile-navigation.scss */
+/* line 227, ../sass/components/_mobile-navigation.scss */
 .l-menu-mobile {
   position: absolute;
   left: -300px;
@@ -1209,7 +1161,7 @@ a.nav-close-btn {
   background-color: #eee;
   backface-visibility: hidden;
   display: block; }
-  /* line 236, ../sass/components/_mobile-navigation.scss */
+  /* line 239, ../sass/components/_mobile-navigation.scss */
   .js-nav .l-menu-mobile {
     -webkit-transform: translateX(0);
     transform: translateX(0);
@@ -1218,7 +1170,7 @@ a.nav-close-btn {
     -webkit-transform: translate3d(0, 0, 0);
     transform: translate3d(0, 0, 0); }
 
-/* line 253, ../sass/components/_mobile-navigation.scss */
+/* line 256, ../sass/components/_mobile-navigation.scss */
 .l-menu-mobile-top {
   background-color: #000;
   height: 50px; }
@@ -1228,17 +1180,17 @@ a.nav-close-btn {
  Main Links styling
  
 -------------------------------------*/
-/* line 265, ../sass/components/_mobile-navigation.scss */
+/* line 268, ../sass/components/_mobile-navigation.scss */
 .mobile-nav {
   height: auto;
   position: relative; }
 
-/* line 269, ../sass/components/_mobile-navigation.scss */
+/* line 272, ../sass/components/_mobile-navigation.scss */
 .mobile-nav ul {
   margin: 0;
   padding: 0; }
 
-/* line 273, ../sass/components/_mobile-navigation.scss */
+/* line 276, ../sass/components/_mobile-navigation.scss */
 .mobile-nav ul li {
   text-align: left;
   float: none;
@@ -1246,7 +1198,7 @@ a.nav-close-btn {
   padding: 0;
   list-style-type: none;
   list-style-image: none; }
-  /* line 278, ../sass/components/_mobile-navigation.scss */
+  /* line 281, ../sass/components/_mobile-navigation.scss */
   .mobile-nav ul li a {
     padding: 15px 15px 15px 40px;
     display: block;
@@ -1256,12 +1208,12 @@ a.nav-close-btn {
     border-bottom: 1px solid #aaa;
     font-size: 18px;
     font-size: 1.125rem; }
-  /* line 288, ../sass/components/_mobile-navigation.scss */
+  /* line 291, ../sass/components/_mobile-navigation.scss */
   .mobile-nav ul li a:hover {
     background-color: #444;
     color: #ccc;
     text-decoration: none; }
-  /* line 293, ../sass/components/_mobile-navigation.scss */
+  /* line 296, ../sass/components/_mobile-navigation.scss */
   .mobile-nav ul li a.active {
     color: #222; }
 
@@ -1270,34 +1222,34 @@ a.nav-close-btn {
  SUB NAV
  
 ---------------------------------------*/
-/* line 305, ../sass/components/_mobile-navigation.scss */
+/* line 308, ../sass/components/_mobile-navigation.scss */
 .mobile-nav ul ul {
   background-color: #ccc; }
 
-/* line 308, ../sass/components/_mobile-navigation.scss */
+/* line 311, ../sass/components/_mobile-navigation.scss */
 .mobile-nav .sub-nav {
   padding: 10px 10px 10px 80px;
   font-size: 14px;
   font-size: 0.875rem; }
-  /* line 312, ../sass/components/_mobile-navigation.scss */
+  /* line 315, ../sass/components/_mobile-navigation.scss */
   .mobile-nav .sub-nav:before {
     font-family: IcoMoonArrows;
     content: "\33";
     position: relative;
     left: -20px; }
 
-/*---------------------------------------------------------------------
------------------------------------------------------------------------
+/*-------------------------------------------------
+---------------------------------------------------
 
- More Link - general settings
+ more link - general settings
  
------------------------------------------------------------------------
----------------------------------------------------------------------*/
-/* line 9, ../sass/components/_more-link.scss */
+--------------------------------------------------
+------------------------------------------------*/
+/* line 21, ../sass/components/_more-link.scss */
 .more-link,
 .l-region--sidebar .view-footer {
   text-align: right; }
-  /* line 13, ../sass/components/_more-link.scss */
+  /* line 25, ../sass/components/_more-link.scss */
   .more-link a,
   .l-region--sidebar .view-footer a {
     display: block;
@@ -1309,11 +1261,11 @@ a.nav-close-btn {
     font-size: 12px;
     font-size: 0.75rem;
     text-align: right; }
-  /* line 24, ../sass/components/_more-link.scss */
+  /* line 36, ../sass/components/_more-link.scss */
   .more-link a:hover,
   .l-region--sidebar .view-footer a:hover {
     text-decoration: none; }
-  /* line 28, ../sass/components/_more-link.scss */
+  /* line 40, ../sass/components/_more-link.scss */
   .more-link a:after,
   .l-region--sidebar .view-footer a:after {
     background-color: transparent;
@@ -1328,38 +1280,39 @@ a.nav-close-btn {
     vertical-align: middle;
     width: 20px;
     speak: none; }
-  /* line 42, ../sass/components/_more-link.scss */
+  /* line 54, ../sass/components/_more-link.scss */
   .more-link a:hover:after,
   .l-region--sidebar .view-footer a:hover:after {
     text-decoration: none; }
 
 /* ----------------------------
 
- More Link - main content section
+ More Link - inside the 
+ main content section
  
 -----------------------------*/
-/* line 53, ../sass/components/_more-link.scss */
+/* line 66, ../sass/components/_more-link.scss */
 .l-main .view-footer {
   padding: 10px 0; }
 
-/* line 56, ../sass/components/_more-link.scss */
+/* line 69, ../sass/components/_more-link.scss */
 .l-main .more-link {
   position: relative;
   left: 0;
   top: 0;
   background: none; }
 
-/* line 62, ../sass/components/_more-link.scss */
+/* line 75, ../sass/components/_more-link.scss */
 .l-main .more-link {
   padding: 10px 0; }
 
-/* line 65, ../sass/components/_more-link.scss */
+/* line 78, ../sass/components/_more-link.scss */
 .l-main .more-link a {
   width: auto;
   padding: 0;
   text-align: right; }
 
-/* line 70, ../sass/components/_more-link.scss */
+/* line 83, ../sass/components/_more-link.scss */
 .l-main .more-link a:after {
   background: none;
   padding: 0;
@@ -1369,20 +1322,13 @@ a.nav-close-btn {
   position: relative;
   top: -2px; }
 
-/*-------------------------------------------------------
----------------------------------------------------------
- 
- MAIN-NAVIGATION - non-mobile
- 
----------------------------------------------------------
---------------------------------------------------------*/
-/* line 28, ../sass/components/_navigation.scss */
+/* line 30, ../sass/components/_navigation.scss */
 .l-region--header .menu {
   margin: 0;
   padding: 0;
   overflow: visible;
   position: relative; }
-  /* line 34, ../sass/components/_navigation.scss */
+  /* line 36, ../sass/components/_navigation.scss */
   .l-region--header .menu li {
     margin: 0;
     padding: 0;
@@ -1390,20 +1336,20 @@ a.nav-close-btn {
     float: left;
     position: relative;
     /* sub nav menus */ }
-    /* line 41, ../sass/components/_navigation.scss */
+    /* line 43, ../sass/components/_navigation.scss */
     .l-region--header .menu li.leaf {
       list-style-image: none; }
-    /* line 44, ../sass/components/_navigation.scss */
+    /* line 46, ../sass/components/_navigation.scss */
     .l-region--header .menu li.collapsed {
       list-style-image: none; }
-    /* line 47, ../sass/components/_navigation.scss */
+    /* line 49, ../sass/components/_navigation.scss */
     .l-region--header .menu li.expanded {
       list-style-image: none; }
-    /* line 52, ../sass/components/_navigation.scss */
+    /* line 54, ../sass/components/_navigation.scss */
     .l-region--header .menu li:hover > a {
       background-color: #444;
       color: #ccc; }
-    /* line 58, ../sass/components/_navigation.scss */
+    /* line 60, ../sass/components/_navigation.scss */
     .l-region--header .menu li > a {
       padding: 15px 20px;
       display: block;
@@ -1411,12 +1357,12 @@ a.nav-close-btn {
       background-color: transparent;
       font-size: 18px;
       font-size: 1.125rem; }
-      /* line 65, ../sass/components/_navigation.scss */
+      /* line 67, ../sass/components/_navigation.scss */
       .l-region--header .menu li > a:hover {
         color: #ccc;
         background-color: #444;
         text-decoration: none; }
-    /* line 73, ../sass/components/_navigation.scss */
+    /* line 75, ../sass/components/_navigation.scss */
     .l-region--header .menu li ul.menu {
       position: absolute;
       top: 59px;
@@ -1429,47 +1375,47 @@ a.nav-close-btn {
       transition: opacity 0.2s ease-in;
       background-color: #777;
       left: -9999px; }
-      /* line 84, ../sass/components/_navigation.scss */
+      /* line 86, ../sass/components/_navigation.scss */
       .l-region--header .menu li ul.menu li {
         float: left; }
-        /* line 87, ../sass/components/_navigation.scss */
+        /* line 89, ../sass/components/_navigation.scss */
         .l-region--header .menu li ul.menu li a {
           padding: 10px 15px;
           color: #fff;
           font-size: 14px;
           font-size: 0.875rem; }
-    /* line 96, ../sass/components/_navigation.scss */
+    /* line 98, ../sass/components/_navigation.scss */
     .l-region--header .menu li:hover ul.menu {
       display: block;
       opacity: 1;
       visibility: visible;
       left: 0; }
 
-/*-----------------------------------------------------------
--------------------------------------------------------------
+/*--------------------------------------------------
+----------------------------------------------------
 
  PAGERS
  
--------------------------------------------------------------
-------------------------------------------------------------*/
+----------------------------------------------------
+--------------------------------------------------*/
 /*-------------------------------------
 
  LOAD MORE link 
  
 --------------------------------------*/
-/* line 15, ../sass/components/_pagers.scss */
+/* line 28, ../sass/components/_pagers.scss */
 ul.pager-load-more {
   border: 0 none;
   margin: 20px 0;
   /* Load More button */ }
-  /* line 19, ../sass/components/_pagers.scss */
+  /* line 32, ../sass/components/_pagers.scss */
   ul.pager-load-more li {
     padding: 0px;
     margin: 0;
     float: none;
     display: block;
     border: 0; }
-  /* line 28, ../sass/components/_pagers.scss */
+  /* line 41, ../sass/components/_pagers.scss */
   ul.pager-load-more .pager-next a {
     background-color: #444;
     border-radius: 4px;
@@ -1477,7 +1423,7 @@ ul.pager-load-more {
     padding: 5px 20px;
     width: auto;
     display: inline-block; }
-    /* line 36, ../sass/components/_pagers.scss */
+    /* line 49, ../sass/components/_pagers.scss */
     ul.pager-load-more .pager-next a:hover {
       background-color: #ccc;
       color: #444;
@@ -1488,12 +1434,12 @@ ul.pager-load-more {
       transition: all 0.2s ease-in;
       border-radius: 4px; }
 
-/*----------------------------------------
+/*------------------------------------
 
  ENTITY PAGER - Previous / Next 
  
------------------------------------------*/
-/* line 59, ../sass/components/_pagers.scss */
+-------------------------------------*/
+/* line 72, ../sass/components/_pagers.scss */
 .node-pager-container {
   height: auto;
   min-height: 60px;
@@ -1501,11 +1447,11 @@ ul.pager-load-more {
   position: relative;
   padding: 15px 0; }
 
-/* line 67, ../sass/components/_pagers.scss */
+/* line 80, ../sass/components/_pagers.scss */
 .block-entity-pager {
   overflow: hidden; }
 
-/* line 71, ../sass/components/_pagers.scss */
+/* line 84, ../sass/components/_pagers.scss */
 a.entity-pager-link,
 a.back-to-river-link {
   color: #777;
@@ -1523,7 +1469,7 @@ a.back-to-river-link {
   transition: all 0.2s ease-in;
   font-size: 12px;
   font-size: 0.75rem; }
-  /* line 85, ../sass/components/_pagers.scss */
+  /* line 98, ../sass/components/_pagers.scss */
   a.entity-pager-link:hover,
   a.back-to-river-link:hover {
     color: orange; }
@@ -1531,16 +1477,16 @@ a.back-to-river-link {
 /*-----------------------
  << PREVIOUS 
 ------------------------*/
-/* line 94, ../sass/components/_pagers.scss */
+/* line 107, ../sass/components/_pagers.scss */
 #entity_pager_1-item-previous,
 #entity_pager_2-item-previous {
   float: left;
   max-width: 40%; }
 
-/* line 99, ../sass/components/_pagers.scss */
+/* line 112, ../sass/components/_pagers.scss */
 a#entity-pager-previous-link {
   padding: 0px 0px 0px 40px; }
-  /* line 103, ../sass/components/_pagers.scss */
+  /* line 116, ../sass/components/_pagers.scss */
   a#entity-pager-previous-link:before {
     content: "\3d";
     display: inline-block;
@@ -1555,17 +1501,17 @@ a#entity-pager-previous-link {
 /*-----------------------
  NEXT >> 
 -------------------------*/
-/* line 142, ../sass/components/_pagers.scss */
+/* line 155, ../sass/components/_pagers.scss */
 #entity_pager_1-item-next,
 #entity_pager_2-item-next {
   float: right;
   max-width: 40%; }
 
-/* line 147, ../sass/components/_pagers.scss */
+/* line 160, ../sass/components/_pagers.scss */
 a#entity-pager-next-link {
   text-align: right;
   padding: 0 40px 0 0; }
-  /* line 152, ../sass/components/_pagers.scss */
+  /* line 165, ../sass/components/_pagers.scss */
   a#entity-pager-next-link:after {
     content: "\3e";
     display: inline-block;
@@ -1580,20 +1526,20 @@ a#entity-pager-next-link {
 /*-------------------------
  ALL - list link 
 --------------------------*/
-/* line 189, ../sass/components/_pagers.scss */
+/* line 202, ../sass/components/_pagers.scss */
 .back-to-river-link-container {
   position: absolute;
   left: 50%;
   -webkit-transform: translateX(-50%);
   transform: translateX(-50%); }
 
-/* line 193, ../sass/components/_pagers.scss */
+/* line 206, ../sass/components/_pagers.scss */
 a.back-to-river-link {
   overflow: hidden;
   height: 0;
   width: 30px;
   padding-top: 30px; }
-  /* line 200, ../sass/components/_pagers.scss */
+  /* line 213, ../sass/components/_pagers.scss */
   a.back-to-river-link:before {
     content: "\62";
     display: block;
@@ -1661,45 +1607,45 @@ a.back-to-river-link {
  
 ------------------------------------------------------
 ----------------------------------------------------*/
-/* line 9, ../sass/components/_search.scss */
+/* line 21, ../sass/components/_search.scss */
 .page-search {
   /* form wrapper */
   /* label */
   /* input */
   /* submit */ }
-  /* line 11, ../sass/components/_search.scss */
+  /* line 23, ../sass/components/_search.scss */
   .page-search #search-form #edit-basic {
     margin-bottom: 40px; }
-  /* line 14, ../sass/components/_search.scss */
+  /* line 26, ../sass/components/_search.scss */
   .page-search .tabs ul.primary {
     margin: 0;
     border: 0; }
-  /* line 20, ../sass/components/_search.scss */
+  /* line 32, ../sass/components/_search.scss */
   .page-search #edit-basic {
     padding: 26.66667px;
     border: 1px solid #aaa; }
-  /* line 26, ../sass/components/_search.scss */
+  /* line 38, ../sass/components/_search.scss */
   .page-search label[for="edit-keys"] {
     margin-right: 5px; }
-  /* line 31, ../sass/components/_search.scss */
+  /* line 43, ../sass/components/_search.scss */
   .page-search input#edit-keys {
     width: 150px; }
-  /* line 36, ../sass/components/_search.scss */
+  /* line 48, ../sass/components/_search.scss */
   .page-search #edit-basic .form-submit {
     margin: 1em 0; }
 
 /* ----Search Results -------*/
-/* line 43, ../sass/components/_search.scss */
+/* line 55, ../sass/components/_search.scss */
 .search-results {
   /* in-context results display */ }
-  /* line 44, ../sass/components/_search.scss */
+  /* line 56, ../sass/components/_search.scss */
   .search-results p:last-child {
     margin-bottom: 0; }
-  /* line 48, ../sass/components/_search.scss */
+  /* line 60, ../sass/components/_search.scss */
   .search-results li {
     border-bottom: 1px dotted #aaa;
     margin-bottom: 1em; }
-  /* line 54, ../sass/components/_search.scss */
+  /* line 66, ../sass/components/_search.scss */
   .search-results .search-snippet-info {
     background-color: #f5f5f5;
     font-size: 11px;
@@ -1713,7 +1659,7 @@ a.back-to-river-link {
  SHOW MORE / SHOW LESS - toggle links 
  
 -----------------------------------------*/
-/* line 8, ../sass/components/_show-more.scss */
+/* line 20, ../sass/components/_show-more.scss */
 a.show-link {
   display: block;
   clear: both;
@@ -1727,12 +1673,12 @@ a.show-link {
   font-size: 13px;
   font-size: 0.8125rem;
   width: 180px; }
-  /* line 21, ../sass/components/_show-more.scss */
+  /* line 33, ../sass/components/_show-more.scss */
   a.show-link:hover {
     background-color: #ccc;
     color: #444;
     text-decoration: none; }
-  /* line 27, ../sass/components/_show-more.scss */
+  /* line 39, ../sass/components/_show-more.scss */
   a.show-link:before, a.show-link:after {
     content: "\25";
     font-family: IcoMoonArrows;
@@ -1743,31 +1689,31 @@ a.show-link {
     position: relative;
     top: 1px;
     speak: none; }
-  /* line 38, ../sass/components/_show-more.scss */
+  /* line 50, ../sass/components/_show-more.scss */
   a.show-link:after {
     margin-left: 6px;
     margin-right: 6px; }
-  /* line 44, ../sass/components/_show-more.scss */
+  /* line 56, ../sass/components/_show-more.scss */
   a.show-link.show-processed:before, a.show-link.show-processed:after {
     top: 1px;
     content: "\24";
     speak: none; }
 
-/*---------------------------------------------------------------------
------------------------------------------------------------------------
+/*------------------------------------------------------
+--------------------------------------------------------
 
  General SIDEBAR BLOCK Styles 
  
------------------------------------------------------------------------
----------------------------------------------------------------------*/
-/* line 14, ../sass/components/_sidebar-block-defaults.scss */
+--------------------------------------------------------
+------------------------------------------------------*/
+/* line 26, ../sass/components/_sidebar-block-defaults.scss */
 .l-region--sidebar .block {
   position: relative;
   margin-bottom: 40px;
   background-color: rgba(0, 0, 0, 0.8);
   color: #aaa;
   padding: 0; }
-/* line 23, ../sass/components/_sidebar-block-defaults.scss */
+/* line 35, ../sass/components/_sidebar-block-defaults.scss */
 .l-region--sidebar h2.block__title {
   color: #fff;
   border-bottom: 0;
@@ -1776,15 +1722,15 @@ a.show-link {
   background-color: #000;
   font-size: 24px;
   font-size: 1.5rem; }
-/* line 34, ../sass/components/_sidebar-block-defaults.scss */
+/* line 46, ../sass/components/_sidebar-block-defaults.scss */
 .l-region--sidebar .view-content,
 .l-region--sidebar .view-empty {
   padding: 7%; }
-/* line 40, ../sass/components/_sidebar-block-defaults.scss */
+/* line 52, ../sass/components/_sidebar-block-defaults.scss */
 .l-region--sidebar .list-row {
   border-color: #444;
   line-height: 1.3; }
-/* line 44, ../sass/components/_sidebar-block-defaults.scss */
+/* line 56, ../sass/components/_sidebar-block-defaults.scss */
 .l-region--sidebar .grid-row {
   line-height: 1.3;
   width: 48%;
@@ -1792,40 +1738,40 @@ a.show-link {
   border-bottom: 0;
   font-size: 12px;
   font-size: 0.75rem; }
-/* line 53, ../sass/components/_sidebar-block-defaults.scss */
+/* line 65, ../sass/components/_sidebar-block-defaults.scss */
 .l-region--sidebar .block a {
   color: #ccc; }
-  /* line 56, ../sass/components/_sidebar-block-defaults.scss */
+  /* line 68, ../sass/components/_sidebar-block-defaults.scss */
   .l-region--sidebar .block a:hover {
     color: red; }
-/* line 62, ../sass/components/_sidebar-block-defaults.scss */
+/* line 74, ../sass/components/_sidebar-block-defaults.scss */
 .l-region--sidebar .button a,
 .l-region--sidebar a.button {
   background-color: #fff;
   color: #000; }
-  /* line 67, ../sass/components/_sidebar-block-defaults.scss */
+  /* line 79, ../sass/components/_sidebar-block-defaults.scss */
   .l-region--sidebar .button a:hover,
   .l-region--sidebar a.button:hover {
     background-color: #000;
     color: #fff; }
-/* line 74, ../sass/components/_sidebar-block-defaults.scss */
+/* line 86, ../sass/components/_sidebar-block-defaults.scss */
 .l-region--sidebar .views-field-title {
   font-size: 14px; }
-/* line 79, ../sass/components/_sidebar-block-defaults.scss */
+/* line 91, ../sass/components/_sidebar-block-defaults.scss */
 .l-region--sidebar .grid-row .views-field-title {
   text-align: center;
   padding: 5px; }
-/* line 85, ../sass/components/_sidebar-block-defaults.scss */
+/* line 97, ../sass/components/_sidebar-block-defaults.scss */
 .l-region--sidebar .more-link,
 .l-region--sidebar .view-footer {
   position: relative; }
-  /* line 89, ../sass/components/_sidebar-block-defaults.scss */
+  /* line 101, ../sass/components/_sidebar-block-defaults.scss */
   .l-region--sidebar .more-link a,
   .l-region--sidebar .view-footer a {
     background-color: #fff;
     color: #000;
     padding: 10px; }
-  /* line 95, ../sass/components/_sidebar-block-defaults.scss */
+  /* line 107, ../sass/components/_sidebar-block-defaults.scss */
   .l-region--sidebar .more-link a:hover,
   .l-region--sidebar .view-footer a:hover {
     background-color: red;
@@ -1836,23 +1782,23 @@ a.show-link {
  Social Icons
  
 --------------------------------*/
-/* line 15, ../sass/components/_social-icons.scss */
+/* line 28, ../sass/components/_social-icons.scss */
 .social-links ul {
   margin: 0;
   overflow: hidden;
   padding: 0; }
-  /* line 24, ../sass/components/_social-icons.scss */
+  /* line 37, ../sass/components/_social-icons.scss */
   .social-links ul li {
     margin: 0 7px 7px 0;
     padding: 0;
     display: inline-block;
     list-style-type: none;
     border: 0; }
-  /* line 32, ../sass/components/_social-icons.scss */
+  /* line 45, ../sass/components/_social-icons.scss */
   .social-links ul li:last-child {
     margin-right: 0; }
 
-/* line 36, ../sass/components/_social-icons.scss */
+/* line 49, ../sass/components/_social-icons.scss */
 .social-links a {
   margin: 0;
   padding: 10px;
@@ -1862,14 +1808,14 @@ a.show-link {
   position: relative;
   color: #fff;
   background-color: #777; }
-  /* line 47, ../sass/components/_social-icons.scss */
+  /* line 60, ../sass/components/_social-icons.scss */
   .social-links a:hover {
     color: #777;
     background-color: #000; }
-  /* line 52, ../sass/components/_social-icons.scss */
+  /* line 65, ../sass/components/_social-icons.scss */
   .social-links a i {
     font-size: 45px; }
-  /* line 55, ../sass/components/_social-icons.scss */
+  /* line 68, ../sass/components/_social-icons.scss */
   .social-links a span.title {
     display: none; }
 
@@ -1901,42 +1847,35 @@ video {
   width: 100%;
   background-color: rgba(43, 43, 43, 0.7); }
 
-/*---------------------------------------------------------------------
------------------------------------------------------------------------
-
- ARTICLES - NODE
- 
------------------------------------------------------------------------
----------------------------------------------------------------------*/
 /*---------------------------------
 
  node container overrides 
  
 ----------------------------------*/
-/* line 16, ../sass/components/articles/_article-node.scss */
+/* line 19, ../sass/components/articles/_article-node.scss */
 #article-header-row-container {
   padding: 0;
   border: 0; }
 
-/* line 22, ../sass/components/articles/_article-node.scss */
+/* line 25, ../sass/components/articles/_article-node.scss */
 #article-middle-row1-container {
   border: 0; }
 
-/* line 27, ../sass/components/articles/_article-node.scss */
+/* line 30, ../sass/components/articles/_article-node.scss */
 #article-middle-row2-container {
   overflow: hidden;
   padding-top: 0; }
 
-/* line 35, ../sass/components/articles/_article-node.scss */
+/* line 38, ../sass/components/articles/_article-node.scss */
 #article-middle-row4-container {
   border-bottom: 1px solid #aaa;
   padding: 40px 0; }
 
-/* line 41, ../sass/components/articles/_article-node.scss */
+/* line 44, ../sass/components/articles/_article-node.scss */
 #article-node-middle-row5-container {
   padding: 20px; }
 
-/* line 44, ../sass/components/articles/_article-node.scss */
+/* line 47, ../sass/components/articles/_article-node.scss */
 #article-node-middle-row5-container .node-pager-container {
   padding: 0;
   border: 0;
@@ -1947,7 +1886,7 @@ video {
  pager - default overrides
   
 ---------------------------*/
-/* line 56, ../sass/components/articles/_article-node.scss */
+/* line 59, ../sass/components/articles/_article-node.scss */
 .node-type-article .node-pager-container {
   margin-bottom: 0; }
 
@@ -1956,7 +1895,7 @@ video {
  article title & author
  
 ---------------------------*/
-/* line 67, ../sass/components/articles/_article-node.scss */
+/* line 70, ../sass/components/articles/_article-node.scss */
 #article-header-row-container h2.node__title {
   margin-bottom: 20px;
   line-height: 1.2; }
@@ -1965,7 +1904,7 @@ video {
  submitted info
  -- (may contain posted date only or also author full name)
 ----------------------------------------------------------*/
-/* line 77, ../sass/components/articles/_article-node.scss */
+/* line 80, ../sass/components/articles/_article-node.scss */
 .node-type-article .node-article .submitted {
   font-style: italic;
   margin-bottom: 20px;
@@ -1976,7 +1915,7 @@ video {
  article body 
  
 ---------------------------*/
-/* line 90, ../sass/components/articles/_article-node.scss */
+/* line 93, ../sass/components/articles/_article-node.scss */
 #article-body-container p:last-child {
   margin-bottom: 0; }
 
@@ -1985,15 +1924,15 @@ video {
  related songs 
  
 ----------------------------*/
-/* line 101, ../sass/components/articles/_article-node.scss */
+/* line 104, ../sass/components/articles/_article-node.scss */
 #article-songs-container {
   font-size: 13px;
   font-size: 0.8125rem;
   font-style: italic; }
-  /* line 105, ../sass/components/articles/_article-node.scss */
+  /* line 108, ../sass/components/articles/_article-node.scss */
   #article-songs-container h2 {
     display: none; }
-  /* line 108, ../sass/components/articles/_article-node.scss */
+  /* line 111, ../sass/components/articles/_article-node.scss */
   #article-songs-container span.views-label:before {
     content: "\4b";
     font-family: IcoMoonBasic;
@@ -2008,19 +1947,19 @@ video {
  
 ---------------------------------------*/
 @incluce breakpoint($small-only) {
-  /* line 126, ../sass/components/articles/_article-node.scss */
+  /* line 129, ../sass/components/articles/_article-node.scss */
   #article-mobile-middle-row3-container .first-item,
   #article-mobile-middle-row3-container .not-first-item {
     margin-bottom: 15px; } }
-/* line 131, ../sass/components/articles/_article-node.scss */
+/* line 134, ../sass/components/articles/_article-node.scss */
 #article-photo-gallery-container {
   overflow: hidden; }
-  /* line 135, ../sass/components/articles/_article-node.scss */
+  /* line 138, ../sass/components/articles/_article-node.scss */
   #article-photo-gallery-container .teaser-grid {
     padding-left: 0;
     height: 175px;
     /* set height on div toggle section */ }
-  /* line 139, ../sass/components/articles/_article-node.scss */
+  /* line 142, ../sass/components/articles/_article-node.scss */
   #article-photo-gallery-container .photo-row {
     height: auto;
     margin: 0 1.5% 1.5% 0;
@@ -2032,31 +1971,31 @@ video {
  PRODUCT REFERENCES ( "In This Article" block )
  
 ---------------------------------------*/
-/* line 153, ../sass/components/articles/_article-node.scss */
+/* line 156, ../sass/components/articles/_article-node.scss */
 #article-nodes-container {
   margin-bottom: 40px;
   padding-bottom: 40px;
   border-bottom: 1px solid #aaa; }
-  /* line 158, ../sass/components/articles/_article-node.scss */
+  /* line 161, ../sass/components/articles/_article-node.scss */
   #article-nodes-container h2.block-title {
     margin-bottom: 20px; }
-  /* line 161, ../sass/components/articles/_article-node.scss */
+  /* line 164, ../sass/components/articles/_article-node.scss */
   #article-nodes-container .teaser-list h2.block-title {
     display: none; }
-  /* line 165, ../sass/components/articles/_article-node.scss */
+  /* line 168, ../sass/components/articles/_article-node.scss */
   #article-nodes-container .teaser-list-row {
     overflow: hidden;
     padding: 26.66667px 0; }
-    /* line 169, ../sass/components/articles/_article-node.scss */
+    /* line 172, ../sass/components/articles/_article-node.scss */
     #article-nodes-container .teaser-list-row:first-child {
       padding-top: 0; }
-    /* line 173, ../sass/components/articles/_article-node.scss */
+    /* line 176, ../sass/components/articles/_article-node.scss */
     #article-nodes-container .teaser-list-row:last-child {
       border-bottom: 0;
       padding-bottom: 0; }
 
 /* product image - container */
-/* line 181, ../sass/components/articles/_article-node.scss */
+/* line 184, ../sass/components/articles/_article-node.scss */
 .article-related-node .image {
   border: 1px solid #aaa;
   float: left;
@@ -2065,36 +2004,36 @@ video {
   width: 20%; }
 
 /* product title - container */
-/* line 190, ../sass/components/articles/_article-node.scss */
+/* line 193, ../sass/components/articles/_article-node.scss */
 .article-related-node-product-body,
 .article-related-node-album-body {
   float: left;
   width: 50%; }
 
-/* line 195, ../sass/components/articles/_article-node.scss */
+/* line 198, ../sass/components/articles/_article-node.scss */
 .article-related-node-title {
   font-size: 21px;
   font-size: 1.3125rem; }
 
 /* product created date */
-/* line 200, ../sass/components/articles/_article-node.scss */
+/* line 203, ../sass/components/articles/_article-node.scss */
 .article-related-node-created-date {
   font-size: 13px;
   font-size: 0.8125rem; }
 
 /* product price */
-/* line 205, ../sass/components/articles/_article-node.scss */
+/* line 208, ../sass/components/articles/_article-node.scss */
 #article-nodes-container .field-commerce-price {
   margin-bottom: 0;
   /* override from store-global.css */ }
 
 /* Links - container */
-/* line 210, ../sass/components/articles/_article-node.scss */
+/* line 213, ../sass/components/articles/_article-node.scss */
 .article-related-node-links {
   float: right;
   margin-left: 4%;
   /* Links - buttons */ }
-  /* line 215, ../sass/components/articles/_article-node.scss */
+  /* line 218, ../sass/components/articles/_article-node.scss */
   .article-related-node-links a {
     background-color: #444;
     border-radius: 30px;
@@ -2107,14 +2046,14 @@ video {
     width: 35px;
     position: relative;
     color: #fff; }
-    /* line 228, ../sass/components/articles/_article-node.scss */
+    /* line 231, ../sass/components/articles/_article-node.scss */
     .article-related-node-links a:hover {
       background-color: #ccc;
       color: #444;
       text-decoration: none; }
 
 /* view more link icon */
-/* line 238, ../sass/components/articles/_article-node.scss */
+/* line 241, ../sass/components/articles/_article-node.scss */
 a.related-node-album-view-link:before,
 a.related-node-product-view-link:before {
   position: absolute;
@@ -2125,7 +2064,7 @@ a.related-node-product-view-link:before {
   font-family: IcoMoonBasic; }
 
 /* buy now link icon */
-/* line 249, ../sass/components/articles/_article-node.scss */
+/* line 252, ../sass/components/articles/_article-node.scss */
 a.related-node-album-buy-link:before,
 a.related-node-product-buy-link:before {
   position: absolute;
@@ -2140,81 +2079,86 @@ a.related-node-product-buy-link:before {
  RECENT & MORE ARTICLES content block 
  
 ---------------------------------------*/
-/* line 266, ../sass/components/articles/_article-node.scss */
+/* line 269, ../sass/components/articles/_article-node.scss */
 .node-more-articles {
   position: relative; }
-  /* line 269, ../sass/components/articles/_article-node.scss */
+  /* line 272, ../sass/components/articles/_article-node.scss */
   .node-more-articles h2.block-title {
     font-size: 20px;
     font-size: 1.25rem;
     margin-bottom: 0px; }
-  /* line 273, ../sass/components/articles/_article-node.scss */
+  /* line 276, ../sass/components/articles/_article-node.scss */
   .node-more-articles .views-row {
     padding: 10px 0;
     border-bottom: 0;
     float: none; }
-  /* line 278, ../sass/components/articles/_article-node.scss */
+  /* line 281, ../sass/components/articles/_article-node.scss */
   .node-more-articles .field-title {
     font-size: 15px;
     font-size: 0.9375rem;
     line-height: 1.3;
     padding-right: 10px;
     display: block; }
-  /* line 284, ../sass/components/articles/_article-node.scss */
+  /* line 287, ../sass/components/articles/_article-node.scss */
   .node-more-articles .field-date {
     font-size: 13px;
     font-size: 0.8125rem;
     display: block;
     line-height: 1.3;
     font-style: italic; }
-  /* line 290, ../sass/components/articles/_article-node.scss */
+  /* line 293, ../sass/components/articles/_article-node.scss */
   .node-more-articles .view-footer {
     padding: 10px 0; }
-  /* line 295, ../sass/components/articles/_article-node.scss */
+  /* line 298, ../sass/components/articles/_article-node.scss */
   .node-more-articles .view-empty {
     font-size: 13px; }
 
-/*---------------------------------------------------------------------
------------------------------------------------------------------------
-
- ARTICLE TEASER LIST & ARTICLE TAGS TEASER LIST
- 
------------------------------------------------------------------------
----------------------------------------------------------------------*/
-/* line 17, ../sass/components/articles/_article-teaser.scss */
+/* line 20, ../sass/components/articles/_article-teaser.scss */
 .article-node-teaser .post-date {
   margin-bottom: 10px; }
 
-/* line 22, ../sass/components/articles/_article-teaser.scss */
+/* line 25, ../sass/components/articles/_article-teaser.scss */
 .article-node-teaser h3.title {
   font-size: 24px;
   font-size: 1.5rem;
   line-height: 1.2; }
 
-/* line 32, ../sass/components/articles/_article-teaser.scss */
+/* line 35, ../sass/components/articles/_article-teaser.scss */
 .page-news .teasers-main-content h3.title a,
 .page-taxonomy .teasers-main-content h3.title a {
   color: #000; }
-  /* line 36, ../sass/components/articles/_article-teaser.scss */
+  /* line 39, ../sass/components/articles/_article-teaser.scss */
   .page-news .teasers-main-content h3.title a:hover,
   .page-taxonomy .teasers-main-content h3.title a:hover {
     color: orange; }
+
+/* list row content */
+/* line 46, ../sass/components/articles/_article-teaser.scss */
+.list .post-date {
+  font-size: 0.813em;
+  font-style: italic; }
+
+/* line 50, ../sass/components/articles/_article-teaser.scss */
+.list .media-thumb-item {
+  width: 160px;
+  float: left;
+  margin-right: 30px; }
 
 /*--------------------------
 
  article tags
  
 ----------------------------*/
-/* line 49, ../sass/components/articles/_article-teaser.scss */
+/* line 64, ../sass/components/articles/_article-teaser.scss */
 #article-tags-container {
   font-size: 12px;
   font-size: 0.75rem;
   font-style: normal;
   margin: 20px 0; }
-  /* line 55, ../sass/components/articles/_article-teaser.scss */
+  /* line 70, ../sass/components/articles/_article-teaser.scss */
   #article-tags-container .field--name-field-tags .field__items {
     overflow: hidden; }
-    /* line 58, ../sass/components/articles/_article-teaser.scss */
+    /* line 73, ../sass/components/articles/_article-teaser.scss */
     #article-tags-container .field--name-field-tags .field__items:before {
       content: "\e004";
       font-family: IcoMoonBasic;
@@ -2224,11 +2168,11 @@ a.related-node-product-buy-link:before {
       vertical-align: middle;
       font-style: normal;
       display: inline-block; }
-  /* line 70, ../sass/components/articles/_article-teaser.scss */
+  /* line 85, ../sass/components/articles/_article-teaser.scss */
   #article-tags-container .field--name-field-tags .field__item {
     margin: 0 8px 0 0;
     display: inline-block; }
-    /* line 74, ../sass/components/articles/_article-teaser.scss */
+    /* line 89, ../sass/components/articles/_article-teaser.scss */
     #article-tags-container .field--name-field-tags .field__item a {
       width: auto;
       text-align: center;
@@ -2236,17 +2180,17 @@ a.related-node-product-buy-link:before {
       margin: 0;
       text-decoration: underline; }
 
-/* line 85, ../sass/components/articles/_article-teaser.scss */
+/* line 100, ../sass/components/articles/_article-teaser.scss */
 .article-node-teaser .media-thumb-item {
   float: left;
   margin-right: 4%;
   width: 28%; }
 
-/* line 107, ../sass/components/articles/_article-teaser.scss */
+/* line 122, ../sass/components/articles/_article-teaser.scss */
 .article-row p:last-child {
   margin-bottom: 0; }
 
-/* line 112, ../sass/components/articles/_article-teaser.scss */
+/* line 127, ../sass/components/articles/_article-teaser.scss */
 .addthis_sharing_toolbox {
   max-height: 32px; }
 
@@ -2256,12 +2200,12 @@ a.related-node-product-buy-link:before {
 
 -------------------------------------------------------*/
 /* make taxonomy page title smaller to fit better if longer */
-/* line 123, ../sass/components/articles/_article-teaser.scss */
+/* line 138, ../sass/components/articles/_article-teaser.scss */
 .page-taxonomy h1 {
   font-size: 2.250em; }
 
 /* -- place a tag icon before page title on taxonomy page*/
-/* line 128, ../sass/components/articles/_article-teaser.scss */
+/* line 143, ../sass/components/articles/_article-teaser.scss */
 .page-taxonomy .l-content h1:before {
   content: "\e004";
   font-family: IcoMoonBasic;

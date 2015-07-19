@@ -1,4 +1,15 @@
-// Transition mixins - default values are defined in /variables/_general.scss
+//------------------------------------------------------
+//
+//	MIXINS - GENERAL - misc mixins 
+//
+//	location: 
+//      /sass/abstractions/mixins-general.scss
+//
+//------------------------------------------------------
+
+
+
+// Transition mixins - default values are defined in /variables/_variables-general.scss
 @mixin transition($property,$time,$function) {
 	-webkit-transition: $property $time $function;
 	-moz-transition: $property $time $function;

@@ -1,6 +1,17 @@
+//----------------------------------------------
+//
+//	LISTS - general styles for ordered and 
+//          unordered lists and grids
+//
+//	location: 
+//      /sass/base/_lists.scss
+//
+//----------------------------------------------
+
+
 /*-------------------------------------------
 
- LISTS - ordered & unordered defaults 
+ LISTS - defaults for standard formatting
 
 --------------------------------------------*/
 
@@ -78,14 +89,14 @@ dd {
 /*---------------------------------------------------------
 -----------------------------------------------------------
 
- LIST & GRID styles
+ LIST & GRID styles - without standard list formatting
   
 -----------------------------------------------------------
 ---------------------------------------------------------*/
 
 /*---------------------------------------
 
- GRID
+ .GRID
  
 ----------------------------------------*/
 
@@ -110,7 +121,7 @@ dd {
 
 /*---------------------------------------
 
- LIST
+ .LIST
  
 ----------------------------------------*/
 
@@ -141,25 +152,4 @@ dd {
 .item-list li.list-row:last-child,
 .l-region--sidebar .list-row:last-child {
 	border-bottom: 0;
-}
-
-/* list row content - articles */
-.list h3.title {
-	font-size: 15px;
-	margin-bottom: 5px;
-}
-.list .post-date {
-	font-size: 0.813em;
-	font-style: italic;
-}
-.list .media-thumb-item {
-	width: 160px;
-	float: left;
-	margin-right: 30px;
-}
-.list ul.share-links-container {
-	border: 0;
-	height: 20px;
-	margin: 0px;
-	padding: 5px 0;
 }

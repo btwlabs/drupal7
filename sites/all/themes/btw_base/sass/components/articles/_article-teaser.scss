@@ -1,10 +1,13 @@
-/*---------------------------------------------------------------------
------------------------------------------------------------------------
+//-------------------------------------------------------------
+//
+//	ARTICLES - TEASER LIST & ARTICLE TAXONOMY TEASER LIST
+//
+//	location: 
+//      /sass/components/articles/_article-teaser.scss
+//
+//------------------------------------------------------------
 
- ARTICLE TEASER LIST & ARTICLE TAGS TEASER LIST
- 
------------------------------------------------------------------------
----------------------------------------------------------------------*/
+
 
 // list item 
 .article-row {
@@ -36,6 +39,18 @@
 	&:hover {
 		color: $link-hover-color;
 	}
+}
+
+
+/* list row content */
+.list .post-date {
+	font-size: 0.813em;
+	font-style: italic;
+}
+.list .media-thumb-item {
+	width: 160px;
+	float: left;
+	margin-right: 30px;
 }
 
 

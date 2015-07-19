@@ -1,3 +1,14 @@
+//----------------------------------------------
+//
+//	BUTTONS & LINKS - general styles for links
+//
+//	location: 
+//      /sass/base/_buttons_links.scss
+//
+//----------------------------------------------
+
+
+
 /*---------------------------------------------------------
 -----------------------------------------------------------
 
@@ -45,10 +56,10 @@ button,
 input[type="reset"], 
 input[type="submit"], 
 input[type="button"] {
-	@include button;
+	@include button; // sass/abstractions/_mixins-buttons.scss
 	
 	&:hover {
-		@include button-hover;
+		@include button-hover; // sass/abstractions/_mixins-buttons.scss
 	}
 }
 
