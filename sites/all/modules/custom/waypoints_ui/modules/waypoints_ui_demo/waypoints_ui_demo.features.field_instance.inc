@@ -10,9 +10,53 @@
 function waypoints_ui_demo_field_default_field_instances() {
   $field_instances = array();
 
-  // Exported field_instance: 'node-page-field_first_image'
-  $field_instances['node-page-field_first_image'] = array(
-    'bundle' => 'page',
+  // Exported field_instance: 'node-waypoints_ui_demo_page-body'
+  $field_instances['node-waypoints_ui_demo_page-body'] = array(
+    'bundle' => 'waypoints_ui_demo_page',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'hidden',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 8,
+      ),
+      'teaser' => array(
+        'label' => 'hidden',
+        'module' => 'text',
+        'settings' => array(
+          'trim_length' => 600,
+        ),
+        'type' => 'text_summary_or_trimmed',
+        'weight' => 1,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'body',
+    'label' => 'Body',
+    'required' => FALSE,
+    'settings' => array(
+      'display_summary' => TRUE,
+      'text_processing' => 1,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'module' => 'text',
+      'settings' => array(
+        'rows' => 20,
+        'summary_rows' => 5,
+      ),
+      'type' => 'text_textarea_with_summary',
+      'weight' => 12,
+    ),
+  );
+
+  // Exported field_instance: 'node-waypoints_ui_demo_page-field_first_image'
+  $field_instances['node-waypoints_ui_demo_page-field_first_image'] = array(
+    'bundle' => 'waypoints_ui_demo_page',
     'deleted' => 0,
     'description' => '',
     'display' => array(
@@ -60,9 +104,9 @@ function waypoints_ui_demo_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-page-field_first_text'
-  $field_instances['node-page-field_first_text'] = array(
-    'bundle' => 'page',
+  // Exported field_instance: 'node-waypoints_ui_demo_page-field_first_text'
+  $field_instances['node-waypoints_ui_demo_page-field_first_text'] = array(
+    'bundle' => 'waypoints_ui_demo_page',
     'default_value' => array(
       0 => array(
         'value' => 'Aging and sexuality bridesmaid bridewealth erotic literature exophilia gas mask fetishism gonadal dysgenesis in vitro fertilisation in vitro fertilization intermammary intercourse intrauterine device jock itch krukenberg tumor married love melasma ngu nulliparous pacte civil de solidarité purity ring situational sexual behaviour tanner stage vd. Shankle buttered bun continuous abstinence dolphin piercing eve principle fellatio genital mutilation hand-holding herpes simplex type ii hirsuties papillaris vulvae hormone impotentia coeundi luteinizing hormone membrana granulosa plaçage predicament bondage promiscuity rape rack rectum registered partnership reproduction sertoli-leydig cell tumor sexual activities unrequited love excuse me sir? you\'re sitting on my face... which is also my body..
@@ -106,9 +150,9 @@ Adrenocortical hormone anovulatory asphyxiaphilia attachment disorder bi-sexuali
     ),
   );
 
-  // Exported field_instance: 'node-page-field_fourth_text'
-  $field_instances['node-page-field_fourth_text'] = array(
-    'bundle' => 'page',
+  // Exported field_instance: 'node-waypoints_ui_demo_page-field_fourth_text'
+  $field_instances['node-waypoints_ui_demo_page-field_fourth_text'] = array(
+    'bundle' => 'waypoints_ui_demo_page',
     'default_value' => array(
       0 => array(
         'value' => 'seminivorous barracudina blobfish dwarf flier gulf halosaur hoki kahawai lancetfish madtom ragfish spinyfin stingfish enteroviruses hpiv philodemic zoophily revolved head-to-knee pose. I\'m a cop you idiot! if it bleeds, we can kill it. arctic beaked bluefin gianttail john triplespine cellulitis sporotrichosis sporothrix schenckii. Put the cookie down. amago pearl river burkholderia cepacia candida albicans coronaviruses. cjd prion legionella pneumophila leishmaniasis leishmania genus rickettsia typhi japanophilia. Back to the carpet. bastards. you belong to me. androphagy theophagy toxiphagous desert dojo hog lenok marine smoothtongue squarehead triplespine bunyaviridae sporotrichosis sporothrix schenckii visceral larva migrans west nile fever bibliophily chromophilous locust pose.
@@ -152,9 +196,9 @@ Fuck you. give you a lift? the first time in my life i am. foliophagous meconoph
     ),
   );
 
-  // Exported field_instance: 'node-page-field_second_image'
-  $field_instances['node-page-field_second_image'] = array(
-    'bundle' => 'page',
+  // Exported field_instance: 'node-waypoints_ui_demo_page-field_second_image'
+  $field_instances['node-waypoints_ui_demo_page-field_second_image'] = array(
+    'bundle' => 'waypoints_ui_demo_page',
     'deleted' => 0,
     'description' => '',
     'display' => array(
@@ -202,9 +246,9 @@ Fuck you. give you a lift? the first time in my life i am. foliophagous meconoph
     ),
   );
 
-  // Exported field_instance: 'node-page-field_second_text'
-  $field_instances['node-page-field_second_text'] = array(
-    'bundle' => 'page',
+  // Exported field_instance: 'node-waypoints_ui_demo_page-field_second_text'
+  $field_instances['node-waypoints_ui_demo_page-field_second_text'] = array(
+    'bundle' => 'waypoints_ui_demo_page',
     'default_value' => array(
       0 => array(
         'value' => 'Mary jane cogs rock me dolly evelina ewe franki janet jo milana samy shyla simona sophie stella viktoria. Duke licking the chops andy angelina britta caroline janine marietta romana sabrina tasha. Mezz alexcia alla claudia destiny dixie era jamie joana katika kelsie marcie nella. Dimebag hood mary jane thug zoot suittogged to the bricks alina camille erin eva ginger jade. Booty cream curb job fitty schooled ya skeets blip off-time jive ready amanda angellina dawnee erica ewe felicia janet lucky mae marion mercia rebecca sylvia tracey viky. Jo po polece evil fruiting anneli audrey celine destiny donna gabi manon marylon. Buggin\' word up cop rock me trickeration whipped up yarddog yeah, man alissa anya britta dana furry gily kari madi malia marci marsha milana nena philipina.
@@ -248,9 +292,9 @@ Canary cut out mitt pounding murder solid whipped up allyson debby elisha hotel 
     ),
   );
 
-  // Exported field_instance: 'node-page-field_third_image'
-  $field_instances['node-page-field_third_image'] = array(
-    'bundle' => 'page',
+  // Exported field_instance: 'node-waypoints_ui_demo_page-field_third_image'
+  $field_instances['node-waypoints_ui_demo_page-field_third_image'] = array(
+    'bundle' => 'waypoints_ui_demo_page',
     'deleted' => 0,
     'description' => '',
     'display' => array(
@@ -298,9 +342,9 @@ Canary cut out mitt pounding murder solid whipped up allyson debby elisha hotel 
     ),
   );
 
-  // Exported field_instance: 'node-page-field_third_text'
-  $field_instances['node-page-field_third_text'] = array(
-    'bundle' => 'page',
+  // Exported field_instance: 'node-waypoints_ui_demo_page-field_third_text'
+  $field_instances['node-waypoints_ui_demo_page-field_third_text'] = array(
+    'bundle' => 'waypoints_ui_demo_page',
     'default_value' => array(
       0 => array(
         'value' => 'It moves like it has a mind. actinograph bathythermograph chronoscope coulombmeter electroretinograph geothermometer helicograph microseismograph nephoscope radiogoniometer seismometer synchroscope tensiometer viscometer voltameter alice aloha anais brianna jessamine karolina keeley linet lucile regina rina sara wivien. Like they\'re actually proud of that shit. no? anemograph barometer phototelegraph radiometeorograph gianna gresy ivanka katerina leslie madeline megan misty redhead salma sany sue suzie. It moves like it has a mind. no? audiometer bronchoscope ceilometer colorimeter gastroscope olfactometer oometer plemyrameter plethysmograph pluviograph sphygmograph tromometer era erica jenny kylie mona nancy oliviya stella.
@@ -346,6 +390,7 @@ The path of the righteous man is beset on all sides by the iniquities of the sel
 
   // Translatables
   // Included for use with string extractors like potx.
+  t('Body');
   t('First Image');
   t('First Text');
   t('Fourth Text');
