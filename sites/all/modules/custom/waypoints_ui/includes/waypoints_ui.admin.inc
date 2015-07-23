@@ -11,8 +11,13 @@
  * Settings form.
  */
 function waypoints_ui_settings_form($form, $form_state) {
-  // Get the waypoints variable.
-  $waypoints = variable_get('waypoints_ui_waypoints', array());
+  // Get the current form waypoints.
+  if ($form_state['rebuild']) {
+    $waypoints = $form_state['values']['waypoints'];
+  }
+  else {
+    $waypoints = variable_get('waypoints_ui_waypoints', array());
+  }
 
   // Calculate the number of waypoint subforms.
   if (!empty($form_state['subform_count'])) {
@@ -21,6 +26,7 @@ function waypoints_ui_settings_form($form, $form_state) {
   else {
     $subform_count = max(1, empty($waypoints) ? 1 : count($waypoints));
   }
+
   // Ajax replaced wrapper.
   $form['waypoints_wrapper'] = array(
     '#type' => 'container',
@@ -34,25 +40,33 @@ function waypoints_ui_settings_form($form, $form_state) {
     '#tree' => TRUE,
   );
 
-
-  $delta = count($waypoints);
+  $i = 1;
   foreach($waypoints as $key => $waypoint) {
     $form['waypoints_wrapper']['waypoints'][$key] = array(
       '#type' => 'fieldset',
-      '#title' => t($key),
+      '#title' => t("Waypoint #$i"),
     );
+    $i++;
     $form['waypoints_wrapper']['waypoints'][$key] += waypoints_ui_admin_subform($key, $waypoint);
   }
 
   // Add a new subform if this is an ajax build of the main form.
-  $existing_delta = $delta;
-  for ($delta; $delta < $subform_count; $delta++) {
-    //$item = $delta-$existing_delta;
-    $key = "waypoint-{$delta}";
+  $num_waypoints = count($waypoints);
+  if ($subform_count > $num_waypoints) {
+    // Get the last key to determine the next one.
+    $keys = array_keys($waypoints);
+    if (!empty($keys)) {
+      $key = $keys[($num_waypoints-1)] + 1;
+    }
+    else {
+      $key = 0;
+    }
+    // Wrap the new subform in a fieldset.
     $form['waypoints_wrapper']['waypoints'][$key] = array(
       '#type' => 'fieldset',
-      '#title' => t($key),
+      '#title' => t('Waypoint #' . $subform_count),
     );
+    // Add the new subform.
     $form['waypoints_wrapper']['waypoints'][$key] += waypoints_ui_admin_subform($key);
   }
 
@@ -92,6 +106,7 @@ function waypoints_ui_admin_subform($key, $values=array()) {
     '#title' => t('Waypoint Element Selector'),
     '#description' => t('Enter the DOM selector on which a waypoint will be set.'),
     '#default_value' => (isset($values['attach_element'])) ? $values['attach_element'] : '',
+    //'#value' => (isset($values['attach_element'])) ? $values['attach_element'] : '',
     '#attributes' => array(
       'placeholder' => t("e.g. 'body', or 'div.whatever'"),
     ),
@@ -101,6 +116,7 @@ function waypoints_ui_admin_subform($key, $values=array()) {
     '#title' => t('Toggle Class'),
     '#description' => t('Enter the name of a class that will toggle on the toggle element.'),
     '#default_value' => (isset($values['toggle_class'])) ? $values['toggle_class'] : '',
+    //'#value' => (isset($values['toggle_class'])) ? $values['toggle_class'] : '',
     '#attributes' => array(
       'placeholder' => t("e.g. 'myclass', 'goo', or 'whatever'"),
     ),
@@ -110,12 +126,14 @@ function waypoints_ui_admin_subform($key, $values=array()) {
     '#title' => t('Toggle on same waypoint element?'),
     '#description' => t('If checked then the configured class will toggle on the same element the waypoint is attached to.'),
     '#default_value' => (isset($values['same_element'])) ? $values['same_element'] : 1,
+    //'#value' => (isset($values['same_element'])) ? $values['same_element'] : 1,
   );
   $form['toggle_element'] = array(
     '#type' => 'textfield',
     '#title' => t('Toggle Element Selector'),
     '#description' => t('Enter the DOM selector that will toggle on the toggle class.'),
     '#default_value' => (isset($values['toggle_element'])) ? $values['toggle_element'] : '',
+    //'#value' => (isset($values['toggle_element'])) ? $values['toggle_element'] : '',
     '#attributes' => array(
       'placeholder' => t("e.g. 'body', or 'div.whatever'"),
     ),
@@ -130,6 +148,7 @@ function waypoints_ui_admin_subform($key, $values=array()) {
     '#title' => t('Toggle Offset'),
     '#description' => t('Enter the percentage of the viewport that the toggle element must pass to trigger the waypoint. Defaults to 0% (top of the view port).'),
     '#default_value' => (isset($values['toggle_offset'])) ? $values['toggle_offset'] : 0,
+    //'#value' => (isset($values['toggle_offset'])) ? $values['toggle_offset'] : 0,
     '#element_validate' => array('element_validate_number'),
     '#field_suffix' => '%',
   );
@@ -169,6 +188,15 @@ function waypoints_ui_delete_waypoint_submit($form, &$form_state) {
   $form_state['subform_count'] = count($form_state['values']['waypoints']) - 1;
   $form_state['values']['waypoints'][$form_state['triggering_element']['#parents'][1]] = FALSE;
   $form_state['values']['waypoints'] = array_filter($form_state['values']['waypoints']);
+  /*
+  // Refactor the waypoints array to just a serial list. Uncomplicates form build.
+  $i = 1;
+  $new_waypoints = array();
+  foreach($form_state['values']['waypoints'] as $waypoint) {
+    $new_waypoints['waypoint-' .  $i++] = $waypoint;
+  }
+  $form_state['values']['waypoints'] = $new_waypoints;
+  */
   waypoints_ui_settings_form_submit($form, $form_state);
   $form_state['rebuild'] = TRUE;
 }
@@ -192,5 +220,5 @@ function waypoints_ui_settings_form_submit($form, $form_state) {
     $waypoints[$key] = $waypoint;
   }
   variable_set('waypoints_ui_waypoints', $waypoints);
-  drupal_set_message(t('Waypoints saved!'), 'status');
+  drupal_set_message(t('Waypoints saved!'), 'status', FALSE);
 }

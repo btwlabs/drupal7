@@ -1,9 +1,5 @@
 /* waypoints_ui_demo.css */
-
-.page-node #content {
-    height: 1000px;
-}
-.node-page .field {
+.node-page .field-type-image {
     opacity: 0;
     -webkit-transition: opacity 0.2s ease-in;
     -moz-transition: opacity 0.2s ease-in;
