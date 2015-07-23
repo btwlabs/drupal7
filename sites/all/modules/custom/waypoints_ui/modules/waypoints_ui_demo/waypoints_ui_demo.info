@@ -1,0 +1,14 @@
+name = Waypoints UI Demo
+description = A small demo of the waypoints_ui module
+core = 7.x
+package = Features
+dependencies[] = ctools
+dependencies[] = features
+dependencies[] = image
+dependencies[] = strongarm
+features[ctools][] = strongarm:strongarm:1
+features[features_api][] = api:2
+features[field_base][] = field_images
+features[field_instance][] = node-page-field_images
+features[variable][] = waypoints_ui_waypoints
+stylesheets[all][] = css/waypoints_ui_demo.css

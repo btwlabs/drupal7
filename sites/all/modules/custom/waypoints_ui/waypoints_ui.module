@@ -12,11 +12,11 @@ function waypoints_ui_init() {
   $waypoints = variable_get('waypoints_ui_waypoints', array());
   // Convert waypoint settings into Drupal js setting.
   foreach($waypoints as $key => $waypoint) {
-    $settings['waypointsUI'][$key]['attach_element'] = $waypoint['attach_element'];
-    $settings['waypointsUI'][$key]['toggle_class'] = $waypoint['toggle_class'];
-    $settings['waypointsUI'][$key]['toggle_offset'] = $waypoint['toggle_offset'];
-    $settings['waypointsUI'][$key]['same_element'] = $waypoint['same_element'];
-    $settings['waypointsUI'][$key]['toggle_element'] = $waypoint['toggle_element'];
+    $settings['waypointsUI'][$waypoint['attach_element']]['attach_element'] = $waypoint['attach_element'];
+    $settings['waypointsUI'][$waypoint['attach_element']]['toggle_class'] = $waypoint['toggle_class'];
+    $settings['waypointsUI'][$waypoint['attach_element']]['toggle_offset'] = $waypoint['toggle_offset'];
+    $settings['waypointsUI'][$waypoint['attach_element']]['same_element'] = $waypoint['same_element'];
+    $settings['waypointsUI'][$waypoint['attach_element']]['toggle_element'] = $waypoint['toggle_element'];
   }
   drupal_add_js($settings, 'setting');
 }
