@@ -283,18 +283,17 @@ a.nav-close-btn {
 		display: block;
 		text-decoration: none;
 		width: auto;
-		color: $nav-text-color;
-		@include border-bottom($border-color);
+		color: $mobile-nav-text-color;
+		@include border-bottom($mobile-nav-border-color);
 		@include font-size(18px);
-	}
-	
-	& a:hover {
-		background-color: $nav-button-bg-hover-color;
-		color: $nav-text-hover-color;
-		text-decoration: none;
-	}
-	& a.active {
-		color: $nav-text-color;
+		
+		&:hover,
+		&:active {
+			background-color: $mobile-nav-bg-hover-color;
+			color: $mobile-nav-text-hover-color;
+			text-decoration: none;
+		}
+		
 	}
 }
 
