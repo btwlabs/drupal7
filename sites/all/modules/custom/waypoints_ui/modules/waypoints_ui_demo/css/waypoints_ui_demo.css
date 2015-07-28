@@ -1,17 +1,13 @@
 /* waypoints_ui_demo.css */
-.node-page .field-type-image {
-    opacity: 0;
-    -webkit-transition: opacity 0.2s ease-in;
-    -moz-transition: opacity 0.2s ease-in;
-    -o-transition: opacity 0.2s ease-in;
-    transition: opacity 0.2s ease-in;
-    height: 0;
-    overflow: hidden
+.node-type-waypoints-ui-demo-page .field {
+    opacity: .1;
+    -webkit-transition: opacity 1s ease-in;
+    -moz-transition: opacity 1s ease-in;
+    -o-transition: opacity 1s ease-in;
+    transition: opacity 1s ease-in;
 }
-.node-page .field.waypoints-ui-visible {
+.node-type-waypoints-ui-demo-page .field.waypoints-ui-visible {
     opacity: 1;
     $opacity-ie: $1 * 100;
     filter: alpha(opacity=1);
-    height: auto;
-    overflow: visible;
 }

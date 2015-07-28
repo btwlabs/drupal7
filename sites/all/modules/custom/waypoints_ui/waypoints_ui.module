@@ -22,20 +22,6 @@ function waypoints_ui_init() {
 }
 
 /**
- * Implements hook_permission().
- */
-function waypoints_ui_permission() {
-  $permissions = array();
-  $permissions['configure waypoints_ui'] = array(
-    'title' => t('Configure Waypoints UI'),
-    'description' => t('Allows a user to add waypoint bindings using the ui'),
-    'restrict access' => TRUE,
-    'warning' => t('Giving this permission to some users could result in some funky-ass website behaviors.')
-  );
-  return $permissions;
-}
-
-/**
  * Implements hook_menu().
  */
 function waypoints_ui_menu() {
@@ -43,7 +29,7 @@ function waypoints_ui_menu() {
   $items['admin/config/user-interface/waypoints/ui'] = array(
     'type' => MENU_LOCAL_TASK,
     'title' => t('Waypoints UI'),
-    'access arguments' => array('configure waypoints_ui'),
+    'access arguments' => array('configure waypoints module'),
     'page callback' => 'drupal_get_form',
     'page arguments' => array('waypoints_ui_settings_form'),
     'file' => 'includes/waypoints_ui.admin.inc',

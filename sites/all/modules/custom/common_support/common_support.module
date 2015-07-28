@@ -258,6 +258,153 @@ function common_support_preprocess_html(&$vars) {
   }
 }
 
+
+/**
+ * Implements hook_field_formatter_info().
+ */
+function common_support_field_formatter_info() {
+  return array(
+    'common_support_schema_list' => array(
+      'label' => t("Schema List"),
+      'field types' => array('text', 'text_long'),
+      'settings' => array(
+        'common_support_list_type' => 'ul',
+        'common_support_list_class' => 'common-support-list',
+        'common_support_list_itemprop' => '',
+      ),
+    ),
+  );
+}
+
+
+/**
+ * Implements hook_field_formatter_Settings_form().
+ */
+function common_support_field_formatter_settings_form($field, $instance, $view_mode, $form, &$form_state) {
+  $display = $instance['display'][$view_mode];
+  $settings = $display['settings'];
+  $form = array();
+
+  if ($display['type'] == 'common_support_schema_list') {
+    $form['common_support_list_type'] = array(
+      '#title' => t("List type"),
+      '#type' => 'select',
+      '#options' => array(
+        'ul' => t("Unordered HTML list (ul)"),
+        'ol' => t("Ordered HTML list (ol)"),
+        'comma' => t("Comma separated list"),
+      ),
+      '#default_value' => $settings['common_support_list_type'],
+      '#required' => TRUE,
+    );
+    $form['common_support_list_itemprop'] = array(
+      '#title' => t("itemProp"),
+      '#type' => 'textfield',
+      '#default_value' => $settings['common_support_list_itemprop'],
+      '#required' => TRUE,
+    );
+    $form['common_support_list_class'] = array(
+      '#title' => t("List classes"),
+      '#type' => 'textfield',
+      '#size' => 40,
+      '#description' => t("A CSS class to use in the markup for the field list."),
+      '#default_value' => $settings['common_support_list_class'],
+      '#required' => FALSE,
+    );
+  }
+
+  $context = array(
+    'field' => $field,
+    'instance' => $instance,
+    'view_mode' => $view_mode
+  );
+  drupal_alter('common_support_field_formatter_settings_form', $form, $form_state, $context);
+
+  return $form;
+}
+
+
+/**
+ * Implements hook_field_formatter_settings_summary().
+ */
+function common_support_field_formatter_settings_summary($field, $instance, $view_mode) {
+  $display = $instance['display'][$view_mode];
+  $settings = $display['settings'];
+
+  $summary = array();
+
+  if ($display['type'] == 'common_support_schema_list') {
+    switch ($settings['common_support_list_type']) {
+      case 'ul':
+        $summary[] = t("Unordered HTML list");
+        break;
+      case 'ol':
+        $summary[] = t("Ordered HTML list");
+        break;
+    }
+
+    if ($settings['common_support_list_class']) {
+      $summary[] = t("CSS Class") . ': <em>' . check_plain($settings['common_support_list_class']) . '</em>';
+    }
+
+    if ($settings['common_support_list_itemprop']) {
+      $summary[] = t("Schema itemProp") . ': <em>' . check_plain($settings['common_support_list_itemprop']) . '</em>';
+    }
+
+    $summary = theme('item_list', array('type' => 'ul', 'items' => $summary));
+  }
+
+  return $summary;
+}
+
+/**
+ * Implements hook_field_formatter_view().
+ */
+function common_support_field_formatter_view($entity_type, $entity, $field, $instance, $langcode, $items, $display) {
+  if ($display['type'] == 'common_support_schema_list') {
+    $settings = $display['settings'];
+    $element = $list_items = array();
+    $itemprop = $settings['common_support_list_itemprop'];
+
+    if ($field['type'] == 'text_long') {
+      foreach ($items as $delta => $item) {
+        // Explode on new line char, trim whitespace (if any), then array filter (So any empty lines will actually be removed).
+        $long_text_items = array_filter(array_map('trim', explode("\n", $item['value'])));
+        foreach ($long_text_items as $long_text_item) {
+          // @see _text_sanitize(), text.module
+          $list_item = ($instance['settings']['text_processing'] ? check_markup($long_text_item, $item['format'], $langcode) : field_filter_xss($long_text_item));
+          $list_items[] = '<span itemprop="' . $itemprop . '">' . $list_item . '</span>';
+        }
+      }
+    }
+    else {
+      foreach ($items as $delta => $item) {
+        $list_item = ($item['format'] ? check_markup($item['value'], $item['format'], $langcode) : field_filter_xss($item['value']));
+        $list_items[] = '<span itemprop="' . $itemprop . '">' . $list_item . '</span>';
+      }
+    }
+
+    // CSS classes are checked for validity on submission. drupal_attributes()
+    // runs each attribute value through check_plain().
+    $classes = explode(' ', $settings['common_support_list_class']);
+    switch ($settings['common_support_list_type']) {
+      case 'ul':
+      case 'ol':
+        // Render elements as one piece of markup and theme as item list.
+        $element[0] = array(
+          '#theme' => 'item_list',
+          '#type' => $settings['common_support_list_type'],
+          '#items' => $list_items,
+          '#attributes' => array(
+            'class' => $classes,
+          ),
+        );
+        break;
+    }
+  }
+  return $element;
+}
+
 /**
  * Checks a view element for a result.
  * Views always returns html whether or not there are results.
