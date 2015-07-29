@@ -69,6 +69,12 @@ h1.site-name {
  
 -----------------------------------*/
 
+// container for close menu button
+.l-menu-mobile-top {
+	background-color: $mobile-nav-close-btn-bg;
+	height: 50px;
+}
+
 // open menu - button
 a.nav-open-btn {
     left: 0px;
@@ -114,7 +120,7 @@ a.nav-close-btn {
 	color: $mobile-nav-bg-color;
 	@include font-size(12px);
 	line-height: 1;
-	color: #999;
+	color: $mobile-nav-close-text-color;
 	height: 50px;
 	
 	&:hover {
@@ -252,11 +258,6 @@ a.nav-close-btn {
     }
 }
 
-// container for close menu button
-.l-menu-mobile-top {
-	background-color: $mobile-nav-close-btn-bg;
-	height: 50px;
-}
 
 
 /*------------------------------------
