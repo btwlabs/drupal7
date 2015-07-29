@@ -201,7 +201,7 @@ a#entity-pager-next-link {
 
 .back-to-river-link-container {
 	position: absolute;
-	@include translate-centerX;
+	@include centerX;
 }
 a.back-to-river-link {
 	overflow: hidden;
