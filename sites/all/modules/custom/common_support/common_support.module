@@ -386,7 +386,7 @@ function common_support_field_formatter_view($entity_type, $entity, $field, $ins
 
     // CSS classes are checked for validity on submission. drupal_attributes()
     // runs each attribute value through check_plain().
-    $classes = explode(' ', $settings['common_support_list_class']);
+    $classes = (!($settings['common_support_list_class'] == '')) ? explode(' ', $settings['common_support_list_class']) : array();
     switch ($settings['common_support_list_type']) {
       case 'ul':
       case 'ol':
@@ -395,10 +395,12 @@ function common_support_field_formatter_view($entity_type, $entity, $field, $ins
           '#theme' => 'item_list',
           '#type' => $settings['common_support_list_type'],
           '#items' => $list_items,
-          '#attributes' => array(
-            'class' => $classes,
-          ),
         );
+        if (!empty($classes)) {
+          $element[0]['#attributes'] = array(
+            'class' => $classes,
+          );
+        }
         break;
     }
   }
