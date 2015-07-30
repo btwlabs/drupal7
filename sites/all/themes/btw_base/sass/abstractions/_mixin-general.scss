@@ -17,11 +17,24 @@
 	transition: $property $time $function;
 }
 
-// Transform - translate (center)
-@mixin translate-centerX {
+// Transform - translate (centerX)
+@mixin centerX {
 	left: 50%;
 	-webkit-transform: translateX(-50%);
 	transform: translateX(-50%);
+}
+// Transform - translate (centerY)
+@mixin centerY {
+	top: 50%;
+	-webkit-transform: translateY(-50%);
+	transform: translateY(-50%);
+}
+// Transform - translate (centerXY)
+@mixin centerXY {
+	top: 50%;
+	left: 50%;
+	-webkit-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
 }
 
 // transition opacity only
