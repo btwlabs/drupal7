@@ -82,28 +82,6 @@ function common_support_menu() {
 }
 
 /**
- * Implements hook_entity_info_alter().
- */
-function common_support_entity_info_alter(&$entity_info) {
-  $entity_info['node']['view modes']['teaser2'] = array(
-    'label' => t('Another teaser mode'),
-    'custom settings' => FALSE,
-  );
-  $entity_info['node']['view modes']['teaser3'] = array(
-    'label' => t('Another teaser mode 2'),
-    'custom settings' => FALSE,
-  );
-  $entity_info['node']['view modes']['teaser4'] = array(
-    'label' => t('Another teaser mode 3'),
-    'custom settings' => FALSE,
-  );
-  $entity_info['node']['view modes']['teaser5'] = array(
-    'label' => t('Another teaser mode 4'),
-    'custom settings' => FALSE,
-  );
-}
-
-/**
  * Implements hook_form_FORM_ID_alter().
  */
 function common_support_form_system_site_information_settings_alter(&$form, $form_state) {
