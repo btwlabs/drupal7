@@ -2135,27 +2135,21 @@ a.related-node-product-buy-link:before {
   font-size: 0.813em;
   font-style: italic; }
 
-/* line 50, ../sass/components/articles/_article-teaser.scss */
-.list .media-thumb-item {
-  width: 160px;
-  float: left;
-  margin-right: 30px; }
-
 /*--------------------------
 
  article tags
  
 ----------------------------*/
-/* line 64, ../sass/components/articles/_article-teaser.scss */
+/* line 59, ../sass/components/articles/_article-teaser.scss */
 #article-tags-container {
   font-size: 12px;
   font-size: 0.75rem;
   font-style: normal;
   margin: 20px 0; }
-  /* line 70, ../sass/components/articles/_article-teaser.scss */
+  /* line 65, ../sass/components/articles/_article-teaser.scss */
   #article-tags-container .field--name-field-tags .field__items {
     overflow: hidden; }
-    /* line 73, ../sass/components/articles/_article-teaser.scss */
+    /* line 68, ../sass/components/articles/_article-teaser.scss */
     #article-tags-container .field--name-field-tags .field__items:before {
       content: "\e004";
       font-family: IcoMoonBasic;
@@ -2165,11 +2159,11 @@ a.related-node-product-buy-link:before {
       vertical-align: middle;
       font-style: normal;
       display: inline-block; }
-  /* line 85, ../sass/components/articles/_article-teaser.scss */
+  /* line 80, ../sass/components/articles/_article-teaser.scss */
   #article-tags-container .field--name-field-tags .field__item {
     margin: 0 8px 0 0;
     display: inline-block; }
-    /* line 89, ../sass/components/articles/_article-teaser.scss */
+    /* line 84, ../sass/components/articles/_article-teaser.scss */
     #article-tags-container .field--name-field-tags .field__item a {
       width: auto;
       text-align: center;
@@ -2177,17 +2171,17 @@ a.related-node-product-buy-link:before {
       margin: 0;
       text-decoration: underline; }
 
-/* line 100, ../sass/components/articles/_article-teaser.scss */
+/* line 95, ../sass/components/articles/_article-teaser.scss */
 .article-node-teaser .media-thumb-item {
   float: left;
   margin-right: 4%;
   width: 28%; }
 
-/* line 122, ../sass/components/articles/_article-teaser.scss */
+/* line 117, ../sass/components/articles/_article-teaser.scss */
 .article-row p:last-child {
   margin-bottom: 0; }
 
-/* line 127, ../sass/components/articles/_article-teaser.scss */
+/* line 122, ../sass/components/articles/_article-teaser.scss */
 .addthis_sharing_toolbox {
   max-height: 32px; }
 
@@ -2197,12 +2191,12 @@ a.related-node-product-buy-link:before {
 
 -------------------------------------------------------*/
 /* make taxonomy page title smaller to fit better if longer */
-/* line 138, ../sass/components/articles/_article-teaser.scss */
+/* line 133, ../sass/components/articles/_article-teaser.scss */
 .page-taxonomy h1 {
   font-size: 2.250em; }
 
 /* -- place a tag icon before page title on taxonomy page*/
-/* line 143, ../sass/components/articles/_article-teaser.scss */
+/* line 138, ../sass/components/articles/_article-teaser.scss */
 .page-taxonomy .l-content h1:before {
   content: "\e004";
   font-family: IcoMoonBasic;
