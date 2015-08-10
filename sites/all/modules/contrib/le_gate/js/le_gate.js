@@ -27,7 +27,7 @@
                 var day = $('#edit-le-gate-selected-date-day').val();
                 var year = $('#edit-le-gate-selected-date-year').val();
                 var query = '?month=' + month + '&day=' + day + '&year=' + year;
-                $.get('le-gate/eval-date' + query, function(data) {
+                $.get('/le-gate/eval-date' + query, function(data) {
                     if (data == 1) {
                         setLeGateCookie();
                         window.location = requestPath;
@@ -38,7 +38,7 @@
                 });
             });
             // Check path.
-            $.get('le-gate/eval-path?le-gate-request-path=' + currentPath, function(data) {
+            $.get('/le-gate/eval-path?le-gate-request-path=' + currentPath, function(data) {
                 if ((data == 1) && (getLeGateCookie() == null)) {
                     window.location = '/le-gate';
                 }
