@@ -17,10 +17,10 @@ function common_support_default_variable_assets() {
   $strongarm->value = 'clearfix
 clickable
 clickable-select
-teaser-grid
-teaser-list
-teaser-grid-row
-teaser-list-row
+grid
+list
+grid-row
+list-row
 node-content-container
 omega-mobile-only
 omega-narrow-only

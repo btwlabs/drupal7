@@ -9,7 +9,7 @@
   <?php if (!empty($title)) : ?>
     <h3><?php print $title; ?></h3>
   <?php endif; ?>
-  <ul class="common-support-teaser-list">
+  <ul class="common-support-list">
     <?php foreach ($rows as $id => $row): ?>
       <li class="<?php print $classes_array[$id]; ?> list-row"><?php print $row; ?></li>
     <?php endforeach; ?>
