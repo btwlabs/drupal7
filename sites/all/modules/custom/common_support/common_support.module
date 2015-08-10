@@ -105,6 +105,16 @@ function common_support_menu() {
 }
 
 /**
+ * Implements hook_menu_alter().
+ * Have to force /search/node to use a correct
+ * title otherwise it defaults to the homepage title.
+ */
+function common_support_menu_alter(&$items) {
+  $items['search/node']['title'] = t('Search');
+  $items['search/node']['type'] = MENU_NORMAL_ITEM;
+}
+
+/**
  * Implements hook_form_FORM_ID_alter().
  */
 function common_support_form_system_site_information_settings_alter(&$form, $form_state) {
