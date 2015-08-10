@@ -27,7 +27,9 @@ input[type="checkbox"] {
 	margin-right: 10px;
 }
 input[type="text"],
-input.form-text {
+input[type="email"],
+input.form-text,
+textarea  {
 	max-width: 100%;
 	padding: 10px;
 }
