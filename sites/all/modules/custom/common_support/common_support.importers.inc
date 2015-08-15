@@ -436,17 +436,9 @@ function common_support_import_entityqueue($export = array(), $module = 'common_
   }
   foreach($export as $entityqueue) {
     // Look for existing nodequeue.
-    /*if (!entityqueue_load_queue_by_name($entityqueue['name'])) {
+    if (!entityqueue_queue_load($entityqueue->name)) {
       // Assign the existing qid if a nodequeue with the same name already exists.
-      $map = common_support_nodequeue_get_qid_map();
-      if (isset($map[$nodequeue['name']])) {
-        $nodequeue['qid'] = $map[$nodequeue['name']];
-      }
-      // Clear the qid if it is a new nodequeue.
-      else {
-        unset($nodequeue['qid']);
-      }
-      if(common_support_nodequeue_save_queue((array) $nodequeue)) {
+      if(entityqueue_queue_save($entityqueue)) {
         continue;
       }
       else {
@@ -455,7 +447,7 @@ function common_support_import_entityqueue($export = array(), $module = 'common_
     }
     else {
       return COMMON_SUPPORT_IMPORT_ASSET_EXISTS;
-    }*/
+    }
   }
   return COMMON_SUPPORT_IMPORT_SUCCESS;
 }

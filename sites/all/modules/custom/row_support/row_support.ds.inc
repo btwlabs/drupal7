@@ -12,27 +12,6 @@ function row_support_ds_field_settings_info() {
 
   $ds_fieldsetting = new stdClass();
   $ds_fieldsetting->api_version = 1;
-  $ds_fieldsetting->id = 'node|page|full';
-  $ds_fieldsetting->entity_type = 'node';
-  $ds_fieldsetting->bundle = 'page';
-  $ds_fieldsetting->view_mode = 'full';
-  $ds_fieldsetting->settings = array(
-    'title' => array(
-      'weight' => '0',
-      'label' => 'hidden',
-      'format' => 'default',
-      'formatter_settings' => array(
-        'link' => '0',
-        'wrapper' => 'h1',
-        'class' => 'title',
-        'ft' => array(),
-      ),
-    ),
-  );
-  $export['node|page|full'] = $ds_fieldsetting;
-
-  $ds_fieldsetting = new stdClass();
-  $ds_fieldsetting->api_version = 1;
   $ds_fieldsetting->id = 'node|row|default';
   $ds_fieldsetting->entity_type = 'node';
   $ds_fieldsetting->bundle = 'row';
@@ -73,6 +52,49 @@ function row_support_ds_field_settings_info() {
     ),
   );
   $export['node|row|default'] = $ds_fieldsetting;
+
+  $ds_fieldsetting = new stdClass();
+  $ds_fieldsetting->api_version = 1;
+  $ds_fieldsetting->id = 'node|row|full';
+  $ds_fieldsetting->entity_type = 'node';
+  $ds_fieldsetting->bundle = 'row';
+  $ds_fieldsetting->view_mode = 'full';
+  $ds_fieldsetting->settings = array(
+    'empty_space' => array(
+      'weight' => '2',
+      'label' => 'hidden',
+      'format' => 'default',
+      'formatter_settings' => array(
+        'ft' => array(
+          'func' => 'theme_ds_field_reset',
+        ),
+      ),
+    ),
+    'mobile_row_image' => array(
+      'weight' => '0',
+      'label' => 'hidden',
+      'format' => 'default',
+      'formatter_settings' => array(
+        'show_title' => 0,
+        'title_wrapper' => '',
+        'ctools' => 'a:3:{s:4:"conf";a:10:{s:5:"label";s:6:"hidden";s:9:"formatter";s:5:"image";s:11:"delta_limit";s:1:"1";s:12:"delta_offset";s:1:"0";s:14:"delta_reversed";i:0;s:18:"formatter_settings";a:2:{s:11:"image_style";s:0:"";s:10:"image_link";s:0:"";}s:7:"context";s:25:"argument_entity_id:node_1";s:14:"override_title";i:0;s:19:"override_title_text";s:0:"";s:22:"override_title_heading";s:2:"h2";}s:4:"type";s:12:"entity_field";s:7:"subtype";s:21:"node:field_row_images";}',
+        'load_terms' => 0,
+        'ft' => array(),
+      ),
+    ),
+    'title' => array(
+      'weight' => '3',
+      'label' => 'hidden',
+      'format' => 'default',
+      'formatter_settings' => array(
+        'link' => '0',
+        'wrapper' => 'h2',
+        'class' => 'title',
+        'ft' => array(),
+      ),
+    ),
+  );
+  $export['node|row|full'] = $ds_fieldsetting;
 
   $ds_fieldsetting = new stdClass();
   $ds_fieldsetting->api_version = 1;
@@ -631,7 +653,7 @@ function row_support_ds_layout_settings_info() {
 /**
  * Implements hook_ds_view_modes_info().
  */
-function btw_evermind_ds_view_modes_info() {
+function row_support_ds_view_modes_info() {
   $export = array();
 
   $ds_view_mode = new stdClass();

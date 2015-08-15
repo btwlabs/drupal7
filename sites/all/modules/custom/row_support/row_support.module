@@ -14,7 +14,7 @@ function row_support_common_support_import() {
     'field_instance',
     'variable',
     'image_style',
-    //'entityqueue',
+    'entityqueue',
   );
 }
 

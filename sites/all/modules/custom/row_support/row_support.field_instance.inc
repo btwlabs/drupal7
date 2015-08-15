@@ -24,6 +24,13 @@ function row_support_default_field_instance_assets() {
         'type' => 'text_default',
         'weight' => 4,
       ),
+      'full' => array(
+        'label' => 'hidden',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 3,
+      ),
       'left_bg_image_row' => array(
         'label' => 'hidden',
         'module' => 'text',
@@ -80,6 +87,27 @@ function row_support_default_field_instance_assets() {
     'description' => '',
     'display' => array(
       'default' => array(
+        'label' => 'hidden',
+        'module' => 'bg_image_formatter',
+        'settings' => array(
+          'css_settings' => array(
+            'bg_image_attachment' => 'scroll',
+            'bg_image_background_size' => '',
+            'bg_image_background_size_ie8' => 0,
+            'bg_image_color' => '#FFFFFF',
+            'bg_image_important' => 1,
+            'bg_image_media_query' => 'all',
+            'bg_image_repeat' => 'no-repeat',
+            'bg_image_selector' => '.node-nid-[node:nid]',
+            'bg_image_x' => 'left',
+            'bg_image_y' => 'top',
+          ),
+          'image_style' => '',
+        ),
+        'type' => 'bg_image_formatter',
+        'weight' => 1,
+      ),
+      'full' => array(
         'label' => 'hidden',
         'module' => 'bg_image_formatter',
         'settings' => array(
@@ -224,6 +252,12 @@ function row_support_default_field_instance_assets() {
         'type' => 'hidden',
         'weight' => 16,
       ),
+      'full' => array(
+        'label' => 'hidden',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 16,
+      ),
       'left_bg_image_row' => array(
         'label' => 'hidden',
         'module' => 'link',
@@ -306,6 +340,12 @@ function row_support_default_field_instance_assets() {
     'display' => array(
       'default' => array(
         'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 14,
+      ),
+      'default' => array(
+        'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 14,
