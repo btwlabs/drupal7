@@ -423,4 +423,41 @@ function common_support_import_nodequeue($export = array(), $module = 'common_su
   return COMMON_SUPPORT_IMPORT_SUCCESS;
 }
 
+/**
+ * Imports entityqueues from a (features)-style import.
+ * @param array $export
+ *   Array of entityqueues.
+ * @return bool
+ *   TRUE on success, FALSE on failure.
+ */
+function common_support_import_entityqueue($export = array(), $module = 'common_support') {
+  if (empty($export)) {
+    return COMMON_SUPPORT_EXPORT_MALFORMED;
+  }
+  foreach($export as $entityqueue) {
+    // Look for existing nodequeue.
+    /*if (!entityqueue_load_queue_by_name($entityqueue['name'])) {
+      // Assign the existing qid if a nodequeue with the same name already exists.
+      $map = common_support_nodequeue_get_qid_map();
+      if (isset($map[$nodequeue['name']])) {
+        $nodequeue['qid'] = $map[$nodequeue['name']];
+      }
+      // Clear the qid if it is a new nodequeue.
+      else {
+        unset($nodequeue['qid']);
+      }
+      if(common_support_nodequeue_save_queue((array) $nodequeue)) {
+        continue;
+      }
+      else {
+        return COMMON_SUPPORT_IMPORT_SAVE_ERROR;
+      }
+    }
+    else {
+      return COMMON_SUPPORT_IMPORT_ASSET_EXISTS;
+    }*/
+  }
+  return COMMON_SUPPORT_IMPORT_SUCCESS;
+}
+
 //@todo add delete functions.

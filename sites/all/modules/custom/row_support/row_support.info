@@ -1,0 +1,14 @@
+name = Row Support
+description = Provides a framework for creation of display rows
+core = 7.x
+package = BTW
+dependencies[] = bg_image_formatter
+dependencies[] = ds_extras
+dependencies[] = entityqueue
+dependencies[] = filter
+dependencies[] = imagecache_actions
+dependencies[] = link
+dependencies[] = multiupload_imagefield_widget
+dependencies[] = text
+dependencies[] = video_embed_field
+dependencies[] = views

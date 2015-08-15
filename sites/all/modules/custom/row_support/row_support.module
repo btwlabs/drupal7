@@ -1,0 +1,33 @@
+<?php
+/**
+ * @file
+ * Code for the row support module.
+ */
+
+/**
+ * Implements hook_common_support_import().
+ */
+function row_support_common_support_import() {
+  return array(
+    'node_type',
+    'field_base',
+    'field_instance',
+    'variable',
+    'image_style',
+    //'entityqueue',
+  );
+}
+
+/**
+ * Implements hook_ctools_plugin_api().
+ */
+function row_support_ctools_plugin_api($module = NULL, $api = NULL) {
+  return common_support_ctools_plugin_api($module, $api);
+}
+
+/**
+ * Implements hook_views_api().
+ */
+function row_support_views_api($module = NULL, $api = NULL) {
+  return common_support_views_api($module, $api);
+}
