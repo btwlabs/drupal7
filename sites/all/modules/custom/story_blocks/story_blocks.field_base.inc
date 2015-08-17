@@ -7,16 +7,16 @@
 /**
  * Implements hook_default_field_base_assets().
  */
-function row_support_default_field_base_assets() {
+function story_blocks_default_field_base_assets() {
   $field_bases = array();
 
-  // Exported field_base: 'field_row_images'
-  $field_bases['field_row_images'] = array(
+  // Exported field_base: 'field_story_block_images'
+  $field_bases['field_story_block_images'] = array(
     'active' => 1,
     'cardinality' => -1,
     'deleted' => 0,
     'entity_types' => array(),
-    'field_name' => 'field_row_images',
+    'field_name' => 'field_story_block_images',
     'indexes' => array(
       'fid' => array(
         0 => 'fid',
@@ -32,13 +32,13 @@ function row_support_default_field_base_assets() {
     'type' => 'image',
   );
 
-  // Exported field_base: 'field_row_link'
-  $field_bases['field_row_link'] = array(
+  // Exported field_base: 'field_story_block_link'
+  $field_bases['field_story_block_link'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
-    'field_name' => 'field_row_link',
+    'field_name' => 'field_story_block_link',
     'indexes' => array(),
     'locked' => 0,
     'module' => 'link',
@@ -61,13 +61,13 @@ function row_support_default_field_base_assets() {
     'type' => 'link_field',
   );
 
-  // Exported field_base: 'field_row_videos'
-  $field_bases['field_row_videos'] = array(
+  // Exported field_base: 'field_story_block_videos'
+  $field_bases['field_story_block_videos'] = array(
     'active' => 1,
     'cardinality' => -1,
     'deleted' => 0,
     'entity_types' => array(),
-    'field_name' => 'field_row_videos',
+    'field_name' => 'field_story_block_videos',
     'indexes' => array(),
     'locked' => 0,
     'module' => 'video_embed_field',

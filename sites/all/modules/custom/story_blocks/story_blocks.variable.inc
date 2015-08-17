@@ -1,42 +1,42 @@
 <?php
 /**
  * @file
- * row_support.variable.inc
+ * story_blocks.variable.inc
  */
 
 /**
  * Implements hook_default_variable_assets().
  */
-function row_support_default_variable_assets() {
+function story_blocks_default_variable_assets() {
   $export = array();
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'comment_anonymous_row';
+  $strongarm->name = 'comment_anonymous_story_block';
   $strongarm->value = 0;
-  $export['comment_anonymous_row'] = $strongarm;
+  $export['comment_anonymous_story_block'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'comment_default_mode_row';
+  $strongarm->name = 'comment_default_mode_story_block';
   $strongarm->value = 1;
-  $export['comment_default_mode_row'] = $strongarm;
+  $export['comment_default_mode_story_block'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'comment_default_per_page_row';
+  $strongarm->name = 'comment_default_per_page_story_block';
   $strongarm->value = '50';
-  $export['comment_default_per_page_row'] = $strongarm;
+  $export['comment_default_per_page_story_block'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'comment_form_location_row';
+  $strongarm->name = 'comment_form_location_story_block';
   $strongarm->value = 1;
-  $export['comment_form_location_row'] = $strongarm;
+  $export['comment_form_location_story_block'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
@@ -48,23 +48,23 @@ function row_support_default_variable_assets() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'comment_preview_row';
+  $strongarm->name = 'comment_preview_story_block';
   $strongarm->value = '1';
-  $export['comment_preview_row'] = $strongarm;
+  $export['comment_preview_story_block'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'comment_row';
+  $strongarm->name = 'comment_story_block';
   $strongarm->value = '0';
-  $export['comment_row'] = $strongarm;
+  $export['comment_story_block'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'comment_subject_field_row';
+  $strongarm->name = 'comment_subject_field_story_block';
   $strongarm->value = 1;
-  $export['comment_subject_field_row'] = $strongarm;
+  $export['comment_subject_field_story_block'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
@@ -83,22 +83,22 @@ function row_support_default_variable_assets() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'field_bundle_settings_node__row';
+  $strongarm->name = 'field_bundle_settings_node__story_block';
   $strongarm->value = array(
     'view_modes' => array(
       'full' => array(
         'custom_settings' => TRUE,
       ),
-      'left_bg_image_row' => array(
+      'left_bg_image_story_block' => array(
         'custom_settings' => TRUE,
       ),
-      'left_non_bg_image_row' => array(
+      'left_non_bg_image_story_block' => array(
         'custom_settings' => TRUE,
       ),
-      'right_bg_image_row' => array(
+      'right_bg_image_story_block' => array(
         'custom_settings' => TRUE,
       ),
-      'right_non_bg_image_row' => array(
+      'right_non_bg_image_story_block' => array(
         'custom_settings' => TRUE,
       ),
       'teaser' => array(
@@ -132,19 +132,19 @@ function row_support_default_variable_assets() {
             'weight' => '0',
             'visible' => FALSE,
           ),
-          'left_bg_image_row' => array(
+          'left_bg_image_story_block' => array(
             'weight' => '0',
             'visible' => FALSE,
           ),
-          'left_non_bg_image_row' => array(
+          'left_non_bg_image_story_block' => array(
             'weight' => '0',
             'visible' => FALSE,
           ),
-          'right_bg_image_row' => array(
+          'right_bg_image_story_block' => array(
             'weight' => '0',
             'visible' => FALSE,
           ),
-          'right_non_bg_image_row' => array(
+          'right_non_bg_image_story_block' => array(
             'weight' => '0',
             'visible' => FALSE,
           ),
@@ -152,30 +152,30 @@ function row_support_default_variable_assets() {
       ),
     ),
   );
-  $export['field_bundle_settings_node__row'] = $strongarm;
+  $export['field_bundle_settings_node__story_block'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'node_options_row';
+  $strongarm->name = 'node_options_story_block';
   $strongarm->value = array(
     0 => 'status',
   );
-  $export['node_options_row'] = $strongarm;
+  $export['node_options_story_block'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'node_preview_row';
+  $strongarm->name = 'node_preview_story_block';
   $strongarm->value = '1';
-  $export['node_preview_row'] = $strongarm;
+  $export['node_preview_story_block'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'node_submitted_row';
+  $strongarm->name = 'node_submitted_story_block';
   $strongarm->value = 0;
-  $export['node_submitted_row'] = $strongarm;
+  $export['node_submitted_story_block'] = $strongarm;
 
   return $export;
 }

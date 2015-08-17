@@ -7,12 +7,12 @@
 /**
  * Implements hook_default_field_instance_assets().
  */
-function row_support_default_field_instance_assets() {
+function story_blocks_default_field_instance_assets() {
   $field_instances = array();
 
   // Exported field_instance: 'node-row-body'
-  $field_instances['node-row-body'] = array(
-    'bundle' => 'row',
+  $field_instances['node-story_block-body'] = array(
+    'bundle' => 'story_block',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
@@ -31,28 +31,28 @@ function row_support_default_field_instance_assets() {
         'type' => 'text_default',
         'weight' => 3,
       ),
-      'left_bg_image_row' => array(
+      'left_bg_image_story_block' => array(
         'label' => 'hidden',
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
         'weight' => 3,
       ),
-      'left_non_bg_image_row' => array(
+      'left_non_bg_image_story_block' => array(
         'label' => 'hidden',
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
         'weight' => 3,
       ),
-      'right_bg_image_row' => array(
+      'right_bg_image_story_block' => array(
         'label' => 'hidden',
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
         'weight' => 5,
       ),
-      'right_non_bg_image_row' => array(
+      'right_non_bg_image_story_block' => array(
         'label' => 'hidden',
         'module' => 'text',
         'settings' => array(),
@@ -80,9 +80,9 @@ function row_support_default_field_instance_assets() {
     ),
   );
 
-  // Exported field_instance: 'node-row-field_row_images'
-  $field_instances['node-row-field_row_images'] = array(
-    'bundle' => 'row',
+  // Exported field_instance: 'node-row-field_story_block_images'
+  $field_instances['node-story_block-field_story_block_images'] = array(
+    'bundle' => 'story_block',
     'deleted' => 0,
     'description' => '',
     'display' => array(
@@ -128,7 +128,7 @@ function row_support_default_field_instance_assets() {
         'type' => 'bg_image_formatter',
         'weight' => 1,
       ),
-      'left_bg_image_row' => array(
+      'left_bg_image_story_block' => array(
         'label' => 'hidden',
         'module' => 'bg_image_formatter',
         'settings' => array(
@@ -149,7 +149,7 @@ function row_support_default_field_instance_assets() {
         'type' => 'bg_image_formatter',
         'weight' => 6,
       ),
-      'left_non_bg_image_row' => array(
+      'left_non_bg_image_story_block' => array(
         'label' => 'hidden',
         'module' => 'image',
         'settings' => array(
@@ -159,7 +159,7 @@ function row_support_default_field_instance_assets() {
         'type' => 'image',
         'weight' => 6,
       ),
-      'right_bg_image_row' => array(
+      'right_bg_image_story_block' => array(
         'label' => 'hidden',
         'module' => 'bg_image_formatter',
         'settings' => array(
@@ -180,7 +180,7 @@ function row_support_default_field_instance_assets() {
         'type' => 'bg_image_formatter',
         'weight' => 2,
       ),
-      'right_non_bg_image_row' => array(
+      'right_non_bg_image_story_block' => array(
         'label' => 'hidden',
         'module' => 'image',
         'settings' => array(
@@ -213,13 +213,13 @@ function row_support_default_field_instance_assets() {
       ),
     ),
     'entity_type' => 'node',
-    'field_name' => 'field_row_images',
+    'field_name' => 'field_story_block_images',
     'label' => 'Images',
     'required' => 0,
     'settings' => array(
       'alt_field' => 1,
       'default_image' => 0,
-      'file_directory' => 'row_images',
+      'file_directory' => 'story_block_images',
       'file_extensions' => 'png gif jpg jpeg',
       'max_filesize' => '',
       'max_resolution' => '',
@@ -239,9 +239,9 @@ function row_support_default_field_instance_assets() {
     ),
   );
 
-  // Exported field_instance: 'node-row-field_row_link'
-  $field_instances['node-row-field_row_link'] = array(
-    'bundle' => 'row',
+  // Exported field_instance: 'node-row-field_story_block_link'
+  $field_instances['node-story_block-field_story_block_link'] = array(
+    'bundle' => 'story_block',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
@@ -258,28 +258,28 @@ function row_support_default_field_instance_assets() {
         'type' => 'hidden',
         'weight' => 16,
       ),
-      'left_bg_image_row' => array(
+      'left_bg_imagestory_block' => array(
         'label' => 'hidden',
         'module' => 'link',
         'settings' => array(),
         'type' => 'link_default',
         'weight' => 4,
       ),
-      'left_non_bg_image_row' => array(
+      'left_non_bg_imagestory_block' => array(
         'label' => 'hidden',
         'module' => 'link',
         'settings' => array(),
         'type' => 'link_default',
         'weight' => 5,
       ),
-      'right_bg_image_row' => array(
+      'right_bg_imagestory_block' => array(
         'label' => 'hidden',
         'module' => 'link',
         'settings' => array(),
         'type' => 'link_default',
         'weight' => 6,
       ),
-      'right_non_bg_image_row' => array(
+      'right_non_bg_imagestory_block' => array(
         'label' => 'hidden',
         'module' => 'link',
         'settings' => array(),
@@ -296,7 +296,7 @@ function row_support_default_field_instance_assets() {
     ),
     'ds_extras_field_template' => '',
     'entity_type' => 'node',
-    'field_name' => 'field_row_link',
+    'field_name' => 'field_story_block_link',
     'label' => 'Link',
     'required' => 0,
     'settings' => array(
@@ -331,9 +331,9 @@ function row_support_default_field_instance_assets() {
     ),
   );
 
-  // Exported field_instance: 'node-row-field_row_videos'
-  $field_instances['node-row-field_row_videos'] = array(
-    'bundle' => 'row',
+  // Exported field_instance: 'node-row-field_story_block_videos'
+  $field_instances['node-story_block-field_story_block_videos'] = array(
+    'bundle' => 'story_block',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
@@ -350,7 +350,7 @@ function row_support_default_field_instance_assets() {
         'type' => 'hidden',
         'weight' => 14,
       ),
-      'left_bg_image_row' => array(
+      'left_bg_image_story_block' => array(
         'label' => 'hidden',
         'module' => 'video_embed_field',
         'settings' => array(
@@ -361,7 +361,7 @@ function row_support_default_field_instance_assets() {
         'type' => 'video_embed_field_link_colorbox',
         'weight' => 5,
       ),
-      'left_non_bg_image_row' => array(
+      'left_non_bg_image_story_block' => array(
         'label' => 'hidden',
         'module' => 'video_embed_field',
         'settings' => array(
@@ -372,7 +372,7 @@ function row_support_default_field_instance_assets() {
         'type' => 'video_embed_field_link_colorbox',
         'weight' => 4,
       ),
-      'right_bg_image_row' => array(
+      'right_bg_image_story_block' => array(
         'label' => 'hidden',
         'module' => 'video_embed_field',
         'settings' => array(
@@ -383,7 +383,7 @@ function row_support_default_field_instance_assets() {
         'type' => 'video_embed_field_link_colorbox',
         'weight' => 1,
       ),
-      'right_non_bg_image_row' => array(
+      'right_non_bg_image_story_block' => array(
         'label' => 'hidden',
         'module' => 'video_embed_field',
         'settings' => array(
@@ -402,7 +402,7 @@ function row_support_default_field_instance_assets() {
       ),
     ),
     'entity_type' => 'node',
-    'field_name' => 'field_row_videos',
+    'field_name' => 'field_story_block_videos',
     'label' => 'Videos',
     'required' => 0,
     'settings' => array(

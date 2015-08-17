@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * Code for the row support module.
+ * Code for the story_block module.
  */
 
 /**
  * Implements hook_common_support_import().
  */
-function row_support_common_support_import() {
+function story_blocks_common_support_import() {
   return array(
     'node_type',
     'field_base',
@@ -21,13 +21,13 @@ function row_support_common_support_import() {
 /**
  * Implements hook_ctools_plugin_api().
  */
-function row_support_ctools_plugin_api($module = NULL, $api = NULL) {
+function story_blocks_ctools_plugin_api($module = NULL, $api = NULL) {
   return common_support_ctools_plugin_api($module, $api);
 }
 
 /**
  * Implements hook_views_api().
  */
-function row_support_views_api($module = NULL, $api = NULL) {
+function story_blocks_views_api($module = NULL, $api = NULL) {
   return common_support_views_api($module, $api);
 }

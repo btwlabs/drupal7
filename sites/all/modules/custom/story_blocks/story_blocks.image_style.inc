@@ -1,20 +1,20 @@
 <?php
 /**
- * @file row_support.image_style.inc
+ * @file story_blocks.image_style.inc
  */
 
 
 /**
  * Implements hook_default_image_style_assets().
  */
-function row_support_default_image_style_assets() {
+function story_blocks_default_image_style_assets() {
   $styles = array();
 
-  // Exported image style: row-img-mobile.
-  $styles['row-img-mobile'] = array(
-    'module' => 'row_support',
-    'label' => 'row-img-mobile',
-    'name' => 'row-img-mobile',
+  // Exported image style: story_block-img-mobile.
+  $styles['story_block-img-mobile'] = array(
+    'module' => 'story_blocks',
+    'label' => 'story_block-img-mobile',
+    'name' => 'story_block-img-mobile',
     'effects' => array(
       10 => array(
         'name' => 'canvasactions_definecanvas',

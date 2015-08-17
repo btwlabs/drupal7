@@ -1,8 +1,9 @@
-name = Row Support
-description = Provides a framework for creation of display rows
+name = Story Blocks
+description = Provides a framework for creation of display blocks with varying layouts
 core = 7.x
 package = BTW
 dependencies[] = bg_image_formatter
+dependencies[] = common_support
 dependencies[] = ds_extras
 dependencies[] = entityqueue
 dependencies[] = filter
