@@ -97,7 +97,7 @@ function articles_support_ds_field_settings_info() {
       'formatter_settings' => array(
         'show_title' => 0,
         'title_wrapper' => '',
-        'ctools' => '',
+        'ctools' => 'a:3:{s:4:"conf";a:3:{s:14:"override_title";i:0;s:19:"override_title_text";s:0:"";s:22:"override_title_heading";s:2:"h2";}s:4:"type";s:5:"block";s:7:"subtype";s:27:"entity_pager-entity_pager_1";}',
         'load_terms' => 0,
         'ft' => array(
           'func' => 'theme_ds_field_reset',
@@ -301,10 +301,10 @@ function articles_support_ds_field_settings_info() {
 
   $ds_fieldsetting = new stdClass();
   $ds_fieldsetting->api_version = 1;
-  $ds_fieldsetting->id = 'node|news_article|teaser2';
+  $ds_fieldsetting->id = 'node|news_article|recent_articles';
   $ds_fieldsetting->entity_type = 'node';
   $ds_fieldsetting->bundle = 'news_article';
-  $ds_fieldsetting->view_mode = 'teaser2';
+  $ds_fieldsetting->view_mode = 'recent_articles';
   $ds_fieldsetting->settings = array(
     'clickable_title_link' => array(
       'weight' => '0',
@@ -322,7 +322,7 @@ function articles_support_ds_field_settings_info() {
       'format' => 'default',
     ),
   );
-  $export['node|news_article|teaser2'] = $ds_fieldsetting;
+  $export['node|news_article|recent_articles'] = $ds_fieldsetting;
 
   return $export;
 }
@@ -744,10 +744,10 @@ function articles_support_ds_layout_settings_info() {
 
   $ds_layout = new stdClass();
   $ds_layout->api_version = 1;
-  $ds_layout->id = 'node|news_article|teaser2';
+  $ds_layout->id = 'node|news_article|recent_articles';
   $ds_layout->entity_type = 'node';
   $ds_layout->bundle = 'news_article';
-  $ds_layout->view_mode = 'teaser2';
+  $ds_layout->view_mode = 'recent_articles';
   $ds_layout->layout = 'ds_1col';
   $ds_layout->settings = array(
     'regions' => array(
@@ -772,7 +772,34 @@ function articles_support_ds_layout_settings_info() {
     'layout_link_attribute' => '',
     'layout_link_custom' => '',
   );
-  $export['node|news_article|teaser2'] = $ds_layout;
+  $export['node|news_article|recent_articles'] = $ds_layout;
+
+  return $export;
+}
+
+/**
+ * Implements hook_ds_view_modes_info().
+ */
+function articles_support_ds_view_modes_info() {
+  $export = array();
+
+  $ds_view_mode = new stdClass();
+  $ds_view_mode->api_version = 1;
+  $ds_view_mode->view_mode = 'recent_articles';
+  $ds_view_mode->label = 'Recent Articles';
+  $ds_view_mode->entities = array(
+    'node' => 'node',
+  );
+  $export['recent_articles'] = $ds_view_mode;
+
+  $ds_view_mode = new stdClass();
+  $ds_view_mode->api_version = 1;
+  $ds_view_mode->view_mode = 'related_articles';
+  $ds_view_mode->label = 'Related Articles';
+  $ds_view_mode->entities = array(
+    'node' => 'node',
+  );
+  $export['related_articles'] = $ds_view_mode;
 
   return $export;
 }
