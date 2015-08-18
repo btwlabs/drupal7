@@ -154,7 +154,7 @@ function articles_support_ds_field_settings_info() {
     'field_article_images' => array(
       'formatter_settings' => array(
         'ft' => array(
-          'func' => 'theme_ds_field',
+          'func' => 'theme_ds_field_minimal',
         ),
       ),
     ),
