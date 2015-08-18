@@ -39,6 +39,7 @@ dependencies[] = menu_attributes
 dependencies[] = metatag
 dependencies[] = navbar
 dependencies[] = pathauto
+dependencies[] = picture
 dependencies[] = rules_admin
 dependencies[] = token_tweaks
 dependencies[] = username_enumeration_prevention

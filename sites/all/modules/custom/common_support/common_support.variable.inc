@@ -17,10 +17,10 @@ function common_support_default_variable_assets() {
   $strongarm->value = 'clearfix
 clickable
 clickable-select
-teaser-grid
-teaser-list
-teaser-grid-row
-teaser-list-row
+grid
+list
+grid-row
+list-row
 node-content-container
 omega-mobile-only
 omega-narrow-only
@@ -44,7 +44,9 @@ quote-url
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'ds_classes_regions';
-  $strongarm->value = 'l-constrained';
+  $strongarm->value = 'l-constrained
+node-nid-[node:nid]
+  ';
   $export['ds_classes_regions'] = $strongarm;
 
   $strongarm = new stdClass();

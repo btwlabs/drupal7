@@ -42,11 +42,13 @@ function hook_common_support_import() {
     'field_base',
     'field_instance',
     'commerce_product',
+    'image_style',
     'vocabulary',
     'user_role',
     'user_permission',
     'variable',
     'nodequeue',
+    'entityqueue',
   );
 }
 

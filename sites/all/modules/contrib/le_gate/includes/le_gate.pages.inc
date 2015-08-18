@@ -19,10 +19,10 @@ function le_gate_eval_path_is_gated() {
   if (!isset($_GET['le-gate-request-path'])) {
     return drupal_json_output('error:no request-path specified');
   }
-  $current_path = $_GET['le-gate-request-path'];
+  $current_path = ltrim($_GET['le-gate-request-path'], '/');
   $return = 1;
   // If this is the le-gate path return.
-  if (($current_path == '/' . LE_GATE_PATH) || ($current_path == '/' . LE_GATE_ADMIN_PATH)) {
+  if (($current_path == LE_GATE_PATH) || ($current_path == LE_GATE_ADMIN_PATH)) {
     $return = 0;
   }
   // If admin page and configured to skip admin pages, return.

@@ -43,6 +43,29 @@ function common_support_modules_enabled($modules) {
 }
 
 /**
+ * Implements hook_block_view().
+ * If using ds_extras page title processing
+ * and blockify together, need to update the
+ * page title via ds first.
+ */
+function common_support_block_view_alter(&$data, $block) {
+  // This block only exists if blockify is enabled.
+  if ($block->delta == 'blockify-page-title') {
+    // Alter the block title ala ds_extras.
+    if (module_exists('ds_extras')) {
+      $page_title = drupal_static('ds_page_title');
+      if (!empty($page_title['head_title'])) {
+        drupal_set_title($page_title['head_title']);
+      }
+    }
+    $data = array(
+      'subject' => '',
+      'content' => blockify_get_content('blockify-page-title'),
+    );
+  }
+}
+
+/**
  * Implements hook_modules_uninstalled.
  * Deletes any assets that a module specifies should
  * be disabled when the module is un-installed.
@@ -82,25 +105,13 @@ function common_support_menu() {
 }
 
 /**
- * Implements hook_entity_info_alter().
+ * Implements hook_menu_alter().
+ * Have to force /search/node to use a correct
+ * title otherwise it defaults to the homepage title.
  */
-function common_support_entity_info_alter(&$entity_info) {
-  $entity_info['node']['view modes']['teaser2'] = array(
-    'label' => t('Another teaser mode'),
-    'custom settings' => FALSE,
-  );
-  $entity_info['node']['view modes']['teaser3'] = array(
-    'label' => t('Another teaser mode 2'),
-    'custom settings' => FALSE,
-  );
-  $entity_info['node']['view modes']['teaser4'] = array(
-    'label' => t('Another teaser mode 3'),
-    'custom settings' => FALSE,
-  );
-  $entity_info['node']['view modes']['teaser5'] = array(
-    'label' => t('Another teaser mode 4'),
-    'custom settings' => FALSE,
-  );
+function common_support_menu_alter(&$items) {
+  $items['search/node']['title'] = t('Search');
+  $items['search/node']['type'] = MENU_NORMAL_ITEM;
 }
 
 /**
@@ -386,7 +397,7 @@ function common_support_field_formatter_view($entity_type, $entity, $field, $ins
 
     // CSS classes are checked for validity on submission. drupal_attributes()
     // runs each attribute value through check_plain().
-    $classes = explode(' ', $settings['common_support_list_class']);
+    $classes = (!($settings['common_support_list_class'] == '')) ? explode(' ', $settings['common_support_list_class']) : array();
     switch ($settings['common_support_list_type']) {
       case 'ul':
       case 'ol':
@@ -395,10 +406,12 @@ function common_support_field_formatter_view($entity_type, $entity, $field, $ins
           '#theme' => 'item_list',
           '#type' => $settings['common_support_list_type'],
           '#items' => $list_items,
-          '#attributes' => array(
-            'class' => $classes,
-          ),
         );
+        if (!empty($classes)) {
+          $element[0]['#attributes'] = array(
+            'class' => $classes,
+          );
+        }
         break;
     }
   }

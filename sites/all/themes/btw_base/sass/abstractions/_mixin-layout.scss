@@ -27,6 +27,20 @@
 }
 
 
+// Constrained
+@mixin constrained {
+	@include breakpoint($small-only) {
+		margin: 0 20px;
+	}
+	@include breakpoint($medium-up) {
+		width: 80%;
+		margin: 0 auto;
+	}
+	@include breakpoint($xxlarge-up) {
+		width: 70%;	
+	}
+}
+
 // Negate constrained styling on a container to make 100% width
 @mixin unconstrained {
 	width: 100%;

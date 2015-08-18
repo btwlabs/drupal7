@@ -194,7 +194,7 @@ function articles_support_views_default_views() {
   $handler->display->display_options['pager']['options']['quantity'] = '9';
   $handler->display->display_options['pager']['options']['effects']['speed'] = 'slow';
   $handler->display->display_options['style_plugin'] = 'list';
-  $handler->display->display_options['style_options']['row_class'] = 'list-row clickable';
+  $handler->display->display_options['style_options']['row_class'] = 'article-row list-row clickable';
   $handler->display->display_options['row_plugin'] = 'node';
   $handler->display->display_options['row_options']['links'] = FALSE;
   /* Field: Content: Title */
@@ -230,6 +230,14 @@ function articles_support_views_default_views() {
 
   /* Display: Page */
   $handler = $view->new_display('page', 'Page', 'page');
+  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'common_support_plugin_style_teaser_list';
+  $handler->display->display_options['style_options']['wrapper_class'] = 'item-list article-row';
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['row_plugin'] = 'node';
+  $handler->display->display_options['row_options']['links'] = FALSE;
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['path'] = 'articles';
 
   /* Display: Recent Articles */
@@ -243,12 +251,12 @@ function articles_support_views_default_views() {
   $handler->display->display_options['pager']['options']['items_per_page'] = '4';
   $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['defaults']['style_plugin'] = FALSE;
-  $handler->display->display_options['style_plugin'] = 'list';
-  $handler->display->display_options['style_options']['row_class'] = 'grid-row clickable';
+  $handler->display->display_options['style_plugin'] = 'common_support_plugin_style_teaser_list';
+  $handler->display->display_options['style_options']['wrapper_class'] = 'item-list article-row';
   $handler->display->display_options['defaults']['style_options'] = FALSE;
   $handler->display->display_options['defaults']['row_plugin'] = FALSE;
   $handler->display->display_options['row_plugin'] = 'node';
-  $handler->display->display_options['row_options']['view_mode'] = 'teaser2';
+  $handler->display->display_options['row_options']['view_mode'] = 'recent_articles';
   $handler->display->display_options['row_options']['links'] = FALSE;
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['arguments'] = FALSE;
@@ -322,20 +330,20 @@ function articles_support_views_default_views() {
   $handler->display->display_options['arguments']['nid']['summary']['format'] = 'default_summary';
   $handler->display->display_options['arguments']['nid']['summary_options']['items_per_page'] = '25';
   $handler->display->display_options['block_description'] = 'Article Gallery';
-  $export['articles'] = $view;
 
-  /* Display: Product Specific Articles Block */
+  /* Display: Related Articles Block */
   $handler = $view->new_display('block', 'Related Articles Block', 'block_1');
   $handler->display->display_options['defaults']['title'] = FALSE;
   $handler->display->display_options['title'] = 'Related Articles';
   $handler->display->display_options['defaults']['css_class'] = FALSE;
   $handler->display->display_options['css_class'] = 'grid';
   $handler->display->display_options['defaults']['style_plugin'] = FALSE;
-  $handler->display->display_options['style_plugin'] = 'list';
-  $handler->display->display_options['style_options']['row_class'] = 'grid clickable';
+  $handler->display->display_options['style_plugin'] = 'common_support_plugin_style_teaser_grid';
+  $handler->display->display_options['style_options']['wrapper_class'] = 'item-list article-row';
   $handler->display->display_options['defaults']['style_options'] = FALSE;
   $handler->display->display_options['defaults']['row_plugin'] = FALSE;
   $handler->display->display_options['row_plugin'] = 'node';
+  $handler->display->display_options['row_options']['view_mode'] = 'related_articles';
   $handler->display->display_options['row_options']['links'] = FALSE;
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['relationships'] = FALSE;
@@ -362,6 +370,7 @@ function articles_support_views_default_views() {
   $handler->display->display_options['arguments']['nid']['summary']['format'] = 'default_summary';
   $handler->display->display_options['arguments']['nid']['summary_options']['items_per_page'] = '25';
   $handler->display->display_options['block_description'] = 'Related Articles';
+
   $export['related_articles'] = $view;
 
   return $export;
