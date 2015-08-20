@@ -7,6 +7,70 @@
 //
 //------------------------------------------------------------
 
+/*------------------------------
+	
+ Page Layout
+ 
+------------------------------*/
+
+.page-news {
+
+	.l-content-1 {
+		.l-constrained {
+			max-width: 1200px;
+		}
+	}
+	.view-articles {
+		.list-row {
+			padding: $vert-spacing-unit 0;
+			
+			@include breakpoint($medium-up) {
+				padding: $vert-spacing-unit*1.5 0;
+			}
+		}
+	}
+	.common-support-teaser-1 {
+		.col-1-wrapper {
+		    margin: 0 5% 0 0;
+		    width: 40%;
+		}
+		.col-2-wrapper {
+			@include breakpoint($medium-up) {
+				width: 55%;
+			}
+		}
+		
+		h3.title {
+			
+			@include breakpoint($small-up) {
+				@include font-size(25px);
+			}
+			@include breakpoint($medium-up) {
+				@include font-size(25px);
+			}
+			@include breakpoint($large-up) {
+				@include font-size(30px);
+			}
+			
+			a {
+				color: $text-color;
+				
+				&:hover {
+					color: $primary-color;
+				}
+			}
+		}
+		.field--name-field-article-body {
+			@include font-size(18px);
+		}
+	}
+}
+
+.view-articles .submitted {
+	font-style: italic;
+	display: block;
+	//margin-top: 30px;
+}
 
 
 // list item 

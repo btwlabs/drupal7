@@ -1852,99 +1852,80 @@ video {
   width: 100%;
   background-color: rgba(43, 43, 43, 0.7); }
 
-/*---------------------------------
-
- node container overrides 
- 
-----------------------------------*/
-/* line 19, ../sass/components/articles/_article-node.scss */
-#article-header-row-container {
-  padding: 0;
-  border: 0; }
-
-/* line 25, ../sass/components/articles/_article-node.scss */
-#article-middle-row1-container {
-  border: 0; }
-
-/* line 30, ../sass/components/articles/_article-node.scss */
-#article-middle-row2-container {
-  overflow: hidden;
-  padding-top: 0; }
-
-/* line 38, ../sass/components/articles/_article-node.scss */
-#article-middle-row4-container {
-  border-bottom: 1px solid #aaa;
-  padding: 40px 0; }
-
-/* line 44, ../sass/components/articles/_article-node.scss */
-#article-node-middle-row5-container {
-  padding: 20px; }
-
-/* line 47, ../sass/components/articles/_article-node.scss */
-#article-node-middle-row5-container .node-pager-container {
-  padding: 0;
-  border: 0;
-  min-height: 30px; }
+/* line 12, ../sass/components/articles/_article-node.scss */
+.node-type-news-article {
+  /*--------------------------
+   article body 
+  ---------------------------*/
+  /*------------------------
+   Gallery display
+  ------------------------*/ }
+  /* line 14, ../sass/components/articles/_article-node.scss */
+  .node-type-news-article .l-content-1 .l-constrained {
+    max-width: 1000px; }
+  /* line 20, ../sass/components/articles/_article-node.scss */
+  .node-type-news-article .header-wrapper h2.title {
+    font-weight: 400; }
+  /* line 49, ../sass/components/articles/_article-node.scss */
+  .node-type-news-article .field-name-field-article-quote .common-support-quote-1 {
+    width: 100%;
+    float: none; }
+  /* line 80, ../sass/components/articles/_article-node.scss */
+  .node-type-news-article .articles-support-1 .common-support-quote-1 .quote-end {
+    right: 0; }
+  /* line 85, ../sass/components/articles/_article-node.scss */
+  .node-type-news-article .articles-support-1 .field-name-field-tags {
+    margin-bottom: 40px; }
+    /* line 88, ../sass/components/articles/_article-node.scss */
+    .node-type-news-article .articles-support-1 .field-name-field-tags a {
+      font-size: 16px;
+      font-size: 1rem; }
+    /* line 92, ../sass/components/articles/_article-node.scss */
+    .node-type-news-article .articles-support-1 .field-name-field-tags:before {
+      content: "\e004";
+      font-family: IcoMoonBasic;
+      font-size: 18px;
+      margin-right: 10px;
+      display: inline-block;
+      vertical-align: middle; }
+  /* line 119, ../sass/components/articles/_article-node.scss */
+  .node-type-news-article .row-mobile-wrapper .field--name-field-article-images {
+    margin-bottom: 40px; }
+    /* line 122, ../sass/components/articles/_article-node.scss */
+    .node-type-news-article .row-mobile-wrapper .field--name-field-article-images .field__item {
+      margin-bottom: 40px; }
+      /* line 125, ../sass/components/articles/_article-node.scss */
+      .node-type-news-article .row-mobile-wrapper .field--name-field-article-images .field__item:last-child {
+        margin-bottom: 0; }
+  /* line 130, ../sass/components/articles/_article-node.scss */
+  .node-type-news-article .row-mobile-wrapper .field-name-quote-mobile {
+    display: none !important; }
+  /* line 142, ../sass/components/articles/_article-node.scss */
+  .node-type-news-article .view-display-id-gallery .grid-row {
+    list-style-type: none;
+    margin: 0;
+    float: left; }
+    /* line 165, ../sass/components/articles/_article-node.scss */
+    .node-type-news-article .view-display-id-gallery .grid-row:nth-child(4n+0) {
+      margin-right: 0; }
 
 /*--------------------------
 
  pager - default overrides
   
 ---------------------------*/
-/* line 59, ../sass/components/articles/_article-node.scss */
+/* line 180, ../sass/components/articles/_article-node.scss */
 .node-type-article .node-pager-container {
   margin-bottom: 0; }
-
-/*--------------------------
-
- article title & author
- 
----------------------------*/
-/* line 70, ../sass/components/articles/_article-node.scss */
-#article-header-row-container h2.node__title {
-  margin-bottom: 20px;
-  line-height: 1.2; }
-
-/*--------------------------------------------------------
- submitted info
- -- (may contain posted date only or also author full name)
-----------------------------------------------------------*/
-/* line 80, ../sass/components/articles/_article-node.scss */
-.node-type-article .node-article .submitted {
-  font-style: italic;
-  margin-bottom: 20px;
-  display: block; }
 
 /*--------------------------
 
  article body 
  
 ---------------------------*/
-/* line 93, ../sass/components/articles/_article-node.scss */
+/* line 191, ../sass/components/articles/_article-node.scss */
 #article-body-container p:last-child {
   margin-bottom: 0; }
-
-/*--------------------------
-
- related songs 
- 
-----------------------------*/
-/* line 104, ../sass/components/articles/_article-node.scss */
-#article-songs-container {
-  font-size: 13px;
-  font-size: 0.8125rem;
-  font-style: italic; }
-  /* line 108, ../sass/components/articles/_article-node.scss */
-  #article-songs-container h2 {
-    display: none; }
-  /* line 111, ../sass/components/articles/_article-node.scss */
-  #article-songs-container span.views-label:before {
-    content: "\4b";
-    font-family: IcoMoonBasic;
-    font-size: 18px;
-    margin-right: 3px;
-    vertical-align: middle;
-    font-style: normal; }
 
 /*-------------------------------------
 
@@ -1952,113 +1933,27 @@ video {
  
 ---------------------------------------*/
 @incluce breakpoint($small-only) {
-  /* line 129, ../sass/components/articles/_article-node.scss */
+  /* line 202, ../sass/components/articles/_article-node.scss */
   #article-mobile-middle-row3-container .first-item,
   #article-mobile-middle-row3-container .not-first-item {
     margin-bottom: 15px; } }
-/* line 134, ../sass/components/articles/_article-node.scss */
+/* line 207, ../sass/components/articles/_article-node.scss */
 #article-photo-gallery-container {
   overflow: hidden; }
-  /* line 138, ../sass/components/articles/_article-node.scss */
+  /* line 211, ../sass/components/articles/_article-node.scss */
   #article-photo-gallery-container .teaser-grid {
     padding-left: 0;
     height: 175px;
     /* set height on div toggle section */ }
-  /* line 142, ../sass/components/articles/_article-node.scss */
+  /* line 215, ../sass/components/articles/_article-node.scss */
   #article-photo-gallery-container .photo-row {
     height: auto;
     margin: 0 1.5% 1.5% 0;
     padding: 0;
     width: 18.5%; }
 
-/*--------------------------------------
-
- PRODUCT REFERENCES ( "In This Article" block )
- 
----------------------------------------*/
-/* line 156, ../sass/components/articles/_article-node.scss */
-#article-nodes-container {
-  margin-bottom: 40px;
-  padding-bottom: 40px;
-  border-bottom: 1px solid #aaa; }
-  /* line 161, ../sass/components/articles/_article-node.scss */
-  #article-nodes-container h2.block-title {
-    margin-bottom: 20px; }
-  /* line 164, ../sass/components/articles/_article-node.scss */
-  #article-nodes-container .teaser-list h2.block-title {
-    display: none; }
-  /* line 168, ../sass/components/articles/_article-node.scss */
-  #article-nodes-container .teaser-list-row {
-    overflow: hidden;
-    padding: 26.66667px 0; }
-    /* line 172, ../sass/components/articles/_article-node.scss */
-    #article-nodes-container .teaser-list-row:first-child {
-      padding-top: 0; }
-    /* line 176, ../sass/components/articles/_article-node.scss */
-    #article-nodes-container .teaser-list-row:last-child {
-      border-bottom: 0;
-      padding-bottom: 0; }
-
-/* product image - container */
-/* line 184, ../sass/components/articles/_article-node.scss */
-.article-related-node .image {
-  border: 1px solid #aaa;
-  float: left;
-  height: auto;
-  margin-right: 4%;
-  width: 20%; }
-
-/* product title - container */
-/* line 193, ../sass/components/articles/_article-node.scss */
-.article-related-node-product-body,
-.article-related-node-album-body {
-  float: left;
-  width: 50%; }
-
-/* line 198, ../sass/components/articles/_article-node.scss */
-.article-related-node-title {
-  font-size: 21px;
-  font-size: 1.3125rem; }
-
-/* product created date */
-/* line 203, ../sass/components/articles/_article-node.scss */
-.article-related-node-created-date {
-  font-size: 13px;
-  font-size: 0.8125rem; }
-
-/* product price */
-/* line 208, ../sass/components/articles/_article-node.scss */
-#article-nodes-container .field-commerce-price {
-  margin-bottom: 0;
-  /* override from store-global.css */ }
-
-/* Links - container */
-/* line 213, ../sass/components/articles/_article-node.scss */
-.article-related-node-links {
-  float: right;
-  margin-left: 4%;
-  /* Links - buttons */ }
-  /* line 218, ../sass/components/articles/_article-node.scss */
-  .article-related-node-links a {
-    background-color: #444;
-    border-radius: 30px;
-    display: block;
-    float: left;
-    height: 0;
-    margin-left: 10px;
-    overflow: hidden;
-    padding-top: 35px;
-    width: 35px;
-    position: relative;
-    color: #fff; }
-    /* line 231, ../sass/components/articles/_article-node.scss */
-    .article-related-node-links a:hover {
-      background-color: #ccc;
-      color: #444;
-      text-decoration: none; }
-
 /* view more link icon */
-/* line 241, ../sass/components/articles/_article-node.scss */
+/* line 224, ../sass/components/articles/_article-node.scss */
 a.related-node-album-view-link:before,
 a.related-node-product-view-link:before {
   position: absolute;
@@ -2069,7 +1964,7 @@ a.related-node-product-view-link:before {
   font-family: IcoMoonBasic; }
 
 /* buy now link icon */
-/* line 252, ../sass/components/articles/_article-node.scss */
+/* line 235, ../sass/components/articles/_article-node.scss */
 a.related-node-album-buy-link:before,
 a.related-node-product-buy-link:before {
   position: absolute;
@@ -2084,61 +1979,92 @@ a.related-node-product-buy-link:before {
  RECENT & MORE ARTICLES content block 
  
 ---------------------------------------*/
-/* line 269, ../sass/components/articles/_article-node.scss */
+/* line 252, ../sass/components/articles/_article-node.scss */
 .node-more-articles {
   position: relative; }
-  /* line 272, ../sass/components/articles/_article-node.scss */
+  /* line 255, ../sass/components/articles/_article-node.scss */
   .node-more-articles h2.block-title {
     font-size: 20px;
     font-size: 1.25rem;
     margin-bottom: 0px; }
-  /* line 276, ../sass/components/articles/_article-node.scss */
+  /* line 259, ../sass/components/articles/_article-node.scss */
   .node-more-articles .views-row {
     padding: 10px 0;
     border-bottom: 0;
     float: none; }
-  /* line 281, ../sass/components/articles/_article-node.scss */
+  /* line 264, ../sass/components/articles/_article-node.scss */
   .node-more-articles .field-title {
     font-size: 15px;
     font-size: 0.9375rem;
     line-height: 1.3;
     padding-right: 10px;
     display: block; }
-  /* line 287, ../sass/components/articles/_article-node.scss */
+  /* line 270, ../sass/components/articles/_article-node.scss */
   .node-more-articles .field-date {
     font-size: 13px;
     font-size: 0.8125rem;
     display: block;
     line-height: 1.3;
     font-style: italic; }
-  /* line 293, ../sass/components/articles/_article-node.scss */
+  /* line 276, ../sass/components/articles/_article-node.scss */
   .node-more-articles .view-footer {
     padding: 10px 0; }
-  /* line 298, ../sass/components/articles/_article-node.scss */
+  /* line 281, ../sass/components/articles/_article-node.scss */
   .node-more-articles .view-empty {
     font-size: 13px; }
 
-/* line 20, ../sass/components/articles/_article-teaser.scss */
+/*------------------------------
+	
+ Page Layout
+ 
+------------------------------*/
+/* line 19, ../sass/components/articles/_article-teaser.scss */
+.page-news .l-content-1 .l-constrained {
+  max-width: 1200px; }
+/* line 24, ../sass/components/articles/_article-teaser.scss */
+.page-news .view-articles .list-row {
+  padding: 40px 0; }
+/* line 33, ../sass/components/articles/_article-teaser.scss */
+.page-news .common-support-teaser-1 .col-1-wrapper {
+  margin: 0 5% 0 0;
+  width: 40%; }
+/* line 55, ../sass/components/articles/_article-teaser.scss */
+.page-news .common-support-teaser-1 h3.title a {
+  color: #777; }
+  /* line 58, ../sass/components/articles/_article-teaser.scss */
+  .page-news .common-support-teaser-1 h3.title a:hover {
+    color: red; }
+/* line 63, ../sass/components/articles/_article-teaser.scss */
+.page-news .common-support-teaser-1 .field--name-field-article-body {
+  font-size: 18px;
+  font-size: 1.125rem; }
+
+/* line 69, ../sass/components/articles/_article-teaser.scss */
+.view-articles .submitted {
+  font-style: italic;
+  display: block; }
+
+/* line 84, ../sass/components/articles/_article-teaser.scss */
 .article-node-teaser .post-date {
   margin-bottom: 10px; }
 
-/* line 25, ../sass/components/articles/_article-teaser.scss */
+/* line 89, ../sass/components/articles/_article-teaser.scss */
 .article-node-teaser h3.title {
   font-size: 24px;
   font-size: 1.5rem;
   line-height: 1.2; }
 
-/* line 35, ../sass/components/articles/_article-teaser.scss */
+/* line 99, ../sass/components/articles/_article-teaser.scss */
 .page-news .teasers-main-content h3.title a,
 .page-taxonomy .teasers-main-content h3.title a {
   color: #000; }
-  /* line 39, ../sass/components/articles/_article-teaser.scss */
+  /* line 103, ../sass/components/articles/_article-teaser.scss */
   .page-news .teasers-main-content h3.title a:hover,
   .page-taxonomy .teasers-main-content h3.title a:hover {
     color: orange; }
 
 /* list row content */
-/* line 46, ../sass/components/articles/_article-teaser.scss */
+/* line 110, ../sass/components/articles/_article-teaser.scss */
 .list .post-date {
   font-size: 0.813em;
   font-style: italic; }
@@ -2148,16 +2074,16 @@ a.related-node-product-buy-link:before {
  article tags
  
 ----------------------------*/
-/* line 59, ../sass/components/articles/_article-teaser.scss */
+/* line 123, ../sass/components/articles/_article-teaser.scss */
 #article-tags-container {
   font-size: 12px;
   font-size: 0.75rem;
   font-style: normal;
   margin: 20px 0; }
-  /* line 65, ../sass/components/articles/_article-teaser.scss */
+  /* line 129, ../sass/components/articles/_article-teaser.scss */
   #article-tags-container .field--name-field-tags .field__items {
     overflow: hidden; }
-    /* line 68, ../sass/components/articles/_article-teaser.scss */
+    /* line 132, ../sass/components/articles/_article-teaser.scss */
     #article-tags-container .field--name-field-tags .field__items:before {
       content: "\e004";
       font-family: IcoMoonBasic;
@@ -2167,11 +2093,11 @@ a.related-node-product-buy-link:before {
       vertical-align: middle;
       font-style: normal;
       display: inline-block; }
-  /* line 80, ../sass/components/articles/_article-teaser.scss */
+  /* line 144, ../sass/components/articles/_article-teaser.scss */
   #article-tags-container .field--name-field-tags .field__item {
     margin: 0 8px 0 0;
     display: inline-block; }
-    /* line 84, ../sass/components/articles/_article-teaser.scss */
+    /* line 148, ../sass/components/articles/_article-teaser.scss */
     #article-tags-container .field--name-field-tags .field__item a {
       width: auto;
       text-align: center;
@@ -2179,17 +2105,17 @@ a.related-node-product-buy-link:before {
       margin: 0;
       text-decoration: underline; }
 
-/* line 95, ../sass/components/articles/_article-teaser.scss */
+/* line 159, ../sass/components/articles/_article-teaser.scss */
 .article-node-teaser .media-thumb-item {
   float: left;
   margin-right: 4%;
   width: 28%; }
 
-/* line 117, ../sass/components/articles/_article-teaser.scss */
+/* line 181, ../sass/components/articles/_article-teaser.scss */
 .article-row p:last-child {
   margin-bottom: 0; }
 
-/* line 122, ../sass/components/articles/_article-teaser.scss */
+/* line 186, ../sass/components/articles/_article-teaser.scss */
 .addthis_sharing_toolbox {
   max-height: 32px; }
 
@@ -2199,12 +2125,12 @@ a.related-node-product-buy-link:before {
 
 -------------------------------------------------------*/
 /* make taxonomy page title smaller to fit better if longer */
-/* line 133, ../sass/components/articles/_article-teaser.scss */
+/* line 197, ../sass/components/articles/_article-teaser.scss */
 .page-taxonomy h1 {
   font-size: 2.250em; }
 
 /* -- place a tag icon before page title on taxonomy page*/
-/* line 138, ../sass/components/articles/_article-teaser.scss */
+/* line 202, ../sass/components/articles/_article-teaser.scss */
 .page-taxonomy .l-content h1:before {
   content: "\e004";
   font-family: IcoMoonBasic;

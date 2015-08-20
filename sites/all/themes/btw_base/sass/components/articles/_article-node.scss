@@ -9,46 +9,167 @@
 
 
 
-/*---------------------------------
-
- node container overrides 
- 
-----------------------------------*/
-
-// contains menu-block, article title, submitted, tags, social sharing links
-#article-header-row-container {
-	padding: 0;
-	border: 0;
+.node-type-news-article {
+	.l-content-1 {
+		.l-constrained {
+			max-width: 1000px;
+		}
+	}
+	
+	.header-wrapper {
+		h2.title {
+			font-weight: 400;
+			
+			@include breakpoint($small-up) {
+				@include font-size(25px);
+			}
+			@include breakpoint($medium-up) {
+				@include font-size(30px);
+			}
+			@include breakpoint($large-up) {
+				@include font-size(40px);
+			}
+		}
+	}
+	
+	// quote sidebar - remove floats in mobile
+	.field-name-field-article-quote {
+		
+		@include breakpoint($small-up) {
+			float: none;
+			width: 100%;
+			margin-top: $vert-spacing-unit;
+		}
+		@include breakpoint($large-up) {
+			float: right;
+			width: 40%;
+			margin-top: 0;
+		}
+		
+		.common-support-quote-1 {
+			width: 100%;
+			float: none;
+		}
+	}
+	
+	/*--------------------------
+	 article body 
+	---------------------------*/
+	
+	.articles-support-1 {
+		// negate floats in small & med layouts
+		.col-1-wrapper {
+			@include breakpoint($small-and-medium) {
+				float: none;
+				width: 100%;
+				margin-right: 0;
+			}
+		}
+		
+		// body
+		.body-container {
+			
+			@include breakpoint($small-up) {
+				@include font-size(18px);
+			}
+			@include breakpoint($large-up) {
+				@include font-size(20px);
+			}
+		}
+		// quote
+		.common-support-quote-1 .quote-end {
+			right: 0;
+		}
+		
+		// tags
+		.field-name-field-tags {
+			margin-bottom: $vert-spacing-unit;
+			
+			a {
+				@include font-size(16px);
+			}
+			
+			&:before {
+				content: "\e004";
+				font-family: $basicicons;
+				font-size: 18px;
+				margin-right: 10px;
+				display: inline-block;
+				vertical-align: middle;
+			}
+		}
+		
+		// sharing
+		.addthis_sharing_toolbox {
+			@include breakpoint($small-only) {
+				margin-bottom: $vert-spacing-unit;
+			}
+		}
+	}
+	
+	/*------------------------
+	 Gallery display
+	------------------------*/
+	
+	// mobile gallery
+	.row-mobile-wrapper {
+		@include breakpoint($medium-up) {
+			display: none;
+		}
+		.field--name-field-article-images {
+			margin-bottom: $vert-spacing-unit;
+			
+			.field__item {
+				margin-bottom: $vert-spacing-unit;
+				
+				&:last-child {
+					margin-bottom: 0;
+				}
+			}
+		}
+		.field-name-quote-mobile {
+			display: none !important;
+		}
+	}
+	
+	// non-mobile gallery only 
+	.row3-outer-wrapper {
+		@include breakpoint($small-only) {
+			display: none;
+		}
+	}
+	.view-display-id-gallery {
+		.grid-row {
+			list-style-type: none;
+			margin: 0;
+			float: left;
+			
+			@include breakpoint($small-only) {
+				width: 48%;
+				margin-bottom: 4%;
+				@include border-bottom($border-color);
+				
+				&:nth-child(odd) {
+					margin-right: 4%;
+				}
+			}
+			@include breakpoint($medium-up) {
+				width: 22.7%;
+				margin: 0px 3.037% 5% 0px;
+				
+				&:nth-child(4n) {
+					margin-right: 0;
+				}
+			}
+			
+			&:nth-child(4n+0) {
+				margin-right: 0;
+			}
+		}
+	}
 }
 
-// contains media
-#article-middle-row1-container {
-	border: 0;
-}
 
-// article body container
-#article-middle-row2-container {
-	overflow: hidden;
-	padding-top: 0;
-}
-
-// row3 container is related content - narrow up
-
-// mobile only - quotes and related album
-#article-middle-row4-container {
-	@include border-bottom($border-color);
-	padding: $vert-spacing-unit 0;
-}
-
-// article pager container
-#article-node-middle-row5-container {
-	padding: $vert-spacing-unit/2;
-}
-#article-node-middle-row5-container .node-pager-container {
-	padding: 0;
-	border: 0;
-	min-height: 30px;
-}
 
 /*--------------------------
 
@@ -63,29 +184,6 @@
 
 /*--------------------------
 
- article title & author
- 
----------------------------*/
-
-#article-header-row-container h2.node__title {
-	margin-bottom: $vert-spacing-unit/2;
-	line-height: 1.2;
-}
-
-/*--------------------------------------------------------
- submitted info
- -- (may contain posted date only or also author full name)
-----------------------------------------------------------*/
-
-.node-type-article .node-article .submitted {
-	font-style: italic;
-	margin-bottom: 20px;
-	display: block;
-}
-
-
-/*--------------------------
-
  article body 
  
 ---------------------------*/
@@ -93,31 +191,6 @@
 #article-body-container p:last-child {
 	margin-bottom: 0;
 }
-
-
-/*--------------------------
-
- related songs 
- 
-----------------------------*/
-
-#article-songs-container {
-	@include font-size(13px);
-	font-style: italic;
-
-	h2 {
-		display: none;
-	}
-	span.views-label:before {
-		content: "\4b";
-		font-family: $basicicons;
-		font-size: 18px;
-		margin-right: 3px;
-		vertical-align: middle;
-		font-style: normal;
-	}
-}
-
 
 /*-------------------------------------
 
@@ -146,96 +219,6 @@
 		width: 18.5%;
 	}
 }
-
-/*--------------------------------------
-
- PRODUCT REFERENCES ( "In This Article" block )
- 
----------------------------------------*/
-
-#article-nodes-container {
-	margin-bottom: $vert-spacing-unit;
-	padding-bottom: $vert-spacing-unit;
-	@include border-bottom($border-color);
-	
-	h2.block-title {
-		margin-bottom: $vert-spacing-unit/2;
-	}
-	.teaser-list h2.block-title {
-		display: none; // duplicate title
-	}
-	
-	.teaser-list-row {
-			overflow: hidden;
-			padding: $vert-spacing-unit/1.5 0;
-	
-		&:first-child {
-			padding-top: 0;
-		}
-		
-		&:last-child {
-			border-bottom: 0;
-			padding-bottom: 0;
-		}
-	}
-}
-
-/* product image - container */
-.article-related-node .image {
-	@include border-all($border-color);
-	float: left;
-	height: auto;
-	margin-right: 4%;
-	width: 20%;
-}
-
-/* product title - container */
-.article-related-node-product-body,
-.article-related-node-album-body {
-	float: left;
-	width: 50%;
-}
-.article-related-node-title {
-	@include font-size(21px);
-}
-
-/* product created date */
-.article-related-node-created-date {
-	@include font-size(13px);
-}
-
-/* product price */
-#article-nodes-container .field-commerce-price {
-	margin-bottom: 0; /* override from store-global.css */
-}
-
-/* Links - container */
-.article-related-node-links {
-	float: right;
-	margin-left: 4%;
-	
-	/* Links - buttons */
-	a {
-		background-color: $button-bg-color;
-		@include border-radius(30px);
-		display: block;
-		float: left;
-		height: 0;
-		margin-left: 10px;
-		overflow: hidden;
-		padding-top: 35px;
-		width: 35px;
-		position: relative;
-		color: $button-text-color;
-		
-		&:hover {
-			background-color: $button-bg-hover-color;
-			color: $button-text-hover-color;
-			text-decoration: none;
-		}
-	}
-}
-
 
 /* view more link icon */
 a.related-node-album-view-link:before,
