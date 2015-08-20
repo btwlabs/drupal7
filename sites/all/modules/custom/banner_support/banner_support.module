@@ -82,6 +82,23 @@ function banner_support_preprocess_node(&$vars) {
       );
       $vars['linked_image'] = drupal_render($field_content);
     }
+    if (!empty($vars['field_banner_link']) && !empty($vars['field_banner_mobile_image'])) {
+      $image = (isset($vars['field_banner_mobile_image'][LANGUAGE_NONE][0])) ? $vars['field_banner_mobile_image'][LANGUAGE_NONE][0] : $vars['field_banner_mobile_image'][0];
+      $image_array = field_view_value('node', $vars['node'], 'field_banner_mobile_image', $image);
+      $url = (isset($vars['field_banner_link'][LANGUAGE_NONE][0]['url'])) ? $vars['field_banner_link'][LANGUAGE_NONE][0]['url'] : $vars['field_banner_link'][0]['url'];
+      $field_content = array(
+        '#theme' => 'link',
+        '#path' => $url,
+        '#text' => drupal_render($image_array),
+        '#options' => array(
+          'html' => TRUE,
+          'attributes' => array(
+            'class' => array('banner-mobile-image-link image reactive'),
+          ),
+        ),
+      );
+      $vars['linked_mobile_image'] = drupal_render($field_content);
+    }
   }
 }
 
@@ -100,7 +117,8 @@ function banner_support_ds_layout_info() {
         'row2' => t('Row 2'),
       ),
       'css' => TRUE,
-      'image' => TRUE,
+      // optional, form only applies to node form at this point.
+      'form' => FALSE,
     ),
   );
 
