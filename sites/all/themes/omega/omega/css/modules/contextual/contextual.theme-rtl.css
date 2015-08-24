@@ -8,7 +8,9 @@
 .contextual-links {
   left: 0;
   right: auto;
+  -webkit-border-radius: 0 4px 4px 4px;
   -moz-border-radius: 0 4px 4px 4px;
-  -webkit-border-radius: 0;
+  -ms-border-radius: 0 4px 4px 4px;
+  -o-border-radius: 0 4px 4px 4px;
   border-radius: 0 4px 4px 4px;
 }
