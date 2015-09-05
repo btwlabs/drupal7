@@ -22,6 +22,7 @@ regions[header] = Header
 regions[branding] = Branding
 regions[navigation] = Navigation
 regions[pre_content] = Pre-Content
+regions[content] = Content
 regions[content_1] = Content 1
 regions[content_2] = Content 2
 regions[content_3] = Content 3
