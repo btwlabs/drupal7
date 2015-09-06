@@ -65,10 +65,10 @@ function banner_support_default_variable_assets() {
   $strongarm->name = 'field_bundle_settings_node__banner';
   $strongarm->value = array(
     'view_modes' => array(
-      'teaser' => array(
+      'banner_no_body' => array(
         'custom_settings' => TRUE,
       ),
-      'teaser2' => array(
+      'banner_with_body' => array(
         'custom_settings' => TRUE,
       ),
       'full' => array(
@@ -81,15 +81,6 @@ function banner_support_default_variable_assets() {
         'custom_settings' => FALSE,
       ),
       'search_result' => array(
-        'custom_settings' => FALSE,
-      ),
-      'teaser3' => array(
-        'custom_settings' => FALSE,
-      ),
-      'teaser4' => array(
-        'custom_settings' => FALSE,
-      ),
-      'teaser5' => array(
         'custom_settings' => FALSE,
       ),
       'token' => array(
@@ -120,11 +111,11 @@ function banner_support_default_variable_assets() {
             'weight' => '0',
             'visible' => FALSE,
           ),
-          'teaser2' => array(
+          'banner_with_body' => array(
             'weight' => '12',
             'visible' => FALSE,
           ),
-          'teaser' => array(
+          'banner_no_body' => array(
             'weight' => '9',
             'visible' => FALSE,
           ),
