@@ -46,6 +46,7 @@ quote-url
   $strongarm->name = 'ds_classes_regions';
   $strongarm->value = 'l-constrained
 node-nid-[node:nid]
+clickable
   ';
   $export['ds_classes_regions'] = $strongarm;
 
