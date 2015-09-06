@@ -1,3 +1,4 @@
+<?php render($page['content']['metatags']); ?>
 <div <?php print $attributes; ?>>
 
 <div id="site-wrapper">
