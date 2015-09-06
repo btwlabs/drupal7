@@ -4,9 +4,9 @@ core = 7.x
 project = le_gate
 scripts[] = js/le_gate.js
 
-; Information added by Drupal.org packaging script on 2015-08-10
-version = "7.x-1.0-beta4"
+; Information added by Drupal.org packaging script on 2015-08-25
+version = "7.x-1.0-beta5"
 core = "7.x"
 project = "le_gate"
-datestamp = "1439211242"
+datestamp = "1440539946"
 
