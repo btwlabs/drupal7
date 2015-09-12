@@ -31,13 +31,13 @@ function banner_support_default_field_instance_assets() {
         'type' => 'text_default',
         'weight' => 5,
       ),
-      'teaser' => array(
+      'banner_no_body' => array(
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 12,
       ),
-      'teaser2' => array(
+      'banner_with_body' => array(
         'label' => 'hidden',
         'module' => 'text',
         'settings' => array(),
@@ -60,7 +60,7 @@ function banner_support_default_field_instance_assets() {
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 1,
+      'weight' => 3,
     ),
   );
 
@@ -80,13 +80,13 @@ function banner_support_default_field_instance_assets() {
         'type' => 'image',
         'weight' => 1,
       ),
-      'teaser' => array(
+      'banner_no_body' => array(
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 7,
       ),
-      'teaser2' => array(
+      'banner_with_body' => array(
         'label' => 'hidden',
         'module' => 'image',
         'settings' => array(
@@ -138,13 +138,13 @@ function banner_support_default_field_instance_assets() {
         'type' => 'link_default',
         'weight' => 2,
       ),
-      'teaser' => array(
+      'banner_no_body' => array(
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 8,
       ),
-      'teaser2' => array(
+      'banner_with_body' => array(
         'label' => 'hidden',
         'module' => 'link',
         'settings' => array(),
@@ -188,11 +188,87 @@ function banner_support_default_field_instance_assets() {
     ),
   );
 
+  // Exported field_instance: 'node-banner-field_banner_mobile_image'
+  $field_instances['node-banner-field_banner_mobile_image'] = array(
+    'bundle' => 'banner',
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'hidden',
+        'module' => 'image',
+        'settings' => array(
+          'image_link' => '',
+          'image_style' => '',
+        ),
+        'type' => 'image',
+        'weight' => 1,
+      ),
+      'banner_no_body' => array(
+        'label' => 'hidden',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 7,
+      ),
+      'banner_with_body' => array(
+        'label' => 'hidden',
+        'module' => 'image',
+        'settings' => array(
+          'image_link' => '',
+          'image_style' => '',
+        ),
+        'type' => 'image',
+        'weight' => 0,
+      ),
+    ),
+    'ds_extras_field_template' => 'theme_ds_field_minimal',
+    'entity_type' => 'node',
+    'field_name' => 'field_banner_mobile_image',
+    'label' => 'Mobile Image',
+    'required' => 0,
+    'settings' => array(
+      'alt_field' => 0,
+      'default_image' => 0,
+      'file_directory' => 'banner_images',
+      'file_extensions' => 'png gif jpg jpeg',
+      'max_filesize' => '',
+      'max_resolution' => '',
+      'min_resolution' => '',
+      'title_field' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'media',
+      'settings' => array(
+        'allowed_schemes' => array(
+          'public' => 'public',
+          'youtube' => 0,
+        ),
+        'allowed_types' => array(
+          'audio' => 0,
+          'document' => 0,
+          'image' => 'image',
+          'video' => 0,
+        ),
+        'browser_plugins' => array(
+          'media_default--media_browser_1' => 'media_default--media_browser_1',
+          'media_default--media_browser_my_files' => 'media_default--media_browser_my_files',
+          'media_internet' => 0,
+          'upload' => 'upload',
+        ),
+      ),
+      'type' => 'media_generic',
+      'weight' => 1,
+    ),
+  );
+
   // Translatables
   // Included for use with string extractors like potx.
   t('Banner Image');
   t('Body');
   t('Link');
+  t('Mobile Image');
   t('This is the url that the banner image will link to');
 
   return $field_instances;

@@ -35,13 +35,13 @@
         <?php if (!empty($row2_col1)) : ?>
           <<?php print $row2_col1_wrapper ?> class="col col-1-wrapper <?php print $row2_col1_classes;?>">
            <?php print $row2_col1; ?>
-          </<?php print $row2_col1_wrapper ?>
+          </<?php print $row2_col1_wrapper ?>> <!-- row-2-col-1-outer-wrapper -->
         <?php endif; ?>
 
         <?php if (!empty($row2_col2)) : ?>
           <<?php print $row2_col2_wrapper ?> class="col col-2-wrapper <?php print $row2_col2_classes;?>">
             <?php print $row2_col2; ?>
-          </<?php print $row2_col2_wrapper ?>>
+          </<?php print $row2_col2_wrapper ?>> <!-- row-2-col-2-outer-wrapper -->
         <?php endif; ?>
 
         <?php if(!empty($row2)) : ?>
@@ -49,7 +49,7 @@
         <?php endif; ?>
 
       </<?php print $row2_wrapper ?>>
-    </div>
+    </div> <!-- row-2-outer-wrapper -->
   <?php endif; ?>
 
   <?php if ((!empty($row3))) : ?>

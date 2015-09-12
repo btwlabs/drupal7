@@ -7,13 +7,16 @@
     Drupal.behaviors.leGate = {
         attach: function (context, settings) {
             // Check path.
-            var fullPath = window.location.pathname;
-            var currentPath = window.location.pathname;//fullPath.replace(/^\/|\/$/g, '');
-            if (!(currentPath == '/le-gate')) {
+            var currentPath = window.location.pathname;
+            if (!(currentPath == '/le-gate') && (getLeGateCookie() == null)) {
+                var requestPath = currentPath;
                 setLeGateCookie('request-path', currentPath);
             }
             else {
-                requestPath = getLeGateCookie('request-path');
+                var requestPath = getLeGateCookie('request-path');
+                if (typeof requestPath == 'undefined') {
+                    requestPath = '';
+                }
             }
             // Add handler to gate link click.
             $('body', context).delegate('a.le-gate-pass-link', 'click', function(e) {
@@ -61,28 +64,14 @@
                 var expires = "expires="+d.toUTCString();
                 // If no path supplied then assume it's the pass name.
                 if (name == null) {
-                    document.cookie = "le-gate-pass=1; " + expires;
+                    document.cookie = "le-gate-pass=1; " + expires+"; path=/";
                 }
                 else {
-                    document.cookie = name+"="+value+"; "+expires;
+                    // First delete the cookie if it exists.
+                    document.cookie = name + '=;expires=Thu, 01 Jan 1970 00:00:01 GMT;';
+                    document.cookie = name+"="+value+"; "+expires+"; path=/";
                 }
             }
-            /**
-             * provide extraction of get param from url
-             */
-            /*function leGateGetUrlVars(url){
-                var vars = [], hash;
-                var hashes = url.slice(url.indexOf('?')).split('&');
-                for(var i = 0; i < hashes.length; i++)
-                {
-                    hash = hashes[i].split('=');
-                    vars.push(hash[0]);
-                    vars[hash[0]] = hash[1];
-                }
-                vars.push('query');
-                vars['query'] = hashes.join('&');
-                return vars;
-            }*/
         }
     };
 })(jQuery);

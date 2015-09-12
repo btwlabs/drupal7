@@ -12,28 +12,38 @@ function banner_support_ds_field_settings_info() {
 
   $ds_fieldsetting = new stdClass();
   $ds_fieldsetting->api_version = 1;
-  $ds_fieldsetting->id = 'node|banner|teaser';
+  $ds_fieldsetting->id = 'node|banner|banner_no_body';
   $ds_fieldsetting->entity_type = 'node';
   $ds_fieldsetting->bundle = 'banner';
-  $ds_fieldsetting->view_mode = 'teaser';
+  $ds_fieldsetting->view_mode = 'banner_no_body';
   $ds_fieldsetting->settings = array(
-    'linked_image' => array(
+    'linked_mobile_image' => array(
       'weight' => '0',
       'label' => 'hidden',
       'format' => 'default',
     ),
+    'linked_image' => array(
+      'weight' => '1',
+      'label' => 'hidden',
+      'format' => 'default',
+    ),
   );
-  $export['node|banner|teaser'] = $ds_fieldsetting;
+  $export['node|banner|banner_no_body'] = $ds_fieldsetting;
 
   $ds_fieldsetting = new stdClass();
   $ds_fieldsetting->api_version = 1;
-  $ds_fieldsetting->id = 'node|banner|teaser2';
+  $ds_fieldsetting->id = 'node|banner|banner_with_body';
   $ds_fieldsetting->entity_type = 'node';
   $ds_fieldsetting->bundle = 'banner';
-  $ds_fieldsetting->view_mode = 'teaser2';
+  $ds_fieldsetting->view_mode = 'banner_with_body';
   $ds_fieldsetting->settings = array(
-    'linked_banner_image' => array(
+    'linked_mobile_image' => array(
       'weight' => '0',
+      'label' => 'hidden',
+      'format' => 'default',
+    ),
+    'linked_image' => array(
+      'weight' => '1',
       'label' => 'hidden',
       'format' => 'default',
     ),
@@ -43,7 +53,7 @@ function banner_support_ds_field_settings_info() {
       'format' => 'default',
     ),
   );
-  $export['node|banner|teaser2'] = $ds_fieldsetting;
+  $export['node|banner|banner_with_body'] = $ds_fieldsetting;
 
   return $export;
 }
@@ -66,6 +76,18 @@ function banner_support_ds_custom_fields_info() {
   $ds_field->properties = array();
   $export['linked_image'] = $ds_field;
 
+  $ds_field = new stdClass();
+  $ds_field->api_version = 1;
+  $ds_field->field = 'linked_mobile_image';
+  $ds_field->label = 'Linked Mobile Image';
+  $ds_field->field_type = 3;
+  $ds_field->entities = array(
+    'node' => 'node',
+  );
+  $ds_field->ui_limit = 'banner|*';
+  $ds_field->properties = array();
+  $export['linked_mobile_image'] = $ds_field;
+
   return $export;
 }
 
@@ -85,39 +107,8 @@ function banner_support_ds_layout_settings_info() {
   $ds_layout->settings = array(
     'regions' => array(
       'ds_content' => array(
-        0 => 'field_banner_image',
-        1 => 'field_banner_link',
-        2 => 'field_banner_body',
-      ),
-    ),
-    'fields' => array(
-      'field_banner_image' => 'ds_content',
-      'field_banner_link' => 'ds_content',
-      'field_banner_body' => 'ds_content',
-    ),
-    'classes' => array(),
-    'wrappers' => array(
-      'ds_content' => 'div',
-    ),
-    'layout_wrapper' => 'div',
-    'layout_attributes' => '',
-    'layout_attributes_merge' => 1,
-    'layout_link_attribute' => '',
-    'layout_link_custom' => '',
-  );
-  $export['node|banner|default'] = $ds_layout;
-
-  $ds_layout = new stdClass();
-  $ds_layout->api_version = 1;
-  $ds_layout->id = 'node|banner|teaser';
-  $ds_layout->entity_type = 'node';
-  $ds_layout->bundle = 'banner';
-  $ds_layout->view_mode = 'teaser';
-  $ds_layout->layout = 'ds_1col';
-  $ds_layout->settings = array(
-    'regions' => array(
-      'ds_content' => array(
-        0 => 'linked_image',
+        0 => 'linked_mobile_image',
+        1 => 'linked_image',
       ),
     ),
     'fields' => array(
@@ -133,20 +124,50 @@ function banner_support_ds_layout_settings_info() {
     'layout_link_attribute' => '',
     'layout_link_custom' => '',
   );
-  $export['node|banner|teaser'] = $ds_layout;
+  $export['node|banner|default'] = $ds_layout;
 
   $ds_layout = new stdClass();
   $ds_layout->api_version = 1;
-  $ds_layout->id = 'node|banner|teaser2';
+  $ds_layout->id = 'node|banner|banner_no_body';
   $ds_layout->entity_type = 'node';
   $ds_layout->bundle = 'banner';
-  $ds_layout->view_mode = 'teaser2';
+  $ds_layout->view_mode = 'banner_no_body';
+  $ds_layout->layout = 'ds_1col';
+  $ds_layout->settings = array(
+    'regions' => array(
+      'ds_content' => array(
+        0 => 'linked_mobile_image',
+        1 => 'linked_image',
+      ),
+    ),
+    'fields' => array(
+      'linked_image' => 'ds_content',
+      'linked_mobile_image' => 'ds_content',
+    ),
+    'classes' => array(),
+    'wrappers' => array(
+      'ds_content' => 'div',
+    ),
+    'layout_wrapper' => 'div',
+    'layout_attributes' => '',
+    'layout_attributes_merge' => 1,
+    'layout_link_attribute' => '',
+    'layout_link_custom' => '',
+  );
+  $export['node|banner|banner_no_body'] = $ds_layout;
+
+  $ds_layout = new stdClass();
+  $ds_layout->api_version = 1;
+  $ds_layout->id = 'node|banner|banner_with_body';
+  $ds_layout->entity_type = 'node';
+  $ds_layout->bundle = 'banner';
+  $ds_layout->view_mode = 'banner_with_body';
   $ds_layout->layout = 'banner_with_body_1';
   $ds_layout->settings = array(
     'regions' => array(
       'row1' => array(
         0 => 'field_banner_image',
-        1 => 'linked_banner_image',
+        1 => 'field_banner_mobile_image',
       ),
       'row2' => array(
         2 => 'title',
@@ -156,7 +177,7 @@ function banner_support_ds_layout_settings_info() {
     ),
     'fields' => array(
       'field_banner_image' => 'row1',
-      'linked_banner_image' => 'row1',
+      'field_banner_mobile_image' => 'row1',
       'title' => 'row2',
       'field_banner_body' => 'row2',
       'field_banner_link' => 'row2',
@@ -172,7 +193,33 @@ function banner_support_ds_layout_settings_info() {
     'layout_link_attribute' => '',
     'layout_link_custom' => '',
   );
-  $export['node|banner|teaser2'] = $ds_layout;
+  $export['node|banner|banner_with_body'] = $ds_layout;
 
+  return $export;
+}
+
+/**
+ * Implements hook_ds_view_modes_info().
+ */
+function banner_support_ds_view_modes_info() {
+  $export = array();
+
+  $ds_view_mode = new stdClass();
+  $ds_view_mode->api_version = 1;
+  $ds_view_mode->view_mode = 'banner_no_body';
+  $ds_view_mode->label = 'Banner with No Body Content';
+  $ds_view_mode->entities = array(
+    'node' => 'node',
+  );
+  $export['banner_no_body'] = $ds_view_mode;
+
+  $ds_view_mode = new stdClass();
+  $ds_view_mode->api_version = 1;
+  $ds_view_mode->view_mode = 'banner_with_body';
+  $ds_view_mode->label = 'Banner with Body Content';
+  $ds_view_mode->entities = array(
+    'node' => 'node',
+  );
+  $export['banner_with_body'] = $ds_view_mode;
   return $export;
 }
