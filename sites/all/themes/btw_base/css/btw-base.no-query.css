@@ -607,19 +607,23 @@ tr.draggable td {
 
 /* line 51, ../sass/base/_tables.scss */
 .draggable a.tabledrag-handle {
-  margin-left: -25px; }
+  margin-left: -15px;
+  min-height: 20px; }
+  /* line 55, ../sass/base/_tables.scss */
+  .draggable a.tabledrag-handle:hover {
+    text-decoration: none; }
 
-/* line 55, ../sass/base/_tables.scss */
+/* line 60, ../sass/base/_tables.scss */
 a.tabledrag-handle .handle {
-  background-position: 1px 4px;
-  height: 17px;
+  background-position: 0px 7px;
+  height: 20px;
   margin: -0.4em 0.5em;
   padding: 0.42em 0.5em;
-  width: 13px; }
+  width: 14px; }
 
-/* line 62, ../sass/base/_tables.scss */
+/* line 67, ../sass/base/_tables.scss */
 a.tabledrag-handle-hover .handle {
-  background-position: 0 -16px; }
+  background-position: 0 -13px; }
 
 /* line 12, ../sass/base/_tabs.scss */
 .tabs.tabs--primary {
@@ -915,6 +919,16 @@ body {
   margin: 0;
   border: 0; }
 
+/* line 11, ../sass/components/_flexslider.scss */
+.flexslider {
+  border: 0;
+  border-radius: 0;
+  background-color: transparent;
+  margin: 0; }
+  /* line 18, ../sass/components/_flexslider.scss */
+  .flexslider .flex-direction-nav li {
+    height: 0; }
+
 /*-------------------------------------------------
 ---------------------------------------------------
 
@@ -1037,7 +1051,7 @@ body {
    
 ------------------------------------*/
 /* Site Name */
-/* line 40, ../sass/components/_mobile-navigation.scss */
+/* line 41, ../sass/components/_mobile-navigation.scss */
 h1.site-name {
   display: none; }
 
@@ -1046,12 +1060,12 @@ h1.site-name {
  Toggle buttons 
  
 -----------------------------------*/
-/* line 73, ../sass/components/_mobile-navigation.scss */
+/* line 74, ../sass/components/_mobile-navigation.scss */
 .l-menu-mobile-top {
   background-color: #000;
   height: 50px; }
 
-/* line 79, ../sass/components/_mobile-navigation.scss */
+/* line 80, ../sass/components/_mobile-navigation.scss */
 a.nav-open-btn {
   left: 0px;
   top: 0px;
@@ -1071,10 +1085,10 @@ a.nav-open-btn {
   -moz-transition: all 0.2s ease;
   -o-transition: all 0.2s ease;
   transition: all 0.2s ease; }
-  /* line 95, ../sass/components/_mobile-navigation.scss */
+  /* line 96, ../sass/components/_mobile-navigation.scss */
   a.nav-open-btn:hover {
     color: #777; }
-  /* line 99, ../sass/components/_mobile-navigation.scss */
+  /* line 100, ../sass/components/_mobile-navigation.scss */
   a.nav-open-btn:before {
     font-family: IcoMoonBasic;
     content: "\62";
@@ -1084,7 +1098,7 @@ a.nav-open-btn {
     top: 11px;
     left: 12px; }
 
-/* line 115, ../sass/components/_mobile-navigation.scss */
+/* line 116, ../sass/components/_mobile-navigation.scss */
 a.nav-close-btn {
   display: block;
   padding: 15px 15px 11px 40px;
@@ -1096,11 +1110,11 @@ a.nav-close-btn {
   line-height: 1;
   color: #999;
   height: 50px; }
-  /* line 126, ../sass/components/_mobile-navigation.scss */
+  /* line 127, ../sass/components/_mobile-navigation.scss */
   a.nav-close-btn:hover {
     text-decoration: none;
     color: #fff; }
-  /* line 131, ../sass/components/_mobile-navigation.scss */
+  /* line 132, ../sass/components/_mobile-navigation.scss */
   a.nav-close-btn:before {
     content: "\e008";
     font-family: IcoMoonBasic;
@@ -1117,23 +1131,23 @@ a.nav-close-btn {
  Layout
    
 ------------------------------------*/
-/* line 151, ../sass/components/_mobile-navigation.scss */
+/* line 152, ../sass/components/_mobile-navigation.scss */
 #site-wrapper {
   overflow: hidden;
   width: 100%; }
 
-/* line 160, ../sass/components/_mobile-navigation.scss */
+/* line 161, ../sass/components/_mobile-navigation.scss */
 .l-inner-wrap {
   width: 100%;
   height: 100%;
   -webkit-transition: .3s ease all;
   transition: .3s ease all; }
 
-/* line 188, ../sass/components/_mobile-navigation.scss */
+/* line 189, ../sass/components/_mobile-navigation.scss */
 .js-nav body {
   overflow: hidden; }
 
-/* line 191, ../sass/components/_mobile-navigation.scss */
+/* line 192, ../sass/components/_mobile-navigation.scss */
 .js-nav .l-inner-wrap {
   -webkit-transform: translateX(300px);
   transform: translateX(300px);
@@ -1148,11 +1162,11 @@ a.nav-close-btn {
   position: relative;
   width: 100%; }
 
-/* line 215, ../sass/components/_mobile-navigation.scss */
+/* line 216, ../sass/components/_mobile-navigation.scss */
 #mobile-fade {
   display: none; }
 
-/* line 218, ../sass/components/_mobile-navigation.scss */
+/* line 219, ../sass/components/_mobile-navigation.scss */
 .js-nav #mobile-fade {
   width: 100%;
   height: 100%;
@@ -1164,7 +1178,7 @@ a.nav-close-btn {
   z-index: 9999;
   opacity: 1; }
 
-/* line 233, ../sass/components/_mobile-navigation.scss */
+/* line 234, ../sass/components/_mobile-navigation.scss */
 .l-menu-mobile {
   position: absolute;
   left: -300px;
@@ -1174,7 +1188,7 @@ a.nav-close-btn {
   background-color: #eee;
   backface-visibility: hidden;
   display: block; }
-  /* line 245, ../sass/components/_mobile-navigation.scss */
+  /* line 246, ../sass/components/_mobile-navigation.scss */
   .js-nav .l-menu-mobile {
     -webkit-transform: translateX(0);
     transform: translateX(0);
@@ -1188,17 +1202,17 @@ a.nav-close-btn {
  Main Links styling
  
 -------------------------------------*/
-/* line 269, ../sass/components/_mobile-navigation.scss */
+/* line 270, ../sass/components/_mobile-navigation.scss */
 .mobile-nav {
   height: auto;
   position: relative; }
 
-/* line 273, ../sass/components/_mobile-navigation.scss */
+/* line 274, ../sass/components/_mobile-navigation.scss */
 .mobile-nav ul {
   margin: 0;
   padding: 0; }
 
-/* line 277, ../sass/components/_mobile-navigation.scss */
+/* line 278, ../sass/components/_mobile-navigation.scss */
 .mobile-nav ul li {
   text-align: left;
   float: none;
@@ -1206,7 +1220,7 @@ a.nav-close-btn {
   padding: 0;
   list-style-type: none;
   list-style-image: none; }
-  /* line 282, ../sass/components/_mobile-navigation.scss */
+  /* line 283, ../sass/components/_mobile-navigation.scss */
   .mobile-nav ul li a {
     padding: 15px 15px 15px 40px;
     display: block;
@@ -1216,8 +1230,9 @@ a.nav-close-btn {
     border-bottom: 1px solid #555;
     font-size: 18px;
     font-size: 1.125rem; }
-    /* line 291, ../sass/components/_mobile-navigation.scss */
-    .mobile-nav ul li a:hover, .mobile-nav ul li a:active {
+    /* line 292, ../sass/components/_mobile-navigation.scss */
+    .mobile-nav ul li a:hover, .mobile-nav ul li a:active
+    .mobile-nav ul li a.active-trail {
       background-color: red;
       color: #fff;
       text-decoration: none; }
@@ -1227,16 +1242,16 @@ a.nav-close-btn {
  SUB NAV
  
 ---------------------------------------*/
-/* line 308, ../sass/components/_mobile-navigation.scss */
+/* line 310, ../sass/components/_mobile-navigation.scss */
 .mobile-nav ul ul {
   background-color: #ccc; }
 
-/* line 311, ../sass/components/_mobile-navigation.scss */
+/* line 313, ../sass/components/_mobile-navigation.scss */
 .mobile-nav .sub-nav {
   padding: 10px 10px 10px 80px;
   font-size: 14px;
   font-size: 0.875rem; }
-  /* line 315, ../sass/components/_mobile-navigation.scss */
+  /* line 317, ../sass/components/_mobile-navigation.scss */
   .mobile-nav .sub-nav:before {
     font-family: IcoMoonArrows;
     content: "\33";
@@ -1327,14 +1342,15 @@ a.nav-close-btn {
   position: relative;
   top: -2px; }
 
-/* line 30, ../sass/components/_navigation.scss */
-.l-region--header .menu {
+/* line 29, ../sass/components/_navigation.scss */
+.l-region--header nav.main-menu .menu {
   margin: 0;
   padding: 0;
   overflow: visible;
-  position: relative; }
+  position: relative;
+  background-color: #ccc; }
   /* line 36, ../sass/components/_navigation.scss */
-  .l-region--header .menu li {
+  .l-region--header nav.main-menu .menu li {
     margin: 0;
     padding: 0;
     list-style-type: none;
@@ -1342,33 +1358,39 @@ a.nav-close-btn {
     position: relative;
     /* sub nav menus */ }
     /* line 43, ../sass/components/_navigation.scss */
-    .l-region--header .menu li.leaf {
+    .l-region--header nav.main-menu .menu li.leaf {
       list-style-image: none; }
     /* line 46, ../sass/components/_navigation.scss */
-    .l-region--header .menu li.collapsed {
-      list-style-image: none; }
+    .l-region--header nav.main-menu .menu li.active-trail {
+      background-color: #ddd; }
     /* line 49, ../sass/components/_navigation.scss */
-    .l-region--header .menu li.expanded {
+    .l-region--header nav.main-menu .menu li.collapsed {
       list-style-image: none; }
-    /* line 54, ../sass/components/_navigation.scss */
-    .l-region--header .menu li:hover > a {
+    /* line 52, ../sass/components/_navigation.scss */
+    .l-region--header nav.main-menu .menu li.expanded {
+      list-style-image: none; }
+    /* line 57, ../sass/components/_navigation.scss */
+    .l-region--header nav.main-menu .menu li:hover > a {
       background-color: #444;
       color: #ccc; }
-    /* line 60, ../sass/components/_navigation.scss */
-    .l-region--header .menu li > a {
+    /* line 63, ../sass/components/_navigation.scss */
+    .l-region--header nav.main-menu .menu li > a {
       padding: 15px 20px;
       display: block;
       color: #222;
       background-color: transparent;
       font-size: 18px;
       font-size: 1.125rem; }
-      /* line 67, ../sass/components/_navigation.scss */
-      .l-region--header .menu li > a:hover {
+      /* line 70, ../sass/components/_navigation.scss */
+      .l-region--header nav.main-menu .menu li > a:hover {
         color: #ccc;
         background-color: #444;
         text-decoration: none; }
-    /* line 75, ../sass/components/_navigation.scss */
-    .l-region--header .menu li ul.menu {
+      /* line 75, ../sass/components/_navigation.scss */
+      .l-region--header nav.main-menu .menu li > a.active-trail, .l-region--header nav.main-menu .menu li > a.active-trail:hover {
+        background-color: #ddd; }
+    /* line 83, ../sass/components/_navigation.scss */
+    .l-region--header nav.main-menu .menu li ul.menu {
       position: absolute;
       top: 59px;
       left: 0;
@@ -1378,19 +1400,24 @@ a.nav-close-btn {
       -moz-transition: opacity 0.2s ease-in;
       -o-transition: opacity 0.2s ease-in;
       transition: opacity 0.2s ease-in;
-      background-color: #777;
+      background-color: #000;
       left: -9999px; }
-      /* line 86, ../sass/components/_navigation.scss */
-      .l-region--header .menu li ul.menu li {
+      /* line 93, ../sass/components/_navigation.scss */
+      .l-region--header nav.main-menu .menu li ul.menu li {
         float: left; }
-        /* line 89, ../sass/components/_navigation.scss */
-        .l-region--header .menu li ul.menu li a {
+        /* line 96, ../sass/components/_navigation.scss */
+        .l-region--header nav.main-menu .menu li ul.menu li a {
           padding: 10px 15px;
-          color: #fff;
+          color: #999;
+          background-color: red;
           font-size: 14px;
           font-size: 0.875rem; }
-    /* line 98, ../sass/components/_navigation.scss */
-    .l-region--header .menu li:hover ul.menu {
+          /* line 102, ../sass/components/_navigation.scss */
+          .l-region--header nav.main-menu .menu li ul.menu li a:hover, .l-region--header nav.main-menu .menu li ul.menu li a:active, .l-region--header nav.main-menu .menu li ul.menu li a.active-trail {
+            color: red;
+            background-color: #000; }
+    /* line 113, ../sass/components/_navigation.scss */
+    .l-region--header nav.main-menu .menu li:hover ul.menu {
       display: block;
       opacity: 1;
       visibility: visible;
