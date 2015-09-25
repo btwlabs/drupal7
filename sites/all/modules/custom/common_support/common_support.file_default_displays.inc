@@ -5,9 +5,9 @@
  */
 
 /**
- * Implements hook_default_file_entities().
+ * Implements hook_file_default_displays().
  */
-function common_support_default_file_entities() {
+function common_support_file_default_displays() {
   $export = array();
 
   $file_display = new stdClass();

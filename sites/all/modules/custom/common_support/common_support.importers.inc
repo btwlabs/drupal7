@@ -125,19 +125,56 @@ function common_support_delete_import($module, $assets) {
   module_invoke_all('common_support_post_delete_assets', $assets, $module);
 }
 
-
+/**
+ * Imports text filters from a features-style export.
+ * @param array $export
+ *   Array of filters.
+ * @return bool
+ *   TRUE on success, FALSE on failure.
+ */
 function common_support_import_filters($export = array(), $module = 'common_support') {
-
+  if ((empty($export)) || (!is_array($export))) {
+    return COMMON_SUPPORT_EXPORT_MALFORMED;
+  }
+  foreach($export as $name => $filter) {
+    // Look for existing filter.
+    if (!filter_format_load($filter)) {
+      if (filter_format_save($filter)) {
+        continue;
+      }
+      else {
+        return COMMON_SUPPORT_IMPORT_SAVE_ERROR;
+      }
+    }
+    else {
+      return COMMON_SUPPORT_IMPORT_ASSET_EXISTS;
+    }
+  }
+  return COMMON_SUPPORT_IMPORT_SUCCESS;
 }
 
-
-function common_support_import_file_entities($export = array(), $module = 'common_support') {
-
-}
-
-
+/**
+ * Imports wysiwyg profiles from a features-style export.
+ * @param array $export
+ *   Array of profiles.
+ * @return bool
+ *   TRUE on success, FALSE on failure.
+ */
 function common_support_wysiwyg($export = array(), $module = 'common_support') {
-
+  if ((empty($export)) || (!is_array($export))) {
+    return COMMON_SUPPORT_EXPORT_MALFORMED;
+  }
+  foreach($export as $name => $profile) {
+    db_merge('wysiwyg')
+      ->key(array('format' => $profile['format']))
+      ->fields(array(
+        'editor' => $profile['editor'],
+        'settings' => serialize($profile['settings']),
+      ))
+      ->execute();
+  }
+  wysiwyg_profile_cache_clear();
+  return COMMON_SUPPORT_IMPORT_SUCCESS;
 }
 
 /**
