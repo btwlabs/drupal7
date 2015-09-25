@@ -30,6 +30,7 @@
 		left: 0;
 		width: 100%;
 		background-color: $mobile-header-bg-color;
+		height: 50px;
 	}
 	@include breakpoint($medium-up) {
 		display: none;
@@ -289,7 +290,8 @@ a.nav-close-btn {
 		@include font-size(18px);
 		
 		&:hover,
-		&:active {
+		&:active
+		&.active-trail {
 			background-color: $mobile-nav-bg-hover-color;
 			color: $mobile-nav-text-hover-color;
 			text-decoration: none;

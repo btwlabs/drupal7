@@ -79,6 +79,7 @@ $nav-text-hover-color: #ccc;
 
 $nav-button-bg-color: transparent;
 $nav-button-bg-hover-color: #444;
+$nav-button-bg-active-color: #ddd;
 
 $nav-bar-bg-color: #ccc;
 
@@ -86,8 +87,10 @@ $nav-bar-bg-color: #ccc;
 	$subnav-text-color: #999;
 	$subnav-text-hover-color: red;
 	
-	$subnav-bg-color: #000;
-	$subnav-bg-hover-color: red;
+	$subnav-button-bg-color: red;
+	$subnav-button-bg-hover-color: #000;
+	
+	$subnav-bar-bg-color: #000;
 
 	// mobile nav only
 	$mobile-nav-text-color: #444;
