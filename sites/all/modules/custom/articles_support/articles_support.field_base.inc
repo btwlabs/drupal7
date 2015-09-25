@@ -142,19 +142,27 @@ function articles_support_default_field_base_assets() {
     'type' => 'link_field',
   );
 
-  // Exported field_base: 'field_article_video'
-  $field_bases['field_article_video'] = array(
+  // Exported field_base: 'field_article_videos'
+  $field_bases['field_article_videos'] = array(
     'active' => 1,
     'cardinality' => -1,
     'deleted' => 0,
     'entity_types' => array(),
-    'field_name' => 'field_article_video',
-    'indexes' => array(),
+    'field_name' => 'field_article_videos',
+    'indexes' => array(
+      'fid' => array(
+        0 => 'fid',
+      ),
+    ),
     'locked' => 0,
-    'module' => 'video_embed_field',
-    'settings' => array(),
+    'module' => 'file',
+    'settings' => array(
+      'display_default' => 0,
+      'display_field' => 0,
+      'uri_scheme' => 'public',
+    ),
     'translatable' => 0,
-    'type' => 'video_embed_field',
+    'type' => 'file',
   );
 
   return $field_bases;

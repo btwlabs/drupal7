@@ -29,19 +29,22 @@ function articles_support_common_support_import() {
 function articles_support_get_article_teaser_image($node, $view_mode = 'full') {
   //if there is an article video, use that.
   $image = array();
-  if (!empty($node->field_article_video)) {
+  if (!empty($node->field_article_videos)) {
+    /*
     $settings = array(
       'label' => 'hidden',
-      'module' => 'video_embed_field',
+      'module' => 'media',
       'settings' => array(
-       'description' => 1,
-       'description_position' => 'bottom',
-       'image_style' => 'articles_teaser_square_switcher',
+        'label' => 'hidden',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'type' => 'video_embed_field_thumbnail',
       'weight' => 9,
     );
-    $image = field_view_value('node', $node, 'field_article_video', $node->field_article_video[LANGUAGE_NONE][0], $settings);
+    */
+    $image = field_view_value('node', $node, 'field_article_video', $node->field_article_video[LANGUAGE_NONE][0], 'teaser');
   }
   elseif (!empty($node->field_article_images)) { //else if there's a image, use that
     $settings = array(
@@ -70,19 +73,21 @@ function articles_support_get_article_teaser_image($node, $view_mode = 'full') {
 function articles_support_get_article_hero_image($node, $view_mode = 'full') {
   //if there is an article video, use that.
   $image = array();
-  if (!empty($node->field_article_video)) {
+  if (!empty($node->field_article_videos)) {
+    /*
     $settings = array(
       'label' => 'hidden',
-      'module' => 'video_embed_field',
+      'module' => 'media',
       'settings' => array(
         'description' => 1,
         'description_position' => 'bottom',
       ),
-      'type' => 'video_embed_field_embed_code',
+      'type' => 'media_youtube',
       'style' => 'wide',
       'weight' => 9,
     );
-    $image = field_view_value('node', $node, 'field_article_video', $node->field_article_video[LANGUAGE_NONE][0], $settings);
+    */
+    $image = field_view_value('node', $node, 'field_article_videos', $node->field_article_video[LANGUAGE_NONE][0], 'full');
   }
   elseif (!empty($node->field_article_images)) { //else if there's a image, use that
     $settings = array(

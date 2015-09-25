@@ -17,6 +17,19 @@ function banner_support_default_field_instance_assets() {
     'deleted' => 0,
     'description' => '',
     'display' => array(
+      'banner_no_body' => array(
+        'label' => 'hidden',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 12,
+      ),
+      'banner_with_body' => array(
+        'label' => 'hidden',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 2,
+      ),
       'default' => array(
         'label' => 'hidden',
         'module' => 'text',
@@ -31,18 +44,11 @@ function banner_support_default_field_instance_assets() {
         'type' => 'text_default',
         'weight' => 5,
       ),
-      'banner_no_body' => array(
-        'label' => 'hidden',
+      'teaser' => array(
+        'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 12,
-      ),
-      'banner_with_body' => array(
-        'label' => 'hidden',
-        'module' => 'text',
-        'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 2,
+        'weight' => 0,
       ),
     ),
     'entity_type' => 'node',
@@ -70,16 +76,6 @@ function banner_support_default_field_instance_assets() {
     'deleted' => 0,
     'description' => '',
     'display' => array(
-      'default' => array(
-        'label' => 'hidden',
-        'module' => 'image',
-        'settings' => array(
-          'image_link' => '',
-          'image_style' => '',
-        ),
-        'type' => 'image',
-        'weight' => 1,
-      ),
       'banner_no_body' => array(
         'label' => 'hidden',
         'settings' => array(),
@@ -96,7 +92,24 @@ function banner_support_default_field_instance_assets() {
         'type' => 'image',
         'weight' => 0,
       ),
+      'default' => array(
+        'label' => 'hidden',
+        'module' => 'image',
+        'settings' => array(
+          'image_link' => '',
+          'image_style' => '',
+        ),
+        'type' => 'image',
+        'weight' => 1,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
     ),
+    'ds_extras_field_template' => '',
     'entity_type' => 'node',
     'field_name' => 'field_banner_image',
     'label' => 'Banner Image',
@@ -114,12 +127,25 @@ function banner_support_default_field_instance_assets() {
     ),
     'widget' => array(
       'active' => 1,
-      'module' => 'image',
+      'module' => 'media',
       'settings' => array(
-        'preview_image_style' => 'thumbnail',
-        'progress_indicator' => 'throbber',
+        'allowed_schemes' => array(
+          'public' => 'public',
+        ),
+        'allowed_types' => array(
+          'audio' => 0,
+          'document' => 0,
+          'image' => 'image',
+          'video' => 0,
+        ),
+        'browser_plugins' => array(
+          'media_default--media_browser_1' => 'media_default--media_browser_1',
+          'media_default--media_browser_my_files' => 'media_default--media_browser_my_files',
+          'media_internet' => 0,
+          'upload' => 'upload',
+        ),
       ),
-      'type' => 'image_image',
+      'type' => 'media_generic',
       'weight' => 0,
     ),
   );
@@ -131,13 +157,6 @@ function banner_support_default_field_instance_assets() {
     'deleted' => 0,
     'description' => 'This is the url that the banner image will link to',
     'display' => array(
-      'default' => array(
-        'label' => 'hidden',
-        'module' => 'link',
-        'settings' => array(),
-        'type' => 'link_default',
-        'weight' => 2,
-      ),
       'banner_no_body' => array(
         'label' => 'hidden',
         'settings' => array(),
@@ -150,6 +169,19 @@ function banner_support_default_field_instance_assets() {
         'settings' => array(),
         'type' => 'link_default',
         'weight' => 3,
+      ),
+      'default' => array(
+        'label' => 'hidden',
+        'module' => 'link',
+        'settings' => array(),
+        'type' => 'link_default',
+        'weight' => 2,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
     ),
     'entity_type' => 'node',
@@ -194,16 +226,6 @@ function banner_support_default_field_instance_assets() {
     'deleted' => 0,
     'description' => '',
     'display' => array(
-      'default' => array(
-        'label' => 'hidden',
-        'module' => 'image',
-        'settings' => array(
-          'image_link' => '',
-          'image_style' => '',
-        ),
-        'type' => 'image',
-        'weight' => 1,
-      ),
       'banner_no_body' => array(
         'label' => 'hidden',
         'settings' => array(),
@@ -218,6 +240,22 @@ function banner_support_default_field_instance_assets() {
           'image_style' => '',
         ),
         'type' => 'image',
+        'weight' => 0,
+      ),
+      'default' => array(
+        'label' => 'hidden',
+        'module' => 'image',
+        'settings' => array(
+          'image_link' => '',
+          'image_style' => '',
+        ),
+        'type' => 'image',
+        'weight' => 1,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
         'weight' => 0,
       ),
     ),
@@ -243,7 +281,6 @@ function banner_support_default_field_instance_assets() {
       'settings' => array(
         'allowed_schemes' => array(
           'public' => 'public',
-          'youtube' => 0,
         ),
         'allowed_types' => array(
           'audio' => 0,
@@ -270,8 +307,6 @@ function banner_support_default_field_instance_assets() {
   t('Link');
   t('Mobile Image');
   t('This is the url that the banner image will link to');
-
-  return $field_instances;
 
   return $field_instances;
 }

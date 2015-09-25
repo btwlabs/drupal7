@@ -110,11 +110,17 @@ function articles_support_default_variable_assets() {
       'right_non_bg_image_story_block' => array(
         'custom_settings' => FALSE,
       ),
+      'banner_no_body' => array(
+        'custom_settings' => FALSE,
+      ),
+      'banner_with_body' => array(
+        'custom_settings' => FALSE,
+      ),
     ),
     'extra_fields' => array(
       'form' => array(
         'metatags' => array(
-          'weight' => '8',
+          'weight' => '7',
         ),
         'title' => array(
           'weight' => '0',

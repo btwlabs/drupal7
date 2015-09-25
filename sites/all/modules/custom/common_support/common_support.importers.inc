@@ -125,6 +125,21 @@ function common_support_delete_import($module, $assets) {
   module_invoke_all('common_support_post_delete_assets', $assets, $module);
 }
 
+
+function common_support_import_filters($export = array(), $module = 'common_support') {
+
+}
+
+
+function common_support_import_file_entities($export = array(), $module = 'common_support') {
+
+}
+
+
+function common_support_wysiwyg($export = array(), $module = 'common_support') {
+
+}
+
 /**
  * Imports nodes from a features-style export.
  * @param array $export

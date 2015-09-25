@@ -167,6 +167,12 @@ function articles_support_default_field_instance_assets() {
         'type' => 'text_default',
         'weight' => 5,
       ),
+      'taxonomy_pages' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'teaser' => array(
         'label' => 'hidden',
         'module' => 'text',
@@ -242,6 +248,12 @@ function articles_support_default_field_instance_assets() {
         'type' => 'image',
         'weight' => 3,
       ),
+      'taxonomy_pages' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
@@ -266,12 +278,19 @@ function articles_support_default_field_instance_assets() {
     ),
     'widget' => array(
       'active' => 1,
-      'module' => 'multiupload_imagefield_widget',
+      'module' => 'media',
       'settings' => array(
+        'allowed_schemes' => array(
+          'public' => 'public',
+        ),
+        'allowed_types' => array(
+          'image' => 'image',
+        ),
+        'browser_plugins' => array(),
         'preview_image_style' => 'thumbnail',
         'progress_indicator' => 'throbber',
       ),
-      'type' => 'image_miw',
+      'type' => 'media_generic',
       'weight' => 4,
     ),
   );
@@ -319,6 +338,12 @@ function articles_support_default_field_instance_assets() {
         'type' => 'field_collection_fields',
         'weight' => 20,
       ),
+      'taxonomy_pages' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
@@ -342,62 +367,83 @@ function articles_support_default_field_instance_assets() {
     ),
   );
 
-  // Exported field_instance: 'node-news_article-field_article_video'
-  $field_instances['node-news_article-field_article_video'] = array(
+  // Exported field_instance: 'node-news_article-field_article_videos'
+  $field_instances['node-news_article-field_article_videos'] = array(
     'bundle' => 'news_article',
-    'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
     'display' => array(
       'default' => array(
         'label' => 'hidden',
-        'module' => 'video_embed_field',
-        'settings' => array(
-          'description' => 1,
-          'description_position' => 'bottom',
-          'video_style' => 'normal',
-        ),
-        'type' => 'video_embed_field',
-        'weight' => 2,
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 21,
       ),
       'full' => array(
         'label' => 'hidden',
-        'module' => 'video_embed_field',
-        'settings' => array(
-          'description' => 1,
-          'description_position' => 'bottom',
-          'video_style' => 'normal',
-        ),
-        'type' => 'video_embed_field',
-        'weight' => 2,
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'recent_articles' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'related_articles' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'taxonomy_pages' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'teaser' => array(
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 8,
-      ),
-      'teaser2' => array(
-        'label' => 'hidden',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 7,
+        'weight' => 0,
       ),
     ),
+    'ds_extras_field_template' => 'theme_ds_field_minimal',
     'entity_type' => 'node',
-    'field_name' => 'field_article_video',
-    'label' => 'Video',
+    'field_name' => 'field_article_videos',
+    'label' => 'Videos',
     'required' => 0,
     'settings' => array(
       'description_field' => 0,
-      'description_length' => 128,
+      'file_directory' => '',
+      'file_extensions' => 'txt',
+      'max_filesize' => '',
       'user_register_form' => FALSE,
     ),
     'widget' => array(
-      'active' => 0,
-      'module' => 'video_embed_field',
-      'settings' => array(),
-      'type' => 'video_embed_field_video',
+      'active' => 1,
+      'module' => 'media',
+      'settings' => array(
+        'allowed_schemes' => array(
+          'public' => 'public',
+          'youtube' => 'youtube',
+        ),
+        'allowed_types' => array(
+          'audio' => 0,
+          'document' => 0,
+          'image' => 0,
+          'video' => 'video',
+        ),
+        'browser_plugins' => array(
+          'media_default--media_browser_1' => 'media_default--media_browser_1',
+          'media_default--media_browser_my_files' => 0,
+          'media_internet' => 'media_internet',
+          'upload' => 0,
+        ),
+      ),
+      'type' => 'media_generic',
       'weight' => 5,
     ),
   );
@@ -437,10 +483,17 @@ function articles_support_default_field_instance_assets() {
         'type' => 'taxonomy_term_reference_link',
         'weight' => 0,
       ),
-      'teaser' => array(
+      'taxonomy_pages' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'module' => 'taxonomy',
+        'settings' => array(),
+        'type' => 'taxonomy_term_reference_link',
         'weight' => 10,
       ),
     ),

@@ -8,9 +8,7 @@
  * Implements hook_default_field_bases_assets().
  */
 function banner_support_default_field_base_assets() {
-  $field_bases = array();
-
-  // Exported field_base: 'field_article_body'
+  // Exported field_base: 'field_banner_body'
   $field_bases['field_banner_body'] = array(
     'active' => 1,
     'cardinality' => 1,
