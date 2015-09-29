@@ -17,5 +17,6 @@ dependencies[] = link
 dependencies[] = list
 dependencies[] = taxonomy
 dependencies[] = text
+dependencies[] = video_embed_field
 dependencies[] = views
 dependencies[] = views_load_more
