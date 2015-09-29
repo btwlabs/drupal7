@@ -1,6 +1,9 @@
 Story Blocks
 ------------
 
+Known Issues: The Right Non BG Image view mode has the link not at the highest weight, but
+right below videos. Not sure where that setting is.
+
 This is a feature module that provides a framework for creating views in which each row
 of the display can have a different layout.
 

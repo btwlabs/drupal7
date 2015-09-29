@@ -80,7 +80,7 @@ function story_blocks_default_field_instance_assets() {
     ),
   );
 
-  // Exported field_instance: 'node-row-field_story_block_images'
+  // Exported field_instance: 'node-story_block-field_story_block_images'
   $field_instances['node-story_block-field_story_block_images'] = array(
     'bundle' => 'story_block',
     'deleted' => 0,
@@ -212,6 +212,7 @@ function story_blocks_default_field_instance_assets() {
         'weight' => 0,
       ),
     ),
+    'ds_extras_field_template' => '',
     'entity_type' => 'node',
     'field_name' => 'field_story_block_images',
     'label' => 'Images',
@@ -229,12 +230,26 @@ function story_blocks_default_field_instance_assets() {
     ),
     'widget' => array(
       'active' => 1,
-      'module' => 'multiupload_imagefield_widget',
+      'module' => 'media',
       'settings' => array(
-        'preview_image_style' => 'thumbnail',
-        'progress_indicator' => 'throbber',
+        'allowed_schemes' => array(
+          'public' => 'public',
+          'youtube' => 0,
+        ),
+        'allowed_types' => array(
+          'audio' => 0,
+          'document' => 0,
+          'image' => 'image',
+          'video' => 0,
+        ),
+        'browser_plugins' => array(
+          'media_default--media_browser_1' => 'media_default--media_browser_1',
+          'media_default--media_browser_my_files' => 'media_default--media_browser_my_files',
+          'media_internet' => 'media_internet',
+          'upload' => 'upload',
+        ),
       ),
-      'type' => 'image_miw',
+      'type' => 'media_generic',
       'weight' => 2,
     ),
   );
@@ -258,28 +273,28 @@ function story_blocks_default_field_instance_assets() {
         'type' => 'hidden',
         'weight' => 16,
       ),
-      'left_bg_imagestory_block' => array(
+      'left_bg_image_story_block' => array(
         'label' => 'hidden',
         'module' => 'link',
         'settings' => array(),
         'type' => 'link_default',
         'weight' => 4,
       ),
-      'left_non_bg_imagestory_block' => array(
+      'left_non_bg_image_story_block' => array(
         'label' => 'hidden',
         'module' => 'link',
         'settings' => array(),
         'type' => 'link_default',
         'weight' => 5,
       ),
-      'right_bg_imagestory_block' => array(
+      'right_bg_image_story_block' => array(
         'label' => 'hidden',
         'module' => 'link',
         'settings' => array(),
         'type' => 'link_default',
         'weight' => 6,
       ),
-      'right_non_bg_imagestory_block' => array(
+      'right_non_bg_image_story_block' => array(
         'label' => 'hidden',
         'module' => 'link',
         'settings' => array(),

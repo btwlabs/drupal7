@@ -41,7 +41,7 @@ function story_blocks_views_default_views() {
   $handler->display->display_options['row_options']['grouping_fieldset']['group_field'] = 'node|entityqueue_relationship';
   $handler->display->display_options['row_options']['default_fieldset']['view_mode'] = 'teaser';
   $handler->display->display_options['row_options']['switch_fieldset']['switch'] = TRUE;
-  /* Relationship: Sample Row Page Queue */
+  /* Relationship: Sample Story Block Page Queue */
   $handler->display->display_options['relationships']['entityqueue_relationship']['id'] = 'entityqueue_relationship';
   $handler->display->display_options['relationships']['entityqueue_relationship']['table'] = 'node';
   $handler->display->display_options['relationships']['entityqueue_relationship']['field'] = 'entityqueue_relationship';
@@ -74,7 +74,7 @@ function story_blocks_views_default_views() {
   $handler->display->display_options['filters']['type']['table'] = 'node';
   $handler->display->display_options['filters']['type']['field'] = 'type';
   $handler->display->display_options['filters']['type']['value'] = array(
-    'row' => 'row',
+    'story_block' => 'story_block',
   );
   /* Filter criterion: Entityqueue: Node In Queue */
   $handler->display->display_options['filters']['entityqueue_relationship']['id'] = 'entityqueue_relationship';

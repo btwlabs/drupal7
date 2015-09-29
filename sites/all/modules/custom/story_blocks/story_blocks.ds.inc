@@ -177,9 +177,7 @@ function story_blocks_ds_field_settings_info() {
         'title_wrapper' => '',
         'ctools' => 'a:3:{s:4:"conf";a:10:{s:5:"label";s:6:"hidden";s:9:"formatter";s:5:"image";s:11:"delta_limit";s:1:"0";s:12:"delta_offset";s:1:"0";s:14:"delta_reversed";i:0;s:18:"formatter_settings";a:2:{s:11:"image_style";s:22:"story_block-img-mobile";s:10:"image_link";s:0:"";}s:7:"context";s:25:"argument_entity_id:node_1";s:14:"override_title";i:0;s:19:"override_title_text";s:0:"";s:22:"override_title_heading";s:2:"h2";}s:4:"type";s:12:"entity_field";s:7:"subtype";s:29:"node:field_story_block_images";}',
         'load_terms' => 0,
-        'ft' => array(
-          'func' => 'theme_ds_field_minimal',
-        ),
+        'ft' => array(),
       ),
     ),
     'title' => array(
@@ -310,9 +308,9 @@ function story_blocks_ds_layout_settings_info() {
     'regions' => array(
       'col1' => array(
         0 => 'mobile_story_block_image',
-        1 => 'field_story_block_link',
-        2 => 'title',
-        3 => 'body',
+        1 => 'title',
+        2 => 'body',
+        3 => 'field_story_block_link',
       ),
       'col2' => array(
         4 => 'field_story_block_videos',
@@ -321,9 +319,9 @@ function story_blocks_ds_layout_settings_info() {
     ),
     'fields' => array(
       'mobile_story_block_image' => 'col1',
-      'field_story_block_link' => 'col1',
       'title' => 'col1',
       'body' => 'col1',
+      'field_story_block_link' => 'col1',
       'field_story_block_videos' => 'col2',
       'field_story_block_images' => 'col2',
     ),
@@ -358,10 +356,10 @@ function story_blocks_ds_layout_settings_info() {
     'regions' => array(
       'col1' => array(
         0 => 'mobile_story_block_image',
-        1 => 'field_story_block_link',
-        2 => 'title',
-        3 => 'body',
-        4 => 'field_story_block_videos',
+        1 => 'title',
+        2 => 'body',
+        3 => 'field_story_block_videos',
+        4 => 'field_story_block_link',
       ),
       'col2' => array(
         5 => 'field_story_block_images',
@@ -369,10 +367,10 @@ function story_blocks_ds_layout_settings_info() {
     ),
     'fields' => array(
       'mobile_story_block_image' => 'col1',
-      'field_story_block_link' => 'col1',
       'title' => 'col1',
       'body' => 'col1',
       'field_story_block_videos' => 'col1',
+      'field_story_block_link' => 'col1',
       'field_story_block_images' => 'col2',
     ),
     'limit' => array(
@@ -405,23 +403,23 @@ function story_blocks_ds_layout_settings_info() {
   $ds_layout->settings = array(
     'regions' => array(
       'col2' => array(
-        0 => 'field_story_block_link',
-        4 => 'title',
-        5 => 'body',
+        3 => 'title',
+        4 => 'body',
+        5 => 'field_story_block_videos',
+        6 => 'field_story_block_link',
       ),
       'col1' => array(
         1 => 'mobile_story_block_image',
-        2 => 'field_story_block_videos',
-        3 => 'field_story_block_images',
+        2 => 'field_story_block_images',
       ),
     ),
     'fields' => array(
-      'field_story_block_link' => 'col2',
       'mobile_story_block_image' => 'col1',
       'field_story_block_videos' => 'col1',
       'field_story_block_images' => 'col1',
       'title' => 'col2',
       'body' => 'col2',
+      'field_story_block_link' => 'col2',
     ),
     'limit' => array(
       'field_story_block_images' => '1',
@@ -452,24 +450,24 @@ function story_blocks_ds_layout_settings_info() {
   $ds_layout->layout = 'common_support_teaser_1';
   $ds_layout->settings = array(
     'regions' => array(
-      'col2' => array(
-        0 => 'field_story_block_link',
-        3 => 'title',
-        4 => 'body',
-        5 => 'field_story_block_videos',
-      ),
       'col1' => array(
-        1 => 'mobile_story_block_image',
-        2 => 'field_story_block_images',
+        0 => 'mobile_story_block_image',
+        1 => 'field_story_block_images',
+      ),
+      'col2' => array(
+        2 => 'title',
+        3 => 'body',
+        4 => 'field_story_block_videos',
+        5 => 'field_story_block_link',
       ),
     ),
     'fields' => array(
-      'field_story_block_link' => 'col2',
       'mobile_story_block_image' => 'col1',
       'field_story_block_images' => 'col1',
       'title' => 'col2',
       'body' => 'col2',
       'field_story_block_videos' => 'col2',
+      'field_story_block_link' => 'col2',
     ),
     'limit' => array(
       'field_story_block_images' => '1',
@@ -488,6 +486,7 @@ function story_blocks_ds_layout_settings_info() {
     'layout_attributes_merge' => 1,
     'layout_link_attribute' => '',
     'layout_link_custom' => '',
+    'layout_disable_css' => 0,
   );
   $export['node|story_block|right_non_bg_image_story_block'] = $ds_layout;
 
