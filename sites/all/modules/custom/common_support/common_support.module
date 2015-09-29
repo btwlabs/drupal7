@@ -9,7 +9,6 @@
  */
 function common_support_common_support_import() {
   return array(
-    'file_entities',
     'filters',
     'variable',
     'wysiwyg'

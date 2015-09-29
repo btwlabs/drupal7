@@ -65,10 +65,10 @@ function banner_support_default_variable_assets() {
   $strongarm->name = 'field_bundle_settings_node__banner';
   $strongarm->value = array(
     'view_modes' => array(
-      'banner_no_body' => array(
+      'banner_large_image_only' => array(
         'custom_settings' => TRUE,
       ),
-      'banner_with_body' => array(
+      'banner_large_with_body' => array(
         'custom_settings' => TRUE,
       ),
       'full' => array(
@@ -89,17 +89,50 @@ function banner_support_default_variable_assets() {
       'revision' => array(
         'custom_settings' => FALSE,
       ),
+      'bnr_lg_hidden_small_with_bdy' => array(
+        'custom_settings' => TRUE,
+      ),
+      'bnr_lg_hidden_sml_hidden' => array(
+        'custom_settings' => TRUE,
+      ),
+      'bnr_lg_hidden_sml_img_only' => array(
+        'custom_settings' => TRUE,
+      ),
+      'bnr_lg_img_only_sml_hidden' => array(
+        'custom_settings' => TRUE,
+      ),
+      'bnr_lg_img_only_sml_img_only' => array(
+        'custom_settings' => TRUE,
+      ),
+      'bnr_lg_img_only_sml_with_bdy' => array(
+        'custom_settings' => TRUE,
+      ),
+      'bnr_lg_with_bdy_sml_hidden' => array(
+        'custom_settings' => TRUE,
+      ),
+      'bnr_lg_with_bdy_sml_img_only' => array(
+        'custom_settings' => TRUE,
+      ),
+      'bnr_lg_with_bdy_sml_with_bdy' => array(
+        'custom_settings' => TRUE,
+      ),
+      'teaser' => array(
+        'custom_settings' => FALSE,
+      ),
+      'taxonomy_pages' => array(
+        'custom_settings' => FALSE,
+      ),
     ),
     'extra_fields' => array(
       'form' => array(
         'metatags' => array(
-          'weight' => '5',
+          'weight' => '8',
         ),
         'title' => array(
           'weight' => '0',
         ),
         'path' => array(
-          'weight' => '3',
+          'weight' => '7',
         ),
         'xmlsitemap' => array(
           'weight' => '4',
@@ -108,15 +141,51 @@ function banner_support_default_variable_assets() {
       'display' => array(
         'share_links' => array(
           'default' => array(
-            'weight' => '0',
+            'weight' => '8',
             'visible' => FALSE,
           ),
-          'banner_with_body' => array(
+          'banner_large_with_body' => array(
             'weight' => '12',
             'visible' => FALSE,
           ),
-          'banner_no_body' => array(
+          'banner_large_image_only' => array(
             'weight' => '9',
+            'visible' => FALSE,
+          ),
+          'bnr_lg_hidden_small_with_bdy' => array(
+            'weight' => '19',
+            'visible' => FALSE,
+          ),
+          'bnr_lg_hidden_sml_hidden' => array(
+            'weight' => '19',
+            'visible' => FALSE,
+          ),
+          'bnr_lg_hidden_sml_img_only' => array(
+            'weight' => '20',
+            'visible' => FALSE,
+          ),
+          'bnr_lg_img_only_sml_hidden' => array(
+            'weight' => '18',
+            'visible' => FALSE,
+          ),
+          'bnr_lg_img_only_sml_img_only' => array(
+            'weight' => '20',
+            'visible' => FALSE,
+          ),
+          'bnr_lg_img_only_sml_with_bdy' => array(
+            'weight' => '18',
+            'visible' => FALSE,
+          ),
+          'bnr_lg_with_bdy_sml_hidden' => array(
+            'weight' => '15',
+            'visible' => FALSE,
+          ),
+          'bnr_lg_with_bdy_sml_img_only' => array(
+            'weight' => '17',
+            'visible' => FALSE,
+          ),
+          'bnr_lg_with_bdy_sml_with_bdy' => array(
+            'weight' => '15',
             'visible' => FALSE,
           ),
         ),

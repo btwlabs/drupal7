@@ -2,6 +2,7 @@ name = Banner Support
 core = 7.x
 package = BTW
 dependencies[] = common_support
+dependencies[] = conditional_fields
 dependencies[] = flexslider_views
 dependencies[] = image
 dependencies[] = link

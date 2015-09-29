@@ -41,14 +41,15 @@ function hook_common_support_import() {
     'node_type',
     'field_base',
     'field_instance',
-    'commerce_product',
     'image_style',
-    'vocabulary',
+    'taxonomy',
     'user_role',
     'user_permission',
     'variable',
     'nodequeue',
     'entityqueue',
+    'conditional_fields',
+    'filters',
   );
 }
 

@@ -7,7 +7,7 @@
 /**
  * Implements hook_default_filters().
  */
-function common_support_default_filters() {
+function common_support_default_filters_assets() {
   $formats = array();
 
   // Exported format: Editor.
@@ -22,7 +22,7 @@ function common_support_default_filters() {
         'weight' => -10,
         'status' => 1,
         'settings' => array(
-          'allowed_html' => '<a> <em> <strong> <cite> <blockquote> <code> <ul> <ol> <li> <dl> <dt> <dd> <div> <iframe> <article> <aside> <section>',
+          'allowed_html' => '<a> <em> <strong> <cite> <blockquote> <code> <ul> <ol> <li> <dl> <dt> <dd> <i> <p> <div> <span> <aside> <section><h2><h3><h4><h5>',
           'filter_html_help' => 1,
           'filter_html_nofollow' => 0,
         ),

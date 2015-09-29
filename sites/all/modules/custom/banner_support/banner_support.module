@@ -27,6 +27,8 @@ function banner_support_common_support_import() {
     'field_base',
     'field_instance',
     'variable',
+    'taxonomy',
+    'conditional_fields',
   );
 }
 
@@ -45,16 +47,46 @@ function banner_support_common_support_delete_import() {
  * Implements hook_entity_view_mode_alter().
  */
 function banner_support_entity_view_mode_alter(&$view_mode, $context) {
-  // Switch banner view modes on banner logic.
+  // Switch banner view modes on banner display options logic.
   // This works b/c banners are only shown in a views block.
-  // If body has content, use associated view mode.
   $node = $context['entity'];
   if (($context['entity_type'] == 'node') && ($node->type == 'banner')) {
-    if (!empty($node->field_banner_body)) {
-      $view_mode = 'banner_with_body';
-    }
-    else {
-      $view_mode = 'banner_no_body';
+    $large_display = $node->field_large_options[LANGUAGE_NONE][0]['value'];
+    $small_display = $node->field_small_options[LANGUAGE_NONE][0]['value'];
+    switch($large_display) {
+      case 'image-only':
+        if ($small_display == 'image-only') {
+          $view_mode = 'bnr_lg_img_only_sml_img_only';
+        }
+        elseif ($small_display == 'image-and-body') {
+          $view_mode = 'bnr_lg_img_only_sml_with_bdy';
+        }
+        else {
+          $view_mode = 'bnr_lg_img_only_sml_hidden';
+        }
+        break;
+      case 'image-and-body':
+        if ($small_display == 'image-only') {
+          $view_mode = 'bnr_lg_with_bdy_sml_img_only';
+        }
+        elseif ($small_display == 'image-and-body') {
+          $view_mode = 'bnr_lg_with_bdy_sml_with_bdy';
+        }
+        else {
+          $view_mode = 'bnr_lg_with_bdy_sml_hidden';
+        }
+        break;
+      case 'do-not-display':
+        if ($small_display == 'image-only') {
+          $view_mode = 'bnr_lg_hidden_sml_img_only';
+        }
+        elseif ($small_display == 'image-and-body') {
+          $view_mode = 'bnr_lg_hidden_small_with_bdy';
+        }
+        else {
+          $view_mode = 'bnr_lg_hidden_sml_hidden';
+        }
+        break;
     }
   }
 }
@@ -65,9 +97,11 @@ function banner_support_entity_view_mode_alter(&$view_mode, $context) {
 function banner_support_preprocess_node(&$vars) {
   // Proceed if this is a banner.
   if ($vars['node']->type == 'banner') {
-    if (!empty($vars['field_banner_link']) && !empty($vars['field_banner_image'])) {
-      $image = (isset($vars['field_banner_image'][LANGUAGE_NONE][0])) ? $vars['field_banner_image'][LANGUAGE_NONE][0] : $vars['field_banner_image'][0];
-      $image_array = field_view_value('node', $vars['node'], 'field_banner_image', $image);
+    // Create a linked large format banner image preprocess field.
+    // This should provide an image whether there is a link or not.
+    if (!empty($vars['field_banner_link']) && !empty($vars['field_banner_large_image'])) {
+      $image = (isset($vars['field_banner_large_image'][LANGUAGE_NONE][0])) ? $vars['field_banner_large_image'][LANGUAGE_NONE][0] : $vars['field_banner_large_image'][0];
+      $image_array = field_view_value('node', $vars['node'], 'field_banner_large_image', $image);
       if (isset($vars['field_banner_link'][LANGUAGE_NONE][0]['url'])) {
         $url = $vars['field_banner_link'][LANGUAGE_NONE][0]['url'];
       }
@@ -82,20 +116,22 @@ function banner_support_preprocess_node(&$vars) {
         '#options' => array(
           'html' => TRUE,
           'attributes' => array(
-            'class' => array('banner-image-link image reactive'),
+            'class' => array('banner-image-link banner-large-image-link image reactive'),
           ),
         ),
       );
-      $vars['linked_image'] = drupal_render($field_content);
+      $vars['linked_large_format_image'] = drupal_render($field_content);
     }
-    elseif (!empty($vars['field_banner_image'])) {
-      $image = (isset($vars['field_banner_image'][LANGUAGE_NONE][0])) ? $vars['field_banner_image'][LANGUAGE_NONE][0] : $vars['field_banner_image'][0];
-      $image_array = field_view_value('node', $vars['node'], 'field_banner_image', $image);
-      $vars['linked_image'] = drupal_render($image_array);
+    elseif (!empty($vars['field_banner_large_image'])) {
+      $image = (isset($vars['field_banner_large_image'][LANGUAGE_NONE][0])) ? $vars['field_banner_large_image'][LANGUAGE_NONE][0] : $vars['field_banner_large_image'][0];
+      $image_array = field_view_value('node', $vars['node'], 'field_banner_large_image', $image);
+      $vars['linked_large_format_image'] = drupal_render($image_array);
     }
-    if (!empty($vars['field_banner_link']) && !empty($vars['field_banner_mobile_image'])) {
-      $image = (isset($vars['field_banner_mobile_image'][LANGUAGE_NONE][0])) ? $vars['field_banner_mobile_image'][LANGUAGE_NONE][0] : $vars['field_banner_mobile_image'][0];
-      $image_array = field_view_value('node', $vars['node'], 'field_banner_mobile_image', $image);
+    // Create a linked small format banner image preprocess field.
+    // This should provide an image whether there is a link or not.
+    if (!empty($vars['field_banner_link']) && !empty($vars['field_banner_small_image'])) {
+      $image = (isset($vars['field_banner_small_image'][LANGUAGE_NONE][0])) ? $vars['field_banner_small_image'][LANGUAGE_NONE][0] : $vars['field_banner_small_image'][0];
+      $image_array = field_view_value('node', $vars['node'], 'field_banner_small_image', $image);
       if (isset($vars['field_banner_link'][LANGUAGE_NONE][0]['url'])) {
         $url = $vars['field_banner_link'][LANGUAGE_NONE][0]['url'];
       }
@@ -110,16 +146,16 @@ function banner_support_preprocess_node(&$vars) {
         '#options' => array(
           'html' => TRUE,
           'attributes' => array(
-            'class' => array('banner-mobile-image-link image reactive'),
+            'class' => array('banner-image-link banner-small-image-link image reactive'),
           ),
         ),
       );
-      $vars['linked_mobile_image'] = drupal_render($field_content);
+      $vars['linked_small_format_image'] = drupal_render($field_content);
     }
-    elseif (!empty($vars['field_banner_mobile_image'])) {
-      $image = (isset($vars['field_banner_mobile_image'][LANGUAGE_NONE][0])) ? $vars['field_banner_mobile_image'][LANGUAGE_NONE][0] : $vars['field_banner_mobile_image'][0];
-      $image_array = field_view_value('node', $vars['node'], 'field_banner_mobile_image', $image);
-      $vars['linked_mobile_image'] = drupal_render($image_array);
+    elseif (!empty($vars['field_banner_small_image'])) {
+      $image = (isset($vars['field_banner_small_image'][LANGUAGE_NONE][0])) ? $vars['field_banner_small_image'][LANGUAGE_NONE][0] : $vars['field_banner_small_image'][0];
+      $image_array = field_view_value('node', $vars['node'], 'field_banner_small_image', $image);
+      $vars['linked_small_format_image'] = drupal_render($image_array);
     }
   }
 }
@@ -130,18 +166,16 @@ function banner_support_preprocess_node(&$vars) {
 function banner_support_ds_layout_info() {
   $path = drupal_get_path('module', 'banner_support');
 
-  $layouts = array(
-    'banner_with_body_1' => array(
-      'label' => t('Banner With Body V1'),
-      'path' => $path . '/layouts/banner_with_body_1',
-      'regions' => array(
-        'row1' => t('Row 1'),
-        'row2' => t('Row 2'),
-      ),
-      'css' => TRUE,
-      // optional, form only applies to node form at this point.
-      'form' => FALSE,
+  $layouts['banner_support_1'] = array(
+    'label' => t('Banner - Large and Small Formats'),
+    'path' => $path . '/layouts/banner_support_1',
+    'regions' => array(
+      'large_format' => t('Large Format'),
+      'small_format' => t('Small Format'),
     ),
+    'css' => TRUE,
+    'form' => FALSE,
+    'image' => TRUE,
   );
 
   return $layouts;

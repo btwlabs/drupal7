@@ -136,10 +136,11 @@ function common_support_import_filters($export = array(), $module = 'common_supp
   if ((empty($export)) || (!is_array($export))) {
     return COMMON_SUPPORT_EXPORT_MALFORMED;
   }
-  foreach($export as $name => $filter) {
+  foreach($export as $name => $format) {
     // Look for existing filter.
-    if (!filter_format_load($filter)) {
-      if (filter_format_save($filter)) {
+    $format = (object) $format;
+    if (!filter_format_load($name)) {
+      if (filter_format_save($format)) {
         continue;
       }
       else {
@@ -147,7 +148,8 @@ function common_support_import_filters($export = array(), $module = 'common_supp
       }
     }
     else {
-      return COMMON_SUPPORT_IMPORT_ASSET_EXISTS;
+      continue;
+      //return COMMON_SUPPORT_IMPORT_ASSET_EXISTS;
     }
   }
   return COMMON_SUPPORT_IMPORT_SUCCESS;
@@ -160,7 +162,7 @@ function common_support_import_filters($export = array(), $module = 'common_supp
  * @return bool
  *   TRUE on success, FALSE on failure.
  */
-function common_support_wysiwyg($export = array(), $module = 'common_support') {
+function common_support_import_wysiwyg($export = array(), $module = 'common_support') {
   if ((empty($export)) || (!is_array($export))) {
     return COMMON_SUPPORT_EXPORT_MALFORMED;
   }
@@ -206,7 +208,8 @@ function common_support_import_node_type($export = array(), $module = 'common_su
       }
     }
     else {
-      return COMMON_SUPPORT_IMPORT_ASSET_EXISTS;
+      continue;
+      //return COMMON_SUPPORT_IMPORT_ASSET_EXISTS;
     }
   }
   return COMMON_SUPPORT_IMPORT_SUCCESS;
@@ -234,7 +237,8 @@ function common_support_import_commerce_product($export = array(), $module = 'co
       }
     }
     else {
-      return COMMON_SUPPORT_IMPORT_ASSET_EXISTS;
+      continue;
+      //return COMMON_SUPPORT_IMPORT_ASSET_EXISTS;
     }
   }
   return COMMON_SUPPORT_IMPORT_SUCCESS;
@@ -262,7 +266,8 @@ function common_support_import_field_base($export = array(), $module = 'common_s
       }
     }
     else {
-      return COMMON_SUPPORT_IMPORT_ASSET_EXISTS;
+      continue;
+      //return COMMON_SUPPORT_IMPORT_ASSET_EXISTS;
     }
   }
   return COMMON_SUPPORT_IMPORT_SUCCESS;
@@ -290,7 +295,8 @@ function common_support_import_field_instance($export = array(), $module = 'comm
       }
     }
     else {
-      return COMMON_SUPPORT_IMPORT_ASSET_EXISTS;
+      continue;
+      //return COMMON_SUPPORT_IMPORT_ASSET_EXISTS;
     }
   }
   return COMMON_SUPPORT_IMPORT_SUCCESS;
@@ -303,13 +309,14 @@ function common_support_import_field_instance($export = array(), $module = 'comm
  * @return bool
  *   TRUE on success, FALSE on failure.
  */
-function common_support_import_vocabulary($export = array(), $module = 'common_support') {
+function common_support_import_taxonomy($export = array(), $module = 'common_support') {
   if ((empty($export)) || (!is_array($export))) {
     return COMMON_SUPPORT_EXPORT_MALFORMED;
   }
   foreach($export as $vocabulary) {
+    $vocabulary = (object) $vocabulary;
     // Look for existing vocabulary.
-    if (!taxonomy_vocabulary_machine_name_load($vocabulary['machine_name'])) {
+    if (!taxonomy_vocabulary_machine_name_load($vocabulary->machine_name)) {
       if (taxonomy_vocabulary_save($vocabulary)) {
         continue;
       }
@@ -318,7 +325,8 @@ function common_support_import_vocabulary($export = array(), $module = 'common_s
       }
     }
     else {
-      return COMMON_SUPPORT_IMPORT_ASSET_EXISTS;
+      continue;
+      //return COMMON_SUPPORT_IMPORT_ASSET_EXISTS;
     }
   }
   return COMMON_SUPPORT_IMPORT_SUCCESS;
@@ -348,7 +356,8 @@ function common_support_import_user_role($export = array(), $module = 'common_su
       }
     }
     else {
-      return COMMON_SUPPORT_IMPORT_ASSET_EXISTS;
+      continue;
+      //return COMMON_SUPPORT_IMPORT_ASSET_EXISTS;
     }
   }
   return COMMON_SUPPORT_IMPORT_SUCCESS;
@@ -404,7 +413,10 @@ function common_support_import_variable($export = array(), $module = 'common_sup
         return COMMON_SUPPORT_IMPORT_SAVE_ERROR;
       }
     }
-    else return COMMON_SUPPORT_IMPORT_ASSET_EXISTS;
+    else {
+      continue;
+      //return COMMON_SUPPORT_IMPORT_ASSET_EXISTS;
+    }
   }
   return COMMON_SUPPORT_IMPORT_SUCCESS;
 }
@@ -432,7 +444,8 @@ function common_support_import_image_style($export = array(), $module = 'common_
       }
     }
     else {
-      return COMMON_SUPPORT_IMPORT_ASSET_EXISTS;
+      continue;
+      //return COMMON_SUPPORT_IMPORT_ASSET_EXISTS;
     }
   }
   return COMMON_SUPPORT_IMPORT_SUCCESS;
@@ -469,7 +482,8 @@ function common_support_import_nodequeue($export = array(), $module = 'common_su
       }
     }
     else {
-      return COMMON_SUPPORT_IMPORT_ASSET_EXISTS;
+      continue;
+      //return COMMON_SUPPORT_IMPORT_ASSET_EXISTS;
     }
   }
   return COMMON_SUPPORT_IMPORT_SUCCESS;
@@ -498,7 +512,50 @@ function common_support_import_entityqueue($export = array(), $module = 'common_
       }
     }
     else {
-      return COMMON_SUPPORT_IMPORT_ASSET_EXISTS;
+      continue;
+      //return COMMON_SUPPORT_IMPORT_ASSET_EXISTS;
+    }
+  }
+  return COMMON_SUPPORT_IMPORT_SUCCESS;
+}
+
+/**
+ * Imports conditional fields settings from a (features)-style import.
+ * @param array $export
+ *   Array of conditional fields.
+ * @return bool
+ *   TRUE on success, FALSE on failure.
+ */
+function common_support_import_conditional_fields($export=array(), $module='common_support') {
+  if (empty($export)) {
+    return COMMON_SUPPORT_EXPORT_MALFORMED;
+  }
+  $dependencies = conditional_fields_load_dependencies();
+  $instances = field_info_instances();
+  foreach($export as $field) {
+    if (isset($dependencies[$field['entity']][$field['bundle']])) {
+      foreach ($dependencies[$field['entity']][$field['bundle']] as $dependancy_type => $field_dep_settings) {
+        if ($dependancy_type == 'dependees' && !empty($field_dep_settings)) {
+          foreach ($field_dep_settings as $dep_setting) {
+            foreach ($dep_setting as $id => $dep_settings) {
+              $deps_to_remove[$id] = $id;
+            }
+          }
+        }
+      }
+      if (!empty($deps_to_remove)) {
+        conditional_fields_dependency_delete($deps_to_remove);
+      }
+    }
+    $entity_instances = $instances[$field['entity']][$field['bundle']];
+    $dependee_id = $entity_instances[$field['dependee']]['id'];
+    $dependent_id = $entity_instances[$field['dependent']]['id'];
+    $options = $field['options'];
+    if(conditional_fields_dependency_insert($dependee_id, $dependent_id, $options)) {
+      continue;
+    }
+    else {
+      return COMMON_SUPPORT_IMPORT_SAVE_ERROR;
     }
   }
   return COMMON_SUPPORT_IMPORT_SUCCESS;
