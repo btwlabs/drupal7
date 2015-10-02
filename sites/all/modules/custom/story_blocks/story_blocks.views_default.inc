@@ -39,7 +39,7 @@ function story_blocks_views_default_views() {
   $handler->display->display_options['row_options']['advanced'] = 0;
   $handler->display->display_options['row_options']['delta_fieldset']['delta_fields'] = array();
   $handler->display->display_options['row_options']['grouping_fieldset']['group_field'] = 'node|entityqueue_relationship';
-  $handler->display->display_options['row_options']['default_fieldset']['view_mode'] = 'teaser';
+  $handler->display->display_options['row_options']['default_fieldset']['view_mode'] = 'full';
   $handler->display->display_options['row_options']['switch_fieldset']['switch'] = TRUE;
   /* Relationship: Sample Story Block Page Queue */
   $handler->display->display_options['relationships']['entityqueue_relationship']['id'] = 'entityqueue_relationship';
