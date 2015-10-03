@@ -1,0 +1,73 @@
+<?php
+/**
+ * @file
+ * feeds_import_vmpn.module
+ */
+
+/**
+ * Implements hook_feeds_processor_targets().
+ */
+function feeds_import_vmpn_feeds_processor_targets($entity_type, $bundle) {
+  if ($entity_type == 'node') {
+    $targets['ds_view_mode'] = array(
+      'name' => t('Display Suite View Mode Selection'),
+      'description' => t('Display Suite Extras lets you select a view mode per node. This targets the view mode setting.'),
+      'callback' => 'feeds_import_vmpn_set_target',
+
+      // Specify both summary_callback and form_callback to add a per mapping
+      // configuration form.
+      'summary_callbacks' => array('feeds_import_vmpn_summary'),
+      'form_callbacks' => array('feeds_import_vmpn_form_callback'),
+    );
+  }
+  return $targets;
+}
+
+/**
+ * Import target config form.
+ */
+function feeds_import_vmpn_form_callback(array $mapping, $target, array $form, array $form_state) {
+  // Available view modes are the options.
+  $modes = ds_entity_view_modes('node');
+  foreach ($modes as $machine_name => $mode) {
+    $options[$machine_name] = $mode['label'];
+  }
+  $form = array();
+  $form['vmpn_default'] = array(
+    '#type' => 'select',
+    '#title' => t('Default View Mode'),
+    '#description' => t("Select a view mode to use by default. If not active default will be used."),
+    '#options' => $options,
+    '#default_value' => (!empty($mapping['vmpn_default'])) ? $mapping['vmpn_default'] : $options[0],
+  );
+  return $form;
+}
+
+/**
+ * Import target setting summary.
+ */
+function feeds_import_vmpn_summary(array $mapping, $target, array $form, array $form_state) {
+  $default = (!empty($mapping['vmpn_default'])) ? $mapping['vmpn_default'] : 'default';
+  return "default view mode:<strong>$default</strong>";
+}
+
+/**
+ * Set the target view mode value.
+ */
+function feeds_import_vmpn_set_target(FeedsSource $source, $entity, $target, array $values, array $mapping) {
+  $go='no';
+  if ($values[0] != '') {
+    $modes = ds_extras_get_bundle_view_modes('node', $entity->type);
+    $keys = array_keys($modes);
+    if (in_array($values[0], $keys)) {
+      $mode = $values[0];
+    }
+    else {
+      $mode = (isset($mapping['vmpn_default'])) ? $mapping['vmpn_default'] : 'default';
+    }
+  }
+  else {
+    $mode = (isset($mapping['vmpn_default'])) ? $mapping['vmpn_default'] : 'default';
+  }
+  $entity->ds_switch = $mode;
+}
