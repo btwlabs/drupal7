@@ -48,6 +48,7 @@ dependencies[] = pathauto
 dependencies[] = picture
 dependencies[] = rules_admin
 dependencies[] = token_tweaks
+dependencies[] = views_content
 dependencies[] = views_ui
 dependencies[] = wysiwyg
 dependencies[] = xmlsitemap
