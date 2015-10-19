@@ -1,0 +1,200 @@
+//------------------------------------------------------
+//
+//	VARIABLES - COLORS - all colors sitewide defined here
+//
+//	location: 
+//      /sass/variables/_variables-colors.scss
+//
+//------------------------------------------------------
+
+
+// Main Site Colors
+
+$primary-color: red;
+$secondary-color: orange;
+
+// for subtle changes to delineate container bg color in main content
+$subtle-accent: rgba(0,0,0,0.05); 
+
+
+
+// Body Text
+$text-color: #777;
+
+$link-color: $primary-color;
+$link-hover-color: $secondary-color;
+$link-visited-color: #000;
+
+
+// Titles
+$title-color: #000;
+$page-title-color: #000;
+
+
+// Selected text color
+$selection-text-color: #fff;
+$selection-background-color: $primary-color;
+
+
+
+// Button styling NORMAL
+$button-text-color: #fff;
+$button-text-hover-color: #444;
+
+$button-bg-color: #444;
+$button-bg-hover-color: #ccc;
+
+$button-border-color: $button-bg-color;
+$button-border-hover-color: $button-bg-hover-color;
+
+
+// Button styling LIGHT ON DARK
+$button-text-color-light: #fff;
+$button-text-hover-color-light: #222;
+
+$button-bg-color-light: transparent;
+$button-bg-hover-color-light: #fff;
+
+$button-border-color-light: #fff;
+$button-border-hover-color-light: #fff;
+
+
+
+// Sitewide Borders
+$border-color: #aaa;
+$sidebar-border-color: #444;
+
+
+
+// Tables 
+$table-header-bg-color: #eee;
+$table-odd-row-bg-color: #fff;
+$table-even-row-bg-color: #f0f0f0;
+
+
+
+// Navigation
+$nav-text-color: #222;
+$nav-text-hover-color: #ccc;
+
+$nav-button-bg-color: transparent;
+$nav-button-bg-hover-color: #444;
+$nav-button-bg-active-color: #ddd;
+
+$nav-bar-bg-color: #ccc;
+
+	// Sub-Navigation
+	$subnav-text-color: #999;
+	$subnav-text-hover-color: red;
+	
+	$subnav-button-bg-color: red;
+	$subnav-button-bg-hover-color: #000;
+	
+	$subnav-bar-bg-color: #000;
+
+	// mobile nav only
+	$mobile-nav-text-color: #444;
+	$mobile-nav-bg-color: #eee;
+	$mobile-nav-text-hover-color: #fff;
+	$mobile-nav-bg-hover-color: $primary-color;
+	$mobile-nav-border-color: #555;
+	
+	// mobile header 
+	$mobile-header-bg-color: #fff;
+	
+	
+	// mobile nav close button
+	$mobile-nav-close-text-color: #999;
+	$mobile-nav-close-btn-bg: #000;
+	
+	// mobile subnav
+	$mobile-subnav-text-color: #444;
+	$mobile-subnav-bg-color: #ccc;
+	
+	// Home page non-mobile
+	$home-nav-text-color: #fff;
+	$home-nav-text-hover-color: #fff;
+
+		
+	// mobile site name
+	$site-name-text-color: #000;
+
+
+
+// Sidebar blocks
+$sidebar-block-bg-color: rgba(0,0,0,0.8);
+
+$sidebar-text-color: #aaa;
+
+$sidebar-link-color: #ccc;
+$sidebar-link-hover-color: red;
+	
+	// block title
+	$sidebar-block-title-color: #fff;
+	$sidebar-block-title-bg-color: #000;
+
+	// buttons
+	$sidebar-button-text-color: #000;
+	$sidebar-button-text-hover-color: #fff;
+	
+	$sidebar-button-bg-color: #fff;
+	$sidebar-button-bg-hover-color: #000;
+	
+	// more link
+	$sidebar-more-link-text-color: #000;
+	$sidebar-more-link-text-hover-color: #fff;
+	
+	$sidebar-more-link-bg-color: #fff;
+	$sidebar-more-link-bg-hover-color: red;
+
+
+
+
+// Footer
+$footer-text-color: #aaa;
+
+$footer-link-color: orange;
+$footer-link-hover-color: white;
+
+$footer-bg-color: #444;
+
+
+
+// Social icons
+$social-icon-color: #fff;
+$social-icon-hover-color: #777;
+
+$social-icon-bg-color: #777;
+$social-icon-bg-hover-color: #000;
+
+$social-icon-border-color: #fff;
+
+
+
+// Messages
+$messages-background-color: #A3E3F8;
+
+
+
+// Dateblock
+$dateblock-day-color: #999;
+$dateblock-month-color: #fff;
+$dateblock-year-color: #999;
+
+$dateblock-text-hover-color: #fff;
+
+$dateblock-bg-color: #000;
+$dateblock-bg-hover-color: #000;
+
+
+
+// Admin Tabs 
+$tabs-text-color: #000;
+$tabs-text-hover-color: #fff;
+
+$tabs-bg-color: #eee;
+$tabs-bg-hover-color: #444;
+
+$tabs-active-text-color: #fff;
+$tabs-active-bg-color: #444;
+

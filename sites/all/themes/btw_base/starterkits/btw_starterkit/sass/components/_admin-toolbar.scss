@@ -1,0 +1,34 @@
+//------------------------------------------------------
+//
+//	ADMIN TOOLBAR - Reposition elements when toolbar is enabled
+//
+//	location: 
+//      /sass/components/_admin_toolbar.scss
+//
+//------------------------------------------------------
+
+
+
+/*---------------------------------------
+
+ LOGGED IN AS ADMIN ON MOBILE
+ 
+---------------------------------------*/
+
+body.toolbar, 
+body.toolbar-drawer {
+	padding-top: 0 !important;
+}
+#toolbar {
+	position: relative;
+}
+div.toolbar-drawer,
+.toolbar-menu a.toggle {
+	display: none;
+}
+
+/* prevents side scrolling */
+#toolbar {
+	margin:0;
+	padding: 0;
+}

@@ -1,0 +1,13 @@
+//------------------------------------------------------
+//
+//	BODY - base body styles
+//
+//	location: 
+//      /sass/components/_body.scss
+//
+//------------------------------------------------------
+
+
+body {
+	@include base-text-style; // see /abstractions/_typography.scss & /variables/_typography.scss
+}

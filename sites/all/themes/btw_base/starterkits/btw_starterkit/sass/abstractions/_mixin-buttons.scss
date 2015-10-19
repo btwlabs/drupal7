@@ -1,0 +1,56 @@
+//------------------------------------------------------
+//
+//	MIXINS - BUTTONS - define groups of attributes for buttons
+//
+//	location: 
+//      /sass/abstractions/mixins-buttons.scss
+//
+//------------------------------------------------------
+
+
+
+// button mixins
+
+@mixin button {
+	background: $button-bg-color; 
+	text-align: center;
+	color: $button-text-color;
+	display: block;
+	text-decoration: none;
+	text-shadow: none;
+	text-transform: $button-text-transform;
+	@include border-radius($button-border-radius);
+	@include transition(all, 0.2s, ease-in);
+	@include button-padding($button-padding);
+}
+
+@mixin button-hover {
+	background: $button-bg-hover-color; 
+	color: $button-text-hover-color;
+	text-decoration: none;
+}
+
+@mixin button-padding($button-padding) {
+	padding: $button-padding;
+}
+
+// button mixin LIGHT BUTTON ON DARK BG
+@mixin button-light {
+	background: $button-bg-color-light; 
+	text-align: center;
+	color: $button-text-color-light;
+	border: 2px solid $button-border-color-light;
+	text-decoration: none;
+	text-transform: $button-text-transform;
+	@include border-radius($button-border-radius);
+	@include transition(all, 0.2s, ease-in);
+	@include button-padding($button-padding);
+	display: inline-block;
+	font-weight: 400;	
+}
+@mixin button-light-hover {
+	background: $button-bg-hover-color-light; 
+	color: $button-text-hover-color-light;
+	border-color: $button-border-hover-color-light;
+	text-decoration: none;
+}
