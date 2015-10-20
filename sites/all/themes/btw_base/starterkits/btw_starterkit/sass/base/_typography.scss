@@ -1,0 +1,147 @@
+//----------------------------------------------
+//
+//	TYPOGRAPHY - basic text element styles
+//               and custom font declarations 
+//
+//	location: 
+//      /sass/base/_typography.scss
+//
+//----------------------------------------------
+
+
+
+/*-----------------------------------
+
+ Custom Fonts
+ 
+-----------------------------------*/
+
+// add custom font declarations here >>
+
+
+
+
+
+
+
+/*--------------------------------------------------------
+----------------------------------------------------------
+
+ TEXT STYLES
+ 
+----------------------------------------------------------
+--------------------------------------------------------*/
+
+// Text color when selected
+::-moz-selection,
+::selection {
+	color: $selection-text-color;
+	background-color: $selection-background-color;
+	text-shadow: none;
+}
+
+hr {
+	margin: 0;
+	padding: 0;
+	border: none;
+	height: 1px;
+	background: $border-color;
+}
+
+p, dl, hr, h1, h2, h3, h4, h5, h6, ol,
+ul, pre, table, address, fieldset {
+	margin-bottom: $vert-spacing-unit;
+	margin-top: 0;
+}
+
+p {
+	word-wrap: break-word;
+}
+
+/*---------------------------------------------
+
+ HEADINGS & TITLES - general
+ 
+-----------------------------------------------*/
+
+h1, 
+h2, 
+h3, 
+h4, 
+h5, 
+h6 {
+	-webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    @include title-style;
+}
+
+h1, h2 {
+	font-weight: normal; /* removes ugly bold rendering of custom title fonts - remove as necessary */
+}
+
+
+/*------------------
+
+ h1
+ 
+-------------------*/
+
+h1 {
+	line-height: 1;
+	padding-bottom: 0;
+	text-transform: none;
+	margin-bottom: $vert-spacing-unit;
+	
+	@include breakpoint($small-up) {
+		@include font-size(30px);
+	}
+	@include breakpoint($medium-up) {
+		@include font-size(40px);
+	}
+	@include breakpoint($large-up) {
+		@include font-size(48px);
+	}
+}
+
+h1#page-title {
+	color: $page-title-color;
+}
+
+
+/*------------------
+
+ h2
+ 
+--------------------*/
+
+h2, 
+h2.node-title,
+h2.block-title,
+h2.views-title {
+	@include font-size(27px);
+}
+
+
+h2.node-title, 
+h2.block-title {
+	line-height: 1.2;
+}
+
+/*--------------------
+
+ h3 - h6
+ 
+---------------------*/
+
+h3 {
+	@include font-size(21px);
+}
+h4 {
+	@include font-size(19px);
+}
+h5 {
+	@include font-size(17px);
+}
+h6 {
+	@include font-size(15px);
+}

@@ -1,0 +1,60 @@
+//------------------------------------------------------
+//
+//	QUOTES BUBBLE - Alternate styling for common-support-quote styles
+//                  that give the appearance the quote body is 
+//                  in a speech bubble with an arrow
+//
+//	location: 
+//      /sass/components/_ds-basics.scss
+//
+//------------------------------------------------------
+
+
+/*
+.common-support-quote-1 {
+	float: none;
+	width: auto !important;
+	color: $quote-text-color;
+	margin-bottom: $vert-spacing-unit;
+	
+	@include breakpoint($small-only) {
+		margin: 0 20px $vert-spacing-unit 20px;
+	}
+	
+	.quote-body {
+		padding: 20px;
+		margin: 0;
+		position: relative;
+		background-color: #eaeaea;
+		
+		@include breakpoint($medium-up) {
+			padding: 30px;
+		}
+		
+		&:after {
+			@include triangle(25px, down, #eaeaea);
+			content: "";
+			display: block;
+			width: 25px;
+			position: absolute;
+			bottom: -25px;
+			left: 20%;
+		}
+	}
+	.quote-author {
+		margin: 20px 30px 0 32%;
+		@include font-size(16px);
+		
+		@include breakpoint($medium-up) {
+			margin-right: 0;
+			@include font-size(20px);
+		}
+	}
+	
+	.quote-start,
+	.quote-end {
+		display: none;
+	}
+	
+}
+*/

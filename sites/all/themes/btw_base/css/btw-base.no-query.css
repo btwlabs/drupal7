@@ -1826,30 +1826,29 @@ a.show-link {
     display: inline-block;
     list-style-type: none;
     border: 0; }
-  /* line 45, ../sass/components/_social-icons.scss */
-  .social-links ul li:last-child {
-    margin-right: 0; }
-
-/* line 49, ../sass/components/_social-icons.scss */
-.social-links a {
-  margin: 0;
-  padding: 10px;
-  text-align: center;
-  width: 50px;
-  display: block;
-  position: relative;
-  color: #fff;
-  background-color: #777; }
-  /* line 60, ../sass/components/_social-icons.scss */
-  .social-links a:hover {
-    color: #777;
-    background-color: #000; }
-  /* line 65, ../sass/components/_social-icons.scss */
-  .social-links a i {
-    font-size: 45px; }
-  /* line 68, ../sass/components/_social-icons.scss */
-  .social-links a span.title {
-    display: none; }
+    /* line 44, ../sass/components/_social-icons.scss */
+    .social-links ul li:last-child {
+      margin-right: 0; }
+    /* line 48, ../sass/components/_social-icons.scss */
+    .social-links ul li a {
+      margin: 0;
+      padding: 10px;
+      text-align: center;
+      width: 50px;
+      display: block;
+      position: relative;
+      color: #fff;
+      background-color: #777; }
+      /* line 59, ../sass/components/_social-icons.scss */
+      .social-links ul li a:hover {
+        color: #777;
+        background-color: #000; }
+      /* line 64, ../sass/components/_social-icons.scss */
+      .social-links ul li a i {
+        font-size: 45px; }
+      /* line 67, ../sass/components/_social-icons.scss */
+      .social-links ul li a span.title {
+        display: none; }
 
 /* line 13, ../sass/components/_video-hero.scss */
 .l-video-wrapper {

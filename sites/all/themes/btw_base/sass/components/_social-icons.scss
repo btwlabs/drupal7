@@ -34,39 +34,39 @@
 		text-align: center;
 	}
 	
-	& li {
+	li {
 		margin: 0 7px 7px 0;
 		padding: 0;
 		display: inline-block;
 		list-style-type: none;
 		border: 0;
-	}
-	
-	& li:last-child {
-		margin-right: 0;
+		
+		&:last-child {
+			margin-right: 0;
+		}
+		
+		a {
+			margin: 0;
+			padding: 10px;
+			text-align: center;
+			width: 50px;
+			display: block;
+			position: relative;
+			color: $social-icon-color;
+			background-color: $social-icon-bg-color;
+			
+			// hover state
+			&:hover {
+				color: $social-icon-hover-color;
+				background-color: $social-icon-bg-hover-color;
+			}
+			
+			i {
+				font-size: 45px;
+			}
+			span.title {
+				display: none;
+			}
+		}
 	}
 }
-.social-links a {
-	margin: 0;
-	padding: 10px;
-	text-align: center;
-	width: 50px;
-	display: block;
-	position: relative;
-	color: $social-icon-color;
-	background-color: $social-icon-bg-color;
-	
-	// hover state
-	&:hover {
-		color: $social-icon-hover-color;
-		background-color: $social-icon-bg-hover-color;
-	}
-	
-	i {
-		font-size: 45px;
-	}
-	span.title {
-		display: none;
-	}
-}
-
