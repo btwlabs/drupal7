@@ -1,0 +1,172 @@
+@font-face {
+	font-family: 'IcoMoonArrows';
+	src:url('fonts/icomoon_arrows.eot');
+	src:url('fonts/icomoon_arrows.eot?#iefix') format('embedded-opentype'),
+		url('fonts/icomoon_arrows.svg#icomoon') format('svg'),
+		url('fonts/icomoon_arrows.woff') format('woff'),
+		url('fonts/icomoon_arrows.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+
+/* Use the following CSS code if you want to use data attributes for inserting your icons */
+[data-icon]:before {
+	font-family: 'IcoMoonArrows';
+	content: attr(data-icon);
+	speak: none;
+	font-weight: normal;
+	-webkit-font-smoothing: antialiased;
+}
+
+/* Use the following CSS code if you want to have a class per icon */
+[class^="icon-"]:before, [class*=" icon-"]:before {
+	font-family: 'IcoMoonArrows';
+	font-style: normal;
+	speak: none;
+	font-weight: normal;
+	-webkit-font-smoothing: antialiased;
+}
+.icon-arrow-small-left-1:before {
+	content: "\22";
+}
+.icon-arrow-small-right-1:before {
+	content: "\23";
+}
+.icon-arrow-small-up-1:before {
+	content: "\24";
+}
+.icon-arrow-small-down-1:before {
+	content: "\25";
+}
+.icon-arrow-circle-left-1:before {
+	content: "\26";
+}
+.icon-arrow-circle-right-1:before {
+	content: "\27";
+}
+.icon-arrow-circle-up-1:before {
+	content: "\28";
+}
+.icon-arrow-circle-down-1:before {
+	content: "\29";
+}
+.icon-arrow-hairline-left:before {
+	content: "\2a";
+}
+.icon-arrow-hairline-right:before {
+	content: "\2b";
+}
+.icon-arrow-hairline-up:before {
+	content: "\2c";
+}
+.icon-arrow-hairline-down:before {
+	content: "\2d";
+}
+.icon-arrow-superthin-left:before {
+	content: "\2e";
+}
+.icon-arrow-superthin-right:before {
+	content: "\2f";
+}
+.icon-arrow-superthin-up:before {
+	content: "\30";
+}
+.icon-arrow-superthin-left-2:before {
+	content: "\31";
+}
+.icon-arrow-thin-left:before {
+	content: "\32";
+}
+.icon-arrow-thin-right:before {
+	content: "\33";
+}
+.icon-arrow-thin-right-2:before {
+	content: "\34";
+}
+.icon-arrow-thin-down:before {
+	content: "\21";
+}
+.icon-arrow-rounded-normal-left:before {
+	content: "\35";
+}
+.icon-arrow-rounded-normal-right:before {
+	content: "\36";
+}
+.icon-arrow-rounded-normal-up:before {
+	content: "\37";
+}
+.icon-arrow-rounded-normal-down:before {
+	content: "\38";
+}
+.icon-arrow-rounded-bold-left:before {
+	content: "\39";
+}
+.icon-arrow-rounded-bold-right:before {
+	content: "\3a";
+}
+.icon-arrow-rounded-bold-up:before {
+	content: "\3b";
+}
+.icon-arrow-rounded-bold-down:before {
+	content: "\3c";
+}
+.icon-arrow-squared-normal-left:before {
+	content: "\3d";
+}
+.icon-arrow-squared-normal-right:before {
+	content: "\3e";
+}
+.icon-arrow-squared-normal-up:before {
+	content: "\3f";
+}
+.icon-arrow-squared-normal-down:before {
+	content: "\40";
+}
+.icon-arrow-squared-bold-left:before {
+	content: "\41";
+}
+.icon-arrow-squared-bold-right:before {
+	content: "\42";
+}
+.icon-arrow-squared-bold-up:before {
+	content: "\43";
+}
+.icon-arrow-squared-bold-down:before {
+	content: "\44";
+}
+.icon-arrow-squared-black-left:before {
+	content: "\45";
+}
+.icon-arrow-squared-black-right:before {
+	content: "\46";
+}
+.icon-arrow-squared-black-up:before {
+	content: "\47";
+}
+.icon-arrow-squared-black-down:before {
+	content: "\48";
+}
+.icon-arrow-double-thin-left:before {
+	content: "\49";
+}
+.icon-arrow-double-thin-right:before {
+	content: "\4a";
+}
+.icon-arrow-double-thin-up:before {
+	content: "\4b";
+}
+.icon-arrow-double-thin-down:before {
+	content: "\4c";
+}
+.icon-arrow-medium-double-up:before {
+	content: "\4d";
+}
+.icon-arrow-medium-double-down:before {
+	content: "\4e";
+}
+.icon-arrow-black-double-up:before {
+	content: "\4f";
+}
+.icon-arrow-black-double-down:before {
+	content: "\50";
+}

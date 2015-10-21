@@ -1,0 +1,22 @@
+//--------------------------------------------------
+//
+//	Flexslider - override base module styles
+//
+//	location: 
+//      /sass/components/_flexslider.scss
+//
+//--------------------------------------------------
+
+
+.flexslider {
+	border: 0;
+	border-radius: 0;
+	background-color: transparent;
+	margin: 0;
+	
+	.flex-direction-nav {
+		li {
+			height: 0;
+		}
+	}
+}

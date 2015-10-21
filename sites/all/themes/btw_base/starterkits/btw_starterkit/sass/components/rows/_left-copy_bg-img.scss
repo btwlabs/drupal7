@@ -1,0 +1,39 @@
+//----------------------------------------------
+//
+//	ROW - LEFT COPY - YES Background image on row
+//
+//	location: 
+//      /sass/components/rows/left-copy_bg-img.scss
+//
+//  Styles for row layout content:
+// 
+// 		= Copy on left (title, body, link) in col-1
+// 		= background image on the row
+//
+//----------------------------------------------
+
+
+// show mobile images in only certain device widths
+.field-name-mobile-row-image {
+	@include breakpoint($small-only) {
+		display: block;
+		margin-bottom: $vert-spacing-unit;
+	}
+	@include breakpoint($medium-up) {
+		display: none;
+	}
+}
+
+.view-mode-left_bg_image_row {
+	@include breakpoint($medium-up) {
+		.col-1-wrapper {
+		    margin: 0;
+		    width: 50%;
+		}
+		.col-2-wrapper {
+			margin: 0;
+		    padding: 0 5%;
+		    width: 50%;
+		}
+	}
+}

@@ -1,0 +1,88 @@
+//--------------------------------------------------
+//
+//	FOOTER - general styles for and layout
+//
+//	location: 
+//      /sass/base/_lists.scss
+//
+//--------------------------------------------------
+
+
+
+
+/*-------------------------------------------------
+---------------------------------------------------
+
+ Footer - Layout
+ 
+---------------------------------------------------
+-------------------------------------------------*/
+
+
+// footer outer wrapper
+.l-footer-wrapper {
+	background-color: $footer-bg-color;
+}
+
+// constrained container
+@include breakpoint($large-up) {
+	.l-footer-wrapper .l-constrained {
+		width: 95%;
+	}
+}
+
+// footer inner wrapper
+.footer-inner {
+	@extend %clearfix;
+	padding: $vert-spacing-unit 0;
+	color: $footer-text-color;
+	
+	& a {
+		color: $footer-link-color;
+	}
+	
+	& a:hover {
+		color: $footer-link-hover-color;
+	}
+}
+
+
+/*-----------------------------------
+
+ Copyright & links
+ 
+------------------------------------*/
+
+.footer-links {
+	margin-bottom: 5px;
+	
+	& ul {
+		margin: 0;
+		padding: 0;
+		@include clearfix;
+	}
+	& ul li {
+		@include no-bullet(0 12px 0 0, 0 0 0 0);
+		float: left;
+	}
+}
+
+// footer main menu block
+.l-footer-wrapper .footer-menu {
+	
+	ul {
+		margin: 0;
+		padding: 0;
+	}
+	li {
+		float: left;
+		list-style-type: none;
+		margin-right: 10px;
+	}
+}
+
+.footer-copyright {
+	@include breakpoint($small-and-medium) {
+		margin-bottom: $vert-spacing-unit/2;
+	}
+}

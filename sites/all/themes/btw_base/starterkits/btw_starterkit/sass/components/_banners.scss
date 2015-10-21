@@ -1,0 +1,27 @@
+//------------------------------------------------------
+//
+//	BANNERS - general styles for feature/header banners
+//
+//	location: 
+//      /sass/components/_banners.scss
+//
+//------------------------------------------------------
+
+
+@include breakpoint($medium-up) {
+
+	.banner-with-body-1 {
+		
+		// banner body wrapper
+		.row2-outer-wrapper {
+			padding: 3%;
+			background-color: rgba(0, 0, 0, 0.7);
+			
+			// title 
+			h2 {
+				color: #fff;
+				margin-bottom: $vert-spacing-unit/2;
+			}
+		}
+	}
+}

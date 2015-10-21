@@ -1,0 +1,5 @@
+name = feeds_import_vmpn
+description = Provides a new node target in feeds to set the view mode per node in from display suite extras.
+core = 7.x
+package = BTW
+dependencies[] = ds_extras

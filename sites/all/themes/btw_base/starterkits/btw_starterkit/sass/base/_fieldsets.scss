@@ -1,0 +1,26 @@
+//----------------------------------------------
+//
+//	Fieldsets - general styles for fieldsets
+//
+//	location: 
+//      /sass/base/_fieldsets.scss
+//
+//----------------------------------------------
+
+
+fieldset {
+	@include border-all($border-color);
+	@include border-radius($border-radius);
+	padding: $vert-spacing-unit;
+	margin-bottom: $vert-spacing-unit;
+}
+legend {
+	@include font-size(24px);
+	font-weight: $title-font-weight;
+	color: $title-color;
+	padding: 0 $vert-spacing-unit/2;
+	
+	a:link {
+		color: $title-color;
+	}
+}
