@@ -22,7 +22,6 @@ function banner_support_views_default_views() {
 
   /* Display: Master */
   $handler = $view->new_display('default', 'Master', 'default');
-  $handler->display->display_options['title'] = '';
   $handler->display->display_options['use_more_always'] = FALSE;
   $handler->display->display_options['access']['type'] = 'perm';
   $handler->display->display_options['cache']['type'] = 'none';
@@ -33,29 +32,18 @@ function banner_support_views_default_views() {
   $handler->display->display_options['row_plugin'] = 'node';
   $handler->display->display_options['row_options']['view_mode'] = 'full';
   $handler->display->display_options['row_options']['links'] = FALSE;
+  /* Relationship: Content: Location (field_banner_location) */
+  $handler->display->display_options['relationships']['field_banner_location_tid']['id'] = 'field_banner_location_tid';
+  $handler->display->display_options['relationships']['field_banner_location_tid']['table'] = 'field_data_field_banner_location';
+  $handler->display->display_options['relationships']['field_banner_location_tid']['field'] = 'field_banner_location_tid';
   /* Field: Content: Link */
   $handler->display->display_options['fields']['field_banner_link']['id'] = 'field_banner_link';
   $handler->display->display_options['fields']['field_banner_link']['table'] = 'field_data_field_banner_link';
   $handler->display->display_options['fields']['field_banner_link']['field'] = 'field_banner_link';
   $handler->display->display_options['fields']['field_banner_link']['label'] = '';
-  $handler->display->display_options['fields']['field_banner_link']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_banner_link']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_banner_link']['click_sort_column'] = 'url';
   $handler->display->display_options['fields']['field_banner_link']['type'] = 'link_absolute';
-  /* Field: Content: Banner Image */
-  $handler->display->display_options['fields']['field_banner_image']['id'] = 'field_banner_image';
-  $handler->display->display_options['fields']['field_banner_image']['table'] = 'field_data_field_banner_image';
-  $handler->display->display_options['fields']['field_banner_image']['field'] = 'field_banner_image';
-  $handler->display->display_options['fields']['field_banner_image']['label'] = '';
-  $handler->display->display_options['fields']['field_banner_image']['alter']['make_link'] = TRUE;
-  $handler->display->display_options['fields']['field_banner_image']['alter']['path'] = '[field_banner_link] ';
-  $handler->display->display_options['fields']['field_banner_image']['alter']['absolute'] = TRUE;
-  $handler->display->display_options['fields']['field_banner_image']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_banner_image']['click_sort_column'] = 'fid';
-  $handler->display->display_options['fields']['field_banner_image']['settings'] = array(
-    'image_style' => '',
-    'image_link' => '',
-  );
   /* Sort criterion: Content: Post date */
   $handler->display->display_options['sorts']['created']['id'] = 'created';
   $handler->display->display_options['sorts']['created']['table'] = 'node';
