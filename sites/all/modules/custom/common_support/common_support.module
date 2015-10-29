@@ -11,7 +11,8 @@ function common_support_common_support_import() {
   return array(
     'filters',
     'variable',
-    'wysiwyg'
+    'wysiwyg',
+    'node_type'
   );
 }
 

@@ -273,5 +273,190 @@ clickable
   $strongarm->value = '10000';
   $export['media_zindex'] = $strongarm;
 
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'comment_anonymous_placeholder';
+  $strongarm->value = '0';
+  $export['comment_anonymous_placeholder'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'comment_default_mode_placeholder';
+  $strongarm->value = 1;
+  $export['comment_default_mode_placeholder'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'comment_default_per_page_placeholder';
+  $strongarm->value = '50';
+  $export['comment_default_per_page_placeholder'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'comment_form_location_placeholder';
+  $strongarm->value = 1;
+  $export['comment_form_location_placeholder'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'comment_placeholder';
+  $strongarm->value = '0';
+  $export['comment_placeholder'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'comment_preview_placeholder';
+  $strongarm->value = '1';
+  $export['comment_preview_placeholder'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'comment_subject_field_placeholder';
+  $strongarm->value = 1;
+  $export['comment_subject_field_placeholder'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'field_bundle_settings_node__placeholder';
+  $strongarm->value = array(
+    'view_modes' => array(
+      'teaser' => array(
+        'custom_settings' => TRUE,
+      ),
+      'full' => array(
+        'custom_settings' => FALSE,
+      ),
+      'rss' => array(
+        'custom_settings' => FALSE,
+      ),
+      'search_index' => array(
+        'custom_settings' => FALSE,
+      ),
+      'search_result' => array(
+        'custom_settings' => FALSE,
+      ),
+      'token' => array(
+        'custom_settings' => FALSE,
+      ),
+      'center_copy_full_width_bg' => array(
+        'custom_settings' => FALSE,
+      ),
+      'contact_us_form' => array(
+        'custom_settings' => FALSE,
+      ),
+      'right_copy_left_pdf' => array(
+        'custom_settings' => FALSE,
+      ),
+      'recent_articles' => array(
+        'custom_settings' => FALSE,
+      ),
+      'related_articles' => array(
+        'custom_settings' => FALSE,
+      ),
+      'bnr_lg_hidden_small_with_bdy' => array(
+        'custom_settings' => FALSE,
+      ),
+      'bnr_lg_hidden_sml_hidden' => array(
+        'custom_settings' => FALSE,
+      ),
+      'bnr_lg_hidden_sml_img_only' => array(
+        'custom_settings' => FALSE,
+      ),
+      'bnr_lg_img_only_sml_hidden' => array(
+        'custom_settings' => FALSE,
+      ),
+      'bnr_lg_img_only_sml_img_only' => array(
+        'custom_settings' => FALSE,
+      ),
+      'bnr_lg_img_only_sml_with_bdy' => array(
+        'custom_settings' => FALSE,
+      ),
+      'bnr_lg_with_bdy_sml_hidden' => array(
+        'custom_settings' => FALSE,
+      ),
+      'bnr_lg_with_bdy_sml_img_only' => array(
+        'custom_settings' => FALSE,
+      ),
+      'bnr_lg_with_bdy_sml_with_bdy' => array(
+        'custom_settings' => FALSE,
+      ),
+      'taxonomy_pages' => array(
+        'custom_settings' => FALSE,
+      ),
+      'left_bg_image_story_block' => array(
+        'custom_settings' => FALSE,
+      ),
+      'left_non_bg_image_story_block' => array(
+        'custom_settings' => FALSE,
+      ),
+      'right_bg_image_story_block' => array(
+        'custom_settings' => FALSE,
+      ),
+      'right_non_bg_image_story_block' => array(
+        'custom_settings' => FALSE,
+      ),
+      'revision' => array(
+        'custom_settings' => FALSE,
+      ),
+    ),
+    'extra_fields' => array(
+      'form' => array(),
+      'display' => array(
+        'share_links' => array(
+          'default' => array(
+            'weight' => '0',
+            'visible' => FALSE,
+          ),
+        ),
+      ),
+    ),
+  );
+  $export['field_bundle_settings_node__placeholder'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'menu_options_placeholder';
+  $strongarm->value = array();
+  $export['menu_options_placeholder'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'menu_parent_placeholder';
+  $strongarm->value = 'main-menu:0';
+  $export['menu_parent_placeholder'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'node_options_placeholder';
+  $strongarm->value = array(
+    0 => 'status',
+  );
+  $export['node_options_placeholder'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'node_preview_placeholder';
+  $strongarm->value = '0';
+  $export['node_preview_placeholder'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'node_submitted_placeholder';
+  $strongarm->value = 0;
+  $export['node_submitted_placeholder'] = $strongarm;
+
   return $export;
 }
