@@ -13,6 +13,23 @@ function common_support_default_variable_assets() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'blockify_blocks';
+  $strongarm->value = array(
+    'blockify-page-title' => 'blockify-page-title',
+    'blockify-logo' => 0,
+    'blockify-site-name' => 0,
+    'blockify-site-slogan' => 0,
+    'blockify-breadcrumb' => 0,
+    'blockify-tabs' => 0,
+    'blockify-messages' => 0,
+    'blockify-actions' => 0,
+    'blockify-feed-icons' => 0,
+  );
+  $export['blockify_blocks'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'ds_classes_fields';
   $strongarm->value = 'clearfix
 clickable
