@@ -120,7 +120,7 @@
                 <div id="mobile-splash" class="l-mobile-splash"><img src="sites/default/files/evermind_rev1_mobile_splash.jpg" /></div><!-- mobile-splash -->
                 <div id="video-wrapper" class="l-video-wrapper">
                   <div id="overlay"></div><!-- overlay -->
-                  <video autoplay="autoplay" loop="loop" width="1280" height="720" class="omega-narrow-up">
+                  <video autoplay="autoplay" loop="loop" width="1280" height="720">
                     <source src="sites/default/files/videos/evermind_rev1.webm" type="video/webm">
                     <source src="sites/default/files/videos/evermind_rev1.mp4" type="video/mp4">
                     <source src="sites/default/files/videos/evermind_rev1.ogv" type="video/ogg">

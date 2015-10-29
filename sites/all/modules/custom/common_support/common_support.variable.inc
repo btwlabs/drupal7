@@ -22,13 +22,6 @@ list
 grid-row
 list-row
 node-content-container
-omega-mobile-only
-omega-narrow-only
-omega-narrow-up
-omega-normal-only
-omega-normal-up
-omega-wide-only
-omega-wide-up
 tags-container
 body-container
 quote

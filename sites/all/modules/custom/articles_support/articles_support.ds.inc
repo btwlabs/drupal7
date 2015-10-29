@@ -115,7 +115,7 @@ function articles_support_ds_field_settings_info() {
         'load_terms' => 0,
         'ft' => array(
           'func' => 'theme_ds_field_minimal',
-          'classes' => 'omega-mobile-only quote',
+          'classes' => 'quote',
         ),
       ),
     ),
@@ -213,7 +213,7 @@ function articles_support_ds_field_settings_info() {
         'load_terms' => 0,
         'ft' => array(
           'func' => 'theme_ds_field_minimal',
-          'classes' => 'omega-mobile-only quote',
+          'classes' => 'quote',
         ),
       ),
     ),

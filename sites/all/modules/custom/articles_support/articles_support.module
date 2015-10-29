@@ -148,7 +148,7 @@ function articles_support_preprocess_node(&$vars) {
       default:
         // Video/image switcharoo.
         $field_content = articles_support_get_article_teaser_image($vars['node']);
-        $field_content['#prefix'] = '<div class="omega-narrow-up media-thumb-container"><div class="media-thumb-item image-item">';
+        $field_content['#prefix'] = '<div class="media-thumb-container"><div class="media-thumb-item image-item">';
         $field_content['#suffix'] = '</div></div>';
         $vars['teaser_image'] = drupal_render($field_content);
 
