@@ -42,6 +42,7 @@ dependencies[] = media_internet
 dependencies[] = media_wysiwyg
 dependencies[] = media_youtube
 dependencies[] = menu_attributes
+dependencies[] = menu_block
 dependencies[] = metatag
 dependencies[] = navbar
 dependencies[] = pathauto
