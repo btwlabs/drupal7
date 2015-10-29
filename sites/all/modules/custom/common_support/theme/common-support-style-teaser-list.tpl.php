@@ -11,7 +11,7 @@
   <?php endif; ?>
   <ul class="common-support-list">
     <?php foreach ($rows as $id => $row): ?>
-      <li class="<?php print $classes_array[$id]; ?> list-row"><?php print $row; ?></li>
+      <li class="list-row<?php if(!empty($classes_array)) : print ' ' . $classes_array[$id]; endif; ?>"><?php print $row; ?></li>
     <?php endforeach; ?>
   </ul>
 </div>
