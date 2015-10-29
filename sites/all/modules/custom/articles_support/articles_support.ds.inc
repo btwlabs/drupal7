@@ -100,7 +100,7 @@ function articles_support_ds_field_settings_info() {
         'ctools' => 'a:3:{s:4:"conf";a:3:{s:14:"override_title";i:0;s:19:"override_title_text";s:0:"";s:22:"override_title_heading";s:2:"h2";}s:4:"type";s:5:"block";s:7:"subtype";s:27:"entity_pager-entity_pager_1";}',
         'load_terms' => 0,
         'ft' => array(
-          'func' => 'theme_ds_field_reset',
+          'func' => 'theme_ds_field_minimal',
         ),
       ),
     ),
@@ -134,7 +134,7 @@ function articles_support_ds_field_settings_info() {
         'ctools' => 'a:3:{s:4:"conf";a:3:{s:14:"override_title";i:0;s:19:"override_title_text";s:0:"";s:22:"override_title_heading";s:2:"h2";}s:4:"type";s:5:"block";s:7:"subtype";s:21:"views-articles-recent";}',
         'load_terms' => 0,
         'ft' => array(
-          'func' => 'theme_ds_field_reset',
+          'func' => 'theme_ds_field_minimal',
         ),
       ),
     ),
@@ -198,7 +198,7 @@ function articles_support_ds_field_settings_info() {
         'ctools' => 'a:3:{s:4:"conf";a:3:{s:14:"override_title";i:0;s:19:"override_title_text";s:0:"";s:22:"override_title_heading";s:2:"h2";}s:4:"type";s:5:"block";s:7:"subtype";s:27:"entity_pager-entity_pager_1";}',
         'load_terms' => 0,
         'ft' => array(
-          'func' => 'theme_ds_field_reset',
+          'func' => 'theme_ds_field_minimal',
         ),
       ),
     ),
@@ -232,7 +232,7 @@ function articles_support_ds_field_settings_info() {
         'ctools' => 'a:3:{s:4:"conf";a:3:{s:14:"override_title";i:0;s:19:"override_title_text";s:0:"";s:22:"override_title_heading";s:2:"h2";}s:4:"type";s:5:"block";s:7:"subtype";s:21:"views-articles-recent";}',
         'load_terms' => 0,
         'ft' => array(
-          'func' => 'theme_ds_field_reset',
+          'func' => 'theme_ds_field_minimal',
         ),
       ),
     ),
