@@ -281,11 +281,6 @@ function articles_support_ds_field_settings_info() {
   $ds_fieldsetting->bundle = 'news_article';
   $ds_fieldsetting->view_mode = 'teaser';
   $ds_fieldsetting->settings = array(
-    'clickable_title_link' => array(
-      'weight' => '0',
-      'label' => 'hidden',
-      'format' => 'default',
-    ),
     'submitted' => array(
       'weight' => '2',
       'label' => 'hidden',
@@ -306,11 +301,6 @@ function articles_support_ds_field_settings_info() {
   $ds_fieldsetting->bundle = 'news_article';
   $ds_fieldsetting->view_mode = 'recent_articles';
   $ds_fieldsetting->settings = array(
-    'clickable_title_link' => array(
-      'weight' => '0',
-      'label' => 'hidden',
-      'format' => 'default',
-    ),
     'submitted' => array(
       'weight' => '2',
       'label' => 'hidden',
@@ -323,6 +313,56 @@ function articles_support_ds_field_settings_info() {
     ),
   );
   $export['node|news_article|recent_articles'] = $ds_fieldsetting;
+
+  $ds_fieldsetting = new stdClass();
+  $ds_fieldsetting->api_version = 1;
+  $ds_fieldsetting->id = 'node|news_article|related_articles';
+  $ds_fieldsetting->entity_type = 'node';
+  $ds_fieldsetting->bundle = 'news_article';
+  $ds_fieldsetting->view_mode = 'related_articles';
+  $ds_fieldsetting->settings = array(
+    'submitted' => array(
+      'weight' => '2',
+      'label' => 'hidden',
+      'format' => 'default',
+    ),
+    'teaser_image' => array(
+      'weight' => '1',
+      'label' => 'hidden',
+      'format' => 'default',
+    ),
+    'clickable_node_title' => array(
+      'weight' => '0',
+      'label' => 'hidden',
+      'format' => 'default',
+    ),
+  );
+  $export['node|news_article|related_articles'] = $ds_fieldsetting;
+
+  $ds_fieldsetting = new stdClass();
+  $ds_fieldsetting->api_version = 1;
+  $ds_fieldsetting->id = 'node|news_article|taxonomy_pages';
+  $ds_fieldsetting->entity_type = 'node';
+  $ds_fieldsetting->bundle = 'news_article';
+  $ds_fieldsetting->view_mode = 'taxonomy_pages';
+  $ds_fieldsetting->settings = array(
+    'submitted' => array(
+      'weight' => '0',
+      'label' => 'hidden',
+      'format' => 'default',
+    ),
+    'teaser_image' => array(
+      'weight' => '0',
+      'label' => 'hidden',
+      'format' => 'default',
+    ),
+    'clickable_node_title' => array(
+      'weight' => '0',
+      'label' => 'hidden',
+      'format' => 'default',
+    ),
+  );
+  $export['node|news_article|taxonomy_pages'] = $ds_fieldsetting;
 
   return $export;
 }
@@ -371,18 +411,6 @@ news_article|full';
     ),
   );
   $export['article_pager'] = $ds_field;
-
-  $ds_field = new stdClass();
-  $ds_field->api_version = 1;
-  $ds_field->field = 'clickable_title_link';
-  $ds_field->label = 'Clickable Title Link';
-  $ds_field->field_type = 3;
-  $ds_field->entities = array(
-    'node' => 'node',
-  );
-  $ds_field->ui_limit = 'news_article|*';
-  $ds_field->properties = array();
-  $export['clickable_title_link'] = $ds_field;
 
   $ds_field = new stdClass();
   $ds_field->api_version = 1;
@@ -716,15 +744,13 @@ function articles_support_ds_layout_settings_info() {
         0 => 'teaser_image',
       ),
       'col2' => array(
-        1 => 'clickable_title_link',
-        2 => 'submitted',
-        3 => 'field_article_body',
-        4 => 'field_tags',
+        1 => 'submitted',
+        2 => 'field_article_body',
+        3 => 'field_tags',
       ),
     ),
     'fields' => array(
       'teaser_image' => 'col1',
-      'clickable_title_link' => 'col1',
       'submitted' => 'col1',
       'field_article_body' => 'col2',
       'field_tags' => 'col2',
@@ -753,13 +779,11 @@ function articles_support_ds_layout_settings_info() {
     'regions' => array(
       'ds_content' => array(
         0 => 'teaser_image',
-        1 => 'clickable_title_link',
-        2 => 'submitted',
+        1 => 'submitted',
       ),
     ),
     'fields' => array(
       'teaser_image' => 'ds_content',
-      'clickable_title_link' => 'ds_content',
       'submitted' => 'ds_content',
     ),
     'classes' => array(),
@@ -773,6 +797,78 @@ function articles_support_ds_layout_settings_info() {
     'layout_link_custom' => '',
   );
   $export['node|news_article|recent_articles'] = $ds_layout;
+
+  $ds_layout = new stdClass();
+  $ds_layout->api_version = 1;
+  $ds_layout->id = 'node|news_article|related_articles';
+  $ds_layout->entity_type = 'node';
+  $ds_layout->bundle = 'news_article';
+  $ds_layout->view_mode = 'related_articles';
+  $ds_layout->layout = 'ds_1col';
+  $ds_layout->settings = array(
+    'regions' => array(
+      'ds_content' => array(
+        0 => 'clickable_node_title',
+        1 => 'teaser_image',
+        2 => 'submitted',
+      ),
+    ),
+    'fields' => array(
+      'clickable_node_title' => 'ds_content',
+      'teaser_image' => 'ds_content',
+      'submitted' => 'ds_content',
+    ),
+    'classes' => array(
+      'layout_class' => array(
+        '' => '',
+      ),
+    ),
+    'wrappers' => array(
+      'ds_content' => 'div',
+    ),
+    'layout_wrapper' => 'div',
+    'layout_attributes' => '',
+    'layout_attributes_merge' => 1,
+    'layout_link_attribute' => '',
+    'layout_link_custom' => '',
+  );
+  $export['node|news_article|related_articles'] = $ds_layout;
+
+  $ds_layout = new stdClass();
+  $ds_layout->api_version = 1;
+  $ds_layout->id = 'node|news_article|taxonomy_pages';
+  $ds_layout->entity_type = 'node';
+  $ds_layout->bundle = 'news_article';
+  $ds_layout->view_mode = 'taxonomy_pages';
+  $ds_layout->layout = 'ds_1col';
+  $ds_layout->settings = array(
+    'regions' => array(
+      'ds_content' => array(
+        0 => 'clickable_node_title',
+        1 => 'teaser_image',
+        2 => 'submitted',
+      ),
+    ),
+    'fields' => array(
+      'clickable_node_title' => 'ds_content',
+      'teaser_image' => 'ds_content',
+      'submitted' => 'ds_content',
+    ),
+    'classes' => array(
+      'layout_class' => array(
+        '' => '',
+      ),
+    ),
+    'wrappers' => array(
+      'ds_content' => 'div',
+    ),
+    'layout_wrapper' => 'div',
+    'layout_attributes' => '',
+    'layout_attributes_merge' => 1,
+    'layout_link_attribute' => '',
+    'layout_link_custom' => '',
+  );
+  $export['node|news_article|taxonomy_pages'] = $ds_layout;
 
   return $export;
 }
