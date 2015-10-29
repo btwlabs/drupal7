@@ -11,7 +11,7 @@
   <?php endif; ?>
   <ul class="common-support-grid">
     <?php foreach ($rows as $id => $row): ?>
-      <li class="grid-row<?php if(!empty($classes_array)) : print ' ' . $classes_array[$id]; endif; ?>"><?php print $row; ?></li>
+      <li class="grid-row<?php if(!empty($classes_array[$id])) : print ' ' . $classes_array[$id]; endif; ?>"><?php print $row; ?></li>
     <?php endforeach; ?>
   </ul>
 </div>
