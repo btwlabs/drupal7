@@ -1,0 +1,6 @@
+sites/default/local/
+sites/default/files/
+sites/*.local
+sites/*.dd
+*.idea*
+
