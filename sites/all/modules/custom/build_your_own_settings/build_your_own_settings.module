@@ -1,0 +1,418 @@
+<?php
+/**
+ * @file
+ * Code for the Build Your Own Settings feature.
+ */
+
+include_once 'build_your_own_settings.features.inc';
+
+
+/**
+ * Implements hook_custom_settings_alter().
+ * Need to change the load order of js for the angular app.
+ */
+function build_your_own_settings_js_alter(&$js) {
+  if (isset($js['build-your-own/app/dependencies/angular.min.js'])) {
+    //@todo think of a better way to do this...? maybe add the js ourselves as libraries??
+    $reference_weight = $js['sites/all/modules/contrib/jquery_update/replace/jquery/2.1/jquery.min.js?v=2.1.4']['weight'];
+    $js['build-your-own/app/dependencies/angular.min.js']['group'] = "JS_LIBRARY";
+    $js['build-your-own/app/dependencies/angular.min.js']['weight'] = $reference_weight++;
+
+    $js['build-your-own/app/dependencies/angular-animate.js']['group'] = "JS_LIBRARY";
+    $js['build-your-own/app/dependencies/angular-animate.js']['weight'] = $reference_weight++;
+
+    $js['build-your-own/app/dependencies/angular-route.js']['group'] = "JS_LIBRARY";
+    $js['build-your-own/app/dependencies/angular-route.js']['weight'] = $reference_weight++;
+
+    $js['build-your-own/app/dependencies/angular-resource.js']['group'] = "JS_LIBRARY";
+    $js['build-your-own/app/dependencies/angular-resource.js']['weight'] = $reference_weight++;
+
+    $js['build-your-own/app/dependencies/promise-tracker.js']['group'] = "JS_LIBRARY";
+    $js['build-your-own/app/dependencies/promise-tracker.js']['weight'] = $reference_weight++;
+
+    $js['build-your-own/app/app.js']['group'] = "JS_LIBRARY";
+    $js['build-your-own/app/app.js']['weight'] = $reference_weight++;
+
+    $js['build-your-own/app/main-page/main-page.js']['group'] = "JS_LIBRARY";
+    $js['build-your-own/app/main-page/main-page.js']['weight'] = $reference_weight++;
+
+    $js['build-your-own/app/components/options/options.js']['group'] = "JS_LIBRARY";
+    $js['build-your-own/app/components/options/options.js']['weight'] = $reference_weight++;
+
+    $js['build-your-own/app/components/selections/selections.js']['group'] = "JS_LIBRARY";
+    $js['build-your-own/app/components/selections/selections.js']['weight'] = $reference_weight++;
+
+    $js['build-your-own/app/components/add2cart/add2cart.js']['group'] = "JS_LIBRARY";
+    $js['build-your-own/app/components/add2cart/add2cart.js']['weight'] = $reference_weight++;
+
+    $js['build-your-own/app/components/price/price.js']['group'] = "JS_LIBRARY";
+    $js['build-your-own/app/components/price/price.js']['weight'] = $reference_weight++;
+
+    $js['build-your-own/app/components/perspectives/perspectives.js']['group'] = "JS_LIBRARY";
+    $js['build-your-own/app/components/perspectives/perspectives.js']['weight'] = $reference_weight++;
+  }
+}
+
+/**
+ * Implements hook_menu();
+ */
+function build_your_own_settings_menu() {
+  $items = array();
+  $items['byo/add-to-cart'] = array(
+    'type' => MENU_CALLBACK,
+    'page callback' => 'build_your_own_settings_add2cart',
+    'access arguments' => array('access content'),
+  );
+  $items['byo/get-byo-components'] = array(
+    'type' => MENU_CALLBACK,
+    'page callback' => 'build_your_own_settings_byo_component_list',
+    'access arguments' => array('access content'),
+  );
+  $items['byo/get-byo-perspectives'] = array(
+    'type' => MENU_CALLBACK,
+    'page callback' => 'build_your_own_settings_byo_perspectives_list',
+    'access arguments' => array('access content'),
+  );
+  return $items;
+}
+
+/**
+ * Implements hook_commerce_line_item_type_info().
+ */
+function build_your_own_settings_commerce_line_item_type_info() {
+  $line_item_types = array();
+  $line_item_types['byo_product'] = array(
+    'type' => 'byo_product',
+    'name' => t('Build Your Own Product'),
+    'description' => t('Line item type for a BYO desk product'),
+    'add_form_submit_value' => t('New BYO Desk'),
+    'base' => 'byo_product_line_item',
+    'product' => true,
+    'callbacks' => array(
+      'configuration' => 'commerce_product_line_item_configuration',
+      'title' => 'commerce_product_line_item_title',
+    ),
+  );
+  return $line_item_types;
+}
+
+/**
+ * Helper function for attaching a line item to an order.
+ * Given an order object, and an array of line item data,
+ * this function will create a new line item based on the data and
+ * attach it to the order object. The order is modified by reference.
+ * @param stdClass $order
+ * @param array $line_item_data_array
+ *   array of line item data arrays, each with the following keys:
+ *   'label' => (optional) the label for the line item, defaults to 'new line item',
+ *   'type' => (optional) a valid commerce_line_item type, defaults to 'product',
+ *   'quantity' => (optional) the quantity of skus for the line item to attach,
+ *     defaults to 1,
+ *   'amount' => the price for the line item (each item),
+ *   'currency_code' => (optional) the currency code for the line item,
+ *     defaults to the commerce_default_currency_code().
+ *   'additional_data' => anything to attach to the line item.
+ * @return array $line_items
+ *   array of attached line_items.
+ */
+function build_your_own_settings_order_line_items_attach(&$order, $line_item_data_array = array()) {
+  $line_items = array();
+  $order_wrapper = entity_metadata_wrapper('commerce_order', $order);
+  foreach ($line_item_data_array as $line_item_data) {
+    $line_item = commerce_line_item_new((isset($line_item_data['type'])) ? $line_item_data['type'] : 'product', $order_wrapper->order_id->value());
+    $line_item_wrapper = entity_metadata_wrapper('commerce_line_item', $line_item);
+
+    // Set default line item properties.
+    // Load placeholder product.
+    // @todo need real products here. Can get it from using tax for select categories and assemble into product ids on client side.
+    $product = commerce_product_new('build_your_own');
+    $product_wrapper = entity_metadata_wrapper('commerce_product', $product);
+    // Set Title.
+    $title = (isset($line_item_data['label'])) ? t($line_item_data['label']) : t('Build Your Own Custom Updesk');
+    $product_wrapper->title->set($title);
+
+    // Set Sku.
+    $sku = "byo_desk_" . str_replace('.', '-', $_SERVER['REMOTE_ADDR']) . '-' . time();
+    $product_wrapper->sku->set($sku);
+
+    // Set price
+    $product_wrapper->commerce_price = array(
+      'amount' => $line_item_data['amount'],
+      'currency_code' => (isset($line_item_data['currency_code'])) ? $line_item_data['currency_code'] : commerce_default_currency(),
+      'data' => array(),
+    );
+
+    commerce_product_save($product);
+
+    commerce_product_line_item_populate($line_item, $product);
+    $line_item_wrapper->line_item_label = $title;
+    $line_item_wrapper->quantity = (isset($line_item_data['quantity'])) ? $line_item_data['quantity'] : 1;
+
+    // Create a price structure.
+    $price = array(
+      'amount' => $line_item_data['amount'],
+      'currency_code' => (isset($line_item_data['currency_code'])) ? $line_item_data['currency_code'] : commerce_default_currency(),
+      'data' => array(),
+    );
+
+    // Set the price on the line item.
+    $line_item_wrapper->commerce_total->amount = $line_item_data['amount'];
+    $line_item_wrapper->commerce_unit_price = $price;
+    $line_item_wrapper->commerce_unit_price->data = commerce_price_component_add($line_item_wrapper->commerce_unit_price->value(), 'base_price', $price, TRUE);
+
+    // Add other line item data.
+    $line_item->data += $line_item_data['additional_data'];
+
+    // Set the line item options fields.
+    $options_list = '<ul class="commerce-order-options-list">';
+    foreach($line_item_data['additional_data'] as $i => $option) {
+      // Skip this option if it is 0 (read "unselected").
+      if ($option == 0) {
+        continue;
+      }
+      $option_product = commerce_product_load($option['product_id']);
+      $values = array(
+        'entity_type' => 'commerce_product',
+        'bundle' => 'build_your_own',
+        'language' => LANGUAGE_NONE,
+        'target_id' => $option['product_id'],
+      );
+      $line_item->field_byo_options_display[LANGUAGE_NONE][] = $values;
+      $options_list .= '<li class="commerce-order-options-list-item><span class="option-type">' . $option['type'] . '</span> <span class="option-separator"></span><span class="option-title">' . $option_product->title . '</span></li>';
+    }
+    $options_list .= '</ul><!-- commerce-order-options-list -->';
+    $line_item->field_byo_options_display[LANGUAGE_NONE][0]['format'] = 'filtered_html';
+    $line_item->field_byo_options_display[LANGUAGE_NONE][0]['value'] = $options_list;
+
+    // Save new line item, add to the order, and save the order.
+    commerce_line_item_save($line_item);
+
+    // Update the order.
+    $order_wrapper->commerce_line_items[] = $line_item;
+    $line_items[$line_item->line_item_id] = $line_item;
+  }
+  return $line_items;
+}
+
+/**
+ * Ajax callback to add an item to the cart.
+ */
+function build_your_own_settings_add2cart() {
+  $_POST = json_decode(file_get_contents('php://input'), true);
+
+  global $user;
+  if (!($order = commerce_cart_order_load($user->uid))) {
+    // Create a cart order and add the line item.
+    $order = commerce_cart_order_new($user->uid);
+
+    // Save order id in session if user is anonymous.
+    if (user_is_anonymous()) {
+      commerce_cart_order_session_save($order->order_id);
+    }
+  }
+
+  // Add the line item.
+  $line_item_data = array(
+    'label' => t($_POST['label']),
+    'type' => 'byo_product',
+    'quantity' => 1,
+    'amount' => $_POST['amount'],
+    'currency_code' => commerce_default_currency(),
+    'additional_data' => $_POST['options'],
+  );
+
+  build_your_own_settings_order_line_items_attach($order, array($line_item_data));
+  commerce_order_calculate_total($order);
+  commerce_order_save($order);
+  drupal_set_message(t("Your custom desk was successfully added to your ") .  l('cart', '/cart'), 'status');
+  //drupal_json_output($return);
+}
+
+/**
+ * Formats array of image urls and metadata.
+ */
+function build_your_own_settings_format_images($img) {
+  $result = array();
+  foreach($img as $file) {
+    $file_wrapper = entity_metadata_wrapper('file', file_load($file['fid']));
+    $url = $file_wrapper->url->value();
+    $perspective = $file_wrapper->field_file_image_perspective->value();
+    $result[$perspective->name] = array('url' => $url);
+  }
+  return $result;
+}
+
+/**
+ * Returns a list of dependencies for a product.
+ * @param $dependency
+ *   The dependency field value.
+ * @return array|int
+ */
+function build_your_own_settings_format_dependency($dependency) {
+  $return = 0;
+  if (!empty($dependency)) {
+    $return = array();
+    foreach($dependency as $product) {
+      $return[] = $product->product_id;
+    }
+  }
+  return $return;
+}
+
+/**
+ * Callback returns json list of build your own 'components'.
+ */
+function build_your_own_settings_byo_component_list() {
+  if ($cache = cache_get('byo_component_list')) {
+    $components = $cache->data;
+  }
+  else {
+    $components = array();
+    // Get the components taxonomy.
+    $vocab = taxonomy_vocabulary_machine_name_load('component_type');
+    $types = entity_load('taxonomy_term', FALSE, array('vid' => $vocab->vid));
+
+    // Go through each term, loading and pre-processing associated component products.
+    $type_id = 0;
+    $component_id = 0;
+    foreach($types as $term) {
+      // Load component type products attached to the term.
+      $products = $term->field_byo_components[LANGUAGE_NONE];
+      $count = count($products);
+      $required = $term->field_byo_required[LANGUAGE_NONE][0]['value'];
+      // Only proceed if there are products.
+      if ($count > 0) {
+        $components[$type_id] = array(
+          "name" => check_plain($term->name),
+          "id" => $type_id,
+          "tid" => $term->tid,
+          "required" => $required,
+        );
+        foreach($products as $value) {
+          // Assemble this product's values.
+          $product = commerce_product_load($value['target_id']);
+          $product_wrapper = entity_metadata_wrapper('commerce_product', $product);
+          $snippet = filter_xss($product_wrapper->field_byo_snippet->value());
+          $price = $product_wrapper->commerce_price->value();
+          $img = $product_wrapper->field_byo_images->value();
+          $images = build_your_own_settings_format_images($img);
+          $dependency = build_your_own_settings_format_dependency($product_wrapper->field_byo_dependencies->value());
+          $safe_name = urldecode(filter_xss($product_wrapper->title->value()));
+          $components[$type_id]["list"][] = array(
+            "name" => $safe_name,
+            "machine_name" => strtolower(str_replace(" ", "-", $safe_name)),
+            "type" => strtolower(str_replace(" ", "-", $term->name)),
+            "type_id" => $type_id,
+            "id" => $component_id,
+            "product_id" => $product_wrapper->product_id->value(),
+            "snippet" => $snippet,
+            "price" => $price['amount'],
+            "images" => $images,
+            "dependency" => $dependency,
+          );
+          $component_id++;
+        }
+        $type_id++;
+      }
+    }
+    cache_set('byo_component_list', $components);
+  }
+  drupal_json_output($components);
+}
+
+/**
+ * Api callback to return list of possible image perspectives.
+ */
+function build_your_own_settings_byo_perspectives_list() {
+  $return = array();
+  // Get the components taxonomy.
+  $vocab = taxonomy_vocabulary_machine_name_load('image_perspective');
+  $perspectives = entity_load('taxonomy_term', FALSE, array('vid' => $vocab->vid));
+  foreach($perspectives as $perspective) {
+    $return[] = $perspective;
+  }
+  return drupal_json_output($return);
+}
+
+/**
+ * Implements hook_entity_update().
+ * Clear the components cache if a component
+ * product is updated.
+ */
+function build_your_own_settings_entity_update($entity, $type) {
+  if (($type == 'commerce_product') && ($entity->type == 'build_your_own_component')) {
+    cache_clear_all('byo_component_list', 'cache');
+  }
+}
+
+/**
+ * Implements hook_entity_insert().
+ * Trigger the update hook if a component
+ * product is created.
+ */
+function build_your_own_settings_entity_insert($entity, $type) {
+  if (($type == 'commerce_product') && ($entity->type == 'build_your_own_component')) {
+    build_your_own_settings_entity_update($entity, $type);
+  }
+}
+
+/**
+ * Implements hook_views_default_views_alter().
+ * Add byo options field to the default cart views.
+ */
+function build_your_own_settings_views_default_views_alter(&$views) {
+  if (isset($views['commerce_line_item_table'])) {
+    $addition = array(
+      'field_byo_options_display' => array(
+        'id' => 'field_byo_options_display',
+        'table' => 'field_data_field_byo_options_display',
+        'field' => 'field_byo_options_display',
+        'element_type' => 0,
+        'settings' => array('link' => 0,),
+        'delta_offset' => '0',
+        'multi_type' => 'ul',
+      ),
+    );
+    $array = $views['commerce_line_item_table']->display['default']->display_options['fields'];
+    $start = array_slice($array, 0, 4, true);
+    $end = array_slice($array, 4, count($array) - 1, true);
+    $views['commerce_line_item_table']->display['default']->display_options['fields'] = $start + $addition + $end;
+  }
+
+  if (isset($views['commerce_cart_form'])) {
+    $addition = array(
+      'field_byo_options_display' => array(
+        'id' => 'field_byo_options_display',
+        'table' => 'field_data_field_byo_options_display',
+        'field' => 'field_byo_options_display',
+        'relationship' => 'commerce_line_items_line_item_id',
+        'element_type' => 0,
+        'settings' => array('link' => 0,),
+        'delta_offset' => '0',
+        'multi_type' => 'ul',
+      ),
+    );
+    $array = $views['commerce_cart_form']->display['default']->display_options['fields'];
+    $start = array_slice($array, 0, 4, true);
+    $end = array_slice($array, 4, count($array) - 1, true);
+    $views['commerce_cart_form']->display['default']->display_options['fields'] = $start + $addition + $end;
+  }
+  if (isset($views['commerce_cart_summary'])) {
+    $addition = array(
+      'field_byo_options_display' => array(
+        'id' => 'field_byo_options_display',
+        'table' => 'field_data_field_byo_options_display',
+        'field' => 'field_byo_options_display',
+        'relationship' => 'commerce_line_items_line_item_id',
+        'element_type' => 0,
+        'settings' => array('link' => 0,),
+        'delta_offset' => '0',
+        'multi_type' => 'ul',
+      ),
+    );
+    $array = $views['commerce_cart_summary']->display['default']->display_options['fields'];
+    $start = array_slice($array, 0, 3, true);
+    $end = array_slice($array, 3, count($array) - 1, true);
+    $views['commerce_cart_summary']->display['default']->display_options['fields'] = $start + $addition + $end;
+  }
+}
