@@ -10,7 +10,7 @@
 function story_blocks_default_image_style_assets() {
   $styles = array();
 
-  // Exported image style: story_block-img-mobile.
+  // Exported image style: story_block-img-small.
   $styles['story_block-img-small'] = array(
     'module' => 'story_blocks',
     'label' => 'story_block-img-small',
