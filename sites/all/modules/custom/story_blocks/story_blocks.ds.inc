@@ -92,6 +92,41 @@ function story_blocks_ds_field_settings_info() {
 
   $ds_fieldsetting = new stdClass();
   $ds_fieldsetting->api_version = 1;
+  $ds_fieldsetting->id = 'node|story_block|left_copy_full_bg_image_h1';
+  $ds_fieldsetting->entity_type = 'node';
+  $ds_fieldsetting->bundle = 'story_block';
+  $ds_fieldsetting->view_mode = 'left_copy_full_bg_image_h1';
+  $ds_fieldsetting->settings = array(
+    'mobile_story_block_image' => array(
+      'weight' => '0',
+      'label' => 'hidden',
+      'format' => 'default',
+      'formatter_settings' => array(
+        'show_title' => 0,
+        'title_wrapper' => '',
+        'ctools' => 'a:3:{s:4:"conf";a:10:{s:5:"label";s:6:"hidden";s:9:"formatter";s:5:"image";s:11:"delta_limit";s:1:"0";s:12:"delta_offset";s:1:"0";s:14:"delta_reversed";i:0;s:18:"formatter_settings";a:2:{s:11:"image_style";s:22:"story_block-img-small";s:10:"image_link";s:0:"";}s:7:"context";s:25:"argument_entity_id:node_1";s:14:"override_title";i:0;s:19:"override_title_text";s:0:"";s:22:"override_title_heading";s:2:"h2";}s:4:"type";s:12:"entity_field";s:7:"subtype";s:29:"node:field_story_block_images";}',
+        'load_terms' => 0,
+        'ft' => array(
+          'func' => 'theme_ds_field_minimal',
+        ),
+      ),
+    ),
+    'title' => array(
+      'weight' => '1',
+      'label' => 'hidden',
+      'format' => 'default',
+      'formatter_settings' => array(
+        'link' => '0',
+        'wrapper' => 'h1',
+        'class' => 'title',
+        'ft' => array(),
+      ),
+    ),
+  );
+  $export['node|story_block|left_copy_full_bg_image_h1'] = $ds_fieldsetting;
+
+  $ds_fieldsetting = new stdClass();
+  $ds_fieldsetting->api_version = 1;
   $ds_fieldsetting->id = 'node|story_block|left_copy_right_bg_image';
   $ds_fieldsetting->entity_type = 'node';
   $ds_fieldsetting->bundle = 'story_block';
@@ -208,6 +243,41 @@ function story_blocks_ds_field_settings_info() {
     ),
   );
   $export['node|story_block|right_copy_full_bg_image'] = $ds_fieldsetting;
+
+  $ds_fieldsetting = new stdClass();
+  $ds_fieldsetting->api_version = 1;
+  $ds_fieldsetting->id = 'node|story_block|right_copy_full_bg_image_h1';
+  $ds_fieldsetting->entity_type = 'node';
+  $ds_fieldsetting->bundle = 'story_block';
+  $ds_fieldsetting->view_mode = 'right_copy_full_bg_image_h1';
+  $ds_fieldsetting->settings = array(
+    'mobile_story_block_image' => array(
+      'weight' => '0',
+      'label' => 'hidden',
+      'format' => 'default',
+      'formatter_settings' => array(
+        'show_title' => 0,
+        'title_wrapper' => '',
+        'ctools' => 'a:3:{s:4:"conf";a:10:{s:5:"label";s:6:"hidden";s:9:"formatter";s:5:"image";s:11:"delta_limit";s:1:"0";s:12:"delta_offset";s:1:"0";s:14:"delta_reversed";i:0;s:18:"formatter_settings";a:2:{s:11:"image_style";s:22:"story_block-img-small";s:10:"image_link";s:0:"";}s:7:"context";s:25:"argument_entity_id:node_1";s:14:"override_title";i:0;s:19:"override_title_text";s:0:"";s:22:"override_title_heading";s:2:"h2";}s:4:"type";s:12:"entity_field";s:7:"subtype";s:29:"node:field_story_block_images";}',
+        'load_terms' => 0,
+        'ft' => array(
+          'func' => 'theme_ds_field_minimal',
+        ),
+      ),
+    ),
+    'title' => array(
+      'weight' => '1',
+      'label' => 'hidden',
+      'format' => 'default',
+      'formatter_settings' => array(
+        'link' => '0',
+        'wrapper' => 'h1',
+        'class' => 'title',
+        'ft' => array(),
+      ),
+    ),
+  );
+  $export['node|story_block|right_copy_full_bg_image_h1'] = $ds_fieldsetting;
 
   $ds_fieldsetting = new stdClass();
   $ds_fieldsetting->api_version = 1;
@@ -431,6 +501,54 @@ function story_blocks_ds_layout_settings_info() {
 
   $ds_layout = new stdClass();
   $ds_layout->api_version = 1;
+  $ds_layout->id = 'node|story_block|left_copy_full_bg_image_h1';
+  $ds_layout->entity_type = 'node';
+  $ds_layout->bundle = 'story_block';
+  $ds_layout->view_mode = 'left_copy_full_bg_image_h1';
+  $ds_layout->layout = 'common_support_teaser_1';
+  $ds_layout->settings = array(
+    'regions' => array(
+      'col1' => array(
+        0 => 'mobile_story_block_image',
+        1 => 'title',
+        2 => 'body',
+        3 => 'field_story_block_link',
+      ),
+      'col2' => array(
+        4 => 'field_story_block_videos',
+        5 => 'field_story_block_images',
+      ),
+    ),
+    'fields' => array(
+      'mobile_story_block_image' => 'col1',
+      'title' => 'col1',
+      'body' => 'col1',
+      'field_story_block_link' => 'col1',
+      'field_story_block_videos' => 'col2',
+      'field_story_block_images' => 'col2',
+    ),
+    'limit' => array(
+      'field_story_block_images' => '1',
+    ),
+    'classes' => array(
+      'layout_class' => array(
+        'node-nid-[node:nid]' => 'node-nid-[node:nid]',
+      ),
+    ),
+    'wrappers' => array(
+      'col1' => 'div',
+      'col2' => 'div',
+    ),
+    'layout_wrapper' => 'div',
+    'layout_attributes' => '',
+    'layout_attributes_merge' => 1,
+    'layout_link_attribute' => '',
+    'layout_link_custom' => '',
+  );
+  $export['node|story_block|left_copy_full_bg_image_h1'] = $ds_layout;
+
+  $ds_layout = new stdClass();
+  $ds_layout->api_version = 1;
   $ds_layout->id = 'node|story_block|left_copy_right_bg_image';
   $ds_layout->entity_type = 'node';
   $ds_layout->bundle = 'story_block';
@@ -575,6 +693,54 @@ function story_blocks_ds_layout_settings_info() {
 
   $ds_layout = new stdClass();
   $ds_layout->api_version = 1;
+  $ds_layout->id = 'node|story_block|right_copy_full_bg_image_h1';
+  $ds_layout->entity_type = 'node';
+  $ds_layout->bundle = 'story_block';
+  $ds_layout->view_mode = 'right_copy_full_bg_image_h1';
+  $ds_layout->layout = 'common_support_teaser_1';
+  $ds_layout->settings = array(
+    'regions' => array(
+      'col2' => array(
+        3 => 'title',
+        4 => 'body',
+        5 => 'field_story_block_videos',
+        6 => 'field_story_block_link',
+      ),
+      'col1' => array(
+        1 => 'mobile_story_block_image',
+        2 => 'field_story_block_images',
+      ),
+    ),
+    'fields' => array(
+      'mobile_story_block_image' => 'col1',
+      'field_story_block_videos' => 'col1',
+      'field_story_block_images' => 'col1',
+      'title' => 'col2',
+      'body' => 'col2',
+      'field_story_block_link' => 'col2',
+    ),
+    'limit' => array(
+      'field_story_block_images' => '1',
+    ),
+    'classes' => array(
+      'layout_class' => array(
+        'node-nid-[node:nid]' => 'node-nid-[node:nid]',
+      ),
+    ),
+    'wrappers' => array(
+      'col1' => 'div',
+      'col2' => 'div',
+    ),
+    'layout_wrapper' => 'div',
+    'layout_attributes' => '',
+    'layout_attributes_merge' => 1,
+    'layout_link_attribute' => '',
+    'layout_link_custom' => '',
+  );
+  $export['node|story_block|right_copy_full_bg_image_h1'] = $ds_layout;
+
+  $ds_layout = new stdClass();
+  $ds_layout->api_version = 1;
   $ds_layout->id = 'node|story_block|right_copy_left_bg_image';
   $ds_layout->entity_type = 'node';
   $ds_layout->bundle = 'story_block';
@@ -690,6 +856,15 @@ function story_blocks_ds_view_modes_info() {
 
   $ds_view_mode = new stdClass();
   $ds_view_mode->api_version = 1;
+  $ds_view_mode->view_mode = 'left_copy_full_bg_image_h1';
+  $ds_view_mode->label = 'Left Copy BG Image H1 Title';
+  $ds_view_mode->entities = array(
+    'node' => 'node',
+  );
+  $export['left_copy_full_bg_image_h1'] = $ds_view_mode;
+
+  $ds_view_mode = new stdClass();
+  $ds_view_mode->api_version = 1;
   $ds_view_mode->view_mode = 'left_copy_right_image';
   $ds_view_mode->label = 'Left Copy Right Image';
   $ds_view_mode->entities = array(
@@ -714,6 +889,15 @@ function story_blocks_ds_view_modes_info() {
     'node' => 'node',
   );
   $export['right_copy_full_bg_image'] = $ds_view_mode;
+
+  $ds_view_mode = new stdClass();
+  $ds_view_mode->api_version = 1;
+  $ds_view_mode->view_mode = 'right_copy_full_bg_image_h1';
+  $ds_view_mode->label = 'Right Copy BG Image H1 Title';
+  $ds_view_mode->entities = array(
+    'node' => 'node',
+  );
+  $export['right_copy_full_bg_image_h1'] = $ds_view_mode;
 
   $ds_view_mode = new stdClass();
   $ds_view_mode->api_version = 1;

@@ -92,6 +92,9 @@ function story_blocks_default_variable_assets() {
       'left_copy_full_bg_image' => array(
         'custom_settings' => TRUE,
       ),
+      'left_copy_full_bg_image_h1' => array(
+        'custom_settings' => TRUE,
+      ),
       'left_copy_right_bg_image' => array(
         'custom_settings' => TRUE,
       ),
@@ -99,6 +102,9 @@ function story_blocks_default_variable_assets() {
         'custom_settings' => TRUE,
       ),
       'right_copy_full_bg_image' => array(
+        'custom_settings' => TRUE,
+      ),
+      'right_copy_full_bg_image_h1' => array(
         'custom_settings' => TRUE,
       ),
       'right_copy_left_bg_image' => array(
@@ -142,11 +148,19 @@ function story_blocks_default_variable_assets() {
             'weight' => '0',
             'visible' => FALSE,
           ),
+          'left_copy_full_bg_image_h1' => array(
+            'weight' => '0',
+            'visible' => FALSE,
+          ),
           'left_copy_right_image' => array(
             'weight' => '0',
             'visible' => FALSE,
           ),
           'right_copy_full_bg_image' => array(
+            'weight' => '0',
+            'visible' => FALSE,
+          ),
+          'right_copy_full_bg_image_h1' => array(
             'weight' => '0',
             'visible' => FALSE,
           ),
