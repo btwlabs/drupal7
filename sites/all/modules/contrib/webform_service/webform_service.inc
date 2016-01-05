@@ -44,7 +44,20 @@ function _submission_resource_access($op = 'view', $args = array()) {
     }
   }
   elseif ($op == 'create') {
-    return node_access($op, $node);
+    // See if the user has permission to submit this webform.
+    //// @see webform_node_view().
+    global $user;
+    $allowed_roles = array();
+    // Check if the user's role can submit this webform.
+    if (variable_get('webform_submission_access_control', 1)) {
+      foreach ($node->webform['roles'] as $rid) {
+        $allowed_roles[$rid] = isset($user->roles[$rid]) ? TRUE : FALSE;
+      }
+      if (array_search(TRUE, $allowed_roles) === FALSE && $user->uid != 1) {
+        return FALSE;
+      }
+    }
+    return TRUE;
   }
 }
 
