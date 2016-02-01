@@ -89,16 +89,28 @@ function story_blocks_default_variable_assets() {
       'full' => array(
         'custom_settings' => TRUE,
       ),
-      'left_bg_image_story_block' => array(
+      'left_copy_full_bg_image' => array(
         'custom_settings' => TRUE,
       ),
-      'left_non_bg_image_story_block' => array(
+      'left_copy_full_bg_image_h1' => array(
         'custom_settings' => TRUE,
       ),
-      'right_bg_image_story_block' => array(
+      'left_copy_right_bg_image' => array(
         'custom_settings' => TRUE,
       ),
-      'right_non_bg_image_story_block' => array(
+      'left_copy_right_image' => array(
+        'custom_settings' => TRUE,
+      ),
+      'right_copy_full_bg_image' => array(
+        'custom_settings' => TRUE,
+      ),
+      'right_copy_full_bg_image_h1' => array(
+        'custom_settings' => TRUE,
+      ),
+      'right_copy_left_bg_image' => array(
+        'custom_settings' => TRUE,
+      ),
+      'right_copy_left_image' => array(
         'custom_settings' => TRUE,
       ),
       'teaser' => array(
@@ -132,19 +144,27 @@ function story_blocks_default_variable_assets() {
             'weight' => '0',
             'visible' => FALSE,
           ),
-          'left_bg_image_story_block' => array(
+          'left_copy_full_bg_image' => array(
             'weight' => '0',
             'visible' => FALSE,
           ),
-          'left_non_bg_image_story_block' => array(
+          'left_copy_full_bg_image_h1' => array(
             'weight' => '0',
             'visible' => FALSE,
           ),
-          'right_bg_image_story_block' => array(
+          'left_copy_right_image' => array(
             'weight' => '0',
             'visible' => FALSE,
           ),
-          'right_non_bg_image_story_block' => array(
+          'right_copy_full_bg_image' => array(
+            'weight' => '0',
+            'visible' => FALSE,
+          ),
+          'right_copy_full_bg_image_h1' => array(
+            'weight' => '0',
+            'visible' => FALSE,
+          ),
+          'right_copy_left_image' => array(
             'weight' => '0',
             'visible' => FALSE,
           ),

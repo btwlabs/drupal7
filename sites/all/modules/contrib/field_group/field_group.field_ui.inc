@@ -822,6 +822,9 @@ function field_group_field_ui_create_vertical_tabs(&$form, &$form_state, $params
   $form_state['field_group_params'] = $params;
 
   $entity_info = entity_get_info($params->entity_type);
+
+  $view_mode_settings = field_view_mode_settings($params->entity_type, $params->bundle);
+
   $view_modes = array();
   if ($params->mode != 'default') {
     $view_modes['default'] = t('Default');
@@ -830,7 +833,7 @@ function field_group_field_ui_create_vertical_tabs(&$form, &$form_state, $params
     $view_modes['0'] = t('Form');
   }
   foreach ($entity_info['view modes'] as $view_mode => $data) {
-    if ($data['custom settings'] && $params->mode != $view_mode) {
+    if ((!empty($view_mode_settings[$view_mode]['custom_settings'])) && $params->mode != $view_mode) {
       $view_modes[$view_mode] = $data['label'];
     }
   }

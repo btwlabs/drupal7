@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the BTW API V1 feature.
+ */
+
+include_once 'btw_api_v1.features.inc';

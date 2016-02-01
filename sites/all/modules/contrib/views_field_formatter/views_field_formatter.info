@@ -1,0 +1,11 @@
+name = Views field formatter
+description = Use the result of a view to display a field.
+core = 7.x
+dependencies[] = views
+
+; Information added by Drupal.org packaging script on 2015-04-18
+version = "7.x-1.3+3-dev"
+core = "7.x"
+project = "views_field_formatter"
+datestamp = "1429374427"
+

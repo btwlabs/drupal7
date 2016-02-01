@@ -296,6 +296,12 @@ function system_test_system_info_alter(&$info, $file, $type) {
     }
   }
 
+<<<<<<< HEAD
+=======
+  if ($file->name == 'system_project_namespace_test') {
+    $info['hidden'] = FALSE;
+  }
+>>>>>>> 89c51bb3b84ef4fc6160282a2863e379aa345d9f
   // Make the system_dependencies_test visible by default.
   if ($file->name == 'system_dependencies_test') {
     $info['hidden'] = FALSE;
