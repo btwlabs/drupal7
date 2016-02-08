@@ -67,7 +67,6 @@ function btw_api_v1_views_default_views() {
   $handler->display->display_options['arguments']['date_argument']['default_argument_type'] = 'date';
   $handler->display->display_options['arguments']['date_argument']['summary']['format'] = 'default_summary';
   $handler->display->display_options['arguments']['date_argument']['granularity'] = 'day';
-  $handler->display->display_options['arguments']['date_argument']['granularity_reset'] = 1;
   $handler->display->display_options['arguments']['date_argument']['date_fields'] = array(
     'node.created' => 'node.created',
   );
