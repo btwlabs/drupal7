@@ -1,0 +1,11 @@
+name = Structured Data Markup
+description = "Provides structured data markup for Drupal sites."
+core = 7.x
+package = other
+php = 5.2.4
+project = sdm
+
+; stylesheets[all][] =
+; scripts[] =
+; dependencies[] =
+; files[] =

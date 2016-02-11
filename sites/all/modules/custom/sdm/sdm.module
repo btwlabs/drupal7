@@ -1,0 +1,379 @@
+<?php
+/**
+ * @file
+ * sdm.module
+ */
+
+/**
+ * Implements hook_init().
+ */
+function sdm_init() {
+  // Code here will be executed on each page load.
+}
+
+ /**
+ * Implements hook_permission().
+ */
+function sdm_permission() {
+  $permissions = array();
+  $permissions['administer_sdm_entities'] = array(
+    'title' => t('Administer sdm Entities')
+  );
+  return $permissions;
+}
+
+/**
+ * Implements hook_menu().
+ */
+function sdm_menu() {
+  $items = array();
+  /**
+   * Add menu info array.
+   * The most common format is:
+   * $items['path/to/whatever'] = array(
+   *   'type' => MY_MENU_TYPE_OPTION,
+   *   'title' => t('My page title'),
+   *   'access callback' => 'my_access_function',
+   *   'access arguments' => array(arg1, arg2...),
+   *   'page callback' => 'my_page_callback_function',
+   *   'page arguements => array(arg1, arg2...),
+   *   'menu' => 'menu name this item will be added to',
+   *   'options' => array(options as the 3rd arg to l()),
+   *   'file' => name of a file to include,
+   *   'path' => path of to the file (defaults to module dir,
+   * );
+   */
+  /*$sdm_entity_uri = 'admin/structure/sdm/manage';
+  $sdm_entity_uri_argument_position = 4;
+
+  $items[$sdm_entity_uri . '/%sdm_entity'] = array(
+    'title callback' => 'entity_label',
+    'title arguments' => array('sdm_entity', $sdm_entity_uri_argument_position),
+    'page callback' => 'entity_ui_get_form',
+    'page arguments' => array('sdm_entity', $sdm_entity_uri_argument_position),
+    'access callback' => 'entity_access',
+    'access arguments' => array('edit', 'sdm_entity', $sdm_entity_uri_argument_position),
+    'file' => 'includes/sdm.admin.inc',
+  );
+  $items[$sdm_entity_uri . '/%sdm_entity/delete'] = array(
+    'title' => t('Delete'),
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('sdm_entity_delete_form', $sdm_entity_uri_argument_position),
+    'access callback' => 'entity_access',
+    'access arguments' => array('delete', 'sdm_entity', $sdm_entity_uri_argument_position),
+    'file' => 'includes/sdm.admin.inc',
+    'type' => MENU_LOCAL_TASK,
+    'context' => MENU_CONTEXT_PAGE | MENU_CONTEXT_INLINE,
+    'weight' => 0,
+  );
+  $items[$sdm_entity_uri . '/%sdm_entity/edit'] = array(
+    'title' => t('Edit'),
+    'access callback' => 'entity_access',
+    'access arguments' => array('edit', 'sdm_entity', $sdm_entity_uri_argument_position),
+    'type' => MENU_DEFAULT_LOCAL_TASK,
+    'weight' => -10,
+  );*/
+  
+  return $items;
+}
+
+// ************************************* ENTITY INFO
+/**
+ * Implements hook_entity_info().
+ */
+function sdm_entity_info() {
+  $entities = array();
+  $entities['sdm_entity'] = array(
+    'label' => t('Structured Data Markup'),
+    'entity class' => 'SDMEntity',
+    'controller class' => 'SDMEntityController',
+    'base table' => 'sdm_entity',
+    'load hook' => 'load_sdm_entity',
+    'fieldable' => TRUE,
+    'exportable' => TRUE,
+    'module' => 'sdm',
+    'uri callback' => 'entity_class_uri',
+    'label callback' => 'entity_class_label',
+    'views controller class' => 'EntityDefaultViewsController',
+    'access callback' => 'sdm_access',
+    'admin ui' => array(
+      'title' => t('Structure Data Markup'),
+      'path' => 'admin/structure/sdm',
+      'file' => 'includes/sdm.admin.inc',
+      'controller class' => 'SDMUIController',
+      'menu wildcard' => '%sdm_entity',
+    ),
+    'entity keys' => array(
+      'id' => 'sdm_entity_id',
+      'bundle' => 'sdm_entity_type',
+    ),
+    'bundle keys' => array(
+      'bundle' => 'sdm_entity_type'
+    ),
+    'bundles' => array(),
+    'view modes' => array(
+      'sdm_entity_full' => array(
+        'label' => t("Structured Data Markup Full"),
+        'custom settings' => TRUE,
+      )
+    )
+  );
+  $entities['sdm_type'] = array(
+    'label' => t('Structured Data Markup Type'),
+    'entity class' => 'SDMType',
+    'controller class' => 'SDMTypeController',
+    'base table' => 'sdm_type',
+    'fieldable' => FALSE,
+    'bundle of' => 'sdm',
+    'exportable' => TRUE,
+    'entity keys' => array(
+      'id' => 'type',
+      'label' => 'label',
+    ),
+    'module' => 'sdm',
+    'access callback' => 'sdm_access',
+    'views controller class' => 'EntityDefaultViewsController',
+    'admin ui' => array(
+      'path' => 'admin/structure/sdm/types',
+      'file' => 'includes/sdm.admin.inc',
+      'controller class' => 'SDMTypeUIController',
+      'menu wildcard' => '%sdm_type',
+    ),
+  );
+  return $entities;
+}
+
+/**
+ * Implements hook_entity_info_alter().
+ */
+function sdm_entity_info_alter(&$entity_info) {
+  foreach (sdm_entity_types() as $type => $info) {
+    $entity_info['sdm_entity']['bundles'][$type] = array(
+      'label' => $info->label,
+      'admin' => array(
+        'path' => 'admin/structure/sdm/types/manage/%sdm_type',
+        'real path' => 'admin/structure/sdm/types/manage/' . $type,
+        'bundle argument' => 5,
+      ),
+    );
+  }
+}
+
+/**
+ * Implements hook_entity_property_info().
+ */
+function sdm_entity_property_info() {
+  $properties = array();
+  $properties['sdm_entity_id'] = array(
+    'label' => t('Structured data markup ID'),
+    'description' => t('The unique id of the sdm_entity'),
+  );
+  $properties['description'] = array(
+    'label' => t('Description'),
+    'type' => 'text',
+    'description' => t('The short description of the structured data markup entry, for admin purposes'),
+    'setter callback' => 'entity_property_verbatim_set',
+    'setter permission' => 'administer_sdm_entities',
+    'schema field' => 'description',
+  );
+  $properties['name'] = array(
+    'label' => t('Name'),
+    'type' => 'text',
+    'description' => t('The name for the structured data entry'),
+    'setter callback' => 'entity_property_verbatim_set',
+    'setter permission' => 'administer_sdm_entities',
+    'schema field' => 'name',
+  );
+  $properties['context'] = array(
+    'label' => t('Context'),
+    'type' => 'text',
+    'description' => t('The context for the structured data, e.g: http://schema.org'),
+    'setter callback' => 'entity_property_verbatim_set',
+    'setter permission' => 'administer_sdm_entities',
+    'schema field' => 'context',
+  );
+  $properties['description'] = array(
+    'label' => t('Description'),
+    'type' => 'text',
+    'description' => t('The short description of the sdm_entity'),
+    'setter callback' => 'entity_property_verbatim_set',
+    'setter permission' => 'administer_sdm_entities',
+    'schema field' => 'description',
+  );
+
+  return array('sdm_entity' => array('properties' => $properties));
+}
+
+/**
+ * Implements hook_forms().
+ *
+ * All sdm entity forms share the same form handler.
+ */
+function sdm_forms() {
+  $forms = array();
+  if ($types = sdm_entity_types()) {
+    foreach (array_keys($types) as $type) {
+      $forms['sdm_entity_edit_' . $type . '_form']['callback'] = 'sdm_entity_form';
+    }
+  }
+  return $forms;
+}
+
+/**
+ * Form factory for sdm entity type forms.
+ * @param string $type
+ *   sdm entity type machine name
+ * @param stdClass $entity
+ *   The entity to create a form for
+ * @param string $op
+ *   The operation (add, edit, etc). Not used currently.
+ */
+function sdm_forms_wrapper($type, $entity, $op='add') {
+  if (!isset($entity)) {
+    $entity = sdm_default_entity($type);
+  }
+  else {
+    $type = $entity->sdm_entity_type;
+  }
+  $form = drupal_get_form('sdm_entity_' . $type . '_form', $entity);
+  return $form;
+}
+
+/**
+ * Returns a default sdm entity.
+ * @param string $type
+ *   The sdm entity type to create.
+ * @return SDMEntity $sdm_entity
+ *   An instantiated sdm entity, unsaved.
+ */
+function sdm_default_entity($type) {
+  $sdm_entity = new Campaign();
+  $sdm_entity->sdm_entity_type = $type;
+  $sdm_entity->is_new = TRUE;
+  $sdm_entity->module = 'sdm';
+  $sdm_entity->data = array();
+  return $sdm_entity;
+}
+
+/**
+ * Access function for the entity.
+ * @param string $op
+ * @param stdClass $entity (variable for the entity)
+ * @param stdClass $account
+ * @param string $entity_type
+ */
+function sdm_entity_access($op, $coolkeys, $account = null, $entity_type = null) {
+  if (!isset($account)) {
+    global $user;
+    $account = $user;
+  }
+  switch ($op) {
+    default: return user_access('administer_sdm_entities');
+  }
+}
+
+/**
+* Load an entity.
+*/
+function sdm_entity_load($id, $reset = FALSE) {
+  $sdm_entities = sdm_entity_load_multiple(array($id), array(), $reset);
+  return reset($sdm_entities);
+}
+
+/**
+* Load multiple entities based on certain conditions.
+*/
+function sdm_entity_load_multiple($ids = array(), $conditions = array(), $reset = FALSE) {
+  return entity_load('sdm_entity', $ids, $conditions, $reset);
+}
+
+/**
+* Save Structured Data Markup entity.
+*/
+function sdm_entity_save($sdm_entity) {
+ entity_save('sdm_entity', $sdm_entity);
+}
+
+/**
+* Delete single Structured Data Markup entity.
+*/
+function sdm_entity_delete($sdm_entity_id) {
+  entity_delete('sdm_entity', entity_id('sdm_entity' , $sdm_entity_id));
+}
+
+/**
+* Delete multiple Structured Data Markup entities.
+*/
+function sdm_entity_delete_multiple($sdm_enitity_ids) {
+  entity_delete_multiple('sdm_entity', $sdm_enitity_ids);
+}
+
+
+/**
+ * List of Structured Data Markup Entity Types.
+ */
+function sdm_entity_types($owner_name = NULL) {
+  $sdm_entity_types = entity_load('sdm_entity_type', isset($owner_name) ? array($owner_name) : FALSE, array(), TRUE);
+  return isset($owner_name) ? reset($sdm_entity_types) : $sdm_entity_types;
+}
+
+/**
+ * Load Structured Data Markup Entity Type.
+ */
+function sdm_entity_type_load($sdm_entity_type) {
+  return sdm_entity_types($sdm_entity_type);
+}
+
+/**
+ * Save Structured Data Markup Entity type entity.
+ */
+function sdm_entity_type_save($sdm_entity_type) {
+  entity_save('sdm_entity_type', $sdm_entity_type);
+}
+
+/**
+ * Delete single Structured Data Markup Entity type.
+ */
+function sdm_entity_type_delete($sdm_entity_type) {
+  entity_delete('sdm_entity_type', entity_id('sdm_entity_type' ,$sdm_entity_type));
+}
+
+/**
+ * Delete multiple Structured Data Markup Entity types.
+ */
+function sdm_entity_type_delete_multiple($sdm_entity_type_ids) {
+  entity_delete_multiple('sdm_entity_type', $sdm_entity_type_ids);
+}
+
+/**
+ * Implements hook_views_data_alter.
+ */
+function sdm_views_data_alter(&$data) {
+  /**
+   * Entity api already provides fields, filters, and
+   * sorts for your entity. However you may also want
+   * to implement some custom ones such as special action
+   * links or formatted dates etc.
+   * 
+   * For format look to hook_views_data().
+   */
+}
+
+/**
+ * Implements hook_theme().
+ */
+function sdm_theme() {
+  $themes = array();
+  $themes['sdm_type_list'] = array(
+    'variables' => array(),
+    'file' => 'theme/sdm_theme.inc'
+  );
+  return $themes;
+}
+
+/**
+ * Implements hook_views_api().
+ */
+function sdm_views_api($module = NULL, $api = NULL) {
+  return array('api' => 3);
+}
