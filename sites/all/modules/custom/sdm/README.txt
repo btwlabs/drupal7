@@ -1,7 +1,8 @@
 README.txt
 ==========
 
-This is a sample module designed to be a blueprint for custom module development.  Currently, it contains the following files:
+Provides an entity for adding Structured Data Markup (SDM) JSON-LD
+script objects to your site.
 
  - sdm.info
  - sdm.module
@@ -11,4 +12,4 @@ This is a sample module designed to be a blueprint for custom module development
 
 AUTHOR/MAINTAINER
 ======================
--Idea Den <admin at ideaden DOT com>
+-Ted Benice, PHD -- [ted@bythewaylabs<DOT>com]
