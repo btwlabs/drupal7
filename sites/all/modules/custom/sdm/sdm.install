@@ -9,10 +9,10 @@
  */
 function sdm_schema() {
   $schema = array();
-  $schema['sdm_entity'] = array(
+  $schema['sdm_data'] = array(
     'description' => 'Stores Structured Data Markup Entity information.',
     'fields' => array(
-      'sdm_entity_id' => array(
+      'sdm_data_id' => array(
         'type' => 'serial',
         'unsigned' => TRUE,
         'not null' => TRUE,
@@ -32,7 +32,7 @@ function sdm_schema() {
         'not null' => TRUE,
         'default' => '',
       ),
-      'sdm_entity_type' => array(
+      'sdm_data_type' => array(
         'description' => 'The type of Structured Data Markup Entity bundle.',
         'type' => 'varchar',
         'length' => 255,
@@ -61,19 +61,19 @@ function sdm_schema() {
         'not null' => FALSE,
       ),
     ),
-    'primary key' => array('sdm_entity_id'),
+    'primary key' => array('sdm_data_id'),
     'forign keys' => array(
-      'sdm_entity_type' => array(
-        'table' => 'sdm_entity_type',
-        'columns' => array('sdm_entity_type' => 'sdm_entity_type'),
+      'sdm_data_type' => array(
+        'table' => 'sdm_data_type',
+        'columns' => array('sdm_data_type' => 'sdm_data_type'),
       ),
     ),
   );
 
-  $schema['sdm_entity_type'] = array(
+  $schema['sdm_data_type'] = array(
     'description' => 'Stores Structured Data Markup Entity Bundle Info.',
     'fields' => array(
-      'sdm_entity_type' => array(
+      'sdm_data_type' => array(
         'description' => 'The type of Structured Data Markup Entity bundle.',
         'type' => 'varchar',
         'length' => 255,
@@ -116,7 +116,7 @@ function sdm_schema() {
         'not null' => FALSE,
       ),
     ),
-    'primary key' => array('sdm_entity_type'),
+    'primary key' => array('sdm_data_type'),
   );
   return $schema;
 }
@@ -125,8 +125,8 @@ function sdm_schema() {
  * Implements hook_uninstall();
  */
 function sdm_uninstall() {
-   db_query('DROP TABLE {sdm_entity}');
-   db_query('DROP TABLE {sdm_entity_type}');
+   db_query('DROP TABLE {sdm_data}');
+   db_query('DROP TABLE {sdm_data_type}');
    
    cache_clear_all('*', 'cache', TRUE);
 }

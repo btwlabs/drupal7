@@ -7,5 +7,5 @@ project = sdm
 
 ; stylesheets[all][] =
 ; scripts[] =
-; dependencies[] =
-; files[] =
+dependencies[] = entity
+files[] = includes/sdm.controller.inc

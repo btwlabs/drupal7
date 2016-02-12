@@ -8,7 +8,7 @@ class SDMEntityController extends EntityAPIController {
   public function create(array $values = array()) {
     global $user;
     $values += array(
-      'sdm_entity_id' => '',
+      'sdm_data_id' => '',
     );
     return parent::create($values);
   }
@@ -17,7 +17,7 @@ class SDMEntityController extends EntityAPIController {
     return $this;
   }
   public function delete($ids) {
-    $entities = entity_load('sdm_entity', $ids);
+    $entities = entity_load('sdm_data', $ids);
     foreach($entities as $entity) {
       // Delete Component Entities.
       foreach($entity->data['plugin_data']['entities'] as $type => $attached_entities) {
@@ -26,7 +26,7 @@ class SDMEntityController extends EntityAPIController {
           entity_delete($type, $id);
         }
       }
-      parent::delete(array($entity->sdm_entity_id));
+      parent::delete(array($entity->sdm_data_id));
     }
   }
 }
@@ -43,27 +43,27 @@ class SDMUIController extends EntityDefaultUIController {
     $items[$this->path]['description'] = t('Manage Structured Data Markup Entities');
     $items[$this->path]['title'] = t('Structured Data Markup Entities');
     // Set the add path to use the list function.
-    $items[$this->path . '/add']['page callback'] = 'sdm_entity_type_table';
+    $items[$this->path . '/add']['page callback'] = 'sdm_data_type_table';
     $items[$this->path . '/add']['access callback'] = 'user_access';
     $items[$this->path . '/add']['access arguments'] = array('administer Structured Data Markup entities');
     // Pass add links through to a form factory.
-    $types = sdm_entity_types();
+    $types = sdm_data_types();
     foreach ($types as $type => $info) {
       $items[$this->path . '/add/' . $type] = array(
         'title' => 'Add ' . $type . '  - Structured Data Markup Entity',
         'page callback' => 'sdm_forms_wrapper',
         'page arguments' => array($type, NULL, 'add'),
         'access callback' => 'entity_access',
-        'access arguments' => array('create', 'sdm_entity', $type),
+        'access arguments' => array('create', 'sdm_data', $type),
         'file' => 'includes/sdm.admin.inc',
         'file path' => drupal_get_path('module', 'sdm'),
       );
     }
     // Pass manage (edit) calls through to the form factory.
-    $items[$this->path . '/manage/%sdm_entity']['page callback'] = 'sdm_forms_wrapper';
-    $items[$this->path . '/manage/%sdm_entity']['page arguments'] = array(NULL, 4, 'edit');
-    $items[$this->path . '/manage/%sdm_entity']['file path'] = drupal_get_path('module', 'sdm');
-    $items[$this->path . '/manage/%sdm_entity']['file'] = 'includes/sdm.admin.inc';
+    $items[$this->path . '/manage/%sdm_data']['page callback'] = 'sdm_forms_wrapper';
+    $items[$this->path . '/manage/%sdm_data']['page arguments'] = array(NULL, 4, 'edit');
+    $items[$this->path . '/manage/%sdm_data']['file path'] = drupal_get_path('module', 'sdm');
+    $items[$this->path . '/manage/%sdm_data']['file'] = 'includes/sdm.admin.inc';
     return $items;
   }
 }
@@ -74,7 +74,7 @@ class SDMUIController extends EntityDefaultUIController {
 class SDMEntity extends Entity {
 
   public function __construct($values = array()) {
-    parent::__construct($values, 'sdm_entity');
+    parent::__construct($values, 'sdm_data');
   }
   protected function defaultLabel() {
     return $this->title;
@@ -104,7 +104,7 @@ class SDMEntityType extends Entity {
   public $class = 'SDMEntityDefault';
 
   public function __construct($values = array()) {
-    parent::__construct($values, 'sdm_entity_type');
+    parent::__construct($values, 'sdm_data_type');
   }
 
   protected function defaultLabel() {
