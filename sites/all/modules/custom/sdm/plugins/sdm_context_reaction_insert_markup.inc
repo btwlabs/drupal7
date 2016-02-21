@@ -32,11 +32,21 @@ class sdm_context_reaction_insert_markup extends context_reaction {
     $sdm_entities = sdm_data_load_multiple($ids, array(), TRUE);
     foreach ($sdm_entities as $sdm_data) {
       $content = "{\n";
-      $content .= "@context: {$sdm_data->context},\n";
-      $content .= "@id: {$sdm_data->id},\n";
-      $content .= "@graph: {},\n";
-      $content .= "@type: {},\n";
-      $content .= "@reverse: {},\n";
+      if (!empty($sdm_data->context)) {
+        $content .= "\"@context\": {$sdm_data->context},\n";
+      }
+      if (!empty($sdm_data->id)) {
+        $content .= "\"@id\": {$sdm_data->id},\n";
+      }
+      if (!empty($sdm_data->graph)) {
+        $content .= "\"@graph\": {$sdm_data->graph},\n";
+      }
+      if (!empty($sdm_data->type)) {
+        $content .= "\"@type\": {$sdm_data->type},\n";
+      }
+      if (!empty($sdm_data->reverse)) {
+        $content .= "\"@reverse\": {$sdm_data->reverse},\n";
+      }
 
       // Get field values.
       $wrapper = entity_metadata_wrapper('sdm_data', $sdm_data);
@@ -44,15 +54,15 @@ class sdm_context_reaction_insert_markup extends context_reaction {
       foreach ($instances as $instance) {
         $label = $instance['label'];
         $value = $wrapper->{$instance['field_name']}->value();
-        $content .= "$label: ";
+        $content .= "\"$label\": ";
         if (!is_array($value)) {
           $content .= $value;
         } else {
-          $content .= "{\n";
+          $content .= "{";
           foreach ($value as $item) {
             $content .= "$item,\n";
           }
-          $content .= "}\n";
+          $content .= "}";
         }
       }
       $block['content'] = $content;
