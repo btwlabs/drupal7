@@ -33,16 +33,22 @@ class sdm_context_reaction_insert_markup extends context_reaction {
     foreach ($sdm_entities as $sdm_data) {
       $content = "{\n";
       if (!empty($sdm_data->context)) {
-        $content .= "\"@context\": {$sdm_data->context},\n";
+        // If it starts with an alpha character, assume we need quotes.
+        if (preg_match('/^[a-z]/i', $sdm_data->context)) {
+          $content .= "\"@context\": \"{$sdm_data->context}\",\n";
+        }
+        else {
+          $content .= "\"@context\": {$sdm_data->context},\n";
+        }
       }
       if (!empty($sdm_data->id)) {
-        $content .= "\"@id\": {$sdm_data->id},\n";
+        $content .= "\"@id\": \"{$sdm_data->id}\",\n";
       }
       if (!empty($sdm_data->graph)) {
         $content .= "\"@graph\": {$sdm_data->graph},\n";
       }
       if (!empty($sdm_data->type)) {
-        $content .= "\"@type\": {$sdm_data->type},\n";
+        $content .= "\"@type\": \"{$sdm_data->type}\",\n";
       }
       if (!empty($sdm_data->reverse)) {
         $content .= "\"@reverse\": {$sdm_data->reverse},\n";
@@ -75,7 +81,6 @@ class sdm_context_reaction_insert_markup extends context_reaction {
         )
       );
       drupal_add_html_head($tag, "sdm-code-{$sdm_data->sdm_data_id}");
-      //drupal_add_js($content, array('type'=> 'inline', 'attributes' => array('type' => 'application/ld+json')));
     }
   }
 }

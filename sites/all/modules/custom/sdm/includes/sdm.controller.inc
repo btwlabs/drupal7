@@ -94,7 +94,7 @@ class SDMEntityType extends Entity {
   public $type;
   public $label;
   public $weight = 0;
-  public $class = 'SDMEntityDefault';
+  public $class = 'SDMEntityType';
 
   public function __construct($values = array()) {
     parent::__construct($values, 'sdm_data_type');
@@ -127,7 +127,7 @@ class SDMEntityTypeUIController extends EntityDefaultUIController {
 /**
 *  Type Controller.
 */
-class SDMEntityTypeController extends EntityAPIController {
+class SDMEntityTypeController extends EntityAPIControllerExportable {
   public function create(array $values = array()) {
     $values += array(
       'sdm_data_type' => '',

@@ -13,11 +13,9 @@ function google_social_profile_sdm_default_sdm_data_type() {
     "type" : null,
     "label" : "Google Social Profile",
     "weight" : 0,
-    "class" : "SDMEntityDefault",
+    "class" : "SDMEntityType",
     "sdm_data_type" : "google_social_profile",
     "description" : "SDM Type for adding Google Social Profile JSON\\/LD objects to your site. See https:\\/\\/developers.google.com\\/structured-data\\/customize\\/social-profiles.",
-    "status" : "1",
-    "module" : null,
     "data" : null,
     "rdf_mapping" : []
   }');
