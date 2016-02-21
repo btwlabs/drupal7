@@ -64,12 +64,6 @@ function sdm_entity_info() {
       'bundle' => 'sdm_data_type'
     ),
     'bundles' => array(),
-    'view modes' => array(
-      'sdm_data_full' => array(
-        'label' => t("Structured Data Markup Full"),
-        'custom settings' => TRUE,
-      )
-    )
   );
   $entities['sdm_data_type'] = array(
     'label' => t('Structured Data Markup Type'),

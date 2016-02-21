@@ -56,17 +56,26 @@ class sdm_context_reaction_insert_markup extends context_reaction {
         $value = $wrapper->{$instance['field_name']}->value();
         $content .= "\"$label\": ";
         if (!is_array($value)) {
-          $content .= $value;
+          $content .= "$value\n";
         } else {
-          $content .= "{";
+          $content .= "[\n";
           foreach ($value as $item) {
             $content .= "$item,\n";
           }
-          $content .= "}";
+          $content .= "]\n";
         }
       }
-      $block['content'] = $content;
-      drupal_add_js($content, 'inline');
+
+      // Can't use drupal_add_js as it only uses type=text/javascript.
+      $tag = array(
+        '#tag' => 'script',
+        '#value' => $content,
+        '#attributes' => array(
+          'type' => 'application/ld+json',
+        )
+      );
+      drupal_add_html_head($tag, "sdm-code-{$sdm_data->sdm_data_id}");
+      //drupal_add_js($content, array('type'=> 'inline', 'attributes' => array('type' => 'application/ld+json')));
     }
   }
 }
