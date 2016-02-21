@@ -43,7 +43,6 @@ function sdm_entity_info() {
     'base table' => 'sdm_data',
     'load hook' => 'sdm_data_load',
     'fieldable' => TRUE,
-    'exportable' => TRUE,
     'module' => 'sdm',
     'uri callback' => 'entity_class_uri',
     'label callback' => 'entity_class_label',
@@ -63,7 +62,7 @@ function sdm_entity_info() {
     'bundle keys' => array(
       'bundle' => 'sdm_data_type'
     ),
-    'bundles' => array(),
+    'bundles' => array()
   );
   $entities['sdm_data_type'] = array(
     'label' => t('Structured Data Markup Type'),
@@ -71,13 +70,13 @@ function sdm_entity_info() {
     'controller class' => 'SDMEntityTypeController',
     'base table' => 'sdm_data_type',
     'fieldable' => FALSE,
-    'bundle of' => 'sdm',
+    'bundle of' => 'sdm_data',
     'exportable' => TRUE,
+    'module' => 'sdm',
     'entity keys' => array(
       'id' => 'sdm_data_type',
       'label' => 'label',
     ),
-    'module' => 'sdm',
     'access callback' => 'sdm_data_access',
     'views controller class' => 'EntityDefaultViewsController',
     'admin ui' => array(
