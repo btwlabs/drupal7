@@ -19,13 +19,6 @@ class SDMEntityController extends EntityAPIController {
   public function delete($ids) {
     $entities = entity_load('sdm_data', $ids);
     foreach($entities as $entity) {
-      // Delete Component Entities.
-      foreach($entity->data['plugin_data']['entities'] as $type => $attached_entities) {
-        foreach($attached_entities as $attached_entity) {
-          $id = entity_id($type, $attached_entity);
-          entity_delete($type, $id);
-        }
-      }
       parent::delete(array($entity->sdm_data_id));
     }
   }
