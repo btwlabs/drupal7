@@ -45,7 +45,7 @@ class SDMUIController extends EntityDefaultUIController {
     // Set the add path to use the list function.
     $items[$this->path . '/add']['page callback'] = 'sdm_data_type_table';
     $items[$this->path . '/add']['access callback'] = 'user_access';
-    $items[$this->path . '/add']['access arguments'] = array('administer Structured Data Markup entities');
+    $items[$this->path . '/add']['access arguments'] = array('administer_sdm_data');
     // Pass add links through to a form factory.
     $types = sdm_data_types();
     foreach ($types as $type => $info) {
@@ -56,7 +56,7 @@ class SDMUIController extends EntityDefaultUIController {
         'access callback' => 'entity_access',
         'access arguments' => array('create', 'sdm_data', $type),
         'file' => 'includes/sdm.admin.inc',
-        'file path' => drupal_get_path('module', 'sdm'),
+        'file path' => drupal_get_path('module', 'sdm')
       );
     }
     // Pass manage (edit) calls through to the form factory.
@@ -77,7 +77,7 @@ class SDMEntity extends Entity {
     parent::__construct($values, 'sdm_data');
   }
   protected function defaultLabel() {
-    return $this->title;
+    return $this->name;
   }
   protected function defaultUri() {
     return array('path' => 'admin/structure/sdm/manage/' . $this->identifier());
@@ -108,10 +108,10 @@ class SDMEntityType extends Entity {
   }
 
   protected function defaultLabel() {
-    return $this->title;
+    return $this->label;
   }
   protected function defaultUri() {
-    return array('path' => 'admin/structure/alpha-module-entities/types/' . $this->identifier());
+    return array('path' => 'admin/structure/sdm/types/' . $this->identifier());
   }
 }
 
@@ -137,7 +137,7 @@ class SDMEntityTypeUIController extends EntityDefaultUIController {
 class SDMEntityTypeController extends EntityAPIController {
   public function create(array $values = array()) {
     $values += array(
-      'type' => '',
+      'sdm_data_type' => '',
       'label' => '',
       'description' => '',
       'class' => 'SDMEntityDefault',

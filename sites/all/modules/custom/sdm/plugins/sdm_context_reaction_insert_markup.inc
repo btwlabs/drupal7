@@ -1,0 +1,62 @@
+<?php
+/**
+ * @file
+ * sdm_context_reaction_insert_markup.inc
+ */
+class sdm_context_reaction_insert_markup extends context_reaction {
+
+  /**
+   * Allow admins to select sdm data to include when context is active.
+   */
+  function options_form($context) {
+    $values = $this->fetch_from_context($context);
+    $entities = sdm_data_load_multiple(false, array(), true);
+    $options = array();
+    foreach($entities as $item) {
+      $options[$item->sdm_data_id] = $item->name;
+    }
+    $form = array(
+      'sdm_entities' => array(
+        '#title' => t('Include Structured Data Markup'),
+        '#description' => t('Select SDM entities to render when this context is active.'),
+        '#type' => 'checkboxes',
+        '#default_value' => isset($values['sdm_entities']) ? $values['sdm_entities'] : array(),
+        '#options' => $options,
+      ),
+    );
+    return $form;
+  }
+
+  function execute($ids)
+  {
+    $sdm_entities = sdm_data_load_multiple($ids, array(), TRUE);
+    foreach ($sdm_entities as $sdm_data) {
+      $content = "{\n";
+      $content .= "@context: {$sdm_data->context},\n";
+      $content .= "@id: {$sdm_data->id},\n";
+      $content .= "@graph: {},\n";
+      $content .= "@type: {},\n";
+      $content .= "@reverse: {},\n";
+
+      // Get field values.
+      $wrapper = entity_metadata_wrapper('sdm_data', $sdm_data);
+      $instances = field_info_instances('sdm_data', $sdm_data->sdm_data_type);
+      foreach ($instances as $instance) {
+        $label = $instance['label'];
+        $value = $wrapper->{$instance['field_name']}->value();
+        $content .= "$label: ";
+        if (!is_array($value)) {
+          $content .= $value;
+        } else {
+          $content .= "{\n";
+          foreach ($value as $item) {
+            $content .= "$item,\n";
+          }
+          $content .= "}\n";
+        }
+      }
+      $block['content'] = $content;
+      drupal_add_js($content, 'inline');
+    }
+  }
+}

@@ -13,11 +13,11 @@
  *
  * @ingroup themeable
  */
-function theme_sdm_type_list($variables) {
+function theme_sdm_data_type_list($variables) {
   $content = $variables['content'];
 
   if ($content) {
-    $output = '<dl class="sdm_data-type-list">';
+    $output = '<dl class="sdm-data-type-list">';
     foreach ($content as $item) {
       $output .= '<dt>' . l($item['title'], $item['href'], $item['localized_options']) . '</dt>';
       $output .= '<dd>' . filter_xss_admin($item['description']) . '</dd>';
