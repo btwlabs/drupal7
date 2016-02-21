@@ -1,0 +1,17 @@
+name = Google Social Profile SDM
+description = Provides an SDM type for adding Google Social Profiles to your pages
+core = 7.x
+package = other
+dependencies[] = entity
+dependencies[] = features
+dependencies[] = sdm
+dependencies[] = text
+features[features_api][] = api:2
+features[field_base][] = field_socia_profile_name
+features[field_base][] = field_social_profile_sameas
+features[field_base][] = field_social_profile_url
+features[field_instance][] = sdm_data-google_social_profile-field_socia_profile_name
+features[field_instance][] = sdm_data-google_social_profile-field_social_profile_sameas
+features[field_instance][] = sdm_data-google_social_profile-field_social_profile_url
+features[sdm_data_type][] = google_social_profile
+project path = sites/all/modules/custom/sdm/modules
