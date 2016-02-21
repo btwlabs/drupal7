@@ -75,7 +75,7 @@ function sdm_data_form($form, &$form_state, $sdm_data = NULL) {
     '#title' => t('@Context'),
     '#description' => t('The @context json+ld node object, e.g: http://schema.org. This can be a full JSON object. See https://www.w3.org/TR/json-ld/#dfn-context-definition for more information about JSON context definitions.'),
     '#default_value' => (isset($sdm_data->context)) ? $sdm_data->context :
-      ((empty($form_state['values']['context'])) ? '"http://schema.org"' : $form_state['values']['context']),
+      ((empty($form_state['values']['context'])) ? 'http://schema.org' : $form_state['values']['context']),
   );
 
   $form['id'] = array(

@@ -61,12 +61,25 @@ class sdm_context_reaction_insert_markup extends context_reaction {
         $label = $instance['label'];
         $value = $wrapper->{$instance['field_name']}->value();
         $content .= "\"$label\": ";
+        // Assume to add quotes if field is a textfield. Dont add quotes to textareas.
+        $field = field_info_field($instance['field_name']);
+        $is_textfield = ($field['type'] == 'text');
         if (!is_array($value)) {
-          $content .= "$value\n";
+          if ($is_textfield) {
+            $content .= "\"$value\"\n";
+          }
+          else {
+            $content .= "$value\n";
+          }
         } else {
           $content .= "[\n";
           foreach ($value as $item) {
-            $content .= "$item,\n";
+            if ($is_textfield) {
+              $content .= "\"$item\",\n";
+            }
+            else {
+              $content .= "$item,\n";
+            }
           }
           $content .= "]\n";
         }

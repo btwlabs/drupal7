@@ -376,6 +376,28 @@ function sdm_data_type_delete_multiple($sdm_data_type_ids) {
 }
 
 /**
+ * Filter function for field options array.
+ * @param $key
+ * @return bool
+ */
+function sdm_only_text($value) {
+  return (($value == 'Text') || ($value == 'Long text'));
+}
+
+/**
+ * Filter function for existing field options array.
+ * @param $key
+ * @return bool
+ */
+function sdm_only_text_existing($value) {
+  return ((strpos($value, 'Text') === 0) || (strpos($value, 'Long text') === 0));
+}
+
+function sdm_form_field_ui_field_overview_form_alter(&$form, $form_id) {
+  $form['fields']['_add_new_field']['type']['#options'] = array_filter($form['fields']['_add_new_field']['type']['#options'], 'sdm_only_text');
+  $form['fields']['_add_existing_field']['field_name']['#options'] = array_filter($form['fields']['_add_existing_field']['field_name']['#options'], 'sdm_only_text_existing');
+}
+/**
  * Implements hook_context_plugins().
  */
 function sdm_context_plugins() {
