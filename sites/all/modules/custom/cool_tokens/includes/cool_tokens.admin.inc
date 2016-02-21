@@ -50,7 +50,7 @@ function cool_tokens_type_form($form, &$form_state, $ft_token_type = NULL) {
     '#disabled' => !empty($ft_token_type->type),
     '#machine_name' => array(
       'exists' => 'cool_tokens_token_name_exists',
-      'source' => array('title'),
+      'source' => array('label'),
   ),
   );
   
