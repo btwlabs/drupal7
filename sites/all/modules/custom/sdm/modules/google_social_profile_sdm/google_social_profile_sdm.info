@@ -1,7 +1,7 @@
 name = Google Social Profile SDM
 description = Provides an SDM type for adding Google Social Profiles to your pages
 core = 7.x
-package = other
+package = Other
 dependencies[] = entity
 dependencies[] = features
 dependencies[] = sdm

@@ -12,7 +12,7 @@ function google_social_profile_sdm_field_default_field_instances() {
 
   // Exported field_instance:
   // 'sdm_data-google_social_profile-field_socia_profile_name'
-  $field_instances['sdm_data-google_social_profile-field_socia_profile_name'] = array(
+  $field_instances['sdm_data-google_social_profile-field_social_profile_name'] = array(
     'bundle' => 'google_social_profile',
     'default_value' => NULL,
     'deleted' => 0,
@@ -29,7 +29,7 @@ function google_social_profile_sdm_field_default_field_instances() {
     ),
     'ds_extras_field_template' => '',
     'entity_type' => 'sdm_data',
-    'field_name' => 'field_socia_profile_name',
+    'field_name' => 'field_social_profile_name',
     'label' => 'name',
     'required' => 0,
     'settings' => array(
