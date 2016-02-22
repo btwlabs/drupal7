@@ -57,33 +57,52 @@ class sdm_context_reaction_insert_markup extends context_reaction {
       // Get field values.
       $wrapper = entity_metadata_wrapper('sdm_data', $sdm_data);
       $instances = field_info_instances('sdm_data', $sdm_data->sdm_data_type);
+      $index = 0;
       foreach ($instances as $instance) {
         $label = $instance['label'];
         $value = $wrapper->{$instance['field_name']}->value();
+        if (empty($value)) {
+          continue;
+        }
         $content .= "\"$label\": ";
         // Assume to add quotes if field is a textfield. Dont add quotes to textareas.
         $field = field_info_field($instance['field_name']);
         $is_textfield = ($field['type'] == 'text');
         if (!is_array($value)) {
           if ($is_textfield) {
-            $content .= "\"$value\"\n";
+            $content .= "\"$value\"";
           }
           else {
-            $content .= "$value\n";
+            $content .= "$value";
           }
-        } else {
+        }
+        else {
           $content .= "[\n";
-          foreach ($value as $item) {
+          foreach ($value as $key => $item) {
             if ($is_textfield) {
-              $content .= "\"$item\",\n";
+              $content .= "\"$item\"";
             }
             else {
-              $content .= "$item,\n";
+              $content .= "$item";
+            }
+            if ($key < count($value)-1) {
+              $content .= ",\n";
+            }
+            else {
+              $content .= "\n";
             }
           }
-          $content .= "]\n";
+          $content .= "]";
+        }
+        if ($index < count($instances)-1) {
+          $content .= ",\n";
+          $index ++;
+        }
+        else {
+          $content .= "\n";
         }
       }
+      $content .= "}\n";
 
       // Can't use drupal_add_js as it only uses type=text/javascript.
       $tag = array(
@@ -93,7 +112,7 @@ class sdm_context_reaction_insert_markup extends context_reaction {
           'type' => 'application/ld+json',
         )
       );
-      drupal_add_html_head($tag, "sdm-code-" . $sdm_data->sdm_data_id);
+      drupal_add_html_head($tag, "sdm-code-{$sdm_data->sdm_data_id}");
     }
   }
 }
