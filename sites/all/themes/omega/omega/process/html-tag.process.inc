@@ -10,8 +10,11 @@
  */
 function omega_process_html_tag(&$variables) {
   if (in_array($variables['element']['#tag'], array('script', 'style'))) {
-    // Remove type="something" and CDATA prefix/suffix.
-    unset($variables['element']['#attributes']['type'], $variables['element']['#value_prefix'], $variables['element']['#value_suffix']);
+    // Remove type="text/javascript" and CDATA prefix/suffix.
+    if (isset($variables['element']['#attributes']['type']) && $variables['element']['#attributes']['type'] == 'text/javascript') {
+      unset($variables['element']['#attributes']['type']);
+    }
+    unset($variables['element']['#value_prefix'], $variables['element']['#value_suffix']);
 
     if (isset($variables['element']['#attributes']['media']) && $variables['element']['#attributes']['media'] == 'all') {
       // Remove media="all" but leave others unaffected.

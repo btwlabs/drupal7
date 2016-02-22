@@ -93,7 +93,7 @@ class sdm_context_reaction_insert_markup extends context_reaction {
           'type' => 'application/ld+json',
         )
       );
-      drupal_add_html_head($tag, "sdm-code-{$sdm_data->sdm_data_id}");
+      drupal_add_html_head($tag, "sdm-code-" . $sdm_data->sdm_data_id);
     }
   }
 }
