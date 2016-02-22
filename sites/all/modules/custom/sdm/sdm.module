@@ -25,7 +25,7 @@ function sdm_init() {
 function sdm_permission() {
   $permissions = array();
   $permissions['administer_sdm_data'] = array(
-    'title' => t('Administer sdm Data')
+    'title' => t('Administer Structured Data Markup')
   );
   return $permissions;
 }
