@@ -11,8 +11,8 @@ dependencies[] = entity
 files[] = includes/sdm.controller.inc
 
 ; Information added by Drupal.org packaging script on 2016-02-22
-version = "7.x-1.0-beta1"
+version = "7.x-1.0-beta3"
 core = "7.x"
 project = "sdm"
-datestamp = "1456167847"
+datestamp = "1456174446"
 
