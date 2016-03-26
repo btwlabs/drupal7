@@ -4,10 +4,9 @@
 //				   usually in the footer
 //
 //	location: 
-//      /sass/components/_social-icons.scss
+//      /sass/components/_icons.scss
 //
 //------------------------------------------------------
-
 
 
 
@@ -17,15 +16,7 @@
  
 --------------------------------*/
 
-.social-links {
-	
-	@include breakpoint($large-up) {
-		float: right;
-		padding-top: 25px;
-	}
-}
-
-.social-links ul {
+.social-links ul.menu {
 	margin: 0;
 	overflow: hidden;
 	padding: 0;
@@ -35,7 +26,7 @@
 	}
 	
 	li {
-		margin: 0 7px 7px 0;
+		margin: 0 15px 15px 0;
 		padding: 0;
 		display: inline-block;
 		list-style-type: none;
@@ -47,9 +38,9 @@
 		
 		a {
 			margin: 0;
-			padding: 10px;
+			padding: 0px;
 			text-align: center;
-			width: 50px;
+			width: 35px;
 			display: block;
 			position: relative;
 			color: $social-icon-color;
@@ -62,7 +53,7 @@
 			}
 			
 			i {
-				font-size: 45px;
+				font-size: 30px;
 			}
 			span.title {
 				display: none;

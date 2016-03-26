@@ -1,0 +1,94 @@
+//------------------------------------------------------
+//
+//	Accordion - styling
+//
+//	location: 
+//      /sass/components/_accordion.scss
+//
+//------------------------------------------------------
+
+
+
+/*--------------------------------
+ Accordion items
+--------------------------------*/
+
+.ui-state-default, 
+.ui-widget-content 
+.ui-state-default, 
+.ui-widget-header 
+.ui-state-default {
+	background: none;
+}
+.ui-widget {
+	font-family: $base-font-family;
+}
+.ui-widget-content {
+	color: $text-color;
+	border-color: $border-color;
+}
+.ui-helper-reset {
+	line-height: $base-line-height;
+}
+.ui-accordion {
+	
+	.view-grouping {
+		margin-bottom: $vert-spacing-unit;
+	}
+	
+	// block header
+	.view-grouping-header {
+		@include title-style;
+		@include responsive-page-title;
+		font-weight: 100;
+	}
+	.ui-accordion-content {
+		@include font-size(16px);
+	}
+	h3 a {
+		text-decoration: none;
+		
+		&:hover {
+			text-decoration: none;
+		}
+	}
+}
+
+// hide border around questions
+.ui-state-default, 
+.ui-widget-content .ui-state-default, 
+.ui-widget-header .ui-state-default {
+	border-color: transparent;
+}
+
+// show border around questions on hover
+.ui-state-active,
+.ui-state-hover,
+.ui-widget-content .ui-state-active, 
+.ui-widget-header .ui-state-active {
+	border-color: $border-color;
+}
+
+/*--------------------------------
+ mobile only accordion items
+--------------------------------*/
+
+.mobile-only.group-product-accordians {
+	margin-bottom: $vert-spacing-unit;
+	padding-bottom: $vert-spacing-unit;
+	border-bottom: 1px solid $border-color;
+}
+.mobile-only {
+	.ui-state-default, 
+	.ui-widget-content .ui-state-default, 
+	.ui-widget-header .ui-state-default {
+		border-color: $border-color;
+	}
+}
+
+// Other products block
+.field-name-other-products-in-category {
+	h2 {
+		color: #333;
+	}
+}

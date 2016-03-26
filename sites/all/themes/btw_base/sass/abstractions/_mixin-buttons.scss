@@ -22,11 +22,14 @@
 	@include border-radius($button-border-radius);
 	@include transition(all, 0.2s, ease-in);
 	@include button-padding($button-padding);
+	line-height: 1;
+	border: 2px solid $dark-gray;
 }
 
 @mixin button-hover {
 	background: $button-bg-hover-color; 
 	color: $button-text-hover-color;
+	border-color: $button-border-hover-color;
 	text-decoration: none;
 }
 
@@ -35,7 +38,7 @@
 }
 
 // button mixin LIGHT BUTTON ON DARK BG
-@mixin button-light {
+@mixin button-on-dark {
 	background: $button-bg-color-light; 
 	text-align: center;
 	color: $button-text-color-light;
@@ -48,7 +51,7 @@
 	display: inline-block;
 	font-weight: 400;	
 }
-@mixin button-light-hover {
+@mixin button-on-dark-hover {
 	background: $button-bg-hover-color-light; 
 	color: $button-text-hover-color-light;
 	border-color: $button-border-hover-color-light;

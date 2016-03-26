@@ -25,6 +25,10 @@
          url('../fonts/IcoMoonSocial/fonts/icomoon_social.svg#IcoMoonSocial') format('svg');
     font-weight: normal;
     font-style: normal;
+    
+    /* Better Font Rendering =========== */
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
 }
 
 /* Interface icons */
@@ -37,6 +41,10 @@
 		url('../fonts/IcoMoonBasic/fonts/icomoon_basic.ttf') format('truetype');
 	font-weight: normal;
 	font-style: normal;
+	
+	/* Better Font Rendering =========== */
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
 }
 
 /* Arrows icons */
@@ -49,6 +57,10 @@
 		url('../fonts/IcoMoonArrows/fonts/icomoon_arrows.ttf') format('truetype');
 	font-weight: normal;
 	font-style: normal;
+	
+	/* Better Font Rendering =========== */
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
 }
 
 

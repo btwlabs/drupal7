@@ -64,14 +64,6 @@ input[type="button"] {
 }
 
 
-/*---------- Form buttons (Override button styles) ----------*/
-button, 
-input[type="reset"], 
-input[type="submit"], 
-input[type="button"] {
-	border: 0;
-}
-
 
 /* Exceptions to <a> css animation */
 #colorbox button {
@@ -85,3 +77,17 @@ input[type="button"] {
 li .button a.active {
 	color: $button-text-color; 
 }
+
+
+/*---------------------------------------------------------
+-----------------------------------------------------------
+
+ BUTTON styles on DARK backgrounds
+ 
+-----------------------------------------------------------
+----------------------------------------------------------*/
+
+.button.is-on-dark {
+	@include button-on-dark; 
+}
+
