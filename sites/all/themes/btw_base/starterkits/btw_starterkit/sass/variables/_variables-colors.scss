@@ -16,10 +16,19 @@ $secondary-color: orange;
 // for subtle changes to delineate container bg color in main content
 $subtle-accent: rgba(0,0,0,0.05); 
 
+// neutral colors
+$white: #fff;
+$xlight-gray: #eaeaea; // text bg area
+$light-gray: #aaa; // borders
+$middle-gray: #777; // light text & icons
+$dark-gray: #333; // titles and text
+$xdark-gray: #222;
+$black: #000;
 
 
 // Body Text
 $text-color: #777;
+$text-color-on-dark: #ccc;
 
 $link-color: $primary-color;
 $link-hover-color: $secondary-color;
@@ -61,8 +70,8 @@ $button-border-hover-color-light: #fff;
 
 
 // Sitewide Borders
-$border-color: #aaa;
-$sidebar-border-color: #444;
+$border-color: $light-gray;
+$sidebar-border-color: $light-gray;
 
 
 
@@ -74,8 +83,8 @@ $table-even-row-bg-color: #f0f0f0;
 
 
 // Navigation
-$nav-text-color: #222;
-$nav-text-hover-color: #ccc;
+$nav-text-color: $middle-gray;
+$nav-text-hover-color: $dark-gray;
 
 $nav-button-bg-color: transparent;
 $nav-button-bg-hover-color: #444;
@@ -149,14 +158,20 @@ $sidebar-link-hover-color: red;
 
 
 
+// Quotes
+$quote-text-color: $text-color;
+$quote-bg-color-on-light: #eaeaea;
+$quote-bg-color-on-dark: #fff;
+
+
 
 // Footer
-$footer-text-color: #aaa;
+$footer-text-color: $middle-gray;
 
-$footer-link-color: orange;
-$footer-link-hover-color: white;
+$footer-link-color: $middle-gray;
+$footer-link-hover-color: $primary-color;
 
-$footer-bg-color: #444;
+$footer-bg-color: $xlight-gray;
 
 
 

@@ -71,6 +71,30 @@
 }
 
 
+/*----------------------------------------
+
+ Admin menus
+ 
+----------------------------------------*/
+
+
+// Inline Add field collection - links
+ul.action-links.action-links-field-collection-add {
+    width: 100%;
+    background: rgba(0,0,0,0.1);
+    padding: 5px;
+    list-style-type: none;
+    margin-left: 0;
+    float: none;
+    overflow: hidden;
+    
+	li {
+		list-style-type: none;
+		float: left;
+		margin-right: 10px;
+	}
+}
+
 
 /*----------------------------------------
 
@@ -109,6 +133,7 @@
 
 .not-front .l-main {
 	padding-bottom: 50px;
+	min-height: 500px;
 }
 
 /*---------------------------
@@ -142,3 +167,21 @@
 		float: left;
 	}
 }
+
+
+/*----------------------------------------
+
+ FOOTER region layout
+
+----------------------------------------*/
+
+.l-pre-footer-wrapper,
+.l-footer-wrapper {
+	.l-constrained {
+		
+		@include breakpoint($medium-up) {
+			width: 90%;
+		}
+	}
+}
+

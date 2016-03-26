@@ -60,7 +60,7 @@
 				}
 				
 				// Nav button links
-				> a {
+				> a.main-nav {
 					padding: 15px 20px;
 					display: block;
 					color: $nav-text-color;
@@ -93,7 +93,7 @@
 					li {
 						float: left;
 						
-						a {
+						a.sub-nav {
 							padding: 10px 15px;
 							color: $subnav-text-color;
 							background-color: $subnav-button-bg-color;
