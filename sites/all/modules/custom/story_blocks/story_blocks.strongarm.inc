@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * story_blocks.variable.inc
+ * story_blocks.strongarm.inc
  */
 
 /**
- * Implements hook_default_variable_assets().
+ * Implements hook_strongarm().
  */
-function story_blocks_default_variable_assets() {
+function story_blocks_strongarm() {
   $export = array();
 
   $strongarm = new stdClass();
@@ -41,13 +41,6 @@ function story_blocks_default_variable_assets() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'comment_page';
-  $strongarm->value = 0;
-  $export['comment_page'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
   $strongarm->name = 'comment_preview_story_block';
   $strongarm->value = '1';
   $export['comment_preview_story_block'] = $strongarm;
@@ -65,20 +58,6 @@ function story_blocks_default_variable_assets() {
   $strongarm->name = 'comment_subject_field_story_block';
   $strongarm->value = 1;
   $export['comment_subject_field_story_block'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'ds_extras_switch_view_mode';
-  $strongarm->value = 1;
-  $export['ds_extras_switch_view_mode'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'ds_extras_vd';
-  $strongarm->value = 1;
-  $export['ds_extras_vd'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
@@ -145,27 +124,35 @@ function story_blocks_default_variable_assets() {
             'visible' => FALSE,
           ),
           'left_copy_full_bg_image' => array(
-            'weight' => '0',
+            'weight' => '12',
             'visible' => FALSE,
           ),
           'left_copy_full_bg_image_h1' => array(
-            'weight' => '0',
+            'weight' => '12',
             'visible' => FALSE,
           ),
           'left_copy_right_image' => array(
-            'weight' => '0',
+            'weight' => '10',
             'visible' => FALSE,
           ),
           'right_copy_full_bg_image' => array(
-            'weight' => '0',
+            'weight' => '16',
             'visible' => FALSE,
           ),
           'right_copy_full_bg_image_h1' => array(
-            'weight' => '0',
+            'weight' => '16',
             'visible' => FALSE,
           ),
           'right_copy_left_image' => array(
-            'weight' => '0',
+            'weight' => '16',
+            'visible' => FALSE,
+          ),
+          'left_copy_right_bg_image' => array(
+            'weight' => '15',
+            'visible' => FALSE,
+          ),
+          'right_copy_left_bg_image' => array(
+            'weight' => '16',
             'visible' => FALSE,
           ),
         ),

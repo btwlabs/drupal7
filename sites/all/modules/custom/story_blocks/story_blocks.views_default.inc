@@ -100,7 +100,6 @@ function story_blocks_views_default_views() {
   $handler->display->display_options['pager']['options']['items_per_page'] = '1';
   $handler->display->display_options['pager']['options']['offset'] = '2';
   $handler->display->display_options['block_description'] = 'Sample Story Block Page-Row 3';
-
   $export['sample_display_story_blocks_page'] = $view;
 
   return $export;

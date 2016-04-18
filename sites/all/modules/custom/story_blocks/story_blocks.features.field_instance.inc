@@ -1,16 +1,16 @@
 <?php
 /**
  * @file
- * btw_evermind.features.field_instance.inc
+ * story_blocks.features.field_instance.inc
  */
 
 /**
- * Implements hook_default_field_instance_assets().
+ * Implements hook_field_default_field_instances().
  */
-function story_blocks_default_field_instance_assets() {
+function story_blocks_field_default_field_instances() {
   $field_instances = array();
 
-  // Exported field_instance: 'node-row-body'
+  // Exported field_instance: 'node-story_block-body'
   $field_instances['node-story_block-body'] = array(
     'bundle' => 'story_block',
     'default_value' => NULL,
@@ -36,49 +36,56 @@ function story_blocks_default_field_instance_assets() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 3,
+        'weight' => 2,
       ),
       'left_copy_full_bg_image_h1' => array(
         'label' => 'hidden',
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 3,
+        'weight' => 2,
       ),
       'left_copy_right_bg_image' => array(
         'label' => 'hidden',
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 3,
+        'weight' => 2,
       ),
       'left_copy_right_image' => array(
         'label' => 'hidden',
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 3,
+        'weight' => 2,
       ),
       'right_copy_full_bg_image' => array(
         'label' => 'hidden',
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 5,
+        'weight' => 3,
       ),
       'right_copy_full_bg_image_h1' => array(
         'label' => 'hidden',
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 5,
+        'weight' => 3,
+      ),
+      'right_copy_left_bg_image' => array(
+        'label' => 'hidden',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 3,
       ),
       'right_copy_left_image' => array(
         'label' => 'hidden',
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 4,
+        'weight' => 3,
       ),
     ),
     'entity_type' => 'node',
@@ -124,6 +131,7 @@ function story_blocks_default_field_instance_assets() {
             'bg_image_y' => 'top',
           ),
           'image_style' => '',
+          'multiple' => FALSE,
         ),
         'type' => 'bg_image_formatter',
         'weight' => 1,
@@ -145,6 +153,7 @@ function story_blocks_default_field_instance_assets() {
             'bg_image_y' => 'top',
           ),
           'image_style' => '',
+          'multiple' => FALSE,
         ),
         'type' => 'bg_image_formatter',
         'weight' => 1,
@@ -166,9 +175,10 @@ function story_blocks_default_field_instance_assets() {
             'bg_image_y' => 'center',
           ),
           'image_style' => '',
+          'multiple' => FALSE,
         ),
         'type' => 'bg_image_formatter',
-        'weight' => 6,
+        'weight' => 5,
       ),
       'left_copy_full_bg_image_h1' => array(
         'label' => 'hidden',
@@ -187,9 +197,10 @@ function story_blocks_default_field_instance_assets() {
             'bg_image_y' => 'center',
           ),
           'image_style' => '',
+          'multiple' => FALSE,
         ),
         'type' => 'bg_image_formatter',
-        'weight' => 6,
+        'weight' => 5,
       ),
       'left_copy_right_bg_image' => array(
         'label' => 'hidden',
@@ -203,14 +214,15 @@ function story_blocks_default_field_instance_assets() {
             'bg_image_important' => 0,
             'bg_image_media_query' => 'all',
             'bg_image_repeat' => 'no-repeat',
-            'bg_image_selector' => '.node-nid-[node:nid] .col-2',
+            'bg_image_selector' => '.node-nid-[node:nid] .col-2-wrapper',
             'bg_image_x' => 'top',
             'bg_image_y' => 'center',
           ),
           'image_style' => '',
+          'multiple' => 0,
         ),
         'type' => 'bg_image_formatter',
-        'weight' => 6,
+        'weight' => 5,
       ),
       'left_copy_right_image' => array(
         'label' => 'hidden',
@@ -220,7 +232,7 @@ function story_blocks_default_field_instance_assets() {
           'image_style' => '',
         ),
         'type' => 'image',
-        'weight' => 6,
+        'weight' => 5,
       ),
       'right_copy_full_bg_image' => array(
         'label' => 'hidden',
@@ -239,9 +251,10 @@ function story_blocks_default_field_instance_assets() {
             'bg_image_y' => 'center',
           ),
           'image_style' => '',
+          'multiple' => FALSE,
         ),
         'type' => 'bg_image_formatter',
-        'weight' => 2,
+        'weight' => 1,
       ),
       'right_copy_full_bg_image_h1' => array(
         'label' => 'hidden',
@@ -260,9 +273,10 @@ function story_blocks_default_field_instance_assets() {
             'bg_image_y' => 'center',
           ),
           'image_style' => '',
+          'multiple' => FALSE,
         ),
         'type' => 'bg_image_formatter',
-        'weight' => 2,
+        'weight' => 1,
       ),
       'right_copy_left_bg_image' => array(
         'label' => 'hidden',
@@ -276,14 +290,15 @@ function story_blocks_default_field_instance_assets() {
             'bg_image_important' => 0,
             'bg_image_media_query' => 'all',
             'bg_image_repeat' => 'no-repeat',
-            'bg_image_selector' => '.node-nid-[node:nid] .col-1',
+            'bg_image_selector' => '.node-nid-[node:nid] .col-1-wrapper',
             'bg_image_x' => 'top',
             'bg_image_y' => 'center',
           ),
           'image_style' => '',
+          'multiple' => 0,
         ),
         'type' => 'bg_image_formatter',
-        'weight' => 2,
+        'weight' => 1,
       ),
       'right_copy_left_image' => array(
         'label' => 'hidden',
@@ -312,6 +327,7 @@ function story_blocks_default_field_instance_assets() {
             'bg_image_y' => 'top',
           ),
           'image_style' => '',
+          'multiple' => FALSE,
         ),
         'type' => 'bg_image_formatter',
         'weight' => 0,
@@ -359,7 +375,7 @@ function story_blocks_default_field_instance_assets() {
     ),
   );
 
-  // Exported field_instance: 'node-row-field_story_block_link'
+  // Exported field_instance: 'node-story_block-field_story_block_link'
   $field_instances['node-story_block-field_story_block_link'] = array(
     'bundle' => 'story_block',
     'default_value' => NULL,
@@ -383,21 +399,28 @@ function story_blocks_default_field_instance_assets() {
         'module' => 'link',
         'settings' => array(),
         'type' => 'link_default',
-        'weight' => 4,
+        'weight' => 3,
       ),
       'left_copy_full_bg_image_h1' => array(
         'label' => 'hidden',
         'module' => 'link',
         'settings' => array(),
         'type' => 'link_default',
-        'weight' => 4,
+        'weight' => 3,
+      ),
+      'left_copy_right_bg_image' => array(
+        'label' => 'hidden',
+        'module' => 'link',
+        'settings' => array(),
+        'type' => 'link_default',
+        'weight' => 3,
       ),
       'left_copy_right_image' => array(
         'label' => 'hidden',
         'module' => 'link',
         'settings' => array(),
         'type' => 'link_default',
-        'weight' => 5,
+        'weight' => 3,
       ),
       'right_copy_full_bg_image' => array(
         'label' => 'hidden',
@@ -413,12 +436,19 @@ function story_blocks_default_field_instance_assets() {
         'type' => 'link_default',
         'weight' => 4,
       ),
+      'right_copy_left_bg_image' => array(
+        'label' => 'hidden',
+        'module' => 'link',
+        'settings' => array(),
+        'type' => 'link_default',
+        'weight' => 4,
+      ),
       'right_copy_left_image' => array(
         'label' => 'hidden',
         'module' => 'link',
         'settings' => array(),
         'type' => 'link_default',
-        'weight' => 6,
+        'weight' => 4,
       ),
       'teaser' => array(
         'label' => 'hidden',
@@ -437,10 +467,10 @@ function story_blocks_default_field_instance_assets() {
       'absolute_url' => 1,
       'attributes' => array(
         'class' => '',
-        'configurable_class' => 0,
-        'configurable_title' => 0,
+        'configurable_class' => 1,
+        'configurable_title' => 1,
         'rel' => '',
-        'target' => 'default',
+        'target' => 'user',
         'title' => '',
       ),
       'display' => array(
@@ -465,7 +495,7 @@ function story_blocks_default_field_instance_assets() {
     ),
   );
 
-  // Exported field_instance: 'node-row-field_story_block_videos'
+  // Exported field_instance: 'node-story_block-field_story_block_videos'
   $field_instances['node-story_block-field_story_block_videos'] = array(
     'bundle' => 'story_block',
     'default_value' => NULL,
@@ -473,38 +503,49 @@ function story_blocks_default_field_instance_assets() {
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 14,
-      ),
-      'default' => array(
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 14,
+      ),
+      'full' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'left_copy_full_bg_image' => array(
         'label' => 'hidden',
         'module' => 'video_embed_field',
         'settings' => array(
           'link_title' => 'Watch Video',
-          'use_description' => 1,
+          'use_description' => 0,
           'video_style' => 'normal',
         ),
         'type' => 'video_embed_field_link_colorbox',
-        'weight' => 5,
+        'weight' => 4,
       ),
       'left_copy_full_bg_image_h1' => array(
         'label' => 'hidden',
         'module' => 'video_embed_field',
         'settings' => array(
           'link_title' => 'Watch Video',
-          'use_description' => 1,
+          'use_description' => FALSE,
           'video_style' => 'normal',
         ),
         'type' => 'video_embed_field_link_colorbox',
-        'weight' => 5,
+        'weight' => 4,
+      ),
+      'left_copy_right_bg_image' => array(
+        'label' => 'hidden',
+        'module' => 'video_embed_field',
+        'settings' => array(
+          'link_title' => 'Watch Video',
+          'use_description' => FALSE,
+          'video_style' => 'normal',
+        ),
+        'type' => 'video_embed_field_link_colorbox',
+        'weight' => 4,
       ),
       'left_copy_right_image' => array(
         'label' => 'hidden',
@@ -522,33 +563,44 @@ function story_blocks_default_field_instance_assets() {
         'module' => 'video_embed_field',
         'settings' => array(
           'link_title' => 'Watch Video',
-          'use_description' => 1,
+          'use_description' => FALSE,
           'video_style' => 'normal',
         ),
         'type' => 'video_embed_field_link_colorbox',
-        'weight' => 1,
+        'weight' => 5,
       ),
       'right_copy_full_bg_image_h1' => array(
         'label' => 'hidden',
         'module' => 'video_embed_field',
         'settings' => array(
           'link_title' => 'Watch Video',
-          'use_description' => 1,
+          'use_description' => FALSE,
           'video_style' => 'normal',
         ),
         'type' => 'video_embed_field_link_colorbox',
-        'weight' => 1,
+        'weight' => 5,
+      ),
+      'right_copy_left_bg_image' => array(
+        'label' => 'hidden',
+        'module' => 'video_embed_field',
+        'settings' => array(
+          'link_title' => 'Watch Video',
+          'use_description' => FALSE,
+          'video_style' => 'normal',
+        ),
+        'type' => 'video_embed_field_link_colorbox',
+        'weight' => 5,
       ),
       'right_copy_left_image' => array(
         'label' => 'hidden',
         'module' => 'video_embed_field',
         'settings' => array(
-          'description' => 1,
-          'description_position' => 'bottom',
+          'link_title' => 'Watch Video',
+          'use_description' => FALSE,
           'video_style' => 'normal',
         ),
-        'type' => 'video_embed_field',
-        'weight' => 7,
+        'type' => 'video_embed_field_link_colorbox',
+        'weight' => 5,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -580,7 +632,6 @@ function story_blocks_default_field_instance_assets() {
   t('Body');
   t('Images');
   t('Link');
-  t('Url');
   t('Videos');
 
   return $field_instances;

@@ -1,33 +1,29 @@
 <?php
 /**
  * @file
- * Code for the story_block module.
+ * Code for the Story Blocks feature.
  */
 
+include_once 'story_blocks.features.inc';
+
 /**
- * Implements hook_common_support_import().
+ * Implements hook_ds_layout_info().
  */
-function story_blocks_common_support_import() {
-  return array(
-    'node_type',
-    'field_base',
-    'field_instance',
-    'variable',
-    'image_style',
-    'entityqueue',
+function story_blocks_ds_layout_info() {
+  $path = drupal_get_path('module', 'story_blocks');
+
+  $layouts = array(
+    'story_block' => array(
+      'label' => t('Story Block Layout'),
+      'path' => $path . '/layouts/story_block',
+      'regions' => array(
+        'col1' => t('Column 1'),
+        'col2' => t('Column 2'),
+      ),
+      'css' => TRUE,
+      'image' => TRUE,
+    )
   );
-}
 
-/**
- * Implements hook_ctools_plugin_api().
- */
-function story_blocks_ctools_plugin_api($module = NULL, $api = NULL) {
-  return common_support_ctools_plugin_api($module, $api);
-}
-
-/**
- * Implements hook_views_api().
- */
-function story_blocks_views_api($module = NULL, $api = NULL) {
-  return common_support_views_api($module, $api);
+  return $layouts;
 }

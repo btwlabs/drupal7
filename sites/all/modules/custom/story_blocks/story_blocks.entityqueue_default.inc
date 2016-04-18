@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * story_blocks.entityqueue.inc
+ * story_blocks.entityqueue_default.inc
  */
 
 /**
- * Implements hook_default_entityqueue_assets().
+ * Implements hook_entityqueue_default_queues().
  */
-function story_blocks_default_entityqueue_assets() {
+function story_blocks_entityqueue_default_queues() {
   $export = array();
 
   $queue = new EntityQueue();
