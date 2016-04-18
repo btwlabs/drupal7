@@ -163,7 +163,7 @@ ul.action-links.action-links-field-collection-add {
 --------------------------*/
 
 @media (min-width: 40.063em)  {
-	.col {
+	.col:not(.node--story-block) {
 		float: left;
 	}
 }

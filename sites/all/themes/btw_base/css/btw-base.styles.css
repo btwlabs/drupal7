@@ -98,21 +98,21 @@ button,
 input[type="reset"],
 input[type="submit"],
 input[type="button"] {
-  background: #444;
+  background: transparent;
   text-align: center;
-  color: #fff;
+  color: #333;
   display: block;
   text-decoration: none;
   text-shadow: none;
   text-transform: uppercase;
-  border-radius: 4px;
+  border-radius: 0px;
   -webkit-transition: all 0.2s ease-in;
   -moz-transition: all 0.2s ease-in;
   -o-transition: all 0.2s ease-in;
   transition: all 0.2s ease-in;
-  padding: 10px 15px;
+  padding: 10px 20px;
   line-height: 1;
-  border: 2px solid #333; }
+  border: 1px solid #333; }
   /* line 61, ../sass/base/_buttons-links.scss */
   .button a:hover,
   a.button:hover,
@@ -120,9 +120,9 @@ input[type="button"] {
   input[type="reset"]:hover,
   input[type="submit"]:hover,
   input[type="button"]:hover {
-    background: #ccc;
-    color: #444;
-    border-color: #ccc;
+    background: #333;
+    color: #fff;
+    border-color: #333;
     text-decoration: none; }
 
 /* Exceptions to <a> css animation */
@@ -135,7 +135,7 @@ input[type="button"] {
 
 /* line 77, ../sass/base/_buttons-links.scss */
 li .button a.active {
-  color: #fff; }
+  color: #333; }
 
 /*---------------------------------------------------------
 -----------------------------------------------------------
@@ -149,16 +149,16 @@ li .button a.active {
   background: transparent;
   text-align: center;
   color: #fff;
-  border: 2px solid #fff;
+  border: 1px solid #fff;
   text-decoration: none;
   text-transform: uppercase;
-  border-radius: 4px;
+  border-radius: 0px;
   -webkit-transition: all 0.2s ease-in;
   -moz-transition: all 0.2s ease-in;
   -o-transition: all 0.2s ease-in;
   transition: all 0.2s ease-in;
-  padding: 10px 15px;
-  display: inline-block;
+  padding: 10px 20px;
+  display: block;
   font-weight: 400; }
 
 /* line 11, ../sass/base/_fieldsets.scss */
@@ -232,21 +232,21 @@ input[type="file"] {
 
 /* line 56, ../sass/base/_forms.scss */
 .webform-client-form input.form-submit {
-  background: #444;
+  background: transparent;
   text-align: center;
-  color: #fff;
+  color: #333;
   display: block;
   text-decoration: none;
   text-shadow: none;
   text-transform: uppercase;
-  border-radius: 4px;
+  border-radius: 0px;
   -webkit-transition: all 0.2s ease-in;
   -moz-transition: all 0.2s ease-in;
   -o-transition: all 0.2s ease-in;
   transition: all 0.2s ease-in;
-  padding: 10px 15px;
+  padding: 10px 20px;
   line-height: 1;
-  border: 2px solid #333;
+  border: 1px solid #333;
   margin: 15px 0; }
   @media (min-width: 40.063em) {
     /* line 56, ../sass/base/_forms.scss */
@@ -254,9 +254,9 @@ input[type="file"] {
       width: auto; } }
   /* line 65, ../sass/base/_forms.scss */
   .webform-client-form input.form-submit:hover {
-    background: #ccc;
-    color: #444;
-    border-color: #ccc;
+    background: #333;
+    color: #fff;
+    border-color: #333;
     text-decoration: none; }
 
 /* line 70, ../sass/base/_forms.scss */
@@ -488,7 +488,7 @@ ul.action-links.action-links-field-collection-add {
 --------------------------*/
 @media (min-width: 40.063em) {
   /* line 166, ../sass/base/_layout.scss */
-  .col {
+  .col:not(.node--story-block) {
     float: left; } }
 /*----------------------------------------
 
@@ -1089,11 +1089,11 @@ div.toolbar-drawer,
 @media (min-width: 0em) and (max-width: 40em) {
   /* line 12, ../sass/components/_backgrounds.scss */
   body {
-    background: #eee; } }
+    background: #fff; } }
 @media (min-width: 40.063em) {
   /* line 12, ../sass/components/_backgrounds.scss */
   body {
-    background: #eee;
+    background: #fff;
     background-size: 100% auto;
     background-attachment: fixed; } }
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
@@ -1116,29 +1116,29 @@ body {
 @media (min-width: 0em) and (max-width: 40em) {
   /* line 49, ../sass/components/_backgrounds.scss */
   .page-news {
-    background: #efefef; } }
+    background: #fff; } }
 @media (min-width: 40.063em) {
   /* line 49, ../sass/components/_backgrounds.scss */
   .page-news {
-    background: #eee; } }
+    background: #fff; } }
 
 @media (min-width: 0em) and (max-width: 40em) {
   /* line 59, ../sass/components/_backgrounds.scss */
   .node-type-article {
-    background: #efefef; } }
+    background: #fff; } }
 @media (min-width: 40.063em) {
   /* line 59, ../sass/components/_backgrounds.scss */
   .node-type-article {
-    background: #eee; } }
+    background: #fff; } }
 
 @media (min-width: 0em) and (max-width: 40em) {
   /* line 69, ../sass/components/_backgrounds.scss */
   .context-about {
-    background: #efefef; } }
+    background: #fff; } }
 @media (min-width: 40.063em) {
   /* line 69, ../sass/components/_backgrounds.scss */
   .context-about {
-    background: #eee; } }
+    background: #fff; } }
 
 @media (min-width: 40.063em) {
   /* line 16, ../sass/components/_banners.scss */
@@ -1292,16 +1292,16 @@ body {
   background: transparent;
   text-align: center;
   color: #fff;
-  border: 2px solid #fff;
+  border: 1px solid #fff;
   text-decoration: none;
   text-transform: uppercase;
-  border-radius: 4px;
+  border-radius: 0px;
   -webkit-transition: all 0.2s ease-in;
   -moz-transition: all 0.2s ease-in;
   -o-transition: all 0.2s ease-in;
   transition: all 0.2s ease-in;
-  padding: 10px 15px;
-  display: inline-block;
+  padding: 10px 20px;
+  display: block;
   font-weight: 400; }
   @media (min-width: 0em) and (max-width: 40em) {
     /* line 69, ../sass/components/_email-signup.scss */
@@ -2053,27 +2053,27 @@ ul.pager-load-more {
     border: 0; }
   /* line 41, ../sass/components/_pagers.scss */
   ul.pager-load-more .pager-next a {
-    background: #444;
+    background: transparent;
     text-align: center;
-    color: #fff;
+    color: #333;
     display: block;
     text-decoration: none;
     text-shadow: none;
     text-transform: uppercase;
-    border-radius: 4px;
+    border-radius: 0px;
     -webkit-transition: all 0.2s ease-in;
     -moz-transition: all 0.2s ease-in;
     -o-transition: all 0.2s ease-in;
     transition: all 0.2s ease-in;
-    padding: 10px 15px;
+    padding: 10px 20px;
     line-height: 1;
-    border: 2px solid #333;
+    border: 1px solid #333;
     display: inline-block; }
     /* line 45, ../sass/components/_pagers.scss */
     ul.pager-load-more .pager-next a:hover {
-      background: #ccc;
-      color: #444;
-      border-color: #ccc;
+      background: #333;
+      color: #fff;
+      border-color: #333;
       text-decoration: none; }
 
 @media (min-width: 0em) and (max-width: 40em) {
@@ -2501,8 +2501,8 @@ a.back-to-river-link {
 a.show-link {
   display: block;
   clear: both;
-  color: #fff;
-  background-color: #444;
+  color: #333;
+  background-color: transparent;
   text-align: center;
   padding: 4px 20px;
   margin-top: 10px;
@@ -2513,8 +2513,8 @@ a.show-link {
   width: 180px; }
   /* line 33, ../sass/components/_show-more.scss */
   a.show-link:hover {
-    background-color: #ccc;
-    color: #444;
+    background-color: #333;
+    color: #fff;
     text-decoration: none; }
   /* line 39, ../sass/components/_show-more.scss */
   a.show-link:before, a.show-link:after {
@@ -3223,20 +3223,228 @@ a.related-node-product-buy-link:before {
 /*-----------------------------------------
  
 ---*/
-@media (min-width: 0em) and (max-width: 40em) {
-  /* line 18, ../sass/components/story-blocks/_story-blocks.scss */
-  .node--story-block .field-name-mobile-story-block-image {
-    margin-bottom: 20px; } }
-@media (min-width: 40.063em) {
-  /* line 18, ../sass/components/story-blocks/_story-blocks.scss */
-  .node--story-block .field-name-mobile-story-block-image {
-    display: none; } }
-@media (min-width: 40.063em) {
-  /* line 32, ../sass/components/story-blocks/_story-blocks.scss */
-  .node--story-block .col-1-wrapper {
-    float: left; }
-  /* line 35, ../sass/components/story-blocks/_story-blocks.scss */
-  .node--story-block .col-2-wrapper {
-    float: right; } }
+/* line 15, ../sass/components/story-blocks/_story-blocks.scss */
+.node--story-block {
+  position: relative;
+  /*-------------------------------------------
+  	VIEW MODES with BACKGROUND IMAGES
+  --------------------------------------------*/ }
+  @media (min-width: 0em) and (max-width: 40em) {
+    /* line 15, ../sass/components/story-blocks/_story-blocks.scss */
+    .node--story-block {
+      border-bottom: 1px solid #aaa; } }
+  @media (min-width: 0em) and (max-width: 40em) {
+    /* line 24, ../sass/components/story-blocks/_story-blocks.scss */
+    .node--story-block .field-name-mobile-story-block-image {
+      margin-bottom: 20px; } }
+  @media (min-width: 40.063em) {
+    /* line 24, ../sass/components/story-blocks/_story-blocks.scss */
+    .node--story-block .field-name-mobile-story-block-image {
+      display: none; } }
+  @media (min-width: 0em) and (max-width: 40em) {
+    /* line 37, ../sass/components/story-blocks/_story-blocks.scss */
+    .node--story-block .image-overlay {
+      display: none; } }
+  @media (min-width: 40.063em) {
+    /* line 37, ../sass/components/story-blocks/_story-blocks.scss */
+    .node--story-block .image-overlay {
+      position: absolute;
+      left: 0;
+      top: 0; } }
+  /* line 50, ../sass/components/story-blocks/_story-blocks.scss */
+  .node--story-block .story-block-inner {
+    padding: 8% 0;
+    position: relative;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-flow: row wrap;
+    -moz-flex-flow: row wrap;
+    -ms-flex-flow: row wrap;
+    flex-flow: row wrap;
+    -webkit-box-pack: start;
+    -ms-flex-pack: start;
+    -webkit-justify-content: flex-start;
+    -moz-justify-content: flex-start;
+    justify-content: flex-start;
+    -webkit-align-content: stretch;
+    -moz-align-content: stretch;
+    -ms-flex-line-pack: stretch;
+    align-content: stretch;
+    -webkit-box-align: stretch;
+    -ms-flex-align: stretch;
+    -webkit-align-items: stretch;
+    -moz-align-items: stretch;
+    align-items: stretch;
+    position: relative; }
+    @media (min-width: 0em) and (max-width: 40em) {
+      /* line 50, ../sass/components/story-blocks/_story-blocks.scss */
+      .node--story-block .story-block-inner {
+        margin: 0 30px; } }
+    @media (min-width: 40.063em) {
+      /* line 50, ../sass/components/story-blocks/_story-blocks.scss */
+      .node--story-block .story-block-inner {
+        width: 80%;
+        margin: 0 auto; } }
+    @media (min-width: 120.063em) {
+      /* line 50, ../sass/components/story-blocks/_story-blocks.scss */
+      .node--story-block .story-block-inner {
+        width: 70%; } }
+  @media (min-width: 40.063em) {
+    /* line 65, ../sass/components/story-blocks/_story-blocks.scss */
+    .node--story-block.col-bg-image .story-block-inner {
+      width: 100%;
+      padding: 0; }
+    /* line 71, ../sass/components/story-blocks/_story-blocks.scss */
+    .node--story-block.col-bg-image.left-copy .col-1-wrapper {
+      width: 50%;
+      padding: 10% 5% 10% 10%; }
+    /* line 75, ../sass/components/story-blocks/_story-blocks.scss */
+    .node--story-block.col-bg-image.left-copy .col-2-wrapper {
+      width: 50%;
+      padding: 10%; }
+    /* line 81, ../sass/components/story-blocks/_story-blocks.scss */
+    .node--story-block.col-bg-image.right-copy .col-1-wrapper {
+      width: 50%; }
+    /* line 84, ../sass/components/story-blocks/_story-blocks.scss */
+    .node--story-block.col-bg-image.right-copy .col-2-wrapper {
+      width: 50%;
+      padding: 10% 10% 10% 5%; } }
+  @media (min-width: 0em) and (max-width: 40em) {
+    /* line 92, ../sass/components/story-blocks/_story-blocks.scss */
+    .node--story-block.col-bg-image .col-1-wrapper,
+    .node--story-block.col-bg-image .col-2-wrapper {
+      background-image: none; } }
+  /* line 102, ../sass/components/story-blocks/_story-blocks.scss */
+  .node--story-block .col {
+    -webkit-box-flex: 0;
+    -webkit-flex-grow: 0;
+    -moz-flex-grow: 0;
+    -ms-flex-positive: 0;
+    flex-grow: 0;
+    -webkit-box-flex: 0;
+    -webkit-flex: 0 1 auto;
+    -moz-box-flex: 0;
+    -moz-flex: 0 1 auto;
+    -ms-flex: 0 1 auto;
+    flex: 0 1 auto;
+    -webkit-align-content: stretch;
+    -moz-align-content: stretch;
+    -ms-flex-line-pack: stretch;
+    align-content: stretch;
+    -webkit-box-pack: start;
+    -ms-flex-pack: start;
+    -webkit-justify-content: flex-start;
+    -moz-justify-content: flex-start;
+    justify-content: flex-start;
+    -webkit-box-align: stretch;
+    -ms-flex-align: stretch;
+    -webkit-align-items: stretch;
+    -moz-align-items: stretch;
+    align-items: stretch; }
+  @media (min-width: 40.063em) {
+    /* line 112, ../sass/components/story-blocks/_story-blocks.scss */
+    .node--story-block.left-copy .col-1-wrapper {
+      width: 55%;
+      padding-right: 5%; }
+    /* line 116, ../sass/components/story-blocks/_story-blocks.scss */
+    .node--story-block.left-copy .col-2-wrapper {
+      width: 45%; }
+    /* line 121, ../sass/components/story-blocks/_story-blocks.scss */
+    .node--story-block.right-copy .col-1-wrapper {
+      width: 45%; }
+    /* line 124, ../sass/components/story-blocks/_story-blocks.scss */
+    .node--story-block.right-copy .col-2-wrapper {
+      width: 55%;
+      padding-left: 5%; } }
+  /* line 132, ../sass/components/story-blocks/_story-blocks.scss */
+  .node--story-block .field-name-field-story-block-link,
+  .node--story-block .field-name-field-story-block-videos {
+    margin: 0 15px 15px 0;
+    display: inline-block; }
+    /* line 137, ../sass/components/story-blocks/_story-blocks.scss */
+    .node--story-block .field-name-field-story-block-link a,
+    .node--story-block .field-name-field-story-block-videos a {
+      background: transparent;
+      text-align: center;
+      color: #333;
+      display: block;
+      text-decoration: none;
+      text-shadow: none;
+      text-transform: uppercase;
+      border-radius: 0px;
+      -webkit-transition: all 0.2s ease-in;
+      -moz-transition: all 0.2s ease-in;
+      -o-transition: all 0.2s ease-in;
+      transition: all 0.2s ease-in;
+      padding: 10px 20px;
+      line-height: 1;
+      border: 1px solid #333; }
+      /* line 140, ../sass/components/story-blocks/_story-blocks.scss */
+      .node--story-block .field-name-field-story-block-link a:hover,
+      .node--story-block .field-name-field-story-block-videos a:hover {
+        background: #333;
+        color: #fff;
+        border-color: #333;
+        text-decoration: none; }
+  @media (min-width: 0em) and (max-width: 40em) {
+    /* line 147, ../sass/components/story-blocks/_story-blocks.scss */
+    .node--story-block .field-name-field-story-block-images {
+      display: none; } }
+  /* line 155, ../sass/components/story-blocks/_story-blocks.scss */
+  .node--story-block .field-name-mobile-story-block-image .field-name-field-story-block-images {
+    display: block; }
+  @media (min-width: 0em) and (max-width: 40em) {
+    /* line 161, ../sass/components/story-blocks/_story-blocks.scss */
+    .node--story-block .field-name--nbsp {
+      display: none; } }
+  @media (min-width: 0em) and (max-width: 40em) {
+    /* line 172, ../sass/components/story-blocks/_story-blocks.scss */
+    .node--story-block.view-mode-left_copy_full_bg_image_h1, .node--story-block.view-mode-right_copy_full_bg_image_h1, .node--story-block.view-mode-left_copy_full_bg_image, .node--story-block.view-mode-right_copy_full_bg_image {
+      background-image: none; } }
+  @media (min-width: 40.063em) {
+    /* line 181, ../sass/components/story-blocks/_story-blocks.scss */
+    .node--story-block.view-mode-left_copy_full_bg_image_h1 .image-overlay, .node--story-block.view-mode-right_copy_full_bg_image_h1 .image-overlay, .node--story-block.view-mode-left_copy_full_bg_image .image-overlay, .node--story-block.view-mode-right_copy_full_bg_image .image-overlay {
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.7); }
+    /* line 187, ../sass/components/story-blocks/_story-blocks.scss */
+    .node--story-block.view-mode-left_copy_full_bg_image_h1 .title, .node--story-block.view-mode-right_copy_full_bg_image_h1 .title, .node--story-block.view-mode-left_copy_full_bg_image .title, .node--story-block.view-mode-right_copy_full_bg_image .title {
+      color: #fff; }
+    /* line 190, ../sass/components/story-blocks/_story-blocks.scss */
+    .node--story-block.view-mode-left_copy_full_bg_image_h1 .field-name-body, .node--story-block.view-mode-right_copy_full_bg_image_h1 .field-name-body, .node--story-block.view-mode-left_copy_full_bg_image .field-name-body, .node--story-block.view-mode-right_copy_full_bg_image .field-name-body {
+      color: #ccc; }
+    /* line 197, ../sass/components/story-blocks/_story-blocks.scss */
+    .node--story-block.view-mode-left_copy_full_bg_image_h1 .field-name-field-story-block-link a,
+    .node--story-block.view-mode-left_copy_full_bg_image_h1 .field-name-field-story-block-videos a, .node--story-block.view-mode-right_copy_full_bg_image_h1 .field-name-field-story-block-link a,
+    .node--story-block.view-mode-right_copy_full_bg_image_h1 .field-name-field-story-block-videos a, .node--story-block.view-mode-left_copy_full_bg_image .field-name-field-story-block-link a,
+    .node--story-block.view-mode-left_copy_full_bg_image .field-name-field-story-block-videos a, .node--story-block.view-mode-right_copy_full_bg_image .field-name-field-story-block-link a,
+    .node--story-block.view-mode-right_copy_full_bg_image .field-name-field-story-block-videos a {
+      background: transparent;
+      text-align: center;
+      color: #fff;
+      border: 1px solid #fff;
+      text-decoration: none;
+      text-transform: uppercase;
+      border-radius: 0px;
+      -webkit-transition: all 0.2s ease-in;
+      -moz-transition: all 0.2s ease-in;
+      -o-transition: all 0.2s ease-in;
+      transition: all 0.2s ease-in;
+      padding: 10px 20px;
+      display: block;
+      font-weight: 400; }
+      /* line 200, ../sass/components/story-blocks/_story-blocks.scss */
+      .node--story-block.view-mode-left_copy_full_bg_image_h1 .field-name-field-story-block-link a:hover,
+      .node--story-block.view-mode-left_copy_full_bg_image_h1 .field-name-field-story-block-videos a:hover, .node--story-block.view-mode-right_copy_full_bg_image_h1 .field-name-field-story-block-link a:hover,
+      .node--story-block.view-mode-right_copy_full_bg_image_h1 .field-name-field-story-block-videos a:hover, .node--story-block.view-mode-left_copy_full_bg_image .field-name-field-story-block-link a:hover,
+      .node--story-block.view-mode-left_copy_full_bg_image .field-name-field-story-block-videos a:hover, .node--story-block.view-mode-right_copy_full_bg_image .field-name-field-story-block-link a:hover,
+      .node--story-block.view-mode-right_copy_full_bg_image .field-name-field-story-block-videos a:hover {
+        background: #fff;
+        color: #222;
+        border-color: #fff;
+        text-decoration: none; } }
 
 /*# sourceMappingURL=btw-base.styles.css.map */

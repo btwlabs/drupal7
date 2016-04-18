@@ -28,7 +28,7 @@ $black: #000;
 
 // Body Text
 $text-color: #777;
-$text-color-on-dark: #ccc;
+$text-on-dark-color: #ccc;
 
 $link-color: $primary-color;
 $link-hover-color: $secondary-color;
@@ -39,6 +39,8 @@ $link-visited-color: #000;
 $title-color: #000;
 $page-title-color: #000;
 
+$title-on-dark-color: #fff;
+
 
 // Selected text color
 $selection-text-color: #fff;
@@ -47,13 +49,13 @@ $selection-background-color: $primary-color;
 
 
 // Button styling NORMAL
-$button-text-color: #fff;
-$button-text-hover-color: #444;
+$button-text-color: $dark-gray;
+$button-text-hover-color: #fff;
 
-$button-bg-color: #444;
-$button-bg-hover-color: #ccc;
+$button-bg-color: transparent;
+$button-bg-hover-color: $dark-gray;
 
-$button-border-color: $button-bg-color;
+$button-border-color: $dark-gray;
 $button-border-hover-color: $button-bg-hover-color;
 
 

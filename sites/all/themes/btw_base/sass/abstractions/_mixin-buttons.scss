@@ -23,7 +23,7 @@
 	@include transition(all, 0.2s, ease-in);
 	@include button-padding($button-padding);
 	line-height: 1;
-	border: 2px solid $dark-gray;
+	border: $button-border-width solid $dark-gray;
 }
 
 @mixin button-hover {
@@ -42,13 +42,13 @@
 	background: $button-bg-color-light; 
 	text-align: center;
 	color: $button-text-color-light;
-	border: 2px solid $button-border-color-light;
+	border: $button-border-width solid $button-border-color-light;
 	text-decoration: none;
 	text-transform: $button-text-transform;
 	@include border-radius($button-border-radius);
 	@include transition(all, 0.2s, ease-in);
 	@include button-padding($button-padding);
-	display: inline-block;
+	display: block;
 	font-weight: 400;	
 }
 @mixin button-on-dark-hover {
