@@ -25,6 +25,8 @@
 	border: 0;
 	@include font-size(18px);
 	word-break: break-all;
+	position: relative;
+	z-index: 15;
 }
 .l-messages .l-constrained {
 	margin: 0;
@@ -51,6 +53,10 @@
 }
 .messages--status {
 	background-color: #bff697;
+	padding: 10%;
+    text-align: center;
+    font-size: 30px;
+    word-break: normal;
 }
 
 .messages--status a,

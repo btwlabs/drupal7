@@ -1,0 +1,45 @@
+//----------------------------------------------
+//
+//	STORY BLOCKS - basic styles for story blocks
+//
+//	location: 
+//      /sass/components/story-blocks/_story-blocks.scss
+//
+//----------------------------------------------
+
+
+/*-----------------------------------------
+ 
+---*/
+
+.node--story-block {
+	
+	// Mobile only images
+	.field-name-mobile-story-block-image {
+		
+		@include breakpoint($small-only) {
+			margin-bottom: $vert-spacing-unit/2;
+		}
+		
+		// hide mobile-only images in wider layouts
+		@include breakpoint($medium-up) {
+			display: none;
+		}
+	}
+	
+	// Columns
+	@include breakpoint($medium-up) {
+		.col-1-wrapper {
+			float: left;
+		}
+		.col-2-wrapper {
+			float: right;
+		}
+	}
+	
+	.left-copy {
+		
+	}
+	
+	
+}

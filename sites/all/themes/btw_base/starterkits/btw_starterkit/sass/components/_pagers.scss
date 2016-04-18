@@ -38,20 +38,12 @@ ul.pager-load-more {
 	}
 	
 	/* Load More button */
-	.pager-next a {
-		background-color: $button-bg-color;
-		@include border-radius($button-border-radius);
-		color: $button-text-color;
-		padding: 5px 20px;
-		width: auto;
+	.pager-next a {	
+		@include button;
 		display: inline-block;
 		
 		&:hover {
-			background-color: $button-bg-hover-color;
-			color: $button-text-hover-color;
-			text-decoration: none;
-			@include transition(all, 0.2s, ease-in);
-			@include border-radius($button-border-radius);
+			@include button-hover;
 		}
 	}
 }
@@ -76,6 +68,10 @@ ul.pager-load-more {
 	//margin-bottom: $vert-spacing-unit;
 	padding: 15px 0;
 	//@include border-top-bottom($border-color);
+	
+	@include breakpoint($large-up) {
+		padding: 30px 0;
+	}
 }
 .block-entity-pager {
 	overflow: hidden;

@@ -26,11 +26,10 @@
 	@include clearfix;
 }
 
-
 // Constrained
 @mixin constrained {
 	@include breakpoint($small-only) {
-		margin: 0 20px;
+		margin: 0 30px;
 	}
 	@include breakpoint($medium-up) {
 		width: 80%;
@@ -46,6 +45,21 @@
 	width: 100%;
 }
 
+// padding on top element to clear the page header
+@mixin clear-header {
+	@include breakpoint($small-only) {
+		padding-top: $header-clear-nav-small;
+	}
+	@include breakpoint($medium-up) {
+		padding-top: $header-clear-nav-medium;
+	}
+	@include breakpoint($large-up){
+		padding-top: $header-clear-nav-large;
+	}
+	@include breakpoint($xlarge-up) {
+		padding-top: $header-clear-nav-xlarge;
+	}
+}
 
 
 
