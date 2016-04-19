@@ -42,3 +42,4 @@ regions[pre_footer] = Pre-Footer
 regions[footer_1] = Footer Section 1
 regions[footer_2] = Footer Section 2
 regions[footer_3] = Footer Section 3
+regions[footer_4] = Footer Section 4
