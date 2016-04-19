@@ -2,7 +2,7 @@
     /**
      * Mobile slide-down functionality, kill top level.
      */
-    Drupal.behaviors.btwBaseKillProdCatLink = {
+    Drupal.behaviors.{{ THEME CAMELCASE LOWER }}KillProdCatLink = {
         attach: function (context, settings) {
             $('.nav-kill', context).click(function(e) {
                 e.preventDefault();
@@ -14,7 +14,7 @@
     /**
      * Slide down js.
      */
-    Drupal.behaviors.btwBaseMobileSlidedown = {
+    Drupal.behaviors.{{ THEME CAMELCASE LOWER }}MobileSlidedown = {
         attach: function (context, settings) {
             $('.slide-down-menu a.main-nav').click(function(e) {
                 var targ = $(this).next('ul').first();
@@ -33,7 +33,7 @@
      * In most cases, there is no good reason to NOT wrap your markup producing
      * JavaScript in a theme function.
      */
-    Drupal.theme.prototype.btwBaseExampleButton = function (path, title) {
+    Drupal.theme.prototype.{{ THEME CAMELCASE LOWER }}ExampleButton = function (path, title) {
         // Create an anchor element with jQuery.
         return $('<a href="' + path + '" title="' + title + '">' + title + '</a>');
     };
@@ -61,7 +61,7 @@
      *   Drupal.settings directly you should use this because of potential
      *   modifications made by the Ajax callback that also produced 'context'.
      */
-    Drupal.behaviors.btwBaseExampleBehavior = {
+    Drupal.behaviors.{{ THEME CAMELCASE LOWER }}ExampleBehavior = {
         attach: function (context, settings) {
             // By using the 'context' variable we make sure that our code only runs on
             // the relevant HTML. Furthermore, by using jQuery.once() we make sure that
@@ -72,7 +72,7 @@
             $('.some-selector', context).once('foo', function () {
                 // Now, we are invoking the previously declared theme function using two
                 // settings as arguments.
-                var $anchor = Drupal.theme('btwBaseExampleButton', settings.myExampleLinkPath, settings.myExampleLinkTitle);
+                var $anchor = Drupal.theme('{{ THEME CAMELCASE LOWER }}ExampleButton', settings.myExampleLinkPath, settings.myExampleLinkTitle);
 
                 // The anchor is then appended to the current element.
                 $anchor.appendTo(this);

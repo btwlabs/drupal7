@@ -120,7 +120,7 @@
                 <div id="mobile-splash" class="l-mobile-splash"><img src="sites/default/files/evermind_rev1_mobile_splash.jpg" /></div><!-- mobile-splash -->
                 <div id="video-wrapper" class="l-video-wrapper">
                   <div id="overlay"></div><!-- overlay -->
-                  <video autoplay="autoplay" loop="loop" width="1280" height="720" class="omega-narrow-up">
+                  <video autoplay="autoplay" loop="loop" width="1280" height="720">
                     <source src="sites/default/files/videos/evermind_rev1.webm" type="video/webm">
                     <source src="sites/default/files/videos/evermind_rev1.mp4" type="video/mp4">
                     <source src="sites/default/files/videos/evermind_rev1.ogv" type="video/ogg">
@@ -212,7 +212,61 @@
 						</div>
 					</div> <!-- close l-content-10 -->
 				<?php endif; ?>
-	
+				
+				<?php if(!empty($page['content_11'])) : ?>
+				<!-- content_11 region -->
+					<div class="l-content-11 l-content slide" data-slide="11">
+						<div class="l-content-11-inner l-inner">
+							<div class="l-constrained">
+					    		<?php print render($page['content_11']); ?>
+							</div>
+						</div>
+					</div> <!-- close l-content-11 -->
+				<?php endif; ?>
+				
+				<?php if(!empty($page['content_12'])) : ?>
+				<!-- content_12 region -->
+					<div class="l-content-12 l-content slide" data-slide="12">
+						<div class="l-content-12-inner l-inner">
+							<div class="l-constrained">
+					    		<?php print render($page['content_12']); ?>
+							</div>
+						</div>
+					</div> <!-- close l-content-12 -->
+				<?php endif; ?>
+				
+				<?php if(!empty($page['content_13'])) : ?>
+				<!-- content_13 region -->
+					<div class="l-content-13 l-content slide" data-slide="13">
+						<div class="l-content-13-inner l-inner">
+							<div class="l-constrained">
+					    		<?php print render($page['content_13']); ?>
+							</div>
+						</div>
+					</div> <!-- close l-content-13 -->
+				<?php endif; ?>
+				
+				<?php if(!empty($page['content_14'])) : ?>
+				<!-- content_14 region -->
+					<div class="l-content-14 l-content slide" data-slide="14">
+						<div class="l-content-14-inner l-inner">
+							<div class="l-constrained">
+					    		<?php print render($page['content_14']); ?>
+							</div>
+						</div>
+					</div> <!-- close l-content-14 -->
+				<?php endif; ?>
+				
+				<?php if(!empty($page['content_15'])) : ?>
+				<!-- content_15 region -->
+					<div class="l-content-15 l-content slide" data-slide="15">
+						<div class="l-content-15-inner l-inner">
+							<div class="l-constrained">
+					    		<?php print render($page['content_15']); ?>
+							</div>
+						</div>
+					</div> <!-- close l-content-15 -->
+				<?php endif; ?>																	
 	    	</div> <!-- close l-main -->
 	
 		</div><!-- close #content -->

@@ -10,9 +10,9 @@
 ; instead run omega.make from the Omega theme directory.
 ;
 ; To run this file with 'drush make' you first have to navigate into your theme.
-; Normally, this would be 'sites/all/themes/btw_starterkit'.
+; Normally, this would be 'sites/all/themes/{{ THEME }}'.
 ;
-; $ cd sites/all/themes/btw_starterkit
+; $ cd sites/all/themes/{{ THEME }}
 ;
 ; Now you can invoke 'drush make' using the following command:
 ;
