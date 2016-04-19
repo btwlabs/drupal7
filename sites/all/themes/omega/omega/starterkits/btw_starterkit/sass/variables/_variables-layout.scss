@@ -1,0 +1,29 @@
+//------------------------------------------------------
+//
+//	VARIABLES - LAYOUT - defines layout attributes
+//
+//	location: 
+//      /sass/variables/_variables-layout.scss
+//
+//------------------------------------------------------
+
+
+// height of header element
+// used for content section clearing fixed top pos items
+
+$header-height-small: 50px;
+$header-height-medium: 78px;
+$header-height-large: 100px;
+$header-height-xlarge: 100px;
+
+$header-clear-nav-small: 60px;
+$header-clear-nav-medium: 60px;
+$header-clear-nav-large: 80px;
+$header-clear-nav-xlarge: 80px;
+
+
+// height of main navigation
+$nav-height-small: 50px;
+$nav-height-medium: 78px;
+$nav-height-large: 100px;
+$nav-height-xlarge: 100px;

@@ -1,0 +1,84 @@
+//-------------------------------------------------------------
+//
+//	EMAIL SIGNUP forms
+//
+//	location: 
+//      /sass/components/_email-signup.scss
+//
+//------------------------------------------------------------
+
+
+
+.email-signup {
+	// block title	
+	h2.block__title {
+		color: $white;
+		line-height: 1.1;
+		position: relative;
+		
+		@include breakpoint($small-only) {
+			@include font-size(35px);
+			text-align: center;
+		}
+		@include breakpoint($medium-up) {
+			@include font-size(35px);
+		}
+		@include breakpoint($large-up) {
+			@include font-size(45px);
+		}
+		@include breakpoint($xlarge-up) {
+			@include font-size(55px);
+		}
+	}
+	.description {
+	    @include font-size(21px);
+	    line-height: 1.3;
+	}
+}
+
+// INTERIOR pages only
+.not-front .email-signup {
+	
+}
+
+.block--emma-block {
+	
+	.form-item,
+	input {
+		@include breakpoint($small-only) {
+			width: 100%;
+		}
+		
+		label {
+			font-weight: 100;
+		}
+	}
+
+	.form-item,
+	input.form-submit {
+		display: inline-block;
+		vertical-align: bottom;
+		margin: 0 15px 15px 0;
+	}
+	label {
+		color: #fff;
+	}
+	.form-item input {
+		color: $text-color;
+	}
+	.form-submit {	
+		@include button-on-dark;
+		
+		@include breakpoint($small-only) {
+			display: block;
+			width: 100%;
+		}
+		
+		&:hover {
+			@include button-on-dark-hover;
+		}
+	}
+}
+
+
+

@@ -1,0 +1,289 @@
+//------------------------------------------------------
+//
+//	ARTICLES - NODE - general styles
+//
+//	location: 
+//      /sass/components/articles/_article-node.scss
+//
+//------------------------------------------------------
+
+
+.node-type-news-article {
+	.l-content-1 {
+		.l-constrained {
+			max-width: 1000px;
+		}
+	}
+	
+	.header-wrapper {
+		h2.title {
+			font-weight: 400;
+			
+			@include breakpoint($small-up) {
+				@include font-size(25px);
+			}
+			@include breakpoint($medium-up) {
+				@include font-size(30px);
+			}
+			@include breakpoint($large-up) {
+				@include font-size(40px);
+			}
+		}
+	}
+	
+	// quote sidebar - remove floats in mobile
+	.field-name-field-article-quote {
+		
+		@include breakpoint($small-up) {
+			float: none;
+			width: 100%;
+			margin-top: $vert-spacing-unit;
+		}
+		@include breakpoint($large-up) {
+			float: right;
+			width: 40%;
+			margin-top: 0;
+		}
+		
+		.common-support-quote-1 {
+			width: 100%;
+			float: none;
+		}
+	}
+	
+	/*--------------------------
+	 article body 
+	---------------------------*/
+	
+	.articles-support-1 {
+		// negate floats in small & med layouts
+		.col-1-wrapper {
+			@include breakpoint($small-and-medium) {
+				float: none;
+				width: 100%;
+				margin-right: 0;
+			}
+			@include breakpoint($large-up) {
+				width: 70%;
+				margin: 0 auto;
+				float: none;
+			}
+		}
+		
+		// body
+		.body-container {
+			
+			@include breakpoint($small-up) {
+				@include font-size(18px);
+			}
+			@include breakpoint($large-up) {
+				@include font-size(20px);
+			}
+		}
+		// quote
+		.common-support-quote-1 .quote-end {
+			right: 0;
+		}
+		
+		// tags
+		.field-name-field-tags {
+			margin-bottom: $vert-spacing-unit;
+			
+			a {
+				@include font-size(16px);
+			}
+			
+			&:before {
+				content: "\e004";
+				font-family: $basicicons;
+				font-size: 18px;
+				margin-right: 10px;
+				display: inline-block;
+				vertical-align: middle;
+			}
+		}
+		
+		// sharing
+		.addthis_sharing_toolbox {
+			@include breakpoint($small-only) {
+				margin-bottom: $vert-spacing-unit;
+			}
+		}
+	}
+	
+	/*------------------------
+	 Gallery display
+	------------------------*/
+	
+	// mobile gallery
+	.row-mobile-wrapper {
+		@include breakpoint($medium-up) {
+			display: none;
+		}
+		.field--name-field-article-images {
+			margin-bottom: $vert-spacing-unit;
+			
+			.field__item {
+				margin-bottom: $vert-spacing-unit;
+				
+				&:last-child {
+					margin-bottom: 0;
+				}
+			}
+		}
+		.field-name-quote-mobile {
+			display: none !important;
+		}
+	}
+	
+	// non-mobile gallery only 
+	.row3-outer-wrapper {
+		@include breakpoint($small-only) {
+			display: none;
+		}
+	}
+	.view-display-id-gallery {
+		.grid-row {
+			list-style-type: none;
+			margin: 0;
+			float: left;
+			
+			@include breakpoint($small-only) {
+				width: 48%;
+				margin-bottom: 4%;
+				@include border-bottom($border-color);
+				
+				&:nth-child(odd) {
+					margin-right: 4%;
+				}
+			}
+			@include breakpoint($medium-up) {
+				width: 22.7%;
+				margin: 0px 3.037% 5% 0px;
+				
+				&:nth-child(4n) {
+					margin-right: 0;
+				}
+			}
+			
+			&:nth-child(4n+0) {
+				margin-right: 0;
+			}
+		}
+	}
+}
+
+
+
+/*--------------------------
+
+ pager - default overrides
+  
+---------------------------*/
+
+.node-type-article .node-pager-container {
+	margin-bottom: 0;
+}
+
+
+/*--------------------------
+
+ article body 
+ 
+---------------------------*/
+
+#article-body-container p:last-child {
+	margin-bottom: 0;
+}
+
+/*-------------------------------------
+
+ ARTICLE GALLERY 
+ 
+---------------------------------------*/
+
+@include breakpoint($small-only) {
+	#article-mobile-middle-row3-container .first-item,
+	#article-mobile-middle-row3-container .not-first-item {
+		margin-bottom: 15px;
+	}
+}
+#article-photo-gallery-container {
+	overflow: hidden;
+	
+	// videos
+	.teaser-grid {
+		padding-left: 0;	
+		height: 175px; /* set height on div toggle section */
+	}
+	.photo-row {
+		height: auto;
+		margin: 0 1.5% 1.5% 0;
+		padding: 0;
+		width: 18.5%;
+	}
+}
+
+/* view more link icon */
+a.related-node-album-view-link:before,
+a.related-node-product-view-link:before {
+	position: absolute;
+	content: "\25";
+	font-size: 18px;
+	left: 9px;
+	top: 8px;
+	font-family: $basicicons;
+}
+
+/* buy now link icon */
+a.related-node-album-buy-link:before,
+a.related-node-product-buy-link:before {
+	position: absolute;
+	content: "\3c";
+	font-size: 18px;
+	left: 8px;
+	top: 8px;
+	font-family: $basicicons;
+}
+
+
+/*-------------------------------------
+
+ RECENT & MORE ARTICLES content block 
+ 
+---------------------------------------*/
+
+.node-more-articles {
+	position: relative;
+	
+	h2.block-title {
+		@include font-size(20px);
+		margin-bottom: 0px;
+	}
+	.views-row {
+		padding: 10px 0;
+		border-bottom: 0;
+		float: none;
+	}
+	.field-title {
+		@include font-size(15px);
+		line-height: 1.3;
+		padding-right: 10px;
+		display: block;
+	}
+	.field-date {
+		@include font-size(13px);
+		display: block;
+		line-height: 1.3;
+		font-style: italic;	
+	}
+	.view-footer {
+		padding: 10px 0;
+	}
+	
+	// if no more articles of a type
+	.view-empty {
+		font-size: 13px;	
+	}
+}
+ 

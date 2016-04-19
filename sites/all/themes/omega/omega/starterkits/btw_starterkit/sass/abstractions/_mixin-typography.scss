@@ -1,0 +1,47 @@
+//------------------------------------------------------
+//
+//	MIXINS - TYPOGRAPHY 
+//
+//	location: 
+//      /sass/abstractions/mixins-typography.scss
+//
+//------------------------------------------------------
+
+
+
+// Use REMs with a pixel fallback for font sizing.
+@mixin font-size($font-size){
+	font-size: $font-size;
+	font-size: ($font-size / $base-font-size)*1rem;
+}
+
+// Basic sitewide body text
+@mixin base-text-style {
+	font-family: $base-font-family;
+	font-weight: $base-font-weight;
+	font-size: $base-font-size;
+	line-height: $base-line-height;
+	color: $text-color;
+	letter-spacing: $base-letter-spacing;
+}
+
+// Titles
+@mixin title-style {
+	font-family: $title-font-family;
+	font-weight: $title-font-weight;
+	margin: $title-margin;
+	color: $title-color;
+}
+
+// Page title - responsive sizes
+@mixin responsive-page-title {
+	@include breakpoint($small-up) {
+		@include font-size(40px);
+	}
+	@include breakpoint($medium-up) {
+		@include font-size(50px);
+	}
+	@include breakpoint($large-up) {
+		@include font-size(60px);
+	}
+}

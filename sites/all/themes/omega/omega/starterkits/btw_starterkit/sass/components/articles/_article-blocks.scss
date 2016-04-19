@@ -1,0 +1,80 @@
+//----------------------------------------------
+//
+//	ARTICLE - Blocks
+//
+//	location: 
+//      /sass/components/articles/_article-blocks.scss
+//
+// 
+//
+//----------------------------------------------
+
+
+
+
+/*-------------------------------------------
+
+	RECENT ARTICLES content block 
+ 
+--------------------------------------------*/
+
+// recent items on article node
+.field-name-recent-articles { 
+	position: relative;
+	
+	.view-content {
+		overflow: hidden;
+	}
+	
+	.list-row { // article node
+		
+		@include breakpoint($small-only) {
+			width: 100%;
+			margin: 0 0 $vert-spacing-unit 0;
+			float: none;
+		}
+		
+		@include breakpoint($medium-only) {
+			float: left;
+			width: 48%;
+			margin: 0 4% $vert-spacing-unit 0;
+			min-height: 310px;
+			border: 0;			
+			
+			&:nth-child(even) {
+				margin-right: 0;
+			}
+		}
+		
+		@include breakpoint($large-up) {
+		    width: 22%;
+		    float: left;
+		    margin: 0 4% 4% 0;
+		    clear: none;
+		    min-height: 310px;
+		    border: 0;
+		}
+		
+		&:nth-child(4n+0) {
+			margin-right: 0;
+		}
+	}
+	.media-thumb-container {
+		margin-bottom: 10px;
+		border: 1px solid #ddd;
+	}
+	h3.title {
+		line-height: 1.4;
+		margin-bottom: 5px;
+		@include font-size(18px);
+	}
+	.submitted {
+		font-style: italic;
+	}
+	
+	// if no more articles of a type
+	.view-empty {
+		font-size: 13px;	
+	}
+
+}

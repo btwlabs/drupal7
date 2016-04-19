@@ -1,0 +1,187 @@
+//----------------------------------------------
+//
+//	LAYOUT - general layout styles for main containers
+//
+//	location: 
+//      /sass/base/_layout.scss
+//
+//----------------------------------------------
+
+
+
+// Show or hide specific content based on breakpoints
+
+// mobile
+@include breakpoint($small-only){
+	.omega-narrow-up {
+		display: none !important;
+	}
+	.omega-mobile-only {
+		display: block !important;
+	}
+}
+
+// tablet and above
+@include breakpoint($medium-up){
+	.omega-mobile-only {
+		display: none !important;
+	}
+	.omega-narrow-up {
+		display: block !important;
+	}
+}
+
+
+//----------------------------------------
+// Define constrained containers sitewide
+//-----------------------------------------
+
+.l-constrained {
+	@include breakpoint($small-only) {
+		margin: 0 20px;
+	}
+	@include breakpoint($medium-up) {
+		width: 80%;
+		margin: 0 auto;
+	}
+	@include breakpoint($xlarge-up) {
+		width: 70%;	
+	}
+}
+
+
+
+/*----------------------------------------
+
+ Add Clearfix to all main containers
+
+----------------------------------------*/
+
+.l-constrained,
+.l-pre-header,
+.l-header,
+.l-inner,
+.l-content,
+#content,
+.pre-content,
+.l-content-wrapper,
+.l-pre-footer-wrapper,
+.l-footer-wrapper {
+	@extend %clearfix;
+}
+
+
+/*----------------------------------------
+
+ Admin menus
+ 
+----------------------------------------*/
+
+
+// Inline Add field collection - links
+ul.action-links.action-links-field-collection-add {
+    width: 100%;
+    background: rgba(0,0,0,0.1);
+    padding: 5px;
+    list-style-type: none;
+    margin-left: 0;
+    float: none;
+    overflow: hidden;
+    
+	li {
+		list-style-type: none;
+		float: left;
+		margin-right: 10px;
+	}
+}
+
+
+/*----------------------------------------
+
+ HEADER region Layout
+
+----------------------------------------*/
+
+
+
+
+/*----------------------------------------
+
+ CONTENT region layout
+
+----------------------------------------*/
+
+// to clear navigation in header
+.not-front #content {
+	@include breakpoint($small-up) {
+		padding-top: $header-height-small;
+	}
+	@include breakpoint($medium-up) {
+		padding-top: $header-height-medium;
+	}
+	@include breakpoint($large-up){
+		padding-top: $header-height-large;
+	}
+	@include breakpoint($xlarge-up){
+		padding-top: $header-height-xlarge;
+	}
+}
+
+.l-content {
+	position: relative;
+}
+
+.not-front .l-main {
+	padding-bottom: 50px;
+	min-height: 500px;
+}
+
+/*---------------------------
+ NODE-CONTAINER STYLES 
+----------------------------*/
+
+.node-row-container,
+.node-middle-row1-container,
+.node-middle-row2-container,
+.node-middle-row3-container,
+.node-middle-row4-container,
+.node-middle-row5-container,
+.node-middle-row6-container,
+.node-middle-row7-container,
+.node-bottom-row-container {
+	padding: $vert-spacing-unit + 10 0;
+	@include border-bottom($border-color);
+	position: relative;
+}
+.node-bottom-row-container {
+	border-bottom: 0;
+}
+
+
+/*--------------------------
+ Base Column styles
+--------------------------*/
+
+@media (min-width: 40.063em)  {
+	.col:not(.node--story-block) {
+		float: left;
+	}
+}
+
+
+/*----------------------------------------
+
+ FOOTER region layout
+
+----------------------------------------*/
+
+.l-pre-footer-wrapper,
+.l-footer-wrapper {
+	.l-constrained {
+		
+		@include breakpoint($medium-up) {
+			width: 90%;
+		}
+	}
+}
+

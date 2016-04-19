@@ -1,0 +1,42 @@
+//------------------------------------------------------
+//
+//	DATEBLOCK - general styles for a dateblock which 
+//              contains day, month, year enclosed and stacked
+//
+//	location: 
+//      /sass/components/_dateblock.scss
+//
+//------------------------------------------------------
+
+
+.dateblock {
+	width: $dateblock-width;
+	background-color: $dateblock-bg-color;
+	float: left;
+	margin: 0 $dateblock-right-margin 0px 0;
+	padding: 5px;
+	text-align: center;
+	@include border-radius($border-radius);
+	@include transition(all, 0.2s, ease-in);
+	
+	& .month, & .day, & .year {
+		display: block;
+		line-height: 1;
+		text-transform: uppercase;
+	}
+	
+	& .month {
+		@include font-size(14px);
+		color: $dateblock-month-color;
+	}
+
+	& .day {
+		@include font-size(26px);
+		color: $dateblock-day-color;
+	}
+
+	& .year {
+		@include font-size(12px);
+	} 
+	
+}
