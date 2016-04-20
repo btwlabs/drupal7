@@ -289,7 +289,7 @@
 		    </div>
 		<?php endif; ?>
 	
-		<?php if(!empty($page['footer_1']) || !empty($page['footer_2']) || !empty($page['footer_3']) || !empty($page['footer_4']) : ?>
+		<?php if(!empty($page['footer_1']) || !empty($page['footer_2']) || !empty($page['footer_3']) || !empty($page['footer_4'])) : ?>
 		    <footer class="l-footer-wrapper" role="contentinfo">
 		    	<div class="l-footer-region">
 		        	<div class="footer-inner l-constrained">
