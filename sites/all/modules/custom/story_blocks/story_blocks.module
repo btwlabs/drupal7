@@ -12,8 +12,7 @@ include_once 'story_blocks.features.inc';
 function story_blocks_ds_layout_info() {
   $path = drupal_get_path('module', 'story_blocks');
 
-  $layouts = array(
-    'story_block' => array(
+  $layouts['story_block'] = array(
       'label' => t('Story Block Layout'),
       'path' => $path . '/layouts/story_block',
       'regions' => array(
@@ -22,8 +21,17 @@ function story_blocks_ds_layout_info() {
       ),
       'css' => TRUE,
       'image' => TRUE,
-    )
-  );
+    );
+
+  $layouts['story_block_one_col'] = array(
+      'label' => t('Story Block Layout One Column'),
+      'path' => $path . '/layouts/story_block_one_col',
+      'regions' => array(
+        'col1' => t('Column 1')
+      ),
+      'css' => TRUE,
+      'image' => TRUE,
+    );
 
   return $layouts;
 }

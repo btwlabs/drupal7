@@ -10,13 +10,20 @@
 function story_blocks_field_default_field_instances() {
   $field_instances = array();
 
-  // Exported field_instance: 'node-story_block-body'
+  // Exported field_instance: 'node-story_block-body'.
   $field_instances['node-story_block-body'] = array(
     'bundle' => 'story_block',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
     'display' => array(
+      'center_copy_full_bg_image' => array(
+        'label' => 'hidden',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 3,
+      ),
       'default' => array(
         'label' => 'hidden',
         'module' => 'text',
@@ -108,12 +115,34 @@ function story_blocks_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-story_block-field_story_block_images'
+  // Exported field_instance: 'node-story_block-field_story_block_images'.
   $field_instances['node-story_block-field_story_block_images'] = array(
     'bundle' => 'story_block',
     'deleted' => 0,
     'description' => '',
     'display' => array(
+      'center_copy_full_bg_image' => array(
+        'label' => 'hidden',
+        'module' => 'bg_image_formatter',
+        'settings' => array(
+          'css_settings' => array(
+            'bg_image_attachment' => 'scroll',
+            'bg_image_background_size' => '',
+            'bg_image_background_size_ie8' => 0,
+            'bg_image_color' => '',
+            'bg_image_important' => 0,
+            'bg_image_media_query' => '',
+            'bg_image_repeat' => 'no-repeat',
+            'bg_image_selector' => '.node-nid-[node:nid]',
+            'bg_image_x' => '',
+            'bg_image_y' => '',
+          ),
+          'image_style' => '',
+          'multiple' => 0,
+        ),
+        'type' => 'bg_image_formatter',
+        'weight' => 1,
+      ),
       'default' => array(
         'label' => 'hidden',
         'module' => 'bg_image_formatter',
@@ -123,7 +152,7 @@ function story_blocks_field_default_field_instances() {
             'bg_image_background_size' => '',
             'bg_image_background_size_ie8' => 0,
             'bg_image_color' => '#FFFFFF',
-            'bg_image_important' => 1,
+            'bg_image_important' => 0,
             'bg_image_media_query' => 'all',
             'bg_image_repeat' => 'no-repeat',
             'bg_image_selector' => '.node-nid-[node:nid]',
@@ -131,7 +160,7 @@ function story_blocks_field_default_field_instances() {
             'bg_image_y' => 'top',
           ),
           'image_style' => '',
-          'multiple' => FALSE,
+          'multiple' => 0,
         ),
         'type' => 'bg_image_formatter',
         'weight' => 1,
@@ -164,18 +193,18 @@ function story_blocks_field_default_field_instances() {
         'settings' => array(
           'css_settings' => array(
             'bg_image_attachment' => 'scroll',
-            'bg_image_background_size' => 'cover',
+            'bg_image_background_size' => '',
             'bg_image_background_size_ie8' => 0,
-            'bg_image_color' => '#FFFFFF',
+            'bg_image_color' => '',
             'bg_image_important' => 0,
-            'bg_image_media_query' => 'all',
+            'bg_image_media_query' => '',
             'bg_image_repeat' => 'no-repeat',
             'bg_image_selector' => '.node-nid-[node:nid]',
-            'bg_image_x' => 'top',
-            'bg_image_y' => 'center',
+            'bg_image_x' => '',
+            'bg_image_y' => '',
           ),
           'image_style' => '',
-          'multiple' => FALSE,
+          'multiple' => 0,
         ),
         'type' => 'bg_image_formatter',
         'weight' => 5,
@@ -186,18 +215,18 @@ function story_blocks_field_default_field_instances() {
         'settings' => array(
           'css_settings' => array(
             'bg_image_attachment' => 'scroll',
-            'bg_image_background_size' => 'cover',
+            'bg_image_background_size' => '',
             'bg_image_background_size_ie8' => 0,
-            'bg_image_color' => '#FFFFFF',
+            'bg_image_color' => '',
             'bg_image_important' => 0,
-            'bg_image_media_query' => 'all',
+            'bg_image_media_query' => '',
             'bg_image_repeat' => 'no-repeat',
             'bg_image_selector' => '.node-nid-[node:nid]',
-            'bg_image_x' => 'top',
-            'bg_image_y' => 'center',
+            'bg_image_x' => '',
+            'bg_image_y' => '',
           ),
           'image_style' => '',
-          'multiple' => FALSE,
+          'multiple' => 0,
         ),
         'type' => 'bg_image_formatter',
         'weight' => 5,
@@ -208,15 +237,15 @@ function story_blocks_field_default_field_instances() {
         'settings' => array(
           'css_settings' => array(
             'bg_image_attachment' => 'scroll',
-            'bg_image_background_size' => 'cover',
+            'bg_image_background_size' => '',
             'bg_image_background_size_ie8' => 0,
-            'bg_image_color' => '#FFFFFF',
+            'bg_image_color' => '',
             'bg_image_important' => 0,
-            'bg_image_media_query' => 'all',
+            'bg_image_media_query' => '',
             'bg_image_repeat' => 'no-repeat',
             'bg_image_selector' => '.node-nid-[node:nid] .col-2-wrapper',
-            'bg_image_x' => 'top',
-            'bg_image_y' => 'center',
+            'bg_image_x' => '',
+            'bg_image_y' => '',
           ),
           'image_style' => '',
           'multiple' => 0,
@@ -240,18 +269,18 @@ function story_blocks_field_default_field_instances() {
         'settings' => array(
           'css_settings' => array(
             'bg_image_attachment' => 'scroll',
-            'bg_image_background_size' => 'cover',
+            'bg_image_background_size' => '',
             'bg_image_background_size_ie8' => 0,
-            'bg_image_color' => '#FFFFFF',
+            'bg_image_color' => '',
             'bg_image_important' => 0,
-            'bg_image_media_query' => 'all',
+            'bg_image_media_query' => '',
             'bg_image_repeat' => 'no-repeat',
             'bg_image_selector' => '.node-nid-[node:nid]',
-            'bg_image_x' => 'top',
-            'bg_image_y' => 'center',
+            'bg_image_x' => '',
+            'bg_image_y' => '',
           ),
           'image_style' => '',
-          'multiple' => FALSE,
+          'multiple' => 0,
         ),
         'type' => 'bg_image_formatter',
         'weight' => 1,
@@ -262,18 +291,18 @@ function story_blocks_field_default_field_instances() {
         'settings' => array(
           'css_settings' => array(
             'bg_image_attachment' => 'scroll',
-            'bg_image_background_size' => 'cover',
+            'bg_image_background_size' => '',
             'bg_image_background_size_ie8' => 0,
-            'bg_image_color' => '#FFFFFF',
+            'bg_image_color' => '',
             'bg_image_important' => 0,
-            'bg_image_media_query' => 'all',
+            'bg_image_media_query' => '',
             'bg_image_repeat' => 'no-repeat',
             'bg_image_selector' => '.node-nid-[node:nid]',
-            'bg_image_x' => 'top',
-            'bg_image_y' => 'center',
+            'bg_image_x' => '',
+            'bg_image_y' => '',
           ),
           'image_style' => '',
-          'multiple' => FALSE,
+          'multiple' => 0,
         ),
         'type' => 'bg_image_formatter',
         'weight' => 1,
@@ -284,15 +313,15 @@ function story_blocks_field_default_field_instances() {
         'settings' => array(
           'css_settings' => array(
             'bg_image_attachment' => 'scroll',
-            'bg_image_background_size' => 'cover',
+            'bg_image_background_size' => '',
             'bg_image_background_size_ie8' => 0,
-            'bg_image_color' => '#FFFFFF',
+            'bg_image_color' => '',
             'bg_image_important' => 0,
-            'bg_image_media_query' => 'all',
+            'bg_image_media_query' => '',
             'bg_image_repeat' => 'no-repeat',
             'bg_image_selector' => '.node-nid-[node:nid] .col-1-wrapper',
-            'bg_image_x' => 'top',
-            'bg_image_y' => 'center',
+            'bg_image_x' => '',
+            'bg_image_y' => '',
           ),
           'image_style' => '',
           'multiple' => 0,
@@ -375,13 +404,20 @@ function story_blocks_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-story_block-field_story_block_link'
+  // Exported field_instance: 'node-story_block-field_story_block_link'.
   $field_instances['node-story_block-field_story_block_link'] = array(
     'bundle' => 'story_block',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
     'display' => array(
+      'center_copy_full_bg_image' => array(
+        'label' => 'hidden',
+        'module' => 'link',
+        'settings' => array(),
+        'type' => 'link_default',
+        'weight' => 4,
+      ),
       'default' => array(
         'label' => 'above',
         'settings' => array(),
@@ -495,13 +531,24 @@ function story_blocks_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-story_block-field_story_block_videos'
+  // Exported field_instance: 'node-story_block-field_story_block_videos'.
   $field_instances['node-story_block-field_story_block_videos'] = array(
     'bundle' => 'story_block',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
     'display' => array(
+      'center_copy_full_bg_image' => array(
+        'label' => 'hidden',
+        'module' => 'video_embed_field',
+        'settings' => array(
+          'link_title' => 'Watch Video',
+          'use_description' => 0,
+          'video_style' => 'normal',
+        ),
+        'type' => 'video_embed_field_link_colorbox',
+        'weight' => 5,
+      ),
       'default' => array(
         'label' => 'hidden',
         'settings' => array(),
@@ -614,6 +661,10 @@ function story_blocks_field_default_field_instances() {
     'label' => 'Videos',
     'required' => 0,
     'settings' => array(
+      'allowed_providers' => array(
+        0 => 'youtube',
+        1 => 'vimeo',
+      ),
       'description_field' => 1,
       'description_length' => 128,
       'user_register_form' => FALSE,

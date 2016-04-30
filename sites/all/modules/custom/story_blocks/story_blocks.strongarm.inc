@@ -62,6 +62,22 @@ function story_blocks_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'ds_classes_regions';
+  $strongarm->value = 'l-constrained
+node-nid-[node:nid]
+clickable
+left-copy
+right-copy
+center-copy
+wrapper-bg-image
+right-image
+left-image
+col-bg-image';
+  $export['ds_classes_regions'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'field_bundle_settings_node__story_block';
   $strongarm->value = array(
     'view_modes' => array(
@@ -110,6 +126,9 @@ function story_blocks_strongarm() {
       'revision' => array(
         'custom_settings' => FALSE,
       ),
+      'center_copy_full_bg_image' => array(
+        'custom_settings' => TRUE,
+      ),
     ),
     'extra_fields' => array(
       'form' => array(),
@@ -152,6 +171,10 @@ function story_blocks_strongarm() {
             'visible' => FALSE,
           ),
           'right_copy_left_bg_image' => array(
+            'weight' => '16',
+            'visible' => FALSE,
+          ),
+          'center_copy_full_bg_image' => array(
             'weight' => '16',
             'visible' => FALSE,
           ),

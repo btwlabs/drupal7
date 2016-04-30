@@ -10,7 +10,7 @@
 function story_blocks_field_default_field_bases() {
   $field_bases = array();
 
-  // Exported field_base: 'body'
+  // Exported field_base: 'body'.
   $field_bases['body'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -31,7 +31,7 @@ function story_blocks_field_default_field_bases() {
     'type' => 'text_with_summary',
   );
 
-  // Exported field_base: 'field_story_block_images'
+  // Exported field_base: 'field_story_block_images'.
   $field_bases['field_story_block_images'] = array(
     'active' => 1,
     'cardinality' => -1,
@@ -53,7 +53,7 @@ function story_blocks_field_default_field_bases() {
     'type' => 'image',
   );
 
-  // Exported field_base: 'field_story_block_link'
+  // Exported field_base: 'field_story_block_link'.
   $field_bases['field_story_block_link'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -82,7 +82,7 @@ function story_blocks_field_default_field_bases() {
     'type' => 'link_field',
   );
 
-  // Exported field_base: 'field_story_block_videos'
+  // Exported field_base: 'field_story_block_videos'.
   $field_bases['field_story_block_videos'] = array(
     'active' => 1,
     'cardinality' => -1,
