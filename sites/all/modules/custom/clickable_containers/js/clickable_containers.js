@@ -2,7 +2,7 @@
     Drupal.behaviors.ccSetLink = {
         attach: function(context, settings){
 
-            $('body', context).delegate('.clickable', 'click', {
+            $('body', context).delegate('.clickable', {
                 click: function(e) {
                     var linkTarg = $(this).find('a.clickable-select');
                     if(!(linkTarg.css('display') == 'none')) {
