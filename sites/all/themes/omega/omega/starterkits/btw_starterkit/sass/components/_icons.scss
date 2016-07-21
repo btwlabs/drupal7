@@ -1,0 +1,63 @@
+//------------------------------------------------------
+//
+//	SOCIAL ICONS - Basic css for social icons on the site
+//				   usually in the footer
+//
+//	location: 
+//      /sass/components/_icons.scss
+//
+//------------------------------------------------------
+
+
+
+/*-------------------------------
+ 
+ Social Icons
+ 
+--------------------------------*/
+
+.social-links ul.menu {
+	margin: 0;
+	overflow: hidden;
+	padding: 0;
+	
+	@include breakpoint($small-and-medium) {
+		text-align: center;
+	}
+	
+	li {
+		margin: 0 15px 15px 0;
+		padding: 0;
+		display: inline-block;
+		list-style-type: none;
+		border: 0;
+		
+		&:last-child {
+			margin-right: 0;
+		}
+		
+		a {
+			margin: 0;
+			padding: 0px;
+			text-align: center;
+			width: 35px;
+			display: block;
+			position: relative;
+			color: $social-icon-color;
+			background-color: $social-icon-bg-color;
+			
+			// hover state
+			&:hover {
+				color: $social-icon-hover-color;
+				background-color: $social-icon-bg-hover-color;
+			}
+			
+			i {
+				font-size: 30px;
+			}
+			span.title {
+				display: none;
+			}
+		}
+	}
+}

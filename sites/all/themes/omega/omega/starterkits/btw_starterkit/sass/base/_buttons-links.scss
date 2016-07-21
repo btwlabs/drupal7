@@ -1,0 +1,93 @@
+//----------------------------------------------
+//
+//	BUTTONS & LINKS - general styles for links
+//
+//	location: 
+//      /sass/base/_buttons_links.scss
+//
+//----------------------------------------------
+
+
+
+/*---------------------------------------------------------
+-----------------------------------------------------------
+
+ General LINK styles
+ 
+-----------------------------------------------------------
+----------------------------------------------------------*/
+
+// these link styles were placed here because it has to load 
+// before .button styles - due to sass globbing and no control  
+// over stylesheet loading order - for button styles to work. 
+
+a,
+a:link,
+a:visited,
+li a.active {
+	@include transition(all, 0.2s, ease-in);
+	color: $link-color;
+	text-decoration: none;
+	
+	&:hover {
+		color: $link-hover-color;
+		text-decoration: underline;
+	}
+}
+
+
+/*---------------------------------------------------------
+-----------------------------------------------------------
+
+ BUTTON styles
+ 
+-----------------------------------------------------------
+----------------------------------------------------------*/
+
+/*-------------------------------------
+
+ Button normal state
+ 
+-------------------------------------*/
+
+.button a,
+a.button,
+button, 
+input[type="reset"], 
+input[type="submit"], 
+input[type="button"] {
+	@include button; // sass/abstractions/_mixins-buttons.scss
+	
+	&:hover {
+		@include button-hover; // sass/abstractions/_mixins-buttons.scss
+	}
+}
+
+
+
+/* Exceptions to <a> css animation */
+#colorbox button {
+	-webkit-transition: none;
+	-moz-transition: none;
+	-o-transition: none;
+	transition: none;
+}
+
+// override drupal default active state
+li .button a.active {
+	color: $button-text-color; 
+}
+
+
+/*---------------------------------------------------------
+-----------------------------------------------------------
+
+ BUTTON styles on DARK backgrounds
+ 
+-----------------------------------------------------------
+----------------------------------------------------------*/
+
+.button.is-on-dark {
+	@include button-on-dark; 
+}
+

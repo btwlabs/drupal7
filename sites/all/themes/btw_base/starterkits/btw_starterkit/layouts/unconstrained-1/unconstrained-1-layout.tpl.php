@@ -200,7 +200,61 @@
 						</div>
 					</div> <!-- close l-content-10 -->
 				<?php endif; ?>
-	
+				
+				<?php if(!empty($page['content_11'])) : ?>
+				<!-- content_11 region -->
+					<div class="l-content-11 l-content slide" data-slide="11">
+						<div class="l-content-11-inner l-inner">
+							<div class="l-constrained">
+					    		<?php print render($page['content_11']); ?>
+							</div>
+						</div>
+					</div> <!-- close l-content-11 -->
+				<?php endif; ?>
+				
+				<?php if(!empty($page['content_12'])) : ?>
+				<!-- content_12 region -->
+					<div class="l-content-12 l-content slide" data-slide="12">
+						<div class="l-content-12-inner l-inner">
+							<div class="l-constrained">
+					    		<?php print render($page['content_12']); ?>
+							</div>
+						</div>
+					</div> <!-- close l-content-12 -->
+				<?php endif; ?>
+				
+				<?php if(!empty($page['content_13'])) : ?>
+				<!-- content_13 region -->
+					<div class="l-content-13 l-content slide" data-slide="13">
+						<div class="l-content-13-inner l-inner">
+							<div class="l-constrained">
+					    		<?php print render($page['content_13']); ?>
+							</div>
+						</div>
+					</div> <!-- close l-content-13 -->
+				<?php endif; ?>
+				
+				<?php if(!empty($page['content_14'])) : ?>
+				<!-- content_14 region -->
+					<div class="l-content-14 l-content slide" data-slide="14">
+						<div class="l-content-14-inner l-inner">
+							<div class="l-constrained">
+					    		<?php print render($page['content_14']); ?>
+							</div>
+						</div>
+					</div> <!-- close l-content-14 -->
+				<?php endif; ?>
+				
+				<?php if(!empty($page['content_15'])) : ?>
+				<!-- content_15 region -->
+					<div class="l-content-15 l-content slide" data-slide="15">
+						<div class="l-content-15-inner l-inner">
+							<div class="l-constrained">
+					    		<?php print render($page['content_15']); ?>
+							</div>
+						</div>
+					</div> <!-- close l-content-15 -->
+				<?php endif; ?>																	
 	    	</div> <!-- close l-main -->
 	
 		</div><!-- close #content -->
@@ -213,7 +267,7 @@
 		    </div>
 		<?php endif; ?>
 	
-		<?php if(!empty($page['footer_1']) || !empty($page['footer_2']) || !empty($page['footer_3'])) : ?>
+		<?php if(!empty($page['footer_1']) || !empty($page['footer_2']) || !empty($page['footer_3']) || !empty($page['footer_4'])) : ?>
 		    <footer class="l-footer-wrapper" role="contentinfo">
 		    	<div class="l-footer-region">
 		        	<div class="footer-inner l-constrained">
@@ -223,6 +277,14 @@
 		
 						<?php if (!empty($page['footer_2'])) : ?>
 							<?php print render($page['footer_2']); ?>
+						<?php endif; ?>
+						
+						<?php if (!empty($page['footer_3'])) : ?>
+							<?php print render($page['footer_3']); ?>
+						<?php endif; ?>
+
+						<?php if (!empty($page['footer_4'])) : ?>
+							<?php print render($page['footer_4']); ?>
 						<?php endif; ?>
 		        	</div>
 		      	</div>

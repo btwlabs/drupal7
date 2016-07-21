@@ -1,0 +1,32 @@
+/*----------------------------------------------
+
+ CLICKABLE class: 
+ 
+ JS that makes entire teaser-row container a link, vs
+ just the linked text within. Style to make 
+ visible changes on container hover.
+  
+-----------------------------------------------*/
+
+/*----------------------------
+ in main content area
+------------------------------*/
+
+/* articles list page */
+
+.teaser-list .clickable:hover h3 a {
+	color: $link-hover-color;
+}
+
+/*------------------------------
+ general 
+-------------------------------*/
+
+.clickable {
+	@include transition(all, 0.2s, ease-in);
+}
+.clickable-hover {
+	cursor: pointer;
+	background: none;
+}
+

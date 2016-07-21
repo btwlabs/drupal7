@@ -13,8 +13,14 @@
 ---*/
 
 .node--story-block {
+	position: relative;
+	
+	@include breakpoint($small-only) {
+		border-bottom: 1px solid $border-color;
+	}
 	
 	// Mobile only images
+	// always appears in col-1-wrapper
 	.field-name-mobile-story-block-image {
 		
 		@include breakpoint($small-only) {
@@ -27,19 +33,177 @@
 		}
 	}
 	
-	// Columns
-	@include breakpoint($medium-up) {
-		.col-1-wrapper {
-			float: left;
+	// Overlay div for shading bg images
+	.image-overlay {
+		@include breakpoint($small-only) {
+			display: none;
 		}
-		.col-2-wrapper {
-			float: right;
+		@include breakpoint($medium-up) {
+			position: absolute;
+			left: 0;
+			top: 0;
 		}
 	}
+
+	// Column Wrapper
+	// flex parent
+	.story-block-inner {
+		@include constrained;
+		padding: 8% 0;
+		position: relative;
+		@include flexbox;
+		@include flex-flow($values: (row wrap));
+		@include justify-content($value: flex-start);
+		@include align-content($value: stretch);
+		@include align-items($value: stretch);
+		position: relative;		
+	}
 	
-	.left-copy {
+	// for column bg images, negate constrained styling
+	&.col-bg-image {		
+		@include breakpoint($medium-up) {
+			.story-block-inner {
+				width: 100%;
+				padding: 0;
+			}
+			
+			&.left-copy {
+				.col-1-wrapper {
+					width: 50%;
+					padding: 10% 5% 10% 10%;
+				}
+				.col-2-wrapper {
+					width: 50%;
+					padding: 10%;
+				}
+			}
+			&.right-copy {
+				.col-1-wrapper {
+					width: 50%;
+				}
+				.col-2-wrapper {
+					width: 50%;
+					padding: 10% 10% 10% 5%;
+				}
+			}
+		}
 		
+		// hide bg image on column
+		.col-1-wrapper,
+		.col-2-wrapper {
+			@include breakpoint($small-only) {
+				background-image: none;
+			}
+		}
 	}
 	
+	// Columns
+	// flex children
+	.col {
+		@include flex-grow($int: 0);
+		@include flex($fg: 0, $fs: 1, $fb: auto);
+		@include align-content($value: stretch);
+		@include justify-content($value: flex-start);
+		@include align-items($value: stretch);
+	}
 	
+	@include breakpoint($medium-up) {
+		&.left-copy {
+			.col-1-wrapper {
+				width: 55%;
+				padding-right: 5%;
+			}
+			.col-2-wrapper {
+				width: 45%;
+			}
+		}
+		&.right-copy {
+			.col-1-wrapper {
+				width: 45%;
+			}
+			.col-2-wrapper {
+				width: 55%;
+				padding-left: 5%;
+			}
+		}
+	}
+	
+	// Links
+	.field-name-field-story-block-link,
+	.field-name-field-story-block-videos {
+		margin: 0 15px 15px 0;
+		display: inline-block;
+		
+		a {
+			@include button;
+			
+			&:hover {
+				@include button-hover;
+			}
+		}
+	}
+	
+	// hide column images in mobile layout
+	.field-name-field-story-block-images {
+		@include breakpoint($small-only) {
+			display: none;
+		}
+	}
+	
+	// add back mobile images in mobile layout
+	.field-name-mobile-story-block-image {
+		.field-name-field-story-block-images {
+			display: block;
+		}
+	}
+	
+	// hide in mobile - keeps div open
+	.field-name--nbsp {
+		@include breakpoint($small-only) {
+			display: none;
+		}
+	}
+	
+		
+	/*-------------------------------------------
+		VIEW MODES with BACKGROUND IMAGES
+	--------------------------------------------*/
+	
+	&.view-mode-left_copy_full_bg_image_h1,
+	&.view-mode-right_copy_full_bg_image_h1,
+	&.view-mode-left_copy_full_bg_image,
+	&.view-mode-right_copy_full_bg_image {
+		@include breakpoint($small-only) {
+			background-image: none;
+		}
+		
+		@include breakpoint($medium-up) {
+			.image-overlay {
+				width: 100%;
+				height: 100%;
+				background-color: rgba(0,0,0,0.7);
+			}
+	
+			.title {
+				color: $title-on-dark-color;
+			}
+			.field-name-body {
+				color: $text-on-dark-color;
+			}
+			
+			// button link
+			.field-name-field-story-block-link,
+			.field-name-field-story-block-videos {		
+				a {
+					@include button-on-dark;
+					
+					&:hover {
+						@include button-on-dark-hover;
+					}
+				}
+			}
+		}
+	}	
 }
+
+
