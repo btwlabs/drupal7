@@ -1,16 +1,16 @@
 <?php
 /**
  * @file
- * taco4.features.conditional_fields.inc
+ * _banner_support.features.conditional_fields.inc
  */
 
 /**
- * Implements hook_default_conditional_fields_assets().
+ * Implements hook_conditional_fields_default_fields().
  */
-function banner_support_default_conditional_fields_assets() {
+function banner_support_conditional_fields_default_fields() {
   $items = array();
 
-  $items[] = array(
+  $items["node:banner:0"] = array(
     'entity' => 'node',
     'bundle' => 'banner',
     'dependent' => 'field_large_body',
@@ -83,7 +83,7 @@ function banner_support_default_conditional_fields_assets() {
     ),
   );
 
-  $items[] = array(
+  $items["node:banner:1"] = array(
     'entity' => 'node',
     'bundle' => 'banner',
     'dependent' => 'field_small_body',

@@ -1,16 +1,16 @@
 <?php
 /**
  * @file
- * banner_support.features.field_instance.inc
+ * _banner_support.features.field_instance.inc
  */
 
 /**
- * Implements hook_default_field_instances_assets().
+ * Implements hook_field_default_field_instances().
  */
-function banner_support_default_field_instance_assets() {
+function banner_support_field_default_field_instances() {
   $field_instances = array();
 
-  // Exported field_instance: 'node-banner-field_banner_large_image'
+  // Exported field_instance: 'node-banner-field_banner_large_image'.
   $field_instances['node-banner-field_banner_large_image'] = array(
     'bundle' => 'banner',
     'deleted' => 0,
@@ -135,7 +135,7 @@ function banner_support_default_field_instance_assets() {
     ),
   );
 
-  // Exported field_instance: 'node-banner-field_banner_link'
+  // Exported field_instance: 'node-banner-field_banner_link'.
   $field_instances['node-banner-field_banner_link'] = array(
     'bundle' => 'banner',
     'default_value' => NULL,
@@ -288,7 +288,7 @@ function banner_support_default_field_instance_assets() {
     ),
   );
 
-  // Exported field_instance: 'node-banner-field_banner_location'
+  // Exported field_instance: 'node-banner-field_banner_location'.
   $field_instances['node-banner-field_banner_location'] = array(
     'bundle' => 'banner',
     'default_value' => NULL,
@@ -403,7 +403,7 @@ function banner_support_default_field_instance_assets() {
     ),
   );
 
-  // Exported field_instance: 'node-banner-field_banner_small_image'
+  // Exported field_instance: 'node-banner-field_banner_small_image'.
   $field_instances['node-banner-field_banner_small_image'] = array(
     'bundle' => 'banner',
     'deleted' => 0,
@@ -528,7 +528,7 @@ function banner_support_default_field_instance_assets() {
     ),
   );
 
-  // Exported field_instance: 'node-banner-field_large_body'
+  // Exported field_instance: 'node-banner-field_large_body'.
   $field_instances['node-banner-field_large_body'] = array(
     'bundle' => 'banner',
     'default_value' => NULL,
@@ -620,7 +620,7 @@ function banner_support_default_field_instance_assets() {
     ),
   );
 
-  // Exported field_instance: 'node-banner-field_large_options'
+  // Exported field_instance: 'node-banner-field_large_options'.
   $field_instances['node-banner-field_large_options'] = array(
     'bundle' => 'banner',
     'default_value' => array(
@@ -739,7 +739,7 @@ function banner_support_default_field_instance_assets() {
     ),
   );
 
-  // Exported field_instance: 'node-banner-field_small_body'
+  // Exported field_instance: 'node-banner-field_small_body'.
   $field_instances['node-banner-field_small_body'] = array(
     'bundle' => 'banner',
     'default_value' => NULL,
@@ -831,7 +831,7 @@ function banner_support_default_field_instance_assets() {
     ),
   );
 
-  // Exported field_instance: 'node-banner-field_small_options'
+  // Exported field_instance: 'node-banner-field_small_options'.
   $field_instances['node-banner-field_small_options'] = array(
     'bundle' => 'banner',
     'default_value' => array(

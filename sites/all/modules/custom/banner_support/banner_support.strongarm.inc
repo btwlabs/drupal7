@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * banner_support.variable.inc
+ * _banner_support.strongarm.inc
  */
 
 /**
- * Implements hook_default_default_variable_assets().
+ * Implements hook_strongarm().
  */
-function banner_support_default_variable_assets() {
+function banner_support_strongarm() {
   $export = array();
 
   $strongarm = new stdClass();

@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * taco3.features.taxonomy.inc
+ * _banner_support.features.taxonomy.inc
  */
 
 /**
- * Implements hook_default_taxonomy_assets().
+ * Implements hook_taxonomy_default_vocabularies().
  */
-function banner_support_default_taxonomy_assets() {
+function banner_support_taxonomy_default_vocabularies() {
   return array(
     'banner_location' => array(
       'name' => 'Banner Location',
