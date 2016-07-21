@@ -33,6 +33,12 @@ function story_blocks_ds_field_settings_info() {
       'weight' => '2',
       'label' => 'hidden',
       'format' => 'default',
+      'formatter_settings' => array(
+        'link' => '0',
+        'wrapper' => 'h2',
+        'class' => 'title',
+        'ft' => array(),
+      ),
     ),
   );
   $export['node|story_block|center_copy_full_bg_image'] = $ds_fieldsetting;
@@ -64,11 +70,6 @@ function story_blocks_ds_field_settings_info() {
         'link' => '0',
         'wrapper' => 'h2',
         'class' => 'title',
-        'ft' => array(),
-      ),
-    ),
-    'field_story_block_images' => array(
-      'formatter_settings' => array(
         'ft' => array(),
       ),
     ),
@@ -415,6 +416,56 @@ function story_blocks_ds_custom_fields_info() {
  */
 function story_blocks_ds_layout_settings_info() {
   $export = array();
+
+  $ds_layout = new stdClass();
+  $ds_layout->api_version = 1;
+  $ds_layout->id = 'node|story_block|center_copy_bg_image_h1_title';
+  $ds_layout->entity_type = 'node';
+  $ds_layout->bundle = 'story_block';
+  $ds_layout->view_mode = 'center_copy_bg_image_h1_title';
+  $ds_layout->layout = 'story_block_one_col';
+  $ds_layout->settings = array(
+    'regions' => array(
+      'col1' => array(
+        0 => 'mobile_story_block_image',
+        1 => 'field_story_block_images',
+        2 => 'title',
+        3 => 'body',
+        4 => 'field_story_block_link',
+        5 => 'field_story_block_videos',
+      ),
+    ),
+    'fields' => array(
+      'mobile_story_block_image' => 'col1',
+      'field_story_block_images' => 'col1',
+      'title' => 'col1',
+      'body' => 'col1',
+      'field_story_block_link' => 'col1',
+      'field_story_block_videos' => 'col1',
+    ),
+    'limit' => array(
+      'field_story_block_images' => '1',
+    ),
+    'classes' => array(
+      'layout_class' => array(
+        'node-nid-[node:nid]' => 'node-nid-[node:nid]',
+        'center-copy' => 'center-copy',
+        'wrapper-bg-image' => 'wrapper-bg-image',
+      ),
+    ),
+    'wrappers' => array(
+      'col1' => 'div',
+    ),
+    'layout_wrapper' => 'div',
+    'layout_attributes' => '',
+    'layout_attributes_merge' => 1,
+    'layout_link_attribute' => '',
+    'layout_link_custom' => '',
+    'layout_disable_css' => 0,
+    'hide_page_title' => '0',
+    'page_option_title' => '',
+  );
+  $export['node|story_block|center_copy_bg_image_h1_title'] = $ds_layout;
 
   $ds_layout = new stdClass();
   $ds_layout->api_version = 1;
@@ -978,6 +1029,15 @@ function story_blocks_ds_layout_settings_info() {
  */
 function story_blocks_ds_view_modes_info() {
   $export = array();
+
+  $ds_view_mode = new stdClass();
+  $ds_view_mode->api_version = 1;
+  $ds_view_mode->view_mode = 'center_copy_bg_image_h1_title';
+  $ds_view_mode->label = 'Center Copy BG Image H1 Title';
+  $ds_view_mode->entities = array(
+    'node' => 'node',
+  );
+  $export['center_copy_bg_image_h1_title'] = $ds_view_mode;
 
   $ds_view_mode = new stdClass();
   $ds_view_mode->api_version = 1;

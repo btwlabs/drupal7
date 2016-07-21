@@ -129,6 +129,9 @@ col-bg-image';
       'center_copy_full_bg_image' => array(
         'custom_settings' => TRUE,
       ),
+      'center_copy_bg_image_h1_title' => array(
+        'custom_settings' => TRUE,
+      ),
     ),
     'extra_fields' => array(
       'form' => array(),
@@ -175,6 +178,10 @@ col-bg-image';
             'visible' => FALSE,
           ),
           'center_copy_full_bg_image' => array(
+            'weight' => '16',
+            'visible' => FALSE,
+          ),
+          'center_copy_bg_image_h1_title' => array(
             'weight' => '16',
             'visible' => FALSE,
           ),

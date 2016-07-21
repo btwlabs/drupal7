@@ -57,7 +57,7 @@ function story_blocks_views_default_views() {
   $handler->display->display_options['fields']['title']['label'] = '';
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
-  /* Sort criterion: Entityqueue: Node Queue Position */
+  /* Sort criterion: Entityqueue: Content Queue Position */
   $handler->display->display_options['sorts']['entityqueue_relationship']['id'] = 'entityqueue_relationship';
   $handler->display->display_options['sorts']['entityqueue_relationship']['table'] = 'node';
   $handler->display->display_options['sorts']['entityqueue_relationship']['field'] = 'entityqueue_relationship';
@@ -75,7 +75,7 @@ function story_blocks_views_default_views() {
   $handler->display->display_options['filters']['type']['value'] = array(
     'story_block' => 'story_block',
   );
-  /* Filter criterion: Entityqueue: Node In Queue */
+  /* Filter criterion: Entityqueue: Content In Queue */
   $handler->display->display_options['filters']['entityqueue_relationship']['id'] = 'entityqueue_relationship';
   $handler->display->display_options['filters']['entityqueue_relationship']['table'] = 'node';
   $handler->display->display_options['filters']['entityqueue_relationship']['field'] = 'entityqueue_relationship';

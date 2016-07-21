@@ -17,6 +17,13 @@ function story_blocks_field_default_field_instances() {
     'deleted' => 0,
     'description' => '',
     'display' => array(
+      'center_copy_bg_image_h1_title' => array(
+        'label' => 'hidden',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 3,
+      ),
       'center_copy_full_bg_image' => array(
         'label' => 'hidden',
         'module' => 'text',
@@ -121,6 +128,28 @@ function story_blocks_field_default_field_instances() {
     'deleted' => 0,
     'description' => '',
     'display' => array(
+      'center_copy_bg_image_h1_title' => array(
+        'label' => 'hidden',
+        'module' => 'bg_image_formatter',
+        'settings' => array(
+          'css_settings' => array(
+            'bg_image_attachment' => 'scroll',
+            'bg_image_background_size' => '',
+            'bg_image_background_size_ie8' => 0,
+            'bg_image_color' => '',
+            'bg_image_important' => 0,
+            'bg_image_media_query' => '',
+            'bg_image_repeat' => 'no-repeat',
+            'bg_image_selector' => '.node-nid-[node:nid]',
+            'bg_image_x' => '',
+            'bg_image_y' => '',
+          ),
+          'image_style' => '',
+          'multiple' => 0,
+        ),
+        'type' => 'bg_image_formatter',
+        'weight' => 1,
+      ),
       'center_copy_full_bg_image' => array(
         'label' => 'hidden',
         'module' => 'bg_image_formatter',
@@ -411,6 +440,13 @@ function story_blocks_field_default_field_instances() {
     'deleted' => 0,
     'description' => '',
     'display' => array(
+      'center_copy_bg_image_h1_title' => array(
+        'label' => 'hidden',
+        'module' => 'link',
+        'settings' => array(),
+        'type' => 'link_default',
+        'weight' => 4,
+      ),
       'center_copy_full_bg_image' => array(
         'label' => 'hidden',
         'module' => 'link',
@@ -538,6 +574,17 @@ function story_blocks_field_default_field_instances() {
     'deleted' => 0,
     'description' => '',
     'display' => array(
+      'center_copy_bg_image_h1_title' => array(
+        'label' => 'hidden',
+        'module' => 'video_embed_field',
+        'settings' => array(
+          'link_title' => 'Watch Video',
+          'use_description' => 0,
+          'video_style' => 'normal',
+        ),
+        'type' => 'video_embed_field_link_colorbox',
+        'weight' => 5,
+      ),
       'center_copy_full_bg_image' => array(
         'label' => 'hidden',
         'module' => 'video_embed_field',
