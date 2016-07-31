@@ -1,7 +1,7 @@
 <?php
 /**
  * @file
- * _banner_support.strongarm.inc
+ * banner_support.strongarm.inc
  */
 
 /**

@@ -30,30 +30,16 @@ function banner_support_views_default_views() {
   $handler->display->display_options['exposed_form']['type'] = 'basic';
   $handler->display->display_options['pager']['type'] = 'none';
   $handler->display->display_options['style_plugin'] = 'flexslider';
-  $handler->display->display_options['row_plugin'] = 'fields';
+  $handler->display->display_options['row_plugin'] = 'node';
+  $handler->display->display_options['row_options']['links'] = FALSE;
   /* Field: Content: Link */
   $handler->display->display_options['fields']['field_banner_link']['id'] = 'field_banner_link';
   $handler->display->display_options['fields']['field_banner_link']['table'] = 'field_data_field_banner_link';
   $handler->display->display_options['fields']['field_banner_link']['field'] = 'field_banner_link';
   $handler->display->display_options['fields']['field_banner_link']['label'] = '';
-  $handler->display->display_options['fields']['field_banner_link']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_banner_link']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_banner_link']['click_sort_column'] = 'url';
   $handler->display->display_options['fields']['field_banner_link']['type'] = 'link_absolute';
-  /* Field: Content: Banner Image */
-  $handler->display->display_options['fields']['field_banner_image']['id'] = 'field_banner_image';
-  $handler->display->display_options['fields']['field_banner_image']['table'] = 'field_data_field_banner_image';
-  $handler->display->display_options['fields']['field_banner_image']['field'] = 'field_banner_image';
-  $handler->display->display_options['fields']['field_banner_image']['label'] = '';
-  $handler->display->display_options['fields']['field_banner_image']['alter']['make_link'] = TRUE;
-  $handler->display->display_options['fields']['field_banner_image']['alter']['path'] = '[field_banner_link] ';
-  $handler->display->display_options['fields']['field_banner_image']['alter']['absolute'] = TRUE;
-  $handler->display->display_options['fields']['field_banner_image']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_banner_image']['click_sort_column'] = 'fid';
-  $handler->display->display_options['fields']['field_banner_image']['settings'] = array(
-    'image_style' => '',
-    'image_link' => '',
-  );
   /* Sort criterion: Content: Post date */
   $handler->display->display_options['sorts']['created']['id'] = 'created';
   $handler->display->display_options['sorts']['created']['table'] = 'node';

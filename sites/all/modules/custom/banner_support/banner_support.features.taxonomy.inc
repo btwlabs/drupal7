@@ -1,7 +1,7 @@
 <?php
 /**
  * @file
- * _banner_support.features.taxonomy.inc
+ * banner_support.features.taxonomy.inc
  */
 
 /**

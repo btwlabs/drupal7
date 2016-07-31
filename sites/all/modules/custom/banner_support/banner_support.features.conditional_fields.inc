@@ -1,7 +1,7 @@
 <?php
 /**
  * @file
- * _banner_support.features.conditional_fields.inc
+ * banner_support.features.conditional_fields.inc
  */
 
 /**
@@ -23,7 +23,7 @@ function banner_support_conditional_fields_default_fields() {
       'effect_options' => array(),
       'element_view' => array(
         1 => 1,
-        2 => 0,
+        2 => 2,
         5 => 0,
         3 => 0,
         4 => 0,
