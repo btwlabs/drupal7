@@ -23,7 +23,7 @@ function banner_support_conditional_fields_default_fields() {
       'effect_options' => array(),
       'element_view' => array(
         1 => 1,
-        2 => 2,
+        2 => 0,
         5 => 0,
         3 => 0,
         4 => 0,
@@ -51,6 +51,13 @@ function banner_support_conditional_fields_default_fields() {
           3 => 0,
           4 => 0,
         ),
+        4 => array(
+          1 => 1,
+          2 => 2,
+          5 => 0,
+          3 => 0,
+          4 => 0,
+        ),
       ),
       'element_edit' => array(
         1 => 1,
@@ -67,6 +74,10 @@ function banner_support_conditional_fields_default_fields() {
           3 => 0,
         ),
         3 => array(
+          1 => 1,
+          3 => 0,
+        ),
+        4 => array(
           1 => 1,
           3 => 0,
         ),

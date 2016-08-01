@@ -10,7 +10,7 @@
 function banner_support_field_default_field_bases() {
   $field_bases = array();
 
-  // Exported field_base: 'field_banner_large_image'
+  // Exported field_base: 'field_banner_large_image'.
   $field_bases['field_banner_large_image'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -32,7 +32,7 @@ function banner_support_field_default_field_bases() {
     'type' => 'image',
   );
 
-  // Exported field_base: 'field_banner_link'
+  // Exported field_base: 'field_banner_link'.
   $field_bases['field_banner_link'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -61,7 +61,7 @@ function banner_support_field_default_field_bases() {
     'type' => 'link_field',
   );
 
-  // Exported field_base: 'field_banner_location'
+  // Exported field_base: 'field_banner_location'.
   $field_bases['field_banner_location'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -87,7 +87,7 @@ function banner_support_field_default_field_bases() {
     'type' => 'taxonomy_term_reference',
   );
 
-  // Exported field_base: 'field_banner_small_image'
+  // Exported field_base: 'field_banner_small_image'.
   $field_bases['field_banner_small_image'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -109,7 +109,7 @@ function banner_support_field_default_field_bases() {
     'type' => 'image',
   );
 
-  // Exported field_base: 'field_large_body'
+  // Exported field_base: 'field_large_body'.
   $field_bases['field_large_body'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -128,7 +128,7 @@ function banner_support_field_default_field_bases() {
     'type' => 'text_long',
   );
 
-  // Exported field_base: 'field_large_options'
+  // Exported field_base: 'field_large_options'.
   $field_bases['field_large_options'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -154,7 +154,7 @@ function banner_support_field_default_field_bases() {
     'type' => 'list_text',
   );
 
-  // Exported field_base: 'field_small_body'
+  // Exported field_base: 'field_small_body'.
   $field_bases['field_small_body'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -173,7 +173,7 @@ function banner_support_field_default_field_bases() {
     'type' => 'text_long',
   );
 
-  // Exported field_base: 'field_small_options'
+  // Exported field_base: 'field_small_options'.
   $field_bases['field_small_options'] = array(
     'active' => 1,
     'cardinality' => 1,
