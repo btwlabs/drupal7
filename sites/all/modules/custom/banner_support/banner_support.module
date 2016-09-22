@@ -67,7 +67,6 @@ function banner_support_preprocess_node(&$vars) {
       $image_array = field_view_value('node', $vars['node'], 'field_banner_large_image', $image);
       $field_content = array(
         '#theme' => 'link',
-        //'#path' => $url,
         '#text' => drupal_render($image_array),
         '#options' => array(
           'html' => TRUE,
@@ -84,7 +83,7 @@ function banner_support_preprocess_node(&$vars) {
       elseif (isset($vars['field_banner_link'][0]['url'])) {
         $field_content['#path'] = $vars['field_banner_link'][0]['url'];
       }
-      else $url = current_path();
+      else $field_content['#path'] = current_path();
 
       // Set the fragment.
       if (isset($vars['field_banner_link'][LANGUAGE_NONE][0]['fragment'])) {
@@ -109,21 +108,15 @@ function banner_support_preprocess_node(&$vars) {
       $image_array = field_view_value('node', $vars['node'], 'field_banner_large_image', $image);
       $vars['linked_large_format_image'] = drupal_render($image_array);
     }
+
     // Create a linked small format banner image preprocess field.
     // This should provide an image whether there is a link or not.
     if (!empty($vars['field_banner_link']) && !empty($vars['field_banner_small_image'])) {
       $image = (isset($vars['field_banner_small_image'][LANGUAGE_NONE][0])) ? $vars['field_banner_small_image'][LANGUAGE_NONE][0] : $vars['field_banner_small_image'][0];
       $image_array = field_view_value('node', $vars['node'], 'field_banner_small_image', $image);
-      if (isset($vars['field_banner_link'][LANGUAGE_NONE][0]['url'])) {
-        $url = $vars['field_banner_link'][LANGUAGE_NONE][0]['url'];
-      }
-      elseif (isset($vars['field_banner_link'][0]['url'])) {
-        $url = $vars['field_banner_link'][0]['url'];
-      }
-      else $url = current_path();
+
       $field_content = array(
         '#theme' => 'link',
-        '#path' => $url,
         '#text' => drupal_render($image_array),
         '#options' => array(
           'html' => TRUE,
@@ -132,6 +125,32 @@ function banner_support_preprocess_node(&$vars) {
           ),
         ),
       );
+
+      // Set the path.
+      if (isset($vars['field_banner_link'][LANGUAGE_NONE][0]['url'])) {
+        $field_content['#path'] = $vars['field_banner_link'][LANGUAGE_NONE][0]['url'];
+      }
+      elseif (isset($vars['field_banner_link'][0]['url'])) {
+        $field_content['#path'] = $vars['field_banner_link'][0]['url'];
+      }
+      else $field_content['#path'] = current_path();
+
+      // Set the fragment.
+      if (isset($vars['field_banner_link'][LANGUAGE_NONE][0]['fragment'])) {
+        $field_content['#options']['fragment'] = $vars['field_banner_link'][LANGUAGE_NONE][0]['fragment'];
+      }
+      elseif (isset($vars['field_banner_link'][0]['fragment'])) {
+        $field_content['#options']['fragment'] = $vars['field_banner_link'][0]['fragment'];
+      }
+
+      // Set the query.
+      if (isset($vars['field_banner_link'][LANGUAGE_NONE][0]['query'])) {
+        $field_content['#options']['query'] = $vars['field_banner_link'][LANGUAGE_NONE][0]['query'];
+      }
+      elseif (isset($vars['field_banner_link'][0]['url'])) {
+        $field_content['#options']['query'] = $vars['field_banner_link'][0]['query'];
+      }
+
       $vars['linked_small_format_image'] = drupal_render($field_content);
     }
     elseif (!empty($vars['field_banner_small_image'])) {
