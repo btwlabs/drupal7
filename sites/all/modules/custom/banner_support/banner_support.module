@@ -67,6 +67,7 @@ function banner_support_preprocess_node(&$vars) {
       $image_array = field_view_value('node', $vars['node'], 'field_banner_large_image', $image);
       $field_content = array(
         '#theme' => 'link',
+        //'#path' => $url,
         '#text' => drupal_render($image_array),
         '#options' => array(
           'html' => TRUE,
@@ -83,7 +84,7 @@ function banner_support_preprocess_node(&$vars) {
       elseif (isset($vars['field_banner_link'][0]['url'])) {
         $field_content['#path'] = $vars['field_banner_link'][0]['url'];
       }
-      else $field_content['#path'] = current_path();
+      else $url = current_path();
 
       // Set the fragment.
       if (isset($vars['field_banner_link'][LANGUAGE_NONE][0]['fragment'])) {
