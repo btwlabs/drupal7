@@ -1,0 +1,60 @@
+//----------------------------------------------
+//
+//	BREADCRUMBS - styling
+//
+//	location: 
+//      /sass/components/
+//
+//
+//----------------------------------------------
+
+
+
+/*breadcrumbs--*/
+
+.block--blockify-blockify-breadcrumb  {
+    padding: 2%;
+    background-color: #efefef;
+    font-size: 18px;
+}
+
+
+ul.breadcrumb {
+	padding:0;
+	margin: 0;
+	
+	li {
+	    list-style-type: none;
+	    display: inline-block;
+	    font-size: 85%;
+	    color: $text-color;
+	    margin-right: 5px;
+	    
+	    &:after {
+			content: " » ";
+			margin-left:5px;
+		}
+		
+		&:last-child:after {
+			content: "";
+		}
+	}
+}
+
+// specific to certain pages
+
+body.node-type-case-study .field-name-breadcrumb {
+	position: relative;
+	top: -20px;
+	max-width: 980px;
+	margin: 0 auto;
+}
+body.node-type-capability .block--blockify-blockify-breadcrumb {
+	padding: 2%;
+}
+
+.node-type-team-member {
+	.block--blockify-blockify-breadcrumb {
+		margin-top: 40px;
+	}
+}

@@ -35,15 +35,24 @@
 		width: 80%;
 		margin: 0 auto;
 	}
-	@include breakpoint($xxlarge-up) {
-		width: 70%;	
-	}
 }
 
 // Negate constrained styling on a container to make 100% width
 @mixin unconstrained {
 	width: 100%;
 }
+
+// use on inner blocks that are within a constrained style section
+// the idea is to keep padding consistent with that of story blocks
+@mixin constrained-row {
+	padding: $constrained-row-padding;
+}
+
+// use on inner blocks not using constrained styles 
+@mixin unconstrained-row {
+	padding: $unconstrained-row-padding;
+}
+
 
 // padding on top element to clear the page header
 @mixin clear-header {

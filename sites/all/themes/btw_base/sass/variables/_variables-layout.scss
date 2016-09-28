@@ -27,3 +27,17 @@ $nav-height-small: 50px;
 $nav-height-medium: 78px;
 $nav-height-large: 100px;
 $nav-height-xlarge: 100px;
+
+
+// default padding on content section rows using constrained styles
+$constrained-row-padding: 8% 0;
+
+// use on inner blocks not using constrained styles
+$unconstrained-row-padding: 8%;
+
+// story blocks
+// padding for columns
+$story-block-padding-left-copy: 8%;
+$story-block-padding-right-copy: 8%;
+
+$story-block-default-padding: 0;

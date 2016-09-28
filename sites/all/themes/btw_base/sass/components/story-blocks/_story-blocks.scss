@@ -8,10 +8,6 @@
 //----------------------------------------------
 
 
-/*-----------------------------------------
- 
----*/
-
 .node--story-block {
 	position: relative;
 	
@@ -24,7 +20,7 @@
 	.field-name-mobile-story-block-image {
 		
 		@include breakpoint($small-only) {
-			margin-bottom: $vert-spacing-unit/2;
+			margin: 0 -30px $vert-spacing-unit;
 		}
 		
 		// hide mobile-only images in wider layouts
@@ -35,9 +31,11 @@
 	
 	// Overlay div for shading bg images
 	.image-overlay {
+		
 		@include breakpoint($small-only) {
 			display: none;
 		}
+		
 		@include breakpoint($medium-up) {
 			position: absolute;
 			left: 0;
@@ -49,14 +47,20 @@
 	// flex parent
 	.story-block-inner {
 		@include constrained;
-		padding: 8% 0;
 		position: relative;
 		@include flexbox;
 		@include flex-flow($values: (row wrap));
 		@include justify-content($value: flex-start);
 		@include align-content($value: stretch);
 		@include align-items($value: stretch);
-		position: relative;		
+		position: relative;
+		
+		@include breakpoint($small-only) {
+			padding: 8% 0;
+		}
+		@include breakpoint($medium-up) {
+			padding: 8% 0;
+		}	
 	}
 	
 	// for column bg images, negate constrained styling
@@ -127,6 +131,11 @@
 			}
 		}
 	}
+	.title {
+		line-height: 1.3;
+		margin-bottom: 1.5rem;
+	}	
+
 	
 	// Links
 	.field-name-field-story-block-link,
@@ -176,12 +185,90 @@
 		@include breakpoint($small-only) {
 			background-image: none;
 		}
+	}	
+
+	.story-block {
+		// center copy with bg image
+		&.view-mode-center_copy_full_bg_image,
+		&.view-mode-center_copy_bg_image_h1_title {
+			background-size: cover;		
+			
+			.story-block-inner {
+				padding: 8%;
+				
+				.col {
+					width: 100%;
+				}
+			}
+		}
+	}
+}
+
+
+/*---------------------------------------------
+	
+	Story block View modes - LIGHT background 
+	colors or images
+	
+----------------------------------------------*/
+
+.light-bg {
+	.story-block {
 		
 		@include breakpoint($medium-up) {
 			.image-overlay {
+				display: block;
+				position: absolute;
+				left: 0;
+				top: 0;
 				width: 100%;
 				height: 100%;
-				background-color: rgba(0,0,0,0.7);
+				background-color: $overlay-bg-color-on-light;
+			}
+	
+			.title {
+				color: $title-on-light-color;
+			}
+			
+			.field-name-body {
+				color: $text-on-light-color;
+			}
+			
+			// button link
+			.field-name-field-story-block-link,
+			.field-name-field-story-block-videos {		
+				a {
+					@include button-on-light;
+					
+					&:hover {
+						@include button-on-light-hover;
+					}
+				}
+			}
+		}
+	}
+}
+
+
+/*---------------------------------------------
+	
+	Story Block View modes - DARK background 
+	colors or images
+	
+----------------------------------------------*/
+
+.dark-bg {
+	.story-block {
+		
+		@include breakpoint($medium-up) {
+			.image-overlay {
+				display: block;
+				position: absolute;
+				left: 0;
+				top: 0;
+				width: 100%;
+				height: 100%;
+				background-color: $overlay-bg-color-on-dark;
 			}
 	
 			.title {
@@ -203,7 +290,13 @@
 				}
 			}
 		}
-	}	
+	}
 }
 
-
+// Hide the image overlay when there is no background image
+.light-bg.no-bg-img,
+.dark-bg.no-bg-img {
+	.image-overlay {
+		display: none;
+	}
+}

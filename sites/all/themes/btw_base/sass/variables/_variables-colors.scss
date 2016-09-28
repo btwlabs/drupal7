@@ -13,8 +13,12 @@
 $primary-color: red;
 $secondary-color: orange;
 
+
+
 // for subtle changes to delineate container bg color in main content
 $subtle-accent: rgba(0,0,0,0.05); 
+
+
 
 // neutral colors
 $white: #fff;
@@ -29,17 +33,22 @@ $black: #000;
 // Body Text
 $text-color: #777;
 $text-on-dark-color: #ccc;
+$text-on-light-color: #000;
 
 $link-color: $primary-color;
 $link-hover-color: $secondary-color;
 $link-visited-color: #000;
 
 
+
 // Titles
 $title-color: #000;
 $page-title-color: #000;
+$section-title-color: #000;
 
 $title-on-dark-color: #fff;
+$title-on-light-color: $title-color;
+
 
 
 // Selected text color
@@ -59,16 +68,28 @@ $button-border-color: $dark-gray;
 $button-border-hover-color: $button-bg-hover-color;
 
 
-// Button styling LIGHT ON DARK
-$button-text-color-light: #fff;
-$button-text-hover-color-light: #222;
 
-$button-bg-color-light: transparent;
-$button-bg-hover-color-light: #fff;
+// Button styling DARK BUTTON ON LIGHT BG
+$button-text-color-on-light: #fff;
+$button-text-hover-color-on-light: #222;
 
-$button-border-color-light: #fff;
-$button-border-hover-color-light: #fff;
+$button-bg-color-on-light: #222;
+$button-bg-hover-color-on-light: #fff;
 
+$button-border-color-on-light: #222;
+$button-border-hover-color-on-light: #fff;
+
+
+
+// Button styling LIGHT BUTTON ON DARK BG
+$button-text-color-on-dark: #fff;
+$button-text-hover-color-on-dark: #222;
+
+$button-bg-color-on-dark: transparent;
+$button-bg-hover-color-on-dark: #fff;
+
+$button-border-color-on-dark: #fff;
+$button-border-hover-color-on-dark: #fff;
 
 
 // Sitewide Borders
@@ -130,6 +151,11 @@ $nav-bar-bg-color: #ccc;
 	// mobile site name
 	$site-name-text-color: #000;
 
+
+
+// Story Blocks
+$overlay-bg-color-on-dark: rgba(0,0,0,0.7);
+$overlay-bg-color-on-light: rgba(255,255,255,0.7);
 
 
 // Sidebar blocks

@@ -112,9 +112,37 @@
 	}
 }
 
-.btw-credits {
+/*------------------
+ plain credits
+-------------------
+	
+	.btw-credits {
+	clear: both;
+	float: none;
 	
 	p {
+		margin: 0 7px 0 0;
+		display: inline-block;
+		vertical-align: middle;
+	}
+	.btw-logo {
+		display: inline-block;
+		vertical-align: middle;
+	}
+}
+*/
+
+// by the way labs credits with logo
+	
+.btw-credits {
+	
+	@include breakpoint($large-up) {
+		float: right;
+		position: relative;
+		top: -5px;
+	}
+	
+	.block__content p {
 		margin: 0 0 5px 0;
 		text-align: center;
 		text-transform: uppercase;
@@ -122,16 +150,16 @@
 		letter-spacing: 0.3em;
 		line-height: 1;
 		display: inline-block;
-		vertical-align: middle;
+		//vertical-align: middle;
 	}
 	
 	.btw-logo {
-			padding: 5px;
-			max-width: 70px;
-			display: inline-block;
-			vertical-align: middle;
-			border: 1px solid $border-color;
-			
+		padding: 5px;
+		max-width: 70px;
+		display: inline-block;
+		vertical-align: middle;
+		border: 1px solid $border-color;
+		
 		a {
 			display: block;
 			height: 0;

@@ -1,0 +1,59 @@
+//------------------------------------------------------
+//
+//	USER NAVIGATION - Top Row in Header
+//
+//	location: 
+//      /sass/components/_user-nav.scss
+//
+//------------------------------------------------------
+
+
+
+
+/*---------------------------------------
+	
+ User Nav = search, account, cart
+ 
+----------------------------------------*/
+nav.user-nav {	
+    background: -moz-linear-gradient(left, #ffffff  0%, #efefef  100%);
+	background: -webkit-linear-gradient(left, #ffffff  0%,#efefef  100%);
+	background: linear-gradient(to right, #ffffff  0%,#efefef  100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff ', endColorstr='#efefef ',GradientType=1 );
+    z-index: 1;
+    position: relative;
+    padding: 5px 15px 5px 5px;
+    height: 36px;
+    @include clearfix;
+	
+	.menu {
+		margin: 0;
+		padding: 0;
+		@include clearfix;
+		float: right;
+		
+		li {
+			position: relative;
+			@include transition($property, 0.3s, $function);
+							
+			a {
+				color: $dark-gray;
+				@include font-size(13px);
+				padding: 5px;
+				text-transform: uppercase;
+				
+				&:hover {
+					color: $primary-color;
+					text-decoration: none;
+				}
+				
+				&:before {
+					font-family: $basicicons;
+					content: "\5d";
+					margin-right: 7px;
+					color: $primary-color;
+				}
+			}
+		}
+	}
+}

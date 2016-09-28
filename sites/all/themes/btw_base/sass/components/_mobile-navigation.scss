@@ -240,6 +240,7 @@ a.nav-close-btn {
     background-color: $mobile-nav-bg-color;
     backface-visibility: hidden;
     display: block;
+    z-index: 100;
     
     // .js-nav is added as body class via js onClick event
 	// turns off 3d translate 

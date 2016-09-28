@@ -68,6 +68,7 @@ li a.active {
   -webkit-transition: all 0.2s ease-in;
   -moz-transition: all 0.2s ease-in;
   -o-transition: all 0.2s ease-in;
+  -ms-transition: all 0.2s ease-in;
   transition: all 0.2s ease-in;
   color: red;
   text-decoration: none; }
@@ -109,6 +110,7 @@ input[type="button"] {
   -webkit-transition: all 0.2s ease-in;
   -moz-transition: all 0.2s ease-in;
   -o-transition: all 0.2s ease-in;
+  -ms-transition: all 0.2s ease-in;
   transition: all 0.2s ease-in;
   padding: 10px 20px;
   line-height: 1;
@@ -156,6 +158,7 @@ li .button a.active {
   -webkit-transition: all 0.2s ease-in;
   -moz-transition: all 0.2s ease-in;
   -o-transition: all 0.2s ease-in;
+  -ms-transition: all 0.2s ease-in;
   transition: all 0.2s ease-in;
   padding: 10px 20px;
   display: block;
@@ -239,6 +242,7 @@ input[type="file"] {
   -webkit-transition: all 0.2s ease-in;
   -moz-transition: all 0.2s ease-in;
   -o-transition: all 0.2s ease-in;
+  -ms-transition: all 0.2s ease-in;
   transition: all 0.2s ease-in;
   padding: 10px 20px;
   line-height: 1;
@@ -354,6 +358,11 @@ h6:after {
   -moz-osx-font-smoothing: grayscale;
   line-height: 1; }
 
+/* line 10, ../sass/base/_layout.scss */
+*, *:before, *:after {
+  -moz-box-sizing: border-box;
+  box-sizing: border-box; }
+
 /*----------------------------------------
 
  Add Clearfix to all main containers
@@ -364,7 +373,7 @@ h6:after {
  Admin menus
  
 ----------------------------------------*/
-/* line 82, ../sass/base/_layout.scss */
+/* line 85, ../sass/base/_layout.scss */
 ul.action-links.action-links-field-collection-add {
   width: 100%;
   background: rgba(0, 0, 0, 0.1);
@@ -373,7 +382,7 @@ ul.action-links.action-links-field-collection-add {
   margin-left: 0;
   float: none;
   overflow: hidden; }
-  /* line 91, ../sass/base/_layout.scss */
+  /* line 94, ../sass/base/_layout.scss */
   ul.action-links.action-links-field-collection-add li {
     list-style-type: none;
     float: left;
@@ -389,11 +398,11 @@ ul.action-links.action-links-field-collection-add {
  CONTENT region layout
 
 ----------------------------------------*/
-/* line 130, ../sass/base/_layout.scss */
+/* line 133, ../sass/base/_layout.scss */
 .l-content {
   position: relative; }
 
-/* line 134, ../sass/base/_layout.scss */
+/* line 137, ../sass/base/_layout.scss */
 .not-front .l-main {
   padding-bottom: 50px;
   min-height: 500px; }
@@ -401,7 +410,7 @@ ul.action-links.action-links-field-collection-add {
 /*---------------------------
  NODE-CONTAINER STYLES 
 ----------------------------*/
-/* line 143, ../sass/base/_layout.scss */
+/* line 146, ../sass/base/_layout.scss */
 .node-row-container,
 .node-middle-row1-container,
 .node-middle-row2-container,
@@ -415,7 +424,7 @@ ul.action-links.action-links-field-collection-add {
   border-bottom: 1px solid #aaa;
   position: relative; }
 
-/* line 156, ../sass/base/_layout.scss */
+/* line 159, ../sass/base/_layout.scss */
 .node-bottom-row-container {
   border-bottom: 0; }
 
@@ -423,7 +432,7 @@ ul.action-links.action-links-field-collection-add {
  Base Column styles
 --------------------------*/
 @media (min-width: 40.063em) {
-  /* line 166, ../sass/base/_layout.scss */
+  /* line 169, ../sass/base/_layout.scss */
   .col:not(.node--story-block) {
     float: left; } }
 /*----------------------------------------
@@ -609,6 +618,7 @@ a img {
   -webkit-transition: all 0.2s ease-in;
   -moz-transition: all 0.2s ease-in;
   -o-transition: all 0.2s ease-in;
+  -ms-transition: all 0.2s ease-in;
   transition: all 0.2s ease-in; }
 
 /* line 43, ../sass/base/_media.scss */
@@ -1024,6 +1034,7 @@ body {
   -webkit-transition: all 0.2s ease-in;
   -moz-transition: all 0.2s ease-in;
   -o-transition: all 0.2s ease-in;
+  -ms-transition: all 0.2s ease-in;
   transition: all 0.2s ease-in; }
 
 /* line 28, ../sass/components/_clickable.scss */
@@ -1059,6 +1070,7 @@ body {
   -webkit-transition: all 0.2s ease-in;
   -moz-transition: all 0.2s ease-in;
   -o-transition: all 0.2s ease-in;
+  -ms-transition: all 0.2s ease-in;
   transition: all 0.2s ease-in; }
   /* line 22, ../sass/components/_dateblock.scss */
   .dateblock .month, .dateblock .day, .dateblock .year {
@@ -1123,6 +1135,7 @@ body {
   -webkit-transition: all 0.2s ease-in;
   -moz-transition: all 0.2s ease-in;
   -o-transition: all 0.2s ease-in;
+  -ms-transition: all 0.2s ease-in;
   transition: all 0.2s ease-in;
   padding: 10px 20px;
   display: block;
@@ -1376,6 +1389,7 @@ a.nav-open-btn {
   -webkit-transition: all 0.2s ease;
   -moz-transition: all 0.2s ease;
   -o-transition: all 0.2s ease;
+  -ms-transition: all 0.2s ease;
   transition: all 0.2s ease; }
   /* line 96, ../sass/components/_mobile-navigation.scss */
   a.nav-open-btn:hover {
@@ -1684,31 +1698,33 @@ a.nav-close-btn {
     /* line 83, ../sass/components/_navigation.scss */
     .l-region--header nav.main-menu .menu li ul.menu {
       position: absolute;
-      top: 59px;
       left: 0;
       min-width: 300px;
       visibility: hidden;
       -webkit-transition: opacity 0.2s ease-in;
       -moz-transition: opacity 0.2s ease-in;
       -o-transition: opacity 0.2s ease-in;
+      -ms-transition: opacity 0.2s ease-in;
       transition: opacity 0.2s ease-in;
       background-color: #000;
       left: -9999px; }
-      /* line 93, ../sass/components/_navigation.scss */
+      /* line 99, ../sass/components/_navigation.scss */
       .l-region--header nav.main-menu .menu li ul.menu li {
         float: left; }
-        /* line 96, ../sass/components/_navigation.scss */
+        /* line 102, ../sass/components/_navigation.scss */
         .l-region--header nav.main-menu .menu li ul.menu li a.sub-nav {
           padding: 10px 15px;
           color: #999;
           background-color: red;
           font-size: 14px;
-          font-size: 0.875rem; }
-          /* line 102, ../sass/components/_navigation.scss */
+          font-size: 0.875rem;
+          display: block; }
+          /* line 109, ../sass/components/_navigation.scss */
           .l-region--header nav.main-menu .menu li ul.menu li a.sub-nav:hover, .l-region--header nav.main-menu .menu li ul.menu li a.sub-nav:active, .l-region--header nav.main-menu .menu li ul.menu li a.sub-nav.active-trail {
             color: red;
-            background-color: #000; }
-    /* line 113, ../sass/components/_navigation.scss */
+            background-color: #000;
+            text-decoration: none; }
+    /* line 121, ../sass/components/_navigation.scss */
     .l-region--header nav.main-menu .menu li:hover ul.menu {
       display: block;
       opacity: 1;
@@ -1752,6 +1768,7 @@ ul.pager-load-more {
     -webkit-transition: all 0.2s ease-in;
     -moz-transition: all 0.2s ease-in;
     -o-transition: all 0.2s ease-in;
+    -ms-transition: all 0.2s ease-in;
     transition: all 0.2s ease-in;
     padding: 10px 20px;
     line-height: 1;
@@ -1796,6 +1813,7 @@ a.back-to-river-link {
   -webkit-transition: all 0.2s ease-in;
   -moz-transition: all 0.2s ease-in;
   -o-transition: all 0.2s ease-in;
+  -ms-transition: all 0.2s ease-in;
   transition: all 0.2s ease-in;
   font-size: 12px;
   font-size: 0.75rem; }
@@ -2708,6 +2726,7 @@ a.related-node-product-buy-link:before {
       -webkit-transition: all 0.2s ease-in;
       -moz-transition: all 0.2s ease-in;
       -o-transition: all 0.2s ease-in;
+      -ms-transition: all 0.2s ease-in;
       transition: all 0.2s ease-in;
       padding: 10px 20px;
       line-height: 1;
