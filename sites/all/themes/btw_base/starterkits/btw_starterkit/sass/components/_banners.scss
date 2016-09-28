@@ -8,20 +8,167 @@
 //------------------------------------------------------
 
 
-@include breakpoint($medium-up) {
 
-	.banner-with-body-1 {
+/*--------------------------------------
+	
+	Slideshow banners
+	
+--------------------------------------*/
+
+// hide block title
+.block--views-rotating-banner-images-block {
+	h2.block__title {
+		display: none;
+	}
+}
+
+.view-rotating-banner-images {
+	
+	// override from ds-basics.scss line 11
+	.outer-wrapper {
+		margin: 0;
+	}
+	
+	// CTA links
+	.field-name-field-banner-link a,
+	.field-name-banner-link-copy a {
+		@include button-on-dark;
+		display: inline-block;
+		background-color: transparent;
 		
-		// banner body wrapper
-		.row2-outer-wrapper {
-			padding: 3%;
-			background-color: rgba(0, 0, 0, 0.7);
-			
-			// title 
-			h2 {
-				color: #fff;
-				margin-bottom: $vert-spacing-unit/2;
-			}
+		&:hover {
+			@include button-on-dark-hover;
 		}
+	}
+}
+
+// show & hide the large and small formats in the proper layout contexts
+
+.large-format-outer-wrapper {
+	position: relative;
+	
+	@include breakpoint($small-only) {
+		display: none;
+	}
+	@include breakpoint($medium-up) {
+		display: block;
+	}
+	
+	// full height and width overlay
+	/*&:after {
+		content:"";
+		display: block;
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background-color: rgba(0,0,0,0.6);
+		z-index: 1;
+	}*/
+}
+.small-format-outer-wrapper {
+	position: relative;
+	
+	@include breakpoint($small-only) {
+		display: block;
+	}
+	@include breakpoint($medium-up) {
+		display: none;
+	}
+	
+	// full height and width overlay
+	/*
+	&:after {
+		content:"";
+		display: block;
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background-color: rgba(0,0,0,0.6);
+		z-index: 1;
+	}
+	*/
+	
+	.field-name-banner-link-copy a {
+		@include font-size(18px);
+		padding: 8px 15px;
+		letter-spacing: 1px;
+	}
+}
+
+
+//  Large banners - Text copy
+.large-row-2 {
+	position: absolute;
+	@include centerY;
+	width: 60%;
+	z-index: 5;
+	margin-left: 15%;
+	
+
+	h2 {
+		color: #fff;
+		line-height: 1.2;
+		
+		@include breakpoint($medium-up) {
+			@include font-size(50px);
+		}
+		@include breakpoint($large-up) {
+			@include font-size(70px);
+		}
+		@include breakpoint($xlarge-up) {
+			@include font-size(90px);
+		}
+		
+		span {
+			display: block;
+		}
+	}
+	
+	// body text
+	.field-name-field-large-body {
+		@include font-size(22px);
+		color: #fff;
+	}
+}
+
+/*------------------------------------------
+	
+	Mobile Banners - absolute positioned over top
+					 of an image
+	
+------------------------------------------*/
+
+.small-row-2 {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    z-index: 5;
+    padding: 30px 30px 60px;
+    background: rgba(0,0,0,0.7);
+	
+	h2 {
+		color: #fff;
+		line-height: 1.2;
+		@include font-size(30px);
+		
+		span {
+			display: block;
+		}
+	}
+	
+	// body text
+	.field-name-field-small-body {
+		@include font-size(20px);
+		color: #fff;
+	}
+	
+	// link
+	.field-name-banner-link-copy a {
+		width: 100%;
 	}
 }

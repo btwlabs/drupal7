@@ -79,6 +79,14 @@ h1, h2 {
 	font-weight: normal; /* removes ugly bold rendering of custom title fonts - remove as necessary */
 }
 
+.block--views h2.block__title,
+.story-block h2.title,
+.field-name-recent-articles > h2.title,
+.node-type-news-article h1.title,
+.section-contact h1.title {
+	@include responsive-section-title;
+	position: relative;
+}
 
 /*------------------
 
@@ -87,20 +95,7 @@ h1, h2 {
 -------------------*/
 
 h1 {
-	line-height: 1;
-	padding-bottom: 0;
-	text-transform: none;
-	margin-bottom: $vert-spacing-unit;
-	
-	@include breakpoint($small-up) {
-		@include font-size(30px);
-	}
-	@include breakpoint($medium-up) {
-		@include font-size(40px);
-	}
-	@include breakpoint($large-up) {
-		@include font-size(48px);
-	}
+	@include responsive-page-title;
 }
 
 h1#page-title,
@@ -108,7 +103,7 @@ h1.page-title,
 .block--blockify h1.title {
 	color: $page-title-color;
 	padding-bottom: 10px;
-	border-bottom: 1px solid $border-color;
+	border-bottom: 1px solid $border-color;	
 }
 
 
@@ -119,17 +114,20 @@ h1.page-title,
 --------------------*/
 
 h2, 
-h2.node-title,
-h2.block-title,
+h2.node__title,
+h2.block__title,
 h2.views-title {
 	@include font-size(27px);
+	color: $section-title-color;
 }
 
 
-h2.node-title, 
-h2.block-title {
+h2.node__title, 
+h2.block__title {
 	line-height: 1.2;
 }
+
+
 
 /*--------------------
 

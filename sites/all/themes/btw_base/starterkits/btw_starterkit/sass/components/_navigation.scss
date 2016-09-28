@@ -16,12 +16,12 @@
 	
 	@include breakpoint($medium-up) {
 		display: block;
-		position: relative; // was fixed pos
-		//top: 50px;
+		position: relative; // for non-fixed nav
 		left: 0;
 		width: 100%;
 		z-index: 9997;
 		min-height: 59px;
+		@include clearfix; // for non-fixed nav
 	}
 	
 	// List items
@@ -39,6 +39,9 @@
 				list-style-type: none;
 				float: left;
 				position: relative;
+				font-family: $nav-font-family;
+				font-weight: $nav-font-weight;
+				line-height: $nav-line-height;
 				
 				&.leaf {
 					list-style-image: none;
@@ -67,6 +70,19 @@
 					background-color: $nav-button-bg-color;
 					@include font-size(18px);
 					
+					@include breakpoint($small-only) {
+						@include font-size(20px);
+						padding: 10px;
+					}
+					@include breakpoint($medium-only) {
+						@include font-size(22px);
+						padding: 10px 15px;
+					}
+					@include breakpoint($large-up) {
+						@include font-size(30px);
+						padding: 15px 20px;
+					}
+					
 					&:hover {
 						color: $nav-text-hover-color;
 						background-color: $nav-button-bg-hover-color;
@@ -89,15 +105,39 @@
 					@include transition-opacity;
 					background-color: $subnav-bar-bg-color;
 					left: -9999px; // hide offscreen when not needed - more accessible than display:none
+					
+					@include breakpoint($small-only) {
+						top: 56px;
+						min-width: 180px;
+					}
+					@include breakpoint($medium-only) {
+						top: 56px;
+						min-width: 180px;
+					}
+					@include breakpoint($large-up) {
+						top: 78px;
+						min-width: 230px;
+					}
 				
 					li {
-						float: left;
+						float: none;
+						overflow: hidden;
 						
 						a.sub-nav {
 							padding: 10px 15px;
 							color: $subnav-text-color;
 							background-color: $subnav-button-bg-color;
 							@include font-size(14px);
+							font-family: $subnav-font-family;
+							font-weight: $subnav-font-weight;
+							line-height: $subnav-line-height;
+							
+							@include breakpoint($medium-up) {
+								@include font-size(14px);
+							}
+							@include breakpoint($large-up) {
+								@include font-size(17px);
+							}
 							
 							&:hover,
 							&:active,

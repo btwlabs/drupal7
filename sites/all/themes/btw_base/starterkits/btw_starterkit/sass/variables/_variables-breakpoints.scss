@@ -30,10 +30,14 @@ $portrait: screen (orientation portrait);
 $small-up: 0px; 					// min-width: 0 
 $small-only: 0em 40em; 				// min-width: 0 and max-width: 640px
 
+$small-plus: 40em 47.5em;			// min-width: 640px and max-width: 760px;
+
 $small-and-medium: 0em 64em;		// min-width: 0 and max-width: 1024px;
 
 $medium-up: 40.063em; 				// min-width: 641px
 $medium-only: 40.063em 64em; 		// min-width: 641px and max-width: 1024px
+
+$medium-plus: 47.563em 64em;		// min-width: 760px and max-width: 1024px;
 
 $large-up: 64.063em; 				// min-width: 1025px
 $large-only: 64.063em 90em; 		// min-width: 1025px and max-width: 1440px

@@ -25,23 +25,55 @@
 	letter-spacing: $base-letter-spacing;
 }
 
+@mixin responsive-body-text {
+	@include breakpoint($small-only) {
+		@include font-size(18px);
+	}
+	@include breakpoint($large-up) {
+		@include font-size(20px)
+	}
+}
+
+
 // Titles
 @mixin title-style {
 	font-family: $title-font-family;
 	font-weight: $title-font-weight;
 	margin: $title-margin;
 	color: $title-color;
+	line-height: $title-line-height;
+	text-transform: $title-text-transform;
 }
 
 // Page title - responsive sizes
 @mixin responsive-page-title {
+	
 	@include breakpoint($small-up) {
-		@include font-size(40px);
+		@include font-size(35px);
 	}
 	@include breakpoint($medium-up) {
-		@include font-size(50px);
+		@include font-size(40px);
 	}
 	@include breakpoint($large-up) {
-		@include font-size(60px);
+		@include font-size(50px);
 	}
+}
+
+// Section title - responsive sizes
+@mixin responsive-section-title {
+	
+	@include breakpoint($small-only) {
+		padding-bottom: 10px;
+		border-bottom: 1px solid $border-color;
+	}
+	@include breakpoint($small-up) {
+		@include font-size(25px);
+	}
+	@include breakpoint($medium-up) {
+		@include font-size(35px);
+	}
+	@include breakpoint($large-up) {
+		@include font-size(40px);
+	}
+
 }

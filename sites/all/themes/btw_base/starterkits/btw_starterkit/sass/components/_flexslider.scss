@@ -20,3 +20,82 @@
 		}
 	}
 }
+
+// override .node ol & .node ul (the only places we typically use bullet point styling)
+.node .flexslider {
+	ul.slides,
+	ol.flex-control-nav,
+	ul.flex-direction-nav {
+		
+		padding: 0;
+		margin: 0;
+			
+		li {
+			list-style-type: none;
+			padding: 0;
+		}
+	}
+}
+
+
+// Slide navigation (dots)
+.flex-control-nav {
+    width: 100%;
+    position: absolute;
+    bottom: 20px;
+    text-align: center;
+    z-index: 2;
+
+	li {		
+		a {
+			background: #fff;
+			
+			&:hover {
+				background: $primary-color;
+			}
+			
+			&.flex-active {
+				background: $primary-color;
+			}
+		}
+	}
+}
+
+
+
+// Slide nav - prev & next
+.flex-direction-nav {
+	
+	a {
+	    margin: -20px 0 0;
+	    color: rgba(0, 0, 0, 0.8);
+	    text-shadow: none;
+	    
+	    @include breakpoint($small-only) {
+		    width: 25px;
+		    height: 25px;
+	    }
+	    @include breakpoint($medium-up) {
+		    width: 55px;
+			height: 55px;
+	    }
+	    
+	    &:before {
+		    font-family: $arrowicons;
+		    display: inline-block;
+		    content: '\32';
+		    color: rgba(255, 255, 255, 0.8);
+		    text-shadow: none;
+		    
+		    @include breakpoint($small-only) {
+			    font-size: 25px;
+		    }
+		    @include breakpoint($medium-up) {
+			    font-size: 55px;
+		    }
+		}
+	}
+	a.flex-next:before {
+		content: '\33';
+	}
+}
