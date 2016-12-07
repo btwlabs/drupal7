@@ -38,18 +38,6 @@ a img {
 	@include transition(all, 0.2s, ease-in);
 }
 
-// colorbox zoom image -cursor icon 
- 
-a.colorbox img,
-.gallery-image-item img {
-	cursor: url("../images/cursor-zoom.png"), pointer;
-}
-
-// video thumbnail - cursor icon 
-a.colorbox-load img,
-.gallery-video-item img {
-	cursor: url("../images/cursor-video.png"), pointer;
-}
 
 
 /*-------------------------------------
