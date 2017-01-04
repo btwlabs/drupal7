@@ -1,5 +1,9 @@
-$breakpoint-no-queries: true;
-$breakpoint-no-query-fallbacks: true;
+//$breakpoint-no-queries: true;
+//$breakpoint-no-query-fallbacks: true;
+
+@import "breakpoint";
+@include bkpt-set('no queries', value);
+@include bkpt-set('no query fallbacks', value);
 
 // Re-render everything from styles.scss but without media queries.
 @import "{{ THEME }}.styles";

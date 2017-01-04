@@ -20,7 +20,8 @@ $horz-spacing-unit: 1em;
 
 
 // convert pixel widths to ems in breakpoints
-$breakpoint-to-ems: true;
+@import "breakpoint";
+@include breakpoint-set('to ems', true);
 
 
 // Define breakpoints
