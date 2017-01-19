@@ -8,7 +8,7 @@
  * Implements hook_field_group_info().
  */
 function banner_support_field_group_info() {
-  $export = array();
+  $field_groups = array();
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -38,39 +38,8 @@ function banner_support_field_group_info() {
       'formatter' => 'collapsible',
     ),
   );
-  $export['group_large_format|node|banner|form'] = $field_group;
+  $field_groups['group_large_format|node|banner|form'] = $field_group;
 
-  $field_group = new stdClass();
-  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
-  $field_group->api_version = 1;
-  $field_group->identifier = 'group_small_format|node|banner|form';
-  $field_group->group_name = 'group_small_format';
-  $field_group->entity_type = 'node';
-  $field_group->bundle = 'banner';
-  $field_group->mode = 'form';
-  $field_group->parent_name = '';
-  $field_group->data = array(
-    'label' => 'Small Format',
-    'weight' => '5',
-    'children' => array(
-      0 => 'field_banner_small_image',
-      1 => 'field_small_body',
-      2 => 'field_small_options',
-    ),
-    'format_type' => 'fieldset',
-    'format_settings' => array(
-      'label' => 'Small Format',
-      'instance_settings' => array(
-        'required_fields' => 1,
-        'classes' => 'group-small-format field-group-fieldset',
-        'description' => 'Image and display options for banners to be shown on small format devices such as smartphones and some small tablets',
-      ),
-      'formatter' => 'collapsible',
-    ),
-  );
-  $export['group_small_format|node|banner|form'] = $field_group;
-
-  // Display groups.
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
   $field_group->api_version = 1;
@@ -99,7 +68,7 @@ function banner_support_field_group_info() {
       'formatter' => 'open',
     ),
   );
-  $export['group_large_row_1|node|banner|bnr_lg_hidden_sml_img_only'] = $field_group;
+  $field_groups['group_large_row_1|node|banner|bnr_lg_hidden_sml_img_only'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -131,7 +100,7 @@ function banner_support_field_group_info() {
       'formatter' => 'open',
     ),
   );
-  $export['group_large_row_1|node|banner|bnr_lg_img_only_sml_hidden'] = $field_group;
+  $field_groups['group_large_row_1|node|banner|bnr_lg_img_only_sml_hidden'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -163,7 +132,7 @@ function banner_support_field_group_info() {
       'formatter' => 'open',
     ),
   );
-  $export['group_large_row_1|node|banner|bnr_lg_img_only_sml_img_only'] = $field_group;
+  $field_groups['group_large_row_1|node|banner|bnr_lg_img_only_sml_img_only'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -195,7 +164,7 @@ function banner_support_field_group_info() {
       'formatter' => 'open',
     ),
   );
-  $export['group_large_row_1|node|banner|bnr_lg_img_only_sml_with_bdy'] = $field_group;
+  $field_groups['group_large_row_1|node|banner|bnr_lg_img_only_sml_with_bdy'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -227,7 +196,7 @@ function banner_support_field_group_info() {
       'formatter' => 'open',
     ),
   );
-  $export['group_large_row_1|node|banner|bnr_lg_with_bdy_sml_hidden'] = $field_group;
+  $field_groups['group_large_row_1|node|banner|bnr_lg_with_bdy_sml_hidden'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -259,7 +228,7 @@ function banner_support_field_group_info() {
       'formatter' => 'open',
     ),
   );
-  $export['group_large_row_1|node|banner|bnr_lg_with_bdy_sml_img_only'] = $field_group;
+  $field_groups['group_large_row_1|node|banner|bnr_lg_with_bdy_sml_img_only'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -291,7 +260,7 @@ function banner_support_field_group_info() {
       'formatter' => 'open',
     ),
   );
-  $export['group_large_row_1|node|banner|bnr_lg_with_bdy_sml_with_bdy'] = $field_group;
+  $field_groups['group_large_row_1|node|banner|bnr_lg_with_bdy_sml_with_bdy'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -321,7 +290,7 @@ function banner_support_field_group_info() {
       'formatter' => 'open',
     ),
   );
-  $export['group_large_row_1|node|banner|default'] = $field_group;
+  $field_groups['group_large_row_1|node|banner|default'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -351,7 +320,7 @@ function banner_support_field_group_info() {
       'formatter' => 'open',
     ),
   );
-  $export['group_large_row_2|node|banner|bnr_lg_hidden_sml_img_only'] = $field_group;
+  $field_groups['group_large_row_2|node|banner|bnr_lg_hidden_sml_img_only'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -381,7 +350,7 @@ function banner_support_field_group_info() {
       'formatter' => 'open',
     ),
   );
-  $export['group_large_row_2|node|banner|bnr_lg_img_only_sml_img_only'] = $field_group;
+  $field_groups['group_large_row_2|node|banner|bnr_lg_img_only_sml_img_only'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -411,7 +380,7 @@ function banner_support_field_group_info() {
       'formatter' => 'open',
     ),
   );
-  $export['group_large_row_2|node|banner|bnr_lg_img_only_sml_with_bdy'] = $field_group;
+  $field_groups['group_large_row_2|node|banner|bnr_lg_img_only_sml_with_bdy'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -444,7 +413,7 @@ function banner_support_field_group_info() {
       'formatter' => 'open',
     ),
   );
-  $export['group_large_row_2|node|banner|bnr_lg_with_bdy_sml_hidden'] = $field_group;
+  $field_groups['group_large_row_2|node|banner|bnr_lg_with_bdy_sml_hidden'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -477,7 +446,7 @@ function banner_support_field_group_info() {
       'formatter' => 'open',
     ),
   );
-  $export['group_large_row_2|node|banner|bnr_lg_with_bdy_sml_img_only'] = $field_group;
+  $field_groups['group_large_row_2|node|banner|bnr_lg_with_bdy_sml_img_only'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -510,7 +479,7 @@ function banner_support_field_group_info() {
       'formatter' => 'open',
     ),
   );
-  $export['group_large_row_2|node|banner|bnr_lg_with_bdy_sml_with_bdy'] = $field_group;
+  $field_groups['group_large_row_2|node|banner|bnr_lg_with_bdy_sml_with_bdy'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -540,7 +509,37 @@ function banner_support_field_group_info() {
       'formatter' => 'open',
     ),
   );
-  $export['group_large_row_2|node|banner|default'] = $field_group;
+  $field_groups['group_large_row_2|node|banner|default'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
+  $field_group->identifier = 'group_small_format|node|banner|form';
+  $field_group->group_name = 'group_small_format';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'banner';
+  $field_group->mode = 'form';
+  $field_group->parent_name = '';
+  $field_group->data = array(
+    'label' => 'Small Format',
+    'weight' => '5',
+    'children' => array(
+      0 => 'field_banner_small_image',
+      1 => 'field_small_body',
+      2 => 'field_small_options',
+    ),
+    'format_type' => 'fieldset',
+    'format_settings' => array(
+      'label' => 'Small Format',
+      'instance_settings' => array(
+        'required_fields' => 1,
+        'classes' => 'group-small-format field-group-fieldset',
+        'description' => 'Image and display options for banners to be shown on small format devices such as smartphones and some small tablets',
+      ),
+      'formatter' => 'collapsible',
+    ),
+  );
+  $field_groups['group_small_format|node|banner|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -572,7 +571,7 @@ function banner_support_field_group_info() {
       'formatter' => 'open',
     ),
   );
-  $export['group_small_row_1|node|banner|bnr_lg_hidden_small_with_bdy'] = $field_group;
+  $field_groups['group_small_row_1|node|banner|bnr_lg_hidden_small_with_bdy'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -604,7 +603,7 @@ function banner_support_field_group_info() {
       'formatter' => 'open',
     ),
   );
-  $export['group_small_row_1|node|banner|bnr_lg_hidden_sml_img_only'] = $field_group;
+  $field_groups['group_small_row_1|node|banner|bnr_lg_hidden_sml_img_only'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -636,7 +635,7 @@ function banner_support_field_group_info() {
       'formatter' => 'open',
     ),
   );
-  $export['group_small_row_1|node|banner|bnr_lg_img_only_sml_img_only'] = $field_group;
+  $field_groups['group_small_row_1|node|banner|bnr_lg_img_only_sml_img_only'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -668,7 +667,7 @@ function banner_support_field_group_info() {
       'formatter' => 'open',
     ),
   );
-  $export['group_small_row_1|node|banner|bnr_lg_img_only_sml_with_bdy'] = $field_group;
+  $field_groups['group_small_row_1|node|banner|bnr_lg_img_only_sml_with_bdy'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -700,7 +699,7 @@ function banner_support_field_group_info() {
       'formatter' => 'open',
     ),
   );
-  $export['group_small_row_1|node|banner|bnr_lg_with_bdy_sml_img_only'] = $field_group;
+  $field_groups['group_small_row_1|node|banner|bnr_lg_with_bdy_sml_img_only'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -732,7 +731,7 @@ function banner_support_field_group_info() {
       'formatter' => 'open',
     ),
   );
-  $export['group_small_row_1|node|banner|bnr_lg_with_bdy_sml_with_bdy'] = $field_group;
+  $field_groups['group_small_row_1|node|banner|bnr_lg_with_bdy_sml_with_bdy'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -762,7 +761,7 @@ function banner_support_field_group_info() {
       'formatter' => 'open',
     ),
   );
-  $export['group_small_row_1|node|banner|default'] = $field_group;
+  $field_groups['group_small_row_1|node|banner|default'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -795,7 +794,7 @@ function banner_support_field_group_info() {
       'formatter' => 'open',
     ),
   );
-  $export['group_small_row_2|node|banner|bnr_lg_hidden_small_with_bdy'] = $field_group;
+  $field_groups['group_small_row_2|node|banner|bnr_lg_hidden_small_with_bdy'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -825,7 +824,7 @@ function banner_support_field_group_info() {
       'formatter' => 'open',
     ),
   );
-  $export['group_small_row_2|node|banner|bnr_lg_hidden_sml_img_only'] = $field_group;
+  $field_groups['group_small_row_2|node|banner|bnr_lg_hidden_sml_img_only'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -855,7 +854,7 @@ function banner_support_field_group_info() {
       'formatter' => 'open',
     ),
   );
-  $export['group_small_row_2|node|banner|bnr_lg_img_only_sml_img_only'] = $field_group;
+  $field_groups['group_small_row_2|node|banner|bnr_lg_img_only_sml_img_only'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -888,7 +887,7 @@ function banner_support_field_group_info() {
       'formatter' => 'open',
     ),
   );
-  $export['group_small_row_2|node|banner|bnr_lg_img_only_sml_with_bdy'] = $field_group;
+  $field_groups['group_small_row_2|node|banner|bnr_lg_img_only_sml_with_bdy'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -918,7 +917,7 @@ function banner_support_field_group_info() {
       'formatter' => 'open',
     ),
   );
-  $export['group_small_row_2|node|banner|bnr_lg_with_bdy_sml_img_only'] = $field_group;
+  $field_groups['group_small_row_2|node|banner|bnr_lg_with_bdy_sml_img_only'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -951,7 +950,7 @@ function banner_support_field_group_info() {
       'formatter' => 'open',
     ),
   );
-  $export['group_small_row_2|node|banner|bnr_lg_with_bdy_sml_with_bdy'] = $field_group;
+  $field_groups['group_small_row_2|node|banner|bnr_lg_with_bdy_sml_with_bdy'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -981,7 +980,16 @@ function banner_support_field_group_info() {
       'formatter' => 'open',
     ),
   );
-  $export['group_small_row_2|node|banner|default'] = $field_group;
+  $field_groups['group_small_row_2|node|banner|default'] = $field_group;
 
-  return $export;
+  // Translatables
+  // Included for use with string extractors like potx.
+  t('Large Format');
+  t('Large Row 1');
+  t('Large Row 2');
+  t('Small Format');
+  t('Small Row 1');
+  t('Small Row 2');
+
+  return $field_groups;
 }

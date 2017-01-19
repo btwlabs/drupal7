@@ -216,27 +216,6 @@ function banner_support_ds_layout_settings_info() {
 
   $ds_layout = new stdClass();
   $ds_layout->api_version = 1;
-  $ds_layout->id = 'node|banner|bnr_lg_hidden_sml_hidden';
-  $ds_layout->entity_type = 'node';
-  $ds_layout->bundle = 'banner';
-  $ds_layout->view_mode = 'bnr_lg_hidden_sml_hidden';
-  $ds_layout->layout = 'banner_support_1';
-  $ds_layout->settings = array(
-    'regions' => array(),
-    'fields' => array(),
-    'classes' => array(),
-    'wrappers' => array(),
-    'layout_wrapper' => 'div',
-    'layout_attributes' => '',
-    'layout_attributes_merge' => TRUE,
-    'layout_link_attribute' => FALSE,
-    'layout_link_custom' => '',
-    'layout_disable_css' => 0,
-  );
-  $export['node|banner|bnr_lg_hidden_sml_hidden'] = $ds_layout;
-
-  $ds_layout = new stdClass();
-  $ds_layout->api_version = 1;
   $ds_layout->id = 'node|banner|bnr_lg_hidden_small_with_bdy';
   $ds_layout->entity_type = 'node';
   $ds_layout->bundle = 'banner';
@@ -276,6 +255,27 @@ function banner_support_ds_layout_settings_info() {
     'layout_disable_css' => 0,
   );
   $export['node|banner|bnr_lg_hidden_small_with_bdy'] = $ds_layout;
+
+  $ds_layout = new stdClass();
+  $ds_layout->api_version = 1;
+  $ds_layout->id = 'node|banner|bnr_lg_hidden_sml_hidden';
+  $ds_layout->entity_type = 'node';
+  $ds_layout->bundle = 'banner';
+  $ds_layout->view_mode = 'bnr_lg_hidden_sml_hidden';
+  $ds_layout->layout = 'banner_support_1';
+  $ds_layout->settings = array(
+    'regions' => array(),
+    'fields' => array(),
+    'classes' => array(),
+    'wrappers' => array(),
+    'layout_wrapper' => 'div',
+    'layout_attributes' => '',
+    'layout_attributes_merge' => TRUE,
+    'layout_link_attribute' => FALSE,
+    'layout_link_custom' => '',
+    'layout_disable_css' => 0,
+  );
+  $export['node|banner|bnr_lg_hidden_sml_hidden'] = $ds_layout;
 
   $ds_layout = new stdClass();
   $ds_layout->api_version = 1;

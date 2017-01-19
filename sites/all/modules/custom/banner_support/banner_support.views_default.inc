@@ -22,6 +22,7 @@ function banner_support_views_default_views() {
 
   /* Display: Master */
   $handler = $view->new_display('default', 'Master', 'default');
+  $handler->display->display_options['title'] = 'Rotating Banner Images';
   $handler->display->display_options['use_more_always'] = FALSE;
   $handler->display->display_options['access']['type'] = 'perm';
   $handler->display->display_options['cache']['type'] = 'none';
@@ -30,12 +31,7 @@ function banner_support_views_default_views() {
   $handler->display->display_options['pager']['type'] = 'none';
   $handler->display->display_options['style_plugin'] = 'flexslider';
   $handler->display->display_options['row_plugin'] = 'node';
-  $handler->display->display_options['row_options']['view_mode'] = 'full';
   $handler->display->display_options['row_options']['links'] = FALSE;
-  /* Relationship: Content: Location (field_banner_location) */
-  $handler->display->display_options['relationships']['field_banner_location_tid']['id'] = 'field_banner_location_tid';
-  $handler->display->display_options['relationships']['field_banner_location_tid']['table'] = 'field_data_field_banner_location';
-  $handler->display->display_options['relationships']['field_banner_location_tid']['field'] = 'field_banner_location_tid';
   /* Field: Content: Link */
   $handler->display->display_options['fields']['field_banner_link']['id'] = 'field_banner_link';
   $handler->display->display_options['fields']['field_banner_link']['table'] = 'field_data_field_banner_link';
@@ -66,8 +62,6 @@ function banner_support_views_default_views() {
 
   /* Display: Rotating Banner Images Block */
   $handler = $view->new_display('block', 'Rotating Banner Images Block', 'block');
-  $handler->display->display_options['block_description'] = 'Rotating Banner Block';
-
   $export['rotating_banner_images'] = $view;
 
   return $export;

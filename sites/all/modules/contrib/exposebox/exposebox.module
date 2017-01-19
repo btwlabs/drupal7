@@ -60,7 +60,7 @@ function exposebox_field_group_format_settings($group) {
   $form['instance_settings']['height'] = array(
     '#type' => 'textfield',
     '#title' => t('Height'),
-    '#description' => t('The height of the box when closed'),
+    '#description' => t('The height of the box when closed, in px.'),
     '#default_value' => isset($group->format_settings['instance_settings']['height']) ? $group->format_settings['instance_settings']['height'] : (isset($formatter['instance_settings']['height']) ? $formatter['instance_settings']['height'] : ''),
     '#field_suffix' => 'px',
     '#weight' => 5,
@@ -82,10 +82,10 @@ function exposebox_field_group_pre_render(&$element, $group, & $form) {
 
     // Normal or collapsible div.
     case 'exposebox':
-      $open_text = isset($group->format_settings['instance_settings']['expose_text']) ? $group->format_settings['instance_settings']['expose_text'] : 'Expose It!';
-      $close_text = isset($group->format_settings['instance_settings']['close_text']) ? $group->format_settings['instance_settings']['close_text'] : 'Close It!';
-      $height = isset($group->format_settings['instance_settings']['height']) ? $group->format_settings['instance_settings']['height'] : null;
-      $classes = isset($group->format_settings['instance_settings']['classes']) ? " {$group->format_settings['instance_settings']['classes']}" : '';
+      $open_text = isset($group->format_settings['instance_settings']['expose_text']) ? check_plain($group->format_settings['instance_settings']['expose_text']) : 'Expose It!';
+      $close_text = isset($group->format_settings['instance_settings']['close_text']) ? check_plain($group->format_settings['instance_settings']['close_text']) : 'Close It!';
+      $height = isset($group->format_settings['instance_settings']['height']) ? check_plain($group->format_settings['instance_settings']['height']) : null;
+      $classes = isset($group->format_settings['instance_settings']['classes']) ? ' ' . check_plain($group->format_settings['instance_settings']['classes']) : '';
       $link_position = isset($group->format_settings['instance_settings']['link_position']) ? $group->format_settings['instance_settings']['link_position'] : 'below';
       $expose_link = '<div class="exposebox-expose-link-wrapper">' . l(t($open_text), current_path(), array('query'=>array('exposeText'=>t($open_text),
           'closeText'=>t($close_text), 'height'=>$height, 'link_position'=> $link_position),
@@ -104,7 +104,7 @@ function exposebox_field_group_pre_render(&$element, $group, & $form) {
       if ($link_position == 'above') {
         $add['#prefix'] .= $expose_link;
       }
-      $add['#prefix'] .= '<div class="exposebox exposebox-closed' . $classes . '"' . $style . '><div style="height:auto; position:relative;">';
+      $add['#prefix'] .= '<div class="exposebox exposebox-closed' . $classes . '" ' . $style . '><div style="height:auto; position:relative;">';
       $add['#suffix'] = '</div></div> ';
       if ($link_position == 'below') {
         $add['#suffix'] .= $expose_link;
